@@ -1,0 +1,225 @@
+[
+    {
+        "id": "1e71fae4ad2e8015",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "name": "set.T_woonkamer_BT",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"T_woonkamer_BT\",msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 2460,
+        "wires": [
+            [
+                "259e9755f1f90324"
+            ]
+        ]
+    },
+    {
+        "id": "903ed6e118657628",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "name": "set.WoonkamerSP",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"WoonkamerSP\",msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 2500,
+        "wires": [
+            [
+                "259e9755f1f90324"
+            ]
+        ]
+    },
+    {
+        "id": "b99b1f2991154c5a",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "name": "set.T_buiten_darksky",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"T_buiten_darksky\",msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 2540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29a7adb021b5eaad",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "name": "set.Z1_Heat_Curve_Target_High_Temp",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"Z1_Heat_Curve_Target_High_Temp\",msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 2580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "12cc95414c4ca9da",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "name": "set.StooklijnDelta",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"StooklijnDelta\",msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1470,
+        "y": 2460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "259e9755f1f90324",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "name": "StooklijnDelta functie",
+        "func": "// Automagische Stooklijn correctie (original by CurlyMo, translated to NodeRed by EdterBak)\n\nvar PV=global.get('T_woonkamer_BT'); // Temperatuurmeting van de ruimte\nvar SP=global.get('WoonkamerSP'); // Setpoint van de ruimte waar de stooklijnDelta voor gecorrigeerd zal worden\nvar Tb=global.get('T_buiten_darksky'); // Buitentemperatuur\nvar Z1_Heat_Curve_Target_High_Temp=global.get('Z1_Heat_Curve_Target_High_Temp'); // TOP29\nvar var_dT=(PV-SP); // als de waarde > 0 dan is het te warm. Als < dan is het te koud\nvar StooklijnDelta=26; // Startpunt voor alle onderstaande correcties\n\n//\n// Het is warmer binnen. Bij iedere if wordt er een -1 toegevoegd. Dus bij 1.7°C te warm zal de stooklijndelta -3 worden.\n//\nif (var_dT >= 0.3) // Het is iets te warm\n    {\n    StooklijnDelta = StooklijnDelta -1;\n    }\nif (var_dT >= 0.6) // Het is redelijk te warm\n    {\n    StooklijnDelta = StooklijnDelta -1;\n    }\nif (var_dT >= 1.5) // Het is veel te warm\n    {\n    StooklijnDelta = StooklijnDelta -1;\n    }\n\nif (var_dT < -0.2) // Het is iets te koud\n    {\n    StooklijnDelta = StooklijnDelta +1;\n    }\nif (Tb < Z1_Heat_Curve_Target_High_Temp -4)\n    {\n    if (var_dT < -0.4) // Het is nog iets kouder\n        {\n        StooklijnDelta = StooklijnDelta +1;\n        }\n        \n    if (var_dT < -0.6) // Het is iets veel te koud\n        {\n        StooklijnDelta = StooklijnDelta +1;\n        }\n    }\n\n\nmsg.payload = StooklijnDelta;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 2460,
+        "wires": [
+            [
+                "9749416003b9f797"
+            ]
+        ]
+    },
+    {
+        "id": "9749416003b9f797",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "name": "String > Number",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 2460,
+        "wires": [
+            [
+                "12cc95414c4ca9da"
+            ]
+        ]
+    },
+    {
+        "id": "ea3fc4ee5a9b2aca",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "name": "String > Number",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 2460,
+        "wires": [
+            [
+                "1e71fae4ad2e8015"
+            ]
+        ]
+    },
+    {
+        "id": "5531b4a144fd77dd",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "name": "String > Number",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 2500,
+        "wires": [
+            [
+                "903ed6e118657628"
+            ]
+        ]
+    },
+    {
+        "id": "c2bd017ffc44b3bc",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "name": "String > Number",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 2540,
+        "wires": [
+            [
+                "b99b1f2991154c5a"
+            ]
+        ]
+    },
+    {
+        "id": "0f64fd15a942efc7",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "name": "String > Number",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 2580,
+        "wires": [
+            [
+                "29a7adb021b5eaad"
+            ]
+        ]
+    },
+    {
+        "id": "83608eae3d62b76e",
+        "type": "comment",
+        "z": "a938de76db0b71f6",
+        "name": "De StooklijnDelta functie",
+        "info": "",
+        "x": 1090,
+        "y": 2420,
+        "wires": []
+    },
+    {
+        "id": "f8ce019110035092",
+        "type": "comment",
+        "z": "a938de76db0b71f6",
+        "name": "De benodigde global variables",
+        "info": "",
+        "x": 420,
+        "y": 2420,
+        "wires": []
+    }
+]
