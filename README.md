@@ -1,4 +1,4 @@
-# NodeRed <> Heishamon controll options
+# NodeRed <> Heishamon control options
 
 Heishamon is created by 'Egyras'/'TheHog'. AWESOME job! 
 Heishamon makes a lot of information available on the Panasonic heatpump through MQTT.
