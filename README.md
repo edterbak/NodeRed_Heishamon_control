@@ -14,7 +14,6 @@ I have choosen NodeRed (=NR). I already use a lot of NR functionality combined w
 BUT...I choose the NR option because if I update or restart HA, the controler and automations just continue. 
 
 I have choosen option 4 in the list above. In this GIT you can find NR functions to control the panasonic. 
-[2021-11-09] Current versions of the function seem rough. I will polish it at a later time and update here. The Flows do contain comments to clarify. In future I will also publish my verion of a NR dashboard. Currently Im not fully happy with it.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -25,6 +24,8 @@ I have choosen option 4 in the list above. In this GIT you can find NR functions
 
 Once imported, you probably need to adjust the settings of the MQTT server in the function.  
 
+## Log / Notes
+[2021-11-09] Current versions of the function seem rough. I will polish it at a later time and update here. The Flows do contain comments to clarify. In future I will also publish my verion of a NR dashboard. Currently Im not fully happy with it.
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
