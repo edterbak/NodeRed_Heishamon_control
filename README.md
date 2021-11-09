@@ -24,7 +24,7 @@ I have choosen option 4 in the list above. In this GIT you can find NR functions
 
 Once imported, you probably need to adjust the settings of the MQTT server in the function.  
 
-## Log / Notes
+## Changelog / Notes
 [2021-11-09] Current versions of the function seem rough. I will polish it at a later time and update here. The Flows do contain comments to clarify. In future I will also publish my verion of a NR dashboard. Currently Im not fully happy with it.
 
 <!-- ACKNOWLEDGMENTS -->
