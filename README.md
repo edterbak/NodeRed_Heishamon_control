@@ -10,7 +10,8 @@ There are multiple options to use this information.
 * []() 5: ... any other 
 
 All of the above options are ways to controle the HP.
-I have choosen NodeRed (=NR). I already use a lot of NR functionality combined with HomeAssistant. In many of my cases NR is the controller and HomeAssistant (=HA) is just the graphical front. This CAN be different as HA is also able to control and automate using MQTT protocol. I choose the NR option because if I restart HA, the controler and automations just continue. 
+I have choosen NodeRed (=NR). I already use a lot of NR functionality combined with HomeAssistant. In many of my cases NR is the controller and HomeAssistant (=HA) is just the graphical front. This CAN be different as HA is also able to control and automate using MQTT protocol. (Just to emphasize; because of the awesome design choice of Heishamon, it presents everything in the MQTT standard, and thats why it is able to interact with ANY software that can handle it.) 
+BUT...I choose the NR option because if I update or restart HA, the controler and automations just continue. 
 
 I have choosen option 4 in the list above. In this GIT you can find NR functions to control the panasonic
 
