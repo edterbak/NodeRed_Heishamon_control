@@ -65,9 +65,12 @@ contextStorage: {
 Once imported, you probably need to adjust the settings of the MQTT server in the function.  
 
 This is currently the first page of the dashboard. From here, you can enable each function separate but you can ALSO use WAR + RTC or WAR + SS together. It does not matter. they add ontop of each other. 
+
 Set the 'Virtual SP'. This is the same as the Ta in direct mode. 
+
 You can enable the WAR function, which will overwrite the choosen virtual SP. 
-If you enable the RTC function, this virtual SP or WAR result will be corrected by the RTC function. 
+
+If you enable the RTC function, the virtual SP or WAR result will be corrected by the RTC function. 
 
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Main.png?raw=true)
 
