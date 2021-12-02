@@ -64,7 +64,9 @@ contextStorage: {
 
 Once imported, you probably need to adjust the settings of the MQTT server in the function.  
 
+This is currently the first page of the dashboard. From here, you can enable each function separate but you can ALSO use WAR + RTC or WAR + SS together. It does not matter. they add ontop of each other. 
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Main.png?raw=true)
+
 
 ## Function 1: WAR (weather dependent temperature control)
 The target watertemperature is influenced by the outside temperature. When it gets colder, the temperature of the water should increase. I have built a GUI including a graph to create a temperature profile.
