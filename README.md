@@ -63,7 +63,10 @@ contextStorage: {
 * []() Copy/past the content of the JSON file from this GIT.
 * []() Click on Import
 
-Once imported, you probably need to adjust the settings of the MQTT server in the function.  
+Once imported, you probably need to adjust the settings of the MQTT server. 
+Click on the hambruger icon and then configuration nodes. Find the MQTT broker part, double click it and change to your settings.
+
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard3.png?raw=true)
 
 This is currently the first page of the dashboard. From here, you can enable each function separate but you can ALSO use WAR + RTC or WAR + SS together. It does not matter. they add ontop of each other. 
 
@@ -88,6 +91,11 @@ Through the GUI, you can set the room target temperature. And you can set the li
 ## Function 3: SoftStart (EXPERIMENTAL!!)
 This function is present and able to be used, but I have not tested this well. Last time I tested it worked, but not stable. This function still needs work.
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/SS.png?raw=true)
+
+### Dashboard
+You can find the link to the dashboard like this:
+
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard2.png?raw=true) ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard1.png?raw=true)
 
 ## Changelog / Notes
 [2021-11-09] (v1) First release. Current versions of the function seem rough. I will polish it at a later time and update here. The Flows do contain comments to clarify. In future I will also publish my verion of a NR dashboard. Currently Im not fully happy with it.
