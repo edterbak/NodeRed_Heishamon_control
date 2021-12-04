@@ -89,14 +89,17 @@ This function is present and able to be used, but I have not tested this well. L
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/SS.png?raw=true)
 
 ## Changelog / Notes
-[2021-11-09] Current versions of the function seem rough. I will polish it at a later time and update here. The Flows do contain comments to clarify. In future I will also publish my verion of a NR dashboard. Currently Im not fully happy with it.
+[2021-11-09] (v1) First release. Current versions of the function seem rough. I will polish it at a later time and update here. The Flows do contain comments to clarify. In future I will also publish my verion of a NR dashboard. Currently Im not fully happy with it.
 
-[2021-12-02] First major upgrade. Things done are:
+[2021-12-02] (v2) First major upgrade. Things done are:
 - Rewritten the functions itself. Better readable, more usefull comments to help all users.
 - Implemented 3 special functions in total now. **1**: WAR (weather dependent control) **2**: RTC (RoomTemperatureControled) and **3**: SoftStart function.
 - Added good usefull charts to each of the above three charts. But this can still use some more love.
 - Improved on the stability of the control system. After reboot, things should continue now as they should. Making use of local storage and variables. 
 
+[2021-12-04] (v3) Bug fixing
+- Toggles on main page were not respected on other pages. 
+- Setpoint sending to SET5 was needlessly being 'flooded' (every 10 seconds the same SP).
 
 ## TODO list
 - [ ] Fix SoftStart routine. 
