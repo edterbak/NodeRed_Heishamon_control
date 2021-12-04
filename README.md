@@ -1,4 +1,5 @@
 # NodeRed <> Heishamon control option
+Current version: 3
 
 Heishamon is originally created by Egyras. AWESOME job! 
 - Heishamon pushes a lot of readings and information from the Panasonic heatpump to MQTT topics. 
