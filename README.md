@@ -81,7 +81,7 @@ If you enable the RTC function, the virtual SP or WAR result will be corrected b
 
 ## Function 1: WAR (weather dependent temperature control)
 The target watertemperature is influenced by the outside temperature. When it gets colder, the temperature of the water should increase. I have built a GUI including a graph to create a temperature profile.
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/WAR.png?raw=true)
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/WAR2.png?raw=true)
 
 ## Function 2: RTC (RoomTemperatureControl)
 This function adjusts the SP of the water depending on the room temperature. When the temperature in a room gets too high, it will add a "-1" to the setpoint of the water temperature. 
