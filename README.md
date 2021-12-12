@@ -25,6 +25,8 @@ A - Data folder.
 
 B - Adjust settings.js.
 
+C - node-red-dashboard
+
 But first; Why?
 I found that after reboot of node red, the logic did not have all variables populated yet. This caused the system not to start automatically where it left off. To be honest, this does not present a major problem to me, but it will reduce the overall WAF significantly when I dont notice something like this in time. So, I had to look for a solution to make the programed setpoints, and all other variables, stick. This is how I achieved that. (Maybe there are better options, feel free to help me on this :) )
 
@@ -56,6 +58,10 @@ contextStorage: {
 	file: { module: 'localfilesystem', config: {flushInterval: '300'}, }
 },
 ```
+
+### C node-red-dashboard
+To make use of the dashboard functionality, you need to install the dashboard npm
+https://flows.nodered.org/node/node-red-dashboard
 
 ## How to install the NR flows
 * []() In NR, click on the hamburge icon (three horizontal stripes in the top right corner)
