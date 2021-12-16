@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 3
+Current version: 4
 
 Heishamon is originally created by Egyras. AWESOME job! 
 - Heishamon pushes a lot of readings and information from the Panasonic heatpump to MQTT topics. 
@@ -98,6 +98,11 @@ Through the GUI, you can set the room target temperature. And you can set the li
 This function is present and able to be used, but I have not tested this well. Last time I tested it worked, but not stable. This function still needs work.
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/SS.png?raw=true)
 
+## Scheduler
+I have added an option to create schedules for DHW runs or Sterilization runs through the GUI. 
+You can enable/disable a schedule, multiselect a day of the week, specify the time (hour + minute) and give the schedule a name.
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Scheduler2.png?raw=true)
+
 ### Dashboard
 You can find the link to the dashboard like this:
 
@@ -116,13 +121,20 @@ You can find the link to the dashboard like this:
 - Toggles on main page were not respected on other pages. 
 - Setpoint sending to SET5 was needlessly being 'flooded' (every 10 seconds the same SP).
 
+[2921-12-16] (v4) Things done are:
+- Added scheduler. This is currently only for a DHW run or Sterilization run. Will expand this
+- Added Energy charts (including COP calculation)
+- General improvements
+
 ## TODO list
 - [ ] Fix SoftStart routine. 
-- [ ] Add more info in dashboard so it shows energy usages and other nice stuffs. 
+- [x] Add more info in dashboard so it shows energy usages and other nice stuffs. 
+- [ ] Add more options for the scheduler, eg. operation mode, silent mode, etc. 
 
 ## Acknowledgments
 * []() Egyras: The original creator of Heishamon. https://github.com/Egyras
 * []() Egyras: For the MQTT topic list - https://github.com/Egyras/HeishaMon/blob/master/MQTT-Topics.md
-* []() CurlyMo: The original automagical 'Stooklijn' correction from CurlyMo: https://gathering.tweakers.net/forum/list_messages/2039982#Automagische_stooklijncorrectie
+* []() CurlyMo: The original calculation for automagical 'Stooklijn' correction - https://gathering.tweakers.net/forum/list_messages/2039982#Automagische_stooklijncorrectie
+* []() AUijtdehaag: The COP calculation - https://github.com/Dylantje/WP-Heishamon-sripts/blob/master/WP%20LUA%20COP%20berekening
 
 <p align="right">(<a href="#top">back to top</a>)</p>
