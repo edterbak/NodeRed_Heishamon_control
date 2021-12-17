@@ -63,7 +63,7 @@ contextStorage: {
 },
 ```
 ATTENTION: After you have done this, and you seem to have it operational, be sure to test if all settings *stick* after a reboot of NodeRed. Things that should stick are: Virtual SP (Ta), Function toggles on the main page, Setpoints in WAR function/graph. Setpoints for RTC function/graph, HeatPump power toggle on/off
-If this is not the case for you, you either need to correct this in settings (like given above), or choose not to use this NR flow.
+If this is not the case for you, you either need to correct this in settings (like given above), or choose not to use this NR flow, or even accept manual action needed after powerloss situations.
 
 ### required Node Red libraries
 To make use of the dashboard functionality, you need to install the dashboard library.
