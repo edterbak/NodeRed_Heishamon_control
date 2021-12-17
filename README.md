@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 4
+Current version: 5
 
 Heishamon is originally created by Egyras. AWESOME job! 
 - Heishamon pushes a lot of readings and information from the Panasonic heatpump to MQTT topics. 
@@ -129,10 +129,19 @@ You can find the link to the dashboard like this:
 - Toggles on main page were not respected on other pages. 
 - Setpoint sending to SET5 was needlessly being 'flooded' (every 10 seconds the same SP).
 
-[2921-12-16] (v4) Things done are:
+[2021-12-16] (v4) Things done are:
 - Added scheduler. This is currently only for a DHW run or Sterilization run. Will expand this
+- Added NR lib "moment" which is used in the scheduler.
 - Added Energy charts (including COP calculation)
 - General improvements
+
+[2021-12-17] (v5) Things done are:
+- Added the option to have a DHW treshold temperature above which the planned DHW run does not start
+- Fixed import issues with non-heishamon sources. (Thank you @lampy25)
+- Fixed hover-tip error in Function RTC tab (Thank you @lampy25)
+- Improved visuals in Function RTC tab. (Thank you @lampy25 for your suggestion!)
+- Fixed multiple graph errors, eg. legend / names. (Thank you @lampy25)
+- removed [smooth] references in the flow. (it did not help much)
 
 ## TODO list
 - [ ] Fix SoftStart routine. 
@@ -144,5 +153,6 @@ You can find the link to the dashboard like this:
 * []() Egyras: For the MQTT topic list - https://github.com/Egyras/HeishaMon/blob/master/MQTT-Topics.md
 * []() CurlyMo: The original calculation for automagical 'Stooklijn' correction - https://gathering.tweakers.net/forum/list_messages/2039982#Automagische_stooklijncorrectie
 * []() AUijtdehaag: The COP calculation - https://github.com/Dylantje/WP-Heishamon-sripts/blob/master/WP%20LUA%20COP%20berekening
+* []() lampy25. For unselfishly giving supportive feedback
 
 <p align="right">(<a href="#top">back to top</a>)</p>
