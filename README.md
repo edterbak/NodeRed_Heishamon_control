@@ -20,6 +20,10 @@ BUT...I choose the NR option because if I update or restart HA, the controler an
 
 I have choosen option 4 in the list above. In this GIT you can find NR functions to control the panasonic. 
 
+## HeatPump setting
+This NodeRed flow generates and controles the setpoint for the Ta. This means you need to put your pump in DIRECT mode on the thermostat itself. 
+From within Heishamon, TOP76, will inform you if you currently are in WAR mode or DIRECT mode. (0=WAR, 1=DIRECT)
+
 ## Prerequisite on the NodeRed install:
 A - Data folder.
 
