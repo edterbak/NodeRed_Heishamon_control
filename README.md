@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 5
+Current version: 6
 
 Heishamon is originally created by Egyras. AWESOME job! 
 - Heishamon pushes a lot of readings and information from the Panasonic heatpump to MQTT topics. 
@@ -100,16 +100,22 @@ The target watertemperature is influenced by the outside temperature. When it ge
 ## Function 2: RTC (RoomTemperatureControl)
 This function adjusts the SP of the water depending on the room temperature. When the temperature in a room gets too high, it will add a "-1" to the setpoint of the water temperature. 
 Through the GUI, you can set the room target temperature. And you can set the limits when you want to increase or lower the SP with 1, 2 or 3 degrees.
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/RTC.png?raw=true)
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/RTC.png?raw=true" width=60%>
 
 ## Function 3: SoftStart (EXPERIMENTAL!!)
 This function is present and able to be used, but I have not tested this well. Last time I tested it worked, but not stable. This function still needs work.
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/SS.png?raw=true)
 
 ## Scheduler
-I have added an option to create schedules for DHW runs or Sterilization runs through the GUI. 
+I have added an option to create 10x schedules (in dashboard) for:
+- DHW runs
+- Sterilization runs
+- Quiet modes
+- Operation modes
 You can enable/disable a schedule, multiselect a day of the week, specify the time (hour + minute) and give the schedule a name.
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Scheduler2.png?raw=true)
+
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Scheduler3.png?raw=true" width=70%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Scheduler3_multiselect_day.png?raw=true" width=15%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/scheduler3_actions.png?raw=true" width=14%>
+Image: [Schedulere] [Multiselect the day] [possible actions to select]
 
 ### Dashboard
 You can find the link to the dashboard like this:
@@ -143,10 +149,16 @@ You can find the link to the dashboard like this:
 - Fixed multiple graph errors, eg. legend / names. (Thank you @lampy25)
 - removed [smooth] references in the flow. (it did not help much)
 
+[2021-12-19] (v6) Things done are:
+- Expanded scheduler to include operation mode and quiet mode
+- Expanded scheduler from 6 lines to 10 lines. 
+- Added an option (in GUI) to prevent DHW run to start above a choosen temperature. 
+- Improved user experience with import process so it does not import non-heishamon items. No rogue nodes. 
+
 ## TODO list
 - [ ] Fix SoftStart routine. 
 - [x] Add more info in dashboard so it shows energy usages and other nice stuffs. 
-- [ ] Add more options for the scheduler, eg. operation mode, silent mode, etc. 
+- [x] Add more options for the scheduler, eg. operation mode, silent mode, etc. 
 
 ## Acknowledgments
 * []() Egyras: The original creator of Heishamon. https://github.com/Egyras
