@@ -75,9 +75,9 @@ The scheduler makes use of the moment lib.
 https://flows.nodered.org/node/node-red-contrib-moment
 
 ## How to install the NR flows
-* []() In NR, click on the hamburge icon (three horizontal stripes in the top right corner)
+* []() In NR, click on the hamburger icon (three horizontal stripes) in the top right corner
 * []() Select Import
-* []() Copy/past the content of the JSON file from this GIT.
+* []() Copy/past the content of the .JSON file from this GIT. (or select a file to upload and selct the flow.json file offered here)
 * []() Click on Import
 
 Once imported, you probably need to adjust the settings of the MQTT server. 
