@@ -31,4 +31,4 @@ contextStorage: {
 Make sure the spacing is correct.
 
 After save>exit and reboot Node-Red addon, you should see the following which confirms the values stick after reboot.
-
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/HomeAssistant/ha2.png?raw=true)
