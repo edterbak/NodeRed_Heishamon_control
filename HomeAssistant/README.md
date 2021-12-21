@@ -4,7 +4,7 @@ If you are running the HomeAssistant Node-Red add-on, you have the install detai
 
 ## Node-Red Addon
 
-in the configuration section, state the required npm modules.
+in HomeAssistant, the configuration section, state the required npm modules.
 ```
 npm_packages:
   - node-red-dashboard
@@ -12,13 +12,10 @@ npm_packages:
 ```
 
 Then SSH into your homeassistant instance through Putty or the the SSH Add-on.
-Go to:
+Type:
 ```
-/config/node-red
-```
-
-Then type
-```
+cd ..
+cd config/node-red
 nano settings.js
 ```
 
