@@ -32,7 +32,7 @@ A - Data folder.
 
 B - Adjust settings.js.
 
-C - Required Node Red libraries
+C - Required Node Red libraries/pallets
 
 But first; Why?
 I found that after reboot of node red, the logic did not have all variables populated yet. This caused the system not to start automatically where it left off. To be honest, this does not present a major problem to me, but it will reduce the overall WAF significantly when I dont notice something like this in time. So, I had to look for a solution to make the programed setpoints, and all other variables, stick. This is how I achieved that. (Maybe there are better options, feel free to help me on this :) )
@@ -68,7 +68,7 @@ contextStorage: {
 ATTENTION: After you have done this, and you seem to have it operational, be sure to test if all settings *stick* after a reboot of NodeRed. Things that should stick are: Virtual SP (Ta), Function toggles on the main page, Setpoints in WAR function/graph. Setpoints for RTC function/graph, HeatPump power toggle on/off
 If this is not the case for you, you either need to correct this in settings (like given above), or choose not to use this NR flow, or even accept manual action needed after powerloss situations.
 
-### required Node Red libraries
+### C - Required Node Red libraries/pallets
 To make use of the dashboard functionality, you need to install the dashboard library.
 https://flows.nodered.org/node/node-red-dashboard
 The scheduler makes use of the moment lib.
