@@ -1,31 +1,32 @@
 # NodeRed <> Heishamon control option
-Current version: 6
-
+Current version: 7<br/>
+<br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! 
-- Heishamon pushes a lot of readings and information from the Panasonic heatpump to a MQTT-broker in a 100+ topics. 
-- Heishamon is also able to receive MQTT commands from the broker to control the heatpump. 
+- Heishamon pushes a lot of readings and information from the Panasonic heatpump to a MQTT-broker in a 100+ topics.  
+- Heishamon is also able to receive MQTT commands from the broker to control the heatpump.  
 
-There are multiple options to use this information or control the heatpump.
+There are multiple options to use this information or control the heatpump.<br/>
 * []() 1: MQTT > Home Assistant
 * []() 2: MQTT > OpenHab
 * []() 3: MQTT > Domoticz
 * []() 4: MQTT > NodeRed
 * []() 5: MQTT > ... any other 
 
-All of the above options are ways to interact with the HP. (And all are good if your happy with it)
-I have choosen NodeRed (=NR). I already use a lot of NR functionality/automations combined with HomeAssistant. In many cases NR is the controller and HomeAssistant (=HA) is just the graphical front. This CAN be different if you want, as HA is also able to send/receive MQTT messages. 
+All of the above options are ways to interact with the HP. (And all are good if your happy with it)<br/>
+I have choosen NodeRed (=NR). I already use a lot of NR functionality/automations combined with HomeAssistant. In many cases NR is the controller and HomeAssistant (=HA) is just the graphical front. This CAN be different if you want, as HA is also able to send/receive MQTT messages.  
 
-(Just to emphasize; because of the awesome design choice of Heishamon, it presents everything in the MQTT standard, and thats why it is able to interact with ANY software that can handle it.) 
+(Just to emphasize; because of the awesome design choice of Heishamon, it presents everything in the MQTT standard, and thats why it is able to interact with ANY software that can handle it.)<br/>
 BUT...I choose the NR option because if I update or restart HA, the controler and automations just continue. 
-
-I have choosen option 4 in the list above. In this GIT you can find NR functions to control the panasonic. 
-
-**My request to you:** When you choose to use/try this (Feel free to do so), PLEASE give feedback on any issues you encounter. You can use the [Issues] section to report to me. 
-When making an issue, please give as much info as you think is required to solve this. Steps to reproduce. Maybe a screenshot etc. Reporting this will help me help you :) Thank you in advance. 
+<br/>
+I have choosen option 4 in the list above. In this GIT you can find NR functions to control the panasonic.  
+<br/>
+**My request to you:**<br/>
+When you choose to use/try this (Feel free to do so), PLEASE give feedback on any issues you encounter. You can use the [Issues] section to report to me. <br/>
+When making an issue, please give as much info as you think is required to solve this. Steps to reproduce. Maybe a screenshot etc. Reporting this will help me help you :) <br/>Thank you in advance. 
 
 ## Required heatpump setting
 This NodeRed flow generates and controles the setpoint for the T outlet (Ta). This means you need to put your pump in DIRECT mode on the thermostat itself. 
-From within Heishamon, TOP76, will inform you if you currently are in WAR mode or DIRECT mode. (0=WAR, 1=DIRECT)
+From within Heishamon, TOP76, will inform you if you currently are in WAR mode or DIRECT mode. <br/>(0=WAR, 1=DIRECT)
 
 ## Prerequisite on the NodeRed install:
 A - Data folder.
@@ -34,8 +35,9 @@ B - Adjust settings.js.
 
 C - Required Node Red libraries/pallets
 
-But first; Why?
-I found that after reboot of node red, the logic did not have all variables populated yet. This caused the system not to start automatically where it left off. To be honest, this does not present a major problem to me, but it will reduce the overall WAF significantly when I dont notice something like this in time. So, I had to look for a solution to make the programed setpoints, and all other variables, stick. This is how I achieved that. (Maybe there are better options, feel free to help me on this :) )
+But first; Why?<br/>
+I found that after reboot of node red, the logic did not have all variables populated yet. This caused the system not to start automatically where it left off before reboot. <br/>
+To be honest, this does not present a major problem to me, but it will reduce the overall WAF significantly when I dont notice something like this in time. So, I had to look for a solution to make the programed setpoints, and all other variables, stick. This is how I achieved that. (Maybe there are better options, feel free to help me on this :) )
 
 ### A - Data folder
 Make sure Node Red is installed with persistent local volume available.
@@ -43,11 +45,11 @@ When you run NR in a container, make sure you install with this paramater:
 ```
 -v FOLDER:/data
 ```
-Here you can choose the name "FOLDER" yourself which will be the local storage folder of NR.
+Here you can choose the name "FOLDER" yourself which will be the local storage folder of NR.<br/>
 If you have installed NR !directly! on a Pi or other linux install, this is already fine.
 
 ### B - Adjust settings.js
-You need to change some settings in settings.js
+You need to change some settings in settings.js<br/>
 Why? If you reboot node red, you will notice some of the variables are not populated yet. Setpoints we have programmed earlier are gone. To make them persistent after reboots, you have to enable the local storage option. Below I have set the flushinterval (write to disk) to 300s. 
 
 In a (proxmox) docker install, you can find this settings.js file in:
@@ -65,13 +67,14 @@ contextStorage: {
 	file: { module: 'localfilesystem', config: {flushInterval: '300'}, }
 },
 ```
-ATTENTION: After you have done this, and you seem to have it operational, be sure to test if all settings *stick* after a reboot of NodeRed. Things that should stick are: Virtual SP (Ta), Function toggles on the main page, Setpoints in WAR function/graph. Setpoints for RTC function/graph, HeatPump power toggle on/off
+ATTENTION: <br/>
+After you have done this, and you seem to have it operational, be sure to test if all settings *stick* after a reboot of NodeRed. Things that should stick are: Virtual SP (Ta), Function toggles on the main page, Setpoints in WAR function/graph. Setpoints for RTC function/graph, HeatPump power toggle on/off
 If this is not the case for you, you either need to correct this in settings (like given above), or choose not to use this NR flow, or even accept manual action needed after powerloss situations.
 
 ### C - Required Node Red libraries/pallets
-To make use of the dashboard functionality, you need to install the dashboard library.
+To make use of the dashboard functionality, you need to install the dashboard library.<br/>
 https://flows.nodered.org/node/node-red-dashboard
-The scheduler makes use of the moment lib.
+The scheduler makes use of the moment lib.<br/>
 https://flows.nodered.org/node/node-red-contrib-moment
 
 ## How to install the NR flows
@@ -80,33 +83,37 @@ https://flows.nodered.org/node/node-red-contrib-moment
 * []() Copy/past the content of the .JSON file from this GIT. (or select a file to upload and selct the flow.json file offered here)
 * []() Click on Import
 
-Once imported, you probably need to adjust the settings of the MQTT server. 
-Click on the hambruger icon and then configuration nodes. Find the MQTT broker part, double click it and change to your settings.
+Once imported, you probably need to adjust the settings of the MQTT server. <br/>
+Click on the hambruger icon and then configuration nodes. Find the MQTT broker part, double click it and change to your settings.<br/>
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard3.png?raw=true)<br/>
 
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard3.png?raw=true)
+Important >> After import and correcting the MQTT settings, you still need to connect two sensors for the functions to work as designed.<br/>
+1: a good room temperature sensor<br/>
+2: the outside temperature<br/>
+As explained by the image below, you CAN use the Panasonic sensors for this. To do this, in tab (1), WP Control, you only need to remove the LinkIN arrows at (2) and (3), Enable both MQTT sensors in the purple box (4). (double-click on them, on the bottom it says 'disabled', click it to enable)<br/>
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/External%20sources2.png?raw=true" width=75%> <br/>
+** Note 1: The Panasonic Room Thermostat is not very accurate which might cause bad temperature control. <br/>
+** Note 2: The Outside temperature sensor on the Panasonic might be subject to heatin up due to direct sunlight. This can also have a negative impact on the functions.<br/>
 
-This is currently the first page of the dashboard. From here, you can enable each function separate but you can ALSO use WAR + RTC or WAR + SS together. It does not matter. they add ontop of each other. 
+This is currently the first page of the dashboard. From here, you can enable each function separate but you can ALSO use WAR + RTC or WAR + SS together. It does not matter. they add ontop of each other. You can use multiple combinations. Virtual SP + RTC function. Or WAR + RTC functions or only set a Virtual SP. 
 
-Set the 'Virtual SP'. This is the same as the Ta in direct mode. 
-
-You can enable the WAR function, which will overwrite the choosen virtual SP. 
-
-If you enable the RTC function, the virtual SP or WAR result will be corrected by the RTC function. 
-
+Set the 'Virtual SP'. This resembles the Ta in direct mode. <br/>
+You can enable the WAR function, which will overwrite the choosen virtual SP. <br/>
+If you enable the RTC function, the virtual SP or WAR result will be corrected by the RTC function. <br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Main.png?raw=true)
-
-
+<br/>
 ## Function 1: WAR (weather dependent temperature control)
 The target watertemperature is influenced by the outside temperature. When it gets colder, the temperature of the water should increase. I have built a GUI including a graph to create a temperature profile.
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/WAR2.png?raw=true)
 
 ## Function 2: RTC (RoomTemperatureControl)
-This function adjusts the SP of the water depending on the room temperature. When the temperature in a room gets too high, it will add a "-1" to the setpoint of the water temperature. 
+This function adjusts the SP of the water depending on the room temperature. <br/>
+When the temperature in a room gets too high, it will add a "-1" to the setpoint of the water temperature. <br/>
 Through the GUI, you can set the room target temperature. And you can set the limits when you want to increase or lower the SP with 1, 2 or 3 degrees.
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/RTC.png?raw=true" width=60%>
 
 ## Function 3: SoftStart (EXPERIMENTAL!!)
-This function is present and able to be used, but I have not tested this well. Last time I tested it worked, but not stable. This function still needs work.
+This function is present but not adviced to be used yet. I have not tested this well enough. Last time I tested it worked, but not stable resulting in early stops. This function still needs work.<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/SS.png?raw=true)
 
 ## Scheduler
@@ -115,14 +122,13 @@ I have added an option to create 10x schedules (in dashboard) for:
 - Sterilization runs
 - Quiet modes
 - Operation modes
-You can enable/disable a schedule, multiselect a day of the week, specify the time (hour + minute) and give the schedule a name.
+You can enable/disable a schedule, multiselect a day of the week, specify the time (hour + minute) and give the schedule a name.<br/>
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Scheduler3.png?raw=true" width=70%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Scheduler3_multiselect_day.png?raw=true" width=15%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/scheduler3_actions.png?raw=true" width=14%>
 Image: [Schedulere] [Multiselect the day] [possible actions to select]
 
 ### Dashboard
-You can find the link to the dashboard like this:
-
+You can find the link to the dashboard like this:<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard2.png?raw=true) ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard1.png?raw=true)
 
 ## Changelog / Notes
@@ -158,6 +164,15 @@ You can find the link to the dashboard like this:
 - Added an option (in GUI) to prevent DHW run to start above a choosen temperature. 
 - Improved user experience with import process so it does not import non-heishamon items. No rogue nodes. 
 
+[2021-12-28] (v7) Things done are:
+- BUG fix: after import the layout of Home was messy. (Node Red limitation causes spacers not to be imported/exported. Fixed this with blanks instead of spacers.)
+- BUG fix: Scheduler, Actions were not correctly stored / recalled.
+- BUG fix: Setting Quiet Mode was not functioning propperly. Fixed the issue.
+- ENHANCEMENT: Error handling added in some functions. Not fully done yet, but already good enough to be published.
+- ENHANCEMENT: Inserted logic to catch situations where variables are not available yet. Functions and Dashboard now keep running if there is one variable unknown.
+- Improved import process further.
+
+
 ## TODO list
 - [ ] Fix SoftStart routine. 
 - [x] Add more info in dashboard so it shows energy usages and other nice stuffs. 
@@ -168,6 +183,6 @@ You can find the link to the dashboard like this:
 * []() Egyras: For the MQTT topic list - https://github.com/Egyras/HeishaMon/blob/master/MQTT-Topics.md
 * []() CurlyMo: The original calculation for automagical 'Stooklijn' correction - https://gathering.tweakers.net/forum/list_messages/2039982#Automagische_stooklijncorrectie
 * []() AUijtdehaag: The COP calculation - https://github.com/Dylantje/WP-Heishamon-sripts/blob/master/WP%20LUA%20COP%20berekening
-* []() lampy25. For unselfishly giving supportive feedback
+* []() lampy25. For unselfishly giving supportive feedback and good idea's
 
 <p align="right">(<a href="#top">back to top</a>)</p>
