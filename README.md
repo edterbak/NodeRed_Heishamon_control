@@ -184,6 +184,7 @@ You can find the link to the dashboard like this:<br/>
 - BUG fix: Setting Quiet Mode was not functioning propperly. Fixed the issue.
 - ENHANCEMENT: Error handling added in some functions. Not fully done yet, but already good enough to be published.
 - ENHANCEMENT: Inserted logic to catch situations where variables are not available yet. Functions and Dashboard now keep running if there is one variable unknown.
+- ENHANCEMENT: Created a new GUI tab (SETTINGS) with nearly all settings you can change through Heishamon. 
 - Improved import process further.
 
 
