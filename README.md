@@ -95,6 +95,20 @@ As explained by the image below, you CAN use the Panasonic sensors for this. To 
 ** Note 1: The Panasonic Room Thermostat is not very accurate which might cause bad temperature control. <br/>
 ** Note 2: The Outside temperature sensor on the Panasonic might be subject to heatin up due to direct sunlight. This can also have a negative impact on the functions.<br/>
 
+## How to personalize or customize
+It is adviced to create a separate tab for your external sources. Any source available in NodeRed can be conditioned and used as a sensor in the functions. If you do this in an 'personal tab', then it is likely easier to update later to newer versions. (no guarantees of course)<br/>
+
+## How to update to a newer version
+There is no easy solution currently know by me to update only changed nodes or flows. <br/>
+I found it is easiest to:<br/> 
+1, remove the tabs, WP MQTT, WP Dash, WP Control, WP Scheduler completely<br/> 
+2, remove all ui_base, ui_group and ui_tab references from the flows.<br/> 
+3, import new version<br/> 
+4, correct setup, eg. MQTT server.<br/> 
+5, re-connect your personalizations.<br/> 
+If there are better ideas about this, please inform me. <br/> 
+
+## The Dashboard
 This is currently the first page of the dashboard. From here, you can enable each function separate but you can ALSO use WAR + RTC or WAR + SS together. It does not matter. they add ontop of each other. You can use multiple combinations. Virtual SP + RTC function. Or WAR + RTC functions or only set a Virtual SP. 
 
 Set the 'Virtual SP'. This resembles the Ta in direct mode. <br/>
