@@ -73,9 +73,9 @@ If this is not the case for you, you either need to correct this in settings (li
 
 ### C - Required Node Red libraries/pallets
 To make use of the dashboard functionality, you need to install the dashboard library.<br/>
-https://flows.nodered.org/node/node-red-dashboard
+https://flows.nodered.org/node/node-red-dashboard <br/>
 The scheduler makes use of the moment lib.<br/>
-https://flows.nodered.org/node/node-red-contrib-moment
+https://flows.nodered.org/node/node-red-contrib-moment <br/>
 
 ## How to install the NR flows
 * []() In NR, click on the hamburger icon (three horizontal stripes) in the top right corner
