@@ -1,7 +1,9 @@
 # NodeRed <> Heishamon control option
 Current version: 7<br/>
 <br/>
-Heishamon hardware and software is originally created by Egyras. AWESOME job! 
+Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
+https://www.tindie.com/stores/thehognl/ <br/>
+It is able to communicate with a range of Panasonic Heatpumps. 
 - Heishamon pushes a lot of readings and information from the Panasonic heatpump to a MQTT-broker in a 100+ topics.  
 - Heishamon is also able to receive MQTT commands from the broker to control the heatpump.  
 
