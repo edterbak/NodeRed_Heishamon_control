@@ -2586,7 +2586,8 @@
             "9b3cba642f3daa70",
             "9e998e80ed82590d",
             "88e644ce965a6890",
-            "cdb2547c58ef93e6"
+            "cdb2547c58ef93e6",
+            "cb924439a66154f1"
         ],
         "x": 1114,
         "y": 59,
@@ -6650,7 +6651,7 @@
         "wires": [
             [
                 "c168a66c6bcdd403",
-                "ee330d0943568f6b"
+                "cb924439a66154f1"
             ]
         ]
     },
@@ -7083,8 +7084,7 @@
         "y": 160,
         "wires": [
             [
-                "fadad1e2505bf86d",
-                "7073769a8492c18c"
+                "fadad1e2505bf86d"
             ]
         ]
     },
@@ -7185,8 +7185,7 @@
                 "9281d7ca9b292f9f"
             ],
             [
-                "fadad1e2505bf86d",
-                "3c0bead7c2873d67"
+                "fadad1e2505bf86d"
             ],
             [
                 "493be73ce31c8c96"
@@ -7311,29 +7310,7 @@
             ]
         ],
         "outputLabels": [
-            "DHW_Target_Temp",
-            "Correction_0_WAR_on_off",
-            "war_ot1",
-            "war_ot2",
-            "war_ot3",
-            "war_wt1",
-            "war_wt2",
-            "war_wt3",
-            "Correction_1_RTC_on_off",
-            "Correction_2_softstart_on_off",
-            "",
-            "Heatpump_State",
-            "Operating_Mode_State",
-            "Quiet_Mode_Level",
-            "Sterilization_Temp",
-            "WoonkamerSP",
-            "rtc_t1",
-            "rtc_t2",
-            "rtc_t3",
-            "rtc_t4",
-            "rtc_t5",
-            "rtc_t6",
-            "WoonkamerSP"
+            "DHW_Target_Temp"
         ]
     },
     {
@@ -9075,51 +9052,16 @@
         "wires": []
     },
     {
-        "id": "7073769a8492c18c",
-        "type": "debug",
+        "id": "cb924439a66154f1",
+        "type": "link out",
         "z": "8c9d42231fd19d3c",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1940,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "ee330d0943568f6b",
-        "type": "debug",
-        "z": "8c9d42231fd19d3c",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2380,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "3c0bead7c2873d67",
-        "type": "debug",
-        "z": "8c9d42231fd19d3c",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1540,
-        "y": 40,
+        "g": "3151681b2157872c",
+        "name": "SetQMDash",
+        "links": [
+            "b1b3e80155e49c5c"
+        ],
+        "x": 2355,
+        "y": 160,
         "wires": []
     },
     {
@@ -9209,7 +9151,8 @@
             "e5fb067144c27e1b",
             "cf2f77d5c5d3e637",
             "ff3dd227527b76c3",
-            "9de1bde370b68508"
+            "9de1bde370b68508",
+            "b1b3e80155e49c5c"
         ],
         "x": 114,
         "y": 839,
@@ -9538,10 +9481,11 @@
         "id": "40c1b15547232388",
         "type": "mqtt in",
         "z": "a938de76db0b71f6",
+        "d": true,
         "g": "0077cf76d14c5757",
         "name": "TOP18 - panasonic_heat_pump/main/Quiet_Mode_Level",
         "topic": "panasonic_heat_pump/main/Quiet_Mode_Level",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
@@ -9786,7 +9730,7 @@
         "gap": "",
         "start": "",
         "inout": "out",
-        "septopics": true,
+        "septopics": false,
         "property": "payload",
         "topi": "topic",
         "x": 950,
@@ -12167,6 +12111,24 @@
         "x": 310,
         "y": 2100,
         "wires": []
+    },
+    {
+        "id": "b1b3e80155e49c5c",
+        "type": "link in",
+        "z": "a938de76db0b71f6",
+        "g": "0077cf76d14c5757",
+        "name": "",
+        "links": [
+            "14327004637e05c7",
+            "cb924439a66154f1"
+        ],
+        "x": 215,
+        "y": 1460,
+        "wires": [
+            [
+                "cbded61fe1f8bfa6"
+            ]
+        ]
     },
     {
         "id": "35d210f042827344",
@@ -17949,7 +17911,8 @@
         "z": "35d210f042827344",
         "name": "Quiet Mode Planning",
         "links": [
-            "765b4d77a9fd44cc"
+            "765b4d77a9fd44cc",
+            "b1b3e80155e49c5c"
         ],
         "x": 1635,
         "y": 2160,
