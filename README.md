@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 7<br/>
+Current version: 7.1<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -189,6 +189,9 @@ You can find the link to the dashboard like this:<br/>
 - ENHANCEMENT: Created a new GUI tab (SETTINGS) with nearly all settings you can change through Heishamon. 
 - Improved import process further.
 
+[2021-12-28] (v7.1) Things done are:
+- BUG fix: Quiet Mode now really fixed
+- Typo in threshold (thank you timovd!)
 
 ## TODO list
 - [ ] Fix SoftStart routine. 
@@ -200,6 +203,7 @@ You can find the link to the dashboard like this:<br/>
 * []() Egyras: For the MQTT topic list - https://github.com/Egyras/HeishaMon/blob/master/MQTT-Topics.md
 * []() CurlyMo: The original calculation for automagical 'Stooklijn' correction - https://gathering.tweakers.net/forum/list_messages/2039982#Automagische_stooklijncorrectie
 * []() AUijtdehaag: The COP calculation - https://github.com/Dylantje/WP-Heishamon-sripts/blob/master/WP%20LUA%20COP%20berekening
-* []() lampy25. For unselfishly giving supportive feedback and good idea's
+* []() lampy25. For unselfishly giving supportive feedback and good idea's. Thanks!
+* []() timovd for his contributions. ! Thanks.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
