@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 8<br/>
+Current version: 7.1<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
