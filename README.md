@@ -195,6 +195,11 @@ You can find the link to the dashboard like this:<br/>
 - BUG fix: Quiet Mode now really fixed
 - Typo in threshold (thank you timovd!)
 
+[2022-01-01] (v8) Things done are:
+- BUG fix: Finally fixed the issue where the scheduled quiet mode or operation mode were not being processed correctly.
+- BUG fix: After import, the layout of scheduler was off. This has now been fixed.
+- REQUEST: added the option for upper / lower limit on the Setpoint
+
 ## TODO list
 - [ ] Fix SoftStart routine. 
 - [x] Add more info in dashboard so it shows energy usages and other nice stuffs. 
