@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 8<br/>
+Current version: 9<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -199,6 +199,9 @@ You can find the link to the dashboard like this:<br/>
 - BUG fix: Finally fixed the issue where the scheduled quiet mode or operation mode were not being processed correctly.
 - BUG fix: After import, the layout of scheduler was off. This has now been fixed.
 - REQUEST: added the option for upper / lower limit on the Setpoint
+
+[2022-01-02] (v9) Thing done is:
+- BUG fix: Fixed scheduled operation mode not working 
 
 ## TODO list
 - [ ] Fix SoftStart routine. 
