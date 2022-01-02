@@ -7467,9 +7467,10 @@
         "type": "link in",
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
-        "name": "",
+        "name": "OperationMode",
         "links": [
-            "c959ee1f94c31c45"
+            "c959ee1f94c31c45",
+            "c6801a6c865543b3"
         ],
         "x": 1435,
         "y": 260,
@@ -18549,7 +18550,8 @@
                 "fdc9275bff11d4f6"
             ],
             [
-                "fac4923b3fac0597"
+                "fac4923b3fac0597",
+                "1f6cdb46183b275b"
             ]
         ],
         "outputLabels": [
@@ -18781,7 +18783,9 @@
         "type": "link out",
         "z": "35d210f042827344",
         "name": "OperationMode Planning",
-        "links": [],
+        "links": [
+            "6d5e44060139d9d1"
+        ],
         "x": 1635,
         "y": 2420,
         "wires": []
@@ -18830,7 +18834,8 @@
         "y": 2420,
         "wires": [
             [
-                "c6801a6c865543b3"
+                "c6801a6c865543b3",
+                "f5ef80a9edf95a5f"
             ]
         ]
     },
@@ -19276,7 +19281,7 @@
         "id": "b9e80ad80744b62d",
         "type": "comment",
         "z": "35d210f042827344",
-        "name": "DHW_treshold ",
+        "name": "DHW_threshold ",
         "info": "",
         "x": 1740,
         "y": 2520,
@@ -23423,6 +23428,38 @@
         "className": "",
         "x": 690,
         "y": 80,
+        "wires": []
+    },
+    {
+        "id": "f5ef80a9edf95a5f",
+        "type": "debug",
+        "z": "35d210f042827344",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1900,
+        "y": 2300,
+        "wires": []
+    },
+    {
+        "id": "1f6cdb46183b275b",
+        "type": "debug",
+        "z": "35d210f042827344",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1980,
+        "y": 2220,
         "wires": []
     },
     {
