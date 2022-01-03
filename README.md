@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 9<br/>
+Current version: 10<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -202,6 +202,9 @@ You can find the link to the dashboard like this:<br/>
 
 [2022-01-02] (v9) Thing done is:
 - BUG fix: Fixed scheduled operation mode not working 
+
+[2022-01-03] (v10) Thing done is:
+- REQUEST: increase upper limits (https://github.com/edterbak/NodeRed_Heishamon_control/issues/8)
 
 ## TODO list
 - [ ] Fix SoftStart routine. 
