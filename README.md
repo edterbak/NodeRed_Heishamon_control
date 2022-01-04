@@ -205,6 +205,7 @@ You can find the link to the dashboard like this:<br/>
 
 [2022-01-03] (v10) Thing done is:
 - REQUEST: Increased upper limit of WAR setpoints (https://github.com/edterbak/NodeRed_Heishamon_control/issues/8)
+- BUG fix: Enable Softstart threw an error in line 179 of function. Fixed
 
 ## TODO list
 - [ ] Fix SoftStart routine. 
