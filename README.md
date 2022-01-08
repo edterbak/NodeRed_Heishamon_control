@@ -82,6 +82,9 @@ The scheduler makes use of the moment lib.<br/>
 https://flows.nodered.org/node/node-red-contrib-moment <br/>
 
 ## How to install the NR flows
+Dashboard: http://IP:1880/ui
+Flows: http://IP:1880/#flow
+
 * []() In NR, click on the hamburger icon (three horizontal stripes) in the top right corner
 * []() Select Import
 * []() Copy/past the content of the .JSON file from this GIT. (or select a file to upload and select the flow.json file offered here)
