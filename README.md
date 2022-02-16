@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 10<br/>
+Current version: 11<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -210,8 +210,14 @@ You can find the link to the dashboard like this:<br/>
 - REQUEST: Increased upper limit of WAR setpoints (https://github.com/edterbak/NodeRed_Heishamon_control/issues/8)
 - BUG fix: Enable Softstart threw an error in line 179 of function. Fixed
 
+[2022-01-03] (v11) Things done are:
+- Major rework on scheduler in the flows section.
+- REQUEST: Scheduler: added option to plan start/shutdown
+- REQUEST: Scheduler: added option to plan night reduction
+- REQUEST: Scheduler: add option to override current powerstate with scheduled tasks.
+
 ## TODO list
-- [ ] Fix SoftStart routine. 
+- [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
 - [x] Add more info in dashboard so it shows energy usages and other nice stuffs. 
 - [x] Add more options for the scheduler, eg. operation mode, silent mode, etc. 
 
