@@ -80,6 +80,8 @@ To make use of the dashboard functionality, you need to install the dashboard li
 https://flows.nodered.org/node/node-red-dashboard <br/>
 The scheduler makes use of the moment lib.<br/>
 https://flows.nodered.org/node/node-red-contrib-moment <br/>
+node-red-contrib-noop is used as well <br/>
+https://flows.nodered.org/node/node-red-contrib-noop <br/>
 
 ## How to install the NR flows
 Dashboard: http://IP:1880/ui
