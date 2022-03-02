@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 11<br/>
+Current version: 12<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -217,6 +217,10 @@ You can find the link to the dashboard like this:<br/>
 - REQUEST: Scheduler: added option to plan start/shutdown
 - REQUEST: Scheduler: added option to plan night reduction
 - REQUEST: Scheduler: add option to override current powerstate with scheduled tasks.
+
+[22-03-01] (v12) Things done are:
+- ENHANCEMENT: issue #19. "settings - DHW/HEAT. show current value" implemented
+- 
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
