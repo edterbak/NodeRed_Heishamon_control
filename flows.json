@@ -133,7 +133,7 @@
         "d": true,
         "name": "TOP6 - panasonic_heat_pump/main/Main_Outlet_Temp",
         "topic": "panasonic_heat_pump/main/Main_Outlet_Temp",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
@@ -153,7 +153,7 @@
         "d": true,
         "name": "TOP7 - panasonic_heat_pump/main/Main_Target_Temp",
         "topic": "panasonic_heat_pump/main/Main_Target_Temp",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
@@ -173,7 +173,7 @@
         "d": true,
         "name": "TOP8 - panasonic_heat_pump/main/Compressor_Freq",
         "topic": "panasonic_heat_pump/main/Compressor_Freq",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
@@ -193,7 +193,7 @@
         "d": true,
         "name": "TOP9 - panasonic_heat_pump/main/DHW_Target_Temp",
         "topic": "panasonic_heat_pump/main/DHW_Target_Temp",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
@@ -213,7 +213,7 @@
         "d": true,
         "name": "TOP10 - panasonic_heat_pump/main/DHW_Temp",
         "topic": "panasonic_heat_pump/main/DHW_Temp",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
@@ -233,7 +233,7 @@
         "d": true,
         "name": "TOP11 - panasonic_heat_pump/main/Operations_Hours",
         "topic": "panasonic_heat_pump/main/Operations_Hours",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
@@ -253,7 +253,7 @@
         "d": true,
         "name": "TOP12 - panasonic_heat_pump/main/Operations_Counter",
         "topic": "panasonic_heat_pump/main/Operations_Counter",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
@@ -273,7 +273,7 @@
         "d": true,
         "name": "TOP13 - panasonic_heat_pump/main/Main_Schedule_State",
         "topic": "panasonic_heat_pump/main/Main_Schedule_State",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
@@ -293,7 +293,7 @@
         "d": true,
         "name": "TOP14 - panasonic_heat_pump/main/Outside_Temp",
         "topic": "panasonic_heat_pump/main/Outside_Temp",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
@@ -533,7 +533,7 @@
         "d": true,
         "name": "TOP26 - panasonic_heat_pump/main/Defrosting_State",
         "topic": "panasonic_heat_pump/main/Defrosting_State",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
@@ -1893,7 +1893,7 @@
         "d": true,
         "name": "TOP94 - panasonic_heat_pump/main/Zones_State",
         "topic": "panasonic_heat_pump/main/Zones_State",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
@@ -3026,7 +3026,7 @@
             "071ac5a0f08a8fdb"
         ],
         "x": 1134,
-        "y": 139,
+        "y": 179,
         "w": 1312,
         "h": 1542
     },
@@ -3812,9 +3812,6 @@
         "g": "7c41aa629fb3859e",
         "name": "Force sterilization",
         "links": [
-            "72d21aa95d3c1e7b",
-            "3c91774a156ca633",
-            "69dba98259785b02",
             "4f62466c41bb3667"
         ],
         "x": 155,
@@ -6278,12 +6275,13 @@
         "type": "link in",
         "z": "8c9d42231fd19d3c",
         "g": "6788a89266ed3c87",
-        "name": "",
+        "name": "softstart on_off",
         "links": [
-            "84f7cbc2cc8c135d"
+            "84f7cbc2cc8c135d",
+            "b8c6be5205c6525c"
         ],
-        "x": 2595,
-        "y": 1400,
+        "x": 2815,
+        "y": 1300,
         "wires": [
             [
                 "c66f65978915e688",
@@ -7097,7 +7095,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1340,
+        "y": 1380,
         "wires": [
             [
                 "a89b41c6600cac07"
@@ -7120,7 +7118,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1380,
+        "y": 1420,
         "wires": [
             [
                 "2d364a067e4a7b4a"
@@ -7143,7 +7141,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1420,
+        "y": 1460,
         "wires": [
             [
                 "b8abd042ad10fed8"
@@ -7166,7 +7164,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1460,
+        "y": 1500,
         "wires": [
             [
                 "02af248fc547b96b"
@@ -7189,7 +7187,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1500,
+        "y": 1540,
         "wires": [
             [
                 "7c7fd14d9f6ec530"
@@ -7212,7 +7210,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1540,
+        "y": 1580,
         "wires": [
             [
                 "69ea88923a102a5d"
@@ -7235,7 +7233,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1580,
+        "y": 1620,
         "wires": [
             [
                 "91fa7e389b484d7c"
@@ -7287,7 +7285,7 @@
         "topicType": "msg",
         "className": "",
         "x": 1790,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
                 "1f4d1ff3b733216c",
@@ -7352,7 +7350,7 @@
         "topicType": "msg",
         "className": "",
         "x": 1800,
-        "y": 380,
+        "y": 420,
         "wires": [
             [
                 "6fa7661447dd0d86"
@@ -7387,7 +7385,7 @@
         "animate": false,
         "className": "",
         "x": 1810,
-        "y": 220,
+        "y": 260,
         "wires": [
             [
                 "3513068c4e7086d5"
@@ -7422,7 +7420,7 @@
         "animate": false,
         "className": "",
         "x": 1490,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "6715b2c07ffdaf0f"
@@ -7445,7 +7443,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2220,
-        "y": 220,
+        "y": 260,
         "wires": []
     },
     {
@@ -7464,7 +7462,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2220,
-        "y": 320,
+        "y": 360,
         "wires": []
     },
     {
@@ -7483,7 +7481,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2230,
-        "y": 400,
+        "y": 440,
         "wires": []
     },
     {
@@ -7502,7 +7500,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2210,
-        "y": 440,
+        "y": 480,
         "wires": []
     },
     {
@@ -7516,7 +7514,7 @@
             "c6801a6c865543b3"
         ],
         "x": 1435,
-        "y": 400,
+        "y": 440,
         "wires": [
             [
                 "493be73ce31c8c96",
@@ -7537,7 +7535,7 @@
         "finalize": "",
         "libs": [],
         "x": 1990,
-        "y": 620,
+        "y": 660,
         "wires": [
             [
                 "43ad0d01b0c84de9"
@@ -7560,7 +7558,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2230,
-        "y": 660,
+        "y": 700,
         "wires": []
     },
     {
@@ -7640,7 +7638,7 @@
         "topicType": "msg",
         "className": "",
         "x": 1680,
-        "y": 620,
+        "y": 660,
         "wires": [
             [
                 "4118b2ccecf6a6de",
@@ -7662,7 +7660,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 2030,
-        "y": 220,
+        "y": 260,
         "wires": [
             [
                 "69e62408ae1d45fd"
@@ -7683,7 +7681,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 2030,
-        "y": 320,
+        "y": 360,
         "wires": [
             [
                 "c168a66c6bcdd403"
@@ -7704,7 +7702,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 2030,
-        "y": 400,
+        "y": 440,
         "wires": [
             [
                 "2c3aa272de5edf1f"
@@ -7721,7 +7719,7 @@
             "14327004637e05c7"
         ],
         "x": 1435,
-        "y": 320,
+        "y": 360,
         "wires": [
             [
                 "1f4d1ff3b733216c",
@@ -7734,20 +7732,20 @@
         "type": "inject",
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
-        "name": "1 Trigger / 5 minutes",
+        "name": "1 Trigger / 30 minutes",
         "props": [
             {
                 "p": "topic",
                 "vt": "str"
             }
         ],
-        "repeat": "300",
+        "repeat": "1800",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
         "topic": "trigger",
         "x": 1280,
-        "y": 220,
+        "y": 260,
         "wires": [
             [
                 "a26b41289a59dba3",
@@ -7775,7 +7773,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2220,
-        "y": 720,
+        "y": 760,
         "wires": []
     },
     {
@@ -7794,7 +7792,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2230,
-        "y": 760,
+        "y": 800,
         "wires": []
     },
     {
@@ -7813,7 +7811,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2220,
-        "y": 1000,
+        "y": 1040,
         "wires": []
     },
     {
@@ -7832,7 +7830,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2220,
-        "y": 1040,
+        "y": 1080,
         "wires": []
     },
     {
@@ -7851,7 +7849,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2230,
-        "y": 1080,
+        "y": 1120,
         "wires": []
     },
     {
@@ -7870,7 +7868,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2240,
-        "y": 1120,
+        "y": 1160,
         "wires": []
     },
     {
@@ -7889,7 +7887,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2210,
-        "y": 1300,
+        "y": 1340,
         "wires": []
     },
     {
@@ -7908,7 +7906,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2230,
-        "y": 1340,
+        "y": 1380,
         "wires": []
     },
     {
@@ -7927,7 +7925,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2230,
-        "y": 1380,
+        "y": 1420,
         "wires": []
     },
     {
@@ -7946,7 +7944,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2240,
-        "y": 1420,
+        "y": 1460,
         "wires": []
     },
     {
@@ -7965,7 +7963,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2240,
-        "y": 1460,
+        "y": 1500,
         "wires": []
     },
     {
@@ -7984,7 +7982,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2240,
-        "y": 1500,
+        "y": 1540,
         "wires": []
     },
     {
@@ -8003,7 +8001,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2240,
-        "y": 1540,
+        "y": 1580,
         "wires": []
     },
     {
@@ -8022,7 +8020,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2230,
-        "y": 1580,
+        "y": 1620,
         "wires": []
     },
     {
@@ -8042,7 +8040,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2210,
-        "y": 1240,
+        "y": 1280,
         "wires": []
     },
     {
@@ -8062,7 +8060,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2270,
-        "y": 820,
+        "y": 860,
         "wires": []
     },
     {
@@ -8082,7 +8080,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2270,
-        "y": 860,
+        "y": 900,
         "wires": []
     },
     {
@@ -8102,7 +8100,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2270,
-        "y": 900,
+        "y": 940,
         "wires": []
     },
     {
@@ -8122,7 +8120,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2270,
-        "y": 940,
+        "y": 980,
         "wires": []
     },
     {
@@ -8153,7 +8151,7 @@
         "animate": false,
         "className": "",
         "x": 1650,
-        "y": 1000,
+        "y": 1040,
         "wires": [
             [
                 "859dc9276ee75464",
@@ -8189,7 +8187,7 @@
         "animate": false,
         "className": "",
         "x": 1680,
-        "y": 720,
+        "y": 760,
         "wires": [
             [
                 "a6faaf6380e6d040",
@@ -8219,7 +8217,7 @@
         "topic": "trigger",
         "payloadType": "date",
         "x": 1280,
-        "y": 1000,
+        "y": 1040,
         "wires": [
             [
                 "de0e892a0157baca",
@@ -8253,7 +8251,7 @@
         "step": 1,
         "className": "",
         "x": 1650,
-        "y": 1040,
+        "y": 1080,
         "wires": [
             [
                 "ae99edee7ea44ce2"
@@ -8274,7 +8272,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1040,
+        "y": 1080,
         "wires": [
             [
                 "aa26d12b996f9c57"
@@ -8309,7 +8307,7 @@
         "animate": false,
         "className": "",
         "x": 1660,
-        "y": 1080,
+        "y": 1120,
         "wires": [
             [
                 "5e3a9447502864ad",
@@ -8345,7 +8343,7 @@
         "animate": false,
         "className": "",
         "x": 1670,
-        "y": 1120,
+        "y": 1160,
         "wires": [
             [
                 "53ae8019411d666d"
@@ -8362,7 +8360,7 @@
             "4f62466c41bb3667"
         ],
         "x": 1355,
-        "y": 1120,
+        "y": 1160,
         "wires": [
             [
                 "ccb9e79ff06190fa"
@@ -8397,7 +8395,7 @@
         "animate": false,
         "className": "",
         "x": 1700,
-        "y": 1580,
+        "y": 1620,
         "wires": [
             [
                 "089ba42c8f7f7a61",
@@ -8418,7 +8416,7 @@
         "width": 0,
         "height": 0,
         "wrap": false,
-        "passthru": false,
+        "passthru": true,
         "topic": "topic",
         "topicType": "msg",
         "format": "{{value}} °C",
@@ -8427,7 +8425,7 @@
         "step": 1,
         "className": "",
         "x": 1670,
-        "y": 1540,
+        "y": 1580,
         "wires": [
             [
                 "a2d7de4325e4bf91",
@@ -8448,7 +8446,7 @@
         "width": 0,
         "height": 0,
         "wrap": false,
-        "passthru": false,
+        "passthru": true,
         "topic": "topic",
         "topicType": "msg",
         "format": "{{value}} °C",
@@ -8457,7 +8455,7 @@
         "step": 1,
         "className": "",
         "x": 1670,
-        "y": 1500,
+        "y": 1540,
         "wires": [
             [
                 "78816343589b199a",
@@ -8478,7 +8476,7 @@
         "width": 0,
         "height": 0,
         "wrap": false,
-        "passthru": false,
+        "passthru": true,
         "topic": "topic",
         "topicType": "msg",
         "format": "{{value}} min",
@@ -8487,7 +8485,7 @@
         "step": 1,
         "className": "",
         "x": 1670,
-        "y": 1460,
+        "y": 1500,
         "wires": [
             [
                 "4021cdadbdc7768d",
@@ -8508,7 +8506,7 @@
         "width": 0,
         "height": 0,
         "wrap": false,
-        "passthru": false,
+        "passthru": true,
         "topic": "topic",
         "topicType": "msg",
         "format": "{{value}} °C",
@@ -8517,7 +8515,7 @@
         "step": 1,
         "className": "",
         "x": 1670,
-        "y": 1420,
+        "y": 1460,
         "wires": [
             [
                 "c803b9ad018fe78e",
@@ -8538,7 +8536,7 @@
         "width": 0,
         "height": 0,
         "wrap": false,
-        "passthru": false,
+        "passthru": true,
         "topic": "topic",
         "topicType": "msg",
         "format": "{{value}} °C",
@@ -8547,7 +8545,7 @@
         "step": 1,
         "className": "",
         "x": 1660,
-        "y": 1380,
+        "y": 1420,
         "wires": [
             [
                 "7139256ff024b872",
@@ -8568,7 +8566,7 @@
         "width": 0,
         "height": 0,
         "wrap": false,
-        "passthru": false,
+        "passthru": true,
         "topic": "topic",
         "topicType": "msg",
         "format": "{{value}} °C",
@@ -8577,7 +8575,7 @@
         "step": 1,
         "className": "",
         "x": 1660,
-        "y": 1340,
+        "y": 1380,
         "wires": [
             [
                 "9b2a45a90495e067",
@@ -8627,7 +8625,7 @@
         "topicType": "msg",
         "className": "",
         "x": 1680,
-        "y": 760,
+        "y": 800,
         "wires": [
             [
                 "c318be9105a9e8e5",
@@ -8672,7 +8670,7 @@
         "topicType": "msg",
         "className": "",
         "x": 1650,
-        "y": 1300,
+        "y": 1340,
         "wires": [
             [
                 "2ed9d626c929fb95",
@@ -8699,7 +8697,7 @@
         "payload": "149",
         "payloadType": "num",
         "x": 1530,
-        "y": 660,
+        "y": 700,
         "wires": [
             [
                 "43ad0d01b0c84de9"
@@ -8721,7 +8719,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 1580,
-        "y": 1640,
+        "y": 1680,
         "wires": [
             [
                 "fce687f80b334b9e"
@@ -8743,7 +8741,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 2190,
-        "y": 1640,
+        "y": 1680,
         "wires": []
     },
     {
@@ -8757,7 +8755,7 @@
             "c723f3f3bbdacfe7"
         ],
         "x": 2135,
-        "y": 620,
+        "y": 660,
         "wires": []
     },
     {
@@ -8774,7 +8772,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1830,
-        "y": 620,
+        "y": 660,
         "wires": [
             [
                 "98757de0a2842b4b"
@@ -8791,7 +8789,7 @@
             "e8684c407d602e87"
         ],
         "x": 2035,
-        "y": 720,
+        "y": 760,
         "wires": []
     },
     {
@@ -8805,7 +8803,7 @@
             "8e6e2ab43ee26928"
         ],
         "x": 2035,
-        "y": 760,
+        "y": 800,
         "wires": []
     },
     {
@@ -8822,7 +8820,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1000,
+        "y": 1040,
         "wires": [
             [
                 "b8e7b80b511e3054"
@@ -8840,7 +8838,7 @@
             "67b8e26842cf7615"
         ],
         "x": 2035,
-        "y": 1000,
+        "y": 1040,
         "wires": []
     },
     {
@@ -8853,7 +8851,7 @@
             "01744f1093a2fd51"
         ],
         "x": 2035,
-        "y": 1080,
+        "y": 1120,
         "wires": []
     },
     {
@@ -8861,7 +8859,7 @@
         "type": "inject",
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
-        "name": "1 Trigger / 5 minutes",
+        "name": "1 Trigger / 30 minutes",
         "props": [
             {
                 "p": "payload"
@@ -8871,14 +8869,15 @@
                 "vt": "str"
             }
         ],
-        "repeat": "300",
+        "repeat": "1800",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
         "topic": "trigger",
+        "payload": "",
         "payloadType": "date",
         "x": 1280,
-        "y": 1260,
+        "y": 1300,
         "wires": [
             [
                 "8e9f91dd021c2ccd",
@@ -8902,7 +8901,7 @@
             "9c4e9ed4c3ac1779"
         ],
         "x": 2035,
-        "y": 1300,
+        "y": 1340,
         "wires": []
     },
     {
@@ -8915,7 +8914,7 @@
             "4c1c4526944e820e"
         ],
         "x": 2035,
-        "y": 1340,
+        "y": 1380,
         "wires": []
     },
     {
@@ -8928,7 +8927,7 @@
             "c32298a87a338b1d"
         ],
         "x": 2035,
-        "y": 1380,
+        "y": 1420,
         "wires": []
     },
     {
@@ -8941,7 +8940,7 @@
             "5e35dee1374d6829"
         ],
         "x": 2035,
-        "y": 1420,
+        "y": 1460,
         "wires": []
     },
     {
@@ -8954,7 +8953,7 @@
             "bfcbe2fb120f457c"
         ],
         "x": 2035,
-        "y": 1460,
+        "y": 1500,
         "wires": []
     },
     {
@@ -8967,7 +8966,7 @@
             "0e3197d36afc45dc"
         ],
         "x": 2035,
-        "y": 1500,
+        "y": 1540,
         "wires": []
     },
     {
@@ -8980,7 +8979,7 @@
             "ca1f0fdf0dd05c89"
         ],
         "x": 2035,
-        "y": 1540,
+        "y": 1580,
         "wires": []
     },
     {
@@ -8994,7 +8993,7 @@
             "e8d5ff3e213ef505"
         ],
         "x": 2035,
-        "y": 1580,
+        "y": 1620,
         "wires": []
     },
     {
@@ -9011,7 +9010,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1080,
+        "y": 1120,
         "wires": [
             [
                 "97d91018b611d85e"
@@ -9032,7 +9031,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1300,
+        "y": 1340,
         "wires": [
             [
                 "d4c237094a0d52f9"
@@ -9053,7 +9052,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1340,
+        "y": 1380,
         "wires": [
             [
                 "d66211d6bd2170ac"
@@ -9074,7 +9073,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1380,
+        "y": 1420,
         "wires": [
             [
                 "71bc8ac0ba520e9e"
@@ -9095,7 +9094,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1420,
+        "y": 1460,
         "wires": [
             [
                 "99beaa5dde77b94c"
@@ -9116,7 +9115,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1460,
+        "y": 1500,
         "wires": [
             [
                 "ec2e17164979af03"
@@ -9137,7 +9136,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1500,
+        "y": 1540,
         "wires": [
             [
                 "ad4e8ac090e4b449"
@@ -9158,7 +9157,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1540,
+        "y": 1580,
         "wires": [
             [
                 "9b9c2c12ee2f9256"
@@ -9179,7 +9178,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1580,
+        "y": 1620,
         "wires": [
             [
                 "365cb4a95d68eb3e"
@@ -9196,7 +9195,7 @@
             "b1b3e80155e49c5c"
         ],
         "x": 2135,
-        "y": 280,
+        "y": 320,
         "wires": []
     },
     {
@@ -9212,7 +9211,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
                 "fadad1e2505bf86d"
@@ -9235,7 +9234,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "493be73ce31c8c96"
@@ -9258,7 +9257,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 220,
+        "y": 260,
         "wires": [
             [
                 "9281d7ca9b292f9f"
@@ -9281,7 +9280,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 620,
+        "y": 660,
         "wires": [
             [
                 "f4f87e6e0f0d5a5a"
@@ -9304,7 +9303,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 720,
+        "y": 760,
         "wires": [
             [
                 "17cf53c8acbfb4e1"
@@ -9327,7 +9326,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 760,
+        "y": 800,
         "wires": [
             [
                 "e31636baf16e3b69"
@@ -9350,7 +9349,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1000,
+        "y": 1040,
         "wires": [
             [
                 "c6559a95bb3c55fb"
@@ -9373,7 +9372,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1040,
+        "y": 1080,
         "wires": [
             [
                 "4dee981d88ea5cf3"
@@ -9396,7 +9395,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1080,
+        "y": 1120,
         "wires": [
             [
                 "45a93847a1d11766"
@@ -9419,7 +9418,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1300,
+        "y": 1340,
         "wires": [
             [
                 "1f2cb9545d7e212d"
@@ -9443,7 +9442,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1120,
+        "y": 1160,
         "wires": [
             [
                 "6c56f45eddcf6890",
@@ -9461,7 +9460,7 @@
             "a628a3d5d7be0e8b"
         ],
         "x": 2035,
-        "y": 1120,
+        "y": 1160,
         "wires": []
     },
     {
@@ -9477,7 +9476,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1120,
+        "y": 1160,
         "wires": [
             [
                 "ccb9e79ff06190fa"
@@ -9495,7 +9494,7 @@
         "name": "HEAT SP lower limit",
         "label": "HEAT SP lower limit",
         "tooltip": "Set the lowest allowed water temperature setpoint.",
-        "group": "26d9e6cf24507b4f",
+        "group": "9aec7afe54746c39",
         "order": 8,
         "width": 0,
         "height": 0,
@@ -9509,7 +9508,7 @@
         "step": 1,
         "className": "",
         "x": 1680,
-        "y": 1160,
+        "y": 1200,
         "wires": [
             [
                 "9170caebad3acdcf"
@@ -9524,7 +9523,7 @@
         "name": "HEAT SP upper limit",
         "label": "HEAT SP upper limit",
         "tooltip": "Set the highest allowed water temperature setpoint.",
-        "group": "26d9e6cf24507b4f",
+        "group": "9aec7afe54746c39",
         "order": 9,
         "width": 0,
         "height": 0,
@@ -9538,7 +9537,7 @@
         "step": 1,
         "className": "",
         "x": 1680,
-        "y": 1200,
+        "y": 1240,
         "wires": [
             [
                 "58d199ee200d7b16"
@@ -9558,7 +9557,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1160,
+        "y": 1200,
         "wires": [
             [
                 "05e2f23adde7a6fc"
@@ -9581,7 +9580,7 @@
         "finalize": "",
         "libs": [],
         "x": 1490,
-        "y": 1200,
+        "y": 1240,
         "wires": [
             [
                 "ede3b3328704cab1"
@@ -9605,7 +9604,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1160,
+        "y": 1200,
         "wires": [
             [
                 "9fcae1bec983aa1f"
@@ -9626,7 +9625,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 1890,
-        "y": 1200,
+        "y": 1240,
         "wires": [
             [
                 "887a43d150c20eb2"
@@ -9643,7 +9642,7 @@
             "8206cc922dc8874d"
         ],
         "x": 2035,
-        "y": 1160,
+        "y": 1200,
         "wires": []
     },
     {
@@ -9656,7 +9655,7 @@
             "170936d914847ac0"
         ],
         "x": 2035,
-        "y": 1200,
+        "y": 1240,
         "wires": []
     },
     {
@@ -9947,114 +9946,12 @@
             "f217f942f56cbfa9"
         ],
         "x": 1545,
-        "y": 180,
+        "y": 220,
         "wires": [
             [
                 "9281d7ca9b292f9f"
             ]
         ]
-    },
-    {
-        "id": "a477a8e89efe36c8",
-        "type": "inject",
-        "z": "8c9d42231fd19d3c",
-        "name": "1 Trigger / minute",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "600",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "trigger",
-        "payload": "",
-        "payloadType": "date",
-        "x": 2670,
-        "y": 1600,
-        "wires": [
-            [
-                "65578013e064761b"
-            ]
-        ]
-    },
-    {
-        "id": "65578013e064761b",
-        "type": "function",
-        "z": "8c9d42231fd19d3c",
-        "name": "Load on boot nachtverlaging",
-        "func": "var var1         = global.get('NightReduction_current_value',\"file\");\nlet msg1={};\n\nmsg1.payload = var1;\nif(var1 === undefined) {msg1=0;}\n\nreturn [msg1];",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 2700,
-        "y": 1640,
-        "wires": [
-            [
-                "debb2952cc07be53"
-            ]
-        ],
-        "outputLabels": [
-            "Correction_1_RTC_on_off"
-        ]
-    },
-    {
-        "id": "debb2952cc07be53",
-        "type": "ui_text",
-        "z": "8c9d42231fd19d3c",
-        "group": "1179fa790d2d89ca",
-        "order": 16,
-        "width": 2,
-        "height": 1,
-        "name": "nightreduction",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 2960,
-        "y": 1640,
-        "wires": []
-    },
-    {
-        "id": "8771224870943c20",
-        "type": "ui_text",
-        "z": "8c9d42231fd19d3c",
-        "group": "1179fa790d2d89ca",
-        "order": 15,
-        "width": 3,
-        "height": 1,
-        "name": "nightreduction",
-        "label": "Nightreduction",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 2960,
-        "y": 1600,
-        "wires": []
-    },
-    {
-        "id": "2bc11eb75c6bb979",
-        "type": "ui_text",
-        "z": "8c9d42231fd19d3c",
-        "group": "1179fa790d2d89ca",
-        "order": 14,
-        "width": 1,
-        "height": 1,
-        "name": "spacer1x1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 3150,
-        "y": 1600,
-        "wires": []
     },
     {
         "id": "a938de76db0b71f6",
@@ -10147,7 +10044,8 @@
             "8206cc922dc8874d",
             "170936d914847ac0",
             "8572da168a9397e1",
-            "76803a7773afbef6"
+            "76803a7773afbef6",
+            "3097c4184ba03f0b"
         ],
         "x": 114,
         "y": 819,
@@ -10190,7 +10088,8 @@
             "16c2c0bf551266ac",
             "b96f8b6697ce1d91",
             "1c99d6a23e7c11c2",
-            "c94d674dec31301e"
+            "c94d674dec31301e",
+            "87c545af2ed49c31"
         ],
         "x": 114,
         "y": 399,
@@ -10222,7 +10121,8 @@
             "219066f9a22a1c23",
             "6782b41fb1659549",
             "ede82249f74ed7ec",
-            "23f4dfbc7c8ce972"
+            "23f4dfbc7c8ce972",
+            "4a0c387e1ddc0dc9"
         ],
         "x": 114,
         "y": 39,
@@ -10285,11 +10185,22 @@
             "2c34d9f3299bef00",
             "e2291dc27fc9ede7",
             "5d952499e2fba893",
-            "a628a3d5d7be0e8b"
+            "a628a3d5d7be0e8b",
+            "fd08994eed1621be",
+            "cd3f44853ed1a6cd",
+            "a0d48945187b9bf6",
+            "5023bec7ba5973f3",
+            "ad6a84d6161eab48",
+            "d7fdd42d981a2d7d",
+            "a82dac1b05afcaac",
+            "a815d38c5137d852",
+            "a0f14e8ff8b7b008",
+            "3bab99eab669bd21",
+            "182df2f14a9ca82f"
         ],
-        "x": 114,
-        "y": 2239,
-        "w": 1032,
+        "x": 194,
+        "y": 2159,
+        "w": 1212,
         "h": 922
     },
     {
@@ -10310,6 +10221,35 @@
         "y": 839,
         "w": 482,
         "h": 122
+    },
+    {
+        "id": "b37318d1b7f66e33",
+        "type": "group",
+        "z": "a938de76db0b71f6",
+        "name": "NightRuduction logic",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5a629acf35a11cc1",
+            "3151f56b9d086c84",
+            "849bb02e7d0f4dfa",
+            "e3c1faa5a1fb80c6",
+            "3f05f1c6e437d5d3",
+            "2b04b7dd5ea852f2",
+            "f0b7868c48887de4",
+            "b1dbfa8badec14e4",
+            "4f05df9205955fba",
+            "a852d7a03c2a4cb0",
+            "038f578f8cc12163",
+            "64489162c0113379",
+            "d283d9a5d5181aed",
+            "3a9f53d1ad6ec693"
+        ],
+        "x": 194,
+        "y": 3119,
+        "w": 1292,
+        "h": 302
     },
     {
         "id": "2c893b32851ad2a2",
@@ -11725,8 +11665,8 @@
         "name": "compressor_frequency",
         "links": [
             "5eef2d3a1816ae18",
-            "73ee925b927ed0c6",
-            "96ebe58652c06e4e"
+            "96ebe58652c06e4e",
+            "87c545af2ed49c31"
         ],
         "x": 1515,
         "y": 1860,
@@ -11793,18 +11733,18 @@
         "name": "",
         "links": [
             "0380b395668eee8e",
+            "2c3e37e102d1461a",
             "84f7cbc2cc8c135d",
             "8dcafc6e30726812",
             "b91f0b27e28d647b",
-            "c57a81d1dee5b8a9",
-            "c9df0ea076346fde"
+            "c9df0ea076346fde",
+            "d283d9a5d5181aed"
         ],
         "x": 155,
         "y": 540,
         "wires": [
             [
-                "6f02b65a25f5c88f",
-                "16c2c0bf551266ac"
+                "6f02b65a25f5c88f"
             ]
         ]
     },
@@ -11824,7 +11764,9 @@
         "x": 250,
         "y": 540,
         "wires": [
-            []
+            [
+                "78114aa97638ee9e"
+            ]
         ]
     },
     {
@@ -11839,7 +11781,7 @@
         "initialize": "if (global.get(\"Correction_0_WAR_on_off\",\"file\") === undefined) {\n    global.set(\"Correction_0_WAR_on_off\", 0,\"file\");\n    throw \"Variable Correction_0_WAR_on_off is undefined. Please set it in the dashboards, toggle the switch.\"\n}\n\nif (global.get(\"T_outside\",\"file\") === undefined) {\n    global.set(\"T_outside\", -99,\"file\");\n    throw \"T_outside is undefined. Make sure sensor data is comming in as a variable correctly.\"\n}\n\nif (global.get(\"Correction_1_RTC_on_off\",\"file\") === undefined) {\n    global.set(\"Correction_1_RTC_on_off\", 0,\"file\")\n    throw \"Correction_1_RTC_on_off is undefined. Please set it in the dashboards, toggle the switch.\"\n}\n\nif (global.get(\"Correction_2_softstart_on_off\",\"file\") === undefined) {\n    global.set(\"Correction_2_softstart_on_off\", 0,\"file\");\n    throw \"Correction_2_softstart_on_off is undefined. Please set it in the dashboards, toggle the switch.\"\n}\n",
         "finalize": "",
         "libs": [],
-        "x": 490,
+        "x": 650,
         "y": 500,
         "wires": [
             [],
@@ -12165,7 +12107,7 @@
         "g": "5a496e1f1ea93a38",
         "name": "T room (RTC function)",
         "info": "",
-        "x": 880,
+        "x": 920,
         "y": 280,
         "wires": []
     },
@@ -12192,7 +12134,7 @@
         "z": "a938de76db0b71f6",
         "g": "5a496e1f1ea93a38",
         "name": "set.T_outside",
-        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'T_outside';\nglobal.set(\"T_outside\",msg.payload,\"file\");\nreturn msg;",
+        "func": "var TOP14=global.get('TOP14_Outside_Temp'); \nvar T_outside=global.get('dark_sky_temperature'); \n\nif (T_outside===undefined)\n    {T_outside = TOP14;}\n\nmsg.payload = T_outside;\nmsg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'T_outside';\nglobal.set(\"T_outside\",msg.payload,\"file\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12215,7 +12157,9 @@
         "name": "T_outside",
         "links": [
             "5eef2d3a1816ae18",
-            "02f25651d70831c9"
+            "02f25651d70831c9",
+            "6401ec360e3666b2",
+            "6a3c45d7a5c5ab3d"
         ],
         "x": 1515,
         "y": 220,
@@ -12225,7 +12169,6 @@
         "id": "df9c3a6c0a51be9b",
         "type": "mqtt in",
         "z": "a938de76db0b71f6",
-        "d": true,
         "g": "5a496e1f1ea93a38",
         "name": "TOP14 - panasonic_heat_pump/main/Outside_Temp",
         "topic": "panasonic_heat_pump/main/Outside_Temp",
@@ -12240,7 +12183,7 @@
         "y": 180,
         "wires": [
             [
-                "3d671794ce872bcd"
+                "4a0c387e1ddc0dc9"
             ]
         ]
     },
@@ -12253,8 +12196,8 @@
         "links": [
             "3a1c7ae1443e0666"
         ],
-        "x": 655,
-        "y": 180,
+        "x": 835,
+        "y": 140,
         "wires": [
             [
                 "3d671794ce872bcd"
@@ -12268,7 +12211,7 @@
         "g": "5a496e1f1ea93a38",
         "name": "T outside sensors (WAR function)",
         "info": "",
-        "x": 910,
+        "x": 950,
         "y": 180,
         "wires": []
     },
@@ -12411,8 +12354,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 2340,
+        "x": 950,
+        "y": 2260,
         "wires": [
             [
                 "ba4a12897a805cee"
@@ -12431,8 +12374,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 990,
-        "y": 2340,
+        "x": 1250,
+        "y": 2260,
         "wires": [
             []
         ]
@@ -12446,8 +12389,8 @@
         "links": [
             "4118b2ccecf6a6de"
         ],
-        "x": 155,
-        "y": 2340,
+        "x": 235,
+        "y": 2260,
         "wires": [
             [
                 "9b245060787d2ecd"
@@ -12467,8 +12410,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 2400,
+        "x": 950,
+        "y": 2320,
         "wires": [
             [
                 "4f8c3c7d06c1b19a"
@@ -12487,8 +12430,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 970,
-        "y": 2400,
+        "x": 1230,
+        "y": 2320,
         "wires": [
             []
         ]
@@ -12506,8 +12449,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 2460,
+        "x": 950,
+        "y": 2380,
         "wires": [
             [
                 "8501242129d89e2c"
@@ -12526,8 +12469,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 970,
-        "y": 2460,
+        "x": 1230,
+        "y": 2380,
         "wires": [
             []
         ]
@@ -12541,8 +12484,8 @@
         "links": [
             "bdb7e8e0217cec66"
         ],
-        "x": 155,
-        "y": 2400,
+        "x": 235,
+        "y": 2320,
         "wires": [
             [
                 "3472c99aef20f07f"
@@ -12558,8 +12501,8 @@
         "links": [
             "979c5ca99c054740"
         ],
-        "x": 155,
-        "y": 2460,
+        "x": 235,
+        "y": 2380,
         "wires": [
             [
                 "eda4721e720d1975"
@@ -12579,8 +12522,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 2520,
+        "x": 950,
+        "y": 2440,
         "wires": [
             [
                 "695ce56812fda3d2"
@@ -12599,8 +12542,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 960,
-        "y": 2520,
+        "x": 1220,
+        "y": 2440,
         "wires": [
             []
         ]
@@ -12614,8 +12557,8 @@
         "links": [
             "092a9db0d9b923b3"
         ],
-        "x": 155,
-        "y": 2520,
+        "x": 235,
+        "y": 2440,
         "wires": [
             [
                 "690250e7cb51c576"
@@ -12635,8 +12578,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 2580,
+        "x": 950,
+        "y": 2500,
         "wires": [
             [
                 "a79fac04465c243e"
@@ -12655,8 +12598,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 970,
-        "y": 2580,
+        "x": 1220,
+        "y": 2500,
         "wires": [
             []
         ]
@@ -12670,8 +12613,8 @@
         "links": [
             "5e3a9447502864ad"
         ],
-        "x": 155,
-        "y": 2580,
+        "x": 235,
+        "y": 2500,
         "wires": [
             [
                 "f4fadebd69120ccb"
@@ -12691,8 +12634,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 2640,
+        "x": 950,
+        "y": 2560,
         "wires": [
             [
                 "10b4e15b0f3199ad"
@@ -12711,8 +12654,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 950,
-        "y": 2640,
+        "x": 1210,
+        "y": 2560,
         "wires": [
             []
         ]
@@ -12730,8 +12673,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 2700,
+        "x": 950,
+        "y": 2620,
         "wires": [
             [
                 "cb2c4d61eeec2c6f"
@@ -12750,8 +12693,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 970,
-        "y": 2700,
+        "x": 1230,
+        "y": 2620,
         "wires": [
             []
         ]
@@ -12769,8 +12712,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 2760,
+        "x": 950,
+        "y": 2680,
         "wires": [
             [
                 "e164eaa22e0fa1dc"
@@ -12789,8 +12732,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 970,
-        "y": 2760,
+        "x": 1230,
+        "y": 2680,
         "wires": [
             []
         ]
@@ -12808,8 +12751,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 2820,
+        "x": 950,
+        "y": 2740,
         "wires": [
             [
                 "f9edb4875d3f2c5b"
@@ -12828,8 +12771,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 970,
-        "y": 2820,
+        "x": 1230,
+        "y": 2740,
         "wires": [
             []
         ]
@@ -12843,8 +12786,8 @@
         "links": [
             "2ed9d626c929fb95"
         ],
-        "x": 155,
-        "y": 2640,
+        "x": 235,
+        "y": 2560,
         "wires": [
             [
                 "ab34ebcc109b74de"
@@ -12860,8 +12803,8 @@
         "links": [
             "9b2a45a90495e067"
         ],
-        "x": 155,
-        "y": 2700,
+        "x": 235,
+        "y": 2620,
         "wires": [
             [
                 "283dd6b0185b554b"
@@ -12877,8 +12820,8 @@
         "links": [
             "7139256ff024b872"
         ],
-        "x": 155,
-        "y": 2760,
+        "x": 235,
+        "y": 2680,
         "wires": [
             [
                 "1281e2b1451c301f"
@@ -12894,8 +12837,8 @@
         "links": [
             "c803b9ad018fe78e"
         ],
-        "x": 155,
-        "y": 2820,
+        "x": 235,
+        "y": 2740,
         "wires": [
             [
                 "a25d1f5d91c84a33"
@@ -12915,8 +12858,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 2880,
+        "x": 950,
+        "y": 2800,
         "wires": [
             [
                 "e11f7d8caf20dbba"
@@ -12935,8 +12878,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
-        "y": 2880,
+        "x": 1240,
+        "y": 2800,
         "wires": [
             []
         ]
@@ -12954,8 +12897,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 2940,
+        "x": 950,
+        "y": 2860,
         "wires": [
             [
                 "460a1a83313cfcc5"
@@ -12974,8 +12917,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
-        "y": 2940,
+        "x": 1240,
+        "y": 2860,
         "wires": [
             []
         ]
@@ -12993,8 +12936,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 3000,
+        "x": 950,
+        "y": 2920,
         "wires": [
             [
                 "58a904f891a8e2cc"
@@ -13013,8 +12956,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
-        "y": 3000,
+        "x": 1240,
+        "y": 2920,
         "wires": [
             []
         ]
@@ -13032,8 +12975,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 3060,
+        "x": 950,
+        "y": 2980,
         "wires": [
             [
                 "5f758eb9af24eb35"
@@ -13052,8 +12995,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1000,
-        "y": 3060,
+        "x": 1260,
+        "y": 2980,
         "wires": [
             []
         ]
@@ -13067,8 +13010,8 @@
         "links": [
             "4021cdadbdc7768d"
         ],
-        "x": 155,
-        "y": 2880,
+        "x": 235,
+        "y": 2800,
         "wires": [
             [
                 "78ddc73a94ec89be"
@@ -13084,8 +13027,8 @@
         "links": [
             "78816343589b199a"
         ],
-        "x": 155,
-        "y": 2940,
+        "x": 235,
+        "y": 2860,
         "wires": [
             [
                 "3fb7221a7218435a"
@@ -13101,8 +13044,8 @@
         "links": [
             "a2d7de4325e4bf91"
         ],
-        "x": 155,
-        "y": 3000,
+        "x": 235,
+        "y": 2920,
         "wires": [
             [
                 "8121e5bfa638e9ab"
@@ -13118,8 +13061,8 @@
         "links": [
             "089ba42c8f7f7a61"
         ],
-        "x": 155,
-        "y": 3060,
+        "x": 235,
+        "y": 2980,
         "wires": [
             [
                 "7caff8b1418d65da"
@@ -13133,8 +13076,8 @@
         "g": "cd2050a861736ec5",
         "name": "Put settings from GUI - DASH into variables",
         "info": "",
-        "x": 310,
-        "y": 2280,
+        "x": 570,
+        "y": 2200,
         "wires": []
     },
     {
@@ -13167,8 +13110,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 990,
-        "y": 3120,
+        "x": 1250,
+        "y": 3040,
         "wires": [
             []
         ]
@@ -13186,8 +13129,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
-        "y": 3120,
+        "x": 950,
+        "y": 3040,
         "wires": [
             [
                 "5d952499e2fba893"
@@ -13203,8 +13146,8 @@
         "links": [
             "0a683587ca4fc25c"
         ],
-        "x": 155,
-        "y": 3120,
+        "x": 235,
+        "y": 3040,
         "wires": [
             [
                 "e2291dc27fc9ede7"
@@ -13299,22 +13242,6 @@
         "wires": []
     },
     {
-        "id": "84c96cb8fec06a84",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1720,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "16c2c0bf551266ac",
         "type": "switch",
         "z": "a938de76db0b71f6",
@@ -13337,8 +13264,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 240,
-        "y": 600,
+        "x": 250,
+        "y": 640,
         "wires": [
             [
                 "b96f8b6697ce1d91"
@@ -13368,7 +13295,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 410,
+        "x": 400,
         "y": 620,
         "wires": [
             [
@@ -13417,11 +13344,614 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 590,
-        "y": 620,
+        "x": 550,
+        "y": 640,
         "wires": [
             [
                 "78114aa97638ee9e"
+            ]
+        ]
+    },
+    {
+        "id": "4a0c387e1ddc0dc9",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "5a496e1f1ea93a38",
+        "name": "set.TOP14_Outside_Temp",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"TOP14_Outside_Temp\",msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 180,
+        "wires": [
+            [
+                "3d671794ce872bcd"
+            ]
+        ]
+    },
+    {
+        "id": "84c96cb8fec06a84",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1720,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "a0d48945187b9bf6",
+        "type": "mqtt in",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "TOP98 - panasonic_heat_pump/main/Heater_Stop_Delta",
+        "topic": "panasonic_heat_pump/main/Heater_Stop_Delta",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 510,
+        "y": 2920,
+        "wires": [
+            [
+                "8121e5bfa638e9ab"
+            ]
+        ]
+    },
+    {
+        "id": "cd3f44853ed1a6cd",
+        "type": "mqtt in",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "TOP97 - panasonic_heat_pump/main/Heater_Start_Delta",
+        "topic": "panasonic_heat_pump/main/Heater_Start_Delta",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 510,
+        "y": 2860,
+        "wires": [
+            [
+                "3fb7221a7218435a"
+            ]
+        ]
+    },
+    {
+        "id": "fd08994eed1621be",
+        "type": "mqtt in",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "TOP96 - panasonic_heat_pump/main/Heater_Delay_Time",
+        "topic": "panasonic_heat_pump/main/Heater_Delay_Time",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 510,
+        "y": 2800,
+        "wires": [
+            [
+                "78ddc73a94ec89be"
+            ]
+        ]
+    },
+    {
+        "id": "5023bec7ba5973f3",
+        "type": "mqtt in",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "TOP22 - panasonic_heat_pump/main/DHW_Heat_Delta",
+        "topic": "panasonic_heat_pump/main/DHW_Heat_Delta",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 500,
+        "y": 2740,
+        "wires": [
+            [
+                "a25d1f5d91c84a33"
+            ]
+        ]
+    },
+    {
+        "id": "ad6a84d6161eab48",
+        "type": "mqtt in",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "TOP23 - panasonic_heat_pump/main/Heat_Delta",
+        "topic": "panasonic_heat_pump/main/Heat_Delta",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 480,
+        "y": 2620,
+        "wires": [
+            [
+                "283dd6b0185b554b"
+            ]
+        ]
+    },
+    {
+        "id": "d7fdd42d981a2d7d",
+        "type": "mqtt in",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "TOP24 - panasonic_heat_pump/main/Cool_Delta",
+        "topic": "panasonic_heat_pump/main/Cool_Delta",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 480,
+        "y": 2680,
+        "wires": [
+            [
+                "1281e2b1451c301f"
+            ]
+        ]
+    },
+    {
+        "id": "a815d38c5137d852",
+        "type": "mqtt in",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "TOP17 - panasonic_heat_pump/main/Powerful_Mode_Time",
+        "topic": "panasonic_heat_pump/main/Powerful_Mode_Time",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 520,
+        "y": 2380,
+        "wires": [
+            [
+                "eda4721e720d1975"
+            ]
+        ]
+    },
+    {
+        "id": "a82dac1b05afcaac",
+        "type": "mqtt in",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "TOP19 - panasonic_heat_pump/main/Holiday_Mode_State",
+        "topic": "panasonic_heat_pump/main/Holiday_Mode_State",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 510,
+        "y": 2320,
+        "wires": [
+            [
+                "3472c99aef20f07f"
+            ]
+        ]
+    },
+    {
+        "id": "3097c4184ba03f0b",
+        "type": "mqtt in",
+        "z": "a938de76db0b71f6",
+        "g": "0077cf76d14c5757",
+        "name": "TOP18 - panasonic_heat_pump/main/Quiet_Mode_Level",
+        "topic": "panasonic_heat_pump/main/Quiet_Mode_Level",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 470,
+        "y": 1440,
+        "wires": [
+            [
+                "cbded61fe1f8bfa6"
+            ]
+        ]
+    },
+    {
+        "id": "a0f14e8ff8b7b008",
+        "type": "mqtt in",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "TOP13 - panasonic_heat_pump/main/Main_Schedule_State",
+        "topic": "panasonic_heat_pump/main/Main_Schedule_State",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 520,
+        "y": 2980,
+        "wires": [
+            [
+                "7caff8b1418d65da"
+            ]
+        ]
+    },
+    {
+        "id": "3bab99eab669bd21",
+        "type": "mqtt in",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "TOP94 - panasonic_heat_pump/main/Zones_State",
+        "topic": "panasonic_heat_pump/main/Zones_State",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 490,
+        "y": 2560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "182df2f14a9ca82f",
+        "type": "mqtt in",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "TOP26 - panasonic_heat_pump/main/Defrosting_State",
+        "topic": "panasonic_heat_pump/main/Defrosting_State",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 500,
+        "y": 2500,
+        "wires": [
+            [
+                "f4fadebd69120ccb"
+            ]
+        ]
+    },
+    {
+        "id": "87c545af2ed49c31",
+        "type": "link in",
+        "z": "a938de76db0b71f6",
+        "g": "23847da379e94b05",
+        "name": "",
+        "links": [
+            "c57a81d1dee5b8a9"
+        ],
+        "x": 155,
+        "y": 640,
+        "wires": [
+            [
+                "16c2c0bf551266ac"
+            ]
+        ]
+    },
+    {
+        "id": "5a629acf35a11cc1",
+        "type": "ui_numeric",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "name": "Night reduction",
+        "label": "Night reduction",
+        "tooltip": "Value is the correction on current SP",
+        "group": "9aec7afe54746c39",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "wrap": true,
+        "passthru": true,
+        "topic": "night_reduction_correction",
+        "topicType": "msg",
+        "format": "{{value}} °C",
+        "min": "-10",
+        "max": "0",
+        "step": "0.1",
+        "className": "",
+        "x": 900,
+        "y": 3380,
+        "wires": [
+            [
+                "3a9f53d1ad6ec693"
+            ]
+        ]
+    },
+    {
+        "id": "3151f56b9d086c84",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "name": "set.NightReduction_correction",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\n\nglobal.set(\"NightReduction_correction\",msg.payload,\"file\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1330,
+        "y": 3380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "849bb02e7d0f4dfa",
+        "type": "inject",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "name": "1 Trigger / 30 minute",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1800",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "trigger",
+        "payload": "",
+        "payloadType": "date",
+        "x": 340,
+        "y": 3240,
+        "wires": [
+            [
+                "e3c1faa5a1fb80c6"
+            ]
+        ]
+    },
+    {
+        "id": "e3c1faa5a1fb80c6",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "name": "Load on boot nachtverlaging",
+        "func": "var var2        = global.get('nightreduction_on_off',\"file\");\nvar correction  = global.get('NightReduction_correction',\"file\");\nvar var1        = global.get('NightReduction_current_value',\"file\");\n\nlet msg1={}, msg2={},msg3={};\n\n\nmsg1.payload = var1;\nmsg2.payload = var2;\nmsg3.payload = correction;\n\nif(var1 === undefined) {msg2=null,msg3=null;}\nif(var2 === undefined) {msg2=null,msg3=null;}\n\nif(var2 == 1)\n    {\n    global.set(\"NightReduction_current_value\",correction,\"file\");\n    msg1.payload = correction;\n    }\n\nif(var2 == 0)\n    {\n    global.set(\"NightReduction_current_value\",0,\"file\");\n    msg1.payload = 0;\n    }\n\n\n\nreturn [msg1,msg2,msg3];\n",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 3240,
+        "wires": [
+            [
+                "3f05f1c6e437d5d3"
+            ],
+            [
+                "f0b7868c48887de4"
+            ],
+            [
+                "5a629acf35a11cc1"
+            ]
+        ],
+        "outputLabels": [
+            "NightReduction_current_value",
+            "nightreduction_on_off",
+            "NightReduction_correction"
+        ]
+    },
+    {
+        "id": "3f05f1c6e437d5d3",
+        "type": "ui_text",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "group": "1179fa790d2d89ca",
+        "order": 16,
+        "width": 2,
+        "height": 1,
+        "name": "nightreduction read",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 910,
+        "y": 3200,
+        "wires": []
+    },
+    {
+        "id": "2b04b7dd5ea852f2",
+        "type": "ui_text",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "group": "1179fa790d2d89ca",
+        "order": 15,
+        "width": 3,
+        "height": 1,
+        "name": "text nightreduction",
+        "label": "Nightreduction",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1110,
+        "y": 3200,
+        "wires": []
+    },
+    {
+        "id": "f0b7868c48887de4",
+        "type": "ui_switch",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "name": "Night reduction",
+        "label": "",
+        "tooltip": "Turn on/off the softstart function ",
+        "group": "1179fa790d2d89ca",
+        "order": 14,
+        "width": 1,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 900,
+        "y": 3280,
+        "wires": [
+            [
+                "64489162c0113379"
+            ]
+        ]
+    },
+    {
+        "id": "b1dbfa8badec14e4",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "name": "set.nightreduction_on_off",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"nightreduction_on_off\",msg.payload,\"file\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1310,
+        "y": 3280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4f05df9205955fba",
+        "type": "comment",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "name": "geprogrameerde reductie",
+        "info": "",
+        "x": 930,
+        "y": 3340,
+        "wires": []
+    },
+    {
+        "id": "a852d7a03c2a4cb0",
+        "type": "comment",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "name": "current value",
+        "info": "",
+        "x": 890,
+        "y": 3160,
+        "wires": []
+    },
+    {
+        "id": "038f578f8cc12163",
+        "type": "comment",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "name": "toggle",
+        "info": "",
+        "x": 870,
+        "y": 3240,
+        "wires": []
+    },
+    {
+        "id": "64489162c0113379",
+        "type": "rbe",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1070,
+        "y": 3280,
+        "wires": [
+            [
+                "b1dbfa8badec14e4",
+                "e3c1faa5a1fb80c6",
+                "d283d9a5d5181aed"
+            ]
+        ]
+    },
+    {
+        "id": "d283d9a5d5181aed",
+        "type": "link out",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "name": "nightreduction_on_off",
+        "mode": "link",
+        "links": [
+            "73ee925b927ed0c6"
+        ],
+        "x": 1215,
+        "y": 3240,
+        "wires": []
+    },
+    {
+        "id": "3a9f53d1ad6ec693",
+        "type": "rbe",
+        "z": "a938de76db0b71f6",
+        "g": "b37318d1b7f66e33",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1070,
+        "y": 3380,
+        "wires": [
+            [
+                "3151f56b9d086c84"
             ]
         ]
     },
@@ -15322,6 +15852,7 @@
         "once": true,
         "onceDelay": "1",
         "topic": "trigger",
+        "payload": "",
         "payloadType": "date",
         "x": 200,
         "y": 2400,
@@ -15348,13 +15879,11 @@
             [
                 "f50b182247afbf12"
             ],
-            [
-                "847b3d4b58b08806"
-            ]
+            []
         ],
         "outputLabels": [
             "DHW_treshold",
-            null
+            ""
         ]
     },
     {
@@ -24042,7 +24571,7 @@
         "type": "function",
         "z": "35d210f042827344",
         "name": "Function schedule",
-        "func": "var topic   =   msg.topic;\n\nvar state   =   global.get(topic+'_state',\"file\");                              // Get state of the agenda item. \nif      (state === undefined)\n        {state = 0;}\n\nif      (state == 0)                                                            // Is it disabled? \n        {msg.payload = null; return [null, null];}                              // output null to all pins and exit. else to continue.\n////////////////////////////////////////////////////////////////////////////////\n////////////////////////////////////////////////////////////////////////////////\n\nelse    {                                                                       // if not, continue...\n        var day_check       =global.get(topic+'_day',\"file\");                   // get schedule variables.\n        var hour_check      =global.get(topic+'_hour',\"file\");                  // get schedule variables.\n        var minutes_check   =global.get(topic+'_minutes',\"file\");               // get schedule variables.\n\n                                                                                // Check the programmed day compared current day.\n        if (day_check.includes(msg.payload[0]))         {day_check = { payload: 1, topic: \"DayOfTheWeek\"};}\n        else                                            {day_check = { payload: 0, topic: \"DayOfTheWeek\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed hour compared current hour.        \n        if (msg.payload[1] == hour_check)               {hour_check = { payload: 1, topic: \"Hour\"};}\n        else                                            {hour_check = { payload: 0, topic: \"Hour\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed minutes compared current minutes.\n        if (msg.payload[2] == minutes_check)            {minutes_check = { payload: 1, topic: \"Minutes\"};}\n        else                                            {minutes_check = { payload: 0, topic: \"Minutes\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n        if (day_check.payload == 1 && hour_check.payload == 1 && minutes_check.payload == 1)        // If all of the conditions are met (day + hour + minutes), then....\n            {\n                let msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={};\n                msg1 = null; msg2 = null; msg3 = null; msg4 = null; msg5 = null; msg6 = null; \n                \n                ////////////////////////////////////////////////////////////////\n                //  Override the current powerstate of heat pump? //////////////\n\n                var override    =   global.get(topic+'_override',\"file\");           // get the current override state.\n                ////////////////////////////////////////////////////////////////\n                if  (override == 1)                                                 // check the override state\n                    {\n                        msg1 = { payload: 1, topic: \"override\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                var action  =   global.get(topic+'_action',\"file\");             // get the action\n                ////////////////////////////////////////////////////////////////\n                \n                if  (action == \"HP_turn_on\")                                    // check the action\n                    {\n                        msg1 = { payload: 1, topic: \"Turn ON HeatPump\" };       // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                if  (action == \"HP_turn_off\")                                   // check the action\n                    {\n                        msg1 = { payload: 0, topic: \"Turn OFF HeatPump\" };      // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                ////////////////////////////////////////////////////////////////\n                if  (action == \"DHW\")                                           // check the action\n                    {\n                        msg2 = { payload: 1, topic: \"DHW\" };                     // DHW action? >> to DHW output pin 2\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                ////////////////////////////////////////////////////////////////\n                if  (action == \"Sterilization\")                                 // check the action\n                    {\n                        msg3 = { payload: 1, topic:  \"Sterilization\" };         // Sterilization action? >> to Sterilization output pin 3\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                ////////////////////////////////////////////////////////////////                \n                if  (action == \"QM_0\")                                          // check the action\n                    {\n                        msg4 = { payload: 0, topic: \"Quiet Mode 0\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                if  (action == \"QM_1\")                                          // check the action\n                    {\n                        msg4 = { payload: 1, topic: \"Quiet Mode 1\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                if  (action == \"QM_2\")                                          // check the action\n                    {\n                        msg4 = { payload: 2, topic: \"Quiet Mode 2\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                if  (action == \"QM_3\")                                          // check the action\n                    {\n                        msg4 = { payload: 3, topic: \"Quiet Mode 3\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                ////////////////////////////////////////////////////////////////\n                if  (action == \"OperationMode0\")                                // check the action\n                    {\n                        msg5 = { payload: 0, topic: \"Operation Mode 0\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }                \n                if  (action == \"OperationMode1\")                                // check the action\n                    {\n                        msg5 = { payload: 1, topic: \"Operation Mode 1\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode2\")                                // check the action\n                    {\n                        msg5 = { payload: 2, topic: \"Operation Mode 2\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode3\")                                // check the action\n                    {\n                        msg5 = { payload: 3, topic: \"Operation Mode 3\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode4\")                                // check the action\n                    {\n                        msg5 = { payload: 4, topic: \"Operation Mode 4\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode5\")                                // check the action\n                    {\n                        msg5 = { payload: 5, topic: \"Operation Mode 5\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode6\")                                // check the action\n                    {\n                        msg5 = { payload: 6, topic: \"Operation Mode 6\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"NightReductionOn\")                                // check the action\n                    {\n                        var correction = global.get(\"NightReduction_correction\",\"file\");           // get the current override state.\n                        global.set(\"NightReduction_current_value\",correction,\"file\");\n                        msg6 = { payload: correction, topic: \"Nightreduction\" };\n                    }\n                if  (action == \"NightReductionOff\")                                // check the action\n                    {\n                        global.set(\"NightReduction_current_value\",0,\"file\");\n                        msg6 = { payload: 0, topic: \"Nightreduction\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n\n            return [msg1, msg2, msg3, msg4, msg5, msg6];\n\n            }   \n        else\n            {   \n                return [null, null, null, null, null, null];\n            }\n        \n\n        }",
+        "func": "var topic   =   msg.topic;\n\nvar state   =   global.get(topic+'_state',\"file\");                              // Get state of the agenda item. \nif      (state === undefined)\n        {state = 0;}\n\nif      (state == 0)                                                            // Is it disabled? \n        {msg.payload = null; return [null, null];}                              // output null to all pins and exit. else to continue.\n////////////////////////////////////////////////////////////////////////////////\n////////////////////////////////////////////////////////////////////////////////\n\nelse    {                                                                       // if not, continue...\n        var day_check       =global.get(topic+'_day',\"file\");                   // get schedule variables.\n        var hour_check      =global.get(topic+'_hour',\"file\");                  // get schedule variables.\n        var minutes_check   =global.get(topic+'_minutes',\"file\");               // get schedule variables.\n\n                                                                                // Check the programmed day compared current day.\n        if (day_check.includes(msg.payload[0]))         {day_check = { payload: 1, topic: \"DayOfTheWeek\"};}\n        else                                            {day_check = { payload: 0, topic: \"DayOfTheWeek\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed hour compared current hour.        \n        if (msg.payload[1] == hour_check)               {hour_check = { payload: 1, topic: \"Hour\"};}\n        else                                            {hour_check = { payload: 0, topic: \"Hour\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed minutes compared current minutes.\n        if (msg.payload[2] == minutes_check)            {minutes_check = { payload: 1, topic: \"Minutes\"};}\n        else                                            {minutes_check = { payload: 0, topic: \"Minutes\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n        if (day_check.payload == 1 && hour_check.payload == 1 && minutes_check.payload == 1)        // If all of the conditions are met (day + hour + minutes), then....\n            {\n                let msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={};\n                msg1 = null; msg2 = null; msg3 = null; msg4 = null; msg5 = null; msg6 = null; \n                \n                ////////////////////////////////////////////////////////////////\n                //  Override the current powerstate of heat pump? //////////////\n\n                var override    =   global.get(topic+'_override',\"file\");           // get the current override state.\n                ////////////////////////////////////////////////////////////////\n                if  (override == 1)                                                 // check the override state\n                    {\n                        msg1 = { payload: 1, topic: \"override\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                var action  =   global.get(topic+'_action',\"file\");             // get the action\n                ////////////////////////////////////////////////////////////////\n                \n                if  (action == \"HP_turn_on\")                                    // check the action\n                    {\n                        msg1 = { payload: 1, topic: \"Turn ON HeatPump\" };       // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                if  (action == \"HP_turn_off\")                                   // check the action\n                    {\n                        msg1 = { payload: 0, topic: \"Turn OFF HeatPump\" };      // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                ////////////////////////////////////////////////////////////////\n                if  (action == \"DHW\")                                           // check the action\n                    {\n                        msg2 = { payload: 1, topic: \"DHW\" };                     // DHW action? >> to DHW output pin 2\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                ////////////////////////////////////////////////////////////////\n                if  (action == \"Sterilization\")                                 // check the action\n                    {\n                        msg3 = { payload: 1, topic:  \"Sterilization\" };         // Sterilization action? >> to Sterilization output pin 3\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                ////////////////////////////////////////////////////////////////                \n                if  (action == \"QM_0\")                                          // check the action\n                    {\n                        msg4 = { payload: 0, topic: \"Quiet Mode 0\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                if  (action == \"QM_1\")                                          // check the action\n                    {\n                        msg4 = { payload: 1, topic: \"Quiet Mode 1\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                if  (action == \"QM_2\")                                          // check the action\n                    {\n                        msg4 = { payload: 2, topic: \"Quiet Mode 2\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                if  (action == \"QM_3\")                                          // check the action\n                    {\n                        msg4 = { payload: 3, topic: \"Quiet Mode 3\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                ////////////////////////////////////////////////////////////////\n                if  (action == \"OperationMode0\")                                // check the action\n                    {\n                        msg5 = { payload: 0, topic: \"Operation Mode 0\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }                \n                if  (action == \"OperationMode1\")                                // check the action\n                    {\n                        msg5 = { payload: 1, topic: \"Operation Mode 1\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode2\")                                // check the action\n                    {\n                        msg5 = { payload: 2, topic: \"Operation Mode 2\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode3\")                                // check the action\n                    {\n                        msg5 = { payload: 3, topic: \"Operation Mode 3\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode4\")                                // check the action\n                    {\n                        msg5 = { payload: 4, topic: \"Operation Mode 4\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode5\")                                // check the action\n                    {\n                        msg5 = { payload: 5, topic: \"Operation Mode 5\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode6\")                                // check the action\n                    {\n                        msg5 = { payload: 6, topic: \"Operation Mode 6\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"NightReductionOn\")                                // check the action\n                    {\n                        var correction = global.get(\"NightReduction_correction\",\"file\");           // get the current override state.\n                        global.set(\"NightReduction_current_value\",correction,\"file\");\n                        global.set(\"nightreduction_on_off\",1,\"file\");\n                        msg6 = { payload: correction, topic: \"Nightreduction\" };\n                    }\n                if  (action == \"NightReductionOff\")                                // check the action\n                    {\n                        global.set(\"NightReduction_current_value\",0,\"file\");\n                        global.set(\"nightreduction_on_off\",0,\"file\");\n                        msg6 = { payload: 0, topic: \"Nightreduction\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n\n            return [msg1, msg2, msg3, msg4, msg5, msg6];\n\n            }   \n        else\n            {   \n                return [null, null, null, null, null, null];\n            }\n        \n\n        }",
         "outputs": 6,
         "noerr": 0,
         "initialize": "\n",
@@ -24098,51 +24627,6 @@
         "x": 210,
         "y": 2480,
         "wires": []
-    },
-    {
-        "id": "847b3d4b58b08806",
-        "type": "ui_numeric",
-        "z": "35d210f042827344",
-        "name": "Night reduction",
-        "label": "Night reduction",
-        "tooltip": "Value is the correction on current SP",
-        "group": "9aec7afe54746c39",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "wrap": true,
-        "passthru": true,
-        "topic": "night_reduction_correction",
-        "topicType": "msg",
-        "format": "{{value}} °C",
-        "min": "-10",
-        "max": "0",
-        "step": 1,
-        "className": "",
-        "x": 760,
-        "y": 2500,
-        "wires": [
-            [
-                "68830677c7938ce0"
-            ]
-        ]
-    },
-    {
-        "id": "68830677c7938ce0",
-        "type": "function",
-        "z": "35d210f042827344",
-        "name": "set.NightReduction_correction",
-        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\n\nglobal.set(\"NightReduction_correction\",msg.payload,\"file\");\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1210,
-        "y": 2500,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "b91f0b27e28d647b",
@@ -24477,17 +24961,6 @@
         "className": ""
     },
     {
-        "id": "2b0c8e162d47abbb",
-        "type": "ui_group",
-        "name": "Schedules",
-        "tab": "ac594a9d775ca4fb",
-        "order": 1,
-        "disp": true,
-        "width": 21,
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "9aec7afe54746c39",
         "type": "ui_group",
         "name": "Related settings",
@@ -24495,6 +24968,17 @@
         "order": 2,
         "disp": true,
         "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2b0c8e162d47abbb",
+        "type": "ui_group",
+        "name": "Schedules",
+        "tab": "ac594a9d775ca4fb",
+        "order": 1,
+        "disp": true,
+        "width": 21,
         "collapse": false,
         "className": ""
     },

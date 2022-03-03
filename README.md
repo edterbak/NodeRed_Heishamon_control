@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 11<br/>
+Current version: 12<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -82,6 +82,9 @@ The scheduler makes use of the moment lib.<br/>
 https://flows.nodered.org/node/node-red-contrib-moment <br/>
 node-red-contrib-noop is used as well <br/>
 https://flows.nodered.org/node/node-red-contrib-noop <br/>
+node-red-contrib-dashboard-average-bars <br/>
+https://flows.nodered.org/node/node-red-contrib-dashboard-average-bars (This is WIP dont install just yet) <br/>
+
 
 ## How to install the NR flows
 Dashboard: http://IP:1880/ui
@@ -217,6 +220,11 @@ You can find the link to the dashboard like this:<br/>
 - REQUEST: Scheduler: added option to plan start/shutdown
 - REQUEST: Scheduler: added option to plan night reduction
 - REQUEST: Scheduler: add option to override current powerstate with scheduled tasks.
+
+[22-03-01] (v12) Things done are:
+- ENHANCEMENT: issue #19. "settings - DHW/HEAT. show current value" implemented (https://github.com/edterbak/NodeRed_Heishamon_control/issues/19)
+- ENHANCEMENT: issue #21. Night reduction - add toggle in the Home screen to controle it manually (https://github.com/edterbak/NodeRed_Heishamon_control/issues/21)
+- ENHANCEMENT: First attempt to include degree days (graaddagen) in the dashboard. It is NOT finished yet, and on my personal tab, but might affect basic dashboard / 
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
