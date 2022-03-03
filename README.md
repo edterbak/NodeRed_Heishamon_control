@@ -223,6 +223,7 @@ You can find the link to the dashboard like this:<br/>
 
 [22-03-01] (v12) Things done are:
 - ENHANCEMENT: issue #19. "settings - DHW/HEAT. show current value" implemented (https://github.com/edterbak/NodeRed_Heishamon_control/issues/19)
+- ENHANCEMENT: issue #20 Night reduction - accuracy to 0,1 instead of 1 - (https://github.com/edterbak/NodeRed_Heishamon_control/issues/20)
 - ENHANCEMENT: issue #21. Night reduction - add toggle in the Home screen to controle it manually (https://github.com/edterbak/NodeRed_Heishamon_control/issues/21)
 - ENHANCEMENT: First attempt to include degree days (graaddagen) in the dashboard. It is NOT finished yet, and on my personal tab, but might affect basic dashboard / 
 
