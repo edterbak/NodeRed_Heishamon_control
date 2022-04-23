@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 13<br/>
+Current version: 13.1<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -236,6 +236,10 @@ all older changelog items are colapsed below. only the latest changelog will alw
 - Add contrib [node-red-contrib-dashboard-bar-chart-data] (https://flows.nodered.org/node/node-red-contrib-dashboard-bar-chart-data) 
 - Made some items in the dashboard collapsable. 
 
+[2022-04-23] (v13.1) Things done are:
+- BUG fix: COP was not working
+- ENHANCEMENT: Made the Energy chart look a little better with titels etc. 
+
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
 - [x] Add more info in dashboard so it shows energy usages and other nice stuffs. 
@@ -248,5 +252,6 @@ all older changelog items are colapsed below. only the latest changelog will alw
 * []() AUijtdehaag: The COP calculation - https://github.com/Dylantje/WP-Heishamon-sripts/blob/master/WP%20LUA%20COP%20berekening
 * []() lampy25. For unselfishly giving supportive feedback and good idea's. Thanks!
 * []() timovd for his contributions. ! Thanks.
+* []() E1cid from Node Red forum, for the help with the bar-chart. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
