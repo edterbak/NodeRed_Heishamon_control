@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 12<br/>
+Current version: 13<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -82,9 +82,8 @@ The scheduler makes use of the moment lib.<br/>
 https://flows.nodered.org/node/node-red-contrib-moment <br/>
 node-red-contrib-noop is used as well <br/>
 https://flows.nodered.org/node/node-red-contrib-noop <br/>
-node-red-contrib-dashboard-average-bars <br/>
-https://flows.nodered.org/node/node-red-contrib-dashboard-average-bars (This is WIP dont install just yet) <br/>
-
+node-red-contrib-dashboard-bar-chart-data (from v13+)<br/>
+https://flows.nodered.org/node/node-red-contrib-dashboard-bar-chart-data <br/>
 
 ## How to install the NR flows
 Dashboard: http://IP:1880/ui
@@ -158,6 +157,8 @@ You can find the link to the dashboard like this:<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard2.png?raw=true) ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard1.png?raw=true)
 
 ## Changelog / Notes
+all older changelog items are colapsed below. only the latest changelog will always be shown.
+<details>
 [2021-11-09] (v1) First release. Current versions of the function seem rough. I will polish it at a later time and update here. The Flows do contain comments to clarify. In future I will also publish my verion of a NR dashboard. Currently Im not fully happy with it.
 
 [2021-12-02] (v2) First major upgrade. Things done are:
@@ -221,11 +222,19 @@ You can find the link to the dashboard like this:<br/>
 - REQUEST: Scheduler: added option to plan night reduction
 - REQUEST: Scheduler: add option to override current powerstate with scheduled tasks.
 
-[22-03-01] (v12) Things done are:
+[2022-03-01] (v12) Things done are:
 - ENHANCEMENT: issue #19. "settings - DHW/HEAT. show current value" implemented (https://github.com/edterbak/NodeRed_Heishamon_control/issues/19)
 - ENHANCEMENT: issue #20 Night reduction - accuracy to 0,1 instead of 1 - (https://github.com/edterbak/NodeRed_Heishamon_control/issues/20)
 - ENHANCEMENT: issue #21. Night reduction - add toggle in the Home screen to controle it manually (https://github.com/edterbak/NodeRed_Heishamon_control/issues/21)
 - ENHANCEMENT: First attempt to include degree days (graaddagen) in the dashboard. It is NOT finished yet, and on my personal tab, but might affect basic dashboard / 
+</details><br/>
+
+[2022-04-23] (v13) Things done are:
+- ENHANCEMENT: issue #17. "Add graaddagen to dashboard" implemented (https://github.com/edterbak/NodeRed_Heishamon_control/issues/17) The result should be a good step in the richt direction. If this needs more work or you have other suggestions, please add to the issue in githug.
+- BUG fix: I noticed the colors of the chart of RTC function was not correct. timing issue. fixed it.
+- Removed the need for NR contrib https://flows.nodered.org/node/node-red-contrib-dashboard-average-bars You can safely remove it if you dont use it elsewhere.
+- Add contrib [node-red-contrib-dashboard-bar-chart-data] (https://flows.nodered.org/node/node-red-contrib-dashboard-bar-chart-data) 
+- Made some items in the dashboard collapsable. 
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
