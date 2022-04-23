@@ -2706,7 +2706,7 @@
         ],
         "x": 104,
         "y": 1959,
-        "w": 882,
+        "w": 942,
         "h": 322
     },
     {
@@ -3910,7 +3910,7 @@
         "topic": "",
         "payload": "[ ]",
         "payloadType": "json",
-        "x": 910,
+        "x": 970,
         "y": 2000,
         "wires": [
             [
@@ -6335,7 +6335,7 @@
                 "t": "set",
                 "p": "topic",
                 "pt": "msg",
-                "to": "current",
+                "to": "Current [A]",
                 "tot": "str"
             }
         ],
@@ -6363,7 +6363,7 @@
                 "t": "set",
                 "p": "topic",
                 "pt": "msg",
-                "to": "defrost_state",
+                "to": "Defrost State [-]",
                 "tot": "str"
             }
         ],
@@ -6391,7 +6391,7 @@
                 "t": "set",
                 "p": "topic",
                 "pt": "msg",
-                "to": "eva_outlet",
+                "to": "EVA outlet [°C]",
                 "tot": "str"
             }
         ],
@@ -6429,9 +6429,7 @@
         "x": 950,
         "y": 1560,
         "wires": [
-            [
-                "fa2eba3089ca0ef4"
-            ]
+            []
         ]
     },
     {
@@ -6686,6 +6684,7 @@
         "id": "2363c41d934e266c",
         "type": "mqtt in",
         "z": "8c9d42231fd19d3c",
+        "d": true,
         "g": "f9448182b177e40e",
         "name": "TOP26 - panasonic_heat_pump/main/Defrosting_State",
         "topic": "panasonic_heat_pump/main/Defrosting_State",
@@ -10544,13 +10543,12 @@
         "nodes": [
             "f4e55b938e645737",
             "43b60b667e5e5610",
-            "aa30462c21670606",
             "306b69356454f3ff"
         ],
         "x": 1604,
-        "y": 839,
-        "w": 482,
-        "h": 122
+        "y": 879,
+        "w": 372,
+        "h": 82
     },
     {
         "id": "b37318d1b7f66e33",
@@ -12233,7 +12231,7 @@
         "z": "a938de76db0b71f6",
         "g": "94f57429e16c8e82",
         "name": "COP_calculated",
-        "func": "var Main_Outlet_Temp=global.get('Main_Outlet_Temp');                            // Get the global variable for Outlet temperature\nvar Main_Inlet_Temp=global.get('Main_Inlet_Temp');                              // Get the global variable for inlet temperature\nvar Pump_Flow=global.get('Pump_Flow');                                          // Get the global variable for pump flow\nvar Heat_Energy_Consumption=global.get('Heat_Energy_Consumption');              // Get the global variable for absorbed energy of the heatpump\nvar Hz=global.get('compressor_frequency');                                      // Get the global variable for absorbed energy of the heatpump\n\nif (Hz == 0) \n    {\n        COP_calculated = 0;\n    }\n    \nelse \n    {\n    var Watt_heat_c = (Main_Outlet_Temp-Main_Inlet_Temp) * 4.187 * (Pump_Flow / 60) * 1000;\n    var COP_calculated = Watt_heat_c / Heat_Energy_Consumption;\n    \n    msg.payload = COP_calculated;\n    msg.payload = Number(msg.payload).toFixed(2);\n    msg.payload = parseFloat(msg.payload);\n    msg.topic   = \"COP\";\n    \n    if (msg.payload > 0) {return msg;}\n    else {return null;}\n    }\n    \n\n",
+        "func": "var Main_Outlet_Temp=global.get('Main_Outlet_Temp');                            // Get the global variable for Outlet temperature\nvar Main_Inlet_Temp=global.get('Main_Inlet_Temp');                              // Get the global variable for inlet temperature\nvar Pump_Flow=global.get('Pump_Flow');                                          // Get the global variable for pump flow\nvar Heat_Energy_Consumption=global.get('Heat_Energy_Consumption',\"file\");       // Get the global variable for absorbed energy of the heatpump\nvar Hz=global.get('compressor_frequency');                                      // Get the global variable for absorbed energy of the heatpump\nvar COP_calculated;\n\nmsg.topic   = \"COP [-]\";\n\n\nif (Hz == 0) \n    {\n        msg.payload = 0;\n        return msg;\n    }\n    \nelse \n    {\n        var Watt_heat_c = (Main_Outlet_Temp - Main_Inlet_Temp) * 4.187 * (Pump_Flow / 60) * 1000;\n        COP_calculated = Watt_heat_c / Heat_Energy_Consumption;\n        \n        msg.payload = COP_calculated;\n        msg.payload = Number(msg.payload).toFixed(2);\n        msg.payload = parseFloat(msg.payload);\n\n        if (msg.payload > 0) \n            {\n                return msg;\n                \n            }\n            \n        else \n            {\n                msg.payload = 0;\n                return msg;\n                \n            }\n    }\n    \n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12243,7 +12241,6 @@
         "y": 920,
         "wires": [
             [
-                "aa30462c21670606",
                 "306b69356454f3ff"
             ]
         ]
@@ -12336,34 +12333,17 @@
         ]
     },
     {
-        "id": "aa30462c21670606",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "94f57429e16c8e82",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1970,
-        "y": 920,
-        "wires": []
-    },
-    {
         "id": "306b69356454f3ff",
         "type": "link out",
         "z": "a938de76db0b71f6",
         "g": "94f57429e16c8e82",
         "name": "COP",
+        "mode": "link",
         "links": [
-            "5eef2d3a1816ae18",
             "fe8e23b8971b868e"
         ],
-        "x": 1925,
-        "y": 880,
+        "x": 1935,
+        "y": 920,
         "wires": []
     },
     {
