@@ -2694,20 +2694,18 @@
         },
         "nodes": [
             "8cb1aceef81045bd",
-            "a699dd17ed4185cf",
             "9802bf01ebf45d28",
             "9789265573ab4c80",
             "c9c2bf06edb19d41",
             "0ac806fe66f54c29",
-            "c42ef7f9448f3c9a",
             "76fd0cf35b775cdf",
             "9f3df8b1cba0bbda",
             "a734f98c5d02604e"
         ],
-        "x": 104,
-        "y": 1959,
-        "w": 942,
-        "h": 322
+        "x": 14,
+        "y": 1919,
+        "w": 782,
+        "h": 302
     },
     {
         "id": "a8ac5b148d851a6b",
@@ -2763,8 +2761,8 @@
             "a955b118f456587f",
             "5df3c72cf1808838",
             "1235e7416dbfe5fc",
-            "6e638f910884ac8a",
-            "c2f90b65d2418083"
+            "4b2cff40b8a3ecc9",
+            "9e7985132053da99"
         ],
         "x": 2534,
         "y": 599,
@@ -2873,43 +2871,6 @@
         "y": 59,
         "w": 1338,
         "h": 502
-    },
-    {
-        "id": "f9448182b177e40e",
-        "type": "group",
-        "z": "8c9d42231fd19d3c",
-        "name": "Chart Energy",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "ea3029991749f77b",
-            "fa2eba3089ca0ef4",
-            "8fd1613ec2d31e77",
-            "3b552bccda090181",
-            "ead1f2d77a00861d",
-            "8a140f3a3a1ff736",
-            "1cbdb190d6f52cb6",
-            "fe8e23b8971b868e",
-            "b1933566192d3b78",
-            "fae151e3fc249477",
-            "21857afb8366acf2",
-            "039ca8047ee5b833",
-            "8e0dc8ab2999f4ec",
-            "38b10c117605255d",
-            "53393ad3ce2b9113",
-            "3a6bb7844523ece7",
-            "ca8fd698c67b1cfa",
-            "2363c41d934e266c",
-            "adf77ab5634ca95a",
-            "b3e1e417d51330e7",
-            "bbe6832628277539",
-            "8627726ba882e493"
-        ],
-        "x": 114,
-        "y": 1279,
-        "w": 932,
-        "h": 642
     },
     {
         "id": "3151681b2157872c",
@@ -3039,6 +3000,79 @@
         "h": 1542
     },
     {
+        "id": "f9448182b177e40e",
+        "type": "group",
+        "z": "8c9d42231fd19d3c",
+        "name": "Chart Energy",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "ea3029991749f77b",
+            "fa2eba3089ca0ef4",
+            "8fd1613ec2d31e77",
+            "3b552bccda090181",
+            "ead1f2d77a00861d",
+            "8a140f3a3a1ff736",
+            "1cbdb190d6f52cb6",
+            "fe8e23b8971b868e",
+            "b1933566192d3b78",
+            "fae151e3fc249477",
+            "21857afb8366acf2",
+            "039ca8047ee5b833",
+            "8e0dc8ab2999f4ec",
+            "38b10c117605255d",
+            "53393ad3ce2b9113",
+            "3a6bb7844523ece7",
+            "ca8fd698c67b1cfa",
+            "b3e1e417d51330e7",
+            "bbe6832628277539",
+            "8627726ba882e493",
+            "4b0bb57d44bd8bb1",
+            "b4d652a4c0313e8a",
+            "990e0858767f91fc",
+            "9ed43df7ef7fa246",
+            "6d77bc12fe8024ee",
+            "9534d89253d426ca",
+            "79ff4d14869086b3"
+        ],
+        "x": 14,
+        "y": 1259,
+        "w": 1092,
+        "h": 562
+    },
+    {
+        "id": "f1a34e3fea473398",
+        "type": "group",
+        "z": "8c9d42231fd19d3c",
+        "name": "Combined bar-chart",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b09d20349841eaed",
+            "d4198e0e57720e55",
+            "8859608d9186c4e4",
+            "278b50b68f01198e",
+            "93a7de2857166209",
+            "d63cf14c266a32c5",
+            "d5724fa53412c7c1",
+            "2c380c0bbcfb5eb1",
+            "3c6cbf1cc644de40",
+            "ad2577846265e4ee",
+            "c302223665944545",
+            "9a77a77bdc585373",
+            "721b7d606f558c73",
+            "2114aed06fe6d5aa",
+            "e1f45532e4338e4a",
+            "7e69bda9aa493902"
+        ],
+        "x": 74,
+        "y": 2279,
+        "w": 1398,
+        "h": 602
+    },
+    {
         "id": "5c6e3f50e1a2328b",
         "type": "group",
         "z": "8c9d42231fd19d3c",
@@ -3079,6 +3113,68 @@
         "y": 1019,
         "w": 332,
         "h": 162
+    },
+    {
+        "id": "2c380c0bbcfb5eb1",
+        "type": "group",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "eee624aa045ae22a"
+        ],
+        "x": 1114,
+        "y": 2739,
+        "w": 312,
+        "h": 82
+    },
+    {
+        "id": "2114aed06fe6d5aa",
+        "type": "group",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "",
+        "style": {
+            "fill": "#DE425B",
+            "fill-opacity": "0.5",
+            "label": true
+        },
+        "nodes": [
+            "2bb4af86f0c78aed",
+            "35c9b0fcbdf3c9e0"
+        ],
+        "x": 714,
+        "y": 2519,
+        "w": 732,
+        "h": 82
+    },
+    {
+        "id": "e1f45532e4338e4a",
+        "type": "group",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "Bucket 1 - kWh calculation",
+        "style": {
+            "fill": "#F59B56",
+            "label": true,
+            "fill-opacity": "0.5"
+        },
+        "nodes": [
+            "1ca44efe39136a9a",
+            "47a9e516229e0256"
+        ],
+        "x": 714,
+        "y": 2419,
+        "w": 732,
+        "h": 82
     },
     {
         "id": "de9229159c024a54",
@@ -3664,8 +3760,8 @@
         "label": "Livingroom SP",
         "tooltip": "",
         "group": "e27cfec311892d88",
-        "order": 11,
-        "width": 6,
+        "order": 12,
+        "width": 5,
         "height": 1,
         "wrap": false,
         "passthru": false,
@@ -3866,7 +3962,7 @@
         "dot": false,
         "ymin": "20",
         "ymax": "",
-        "removeOlder": "12",
+        "removeOlder": "24",
         "removeOlderPoints": "1000",
         "removeOlderUnit": "3600",
         "cutout": 0,
@@ -3886,36 +3982,10 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 760,
-        "y": 2040,
+        "x": 670,
+        "y": 1960,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "a699dd17ed4185cf",
-        "type": "inject",
-        "z": "8c9d42231fd19d3c",
-        "g": "c3b7d9597903239c",
-        "name": "RESET",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "[ ]",
-        "payloadType": "json",
-        "x": 970,
-        "y": 2000,
-        "wires": [
-            [
-                "8cb1aceef81045bd"
-            ]
         ]
     },
     {
@@ -3957,8 +4027,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 640,
-        "y": 2160,
+        "x": 650,
+        "y": 2080,
         "wires": [
             []
         ]
@@ -4002,8 +4072,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 640,
-        "y": 2200,
+        "x": 650,
+        "y": 2120,
         "wires": [
             []
         ]
@@ -4173,11 +4243,11 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 22,
+        "order": 25,
         "width": 6,
         "height": 1,
         "name": "Current correction (RTC)",
-        "label": "Correction",
+        "label": "Current correction",
         "format": "{{msg.payload}} °C",
         "layout": "row-spread",
         "className": "",
@@ -4876,7 +4946,7 @@
         "label": "",
         "tooltip": "",
         "group": "e27cfec311892d88",
-        "order": 5,
+        "order": 6,
         "width": 2,
         "height": 1,
         "wrap": false,
@@ -4888,7 +4958,7 @@
         "max": "+5",
         "step": "0.1",
         "className": "",
-        "x": 3050,
+        "x": 3170,
         "y": 800,
         "wires": [
             [
@@ -4906,7 +4976,7 @@
         "label": "",
         "tooltip": "",
         "group": "e27cfec311892d88",
-        "order": 7,
+        "order": 8,
         "width": 2,
         "height": 1,
         "wrap": false,
@@ -4918,7 +4988,7 @@
         "max": "+5",
         "step": "0.1",
         "className": "",
-        "x": 3170,
+        "x": 3290,
         "y": 800,
         "wires": [
             [
@@ -4936,7 +5006,7 @@
         "label": "",
         "tooltip": "",
         "group": "e27cfec311892d88",
-        "order": 9,
+        "order": 10,
         "width": 2,
         "height": 1,
         "wrap": false,
@@ -4948,7 +5018,7 @@
         "max": "+5",
         "step": "0.1",
         "className": "",
-        "x": 3290,
+        "x": 3430,
         "y": 800,
         "wires": [
             [
@@ -4966,7 +5036,7 @@
         "label": "",
         "tooltip": "",
         "group": "e27cfec311892d88",
-        "order": 14,
+        "order": 18,
         "width": 2,
         "height": 1,
         "wrap": false,
@@ -4978,7 +5048,7 @@
         "max": "0",
         "step": "0.1",
         "className": "",
-        "x": 3050,
+        "x": 3170,
         "y": 980,
         "wires": [
             [
@@ -4996,7 +5066,7 @@
         "label": "",
         "tooltip": "",
         "group": "e27cfec311892d88",
-        "order": 16,
+        "order": 20,
         "width": 2,
         "height": 1,
         "wrap": false,
@@ -5008,7 +5078,7 @@
         "max": "0",
         "step": "0.1",
         "className": "",
-        "x": 3170,
+        "x": 3290,
         "y": 980,
         "wires": [
             [
@@ -5026,7 +5096,7 @@
         "label": "",
         "tooltip": "",
         "group": "e27cfec311892d88",
-        "order": 18,
+        "order": 22,
         "width": 2,
         "height": 1,
         "wrap": false,
@@ -5038,7 +5108,7 @@
         "max": "0",
         "step": "0.1",
         "className": "",
-        "x": 3290,
+        "x": 3410,
         "y": 980,
         "wires": [
             [
@@ -5059,8 +5129,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3620,
-        "y": 760,
+        "x": 3640,
+        "y": 780,
         "wires": [
             []
         ]
@@ -5071,9 +5141,9 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 4,
+        "order": 3,
         "width": 3,
-        "height": 3,
+        "height": 4,
         "name": "Warm limits",
         "label": "Too warm",
         "format": "{{msg.payload}}",
@@ -5107,9 +5177,9 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 13,
+        "order": 15,
         "width": 3,
-        "height": 3,
+        "height": 4,
         "name": "Cold limits",
         "label": "Too cold",
         "format": "{{msg.payload}}",
@@ -5307,7 +5377,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 21,
+        "order": 24,
         "width": 6,
         "height": 1,
         "name": "Start SP (RTC)",
@@ -5325,7 +5395,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 23,
+        "order": 26,
         "width": 6,
         "height": 1,
         "name": "Result SP (RTC)",
@@ -5654,14 +5724,14 @@
         "z": "8c9d42231fd19d3c",
         "g": "c3b7d9597903239c",
         "name": "Chart Water (ROOM)",
-        "func": "var SP_Ta                   = global.get('SP_Final',\"file\");                    // Current Setpoint Ta\nvar PV_Tr                   = global.get('Main_Inlet_Temp');                    // Current inlet temperature\nvar PV_Ta                   = global.get('Main_Outlet_Temp');                   // Current outlet temperature\nvar DHW_Temp                = global.get('DHW_Temp');                           // Current TANK temperature\nvar ThreeWay_Valve_State    = global.get(\"ThreeWay_Valve_State\");               // Current state of the 3-way valve\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={}, msg9={}, msg10={}, msg11={}, msg12={};\n\nmsg1.payload = SP_Ta;                                                           //\nmsg1.payload = Number(msg1.payload).toFixed(0);\nmsg1.payload = parseFloat(msg1.payload);\nmsg1.topic='SP Ta';                                                             // \n\nmsg2.payload = PV_Tr;                                                           // \nmsg2.payload = Number(msg2.payload).toFixed(1);\nmsg2.payload = parseFloat(msg2.payload);\nmsg2.topic='PV Tr';                                                             // \n\nmsg3.payload = PV_Ta;                                                           // \nmsg3.payload = Number(msg3.payload).toFixed(1);\nmsg3.payload = parseFloat(msg3.payload);\nmsg3.topic='PV Ta';                                                             // \n\nmsg4.payload = ThreeWay_Valve_State;                                            // \nmsg4.payload = Number(msg4.payload).toFixed(0);\nmsg4.payload = parseFloat(msg4.payload);\nmsg4.topic='ThreeWay Valve State';                                              //  \n\nmsg5.payload = DHW_Temp;                                                        // \nmsg5.payload = Number(msg5.payload).toFixed(0);\nmsg5.payload = parseFloat(msg5.payload);\nmsg5.topic='Tank PV';                                                           //  \n\n\n\n// ThreeWay_Valve_state = ROOM mode > output value to pin 1\nif (ThreeWay_Valve_State == 0) {\n    return [ [msg1, msg2, msg3] , null ];\n    } \n\n// ThreeWay_Valve_state = DHW mode > output value to pin 2, including the PV_Tank\nelse {\n    return [ null , [msg1, msg2, msg3, msg5] ];\n    }",
+        "func": "var SP_Ta                   = global.get('SP_Final',\"file\");                    // Current Setpoint Ta\nvar PV_Tr                   = global.get('Main_Inlet_Temp');                    // Current inlet temperature\nvar PV_Ta                   = global.get('Main_Outlet_Temp');                   // Current outlet temperature\nvar DHW_Temp                = global.get('DHW_Temp');                           // Current TANK temperature\nvar ThreeWay_Valve_State    = global.get(\"ThreeWay_Valve_State\");               // Current state of the 3-way valve\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={};\n\nmsg1.payload = SP_Ta;                                                           //\nmsg1.payload = Number(msg1.payload).toFixed(0);\nmsg1.payload = parseFloat(msg1.payload);\nmsg1.topic='SP Ta';                                                             // \n\nmsg2.payload = PV_Tr;                                                           // \nmsg2.payload = Number(msg2.payload).toFixed(1);\nmsg2.payload = parseFloat(msg2.payload);\nmsg2.topic='PV Tr';                                                             // \n\nmsg3.payload = PV_Ta;                                                           // \nmsg3.payload = Number(msg3.payload).toFixed(1);\nmsg3.payload = parseFloat(msg3.payload);\nmsg3.topic='PV Ta';                                                             // \n\nmsg4.payload = ThreeWay_Valve_State;                                            // \nmsg4.payload = Number(msg4.payload).toFixed(0);\nmsg4.payload = parseFloat(msg4.payload);\nmsg4.topic='ThreeWay Valve State';                                              //  \n\nmsg5.payload = DHW_Temp;                                                        // \nmsg5.payload = Number(msg5.payload).toFixed(0);\nmsg5.payload = parseFloat(msg5.payload);\nmsg5.topic='Tank PV';                                                           //  \n\n\n\n// ThreeWay_Valve_state = ROOM mode > output value to pin 1\nif (ThreeWay_Valve_State == 0) {\n    return [ [msg1, msg2, msg3] , null ];\n    } \n\n// ThreeWay_Valve_state = DHW mode > output value to pin 2, including the PV_Tank\nelse {\n    return [ null , [msg1, msg2, msg3, msg5] ];\n    }",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
-        "y": 2180,
+        "x": 360,
+        "y": 2100,
         "wires": [
             [
                 "9802bf01ebf45d28"
@@ -5686,43 +5756,18 @@
                 "vt": "str"
             }
         ],
-        "repeat": "30",
+        "repeat": "60",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
         "topic": "trigger",
+        "payload": "",
         "payloadType": "date",
-        "x": 230,
-        "y": 2180,
+        "x": 140,
+        "y": 2100,
         "wires": [
             [
                 "c9c2bf06edb19d41"
-            ]
-        ]
-    },
-    {
-        "id": "c42ef7f9448f3c9a",
-        "type": "inject",
-        "z": "8c9d42231fd19d3c",
-        "g": "c3b7d9597903239c",
-        "name": "RESET",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "[ ]",
-        "payloadType": "json",
-        "x": 760,
-        "y": 2120,
-        "wires": [
-            [
-                "9802bf01ebf45d28"
             ]
         ]
     },
@@ -5744,12 +5789,10 @@
         "topic": "",
         "payload": "[ ]",
         "payloadType": "json",
-        "x": 760,
-        "y": 2240,
+        "x": 110,
+        "y": 2180,
         "wires": [
-            [
-                "9789265573ab4c80"
-            ]
+            []
         ]
     },
     {
@@ -5764,8 +5807,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 2040,
+        "x": 370,
+        "y": 1960,
         "wires": [
             [
                 "8cb1aceef81045bd"
@@ -5787,14 +5830,15 @@
                 "vt": "str"
             }
         ],
-        "repeat": "30",
+        "repeat": "120",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
         "topic": "trigger",
+        "payload": "",
         "payloadType": "date",
-        "x": 240,
-        "y": 2040,
+        "x": 140,
+        "y": 1960,
         "wires": [
             [
                 "9f3df8b1cba0bbda"
@@ -5862,8 +5906,8 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 12,
-        "width": 6,
+        "order": 14,
+        "width": 5,
         "height": 1,
         "name": "Livingroom PV",
         "label": "Livingroom PV",
@@ -5948,206 +5992,6 @@
             [
                 "5b0c451c1ec63b84"
             ]
-        ]
-    },
-    {
-        "id": "ea3029991749f77b",
-        "type": "mqtt in",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "TOP15 - panasonic_heat_pump/main/Heat_Energy_Production",
-        "topic": "panasonic_heat_pump/main/Heat_Energy_Production",
-        "qos": "1",
-        "datatype": "auto",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 370,
-        "y": 1320,
-        "wires": [
-            [
-                "38b10c117605255d"
-            ]
-        ]
-    },
-    {
-        "id": "fa2eba3089ca0ef4",
-        "type": "ui_chart",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "",
-        "group": "fb77ab43998a2f18",
-        "order": 1,
-        "width": 26,
-        "height": 8,
-        "label": "Energy",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "HH:mm",
-        "interpolate": "step",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "12",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#056647",
-            "#d1102b",
-            "#0082cd",
-            "#ff7f0e",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 960,
-        "y": 1400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8fd1613ec2d31e77",
-        "type": "mqtt in",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "TOP26 - panasonic_heat_pump/main/Defrosting_State",
-        "topic": "panasonic_heat_pump/main/Defrosting_State",
-        "qos": "1",
-        "datatype": "auto",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 400,
-        "y": 1680,
-        "wires": [
-            [
-                "21857afb8366acf2"
-            ]
-        ]
-    },
-    {
-        "id": "3b552bccda090181",
-        "type": "mqtt in",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "TOP40 - panasonic_heat_pump/main/DHW_Energy_Production",
-        "topic": "panasonic_heat_pump/main/DHW_Energy_Production",
-        "qos": "1",
-        "datatype": "auto",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 370,
-        "y": 1440,
-        "wires": [
-            [
-                "3a6bb7844523ece7"
-            ]
-        ]
-    },
-    {
-        "id": "ead1f2d77a00861d",
-        "type": "mqtt in",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "TOP41 - panasonic_heat_pump/main/DHW_Energy_Consumption",
-        "topic": "panasonic_heat_pump/main/DHW_Energy_Consumption",
-        "qos": "1",
-        "datatype": "auto",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 380,
-        "y": 1500,
-        "wires": [
-            [
-                "ca8fd698c67b1cfa"
-            ]
-        ]
-    },
-    {
-        "id": "8a140f3a3a1ff736",
-        "type": "mqtt in",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "TOP67 - panasonic_heat_pump/main/Compressor_Current",
-        "topic": "panasonic_heat_pump/main/Compressor_Current",
-        "qos": "1",
-        "datatype": "auto",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 390,
-        "y": 1620,
-        "wires": [
-            [
-                "fae151e3fc249477"
-            ]
-        ]
-    },
-    {
-        "id": "1cbdb190d6f52cb6",
-        "type": "ui_chart",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "",
-        "group": "fb77ab43998a2f18",
-        "order": 2,
-        "width": 26,
-        "height": 7,
-        "label": "Efficiency",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "HH:mm",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "12",
-        "removeOlderPoints": "1000",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 940,
-        "y": 1700,
-        "wires": [
-            []
         ]
     },
     {
@@ -6285,160 +6129,12 @@
         ]
     },
     {
-        "id": "fe8e23b8971b868e",
-        "type": "link in",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "COP calculated",
-        "links": [
-            "306b69356454f3ff"
-        ],
-        "x": 700,
-        "y": 1740,
-        "wires": [
-            [
-                "1cbdb190d6f52cb6"
-            ]
-        ],
-        "l": true
-    },
-    {
-        "id": "b1933566192d3b78",
-        "type": "mqtt in",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "TOP53 - panasonic_heat_pump/main/Eva_Outlet_Temp",
-        "topic": "panasonic_heat_pump/main/Eva_Outlet_Temp",
-        "qos": "1",
-        "datatype": "auto",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 400,
-        "y": 1800,
-        "wires": [
-            [
-                "039ca8047ee5b833"
-            ]
-        ]
-    },
-    {
-        "id": "fae151e3fc249477",
-        "type": "change",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Current [A]",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 1620,
-        "wires": [
-            [
-                "1cbdb190d6f52cb6"
-            ]
-        ]
-    },
-    {
-        "id": "21857afb8366acf2",
-        "type": "change",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Defrost State [-]",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 1680,
-        "wires": [
-            [
-                "1cbdb190d6f52cb6"
-            ]
-        ]
-    },
-    {
-        "id": "039ca8047ee5b833",
-        "type": "change",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "EVA outlet [°C]",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 1800,
-        "wires": [
-            [
-                "1cbdb190d6f52cb6"
-            ]
-        ]
-    },
-    {
-        "id": "8e0dc8ab2999f4ec",
-        "type": "inject",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "RESET",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "[ ]",
-        "payloadType": "json",
-        "x": 950,
-        "y": 1560,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "dc69bdbe82bc7c6e",
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 6,
+        "order": 7,
         "width": 1,
         "height": 1,
         "name": "-3",
@@ -6446,7 +6142,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3050,
+        "x": 3170,
         "y": 760,
         "wires": []
     },
@@ -6456,7 +6152,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 8,
+        "order": 9,
         "width": 1,
         "height": 1,
         "name": "-2",
@@ -6464,7 +6160,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3170,
+        "x": 3290,
         "y": 760,
         "wires": []
     },
@@ -6474,7 +6170,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 10,
+        "order": 11,
         "width": 1,
         "height": 1,
         "name": "-1",
@@ -6482,7 +6178,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3290,
+        "x": 3430,
         "y": 760,
         "wires": []
     },
@@ -6492,7 +6188,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 15,
+        "order": 19,
         "width": 1,
         "height": 1,
         "name": "+1",
@@ -6500,7 +6196,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3050,
+        "x": 3170,
         "y": 1020,
         "wires": []
     },
@@ -6510,7 +6206,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 17,
+        "order": 21,
         "width": 1,
         "height": 1,
         "name": "+2",
@@ -6518,7 +6214,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3170,
+        "x": 3290,
         "y": 1020,
         "wires": []
     },
@@ -6528,7 +6224,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 19,
+        "order": 23,
         "width": 1,
         "height": 1,
         "name": "+3",
@@ -6536,123 +6232,9 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3290,
+        "x": 3410,
         "y": 1020,
         "wires": []
-    },
-    {
-        "id": "38b10c117605255d",
-        "type": "change",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Energy Production [HEAT]",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 1320,
-        "wires": [
-            [
-                "fa2eba3089ca0ef4"
-            ]
-        ]
-    },
-    {
-        "id": "53393ad3ce2b9113",
-        "type": "change",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Energy Consumption [HEAT]",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 1360,
-        "wires": [
-            [
-                "fa2eba3089ca0ef4",
-                "b3e1e417d51330e7"
-            ]
-        ]
-    },
-    {
-        "id": "3a6bb7844523ece7",
-        "type": "change",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Energy Production [DHW]",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 1440,
-        "wires": [
-            [
-                "fa2eba3089ca0ef4"
-            ]
-        ]
-    },
-    {
-        "id": "ca8fd698c67b1cfa",
-        "type": "change",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Energy Consumption [DHW]",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 1500,
-        "wires": [
-            [
-                "fa2eba3089ca0ef4",
-                "bbe6832628277539"
-            ]
-        ]
     },
     {
         "id": "354fe89415b3f383",
@@ -6677,57 +6259,6 @@
         "wires": [
             [
                 "0d58a1e854263ec4"
-            ]
-        ]
-    },
-    {
-        "id": "2363c41d934e266c",
-        "type": "mqtt in",
-        "z": "8c9d42231fd19d3c",
-        "d": true,
-        "g": "f9448182b177e40e",
-        "name": "TOP26 - panasonic_heat_pump/main/Defrosting_State",
-        "topic": "panasonic_heat_pump/main/Defrosting_State",
-        "qos": "1",
-        "datatype": "auto",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 400,
-        "y": 1880,
-        "wires": [
-            [
-                "adf77ab5634ca95a"
-            ]
-        ]
-    },
-    {
-        "id": "adf77ab5634ca95a",
-        "type": "change",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Defrosting_state",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 1880,
-        "wires": [
-            [
-                "1cbdb190d6f52cb6"
             ]
         ]
     },
@@ -9781,42 +9312,6 @@
         "wires": []
     },
     {
-        "id": "c2f90b65d2418083",
-        "type": "ui_text",
-        "z": "8c9d42231fd19d3c",
-        "g": "a8ac5b148d851a6b",
-        "group": "e27cfec311892d88",
-        "order": 3,
-        "width": 6,
-        "height": 1,
-        "name": "spacer 6x1",
-        "label": "",
-        "format": "",
-        "layout": "row-right",
-        "className": "",
-        "x": 3970,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "6e638f910884ac8a",
-        "type": "ui_text",
-        "z": "8c9d42231fd19d3c",
-        "g": "a8ac5b148d851a6b",
-        "group": "e27cfec311892d88",
-        "order": 20,
-        "width": 6,
-        "height": 1,
-        "name": "spacer 6x1",
-        "label": "",
-        "format": "",
-        "layout": "row-right",
-        "className": "",
-        "x": 3970,
-        "y": 760,
-        "wires": []
-    },
-    {
         "id": "7ad13ef881e1231e",
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
@@ -9946,57 +9441,6 @@
         "wires": [
             [
                 "9281d7ca9b292f9f"
-            ]
-        ]
-    },
-    {
-        "id": "b3e1e417d51330e7",
-        "type": "link out",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "Energy Consumption [HEAT]",
-        "mode": "link",
-        "links": [
-            "0a964a94cb194778",
-            "644ab58ff8db1099",
-            "8cfd78f878b481c0",
-            "09413c5fb62794f0"
-        ],
-        "x": 1005,
-        "y": 1360,
-        "wires": []
-    },
-    {
-        "id": "bbe6832628277539",
-        "type": "link out",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "Energy Consumption [DHW]",
-        "mode": "link",
-        "links": [
-            "20730213898479e0",
-            "bcef6fbbc58113a6",
-            "05c67c5f7508a04d",
-            "4d9976602e173a3b"
-        ],
-        "x": 1005,
-        "y": 1500,
-        "wires": []
-    },
-    {
-        "id": "8627726ba882e493",
-        "type": "link in",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "",
-        "links": [
-            "9de1bde370b68508"
-        ],
-        "x": 155,
-        "y": 1360,
-        "wires": [
-            [
-                "53393ad3ce2b9113"
             ]
         ]
     },
@@ -10283,6 +9727,1223 @@
         ]
     },
     {
+        "id": "ea3029991749f77b",
+        "type": "mqtt in",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "TOP15 - panasonic_heat_pump/main/Heat_Energy_Production",
+        "topic": "panasonic_heat_pump/main/Heat_Energy_Production",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 1300,
+        "wires": [
+            [
+                "4b0bb57d44bd8bb1"
+            ]
+        ]
+    },
+    {
+        "id": "fa2eba3089ca0ef4",
+        "type": "ui_chart",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "group": "fb77ab43998a2f18",
+        "order": 1,
+        "width": 26,
+        "height": 8,
+        "label": "Energy",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "step",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#056647",
+            "#d1102b",
+            "#0082cd",
+            "#ff7f0e",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1020,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8fd1613ec2d31e77",
+        "type": "mqtt in",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "TOP26 - panasonic_heat_pump/main/Defrosting_State",
+        "topic": "panasonic_heat_pump/main/Defrosting_State",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 1660,
+        "wires": [
+            [
+                "6d77bc12fe8024ee"
+            ]
+        ]
+    },
+    {
+        "id": "3b552bccda090181",
+        "type": "mqtt in",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "TOP40 - panasonic_heat_pump/main/DHW_Energy_Production",
+        "topic": "panasonic_heat_pump/main/DHW_Energy_Production",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 1420,
+        "wires": [
+            [
+                "b4d652a4c0313e8a"
+            ]
+        ]
+    },
+    {
+        "id": "ead1f2d77a00861d",
+        "type": "mqtt in",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "TOP41 - panasonic_heat_pump/main/DHW_Energy_Consumption",
+        "topic": "panasonic_heat_pump/main/DHW_Energy_Consumption",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 1480,
+        "wires": [
+            [
+                "990e0858767f91fc"
+            ]
+        ]
+    },
+    {
+        "id": "8a140f3a3a1ff736",
+        "type": "mqtt in",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "TOP67 - panasonic_heat_pump/main/Compressor_Current",
+        "topic": "panasonic_heat_pump/main/Compressor_Current",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 1600,
+        "wires": [
+            [
+                "9ed43df7ef7fa246"
+            ]
+        ]
+    },
+    {
+        "id": "1cbdb190d6f52cb6",
+        "type": "ui_chart",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "group": "fb77ab43998a2f18",
+        "order": 2,
+        "width": 26,
+        "height": 7,
+        "label": "Efficiency",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "12",
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1000,
+        "y": 1680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fe8e23b8971b868e",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "COP calculated",
+        "links": [
+            "306b69356454f3ff",
+            "5787c91b303f2538"
+        ],
+        "x": 800,
+        "y": 1720,
+        "wires": [
+            [
+                "1cbdb190d6f52cb6"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "b1933566192d3b78",
+        "type": "mqtt in",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "TOP53 - panasonic_heat_pump/main/Eva_Outlet_Temp",
+        "topic": "panasonic_heat_pump/main/Eva_Outlet_Temp",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 1780,
+        "wires": [
+            [
+                "9534d89253d426ca"
+            ]
+        ]
+    },
+    {
+        "id": "fae151e3fc249477",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Current [A]",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1600,
+        "wires": [
+            [
+                "1cbdb190d6f52cb6"
+            ]
+        ]
+    },
+    {
+        "id": "21857afb8366acf2",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Defrost State [-]",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1660,
+        "wires": [
+            [
+                "1cbdb190d6f52cb6"
+            ]
+        ]
+    },
+    {
+        "id": "039ca8047ee5b833",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "EVA outlet [°C]",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1780,
+        "wires": [
+            [
+                "1cbdb190d6f52cb6"
+            ]
+        ]
+    },
+    {
+        "id": "8e0dc8ab2999f4ec",
+        "type": "inject",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "RESET",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[ ]",
+        "payloadType": "json",
+        "x": 1010,
+        "y": 1540,
+        "wires": [
+            [
+                "1cbdb190d6f52cb6"
+            ]
+        ]
+    },
+    {
+        "id": "38b10c117605255d",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Energy Production [HEAT]",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1300,
+        "wires": [
+            [
+                "fa2eba3089ca0ef4"
+            ]
+        ]
+    },
+    {
+        "id": "53393ad3ce2b9113",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Energy Consumption [HEAT]",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1340,
+        "wires": [
+            [
+                "fa2eba3089ca0ef4",
+                "b3e1e417d51330e7"
+            ]
+        ]
+    },
+    {
+        "id": "3a6bb7844523ece7",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Energy Production [DHW]",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1420,
+        "wires": [
+            [
+                "fa2eba3089ca0ef4"
+            ]
+        ]
+    },
+    {
+        "id": "ca8fd698c67b1cfa",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Energy Consumption [DHW]",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 1480,
+        "wires": [
+            [
+                "fa2eba3089ca0ef4",
+                "bbe6832628277539"
+            ]
+        ]
+    },
+    {
+        "id": "b3e1e417d51330e7",
+        "type": "link out",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "Energy Consumption [HEAT]",
+        "mode": "link",
+        "links": [
+            "0a964a94cb194778",
+            "644ab58ff8db1099",
+            "8cfd78f878b481c0",
+            "09413c5fb62794f0"
+        ],
+        "x": 1065,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "bbe6832628277539",
+        "type": "link out",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "Energy Consumption [DHW]",
+        "mode": "link",
+        "links": [
+            "20730213898479e0",
+            "bcef6fbbc58113a6",
+            "05c67c5f7508a04d",
+            "4d9976602e173a3b"
+        ],
+        "x": 1065,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "8627726ba882e493",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "links": [
+            "9de1bde370b68508"
+        ],
+        "x": 215,
+        "y": 1340,
+        "wires": [
+            [
+                "79ff4d14869086b3"
+            ]
+        ]
+    },
+    {
+        "id": "4b0bb57d44bd8bb1",
+        "type": "delay",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 620,
+        "y": 1300,
+        "wires": [
+            [
+                "38b10c117605255d"
+            ]
+        ]
+    },
+    {
+        "id": "b4d652a4c0313e8a",
+        "type": "delay",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 620,
+        "y": 1420,
+        "wires": [
+            [
+                "3a6bb7844523ece7"
+            ]
+        ]
+    },
+    {
+        "id": "990e0858767f91fc",
+        "type": "delay",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 620,
+        "y": 1480,
+        "wires": [
+            [
+                "ca8fd698c67b1cfa"
+            ]
+        ]
+    },
+    {
+        "id": "9ed43df7ef7fa246",
+        "type": "delay",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 620,
+        "y": 1600,
+        "wires": [
+            [
+                "fae151e3fc249477"
+            ]
+        ]
+    },
+    {
+        "id": "6d77bc12fe8024ee",
+        "type": "delay",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 620,
+        "y": 1660,
+        "wires": [
+            [
+                "21857afb8366acf2"
+            ]
+        ]
+    },
+    {
+        "id": "9534d89253d426ca",
+        "type": "delay",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 620,
+        "y": 1780,
+        "wires": [
+            [
+                "039ca8047ee5b833"
+            ]
+        ]
+    },
+    {
+        "id": "79ff4d14869086b3",
+        "type": "delay",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 620,
+        "y": 1340,
+        "wires": [
+            [
+                "53393ad3ce2b9113"
+            ]
+        ]
+    },
+    {
+        "id": "9e7985132053da99",
+        "type": "ui_numeric",
+        "z": "8c9d42231fd19d3c",
+        "g": "a8ac5b148d851a6b",
+        "name": "rtc_off",
+        "label": "",
+        "tooltip": "",
+        "group": "e27cfec311892d88",
+        "order": 4,
+        "width": 2,
+        "height": 1,
+        "wrap": false,
+        "passthru": false,
+        "topic": "rtc_off",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "+20",
+        "step": "0.1",
+        "className": "",
+        "x": 3050,
+        "y": 800,
+        "wires": [
+            [
+                "aae82d0c01404d51"
+            ]
+        ]
+    },
+    {
+        "id": "47b72adc26e2025f",
+        "type": "ui_text",
+        "z": "8c9d42231fd19d3c",
+        "group": "e27cfec311892d88",
+        "order": 5,
+        "width": 1,
+        "height": 1,
+        "name": "off",
+        "label": "off",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 3050,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "6a4e29a621172a7e",
+        "type": "ui_numeric",
+        "z": "8c9d42231fd19d3c",
+        "name": "rtc_on",
+        "label": "",
+        "tooltip": "",
+        "group": "e27cfec311892d88",
+        "order": 16,
+        "width": 2,
+        "height": 1,
+        "wrap": false,
+        "passthru": false,
+        "topic": "rtc_on",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": "-20",
+        "max": "0",
+        "step": "0.1",
+        "className": "",
+        "x": 3050,
+        "y": 980,
+        "wires": [
+            [
+                "aae82d0c01404d51"
+            ]
+        ]
+    },
+    {
+        "id": "449411f64f3ffe0b",
+        "type": "ui_text",
+        "z": "8c9d42231fd19d3c",
+        "group": "e27cfec311892d88",
+        "order": 17,
+        "width": 1,
+        "height": 1,
+        "name": "on",
+        "label": "on",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 3050,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "4b2cff40b8a3ecc9",
+        "type": "ui_text",
+        "z": "8c9d42231fd19d3c",
+        "g": "a8ac5b148d851a6b",
+        "group": "e27cfec311892d88",
+        "order": 13,
+        "width": 1,
+        "height": 2,
+        "name": "spacer 1x2",
+        "label": "",
+        "format": "",
+        "layout": "row-right",
+        "className": "",
+        "x": 3970,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "b09d20349841eaed",
+        "type": "inject",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "Once per 15minutes",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "900",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "trigger",
+        "x": 240,
+        "y": 2780,
+        "wires": [
+            [
+                "d4198e0e57720e55"
+            ]
+        ]
+    },
+    {
+        "id": "d4198e0e57720e55",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "Function - bucket 1 + 2 combined",
+        "func": "var myArray1 = global.get(\"COP_DHW_24m\",\"file\");                                // DHW\n\nvar myArray2 = global.get(\"COP_HEAT_24m\",\"file\");                               // HEAT\n\nlet msg1={}, msg2={};\n\nmsg1 = myArray1;\nmsg2 = myArray2;\n\nvar varlabels   = msg1.payload[0].labels;\nvar varData1    = msg1.payload[0].data[0];\nvar varData2    = msg2.payload[0].data[0];\n\nvar m={};\n    m.labels    = varlabels;\n    m.series    = ['DHW', 'HEAT'];\n    m.data      = [varData1, varData2];\n\nreturn {payload:[m]};\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 2780,
+        "wires": [
+            [
+                "eee624aa045ae22a"
+            ]
+        ],
+        "outputLabels": [
+            "graaddagen_calc"
+        ]
+    },
+    {
+        "id": "8859608d9186c4e4",
+        "type": "comment",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "Bucket 1 + 2 + 3 combined to chart",
+        "info": "",
+        "x": 260,
+        "y": 2740,
+        "wires": []
+    },
+    {
+        "id": "47a9e516229e0256",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "e1f45532e4338e4a",
+        "name": "Store information to COP_HEAT_24m",
+        "func": "var myArray4 = msg;\nglobal.set(\"COP_HEAT_24m\", myArray4,\"file\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 2460,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "graaddagen 24h"
+        ]
+    },
+    {
+        "id": "278b50b68f01198e",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "Load bar-chart data",
+        "func": "var myArray1 = global.get(\"COP_HEAT_24m\",\"file\");\nvar myArray2 = global.get(\"COP_DHW_24m\",\"file\");\n\nlet msg1={}, msg2={}, msg3={};\nmsg1 = myArray1;\nmsg2 = myArray2;\n\nreturn [msg1,msg2];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 2360,
+        "wires": [
+            [
+                "1ca44efe39136a9a"
+            ],
+            [
+                "2bb4af86f0c78aed"
+            ]
+        ],
+        "outputLabels": [
+            "COP_HEAT_24m",
+            "COP_DHW_24m"
+        ]
+    },
+    {
+        "id": "93a7de2857166209",
+        "type": "inject",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "Restore after boot",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "trigger",
+        "x": 210,
+        "y": 2360,
+        "wires": [
+            [
+                "278b50b68f01198e"
+            ]
+        ]
+    },
+    {
+        "id": "d63cf14c266a32c5",
+        "type": "inject",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "RESET",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[ ]",
+        "payloadType": "json",
+        "x": 190,
+        "y": 2840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d5724fa53412c7c1",
+        "type": "comment",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "31 Days information",
+        "info": "",
+        "x": 190,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "35c9b0fcbdf3c9e0",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "2114aed06fe6d5aa",
+        "name": "Store information to COP_DHW_24m",
+        "func": "var myArray1 = msg;\nglobal.set(\"COP_DHW_24m\", myArray1,\"file\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 2560,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "graaddagen 24h"
+        ]
+    },
+    {
+        "id": "eee624aa045ae22a",
+        "type": "ui_chart",
+        "z": "8c9d42231fd19d3c",
+        "g": "2c380c0bbcfb5eb1",
+        "name": "COP DHW + COP HEAT (24m)",
+        "group": "fb77ab43998a2f18",
+        "order": 3,
+        "width": 26,
+        "height": 7,
+        "label": "COP (24 months)",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#00876c",
+            "#de425b",
+            "#f59b56",
+            "#fff18f",
+            "#89bf77",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1270,
+        "y": 2780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3c6cbf1cc644de40",
+        "type": "inject",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "clear",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "clear",
+        "payloadType": "str",
+        "x": 370,
+        "y": 2840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ad2577846265e4ee",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "",
+        "links": [
+            "306b69356454f3ff"
+        ],
+        "x": 125,
+        "y": 2460,
+        "wires": [
+            [
+                "9a77a77bdc585373"
+            ]
+        ]
+    },
+    {
+        "id": "c302223665944545",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "",
+        "links": [
+            "5787c91b303f2538"
+        ],
+        "x": 125,
+        "y": 2560,
+        "wires": [
+            [
+                "721b7d606f558c73"
+            ]
+        ]
+    },
+    {
+        "id": "9a77a77bdc585373",
+        "type": "delay",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 2460,
+        "wires": [
+            [
+                "1ca44efe39136a9a"
+            ]
+        ]
+    },
+    {
+        "id": "721b7d606f558c73",
+        "type": "delay",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 2560,
+        "wires": [
+            [
+                "2bb4af86f0c78aed"
+            ]
+        ]
+    },
+    {
+        "id": "2bb4af86f0c78aed",
+        "type": "bar-chart-data",
+        "z": "8c9d42231fd19d3c",
+        "g": "2114aed06fe6d5aa",
+        "name": "bar-chart DHW COP-24months",
+        "x_interval": "months",
+        "x_size": 24,
+        "unit": "",
+        "precision": 2,
+        "is_meter_reading": "False",
+        "agg_by": "avg",
+        "x": 870,
+        "y": 2560,
+        "wires": [
+            [
+                "35c9b0fcbdf3c9e0"
+            ]
+        ]
+    },
+    {
+        "id": "1ca44efe39136a9a",
+        "type": "bar-chart-data",
+        "z": "8c9d42231fd19d3c",
+        "g": "e1f45532e4338e4a",
+        "name": "bar-chart HEAT COP-24months",
+        "x_interval": "months",
+        "x_size": 24,
+        "unit": "",
+        "precision": "3",
+        "is_meter_reading": "False",
+        "agg_by": "avg",
+        "x": 870,
+        "y": 2460,
+        "wires": [
+            [
+                "47a9e516229e0256"
+            ]
+        ]
+    },
+    {
+        "id": "7e69bda9aa493902",
+        "type": "comment",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+        "info": "",
+        "x": 690,
+        "y": 2660,
+        "wires": []
+    },
+    {
+        "id": "c1a4ab9dbe8cadb2",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "name": "",
+        "links": [
+            "5701fbba24da9674"
+        ],
+        "x": 1465,
+        "y": 100,
+        "wires": [
+            [
+                "9281d7ca9b292f9f"
+            ]
+        ]
+    },
+    {
         "id": "a938de76db0b71f6",
         "type": "tab",
         "label": "WP Control",
@@ -10543,12 +11204,13 @@
         "nodes": [
             "f4e55b938e645737",
             "43b60b667e5e5610",
-            "306b69356454f3ff"
+            "306b69356454f3ff",
+            "5787c91b303f2538"
         ],
         "x": 1604,
-        "y": 879,
-        "w": 372,
-        "h": 82
+        "y": 859,
+        "w": 502,
+        "h": 122
     },
     {
         "id": "b37318d1b7f66e33",
@@ -12102,7 +12764,7 @@
         "z": "a938de76db0b71f6",
         "g": "23847da379e94b05",
         "name": "WAR + RTC + Softstart function",
-        "func": "//\n//      [SP0_start]                 = Value is set through the dashboard. Compares to a virtual Ta Direct.\n//      \n//      [correction_war]            = calculate a correction in this function if it is enabled\n//      [SP1_war]                   = [SP0_start] + [correction_war]\n//\n//      [correction_rtc]            = calculate a correction in this function if it is enabled\n//      [SP2_rtc]                   = [SP1_war] + [correction_rtc]\n//\n//      [correction_softstart]      = calculate a correction in this function if it is enabled\n//      [SP3_softstart]             = [SP2_rtc] + [Correction_softstart]\n//\n//      [SP4_night_reduction]       = [SP3_softstart] + [NightReduction_current_value]\n//\n//      [SP_Final]                  = [SP4_night_reduction] = New real SP to [SET5 SetZ1HeatRequestTemperature]\n//\n//////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////\n\n// All these functions ONLY need to be executed when the heatpump is in HEAT mode. \nvar ThreeWay_Valve_State=global.get('ThreeWay_Valve_State');                    // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)\n\nif (ThreeWay_Valve_State==1){msg.payload=0;return msg;}                         // If state is 1 (DHW mode), correction 0 is direclty exported to the message and the function ends here.\nelse\n{\n    ////////////////////////////////////////////////////////////////////////////\n    ////////////////////////////////////////////////////////////////////////////\n    \n    var SP0_start       = global.get('SP_DIRECT_virt',\"file\");                  // Get the global variable for SP_DIRECT_virt. Value is set through the dashboard\n    if (global.get(\"SP_DIRECT_virt\",\"file\") === undefined) \n        {\n        throw \"Virtual SP (Ta) is not correctly set in Dashboards. Please set it.\"\n        }\n        \n        \n    //////////////////////////////// WAR /////////////////////////////////////////\n    // This function replaces the virtual Ta Direct set from the dashboard. \n    //\n    // Design example\n    //          OUTSIDE                 WATER\n    //          Temperature     >>      Temperature\n    //----------------------------------------------------------------------------\n    // Range 1\n    //          (OT1=)  20      >>  25  (=WT1)\n    // Range 2\n    //          (OT2=)  5       >>  31  (=WT2)\n    //----------------------------------------------------------------------------\n    //          (OT2=)  5       >>  31  (=WT2)\n    // Range 3\n    //          (OT3=)  -10     >>  37  (=WT3)\n    // Range 4\n    //----------------------------------------------------------------------------\n    var war_state       = global.get('Correction_0_WAR_on_off',\"file\");             // Get the global variable. Used to see if the WAR function is enabled.\n    var war_Tb          = global.get('T_outside',\"file\");                           // Outdoor temperature.\n    if (isNaN(war_Tb))               // if the variable is Not a Number, produce an error message.\n            {throw \"WAR function: T_outside is not valid. Please correct this in the flow-configuration screen of NodeRed.\"}\n    var SP1_war                                                                     // set variable\n    \n    if (war_state==1 && war_Tb > -50)                                               // If the state is 1 (enabled), AND outside temperature contains a value.\n                                                                                    // Only if above conditions are met, we will go through the calculation.\n        {\n            var war_ot1         = global.get('war_ot1',\"file\");                 // Outside temperature high         (warm outside)\n            var war_ot2         = global.get('war_ot2',\"file\");                 // Outside temperature intermediate (intermediate outside temperature)\n            var war_ot3         = global.get('war_ot3',\"file\");                 // Outside temperature low          (cold outside)\n            var war_wt1         = global.get('war_wt1',\"file\");                 // Water temperature low            (cold water)\n            var war_wt2         = global.get('war_wt2',\"file\");                 // Water temperature intermediate   (intermediate water temperature)\n            var war_wt3         = global.get('war_wt3',\"file\");                 // Water temperature high           (warm water)\n\n                if (isNaN(war_ot1+war_ot2+war_ot3+war_wt1+war_wt2+war_wt3))     // if the variables are added to eachother and the result is Not a Number, produce an error message.\n                {throw \"WAR function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"}\n\n            if (war_Tb => war_ot1) \n                {SP1_war = war_wt1;}                                        // Range 1\n            \n            if (war_Tb < war_ot1 && war_Tb > war_ot2)                       // Range 2\n                {SP1_war = (((war_wt1-war_wt2)*((war_Tb-war_ot1)/(war_ot1-war_ot2)))+war_wt1);}\n                \n            if (war_Tb == war_ot2) {SP1_war = war_wt2;}                     // transition point 2|3\n            \n            if (war_Tb < war_ot2 && war_Tb > war_ot3)                       // Range 3\n                {SP1_war = (((war_wt2-war_wt3)*((war_Tb-war_ot2)/(war_ot2-war_ot3)))+war_wt2);}\n                \n            if (war_Tb <= war_ot3)                                          // Range 4\n                {SP1_war = war_wt3;}                                            \n    \n            SP1_war = Number(SP1_war).toFixed(0);\n            SP1_war = parseFloat(SP1_war);\n        }\n        \n    else\n        {\n            SP1_war = SP0_start;                                                // Get the global variable for SP_DIRECT_virt. Value is set through the dashboard\n        }\n        \n    \n    ////////////////////////////////////////////////////////////////////////////\n    //////////////////////////////// RTC ///////////////////////////////////////\n    //\n    // Automagical RoomTemperatureCompensation (=RTC) (original StooklijnDelta by CurlyMo, translated to NodeRed by EdterBak)\n    // This function checks a virtual setpoint of a room against a measured temperature of the room.\n    //\n    //\n    // [Function explanation]\n    // First check: Is the function enabled (through GUI/Dashboard). If not, correction will be 0.\n    // When enabled; Each IF checks the value of dT_rtc against an offset. If the check is true, the local variable \"Correction_1_RTC\" is corrected by -1 or +1.\n    // Additionally. If TWO IFs are true, then the correction is added twice. \n    // Eg. It is too hot inside (PV). When it is 1.5°C too warm, the RoomTemperatureCompensation variable will be -3.\n    //\n    //    \n    // If the RTC function is disabled, the correction is set to 0 so it is also visible as 0 in the dashboard.    \n    //\n\n    var rtc_state       = global.get('Correction_1_RTC_on_off',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n    \n    if (rtc_state == 0) {rtc_correction = 0;}                                   // If RTC is disabled, set correction to 0. end if\n    else\n        {\n\n        // Declaration of variables including their values.    \n        var rtc_correction  = 0;                                                // declare local variable, start with value zero\n        var rtc_PV          = global.get('T_woonkamer_BT');                     // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n        var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard. \n        var rtc_Tb          = global.get('T_outside',\"file\");                   // Outdoor temperature.\n        var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n        \n        //\n        // below are the variables containing the temperature ranges.\n        var rtc_t1          = global.get('rtc_t1',\"file\");                      // Range +3\n        var rtc_t2          = global.get('rtc_t2',\"file\");                      // Range +2\n        var rtc_t3          = global.get('rtc_t3',\"file\");                      // Range +1\n        var rtc_t4          = global.get('rtc_t4',\"file\");                      // Range -1\n        var rtc_t5          = global.get('rtc_t5',\"file\");                      // Range -2\n        var rtc_t6          = global.get('rtc_t6',\"file\");                      // Range -3\n        \n            if (isNaN(rtc_t1+rtc_t2+rtc_t3+rtc_t4+rtc_t5+rtc_t6))               // if the variables are added to eachother and the result is Not a Number, produce an error message.\n            {throw \"RTC function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"}\n            \n        // ADJUST THE VALUES BELOW TO YOUR OWN SITUATION\n        if (rtc_dT >= rtc_t3) {rtc_correction = rtc_correction -1;}             // It is a little too hot.\n        if (rtc_dT >= rtc_t2) {rtc_correction = rtc_correction -1;}             // It is too hot.\n        if (rtc_dT >= rtc_t1) {rtc_correction = rtc_correction -1;}             // It is way too hot.\n    \n        if (rtc_dT < rtc_t4) {rtc_correction = rtc_correction +1;}              // It is a little too cold\n        if (rtc_Tb < 18)                                                        // Extra check to justify increasing the setpoint this much.\n            {\n            if (rtc_dT < rtc_t5) {rtc_correction = rtc_correction +1;}          // It is too cold.\n            if (rtc_dT < rtc_t6) {rtc_correction = rtc_correction +1;}          // It is way too cold\n            }\n        }\n    \n    \n    \n    ////////////////////////////////////////////////////////////////////////////////\n    //\n    //      [SP0_start]                 = Value is set through the dashboard. Compares to a virtual Ta Direct.\n    //      \n    //      [correction_war]            = calculate a correction in this function if it is enabled\n    //      [SP1_war]                   = [SP0_start] + [correction_war]\n    //\n    //      [correction_rtc]            = calculate a correction in this function if it is enabled\n    //      [SP2_rtc]                   = [SP1_war] + [correction_rtc]\n    //\n    //      [correction_softstart]      = calculate a correction in this function if it is enabled\n    //      [SP3_softstart]             = [SP2_rtc] + [Correction_softstart]\n    //\n    //      [SP_Final]                  = [SP3_softstart] = New real SP to [SET5 SetZ1HeatRequestTemperature]\n    //\n    var SP2_rtc = SP1_war + rtc_correction;\n    \n    \n    \n    \n    \n    //////////////////////////////// SOFTSTART /////////////////////////////////////\n    // Declaration of variables including their values.\n    var ss_state            = global.get('Correction_2_softstart_on_off',\"file\");          // Get the global variable. Used to see if the softstart function is enabled.\n    if (ss_state == 0) {ss_correction = 0;} \n    \n    else \n        {\n            var ss_PV_Ta            = global.get('Main_Outlet_Temp');               // PV (Ta/outlet) Temperature of water.\n            var ss_PV_Tr            = global.get('Main_Inlet_Temp');                // PV (Tr/inlet) Temperature of water.            \n            var ss_dTmax            = 2;                                            // Maximum alowed temperature difference\n            var ss_Tb               = global.get('T_outside',\"file\");               // Outdoor temperature.\n                if (isNaN(ss_Tb))               // if the variable is Not a Number, produce an error message.\n                {throw \"SoftStart function: T_outside is not valid. Please correct this in the flow-configuration screen of NodeRed.\"}\n                \n            var ss_Hz               = global.get('compressor_frequency');           // Get the global variable for current compressor frequency\n            var ss_Threshold         = 30;                                           // Hz compressor treshold, initial value. This value is used if in case of error or the values for T_outside is unavailable. \n            var ss_correction_old   = global.get('Correction_2_softstart');         // Get the global variable. The variable correction by softstart function, from memory.\n                if (ss_correction_old === undefined) \n                {ss_correction_old = 0;}                                            // make sure there is a value present.\n            var ss_correction       = 0;                                            // set initial value new_correction as a basis for the calculation\n                    \n                    // Treshold calculation based on outside temperatures. Change these values to your own liking.\n                    if (ss_Tb >= 3)                     {ss_Threshold=30;}\n                    if (ss_Tb < 3 &&  ss_Tb >= 1)       {ss_Threshold=32;}\n                    if (ss_Tb < 1 &&  ss_Tb >= -2)      {ss_Threshold=37;}\n                    if (ss_Tb < -2 && ss_Tb >= -5)      {ss_Threshold=43;}\n                    if (ss_Tb < -5 && ss_Tb >= -7)      {ss_Threshold=46;}\n                    if (ss_Tb < -7 && ss_Tb >= -9)      {ss_Threshold=49;}\n                    if (ss_Tb < -9 && ss_Tb >= -11)     {ss_Threshold=51;}\n                    if (ss_Tb < -11)                    {ss_Threshold=53;}\n                    \n            // CONDITIONS and calculation for new_correction of the SP.\n                // 1 - Compressor frequency must be above 0\n                // 2 - Softstart function must be enabled (GUI boolean)\n                // 3 - Prevent intervention when the HP is coming back from DHW mode with very hot water. (PVTr < 32) (removed mow)\n            \n            if (ss_Hz > 5 && (SP2_rtc - ss_PV_Ta) > ss_dTmax) \n                {ss_correction = (ss_PV_Ta + ss_dTmax - SP2_rtc);\n                    if (ss_correction < -4){ss_correction = -4;}\n                }\n\n            else\n                {ss_correction = 0;} // because the conditions are not met, ss_correction is set to 0.\n            \n            // When a new correction value is found, it is compared to the old correction value (= ss_diff). \n            //\n                // ss_diff = [new] - [old]\n                // ss_diff = [-5]  - [0]  = -5     case 1; Allowed. Startup phase, correction required of -5.\n                // ss_diff = [-5]  - [-4] = -1     case 2; Allowed. Not startup phase, but bigger correction required\n                // ss_diff = [0]   - [0]  =  0     case 3; Allowed. Current correction the same as old correction.\n                // ss_diff = [-5]  - [-5] =  0     case 3; Allowed. Current correction the same as old correction.\n                // ss_diff = [-4]  - [-5] = +1     case 4; Restrict. Correction reduction. This is only allowed if rules below are met.\n                // ss_diff = [-1]  - [-5] = +4     case 5; Restrict. BIG correction reduction. This is not allowed if rules below are met.\n                \n            var ss_diff = (ss_correction - ss_correction_old);\n            \n            if (ss_diff <= 0)                                                       // Allowed. case 1, 2 and 3. \n                {ss_correction = ss_correction;}\n            \n            if (ss_diff > 0 && ss_Hz > ss_Threshold)                                // Do not allow. Case 4, 5. Check frequency against treshold if it is allow or not. Frequency is too high, so NEW_correction is overwritten with OLD_correction.\n                {ss_correction = ss_correction_old;}                        // Keep old correction.    \n    \n            if (ss_diff > 0 && ss_Hz <= ss_Threshold)                               // Allow. Restrict. Case 4, 5. Check frequency gainst treshold if it is allow or not. Frequency is low enough, so NEW_correction is kept.\n                {ss_correction = ss_correction_old + 1;}                            // Keep new correction. Note: this line can actually be taken out, but does no harm and helps understanding. New_correction is already determined above.\n        }\n    \n    ////////////////////////////////////////////////////////////////////////////////\n    //      [SP1_war]                   = [SP0_Start] + [war_correction]\n    //      [SP2_rtc]                   = [SP1_war] + [rtc_correction]\n    //      [SP3_Softstart]             = [SP2_trc] + [Correction_Softstart]\n    //      [SP_Final]                  = [SP3_Softstart] = New real SP to [SET5 SetZ1HeatRequestTemperature]\n    var SP3_ss = SP2_rtc + ss_correction;\n    ////////////////////////////////////////////////////////////////////////////////\n    \n    ////////////////////////////////////////////////////////////////////////////////\n    // Night Reduction\n    var nr_corr = global.get('NightReduction_current_value',\"file\");\n    if (nr_corr === undefined)\n        {nr_corr = 0;}\n    var SP4_nr = SP3_ss + nr_corr;\n    ////////////////////////////////////////////////////////////////////////////////\n    \n    \n    var SP_Final                        = SP4_nr;\n    \n    \n    \n    ////////////////////////////////////////////////////////////////////////////////\n    //  Make sure the calculated final setpoint is within the upper and the lower limit.\n    var SP_lower_limit                  = global.get('HEAT_SP_lower_limit',\"file\");\n    var SP_upper_limit                  = global.get('HEAT_SP_upper_limit',\"file\");\n    \n    if      (SP_lower_limit === undefined)      {}                                  //\n    else    {\n                if (SP_Final < SP_lower_limit)      {SP_Final = SP_lower_limit;}    //\n            }\n            \n    if      (SP_upper_limit === undefined)      {}                                  //\n    else    {\n                if (SP_Final > SP_upper_limit)      {SP_Final = SP_upper_limit;}    //\n            }\n            \n    \n    \n    let msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={}, msg9={}, msg10={};\n    \n    msg1.payload = SP0_start;                                                       // not required, for debugging\n    msg1.topic='SP0_start';                                                         // not required, for debugging\n    \n    msg2.payload = null;                                                            // required\n    msg2.topic='empty';                                                             // required\n    \n    msg3.payload = SP1_war;                                                         // required\n    msg3.topic='SP1_war';                                                           // required\n    \n    msg4.payload = rtc_correction;                                                  // not required, for debugging\n    msg4.topic = 'rtc_correction';                                                  // not required, for debugging\n    \n    msg5.payload = SP2_rtc;                                                         // required\n    msg5.topic = 'SP2_rtc';                                                         // required\n    \n    msg6.payload = ss_correction;                                                   // required\n    msg6.topic = 'ss_correction';                                                   // required\n    \n    msg7.payload = SP3_ss;                                                          // not required, for debugging\n    msg7.topic = 'SP3_ss';                                                          // not required, for debugging\n    \n    msg8.payload = SP_Final;                                                        // required\n    msg8.topic = 'SP_Final';                                                        // required\n    \n    msg9.payload = nr_corr;\n    msg9.topic = 'nightreduction';                                                  // not required, for debugging\n    \n    msg10.payload = ss_Hz;\n    msg10.topic = 'ss_Hz';                                                          // not required, for debugging\n    \n    \n    return [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10];\n    \n    \n}",
+        "func": "//\n//      [SP0_start]                 = Value is set through the dashboard. Compares to a virtual Ta Direct.\n//      \n//      [correction_war]            = calculate a correction in this function if it is enabled\n//      [SP1_war]                   = [SP0_start] + [correction_war]\n//\n//      [correction_rtc]            = calculate a correction in this function if it is enabled\n//      [SP2_rtc]                   = [SP1_war] + [correction_rtc]\n//\n//      [correction_softstart]      = calculate a correction in this function if it is enabled\n//      [SP3_softstart]             = [SP2_rtc] + [Correction_softstart]\n//\n//      [SP4_night_reduction]       = [SP3_softstart] + [NightReduction_current_value]\n//\n//      [SP_Final]                  = [SP4_night_reduction] = New real SP to [SET5 SetZ1HeatRequestTemperature]\n//\n//////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////\n\n// All these functions ONLY need to be executed when the heatpump is in HEAT mode. \nvar ThreeWay_Valve_State=global.get('ThreeWay_Valve_State');                    // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)\n\nif (ThreeWay_Valve_State==1){msg.payload=0;return msg;}                         // If state is 1 (DHW mode), correction 0 is direclty exported to the message and the function ends here.\nelse\n{\n    ////////////////////////////////////////////////////////////////////////////\n    ////////////////////////////////////////////////////////////////////////////\n    \n    var SP0_start       = global.get('SP_DIRECT_virt',\"file\");                  // Get the global variable for SP_DIRECT_virt. Value is set through the dashboard\n    if (global.get(\"SP_DIRECT_virt\",\"file\") === undefined) \n        {\n        throw \"Virtual SP (Ta) is not correctly set in Dashboards. Please set it.\"\n        }\n        \n        \n    //////////////////////////////// WAR /////////////////////////////////////////\n    // This function replaces the virtual Ta Direct set from the dashboard. \n    //\n    // Design example\n    //          OUTSIDE                 WATER\n    //          Temperature     >>      Temperature\n    //----------------------------------------------------------------------------\n    // Range 1\n    //          (OT1=)  20      >>  25  (=WT1)\n    // Range 2\n    //          (OT2=)  5       >>  31  (=WT2)\n    //----------------------------------------------------------------------------\n    //          (OT2=)  5       >>  31  (=WT2)\n    // Range 3\n    //          (OT3=)  -10     >>  37  (=WT3)\n    // Range 4\n    //----------------------------------------------------------------------------\n    var war_state       = global.get('Correction_0_WAR_on_off',\"file\");             // Get the global variable. Used to see if the WAR function is enabled.\n    var war_Tb          = global.get('T_outside',\"file\");                           // Outdoor temperature.\n    if (isNaN(war_Tb))               // if the variable is Not a Number, produce an error message.\n            {throw \"WAR function: T_outside is not valid. Please correct this in the flow-configuration screen of NodeRed.\"}\n    var SP1_war                                                                     // set variable\n    \n    if (war_state==1 && war_Tb > -50)                                               // If the state is 1 (enabled), AND outside temperature contains a value.\n                                                                                    // Only if above conditions are met, we will go through the calculation.\n        {\n            var war_ot1         = global.get('war_ot1',\"file\");                 // Outside temperature high         (warm outside)\n            var war_ot2         = global.get('war_ot2',\"file\");                 // Outside temperature intermediate (intermediate outside temperature)\n            var war_ot3         = global.get('war_ot3',\"file\");                 // Outside temperature low          (cold outside)\n            var war_wt1         = global.get('war_wt1',\"file\");                 // Water temperature low            (cold water)\n            var war_wt2         = global.get('war_wt2',\"file\");                 // Water temperature intermediate   (intermediate water temperature)\n            var war_wt3         = global.get('war_wt3',\"file\");                 // Water temperature high           (warm water)\n\n                if (isNaN(war_ot1+war_ot2+war_ot3+war_wt1+war_wt2+war_wt3))     // if the variables are added to eachother and the result is Not a Number, produce an error message.\n                {throw \"WAR function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"}\n\n            if (war_Tb => war_ot1) \n                {SP1_war = war_wt1;}                                        // Range 1\n            \n            if (war_Tb < war_ot1 && war_Tb > war_ot2)                       // Range 2\n                {SP1_war = (((war_wt1-war_wt2)*((war_Tb-war_ot1)/(war_ot1-war_ot2)))+war_wt1);}\n                \n            if (war_Tb == war_ot2) {SP1_war = war_wt2;}                     // transition point 2|3\n            \n            if (war_Tb < war_ot2 && war_Tb > war_ot3)                       // Range 3\n                {SP1_war = (((war_wt2-war_wt3)*((war_Tb-war_ot2)/(war_ot2-war_ot3)))+war_wt2);}\n                \n            if (war_Tb <= war_ot3)                                          // Range 4\n                {SP1_war = war_wt3;}                                            \n    \n            SP1_war = Number(SP1_war).toFixed(0);\n            SP1_war = parseFloat(SP1_war);\n        }\n        \n    else\n        {\n            SP1_war = SP0_start;                                                // Get the global variable for SP_DIRECT_virt. Value is set through the dashboard\n        }\n        \n    \n    ////////////////////////////////////////////////////////////////////////////\n    //////////////////////////////// RTC ///////////////////////////////////////\n    //\n    // Automagical RoomTemperatureCompensation (=RTC) (original StooklijnDelta by CurlyMo, translated to NodeRed by EdterBak)\n    // This function checks a virtual setpoint of a room against a measured temperature of the room.\n    //\n    //\n    // [Function explanation]\n    // First check: Is the function enabled (through GUI/Dashboard). If not, correction will be 0.\n    // When enabled; Each IF checks the value of dT_rtc against an offset. If the check is true, the local variable \"Correction_1_RTC\" is corrected by -1 or +1.\n    // Additionally. If TWO IFs are true, then the correction is added twice. \n    // Eg. It is too hot inside (PV). When it is 1.5°C too warm, the RoomTemperatureCompensation variable will be -3.\n    //\n    //    \n    // If the RTC function is disabled, the correction is set to 0 so it is also visible as 0 in the dashboard.    \n    //\n\n    var rtc_state       = global.get('Correction_1_RTC_on_off',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n    \n    if (rtc_state == 0) {rtc_correction = 0;}                                   // If RTC is disabled, set correction to 0. end if\n    else\n        {\n\n        // Declaration of variables including their values.    \n        var rtc_correction  = 0;                                                // declare local variable, start with value zero\n        var rtc_PV          = global.get('T_woonkamer_BT');                     // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n        var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard. \n        var rtc_Tb          = global.get('T_outside',\"file\");                   // Outdoor temperature.\n        var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n        \n        //\n        // below are the variables containing the temperature ranges.\n        var rtc_off         = global.get('rtc_off',\"file\");                     // Range turn heatpump off\n        var rtc_t1          = global.get('rtc_t1',\"file\");                      // Range +3\n        var rtc_t2          = global.get('rtc_t2',\"file\");                      // Range +2\n        var rtc_t3          = global.get('rtc_t3',\"file\");                      // Range +1\n        \n        var rtc_on          = global.get('rtc_on',\"file\");                      // Range turn heatpump on\n        var rtc_t4          = global.get('rtc_t4',\"file\");                      // Range -1\n        var rtc_t5          = global.get('rtc_t5',\"file\");                      // Range -2\n        var rtc_t6          = global.get('rtc_t6',\"file\");                      // Range -3\n        \n            if (isNaN(rtc_t1+rtc_t2+rtc_t3+rtc_t4+rtc_t5+rtc_t6+rtc_off+rtc_on))               // if the variables are added to eachother and the result is Not a Number, produce an error message.\n            {throw \"RTC function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"}\n        \n        var heatpump_switch;                                                    // create a variable to store HP state.\n        var Heatpump_State  = global.get('Heatpump_State',\"file\");              // get current state of the heatpump. on or off (1 or 0)\n        \n        // ADJUST THE VALUES BELOW TO YOUR OWN SITUATION\n        if (rtc_dT >= rtc_t3) {rtc_correction = rtc_correction -1;}             // It is a little too hot.\n        if (rtc_dT >= rtc_t2) {rtc_correction = rtc_correction -1;}             // It is too hot.\n        if (rtc_dT >= rtc_t1) {rtc_correction = rtc_correction -1;}             // It is way too hot.\n\n        if (rtc_dT > rtc_off && Heatpump_State == 1) {heatpump_switch = 0;}     // It is waaaaaay way too hot. Turn off heatpump\n        if (rtc_dT <= rtc_off && rtc_dT >= rtc_on) {heatpump_switch = null;}    // It is right in between, functioning heatpump.\n        if (rtc_dT < rtc_on && Heatpump_State == 0) {heatpump_switch = 1;}      // It is cold enough again, turn on heatpump\n\n        if (rtc_dT < rtc_t4) {rtc_correction = rtc_correction +1;}              // It is a little too cold\n        if (rtc_Tb < 18)                                                        // Extra check to justify increasing the setpoint this much.\n            {\n            if (rtc_dT < rtc_t5) {rtc_correction = rtc_correction +1;}          // It is too cold.\n            if (rtc_dT < rtc_t6) {rtc_correction = rtc_correction +1;}          // It is way too cold\n            }\n        }\n    \n    \n    \n    ////////////////////////////////////////////////////////////////////////////////\n    //\n    //      [SP0_start]                 = Value is set through the dashboard. Compares to a virtual Ta Direct.\n    //      \n    //      [correction_war]            = calculate a correction in this function if it is enabled\n    //      [SP1_war]                   = [SP0_start] + [correction_war]\n    //\n    //      [correction_rtc]            = calculate a correction in this function if it is enabled\n    //      [SP2_rtc]                   = [SP1_war] + [correction_rtc]\n    //\n    //      [correction_softstart]      = calculate a correction in this function if it is enabled\n    //      [SP3_softstart]             = [SP2_rtc] + [Correction_softstart]\n    //\n    //      [SP_Final]                  = [SP3_softstart] = New real SP to [SET5 SetZ1HeatRequestTemperature]\n    //\n    var SP2_rtc = SP1_war + rtc_correction;\n    \n    \n    \n    \n    \n    //////////////////////////////// SOFTSTART /////////////////////////////////////\n    // Declaration of variables including their values.\n    var ss_state            = global.get('Correction_2_softstart_on_off',\"file\");          // Get the global variable. Used to see if the softstart function is enabled.\n    if (ss_state == 0) {ss_correction = 0;} \n    \n    else \n        {\n            var ss_PV_Ta            = global.get('Main_Outlet_Temp');               // PV (Ta/outlet) Temperature of water.\n            var ss_PV_Tr            = global.get('Main_Inlet_Temp');                // PV (Tr/inlet) Temperature of water.            \n            var ss_dTmax            = 2;                                            // Maximum alowed temperature difference\n            var ss_Tb               = global.get('T_outside',\"file\");               // Outdoor temperature.\n                if (isNaN(ss_Tb))               // if the variable is Not a Number, produce an error message.\n                {throw \"SoftStart function: T_outside is not valid. Please correct this in the flow-configuration screen of NodeRed.\"}\n                \n            var ss_Hz               = global.get('compressor_frequency');           // Get the global variable for current compressor frequency\n            var ss_Threshold         = 30;                                           // Hz compressor treshold, initial value. This value is used if in case of error or the values for T_outside is unavailable. \n            var ss_correction_old   = global.get('Correction_2_softstart');         // Get the global variable. The variable correction by softstart function, from memory.\n                if (ss_correction_old === undefined) \n                {ss_correction_old = 0;}                                            // make sure there is a value present.\n            var ss_correction       = 0;                                            // set initial value new_correction as a basis for the calculation\n                    \n                    // Treshold calculation based on outside temperatures. Change these values to your own liking.\n                    if (ss_Tb >= 3)                     {ss_Threshold=30;}\n                    if (ss_Tb < 3 &&  ss_Tb >= 1)       {ss_Threshold=32;}\n                    if (ss_Tb < 1 &&  ss_Tb >= -2)      {ss_Threshold=37;}\n                    if (ss_Tb < -2 && ss_Tb >= -5)      {ss_Threshold=43;}\n                    if (ss_Tb < -5 && ss_Tb >= -7)      {ss_Threshold=46;}\n                    if (ss_Tb < -7 && ss_Tb >= -9)      {ss_Threshold=49;}\n                    if (ss_Tb < -9 && ss_Tb >= -11)     {ss_Threshold=51;}\n                    if (ss_Tb < -11)                    {ss_Threshold=53;}\n                    \n            // CONDITIONS and calculation for new_correction of the SP.\n                // 1 - Compressor frequency must be above 0\n                // 2 - Softstart function must be enabled (GUI boolean)\n                // 3 - Prevent intervention when the HP is coming back from DHW mode with very hot water. (PVTr < 32) (removed mow)\n            \n            if (ss_Hz > 5 && (SP2_rtc - ss_PV_Ta) > ss_dTmax) \n                {ss_correction = (ss_PV_Ta + ss_dTmax - SP2_rtc);\n                    if (ss_correction < -4){ss_correction = -4;}\n                }\n\n            else\n                {ss_correction = 0;} // because the conditions are not met, ss_correction is set to 0.\n            \n            // When a new correction value is found, it is compared to the old correction value (= ss_diff). \n            //\n                // ss_diff = [new] - [old]\n                // ss_diff = [-5]  - [0]  = -5     case 1; Allowed. Startup phase, correction required of -5.\n                // ss_diff = [-5]  - [-4] = -1     case 2; Allowed. Not startup phase, but bigger correction required\n                // ss_diff = [0]   - [0]  =  0     case 3; Allowed. Current correction the same as old correction.\n                // ss_diff = [-5]  - [-5] =  0     case 3; Allowed. Current correction the same as old correction.\n                // ss_diff = [-4]  - [-5] = +1     case 4; Restrict. Correction reduction. This is only allowed if rules below are met.\n                // ss_diff = [-1]  - [-5] = +4     case 5; Restrict. BIG correction reduction. This is not allowed if rules below are met.\n                \n            var ss_diff = (ss_correction - ss_correction_old);\n            \n            if (ss_diff <= 0)                                                       // Allowed. case 1, 2 and 3. \n                {ss_correction = ss_correction;}\n            \n            if (ss_diff > 0 && ss_Hz > ss_Threshold)                                // Do not allow. Case 4, 5. Check frequency against treshold if it is allow or not. Frequency is too high, so NEW_correction is overwritten with OLD_correction.\n                {ss_correction = ss_correction_old;}                        // Keep old correction.    \n    \n            if (ss_diff > 0 && ss_Hz <= ss_Threshold)                               // Allow. Restrict. Case 4, 5. Check frequency gainst treshold if it is allow or not. Frequency is low enough, so NEW_correction is kept.\n                {ss_correction = ss_correction_old + 1;}                            // Keep new correction. Note: this line can actually be taken out, but does no harm and helps understanding. New_correction is already determined above.\n        }\n    \n    ////////////////////////////////////////////////////////////////////////////////\n    //      [SP1_war]                   = [SP0_Start] + [war_correction]\n    //      [SP2_rtc]                   = [SP1_war] + [rtc_correction]\n    //      [SP3_Softstart]             = [SP2_trc] + [Correction_Softstart]\n    //      [SP_Final]                  = [SP3_Softstart] = New real SP to [SET5 SetZ1HeatRequestTemperature]\n    var SP3_ss = SP2_rtc + ss_correction;\n    ////////////////////////////////////////////////////////////////////////////////\n    \n    ////////////////////////////////////////////////////////////////////////////////\n    // Night Reduction\n    var nr_corr = global.get('NightReduction_current_value',\"file\");\n    if (nr_corr === undefined)\n        {nr_corr = 0;}\n    var SP4_nr = SP3_ss + nr_corr;\n    ////////////////////////////////////////////////////////////////////////////////\n    \n    \n    var SP_Final                        = SP4_nr;\n    \n    \n    \n    ////////////////////////////////////////////////////////////////////////////////\n    //  Make sure the calculated final setpoint is within the upper and the lower limit.\n    var SP_lower_limit                  = global.get('HEAT_SP_lower_limit',\"file\");\n    var SP_upper_limit                  = global.get('HEAT_SP_upper_limit',\"file\");\n    \n    if      (SP_lower_limit === undefined)      {}                                  //\n    else    {\n                if (SP_Final < SP_lower_limit)      {SP_Final = SP_lower_limit;}    //\n            }\n            \n    if      (SP_upper_limit === undefined)      {}                                  //\n    else    {\n                if (SP_Final > SP_upper_limit)      {SP_Final = SP_upper_limit;}    //\n            }\n            \n    \n    \n    let msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={}, msg9={}, msg10={};\n    \n    msg1.payload = SP0_start;                                                       // not required, for debugging\n    msg1.topic='SP0_start';                                                         // not required, for debugging\n    \n    msg2.payload = null;                                                            // required\n    msg2.topic='empty';                                                             // required\n    \n    msg3.payload = SP1_war;                                                         // required\n    msg3.topic='SP1_war';                                                           // required\n    \n    msg4.payload = rtc_correction;                                                  // not required, for debugging\n    msg4.topic = 'rtc_correction';                                                  // not required, for debugging\n    \n    msg5.payload = SP2_rtc;                                                         // required\n    msg5.topic = 'SP2_rtc';                                                         // required\n    \n    msg6.payload = ss_correction;                                                   // required\n    msg6.topic = 'ss_correction';                                                   // required\n    \n    msg7.payload = SP3_ss;                                                          // not required, for debugging\n    msg7.topic = 'SP3_ss';                                                          // not required, for debugging\n    \n    msg8.payload = SP_Final;                                                        // required\n    msg8.topic = 'SP_Final';                                                        // required\n    \n    msg9.payload = heatpump_switch;\n    msg9.topic = 'heatpump_on/off (rtc_switch)';                                     // required, to turn on / off the heatpump\n    \n    msg10.payload = rtc_dT;\n    msg10.topic = 'rtc_dT';                                                          // not required, for debugging\n    \n    \n    return [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10];\n    \n    \n}",
         "outputs": 10,
         "noerr": 0,
         "initialize": "if (global.get(\"Correction_0_WAR_on_off\",\"file\") === undefined) {\n    global.set(\"Correction_0_WAR_on_off\", 0,\"file\");\n    throw \"Variable Correction_0_WAR_on_off is undefined. Please set it in the dashboards, toggle the switch.\"\n}\n\nif (global.get(\"T_outside\",\"file\") === undefined) {\n    global.set(\"T_outside\", -99,\"file\");\n    throw \"T_outside is undefined. Make sure sensor data is comming in as a variable correctly.\"\n}\n\nif (global.get(\"Correction_1_RTC_on_off\",\"file\") === undefined) {\n    global.set(\"Correction_1_RTC_on_off\", 0,\"file\")\n    throw \"Correction_1_RTC_on_off is undefined. Please set it in the dashboards, toggle the switch.\"\n}\n\nif (global.get(\"Correction_2_softstart_on_off\",\"file\") === undefined) {\n    global.set(\"Correction_2_softstart_on_off\", 0,\"file\");\n    throw \"Correction_2_softstart_on_off is undefined. Please set it in the dashboards, toggle the switch.\"\n}\n",
@@ -12120,8 +12782,7 @@
                 "c170e8478752746e"
             ],
             [
-                "5f233c0fd1ffa550",
-                "84c96cb8fec06a84"
+                "5f233c0fd1ffa550"
             ],
             [
                 "db3d913f68e3e439"
@@ -12132,7 +12793,9 @@
             [
                 "4e78d56d6c1eb0d1"
             ],
-            [],
+            [
+                "5701fbba24da9674"
+            ],
             []
         ],
         "outputLabels": [
@@ -12144,8 +12807,8 @@
             "ss_correction",
             "SP3_ss",
             "SP_Final",
-            "empty",
-            "ss_Hz"
+            "heatpump_on/off (rtc_switch)",
+            "rtc_dT"
         ],
         "info": "# ALL IN ONE FUNCTION\n\nThis function takes care of WAR, RTC and SoftStart. Comments are within"
     },
@@ -12231,8 +12894,8 @@
         "z": "a938de76db0b71f6",
         "g": "94f57429e16c8e82",
         "name": "COP_calculated",
-        "func": "var Main_Outlet_Temp=global.get('Main_Outlet_Temp');                            // Get the global variable for Outlet temperature\nvar Main_Inlet_Temp=global.get('Main_Inlet_Temp');                              // Get the global variable for inlet temperature\nvar Pump_Flow=global.get('Pump_Flow');                                          // Get the global variable for pump flow\nvar Heat_Energy_Consumption=global.get('Heat_Energy_Consumption',\"file\");       // Get the global variable for absorbed energy of the heatpump\nvar Hz=global.get('compressor_frequency');                                      // Get the global variable for absorbed energy of the heatpump\nvar COP_calculated;\n\nmsg.topic   = \"COP [-]\";\n\n\nif (Hz == 0) \n    {\n        msg.payload = 0;\n        return msg;\n    }\n    \nelse \n    {\n        var Watt_heat_c = (Main_Outlet_Temp - Main_Inlet_Temp) * 4.187 * (Pump_Flow / 60) * 1000;\n        COP_calculated = Watt_heat_c / Heat_Energy_Consumption;\n        \n        msg.payload = COP_calculated;\n        msg.payload = Number(msg.payload).toFixed(2);\n        msg.payload = parseFloat(msg.payload);\n\n        if (msg.payload > 0) \n            {\n                return msg;\n                \n            }\n            \n        else \n            {\n                msg.payload = 0;\n                return msg;\n                \n            }\n    }\n    \n\n",
-        "outputs": 1,
+        "func": "var Hz=global.get('compressor_frequency',\"memoryOnly\");                                              // Get the global variable for absorbed energy of the heatpump\n\nif (Hz == 0)                                                                            // If compressor is off, end here.\n    {\n        return null;\n    }\n    \nelse                                                                                    // if not, continue.\n    {\n        var Main_Outlet_Temp=global.get('Main_Outlet_Temp');                            // Get the global variable for water Outlet temperature\n        var Main_Inlet_Temp=global.get('Main_Inlet_Temp');                              // Get the global variable for water inlet temperature\n        var Pump_Flow=global.get('Pump_Flow');                                          // Get the global variable for water flow\n        var Energy_Consumption;                                                         // declare variable\n        var COP_calculated;                                                             // declare variable\n        var Watt_heat_c;                                                                // declare variable\n        \n        let msg1={},msg2={};\n\n        var ThreeWay_Valve_State=global.get('ThreeWay_Valve_State');                    // Get the global variable for 3-way valve position.\n        \n        if (ThreeWay_Valve_State == 0)\n            {\n                Energy_Consumption      = global.get('Heat_Energy_Consumption',\"file\"); // Get the global variable for absorbed energy of the heatpump heat\n                Watt_heat_c             = (Main_Outlet_Temp - Main_Inlet_Temp) * 4.187 * (Pump_Flow / 60) * 1000;\n                COP_calculated          = Watt_heat_c / Energy_Consumption;\n                msg1.payload            = COP_calculated\n                msg1.topic              = \"COP_HEAT\";\n                msg1.payload            = Number(msg1.payload).toFixed(2);\n                msg1.payload            = parseFloat(msg1.payload);\n                if (msg1.payload > 0) \n                    {\n                        return [msg1,null];\n                    }\n                else if (msg1.payload === undefined)\n                    {\n                        return null;\n                    }\n                else \n                    {\n                        msg1.payload = 0;\n                    }\n                \n            }\n\n        else\n            {\n                Energy_Consumption      = global.get('DHW_Energy_Consumption',\"file\");  // Get the global variable for absorbed energy of the heatpump dhw\n                Watt_heat_c             = (Main_Outlet_Temp - Main_Inlet_Temp) * 4.187 * (Pump_Flow / 60) * 1000;\n                COP_calculated          = Watt_heat_c / Energy_Consumption;\n                msg2.payload            = COP_calculated\n                msg2.topic              = \"COP_DHW\";\n                msg2.payload            = Number(msg2.payload).toFixed(2);\n                msg2.payload            = parseFloat(msg2.payload);\n                if (msg2.payload < 0) \n                    {\n                        msg2.payload = 0;\n                    }\n                else if (msg2.payload === undefined)\n                    {\n                        return null;\n                    }\n                else\n                    {\n                        return [null,msg2];\n                    }\n            }\n    }\n    \n\n",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -12242,7 +12905,14 @@
         "wires": [
             [
                 "306b69356454f3ff"
+            ],
+            [
+                "5787c91b303f2538"
             ]
+        ],
+        "outputLabels": [
+            "COP HEAT [-]",
+            "COP DHW [-]"
         ]
     },
     {
@@ -12337,13 +13007,14 @@
         "type": "link out",
         "z": "a938de76db0b71f6",
         "g": "94f57429e16c8e82",
-        "name": "COP",
+        "name": "COP HEAT",
         "mode": "link",
         "links": [
+            "ad2577846265e4ee",
             "fe8e23b8971b868e"
         ],
-        "x": 1935,
-        "y": 920,
+        "x": 2065,
+        "y": 900,
         "wires": []
     },
     {
@@ -13671,22 +14342,6 @@
         ]
     },
     {
-        "id": "84c96cb8fec06a84",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1720,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "a0d48945187b9bf6",
         "type": "mqtt in",
         "z": "a938de76db0b71f6",
@@ -14311,6 +14966,34 @@
                 "dbdd0d7a75ebb0cd"
             ]
         ]
+    },
+    {
+        "id": "5787c91b303f2538",
+        "type": "link out",
+        "z": "a938de76db0b71f6",
+        "g": "94f57429e16c8e82",
+        "name": "COP DHW",
+        "mode": "link",
+        "links": [
+            "c302223665944545",
+            "fe8e23b8971b868e"
+        ],
+        "x": 2065,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "5701fbba24da9674",
+        "type": "link out",
+        "z": "a938de76db0b71f6",
+        "name": "heatpump_on/off (rtc_switch)",
+        "mode": "link",
+        "links": [
+            "c1a4ab9dbe8cadb2"
+        ],
+        "x": 1735,
+        "y": 560,
+        "wires": []
     },
     {
         "id": "35d210f042827344",
@@ -25123,7 +25806,7 @@
         ],
         "x": 54,
         "y": 1119,
-        "w": 1388,
+        "w": 1398,
         "h": 602
     },
     {
@@ -25316,7 +25999,7 @@
         ],
         "x": 84,
         "y": 579,
-        "w": 1322,
+        "w": 1332,
         "h": 82
     },
     {
@@ -25338,7 +26021,7 @@
         ],
         "x": 84,
         "y": 1239,
-        "w": 1332,
+        "w": 1342,
         "h": 82
     },
     {
@@ -25657,7 +26340,8 @@
             "b27f3362361c5e64",
             "978657d3c3a0f2cb",
             "7771da8a0a8b3592",
-            "7887aff049a582de"
+            "7887aff049a582de",
+            "7c5168cdea10e6fd"
         ],
         "x": 845,
         "y": 120,
@@ -25853,7 +26537,8 @@
         "mode": "link",
         "links": [
             "6988051cc52f2c86",
-            "dc13db3939bf2d7f"
+            "dc13db3939bf2d7f",
+            "ce5d0b3236face62"
         ],
         "x": 800,
         "y": 240,
@@ -26381,7 +27066,8 @@
         "mode": "link",
         "links": [
             "65322aec4f8fd58e",
-            "868b4c6128111bb6"
+            "868b4c6128111bb6",
+            "22538d89f57d30fe"
         ],
         "x": 800,
         "y": 340,
@@ -26789,17 +27475,6 @@
         "className": ""
     },
     {
-        "id": "fb77ab43998a2f18",
-        "type": "ui_group",
-        "name": "Power",
-        "tab": "1a08b96c5aeb8d6e",
-        "order": 1,
-        "disp": true,
-        "width": 26,
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "548e51986bce11b0",
         "type": "ui_group",
         "name": "Operation",
@@ -26851,6 +27526,17 @@
         "order": 2,
         "disp": true,
         "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fb77ab43998a2f18",
+        "type": "ui_group",
+        "name": "Power",
+        "tab": "1a08b96c5aeb8d6e",
+        "order": 1,
+        "disp": true,
+        "width": 26,
         "collapse": false,
         "className": ""
     },
@@ -26922,15 +27608,6 @@
         "hidden": false
     },
     {
-        "id": "1a08b96c5aeb8d6e",
-        "type": "ui_tab",
-        "name": "Charts Energy",
-        "icon": "dashboard",
-        "order": 8,
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "33ece0076bfd7cb7",
         "type": "ui_tab",
         "name": "Settings",
@@ -26945,6 +27622,15 @@
         "name": "Scheduler",
         "icon": "dashboard",
         "order": 6,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1a08b96c5aeb8d6e",
+        "type": "ui_tab",
+        "name": "Charts Energy",
+        "icon": "dashboard",
+        "order": 8,
         "disabled": false,
         "hidden": false
     },
