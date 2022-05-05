@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 13.1<br/>
+Current version: 14 beta1<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -227,7 +227,7 @@ all older changelog items are colapsed below. only the latest changelog will alw
 - ENHANCEMENT: issue #20 Night reduction - accuracy to 0,1 instead of 1 - (https://github.com/edterbak/NodeRed_Heishamon_control/issues/20)
 - ENHANCEMENT: issue #21. Night reduction - add toggle in the Home screen to controle it manually (https://github.com/edterbak/NodeRed_Heishamon_control/issues/21)
 - ENHANCEMENT: First attempt to include degree days (graaddagen) in the dashboard. It is NOT finished yet, and on my personal tab, but might affect basic dashboard / 
-</details><br/>
+
 
 [2022-04-23] (v13) Things done are:
 - ENHANCEMENT: issue #17. "Add graaddagen to dashboard" implemented (https://github.com/edterbak/NodeRed_Heishamon_control/issues/17) The result should be a good step in the richt direction. If this needs more work or you have other suggestions, please add to the issue in githug.
@@ -239,6 +239,12 @@ all older changelog items are colapsed below. only the latest changelog will alw
 [2022-04-23] (v13.1) Things done are:
 - BUG fix: COP was not working
 - ENHANCEMENT: Made the Energy chart look a little better with titels etc. 
+</details><br/>
+
+[2022-05-05] (v14 beta1) Things done are:
+- ENHANCEMENT: Feature request; first attempt to turn heatpump off with RTC-function, when room temperature is above threshold. 
+- Fixes in Energy Charts
+
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
