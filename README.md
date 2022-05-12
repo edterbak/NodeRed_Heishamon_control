@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 14 beta2<br/>
+Current version: 14 beta 3<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -247,6 +247,10 @@ all older changelog items are colapsed below. only the latest changelog will alw
 
 [2022-05-08] (v14 beta2) Things done are:
 - ENHANCEMENT: Feature request; second attempt to turn heatpump off with RTC-function, when room temperature is above threshold. Added DHW to the mix. it should be safe to use now. I have tested it and it does seem to work. Could use some more love to make sure it works propperly.
+
+[2022-05-12] (v14 beta3) Things done are:
+- ENHANCEMENT: Feature request; third attempt to turn heatpump off with RTC-function. Bug fixed that the stored rtc_on / rtc_off temperature ranges are not persistent.
+- BUG: Fixed scheduler bug where the 'override' toggles were not persistent over reboot.
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
