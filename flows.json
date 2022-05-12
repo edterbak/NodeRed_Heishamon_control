@@ -2679,7 +2679,7 @@
             "1ed98a1d47eb56f0",
             "79dc18dd1cca1e73"
         ],
-        "x": 94,
+        "x": 114,
         "y": 479,
         "w": 932,
         "h": 502
@@ -2762,7 +2762,8 @@
             "5df3c72cf1808838",
             "1235e7416dbfe5fc",
             "4b2cff40b8a3ecc9",
-            "9e7985132053da99"
+            "9e7985132053da99",
+            "96419721b813974f"
         ],
         "x": 2534,
         "y": 599,
@@ -3065,7 +3066,11 @@
             "721b7d606f558c73",
             "2114aed06fe6d5aa",
             "e1f45532e4338e4a",
-            "7e69bda9aa493902"
+            "7e69bda9aa493902",
+            "4dc4c11e169604ca",
+            "c28ac0a0c107c5e3",
+            "d0da762a5ce4c419",
+            "f5f7d3b912113a33"
         ],
         "x": 74,
         "y": 2279,
@@ -3148,12 +3153,11 @@
             "label": true
         },
         "nodes": [
-            "2bb4af86f0c78aed",
             "35c9b0fcbdf3c9e0"
         ],
-        "x": 714,
+        "x": 1094,
         "y": 2519,
-        "w": 732,
+        "w": 352,
         "h": 82
     },
     {
@@ -3168,12 +3172,11 @@
             "fill-opacity": "0.5"
         },
         "nodes": [
-            "1ca44efe39136a9a",
             "47a9e516229e0256"
         ],
-        "x": 714,
+        "x": 1094,
         "y": 2419,
-        "w": 732,
+        "w": 352,
         "h": 82
     },
     {
@@ -3190,7 +3193,7 @@
         "format": "{{msg.payload}} Hz",
         "layout": "row-spread",
         "className": "",
-        "x": 910,
+        "x": 930,
         "y": 760,
         "wires": []
     },
@@ -3203,7 +3206,7 @@
         "links": [
             "3b23831ccc3641c6"
         ],
-        "x": 495,
+        "x": 515,
         "y": 700,
         "wires": [
             [
@@ -3235,7 +3238,7 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 890,
+        "x": 910,
         "y": 700,
         "wires": []
     },
@@ -3253,7 +3256,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 320,
+        "x": 340,
         "y": 760,
         "wires": [
             [
@@ -3270,7 +3273,7 @@
         "links": [
             "905527b22aae9dc8"
         ],
-        "x": 495,
+        "x": 515,
         "y": 640,
         "wires": [
             [
@@ -3287,7 +3290,7 @@
         "links": [
             "35ca9241fc9fc7a1"
         ],
-        "x": 495,
+        "x": 515,
         "y": 580,
         "wires": [
             [
@@ -3309,7 +3312,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 910,
+        "x": 930,
         "y": 640,
         "wires": []
     },
@@ -3327,7 +3330,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 900,
+        "x": 920,
         "y": 580,
         "wires": []
     },
@@ -3340,7 +3343,7 @@
         "links": [
             "12a26bbb7c8070d7"
         ],
-        "x": 495,
+        "x": 515,
         "y": 520,
         "wires": [
             [
@@ -3362,7 +3365,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 900,
+        "x": 920,
         "y": 520,
         "wires": []
     },
@@ -3565,7 +3568,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 310,
+        "x": 330,
         "y": 940,
         "wires": [
             [
@@ -3587,7 +3590,7 @@
         "format": "{{msg.payload}} RPM",
         "layout": "row-spread",
         "className": "",
-        "x": 920,
+        "x": 940,
         "y": 940,
         "wires": []
     },
@@ -3756,8 +3759,8 @@
         "type": "ui_numeric",
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
-        "name": "Woonkamer SP",
-        "label": "Livingroom SP",
+        "name": "Room Setpoint",
+        "label": "Room Setpoint",
         "tooltip": "",
         "group": "e27cfec311892d88",
         "order": 12,
@@ -4156,7 +4159,7 @@
         "g": "a8ac5b148d851a6b",
         "name": "RTC on/off",
         "label": "",
-        "tooltip": "Room Temperature Correction",
+        "tooltip": "Turn on/off the Room Temperature Correction function. Configure in \"Function (RTC)\" menu. ",
         "group": "1179fa790d2d89ca",
         "order": 8,
         "width": 1,
@@ -4243,7 +4246,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 25,
+        "order": 26,
         "width": 6,
         "height": 1,
         "name": "Current correction (RTC)",
@@ -4534,7 +4537,7 @@
         "g": "3476743a7b29da0d",
         "name": "WAR on/off",
         "label": "",
-        "tooltip": "Turn on/off the weather correction function",
+        "tooltip": "Turn on/off the Weather Correction function. Configure in \"Function (WAR)\" menu. ",
         "group": "1179fa790d2d89ca",
         "order": 5,
         "width": 1,
@@ -4716,6 +4719,7 @@
         "once": true,
         "onceDelay": "1",
         "topic": "trigger",
+        "payload": "",
         "payloadType": "date",
         "x": 2680,
         "y": 720,
@@ -4731,8 +4735,8 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "name": "Load on boot RTC",
-        "func": "var var1e            = global.get('Correction_1_RTC_on_off',\"file\");\nvar var2e            = global.get('WoonkamerSP',\"file\");\nvar var3e            = global.get('rtc_t1',\"file\");\nvar var4e            = global.get('rtc_t2',\"file\");\nvar var5e            = global.get('rtc_t3',\"file\");\nvar var6e            = global.get('rtc_t4',\"file\");\nvar var7e            = global.get('rtc_t5',\"file\");\nvar var8e            = global.get('rtc_t6',\"file\");\n\n\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={};\n\n\nmsg1.payload = var1e;\nif(var1e === undefined) {msg1=null;}\nmsg2.payload = var2e;\nif(var2e === undefined) {msg2=null;}\nmsg3.payload = var3e;\nif(var3e === undefined) {msg3=null;}\nmsg4.payload = var4e;\nif(var4e === undefined) {msg4=null;}\nmsg5.payload = var5e;\nif(var5e === undefined) {msg5=null;}\nmsg6.payload = var6e;\nif(var6e === undefined) {msg6=null;}\nmsg7.payload = var7e;\nif(var7e === undefined) {msg7=null;}\nmsg8.payload = var8e;\nif(var8e === undefined) {msg8=null;}\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8];\n",
-        "outputs": 8,
+        "func": "var var1e            = global.get('Correction_1_RTC_on_off',\"file\");\nvar var2e            = global.get('WoonkamerSP',\"file\");\nvar var3e            = global.get('rtc_t1',\"file\");\nvar var4e            = global.get('rtc_t2',\"file\");\nvar var5e            = global.get('rtc_t3',\"file\");\nvar var6e            = global.get('rtc_t4',\"file\");\nvar var7e            = global.get('rtc_t5',\"file\");\nvar var8e            = global.get('rtc_t6',\"file\");\nvar var9e            = global.get('rtc_off',\"file\");\nvar var10e           = global.get('rtc_on',\"file\");\n\n\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={}, msg9={}, msg10={};\n\n\nmsg1.payload = var1e;\nif(var1e === undefined) {msg1=null;}\nmsg2.payload = var2e;\nif(var2e === undefined) {msg2=null;}\nmsg3.payload = var3e;\nif(var3e === undefined) {msg3=null;}\nmsg4.payload = var4e;\nif(var4e === undefined) {msg4=null;}\nmsg5.payload = var5e;\nif(var5e === undefined) {msg5=null;}\nmsg6.payload = var6e;\nif(var6e === undefined) {msg6=null;}\nmsg7.payload = var7e;\nif(var7e === undefined) {msg7=null;}\nmsg8.payload = var8e;\nif(var8e === undefined) {msg8=null;}\nmsg9.payload = var9e;\nif(var9e === undefined) {msg9=null;}\nmsg10.payload = var10e;\nif(var10e === undefined) {msg10=null;}\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10];\n",
+        "outputs": 10,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -4764,6 +4768,12 @@
             ],
             [
                 "017e7b4d1642ed42"
+            ],
+            [
+                "9e7985132053da99"
+            ],
+            [
+                "6a4e29a621172a7e"
             ]
         ],
         "outputLabels": [
@@ -4774,7 +4784,9 @@
             "rtc_t3",
             "rtc_t4",
             "rtc_t5",
-            "rtc_t6"
+            "rtc_t6",
+            "rtc_off",
+            "rtc_on"
         ]
     },
     {
@@ -5129,7 +5141,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3640,
+        "x": 3680,
         "y": 780,
         "wires": [
             []
@@ -5162,12 +5174,12 @@
         "order": 2,
         "width": 6,
         "height": 1,
-        "name": "RTC Settings",
-        "label": "RTC Settings",
+        "name": "RTC Settings [HEAT]",
+        "label": "RTC Settings [HEAT]",
         "format": "{{msg.payload}}",
         "layout": "row-center",
         "className": "",
-        "x": 2910,
+        "x": 2940,
         "y": 760,
         "wires": []
     },
@@ -5208,7 +5220,8 @@
                 "b32f014cb3ec752e"
             ],
             [
-                "dade0dbb40c3945a"
+                "dade0dbb40c3945a",
+                "1f5d513050d612a1"
             ]
         ],
         "outputLabels": [
@@ -5377,7 +5390,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 24,
+        "order": 25,
         "width": 6,
         "height": 1,
         "name": "Start SP (RTC)",
@@ -5395,7 +5408,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 26,
+        "order": 27,
         "width": 6,
         "height": 1,
         "name": "Result SP (RTC)",
@@ -5909,12 +5922,12 @@
         "order": 14,
         "width": 5,
         "height": 1,
-        "name": "Livingroom PV",
-        "label": "Livingroom PV",
+        "name": "Room Actual",
+        "label": "Room Actual",
         "format": "{{msg.payload}} °C ",
         "layout": "row-spread",
         "className": "",
-        "x": 3080,
+        "x": 3070,
         "y": 900,
         "wires": []
     },
@@ -6494,8 +6507,8 @@
         "height": 1,
         "name": "RTC text",
         "label": "RTC",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
+        "format": "({{msg.payload}} °C)",
+        "layout": "row-left",
         "className": "",
         "x": 3020,
         "y": 660,
@@ -7233,8 +7246,7 @@
         "y": 440,
         "wires": [
             [
-                "2c3aa272de5edf1f",
-                "ce1d2fb21123cea6"
+                "2c3aa272de5edf1f"
             ]
         ]
     },
@@ -8039,8 +8051,8 @@
         "topic": "topic",
         "topicType": "msg",
         "format": "{{value}} °C",
-        "min": "1",
-        "max": "15",
+        "min": "-10",
+        "max": "0",
         "step": 1,
         "className": "",
         "x": 1670,
@@ -9363,7 +9375,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 330,
+        "x": 350,
         "y": 820,
         "wires": [
             [
@@ -9385,7 +9397,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 330,
+        "x": 350,
         "y": 880,
         "wires": [
             [
@@ -9407,7 +9419,7 @@
         "format": "{{msg.payload}} RPM",
         "layout": "row-spread",
         "className": "",
-        "x": 890,
+        "x": 910,
         "y": 820,
         "wires": []
     },
@@ -9425,7 +9437,7 @@
         "format": "{{msg.payload}} RPM",
         "layout": "row-spread",
         "className": "",
-        "x": 890,
+        "x": 910,
         "y": 880,
         "wires": []
     },
@@ -10567,7 +10579,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "f1a34e3fea473398",
         "name": "Function - bucket 1 + 2 combined",
-        "func": "var myArray1 = global.get(\"COP_DHW_24m\",\"file\");                                // DHW\n\nvar myArray2 = global.get(\"COP_HEAT_24m\",\"file\");                               // HEAT\n\nlet msg1={}, msg2={};\n\nmsg1 = myArray1;\nmsg2 = myArray2;\n\nvar varlabels   = msg1.payload[0].labels;\nvar varData1    = msg1.payload[0].data[0];\nvar varData2    = msg2.payload[0].data[0];\n\nvar m={};\n    m.labels    = varlabels;\n    m.series    = ['DHW', 'HEAT'];\n    m.data      = [varData1, varData2];\n\nreturn {payload:[m]};\n\n",
+        "func": "var myArray1 = global.get(\"COP_DHW_24m\",\"file\");                                // DHW\nvar myArray21 = global.get(\"COP_HEAT_24m\",\"file\");                              // HEAT\n\nif (myArray1 !== undefined || myArray21 !== undefined)                          // check if all is valid.\n\n{\n\n    let msg1={}, msg2={};\n    \n    msg1 = myArray1;\n    msg2 = myArray21;\n    \n    var varlabels   = msg2.payload[0].labels;\n    var varData1    = msg1.payload[0].data[0];\n    if (varData1 === undefined){varData1=null;}\n    var varData2    = msg2.payload[0].data[0];\n    if (varData2 === undefined){varData2=null;}\n    \n    var varSeries1     = msg1.payload[0].series[0];\n    var varSeries2     = msg2.payload[0].series[0];\n    \n    var m={};\n        m.labels    = varlabels;\n        m.series    = [varSeries1, varSeries2];\n        m.data      = [varData1, varData2];\n    \n    return {payload:[m]};\n}\n\nelse\n{\n    return null;\n    \n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -10622,7 +10634,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "f1a34e3fea473398",
         "name": "Load bar-chart data",
-        "func": "var myArray1 = global.get(\"COP_HEAT_24m\",\"file\");\nvar myArray2 = global.get(\"COP_DHW_24m\",\"file\");\n\nlet msg1={}, msg2={};\nmsg1 = myArray1;\nmsg2 = myArray2;\n\nreturn [msg1,msg2];",
+        "func": "var myArray1 = global.get(\"COP_HEAT_24m\",\"file\");\nvar myArray21 = global.get(\"COP_DHW_24m\",\"file\");\n\nlet msg1={}, msg2={};\nmsg1 = myArray1;\nmsg2 = myArray21;\n\nreturn [msg1,msg2];",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -10632,10 +10644,10 @@
         "y": 2360,
         "wires": [
             [
-                "1ca44efe39136a9a"
+                "f5f7d3b912113a33"
             ],
             [
-                "2bb4af86f0c78aed"
+                "d0da762a5ce4c419"
             ]
         ],
         "outputLabels": [
@@ -10689,7 +10701,9 @@
         "x": 190,
         "y": 2840,
         "wires": [
-            []
+            [
+                "eee624aa045ae22a"
+            ]
         ]
     },
     {
@@ -10709,7 +10723,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "2114aed06fe6d5aa",
         "name": "Store information to COP_DHW_24m",
-        "func": "var myArray1 = msg;\nglobal.set(\"COP_DHW_24m\", myArray1,\"file\");\nreturn msg;",
+        "func": "var myArray21 = msg;\nglobal.set(\"COP_DHW_24m\", myArray21,\"file\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -10750,7 +10764,7 @@
         "useOneColor": false,
         "useUTC": false,
         "colors": [
-            "#00876c",
+            "#007585",
             "#de425b",
             "#f59b56",
             "#fff18f",
@@ -10790,7 +10804,9 @@
         "x": 370,
         "y": 2840,
         "wires": [
-            []
+            [
+                "eee624aa045ae22a"
+            ]
         ]
     },
     {
@@ -10806,7 +10822,7 @@
         "y": 2460,
         "wires": [
             [
-                "9a77a77bdc585373"
+                "c28ac0a0c107c5e3"
             ]
         ]
     },
@@ -10823,7 +10839,7 @@
         "y": 2560,
         "wires": [
             [
-                "721b7d606f558c73"
+                "4dc4c11e169604ca"
             ]
         ]
     },
@@ -10849,7 +10865,7 @@
         "y": 2460,
         "wires": [
             [
-                "1ca44efe39136a9a"
+                "f5f7d3b912113a33"
             ]
         ]
     },
@@ -10875,47 +10891,7 @@
         "y": 2560,
         "wires": [
             [
-                "2bb4af86f0c78aed"
-            ]
-        ]
-    },
-    {
-        "id": "2bb4af86f0c78aed",
-        "type": "bar-chart-data",
-        "z": "8c9d42231fd19d3c",
-        "g": "2114aed06fe6d5aa",
-        "name": "bar-chart DHW COP-24months",
-        "x_interval": "months",
-        "x_size": 24,
-        "unit": "",
-        "precision": 2,
-        "is_meter_reading": "False",
-        "agg_by": "avg",
-        "x": 870,
-        "y": 2560,
-        "wires": [
-            [
-                "35c9b0fcbdf3c9e0"
-            ]
-        ]
-    },
-    {
-        "id": "1ca44efe39136a9a",
-        "type": "bar-chart-data",
-        "z": "8c9d42231fd19d3c",
-        "g": "e1f45532e4338e4a",
-        "name": "bar-chart HEAT COP-24months",
-        "x_interval": "months",
-        "x_size": 24,
-        "unit": "",
-        "precision": "2",
-        "is_meter_reading": "False",
-        "agg_by": "avg",
-        "x": 870,
-        "y": 2460,
-        "wires": [
-            [
-                "47a9e516229e0256"
+                "d0da762a5ce4c419"
             ]
         ]
     },
@@ -10931,47 +10907,117 @@
         "wires": []
     },
     {
-        "id": "ce1d2fb21123cea6",
-        "type": "ui_chart",
+        "id": "96419721b813974f",
+        "type": "ui_text",
         "z": "8c9d42231fd19d3c",
-        "name": "",
-        "group": "b7f22c282fde0f86",
-        "order": 10,
-        "width": 0,
-        "height": 0,
-        "label": "chart",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": true,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "48",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
+        "g": "a8ac5b148d851a6b",
+        "group": "e27cfec311892d88",
+        "order": 24,
+        "width": 6,
+        "height": 1,
+        "name": "spacer 6x1",
+        "label": "",
+        "format": "",
+        "layout": "row-right",
         "className": "",
-        "x": 2350,
-        "y": 100,
+        "x": 3950,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "4dc4c11e169604ca",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "DHW",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 230,
+        "y": 2560,
         "wires": [
-            []
+            [
+                "721b7d606f558c73"
+            ]
+        ]
+    },
+    {
+        "id": "c28ac0a0c107c5e3",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "HEAT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 230,
+        "y": 2460,
+        "wires": [
+            [
+                "9a77a77bdc585373"
+            ]
+        ]
+    },
+    {
+        "id": "d0da762a5ce4c419",
+        "type": "bar-chart-data",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "bar-chart DHW COP-12months",
+        "x_interval": "months",
+        "x_size": "12",
+        "unit": "",
+        "precision": 2,
+        "is_meter_reading": "False",
+        "agg_by": "avg",
+        "x": 910,
+        "y": 2560,
+        "wires": [
+            [
+                "35c9b0fcbdf3c9e0"
+            ]
+        ]
+    },
+    {
+        "id": "f5f7d3b912113a33",
+        "type": "bar-chart-data",
+        "z": "8c9d42231fd19d3c",
+        "g": "f1a34e3fea473398",
+        "name": "bar-chart HEAT COP-12months",
+        "x_interval": "months",
+        "x_size": "12",
+        "unit": "",
+        "precision": "2",
+        "is_meter_reading": "False",
+        "agg_by": "avg",
+        "x": 910,
+        "y": 2460,
+        "wires": [
+            [
+                "47a9e516229e0256"
+            ]
         ]
     },
     {
@@ -17066,41 +17112,12 @@
         ]
     },
     {
-        "id": "bfc72465148667f3",
-        "type": "inject",
-        "z": "35d210f042827344",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 400,
-        "y": 380,
-        "wires": [
-            [
-                "f5602874161743c8"
-            ]
-        ]
-    },
-    {
         "id": "698336312f37f38e",
         "type": "function",
         "z": "35d210f042827344",
         "name": "GET global / topics",
-        "func": "// variables to load on boot for dasboard\n\nschedule_topic = msg.payload\n\n\nvar var1    = global.get(schedule_topic+'_Description',\"file\");\nvar var2    = global.get(schedule_topic+'_day',\"file\");\nvar var3    = global.get(schedule_topic+'_hour',\"file\");\nvar var4    = global.get(schedule_topic+'_minutes',\"file\");\nvar var5    = global.get(schedule_topic+'_state',\"file\");\nvar var6    = global.get(schedule_topic+'_action',\"file\");\n//var var7    = global.get(schedule_topic+'_allow_turn_on',\"file\");\n\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={}, msg9={}, msg10={};\n\n\n\nmsg1.payload = var1;\nmsg2.payload = var2;    \nmsg3.payload = var3;    \nmsg4.payload = var4;    \nmsg5.payload = var5;    \nmsg6.payload = var6;    \n//msg7.payload = var7;    \n//msg8.payload = var8;    \n//msg9.payload = var9;    \n//msg10.payload = var10;\n\n\nmsg1.topic = schedule_topic+'_Description';\nmsg2.topic = schedule_topic+'_day';\nmsg3.topic = schedule_topic+'_hour';\nmsg4.topic = schedule_topic+'_minutes';\nmsg5.topic = schedule_topic+'_state';\nmsg6.topic = schedule_topic+'_action';\n//msg7.topic = schedule_topic+'_allow_turn_on';\n//msg8.topic = schedule_topic+'';\n//msg9.topic = schedule_topic;\n//msg10.topic = schedule_topic;\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6];",
-        "outputs": 6,
+        "func": "// variables to load on boot for dasboard\n\nschedule_topic = msg.payload\n\n\nvar var1    = global.get(schedule_topic+'_Description',\"file\");\nvar var2    = global.get(schedule_topic+'_day',\"file\");\nvar var3    = global.get(schedule_topic+'_hour',\"file\");\nvar var4    = global.get(schedule_topic+'_minutes',\"file\");\nvar var5    = global.get(schedule_topic+'_state',\"file\");\nvar var6    = global.get(schedule_topic+'_action',\"file\");\nvar var7    = global.get(schedule_topic+'_override',\"file\");\n\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={}, msg9={}, msg10={};\n\n\n\nmsg1.payload = var1;\nmsg2.payload = var2;    \nmsg3.payload = var3;    \nmsg4.payload = var4;    \nmsg5.payload = var5;    \nmsg6.payload = var6;    \nmsg7.payload = var7;    \n//msg8.payload = var8;    \n//msg9.payload = var9;    \n//msg10.payload = var10;\n\n\nmsg1.topic = schedule_topic+'_Description';\nmsg2.topic = schedule_topic+'_day';\nmsg3.topic = schedule_topic+'_hour';\nmsg4.topic = schedule_topic+'_minutes';\nmsg5.topic = schedule_topic+'_state';\nmsg6.topic = schedule_topic+'_action';\nmsg7.topic = schedule_topic+'_override';\n//msg8.topic = schedule_topic+'';\n//msg9.topic = schedule_topic;\n//msg10.topic = schedule_topic;\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7];",
+        "outputs": 7,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -17108,6 +17125,9 @@
         "x": 410,
         "y": 160,
         "wires": [
+            [
+                "58449f97376b98d9"
+            ],
             [
                 "58449f97376b98d9"
             ],
@@ -17133,7 +17153,8 @@
             "Schedule_1_hour",
             "Schedule_1_minutes",
             "Schedule_1_state",
-            "Schedule_1_topic"
+            "Schedule_1_topic",
+            "Schedule_x_override"
         ]
     },
     {
@@ -27281,7 +27302,7 @@
         "name": "MQTT (x.x.x.x)",
         "broker": "x.x.x.x",
         "port": "1883",
-        "clientid": "",
+        "clientid": "Node_Red_Client",
         "autoConnect": true,
         "usetls": false,
         "compatmode": false,
@@ -27515,17 +27536,6 @@
         "className": ""
     },
     {
-        "id": "b7f22c282fde0f86",
-        "type": "ui_group",
-        "name": "Solar Energy",
-        "tab": "4fb3ce05f81e8c95",
-        "order": 1,
-        "disp": true,
-        "width": 8,
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "2b0c8e162d47abbb",
         "type": "ui_group",
         "name": "Schedules",
@@ -27570,7 +27580,7 @@
         "type": "ui_tab",
         "name": "Charts Temperature",
         "icon": "dashboard",
-        "order": 7,
+        "order": 8,
         "disabled": false,
         "hidden": false
     },
@@ -27606,7 +27616,7 @@
         "type": "ui_tab",
         "name": "Scheduler",
         "icon": "dashboard",
-        "order": 6,
+        "order": 7,
         "disabled": false,
         "hidden": false
     },
@@ -27615,15 +27625,7 @@
         "type": "ui_tab",
         "name": "Charts Energy",
         "icon": "dashboard",
-        "order": 8,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "4fb3ce05f81e8c95",
-        "type": "ui_tab",
-        "name": "System settings",
-        "icon": "dashboard",
+        "order": 9,
         "disabled": false,
         "hidden": false
     },
@@ -27632,7 +27634,7 @@
         "type": "ui_tab",
         "name": "Chart Degree Days",
         "icon": "dashboard",
-        "order": 9,
+        "order": 10,
         "disabled": false,
         "hidden": false
     }
