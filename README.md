@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 14 beta 3<br/>
+Current version: 14 beta 4<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -251,6 +251,12 @@ all older changelog items are colapsed below. only the latest changelog will alw
 [2022-05-12] (v14 beta3) Things done are:
 - ENHANCEMENT: Feature request; third attempt to turn heatpump off with RTC-function. Bug fixed that the stored rtc_on / rtc_off temperature ranges are not persistent.
 - BUG: Fixed scheduler bug where the 'override' toggles were not persistent over reboot.
+
+[2022-05-18] (v14 beta4) Things done are:
+- ENHANCEMENT: Feature request; forth attempt to turn heatpump off with RTC-function. https://github.com/edterbak/NodeRed_Heishamon_control/issues/24
+- BUG: fixed incorrect calculated dhw/heat kwh values. (https://github.com/edterbak/NodeRed_Heishamon_control/issues/27) Needs to be confirmed working.
+- ENHANCEMENT: Feature reuqest; Solar function. (https://github.com/edterbak/NodeRed_Heishamon_control/issues/26) This is the first attempt. 
+
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
