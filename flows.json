@@ -2645,7 +2645,9 @@
             "6bdcf84066368733",
             "8c2afa46f759d9cd",
             "6c42a1a32ed02491",
-            "77accb50873d6c98"
+            "77accb50873d6c98",
+            "7386864c75dbce5c",
+            "3f63919ddd4f0ea7"
         ],
         "x": 94,
         "y": 19,
@@ -2700,12 +2702,19 @@
             "0ac806fe66f54c29",
             "76fd0cf35b775cdf",
             "9f3df8b1cba0bbda",
-            "a734f98c5d02604e"
+            "a734f98c5d02604e",
+            "12b317db9b7ce136",
+            "aeca371dc97489c4",
+            "1afae37bbb9eee4f",
+            "62bb9a3778a8e0c4",
+            "8cea97ace96d4c67",
+            "eea147e0b371b347",
+            "f6a75e4b3dd9cf4c"
         ],
         "x": 14,
         "y": 1919,
-        "w": 772,
-        "h": 302
+        "w": 952,
+        "h": 342
     },
     {
         "id": "a8ac5b148d851a6b",
@@ -2995,9 +3004,9 @@
             "6db2abfba9e25737",
             "071ac5a0f08a8fdb"
         ],
-        "x": 1134,
+        "x": 1124,
         "y": 179,
-        "w": 1312,
+        "w": 1322,
         "h": 1542
     },
     {
@@ -3626,12 +3635,12 @@
         "width": 0,
         "height": 0,
         "wrap": false,
-        "passthru": false,
+        "passthru": true,
         "topic": "topic",
         "topicType": "msg",
         "format": "{{value}} °C",
         "min": "40",
-        "max": "65",
+        "max": "75",
         "step": 1,
         "className": "",
         "x": 410,
@@ -3842,14 +3851,15 @@
         "gap": "",
         "start": "",
         "inout": "out",
-        "septopics": true,
+        "septopics": false,
         "property": "payload",
         "topi": "topic",
         "x": 630,
         "y": 120,
         "wires": [
             [
-                "bd4b6ca0aa2c5e58"
+                "bd4b6ca0aa2c5e58",
+                "b942457059566bd1"
             ]
         ]
     },
@@ -3988,7 +3998,9 @@
         "x": 670,
         "y": 1960,
         "wires": [
-            []
+            [
+                "1afae37bbb9eee4f"
+            ]
         ]
     },
     {
@@ -4033,7 +4045,9 @@
         "x": 650,
         "y": 2080,
         "wires": [
-            []
+            [
+                "62bb9a3778a8e0c4"
+            ]
         ]
     },
     {
@@ -4078,7 +4092,9 @@
         "x": 650,
         "y": 2120,
         "wires": [
-            []
+            [
+                "8cea97ace96d4c67"
+            ]
         ]
     },
     {
@@ -5771,7 +5787,7 @@
         ],
         "repeat": "60",
         "crontab": "",
-        "once": true,
+        "once": false,
         "onceDelay": "1",
         "topic": "trigger",
         "payload": "",
@@ -5803,7 +5819,7 @@
         "payload": "[ ]",
         "payloadType": "json",
         "x": 110,
-        "y": 2180,
+        "y": 2220,
         "wires": [
             []
         ]
@@ -5845,7 +5861,7 @@
         ],
         "repeat": "120",
         "crontab": "",
-        "once": true,
+        "once": false,
         "onceDelay": "1",
         "topic": "trigger",
         "payload": "",
@@ -5937,10 +5953,10 @@
         "z": "8c9d42231fd19d3c",
         "g": "5c6e3f50e1a2328b",
         "name": "",
-        "group": "405b26e8a7e1985d",
-        "order": 1,
-        "width": 10,
-        "height": 10,
+        "group": "9b8ec8b1b9f66309",
+        "order": 4,
+        "width": 11,
+        "height": 5,
         "label": "WAR Time chart",
         "chartType": "line",
         "legend": "true",
@@ -6362,7 +6378,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "7c41aa629fb3859e",
         "name": "Load on boot 4",
-        "func": "var var1          = global.get('DHW_Target_Temp',\"file\");\n\n\n\nlet msg1={};\n\n\nmsg1.payload = var1;\n\n\nreturn [msg1];",
+        "func": "var DHW_Target_Temp         = global.get('DHW_Target_Temp',\"file\");\n//let msg1={};\nmsg.payload = DHW_Target_Temp;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6372,7 +6388,8 @@
         "y": 120,
         "wires": [
             [
-                "158e0bb2b00cd4ba"
+                "158e0bb2b00cd4ba",
+                "7386864c75dbce5c"
             ]
         ],
         "outputLabels": [
@@ -6394,11 +6411,12 @@
                 "vt": "str"
             }
         ],
-        "repeat": "180",
+        "repeat": "1800",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
         "topic": "trigger",
+        "payload": "",
         "payloadType": "date",
         "x": 230,
         "y": 80,
@@ -6489,7 +6507,7 @@
         "height": 1,
         "name": "T outside (advanced Functions tab)",
         "label": "WAR",
-        "format": "( {{msg.payload}} °C)",
+        "format": "({{msg.payload}} °C)",
         "layout": "row-left",
         "className": "",
         "x": 3380,
@@ -7052,7 +7070,8 @@
         "links": [
             "35995d04250be2bc",
             "c6801a6c865543b3",
-            "c959ee1f94c31c45"
+            "c959ee1f94c31c45",
+            "b50ab0a4981f9d17"
         ],
         "x": 1435,
         "y": 440,
@@ -11021,6 +11040,196 @@
         ]
     },
     {
+        "id": "7386864c75dbce5c",
+        "type": "link out",
+        "z": "8c9d42231fd19d3c",
+        "g": "7c41aa629fb3859e",
+        "name": "DHW_Target_Temp",
+        "mode": "link",
+        "links": [
+            "b057826d31d24adf"
+        ],
+        "x": 415,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "3f63919ddd4f0ea7",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "g": "7c41aa629fb3859e",
+        "name": "Dash - DHW (SP) link in",
+        "links": [
+            "e62a354ce682ea6f",
+            "42734e97a85d5537"
+        ],
+        "x": 505,
+        "y": 80,
+        "wires": [
+            [
+                "158e0bb2b00cd4ba"
+            ]
+        ]
+    },
+    {
+        "id": "b942457059566bd1",
+        "type": "debug",
+        "z": "8c9d42231fd19d3c",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1250,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "62bb9a3778a8e0c4",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "c3b7d9597903239c",
+        "name": "",
+        "func": "global.set(\"chart-water-heat\",msg,\"file\")",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 2080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8cea97ace96d4c67",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "c3b7d9597903239c",
+        "name": "",
+        "func": "global.set(\"chart-water-dhw\",msg,\"file\")",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 2120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1afae37bbb9eee4f",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "c3b7d9597903239c",
+        "name": "",
+        "func": "global.set(\"chart-kamertemperatuur\",msg,\"file\")",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 1960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aeca371dc97489c4",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "c3b7d9597903239c",
+        "name": "load",
+        "func": "delete msg.payload;\nmsg = global.get(\"chart-kamertemperatuur\",\"file\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 2000,
+        "wires": [
+            [
+                "8cb1aceef81045bd"
+            ]
+        ]
+    },
+    {
+        "id": "eea147e0b371b347",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "c3b7d9597903239c",
+        "name": "load",
+        "func": "delete msg.payload;\nmsg = global.get(\"chart-water-heat\",\"file\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 2060,
+        "wires": [
+            [
+                "9802bf01ebf45d28"
+            ]
+        ]
+    },
+    {
+        "id": "f6a75e4b3dd9cf4c",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "c3b7d9597903239c",
+        "name": "load",
+        "func": "delete msg.payload;\nmsg = global.get(\"chart-water-dhw\",\"file\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 2140,
+        "wires": [
+            [
+                "9789265573ab4c80"
+            ]
+        ]
+    },
+    {
+        "id": "12b317db9b7ce136",
+        "type": "inject",
+        "z": "8c9d42231fd19d3c",
+        "g": "c3b7d9597903239c",
+        "name": "start",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 2040,
+        "wires": [
+            [
+                "aeca371dc97489c4",
+                "eea147e0b371b347",
+                "f6a75e4b3dd9cf4c"
+            ]
+        ]
+    },
+    {
         "id": "a938de76db0b71f6",
         "type": "tab",
         "label": "WP Control",
@@ -12324,7 +12533,7 @@
         "gap": "",
         "start": "",
         "inout": "out",
-        "septopics": true,
+        "septopics": false,
         "property": "payload",
         "topi": "topic",
         "x": 950,
@@ -25837,7 +26046,7 @@
             "5792c915eb0eb380",
             "974b24f717fe8560"
         ],
-        "x": 54,
+        "x": 64,
         "y": 199,
         "w": 872,
         "h": 82
@@ -26072,7 +26281,7 @@
         "links": [
             "9de1bde370b68508"
         ],
-        "x": 95,
+        "x": 105,
         "y": 240,
         "wires": [
             [
@@ -26086,13 +26295,13 @@
         "z": "ed155b604642d354",
         "g": "2b75a55bb8fb12c6",
         "name": "Energy_Consumption_HEAT_kWh",
-        "func": "msg1 = {};\nmsg2 = {};\nmsg3 = {};\nmsg4 = {};\nmsg5 = {};\n\nvar CurrentTime = new Date().getTime();\nvar PreviousTime = flow.get(\"PreviousTime\");\nvar PreviousMessage = flow.get(\"PreviousMessage\");\nvar PreviousTopic = flow.get(\"PreviousTopic\");\nvar LastMessage = msg.payload;\nvar LastTopic= msg.topic;\n\n if (PreviousTime === \"undefined\") {\nflow.set('PreviousTime',CurrentTime);\n\n   \n}\n\nelse {\nTimeElapsed = ((CurrentTime - PreviousTime)/1000);\nflow.set('PreviousTime',CurrentTime);\nflow.set('PreviousMessage',msg.payload);\nflow.set('PreviousTopic',msg.topic);\nmsg3.last = {\"lastTime\":CurrentTime,\"LastMessage\":LastMessage,\"LastTopic\":LastTopic};\nmsg3.Previous = {\"PreviousTime\":PreviousTime,\"PreviousMessage\":PreviousMessage,\"PreviousTopic\":PreviousTopic};\n\n\nmsg1.payload = (TimeElapsed + \"  Seconds\");\ntemp = parseFloat(TimeElapsed.toFixed(0));\nmsg2.payload = temp;\nmsg3.payload = {\"Count\":temp,\"Units\":\"Seconds\"}; \nmsg5.payload = (PreviousMessage * ( temp / 3600000 ));   //  Calculation to Wh portion\nNumber(msg5.payload).toFixed(4);\nmsg5.topic = 'Energy_Consumption_HEAT_kWh';\n   }\n   \nreturn msg5;\n \n",
+        "func": "msg1 = {};\nmsg2 = {};\nmsg3 = {};\nmsg4 = {};\nmsg5 = {};\n\nvar CurrentTime = new Date().getTime();\nvar PreviousTime = context.get(\"PreviousTime\");\nvar PreviousMessage = context.get(\"PreviousMessage\");\nvar PreviousTopic = context.get(\"PreviousTopic\");\nvar exit;\n\n    var LastMessage = msg.payload;\n    var LastTopic= msg.topic;\n    \n    if (PreviousTime === undefined) \n        {\n            context.set('PreviousTime',CurrentTime);\n            exit = true;\n        }\n        \n    else if (PreviousMessage === undefined) \n        {\n            context.set('PreviousMessage',msg.payload);\n            exit = true;\n        }\n    else if (PreviousTopic === undefined) \n        {\n            context.set('PreviousTopic',msg.topic);\n            exit = true;\n        }\n    \n    else {\n                \n            TimeElapsed = ((CurrentTime - PreviousTime)/1000);\n            context.set('PreviousTime',CurrentTime);\n            context.set('PreviousMessage',msg.payload);\n            context.set('PreviousTopic',msg.topic);\n            msg3.last = {\"lastTime\":CurrentTime,\"LastMessage\":LastMessage,\"LastTopic\":LastTopic};\n            msg3.Previous = {\"PreviousTime\":PreviousTime,\"PreviousMessage\":PreviousMessage,\"PreviousTopic\":PreviousTopic};\n            \n            \n            msg1.payload = (TimeElapsed + \"  Seconds\");\n            temp = parseFloat(TimeElapsed.toFixed(0));\n            msg2.payload = temp;\n            msg3.payload = {\"Count\":temp,\"Units\":\"Seconds\"}; \n            msg5.payload = (PreviousMessage * ( temp / 3600000 ));   //  Calculation to Wh portion\n            Number(msg5.payload).toFixed(4);\n            msg5.topic = 'Energy_Consumption_HEAT_kWh';\n       }\n    if (exit === true)\n        {return null;}\n    else     \n        {return msg5;}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
+        "x": 470,
         "y": 240,
         "wires": [
             [
@@ -26535,7 +26744,7 @@
             "dc13db3939bf2d7f",
             "ce5d0b3236face62"
         ],
-        "x": 800,
+        "x": 810,
         "y": 240,
         "wires": [],
         "inputLabels": [
@@ -26912,7 +27121,7 @@
         "outputLabels": [
             "kwh_31d",
             "degreedays_31d",
-            null
+            ""
         ]
     },
     {
@@ -26962,7 +27171,10 @@
         "y": 1020,
         "wires": [
             [
-                "2ee679408e4ccc6f"
+                "2ee679408e4ccc6f",
+                "9a88d9c8f4a6c2a5",
+                "91840e451e332fa6",
+                "d64accce0bd0c291"
             ]
         ]
     },
@@ -27034,7 +27246,7 @@
         "z": "ed155b604642d354",
         "g": "27d590581cd92df1",
         "name": "Energy_Consumption_DHW_kWh",
-        "func": "msg1 = {};\nmsg2 = {};\nmsg3 = {};\nmsg4 = {};\nmsg5 = {};\n\nvar CurrentTime = new Date().getTime();\nvar PreviousTime = flow.get(\"PreviousTime\");\nvar PreviousMessage = flow.get(\"PreviousMessage\");\nvar PreviousTopic = flow.get(\"PreviousTopic\");\nvar LastMessage = msg.payload;\nvar LastTopic= msg.topic;\n\n if (PreviousTime === \"undefined\") {\nflow.set('PreviousTime',CurrentTime);\n\n   \n}\n\nelse {\nTimeElapsed = ((CurrentTime - PreviousTime)/1000);\nflow.set('PreviousTime',CurrentTime);\nflow.set('PreviousMessage',msg.payload);\nflow.set('PreviousTopic',msg.topic);\nmsg3.last = {\"lastTime\":CurrentTime,\"LastMessage\":LastMessage,\"LastTopic\":LastTopic};\nmsg3.Previous = {\"PreviousTime\":PreviousTime,\"PreviousMessage\":PreviousMessage,\"PreviousTopic\":PreviousTopic};\n\n\nmsg1.payload = (TimeElapsed + \"  Seconds\");\ntemp = parseFloat(TimeElapsed.toFixed(0));\nmsg2.payload = temp;\nmsg3.payload = {\"Count\":temp,\"Units\":\"Seconds\"}; \nmsg5.payload = (PreviousMessage * ( temp / 3600000 ));   //  Calculation to Wh portion\nNumber(msg5.payload).toFixed(4);\nmsg5.topic = 'Energy_Consumption_DHW_kWh';\n   }\n   \nreturn msg5;\n \n",
+        "func": "msg1 = {};\nmsg2 = {};\nmsg3 = {};\nmsg4 = {};\nmsg5 = {};\n\nvar CurrentTime = new Date().getTime();\nvar PreviousTime = context.get(\"PreviousTime\");\nvar PreviousMessage = context.get(\"PreviousMessage\");\nvar PreviousTopic = context.get(\"PreviousTopic\");\nvar exit;\n\n    var LastMessage = msg.payload;\n    var LastTopic= msg.topic;\n    \n    if (PreviousTime === undefined) \n        {\n            context.set('PreviousTime',CurrentTime);\n            exit = true;\n        }\n        \n    else if (PreviousMessage === undefined) \n        {\n            context.set('PreviousMessage',msg.payload);\n            exit = true;\n        }\n    else if (PreviousTopic === undefined) \n        {\n            context.set('PreviousTopic',msg.topic);\n            exit = true;\n        }\n    \n    else {\n                \n            TimeElapsed = ((CurrentTime - PreviousTime)/1000);\n            context.set('PreviousTime',CurrentTime);\n            context.set('PreviousMessage',msg.payload);\n            context.set('PreviousTopic',msg.topic);\n            msg3.last = {\"lastTime\":CurrentTime,\"LastMessage\":LastMessage,\"LastTopic\":LastTopic};\n            msg3.Previous = {\"PreviousTime\":PreviousTime,\"PreviousMessage\":PreviousMessage,\"PreviousTopic\":PreviousTopic};\n            \n            \n            msg1.payload = (TimeElapsed + \"  Seconds\");\n            temp = parseFloat(TimeElapsed.toFixed(0));\n            msg2.payload = temp;\n            msg3.payload = {\"Count\":temp,\"Units\":\"Seconds\"}; \n            msg5.payload = (PreviousMessage * ( temp / 3600000 ));   //  Calculation to Wh portion\n            Number(msg5.payload).toFixed(4);\n            msg5.topic = 'Energy_Consumption_DHW_kWh';\n       }\n    if (exit === true)\n        {return null;}\n    else     \n        {return msg5;}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -27297,6 +27509,1912 @@
         ]
     },
     {
+        "id": "7859b4e11da15a97",
+        "type": "inject",
+        "z": "ed155b604642d354",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "111",
+        "x": 410,
+        "y": 1800,
+        "wires": [
+            [
+                "824f860359d733b2"
+            ]
+        ]
+    },
+    {
+        "id": "824f860359d733b2",
+        "type": "function",
+        "z": "ed155b604642d354",
+        "name": "",
+        "func": "delete msg.topic;\nmsg = {\"payload\":[{\"labels\":[\"04-18\",\"04-19\",\"04-20\",\"04-21\",\"04-22\",\"04-23\",\"04-24\",\"04-25\",\"04-26\",\"04-27\",\"04-28\",\"04-29\",\"04-30\",\"05-01\",\"05-02\",\"05-03\",\"05-04\",\"05-05\",\"05-06\",\"05-07\",\"05-08\",\"05-09\",\"05-10\",\"05-11\",\"05-12\",\"05-13\",\"05-14\",\"05-15\",\"05-16\",\"05-17\",\"05-18\"],\"series\":[\"Energy_Consumption_HEAT_kWh\"],\"data\":[[0,0,0,0.202,2.132,0.341,1.312,1.922,1.307,0.411,2.174,4.679,1.984,1.914,2.146,2.656,1.918,2.164,2.777,0.176,1.569,1.547,0.29,0.266,0.067,2.166,0,0,0,0,0]]}],\"topic\":\"Energy_Consumption_HEAT_kWh\",\"_msgid\":\"e541c0849949aecc\",\"_event\":\"node:974b24f717fe8560\",\"bar_keys\":[\"20220418\",\"20220419\",\"20220420\",\"20220421\",\"20220422\",\"20220423\",\"20220424\",\"20220425\",\"20220426\",\"20220427\",\"20220428\",\"20220429\",\"20220430\",\"20220501\",\"20220502\",\"20220503\",\"20220504\",\"20220505\",\"20220506\",\"20220507\",\"20220508\",\"20220509\",\"20220510\",\"20220511\",\"20220512\",\"20220513\",\"20220514\",\"20220515\",\"20220516\",\"20220517\",\"20220518\"],\"data_counter\":[0],\"topics\":[\"Energy_Consumption_HEAT_kWh\"],\"Energy_Consumption_HEAT_kWh_last\":0,\"data_min\":0,\"data_max\":89527530.931,\"data_sum\":89527567.051,\"settings\":{\"unit\":\"\",\"x_size\":\"31\",\"precision\":\"3\",\"is_meter_reading\":false,\"agg_by\":\"sum\"}};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 1800,
+        "wires": [
+            [
+                "550d61dd1ac867d3"
+            ]
+        ]
+    },
+    {
+        "id": "966985d68ebb4990",
+        "type": "tab",
+        "label": "WP Solar",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bf2c1d5a22f56dd8",
+        "type": "group",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "style": {
+            "fill": "#bfdbef",
+            "label": true
+        },
+        "nodes": [
+            "071320367f2b7a40",
+            "e6e7a4c840499ff0",
+            "2ab2c3aad0cba156",
+            "e7e4159b16d21595",
+            "5256af8b7309c113",
+            "35911a7ba2ccb3ee",
+            "b51e04fb99eba20b",
+            "b6f0411bbf444c9c",
+            "c980bba812a20bc2",
+            "2c195bb0c3f09444",
+            "39f8d3463d10ccfb",
+            "d5bc64b70d2aa037",
+            "c7ec48dc3c78df80",
+            "4219518104b1ef5d"
+        ],
+        "x": 88,
+        "y": 39,
+        "w": 1578,
+        "h": 542
+    },
+    {
+        "id": "429efe20cfdf905d",
+        "type": "group",
+        "z": "966985d68ebb4990",
+        "name": "SOLAR functions",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b48cd18bfd6eb512",
+            "d10277056d1d02fe",
+            "f2de7a857ebb62ca",
+            "199df2b0fce0a31b",
+            "d60c01c296ab9701",
+            "6f42eb5ce8f14538",
+            "b84df04af23dbc5a",
+            "3999167a968f41c5",
+            "97d1263164d37f9a",
+            "8e29b6d3f137cbae",
+            "2acf2118927e2814",
+            "e493043bd34ba3c3",
+            "e0026e2c5ab2bd08",
+            "aa0fc024b66f7bef",
+            "bec72a0fb0243efa",
+            "9593ad422bc31478",
+            "41aa79867da214eb",
+            "023d546db538f837",
+            "54b33637f9684c64",
+            "ba47d2dd13c84aa8",
+            "e0c261e5e8e372fb",
+            "a99e3a9e7081a34c",
+            "d08c9f275ae78024",
+            "2b2aec0a8404885d",
+            "1e0f4db7208e5055"
+        ],
+        "x": 94,
+        "y": 793,
+        "w": 1332,
+        "h": 914
+    },
+    {
+        "id": "9a5d579bcebc1122",
+        "type": "group",
+        "z": "966985d68ebb4990",
+        "name": "HELP part",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f291a21b0d2a0fe6",
+            "59498f5efd6657e7",
+            "b6f6698f6e4cb68d",
+            "09e613c29d43a6c2",
+            "845b07c7746b9475",
+            "e1b27d9cc61959b3"
+        ],
+        "x": 1694,
+        "y": 139,
+        "w": 512,
+        "h": 382
+    },
+    {
+        "id": "b51e04fb99eba20b",
+        "type": "group",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": "This groups function: Calculate result of the day",
+        "style": {
+            "label": true,
+            "fill": "#dbcbe7"
+        },
+        "nodes": [
+            "aad8f63921d33903",
+            "9001c99705ba1e90",
+            "cdc88bca276de61b",
+            "794528b156d90283",
+            "42734e97a85d5537"
+        ],
+        "x": 574,
+        "y": 419,
+        "w": 772,
+        "h": 122
+    },
+    {
+        "id": "b6f0411bbf444c9c",
+        "type": "group",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": "",
+        "style": {
+            "stroke": "#ff0000",
+            "fill": "#ff0000",
+            "fill-opacity": "0.55",
+            "label": true
+        },
+        "nodes": [
+            "41082ab321e92da9"
+        ],
+        "x": 114,
+        "y": 159,
+        "w": 272,
+        "h": 82
+    },
+    {
+        "id": "e0026e2c5ab2bd08",
+        "type": "group",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "",
+        "style": {
+            "fill": "#ffefbf",
+            "label": true
+        },
+        "nodes": [
+            "ce2634259bc8d6eb",
+            "a44a8c2daa6c9586",
+            "33af265aa8cd105a",
+            "16fc69e4b9ff74fd",
+            "3a7ce33e7b19cff8",
+            "608ac27952261ad4",
+            "7ed70179e6faf792",
+            "7343c5b7a6839f36",
+            "2e9d5424e80ef967",
+            "f3f4f51165a33ae4",
+            "bfade373dc6bae1e",
+            "9e65e17c7283cfa5",
+            "e5cb66afb46c891b",
+            "2a4ffebda936e1bf"
+        ],
+        "x": 494,
+        "y": 819,
+        "w": 432,
+        "h": 862
+    },
+    {
+        "id": "ce2634259bc8d6eb",
+        "type": "ui_dropdown",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "name": "Power detection method",
+        "label": "Power detection method",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "b7f22c282fde0f86",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "kWh production today",
+                "value": "kWh",
+                "type": "str"
+            },
+            {
+                "label": "kW production now",
+                "value": "kW",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 630,
+        "y": 1220,
+        "wires": [
+            [
+                "7343c5b7a6839f36",
+                "aa0fc024b66f7bef"
+            ]
+        ]
+    },
+    {
+        "id": "a44a8c2daa6c9586",
+        "type": "ui_gauge",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "name": "Power export (W)",
+        "group": "b7f22c282fde0f86",
+        "order": 10,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Actual",
+        "label": "Watt",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5000",
+        "colors": [
+            "#bf3535",
+            "#f76300",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 610,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "33af265aa8cd105a",
+        "type": "ui_numeric",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "name": "DHW temperature setpoint - low",
+        "label": "DHW temperature setpoint - low",
+        "tooltip": "This setpoint is active below the {{msg.threshold}} limit",
+        "group": "b7f22c282fde0f86",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "wrap": true,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}} °C",
+        "min": 0,
+        "max": "75",
+        "step": 1,
+        "className": "",
+        "x": 650,
+        "y": 1040,
+        "wires": [
+            [
+                "d08c9f275ae78024"
+            ]
+        ]
+    },
+    {
+        "id": "16fc69e4b9ff74fd",
+        "type": "ui_numeric",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "name": "DHW temperature setpoint - high",
+        "label": "DHW temperature setpoint - high",
+        "tooltip": "This setpoint is active above the {{msg.threshold}} limit",
+        "group": "b7f22c282fde0f86",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "wrap": true,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}} °C",
+        "min": 0,
+        "max": "75",
+        "step": 1,
+        "className": "",
+        "x": 660,
+        "y": 1160,
+        "wires": [
+            [
+                "bec72a0fb0243efa"
+            ]
+        ]
+    },
+    {
+        "id": "3a7ce33e7b19cff8",
+        "type": "ui_chart",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "name": "Today kWh total",
+        "group": "b7f22c282fde0f86",
+        "order": 11,
+        "width": 2,
+        "height": 4,
+        "label": "Today",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 600,
+        "y": 1640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "608ac27952261ad4",
+        "type": "ui_numeric",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "name": "Solar Production threshold ({{detection_method}})",
+        "label": "Solar Production threshold ({{detection_method}})",
+        "tooltip": "",
+        "group": "b7f22c282fde0f86",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "wrap": true,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}} {{detection_method}}",
+        "min": 0,
+        "max": "30",
+        "step": "0.1",
+        "className": "",
+        "x": 710,
+        "y": 1340,
+        "wires": [
+            [
+                "7ed70179e6faf792",
+                "9593ad422bc31478"
+            ]
+        ]
+    },
+    {
+        "id": "7ed70179e6faf792",
+        "type": "change",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "threshold",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 1100,
+        "wires": [
+            [
+                "33af265aa8cd105a",
+                "16fc69e4b9ff74fd"
+            ]
+        ]
+    },
+    {
+        "id": "7343c5b7a6839f36",
+        "type": "change",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "detection_method",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 1280,
+        "wires": [
+            [
+                "608ac27952261ad4"
+            ]
+        ]
+    },
+    {
+        "id": "2e9d5424e80ef967",
+        "type": "ui_switch",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "name": "Fallback to SP low below threshold",
+        "label": "Fallback to SP low?",
+        "tooltip": "Default = disable (no).",
+        "group": "b7f22c282fde0f86",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 660,
+        "y": 1440,
+        "wires": [
+            [
+                "41aa79867da214eb"
+            ]
+        ]
+    },
+    {
+        "id": "aad8f63921d33903",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "g": "b51e04fb99eba20b",
+        "name": "Function schedule",
+        "func": "\n////////////////////////////////////////////////////////////////////////////////\n////////////////////////////////////////////////////////////////////////////////\n\n\nif (flow.get(\"start_today\",\"file\") === undefined)\n    {\n        msg.payload = Number(msg.payload).toFixed(1);\n        msg.payload = parseFloat(msg.payload);\n        flow.set(\"start_today\",msg.payload,\"file\");\n    }\nvar total_kwh       = flow.get('total_kwh',\"file\");\nvar start_today     = flow.get('start_today',\"file\");\nif (msg.topic == \"time\")                                                        // When @ midnight, reprogram start_today.\n    {\n        var DHW_SP_LOW      = global.get('DHW_SP_LOW',\"file\");                  //\n        var DHW_Target_Temp = global.get('DHW_Target_Temp',\"file\");             //\n        var solar_state     = global.get('solar_state',\"file\");                 //\n        \n        msg.topic           = \"kWh\";\n        msg.payload         = 0;\n        \n        if (total_kwh !== undefined)\n            {\n                flow.set('start_today',total_kwh,\"file\");\n            }\n\n        if (DHW_Target_Temp != DHW_SP_LOW && solar_state == true)\n            {\n                let msg2={};\n                msg2.payload = DHW_SP_LOW;\n                return [msg, msg2];\n            }\n        else \n            {\n                return [msg,null];\n            }\n    }\nelse if (msg.topic == \"start\")\n    {\n        let msg1={};\n        msg1.payload = total_kwh - start_today;\n        msg1.payload = Number(msg1.payload).toFixed(2);\n        msg1.payload = parseFloat(msg1.payload);\n        msg1.topic = \"kWh\";\n        return [msg1,null];\n    }\nelse\n    {\n        var until_now       =   (msg.payload - start_today);            // calculate todays production in kWh\n        msg.payload = until_now;\n        msg.payload = Number(msg.payload).toFixed(2);\n        msg.payload = parseFloat(msg.payload);\n        msg.topic = \"kWh\";\n        return [msg,null];\n    }\n    ",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "\n",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 460,
+        "wires": [
+            [
+                "cdc88bca276de61b"
+            ],
+            [
+                "42734e97a85d5537"
+            ]
+        ],
+        "outputLabels": [
+            "override / power on/off",
+            "DHW_SP_LOW"
+        ]
+    },
+    {
+        "id": "9001c99705ba1e90",
+        "type": "delay",
+        "z": "966985d68ebb4990",
+        "g": "b51e04fb99eba20b",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "30",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 460,
+        "wires": [
+            [
+                "aad8f63921d33903"
+            ]
+        ]
+    },
+    {
+        "id": "b48cd18bfd6eb512",
+        "type": "inject",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "RESET",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[ ]",
+        "payloadType": "json",
+        "x": 190,
+        "y": 1500,
+        "wires": [
+            [
+                "a44a8c2daa6c9586"
+            ]
+        ]
+    },
+    {
+        "id": "f3f4f51165a33ae4",
+        "type": "ui_switch",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "name": "Solar functions",
+        "label": "Solar functions",
+        "tooltip": "Enable / Disable the Solar energy functionality",
+        "group": "b7f22c282fde0f86",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 600,
+        "y": 940,
+        "wires": [
+            [
+                "e0c261e5e8e372fb"
+            ]
+        ]
+    },
+    {
+        "id": "f291a21b0d2a0fe6",
+        "type": "ui_media",
+        "z": "966985d68ebb4990",
+        "g": "9a5d579bcebc1122",
+        "group": "55fef8703465841e",
+        "name": "Current kW Production",
+        "width": 7,
+        "height": 5,
+        "order": 2,
+        "category": "Solar",
+        "file": "chart powerproduction_1.png",
+        "layout": "adjust",
+        "showcontrols": false,
+        "loop": true,
+        "onstart": false,
+        "scope": "local",
+        "tooltip": "Select [kW Production now] if you want to use current powerproduction as a trigger to allow the 2nd Setpoint. This can result in more on-off actions.",
+        "x": 1900,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "59498f5efd6657e7",
+        "type": "ui_media",
+        "z": "966985d68ebb4990",
+        "g": "9a5d579bcebc1122",
+        "group": "55fef8703465841e",
+        "name": "kWh Production today",
+        "width": 7,
+        "height": 5,
+        "order": 3,
+        "category": "Solar",
+        "file": "chart powerproduction_2.png",
+        "layout": "adjust",
+        "showcontrols": false,
+        "loop": true,
+        "onstart": false,
+        "scope": "local",
+        "tooltip": "Select [kWh Production today] if you want to use todays total accumulated powerproduction as a trigger to allow the 2nd Setpoint.",
+        "x": 1900,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b6f6698f6e4cb68d",
+        "type": "ui_text",
+        "z": "966985d68ebb4990",
+        "g": "9a5d579bcebc1122",
+        "group": "55fef8703465841e",
+        "order": 5,
+        "width": 7,
+        "height": 1,
+        "name": "text - kWh Production today",
+        "label": "Image 2: kWh Production today",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1920,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "09e613c29d43a6c2",
+        "type": "ui_text",
+        "z": "966985d68ebb4990",
+        "g": "9a5d579bcebc1122",
+        "group": "55fef8703465841e",
+        "order": 4,
+        "width": 7,
+        "height": 1,
+        "name": "text - kW Production now",
+        "label": "Image 1: kW Production now",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1910,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "845b07c7746b9475",
+        "type": "ui_template",
+        "z": "966985d68ebb4990",
+        "g": "9a5d579bcebc1122",
+        "group": "55fef8703465841e",
+        "name": "Line - Instructions text",
+        "order": 1,
+        "width": 14,
+        "height": 15,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<h3>Instructions</h3> \n</html>\nThe Instruction is split into two parts. </br> </br>\n1st part in Node-Red flow page (http://IP:1880/#flow)</br>\nFollow the instructions in the white comments in the tab: “WP Solar”</br></br>\n2nd part is written below. </br></br>\n\n<h3>Solar function</h3>\nThis enables / disables this function.</br></br>\n<h3>DHW temperature setpoint – low/high</h3>\nThis is the target temperature for the water in DHW tank. The high setpoint will be used when solar power reached the threshold. By default, setpoint low is used at the beginning of each day. Note: Setpoint low is the same setpoint as set in HOME tab (DHW SP)</br></br>\n<h3>Power detection method</h3> \nThere are two options are available. Option 1: “kW production now” and option 2: “kWh production today”.</br>\nkW production now – Live energy export of the house expressed in Watt. See image 1.</br>\nkWh production today – Todays cumulative energy export of the house, expressed in kWh. See image 2. This value will only increase. Energy import (at a later time) will not be subtracted from the value.</br></br>\n<h3>Solar Production threshold (XX)</h3>\nThe threshold above which the new “DHW temperature setpoint – high” should be sent to the heatpump as a new target. </br></br>\n<h3>Fallback to SP low?</h3>\nBy default, once setpoint high is used, it will not switch back to setpoint low on the same day. If you do want to fall back to SP low, enable 'fallback to SP low below threshold. This will only apply for the power detection method kW. Be aware that this might cause oscillating behavior. </br></br>\n\n<h3>Override power state</h3>\nWhen the heatpump is turned off, do you want this function to turn the heatpump on again? Enable switch to allow 'turn on' action",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1900,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bfade373dc6bae1e",
+        "type": "ui_template",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "group": "b7f22c282fde0f86",
+        "name": "Line - Setup ",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Setup</left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 590,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9e65e17c7283cfa5",
+        "type": "ui_template",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "group": "b7f22c282fde0f86",
+        "name": "Line - Current values",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Power export</left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 620,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d10277056d1d02fe",
+        "type": "link in",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "Input - Current power production",
+        "links": [
+            "641b07a48cdc5a80",
+            "071320367f2b7a40"
+        ],
+        "x": 445,
+        "y": 1600,
+        "wires": [
+            [
+                "a44a8c2daa6c9586"
+            ]
+        ]
+    },
+    {
+        "id": "f2de7a857ebb62ca",
+        "type": "link in",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "Input - kWh production of Today",
+        "links": [
+            "39f8d3463d10ccfb"
+        ],
+        "x": 445,
+        "y": 1640,
+        "wires": [
+            [
+                "3a7ce33e7b19cff8"
+            ]
+        ]
+    },
+    {
+        "id": "071320367f2b7a40",
+        "type": "link out",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": "P1 Output - Power production (kW)",
+        "mode": "link",
+        "links": [
+            "d10277056d1d02fe",
+            "9b780c59d00e0e91",
+            "4047483a87ea6ec9"
+        ],
+        "x": 1240,
+        "y": 320,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "e6e7a4c840499ff0",
+        "type": "comment",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": "PRODUCTION",
+        "info": "",
+        "x": 200,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "2ab2c3aad0cba156",
+        "type": "comment",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": "Expected input is a value in Watt or kiloWatt.",
+        "info": "",
+        "x": 290,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "794528b156d90283",
+        "type": "no-op",
+        "z": "966985d68ebb4990",
+        "g": "b51e04fb99eba20b",
+        "name": "IN",
+        "x": 650,
+        "y": 460,
+        "wires": [
+            [
+                "9001c99705ba1e90"
+            ]
+        ]
+    },
+    {
+        "id": "cdc88bca276de61b",
+        "type": "no-op",
+        "z": "966985d68ebb4990",
+        "g": "b51e04fb99eba20b",
+        "name": "OUT",
+        "x": 1210,
+        "y": 460,
+        "wires": [
+            [
+                "39f8d3463d10ccfb"
+            ]
+        ]
+    },
+    {
+        "id": "41082ab321e92da9",
+        "type": "comment",
+        "z": "966985d68ebb4990",
+        "g": "b6f0411bbf444c9c",
+        "name": ">> Put your input here !  <<",
+        "info": "",
+        "x": 250,
+        "y": 200,
+        "wires": [],
+        "icon": "node-red/sort.svg"
+    },
+    {
+        "id": "e7e4159b16d21595",
+        "type": "link in",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": "",
+        "links": [
+            "2c195bb0c3f09444",
+            "c8359b76aff8f00e"
+        ],
+        "x": 145,
+        "y": 320,
+        "wires": [
+            [
+                "5256af8b7309c113"
+            ]
+        ]
+    },
+    {
+        "id": "5256af8b7309c113",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": "VALUE * +/- 1000",
+        "func": "\n////////////////////////////////////////////////////////////////////////////////\n//                                                                            //\n//    In this function you need to multiply the value by 1000 or -1000        //\n//                                                                            //\n////////////////////////////////////////////////////////////////////////////////\n\nmsg.payload = msg.payload * 1000;    // \n\n\n// Attention !!!\n//\n// Do NOT remove this function completly. The output is a number, not text.\n//\n//\n////////////////////////////////////////////////////////////////////////////////\n//msg.payload = msg.payload;                                                // deviding by 1000 to convert to kWh\nmsg.topic = \"W\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 320,
+        "wires": [
+            [
+                "071320367f2b7a40",
+                "c980bba812a20bc2"
+            ]
+        ]
+    },
+    {
+        "id": "35911a7ba2ccb3ee",
+        "type": "comment",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": "Correction",
+        "info": "",
+        "x": 280,
+        "y": 280,
+        "wires": [],
+        "icon": "node-red/sort.svg"
+    },
+    {
+        "id": "e5cb66afb46c891b",
+        "type": "comment",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "name": "DASHBOARD",
+        "info": "",
+        "x": 590,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "c980bba812a20bc2",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": "GRID power production W to kWh",
+        "func": "msg1 = {};\nmsg2 = {};\nmsg3 = {};\nmsg4 = {};\nmsg5 = {};\nmsg6 = {};\n\nvar CurrentTime = new Date().getTime();\nvar PreviousTime = context.get(\"PreviousTime\");\nvar PreviousMessage = context.get(\"PreviousMessage\");\nvar PreviousTopic = context.get(\"PreviousTopic\");\nvar exit = false;\n//  First run checks. If some variables are undefined, set current values and exit.\nif (PreviousTime === undefined) {context.set('PreviousTime',CurrentTime);       exit = true;}\nif (PreviousMessage === undefined) {context.set('PreviousMessage',msg.payload); exit = true;}\nif (PreviousTopic === undefined)  {context.set('PreviousMessage',msg.topic);    exit = true;}\n\nif (exit === false)        \n    {    return null;            // This output will automatically be skipped, next calculation will be ok.\n        \n    }\n\nelse\n    {\n        var LastMessage = msg.payload;\n        var LastTopic= msg.topic;\n        \n        TimeElapsed = ((CurrentTime - PreviousTime)/1000);\n        context.set('PreviousTime',CurrentTime);\n        context.set('PreviousMessage',msg.payload);\n        context.set('PreviousTopic',msg.topic);\n        msg3.last = {\"lastTime\":CurrentTime,\"LastMessage\":LastMessage,\"LastTopic\":LastTopic};\n        msg3.Previous = {\"PreviousTime\":PreviousTime,\"PreviousMessage\":PreviousMessage,\"PreviousTopic\":PreviousTopic};\n        \n        \n        msg1.payload = (TimeElapsed + \"  Seconds\");\n        temp = parseFloat(TimeElapsed.toFixed(0));\n        msg2.payload = temp;\n        msg3.payload = {\"Count\":temp,\"Units\":\"Seconds\"}; \n        msg5.payload = (PreviousMessage * ( temp / 3600000 ));                  //  Calculation to Wh portion\n        Number(msg5.payload).toFixed(4);\n        msg5.topic = 'GRID power production kWh';                               // msg5 = latest kWh part.\n    \n    \n    ///////////////////////////////////////////////////////////////////////////\n    // Calculation from kWh part > total kWh of today\n        var total_kwh = flow.get(\"total_kwh\",\"file\");\n        if (total_kwh === undefined)        {total_kwh = 0;}\n        \n        msg6.payload = msg5.payload + total_kwh;                                // msg6 = kWh total from the start of operation\n        msg6.topic = 'GRID power production kWh';\n    \n        flow.set('total_kwh',msg6.payload,\"file\");\n        \n    ////////////////////////////////////////////////////////////////////////////\n        return msg6;\n    \n    }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 460,
+        "wires": [
+            [
+                "794528b156d90283"
+            ]
+        ],
+        "outputLabels": [
+            "Production kWh of today"
+        ],
+        "icon": "node-red/timer.png"
+    },
+    {
+        "id": "2c195bb0c3f09444",
+        "type": "link out",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": "CONNECT FROM P1",
+        "mode": "link",
+        "links": [
+            "e7e4159b16d21595"
+        ],
+        "x": 1280,
+        "y": 200,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "39f8d3463d10ccfb",
+        "type": "link out",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": "P1 Output - Power production Today (kWh)",
+        "mode": "link",
+        "links": [
+            "f2de7a857ebb62ca",
+            "a27c417c537a6b65",
+            "c193dd7c180a36de"
+        ],
+        "x": 1470,
+        "y": 460,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "d5bc64b70d2aa037",
+        "type": "comment",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",
+        "info": "",
+        "x": 800,
+        "y": 200,
+        "wires": [],
+        "icon": "node-red/sort.svg"
+    },
+    {
+        "id": "199df2b0fce0a31b",
+        "type": "change",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "set variable DHW_SP_HIGH",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(file)::DHW_SP_HIGH",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d60c01c296ab9701",
+        "type": "change",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "set variable solar_detection_method",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(file)::solar_detection_method",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1250,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f42eb5ce8f14538",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "Load on boot",
+        "func": "var variable                    = global.get('solar_detection_method',\"file\");\nlet msg1={};\n\nif(variable === undefined)      {return null;}\n                            \nelse                        \n    {\n        msg1.payload = variable;\n//        msg1.topic = 'DHWHeatDelta'; \n        return msg1;\n    }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1220,
+        "wires": [
+            [
+                "ce2634259bc8d6eb"
+            ]
+        ],
+        "outputLabels": [
+            "Heatpump_State"
+        ]
+    },
+    {
+        "id": "b84df04af23dbc5a",
+        "type": "inject",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1800",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 940,
+        "wires": [
+            [
+                "6f42eb5ce8f14538",
+                "3999167a968f41c5",
+                "8e29b6d3f137cbae",
+                "2acf2118927e2814",
+                "54b33637f9684c64",
+                "2b2aec0a8404885d",
+                "1e0f4db7208e5055"
+            ]
+        ]
+    },
+    {
+        "id": "3999167a968f41c5",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "Load on boot",
+        "func": "var variable                    = global.get('DHW_SP_HIGH',\"file\");\nlet msg1={};\n\nif(variable === undefined)      {return null;}\n                            \nelse                        \n    {\n        msg1.payload = variable;\n//        msg1.topic = 'DHW_SP_HIGH'; \n        return msg1;\n    }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1160,
+        "wires": [
+            [
+                "16fc69e4b9ff74fd"
+            ]
+        ],
+        "outputLabels": [
+            "Heatpump_State"
+        ]
+    },
+    {
+        "id": "97d1263164d37f9a",
+        "type": "change",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "set variable solar_threshold",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(file)::solar_threshold",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 1340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8e29b6d3f137cbae",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "Load on boot",
+        "func": "var variable                    = global.get('solar_state',\"file\");\nlet msg1={};\n\nif(variable === undefined)      {return null;}\n                            \nelse                        \n    {\n        msg1.payload = variable;\n//        msg1.topic = 'solar_state'; \n        return msg1;\n    }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 940,
+        "wires": [
+            [
+                "f3f4f51165a33ae4"
+            ]
+        ],
+        "outputLabels": [
+            "Heatpump_State"
+        ]
+    },
+    {
+        "id": "2acf2118927e2814",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "Load on boot",
+        "func": "var variable                    = global.get('solar_fallback',\"file\");\nlet msg1={};\n\nif(variable === undefined)      {return null;}\n                            \nelse                        \n    {\n        msg1.payload = variable;\n//        msg1.topic = 'solar_fallback'; \n        return msg1;\n    }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1440,
+        "wires": [
+            [
+                "2e9d5424e80ef967"
+            ]
+        ],
+        "outputLabels": [
+            "Heatpump_State"
+        ]
+    },
+    {
+        "id": "e493043bd34ba3c3",
+        "type": "change",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "set variable solar_fallback",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(file)::solar_fallback",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1210,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa0fc024b66f7bef",
+        "type": "rbe",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1030,
+        "y": 1220,
+        "wires": [
+            [
+                "d60c01c296ab9701"
+            ]
+        ]
+    },
+    {
+        "id": "bec72a0fb0243efa",
+        "type": "rbe",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1030,
+        "y": 1160,
+        "wires": [
+            [
+                "199df2b0fce0a31b"
+            ]
+        ]
+    },
+    {
+        "id": "9593ad422bc31478",
+        "type": "rbe",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1030,
+        "y": 1340,
+        "wires": [
+            [
+                "97d1263164d37f9a"
+            ]
+        ]
+    },
+    {
+        "id": "41aa79867da214eb",
+        "type": "rbe",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1030,
+        "y": 1440,
+        "wires": [
+            [
+                "e493043bd34ba3c3"
+            ]
+        ]
+    },
+    {
+        "id": "023d546db538f837",
+        "type": "inject",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "RESET",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[ ]",
+        "payloadType": "json",
+        "x": 190,
+        "y": 1540,
+        "wires": [
+            [
+                "3a7ce33e7b19cff8"
+            ]
+        ]
+    },
+    {
+        "id": "07cc0b87ee9c6f05",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "name": "Watt trigger",
+        "func": "var solar_state                     = global.get('solar_state',\"file\");\nvar solar_detection_method          = global.get('solar_detection_method',\"file\");\nvar solar_threshold                 = global.get('solar_threshold',\"file\");  \nvar DHW_Current                     = global.get('DHW_Target_Temp',\"file\");\nvar solar_fallback                  = global.get('solar_fallback',\"file\");\nvar DHW_SP_HIGH                     = global.get('DHW_SP_HIGH',\"file\");\nvar Operating_Mode_State            = global.get('Operating_Mode_State',\"file\");\nvar new_Operating_Mode_State;       // just create a variable, empty.\nvar solar_turn_on                   = global.get('solar_turn_on',\"file\");\nvar Heatpump_State                  = global.get('Heatpump_State',\"file\");\n\nlet msg1={};\nlet msg2={};\nlet msg3={};\n\nif (solar_state === true && solar_detection_method == \"kW\" && solar_threshold < (msg.payload / 1000) && DHW_Current != DHW_SP_HIGH)\n{\n    if (Operating_Mode_State == 0){new_Operating_Mode_State = 4;}\n    if (Operating_Mode_State == 1){new_Operating_Mode_State = 5;}\n    if (Operating_Mode_State == 2){new_Operating_Mode_State = 6;}\n    if (Operating_Mode_State == 7){new_Operating_Mode_State = 8;}\n    \n    msg1.payload = global.get('DHW_SP_HIGH',\"file\");\n    msg2.payload = new_Operating_Mode_State;\n    if (Heatpump_State == 0 && solar_turn_on == true)\n        {   \n            msg3.payload = 1;\n            return [msg1, msg2, msg3];\n        }\n    else    \n    {   \n        return [msg1, msg2, null];\n    }    \n}\nelse if (solar_state === true && solar_detection_method == \"kW\" && solar_threshold > (msg.payload / 1000) && DHW_Current == DHW_SP_HIGH && solar_fallback == true)\n{\n    msg1.payload = global.get('DHW_SP_LOW',\"file\");\n    return [msg1,null,null];\n}\nelse {return [null,null,null];}\n\n//DHW_Target_Temp\n// Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1760,
+        "wires": [
+            [
+                "deffe25195748bb7",
+                "78507acac200e031"
+            ],
+            [
+                "37178acf2fda2d9d"
+            ],
+            [
+                "ee7e3fc1d241d09e"
+            ]
+        ],
+        "outputLabels": [
+            "DHW_SP_LOW/HIGH",
+            "new_Operating_Mode_State",
+            "solar_turn_on"
+        ]
+    },
+    {
+        "id": "deffe25195748bb7",
+        "type": "debug",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "54b33637f9684c64",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "Load on boot",
+        "func": "var variable                    = global.get('DHW_SP_LOW',\"file\");\nlet msg1={};\n\nif(variable === undefined)      {return null;}\n                            \nelse                        \n    {\n        msg1.payload = variable;\n//        msg1.topic = 'DHW_SP_LOW'; \n        return msg1;\n    }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1040,
+        "wires": [
+            [
+                "33af265aa8cd105a"
+            ]
+        ],
+        "outputLabels": [
+            "Heatpump_State"
+        ]
+    },
+    {
+        "id": "ba47d2dd13c84aa8",
+        "type": "change",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "set variable solar_state",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(file)::solar_state",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1210,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e0c261e5e8e372fb",
+        "type": "rbe",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1030,
+        "y": 940,
+        "wires": [
+            [
+                "ba47d2dd13c84aa8"
+            ]
+        ]
+    },
+    {
+        "id": "d08c9f275ae78024",
+        "type": "rbe",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1030,
+        "y": 1040,
+        "wires": [
+            [
+                "a99e3a9e7081a34c"
+            ]
+        ]
+    },
+    {
+        "id": "a99e3a9e7081a34c",
+        "type": "change",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "set variable DHW_SP_LOW",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(file)::DHW_SP_LOW",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4047483a87ea6ec9",
+        "type": "link in",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "links": [
+            "071320367f2b7a40"
+        ],
+        "x": 235,
+        "y": 1760,
+        "wires": [
+            [
+                "07cc0b87ee9c6f05"
+            ]
+        ]
+    },
+    {
+        "id": "c193dd7c180a36de",
+        "type": "link in",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "links": [
+            "39f8d3463d10ccfb"
+        ],
+        "x": 235,
+        "y": 1920,
+        "wires": [
+            [
+                "e5767c67ab606448"
+            ]
+        ]
+    },
+    {
+        "id": "651885e899237320",
+        "type": "comment",
+        "z": "966985d68ebb4990",
+        "name": "W",
+        "info": "",
+        "x": 230,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "2d6dc1388cdc2951",
+        "type": "comment",
+        "z": "966985d68ebb4990",
+        "name": "kWh",
+        "info": "",
+        "x": 230,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "e62a354ce682ea6f",
+        "type": "link out",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "3f63919ddd4f0ea7"
+        ],
+        "x": 1105,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "e5767c67ab606448",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "name": "kWh trigger",
+        "func": "var solar_state                     = global.get('solar_state',\"file\");\nvar solar_detection_method          = global.get('solar_detection_method',\"file\");\nvar solar_threshold                 = global.get('solar_threshold',\"file\");  \nvar DHW_Target_Temp                 = global.get('DHW_Target_Temp',\"file\");\n//var solar_fallback                = global.get('solar_fallback',\"file\");\nvar DHW_SP_HIGH                     = global.get('DHW_SP_HIGH',\"file\");\nvar Operating_Mode_State            = global.get('Operating_Mode_State',\"file\");\nvar new_Operating_Mode_State;\nvar solar_turn_on                   = global.get('solar_turn_on',\"file\");\nvar Heatpump_State                  = global.get('Heatpump_State',\"file\");\n\nlet msg1={};\nlet msg2={};\nlet msg3={};\n\n////////////////////////////////////////////////////\nif (solar_state === true && solar_detection_method == \"kWh\" && solar_threshold < msg.payload && DHW_Target_Temp != DHW_SP_HIGH)\n{\n    new_Operating_Mode_State = Operating_Mode_State;\n    if (Operating_Mode_State == 0){new_Operating_Mode_State = 4;}\n    if (Operating_Mode_State == 1){new_Operating_Mode_State = 5;}\n    if (Operating_Mode_State == 2){new_Operating_Mode_State = 6;}\n    if (Operating_Mode_State == 7){new_Operating_Mode_State = 8;}\n    \n    msg1.payload = global.get('DHW_SP_HIGH',\"file\");\n    msg2.payload = new_Operating_Mode_State;\n    \n    if(Heatpump_State == 0 && solar_turn_on == true)\n        {\n            msg3.payload = 1;\n            return [msg1, msg2, msg3];\n        }\n    else\n        {\n            return [msg1,msg2, null];\n        }\n    \n}\n\n////////////////////////////////////////////////////\nelse {return [null,null,null];}\n",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1920,
+        "wires": [
+            [
+                "9f1026b6f50017e2",
+                "78507acac200e031"
+            ],
+            [
+                "37178acf2fda2d9d"
+            ],
+            [
+                "ee7e3fc1d241d09e"
+            ]
+        ],
+        "outputLabels": [
+            "DHW_SP_HIGH",
+            "new_Operating_Mode_State",
+            "solar_turn_on"
+        ]
+    },
+    {
+        "id": "9f1026b6f50017e2",
+        "type": "debug",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "2b2aec0a8404885d",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "Load on boot",
+        "func": "var variable                    = global.get('solar_threshold',\"file\");\nlet msg1={};\n\nif(variable === undefined)      {return null;}\n                            \nelse                        \n    {\n        msg1.payload = variable;\n//        msg1.topic = 'solar_threshold'; \n        return msg1;\n    }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1340,
+        "wires": [
+            [
+                "608ac27952261ad4"
+            ]
+        ],
+        "outputLabels": [
+            "Heatpump_State"
+        ]
+    },
+    {
+        "id": "42734e97a85d5537",
+        "type": "link out",
+        "z": "966985d68ebb4990",
+        "g": "b51e04fb99eba20b",
+        "name": "DHW_SP_LOW",
+        "mode": "link",
+        "links": [
+            "3f63919ddd4f0ea7"
+        ],
+        "x": 1240,
+        "y": 500,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "b50ab0a4981f9d17",
+        "type": "link out",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "6d5e44060139d9d1"
+        ],
+        "x": 805,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "c7ec48dc3c78df80",
+        "type": "inject",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "01 00 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "time",
+        "x": 650,
+        "y": 540,
+        "wires": [
+            [
+                "aad8f63921d33903"
+            ]
+        ]
+    },
+    {
+        "id": "2a4ffebda936e1bf",
+        "type": "ui_switch",
+        "z": "966985d68ebb4990",
+        "g": "e0026e2c5ab2bd08",
+        "name": "Override power state",
+        "label": "Override power state",
+        "tooltip": "When the heatpump is powerd off, do you want this function to turn on the heatpump and execute",
+        "group": "b7f22c282fde0f86",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 620,
+        "y": 1500,
+        "wires": [
+            [
+                "e6f667136e7f2ac3"
+            ]
+        ]
+    },
+    {
+        "id": "1e0f4db7208e5055",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "g": "429efe20cfdf905d",
+        "name": "Load on boot",
+        "func": "var variable                    = global.get('solar_turn_on',\"file\");\nlet msg1={};\n\nif(variable === undefined)      {return null;}\n                            \nelse                        \n    {\n        msg1.payload = variable;\n//        msg1.topic = 'solar_turn_on'; \n        return msg1;\n    }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1500,
+        "wires": [
+            [
+                "2a4ffebda936e1bf"
+            ]
+        ],
+        "outputLabels": [
+            "Heatpump_State"
+        ]
+    },
+    {
+        "id": "e6f667136e7f2ac3",
+        "type": "rbe",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1030,
+        "y": 1500,
+        "wires": [
+            [
+                "56d5a2ccd5cdaa52"
+            ]
+        ]
+    },
+    {
+        "id": "56d5a2ccd5cdaa52",
+        "type": "change",
+        "z": "966985d68ebb4990",
+        "name": "set variable solar_fallback",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(file)::solar_turn_on",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1210,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ee7e3fc1d241d09e",
+        "type": "link out",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "mode": "link",
+        "links": [],
+        "x": 555,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "37178acf2fda2d9d",
+        "type": "delay",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 700,
+        "y": 1840,
+        "wires": [
+            [
+                "b50ab0a4981f9d17"
+            ]
+        ]
+    },
+    {
+        "id": "78507acac200e031",
+        "type": "delay",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1000,
+        "y": 1840,
+        "wires": [
+            [
+                "e62a354ce682ea6f"
+            ]
+        ]
+    },
+    {
+        "id": "e1b27d9cc61959b3",
+        "type": "comment",
+        "z": "966985d68ebb4990",
+        "g": "9a5d579bcebc1122",
+        "name": "Delete this group if you do NOT want the instruction / HELP part",
+        "info": "",
+        "x": 1950,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "4219518104b1ef5d",
+        "type": "inject",
+        "z": "966985d68ebb4990",
+        "g": "bf2c1d5a22f56dd8",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "3",
+        "topic": "start",
+        "x": 650,
+        "y": 500,
+        "wires": [
+            [
+                "aad8f63921d33903"
+            ]
+        ]
+    },
+    {
         "id": "92e5b2c.00a8b5",
         "type": "mqtt-broker",
         "name": "MQTT (x.x.x.x)",
@@ -27459,17 +29577,6 @@
         "className": ""
     },
     {
-        "id": "405b26e8a7e1985d",
-        "type": "ui_group",
-        "name": "Graph 2",
-        "tab": "1d038e38da23c646",
-        "order": 3,
-        "disp": false,
-        "width": 10,
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "548e51986bce11b0",
         "type": "ui_group",
         "name": "Operation",
@@ -27558,6 +29665,28 @@
         "className": ""
     },
     {
+        "id": "b7f22c282fde0f86",
+        "type": "ui_group",
+        "name": "Solar Energy",
+        "tab": "4fb3ce05f81e8c95",
+        "order": 1,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "55fef8703465841e",
+        "type": "ui_group",
+        "name": "Help",
+        "tab": "4fb3ce05f81e8c95",
+        "order": 2,
+        "disp": true,
+        "width": 14,
+        "collapse": true,
+        "className": ""
+    },
+    {
         "id": "a5be8588.b8fbc8",
         "type": "ui_tab",
         "name": "Home",
@@ -27635,6 +29764,15 @@
         "name": "Chart Degree Days",
         "icon": "dashboard",
         "order": 10,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "4fb3ce05f81e8c95",
+        "type": "ui_tab",
+        "name": "Function (Solar)",
+        "icon": "dashboard",
+        "order": 6,
         "disabled": false,
         "hidden": false
     }
