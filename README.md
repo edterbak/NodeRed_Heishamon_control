@@ -258,7 +258,7 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - BUG: Fixed scheduler bug where the 'override' toggles were not persistent over reboot.
 
 [2022-05-18] (v14 beta4) Things done are:
-- ENHANCEMENT: Feature request; forth attempt to turn heatpump off with RTC-function. https://github.com/edterbak/NodeRed_Heishamon_control/issues/24
+- ENHANCEMENT: Feature request; fourth attempt to turn heatpump off with RTC-function. https://github.com/edterbak/NodeRed_Heishamon_control/issues/24
 - BUG: fixed incorrect calculated dhw/heat kwh values. (https://github.com/edterbak/NodeRed_Heishamon_control/issues/27) Needs to be confirmed working.
 - ENHANCEMENT: Feature reuqest; Solar function. (https://github.com/edterbak/NodeRed_Heishamon_control/issues/26) This is the first attempt. 
 
