@@ -26,6 +26,8 @@ I have chosen option 4 in the list above. In this GIT you can find NR functions 
 When you choose to use/try this (Feel free to do so), PLEASE give feedback on any issues you encounter. You can use the [Issues] section to report to me. <br/>
 When making an issue, please give as much info as you think is required to solve this. Steps to reproduce. Maybe a screenshot etc. Reporting this will help me help you :) <br/>Thank you in advance. 
 
+## installation 
+<details>
 ## Required heat pump setting
 This Node Red flow generates and controls the setpoint for the T outlet (Ta). This means you need to put your pump in DIRECT mode on the thermostat itself. 
 From within Heishamon, TOP76, will inform you if you currently are in WAR mode or DIRECT mode. <br/>(0=WAR, 1=DIRECT)
@@ -118,8 +120,10 @@ I found it is easiest to:<br/>
 4, correct setup, eg. MQTT server.<br/> 
 5, re-connect your personalization’s.<br/> 
 If there are better ideas about this, please inform me. <br/> 
+</details>
 
 ## The Dashboard
+<details>
 This is currently the first page of the dashboard. From here, you can enable each function separate but you can ALSO use WAR + RTC or WAR + SS together. It does not matter. they add on top of each other. You can use multiple combinations. Virtual SP + RTC function. Or WAR + RTC functions or only set a Virtual SP. 
 
 Set the 'Virtual SP'. This resembles the Ta in direct mode. <br/>
@@ -155,9 +159,10 @@ Image: [Scheduler] [Multiselect the day] [possible actions to select]
 ### Dashboard
 You can find the link to the dashboard like this:<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard2.png?raw=true) ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard1.png?raw=true)
+</details>
 
 ## Changelog / Notes
-all older changelog items are colapsed below. only the latest changelog will always be shown.
+All older changelog items are colapsed below. only the latest changelog will always be shown.
 <details>
 [2021-11-09] (v1) First release. Current versions of the function seem rough. I will polish it at a later time and update here. The Flows do contain comments to clarify. In future I will also publish my verion of a NR dashboard. Currently Im not fully happy with it.
 
