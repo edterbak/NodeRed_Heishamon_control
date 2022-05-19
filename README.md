@@ -28,6 +28,7 @@ When making an issue, please give as much info as you think is required to solve
 
 ## installation 
 <details>
+	
 ## Required heat pump setting
 This Node Red flow generates and controls the setpoint for the T outlet (Ta). This means you need to put your pump in DIRECT mode on the thermostat itself. 
 From within Heishamon, TOP76, will inform you if you currently are in WAR mode or DIRECT mode. <br/>(0=WAR, 1=DIRECT)
