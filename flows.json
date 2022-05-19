@@ -28462,7 +28462,7 @@
         "z": "966985d68ebb4990",
         "g": "bf2c1d5a22f56dd8",
         "name": "GRID power production W to kWh",
-        "func": "msg1 = {};\nmsg2 = {};\nmsg3 = {};\nmsg4 = {};\nmsg5 = {};\nmsg6 = {};\n\nvar CurrentTime = new Date().getTime();\nvar PreviousTime = context.get(\"PreviousTime\");\nvar PreviousMessage = context.get(\"PreviousMessage\");\nvar PreviousTopic = context.get(\"PreviousTopic\");\nvar exit = false;\n//  First run checks. If some variables are undefined, set current values and exit.\nif (PreviousTime === undefined) {context.set('PreviousTime',CurrentTime);       exit = true;}\nif (PreviousMessage === undefined) {context.set('PreviousMessage',msg.payload); exit = true;}\nif (PreviousTopic === undefined)  {context.set('PreviousMessage',msg.topic);    exit = true;}\n\nif (exit === false)        \n    {    return null;            // This output will automatically be skipped, next calculation will be ok.\n        \n    }\n\nelse\n    {\n        var LastMessage = msg.payload;\n        var LastTopic= msg.topic;\n        \n        TimeElapsed = ((CurrentTime - PreviousTime)/1000);\n        context.set('PreviousTime',CurrentTime);\n        context.set('PreviousMessage',msg.payload);\n        context.set('PreviousTopic',msg.topic);\n        msg3.last = {\"lastTime\":CurrentTime,\"LastMessage\":LastMessage,\"LastTopic\":LastTopic};\n        msg3.Previous = {\"PreviousTime\":PreviousTime,\"PreviousMessage\":PreviousMessage,\"PreviousTopic\":PreviousTopic};\n        \n        \n        msg1.payload = (TimeElapsed + \"  Seconds\");\n        temp = parseFloat(TimeElapsed.toFixed(0));\n        msg2.payload = temp;\n        msg3.payload = {\"Count\":temp,\"Units\":\"Seconds\"}; \n        msg5.payload = (PreviousMessage * ( temp / 3600000 ));                  //  Calculation to Wh portion\n        Number(msg5.payload).toFixed(4);\n        msg5.topic = 'GRID power production kWh';                               // msg5 = latest kWh part.\n    \n    \n    ///////////////////////////////////////////////////////////////////////////\n    // Calculation from kWh part > total kWh of today\n        var total_kwh = flow.get(\"total_kwh\",\"file\");\n        if (total_kwh === undefined)        {total_kwh = 0;}\n        \n        msg6.payload = msg5.payload + total_kwh;                                // msg6 = kWh total from the start of operation\n        msg6.topic = 'GRID power production kWh';\n    \n        flow.set('total_kwh',msg6.payload,\"file\");\n        \n    ////////////////////////////////////////////////////////////////////////////\n        return msg6;\n    \n    }",
+        "func": "msg1 = {};\nmsg2 = {};\nmsg3 = {};\nmsg4 = {};\nmsg5 = {};\nmsg6 = {};\n\nvar CurrentTime = new Date().getTime();\nvar PreviousTime = context.get(\"PreviousTime\");\nvar PreviousMessage = context.get(\"PreviousMessage\");\nvar PreviousTopic = context.get(\"PreviousTopic\");\nvar exit = false;\n\n//  First run checks. If some variables are undefined, set current values and exit.\nif (PreviousTime === undefined) {context.set('PreviousTime',CurrentTime);       exit = true;}\nif (PreviousMessage === undefined) {context.set('PreviousMessage',msg.payload); exit = true;}\nif (PreviousTopic === undefined)  {context.set('PreviousMessage',msg.topic);    exit = true;}\n\nif (exit === true)        \n    {    return null;            // This output will automatically be skipped, next calculation will be ok.\n        \n    }\n\nelse\n    {\n        var LastMessage = msg.payload;\n        var LastTopic= msg.topic;\n        \n        TimeElapsed = ((CurrentTime - PreviousTime)/1000);\n        context.set('PreviousTime',CurrentTime);\n        context.set('PreviousMessage',msg.payload);\n        context.set('PreviousTopic',msg.topic);\n        msg3.last = {\"lastTime\":CurrentTime,\"LastMessage\":LastMessage,\"LastTopic\":LastTopic};\n        msg3.Previous = {\"PreviousTime\":PreviousTime,\"PreviousMessage\":PreviousMessage,\"PreviousTopic\":PreviousTopic};\n        \n        \n        msg1.payload = (TimeElapsed + \"  Seconds\");\n        temp = parseFloat(TimeElapsed.toFixed(0));\n        msg2.payload = temp;\n        msg3.payload = {\"Count\":temp,\"Units\":\"Seconds\"}; \n        msg5.payload = (PreviousMessage * ( temp / 3600000 ));                  //  Calculation to Wh portion\n        Number(msg5.payload).toFixed(4);\n        msg5.topic = 'GRID power production kWh';                               // msg5 = latest kWh part.\n    \n    \n    ///////////////////////////////////////////////////////////////////////////\n    // Calculation from kWh part > total kWh of today\n        var total_kwh = flow.get(\"total_kwh\",\"file\");\n        if (total_kwh === undefined)        {total_kwh = 0;}\n        \n        msg6.payload = msg5.payload + total_kwh;                                // msg6 = kWh total from the start of operation\n        msg6.topic = 'GRID power production kWh';\n    \n        flow.set('total_kwh',msg6.payload,\"file\");\n        \n    ////////////////////////////////////////////////////////////////////////////\n        return msg6;\n    \n    }",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -29411,6 +29411,31 @@
         "wires": [
             [
                 "aad8f63921d33903"
+            ]
+        ]
+    },
+    {
+        "id": "8dd0b58bf8138a57",
+        "type": "inject",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0.30",
+        "payloadType": "num",
+        "x": 110,
+        "y": 700,
+        "wires": [
+            [
+                "5256af8b7309c113"
             ]
         ]
     },
