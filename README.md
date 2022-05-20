@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 14 beta 5<br/>
+Current version: 14 beta 6<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -266,6 +266,12 @@ All older changelog items are colapsed below. only the latest changelog will alw
 [2022-05-19] (v14 beta5) Things done are:
 - BUG: Solar function. not producing kWh values. fixed
 
+[2022-05-20] (v14 beta6) Things done are:
+- ENHANCEMENT: General polishing of the Solar functionality
+- Fixed other issues.
+- ENHANCEMENT: Changed the gauge by a multicolor chart. Hope this is nicer. Added threshold to the graph.
+
+This will probably be the last build befor merging to main branch.... (fingers crossed)
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
