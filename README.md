@@ -144,7 +144,7 @@ The target water temperature is influenced by the outside temperature. When it g
 ## Function 2: RTC (RoomTemperatureControl)
 This function adjusts the SP of the water depending on the room temperature. <br/>
 When the temperature in a room gets too high, it will add a "-1" to the setpoint of the water temperature. <br/>
-Through the GUI, you can set the room target temperature. And you can set the limits when you want to increase or lower the SP with 1, 2 or 3 degrees.
+Through the GUI, you can set the room target temperature. And you can set the limits when you want to increase or lower the SP with 1, 2 or 3 degrees.<br/>
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/RTC.png?raw=true" width=60%>
 
 ## Function 3: SoftStart (EXPERIMENTAL!!)
