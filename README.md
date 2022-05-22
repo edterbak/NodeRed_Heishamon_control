@@ -151,6 +151,12 @@ Through the GUI, you can set the room target temperature. And you can set the li
 This function is present but not advised to be used yet. I have not tested this well enough. Last time I tested it worked, but not stable resulting in early stops. This function still needs work.<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/SS.png?raw=true)
 
+## Function 4: Solar
+The aim of this function is to increase efficiency (and save cost) by utilizing solar energy as much as possible.
+When there is solar energy in abundance, you can tell the heatpump to use that energy to heat up your DHW water tank. 
+To determine if there is enough solar energy, you need any form of power measurement. This can be a P1 power meter, or a meter directly behind your panels.<br/>
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/solar3.png?raw=true)
+
 ## Scheduler
 I have added an option to create 10x schedules (in dashboard) for:
 - DHW runs
