@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 14 beta 7<br/>
+Current version: 14 beta 8<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -291,6 +291,11 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Removed the need for the contrib "Media". Doesnt work after you imported. 
 - improved logic on COP calculation. store/restore.
 - Solar function: Rounded power readings to 0 decimals.
+
+[2022-05-27] (v14 beta8) Things done are:
+- IMPROVEMENT: Reduced not needed SET commands to nopefully 0. still checking, but it looks solid now.
+- Disabled COP chart. It triggers a bug which I will solve soon. Im on the right trail now.
+- Work on solar function still ongoing based on the feedback I am receiving. (thanks!)
 
 This (again) will probably be the last build befor merging to main branch.... (fingers crossed)
 
