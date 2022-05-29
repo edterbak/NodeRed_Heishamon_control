@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 14 beta 8<br/>
+Current version: 14 beta 9<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -292,10 +292,14 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - improved logic on COP calculation. store/restore.
 - Solar function: Rounded power readings to 0 decimals.
 
-[2022-05-27] (v14 beta8) Things done are:
-- IMPROVEMENT: Reduced not needed SET commands to nopefully 0. still checking, but it looks solid now.
-- Disabled COP chart. It triggers a bug which I will solve soon. Im on the right trail now.
-- Work on solar function still ongoing based on the feedback I am receiving. (thanks!)
+[2022-05-27] (v14 beta9) Things done are:
+- BUG: Fixed issue HeatPump being turned off when using the on/off temperature from RTC function
+- BUG: Fixed issue where OperatingMode would not stick, also RTC function on/off related.
+- removed bar-chart for COP. It keeps throwing errors or NaN value for DHW. Need to dive in at a later time.
+- Solar function: for the time being use JavaBoon's code. Thank you !!!
+
+[2022-05-29] (v14 beta8) Things done are:
+- IMPROVEMENT:
 
 This (again) will probably be the last build befor merging to main branch.... (fingers crossed)
 
@@ -312,5 +316,6 @@ This (again) will probably be the last build befor merging to main branch.... (f
 * []() lampy25. For unselfishly giving supportive feedback and good idea's. Thanks!
 * []() timovd for his contributions. ! Thanks.
 * []() E1cid from Node Red forum, for the help with the bar-chart. 
+* []() Javaboon for his assistance in the Solar functionality
 
 <p align="right">(<a href="#top">back to top</a>)</p>
