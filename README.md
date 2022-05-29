@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 14 beta 9<br/>
+Current version: 14 beta 10<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -293,7 +293,7 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Solar function: Rounded power readings to 0 decimals.
 
 [2022-05-27] (v14 beta8) Things done are:
-lost the details...
+- Reduced excess SET commands to nearly zero (Thanks for the tip!)
 
 [2022-05-29] (v14 beta9) Things done are:
 - BUG: Fixed issue HeatPump being turned off when using the on/off temperature from RTC function
@@ -301,12 +301,13 @@ lost the details...
 - removed bar-chart for COP. It keeps throwing errors or NaN value for DHW. Need to dive in at a later time.
 - Solar function: for the time being use JavaBoon's code. Thank you !!!
 
-This (again) will probably be the last build befor merging to main branch.... (fingers crossed)
+[2022-05-29] (v14 beta10) Things done are:
+- BUG: I forgot to enable the SET9 command again after some debugging. Re-enabled it.
+- Feature request: Added a button on the request of klerk (and added some lines to make it look better)
+- re-added bar-chart for COP. It seems to work. It should start building a chart once DHW + HEAT info is available. untill then it will be empty. Need time to test if this is solid or not.
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
-- [x] Add more info in dashboard so it shows energy usages and other nice stuffs. 
-- [x] Add more options for the scheduler, eg. operation mode, silent mode, etc. 
 
 ## Acknowledgments
 * []() Egyras: The original creator of Heishamon. https://github.com/Egyras
@@ -317,5 +318,6 @@ This (again) will probably be the last build befor merging to main branch.... (f
 * []() timovd for his contributions. ! Thanks.
 * []() E1cid from Node Red forum, for the help with the bar-chart. 
 * []() Javaboon for his assistance in the Solar functionality
+* []() klerk for his feature requests and helping.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
