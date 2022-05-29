@@ -292,14 +292,14 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - improved logic on COP calculation. store/restore.
 - Solar function: Rounded power readings to 0 decimals.
 
-[2022-05-27] (v14 beta9) Things done are:
+[2022-05-27] (v14 beta8) Things done are:
+lost the details...
+
+[2022-05-29] (v14 beta9) Things done are:
 - BUG: Fixed issue HeatPump being turned off when using the on/off temperature from RTC function
 - BUG: Fixed issue where OperatingMode would not stick, also RTC function on/off related.
 - removed bar-chart for COP. It keeps throwing errors or NaN value for DHW. Need to dive in at a later time.
 - Solar function: for the time being use JavaBoon's code. Thank you !!!
-
-[2022-05-29] (v14 beta8) Things done are:
-- IMPROVEMENT:
 
 This (again) will probably be the last build befor merging to main branch.... (fingers crossed)
 
