@@ -309,6 +309,7 @@ All older changelog items are colapsed below. only the latest changelog will alw
 [2022-05-31] (v14 beta11) Things done are:
 - Improved reduction of SET messages even further. 
 - FEATURE: Added a LOG page on the dashboard. 
+- Added smoothening filter (moving average over last 15 minutes) to reduce frequent SP changes.
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
