@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 14 beta 10<br/>
+Current version: 14 beta 11<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -305,6 +305,10 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - BUG: I forgot to enable the SET9 command again after some debugging. Re-enabled it.
 - Feature request: Added a button on the request of klerk (and added some lines to make it look better)
 - re-added bar-chart for COP. It seems to work. It should start building a chart once DHW + HEAT info is available. untill then it will be empty. Need time to test if this is solid or not.
+
+[2022-05-31] (v14 beta11) Things done are:
+- Improved reduction of SET messages even further. 
+- FEATURE: Added a LOG page on the dashboard. 
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
