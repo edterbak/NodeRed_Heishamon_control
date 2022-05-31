@@ -2610,51 +2610,12 @@
             "719e11414721599e",
             "081dae9f3555ade6",
             "b51f6522ce8b3103",
-            "f1d5f06e37508081",
             "05f3b66c7b91e0c6"
         ],
         "x": 114,
         "y": 1279,
         "w": 932,
         "h": 142
-    },
-    {
-        "id": "f1d5f06e37508081",
-        "type": "ui_text",
-        "z": "8c9d42231fd19d3c",
-        "g": "e7187e0c9dc038f0",
-        "group": "74946a73578ea096",
-        "order": 3,
-        "width": 6,
-        "height": 1,
-        "name": "spacer 6x1",
-        "label": "",
-        "format": "",
-        "layout": "row-right",
-        "className": "",
-        "x": 430,
-        "y": 1320,
-        "wires": []
-    },
-    {
-        "id": "74946a73578ea096",
-        "type": "ui_group",
-        "name": "ROOM",
-        "tab": "a5be8588.b8fbc8",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "a5be8588.b8fbc8",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
     },
     {
         "id": "7c41aa629fb3859e",
@@ -2682,7 +2643,6 @@
             "6bdcf84066368733",
             "8c2afa46f759d9cd",
             "6c42a1a32ed02491",
-            "77accb50873d6c98",
             "7386864c75dbce5c",
             "3f63919ddd4f0ea7",
             "3d3b432c844ba87e",
@@ -2693,35 +2653,6 @@
         "y": 19,
         "w": 912,
         "h": 442
-    },
-    {
-        "id": "77accb50873d6c98",
-        "type": "ui_text",
-        "z": "8c9d42231fd19d3c",
-        "g": "7c41aa629fb3859e",
-        "group": "e3cc96332cd59f07",
-        "order": 2,
-        "width": 6,
-        "height": 1,
-        "name": "spacer 6x1",
-        "label": "",
-        "format": "",
-        "layout": "row-right",
-        "className": "",
-        "x": 750,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "e3cc96332cd59f07",
-        "type": "ui_group",
-        "name": "DHW",
-        "tab": "a5be8588.b8fbc8",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
     },
     {
         "id": "5ab5ca67951ca4de",
@@ -2835,8 +2766,6 @@
             "48ac4170551d07e2",
             "e5afa5e58fb2ecef",
             "1f5d513050d612a1",
-            "a955b118f456587f",
-            "5df3c72cf1808838",
             "1235e7416dbfe5fc",
             "4b2cff40b8a3ecc9",
             "9e7985132053da99",
@@ -2848,53 +2777,6 @@
         "w": 1618,
         "h": 622,
         "info": "# yeah"
-    },
-    {
-        "id": "a955b118f456587f",
-        "type": "ui_text",
-        "z": "8c9d42231fd19d3c",
-        "g": "a8ac5b148d851a6b",
-        "group": "1179fa790d2d89ca",
-        "order": 21,
-        "width": 6,
-        "height": 1,
-        "name": "spacer 6x1",
-        "label": "",
-        "format": "",
-        "layout": "row-right",
-        "className": "",
-        "x": 3830,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "5df3c72cf1808838",
-        "type": "ui_text",
-        "z": "8c9d42231fd19d3c",
-        "g": "a8ac5b148d851a6b",
-        "group": "1179fa790d2d89ca",
-        "order": 3,
-        "width": 5,
-        "height": 1,
-        "name": "spacer 6x1",
-        "label": "",
-        "format": "",
-        "layout": "row-right",
-        "className": "",
-        "x": 3830,
-        "y": 940,
-        "wires": []
-    },
-    {
-        "id": "1179fa790d2d89ca",
-        "type": "ui_group",
-        "name": "Advanced Functions",
-        "tab": "a5be8588.b8fbc8",
-        "order": 4,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
     },
     {
         "id": "6788a89266ed3c87",
@@ -3211,6 +3093,31 @@
         "h": 602
     },
     {
+        "id": "f3ab3ae5d93d2da8",
+        "type": "group",
+        "z": "8c9d42231fd19d3c",
+        "name": "Logs",
+        "style": {
+            "fill": "#ffffff",
+            "label": true
+        },
+        "nodes": [
+            "53f38afaf9648bf5",
+            "23fbf9519a9b333f",
+            "abe6f4c6b9a5728e",
+            "b03c3d46024e8094",
+            "6468e0ed83809d87",
+            "cdc80bbd57260854",
+            "51fc8c7104bf0574",
+            "8473ce049846c09a",
+            "5046c61e7a199375"
+        ],
+        "x": 1228,
+        "y": 1779,
+        "w": 1324,
+        "h": 362
+    },
+    {
         "id": "5c6e3f50e1a2328b",
         "type": "group",
         "z": "8c9d42231fd19d3c",
@@ -3310,6 +3217,27 @@
         "x": 1054,
         "y": 2639,
         "w": 352,
+        "h": 82
+    },
+    {
+        "id": "5046c61e7a199375",
+        "type": "group",
+        "z": "8c9d42231fd19d3c",
+        "g": "f3ab3ae5d93d2da8",
+        "name": "LOGS",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "7a1095f589f874f3",
+            "5bbb6f1fdd9c71cc",
+            "af068a9720c4f5c5",
+            "98765567eb2e9225",
+            "e98d687b9dfe8b58"
+        ],
+        "x": 1254,
+        "y": 1919,
+        "w": 1272,
         "h": 82
     },
     {
@@ -9667,7 +9595,7 @@
         "g": "f9448182b177e40e",
         "name": "",
         "group": "fb77ab43998a2f18",
-        "order": 1,
+        "order": 2,
         "width": 26,
         "height": 8,
         "label": "Energy",
@@ -9800,7 +9728,7 @@
         "g": "f9448182b177e40e",
         "name": "",
         "group": "fb77ab43998a2f18",
-        "order": 2,
+        "order": 4,
         "width": 26,
         "height": 7,
         "label": "Efficiency",
@@ -10937,12 +10865,10 @@
         "wires": [
             [
                 "06eb0645cad9e9a0",
-                "792315114d972d0e",
                 "f5f7d3b912113a33"
             ],
             [
                 "afcdd865b8ebab80",
-                "1d3be9e9f1d0365b",
                 "25a5987e8a1aaf9c"
             ]
         ],
@@ -11018,10 +10944,10 @@
         "g": "2c380c0bbcfb5eb1",
         "name": "COP DHW + COP HEAT (24m)",
         "group": "fb77ab43998a2f18",
-        "order": 3,
+        "order": 6,
         "width": 26,
         "height": 7,
-        "label": "COP (24 months)",
+        "label": "COP / month (24)",
         "chartType": "bar",
         "legend": "true",
         "xformat": "HH:mm:ss",
@@ -11357,7 +11283,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1290,
+        "x": 1250,
         "y": 2440,
         "wires": []
     },
@@ -11472,96 +11398,6 @@
         "wires": []
     },
     {
-        "id": "1d3be9e9f1d0365b",
-        "type": "ui_chart",
-        "z": "8c9d42231fd19d3c",
-        "d": true,
-        "name": "",
-        "group": "fb77ab43998a2f18",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "label": "chart dhw",
-        "chartType": "bar",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "52",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "604800",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1600,
-        "y": 2540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "792315114d972d0e",
-        "type": "ui_chart",
-        "z": "8c9d42231fd19d3c",
-        "d": true,
-        "name": "",
-        "group": "fb77ab43998a2f18",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "label": "chart heat",
-        "chartType": "bar",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "52",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "604800",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1600,
-        "y": 2500,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "43403f14c1a863a4",
         "type": "ui_template",
         "z": "8c9d42231fd19d3c",
@@ -11577,7 +11413,7 @@
         "templateScope": "local",
         "className": "",
         "x": 790,
-        "y": 560,
+        "y": 500,
         "wires": [
             []
         ]
@@ -11656,7 +11492,7 @@
         "templateScope": "local",
         "className": "",
         "x": 790,
-        "y": 600,
+        "y": 540,
         "wires": [
             []
         ]
@@ -11763,6 +11599,380 @@
         "y": 280,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "6cce5b6bd4157c5b",
+        "type": "ui_template",
+        "z": "8c9d42231fd19d3c",
+        "group": "fb77ab43998a2f18",
+        "name": "Line",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 10px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 2px solid #a39d99;\n    box-shadow: 0 0 5px #a39d99\";\n\t>\n\n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1130,
+        "y": 3180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dc1b09eb3278501e",
+        "type": "ui_template",
+        "z": "8c9d42231fd19d3c",
+        "group": "fb77ab43998a2f18",
+        "name": "Line",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 10px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 2px solid #a39d99;\n    box-shadow: 0 0 5px #a39d99\";\n\t>\n\n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1130,
+        "y": 3220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "23aa1aeed6d15e49",
+        "type": "ui_template",
+        "z": "8c9d42231fd19d3c",
+        "group": "fb77ab43998a2f18",
+        "name": "Line",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 10px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 2px solid #a39d99;\n    box-shadow: 0 0 5px #a39d99\";\n\t>\n\n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1130,
+        "y": 3260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "53f38afaf9648bf5",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "f3ab3ae5d93d2da8",
+        "name": "Create table in context",
+        "func": "let sctab = [];\nflow.set(\"sctab\", sctab);\nreturn msg;",
+        "outputs": "1",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1940,
+        "y": 2040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "23fbf9519a9b333f",
+        "type": "inject",
+        "z": "8c9d42231fd19d3c",
+        "g": "f3ab3ae5d93d2da8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "Start",
+        "payloadType": "str",
+        "x": 1690,
+        "y": 2040,
+        "wires": [
+            [
+                "53f38afaf9648bf5"
+            ]
+        ]
+    },
+    {
+        "id": "abe6f4c6b9a5728e",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "g": "f3ab3ae5d93d2da8",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(file)::logs",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2390,
+        "y": 1820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b03c3d46024e8094",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "g": "f3ab3ae5d93d2da8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(file)::logs",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2100,
+        "y": 1820,
+        "wires": [
+            [
+                "7a1095f589f874f3"
+            ]
+        ]
+    },
+    {
+        "id": "6468e0ed83809d87",
+        "type": "ui_button",
+        "z": "8c9d42231fd19d3c",
+        "g": "f3ab3ae5d93d2da8",
+        "name": "Refresh",
+        "group": "6cad29eeb8b60520",
+        "order": 4,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Refresh",
+        "tooltip": "If the list is empty, try refreshing it.",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "refresh",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1900,
+        "y": 1820,
+        "wires": [
+            [
+                "b03c3d46024e8094"
+            ]
+        ]
+    },
+    {
+        "id": "cdc80bbd57260854",
+        "type": "ui_template",
+        "z": "8c9d42231fd19d3c",
+        "g": "f3ab3ae5d93d2da8",
+        "group": "6cad29eeb8b60520",
+        "name": "Line",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 10px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 3px solid #a39d99;\n    box-shadow: 0 0 5px #a39d99\";\n\t>\n<right>[Date] [Time] - [SET command]: [Value/Text]</right> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1490,
+        "y": 1880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "51fc8c7104bf0574",
+        "type": "ui_text",
+        "z": "8c9d42231fd19d3c",
+        "g": "f3ab3ae5d93d2da8",
+        "group": "6cad29eeb8b60520",
+        "order": 3,
+        "width": 7,
+        "height": 1,
+        "name": "filler",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1610,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "8473ce049846c09a",
+        "type": "ui_text",
+        "z": "8c9d42231fd19d3c",
+        "g": "f3ab3ae5d93d2da8",
+        "group": "6cad29eeb8b60520",
+        "order": 5,
+        "width": 1,
+        "height": 1,
+        "name": "filler",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1490,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "7a1095f589f874f3",
+        "type": "ui_template",
+        "z": "8c9d42231fd19d3c",
+        "g": "5046c61e7a199375",
+        "group": "6cad29eeb8b60520",
+        "name": "SVG based template",
+        "order": 2,
+        "width": 10,
+        "height": 9,
+        "format": "<style>\n\n    #tex1 {\n//        font-weight:bolder;\n        font-size: 12;\n//        letter-spacing: 4px;\n        fill: white;\n    }\n    \n</style>\n\n\n<svg height=\"500\" width=\"530\" >\n\n<text id=\"tex1\" x=\"10\" y=\"30\" > {{msg.payload[0]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"50\" > {{msg.payload[1]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"70\" > {{msg.payload[2]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"90\" > {{msg.payload[3]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"110\" > {{msg.payload[4]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"130\" > {{msg.payload[5]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"150\" > {{msg.payload[6]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"170\" > {{msg.payload[7]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"190\" > {{msg.payload[8]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"210\" > {{msg.payload[9]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"230\" > {{msg.payload[9]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"250\" > {{msg.payload[10]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"270\" > {{msg.payload[11]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"290\" > {{msg.payload[12]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"310\" > {{msg.payload[13]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"330\" > {{msg.payload[14]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"350\" > {{msg.payload[15]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"370\" > {{msg.payload[16]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"390\" > {{msg.payload[17]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"410\" > {{msg.payload[18]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"430\" > {{msg.payload[19]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"450\" > {{msg.payload[20]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"470\" > {{msg.payload[21]}} </text>\n<text id=\"tex1\" x=\"10\" y=\"490\" > {{msg.payload[22]}} </text>\n</svg>\n\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 2400,
+        "y": 1960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5bbb6f1fdd9c71cc",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "5046c61e7a199375",
+        "name": "Add word to scrolling table",
+        "func": "let pay = msg.payload;\n\n// Read scrolling table from context\nlet sctab = flow.get(\"sctab\");\n\n// Modify scrolling table by adding msg.payload as first element\nlet size = sctab.unshift(pay);\n\n// Remove last element from scrolling table\nif (size >25) sctab.pop();\n\n// Update context for scrolling text\nflow.set(\"sctab\",sctab);\n\n// Shalow copy updated scrolling table to msg.payload\nmsg.payload = [...sctab];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2140,
+        "y": 1960,
+        "wires": [
+            [
+                "7a1095f589f874f3",
+                "abe6f4c6b9a5728e"
+            ]
+        ]
+    },
+    {
+        "id": "af068a9720c4f5c5",
+        "type": "mqtt in",
+        "z": "8c9d42231fd19d3c",
+        "g": "5046c61e7a199375",
+        "name": "",
+        "topic": "panasonic_heat_pump/commands/#",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1420,
+        "y": 1960,
+        "wires": [
+            [
+                "e98d687b9dfe8b58"
+            ]
+        ]
+    },
+    {
+        "id": "98765567eb2e9225",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "5046c61e7a199375",
+        "name": "",
+        "func": "var DateTime    = msg.time;\nvar Source      = msg.topic;\nvar Value       = msg.payload;\nmsg1 = {};\nmsg1.payload = (DateTime + \" - \" + Source + \": \" + Value);\n\nreturn msg1;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1900,
+        "y": 1960,
+        "wires": [
+            [
+                "5bbb6f1fdd9c71cc"
+            ]
+        ]
+    },
+    {
+        "id": "e98d687b9dfe8b58",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "g": "5046c61e7a199375",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time",
+                "pt": "msg",
+                "to": "$now('[D01]/[M01] [H01]:[m01]', '+0200')",
+                "tot": "jsonata"
+            },
+            {
+                "t": "change",
+                "p": "topic",
+                "pt": "msg",
+                "from": "panasonic_heat_pump/commands/",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1680,
+        "y": 1960,
+        "wires": [
+            [
+                "98765567eb2e9225"
+            ]
         ]
     },
     {
@@ -11901,7 +12111,8 @@
             "5701fbba24da9674",
             "35995d04250be2bc",
             "530b23bec05c1f07",
-            "f5a1b8d1616afcb8"
+            "f5a1b8d1616afcb8",
+            "5e9b06898ada7a45"
         ],
         "x": 114,
         "y": 399,
@@ -11934,7 +12145,8 @@
             "6782b41fb1659549",
             "ede82249f74ed7ec",
             "23f4dfbc7c8ce972",
-            "4a0c387e1ddc0dc9"
+            "4a0c387e1ddc0dc9",
+            "f95a16dc7ae6773b"
         ],
         "x": 134,
         "y": 39,
@@ -13673,12 +13885,10 @@
         "y": 920,
         "wires": [
             [
-                "306b69356454f3ff",
-                "52329e6605f49657"
+                "306b69356454f3ff"
             ],
             [
-                "5787c91b303f2538",
-                "d8aa12a671130ae8"
+                "5787c91b303f2538"
             ]
         ],
         "outputLabels": [
@@ -13807,7 +14017,7 @@
         "y": 280,
         "wires": [
             [
-                "581692e893e2d482"
+                "f95a16dc7ae6773b"
             ]
         ]
     },
@@ -13824,7 +14034,7 @@
         "y": 280,
         "wires": [
             [
-                "581692e893e2d482"
+                "f95a16dc7ae6773b"
             ]
         ]
     },
@@ -13847,7 +14057,7 @@
         "g": "5a496e1f1ea93a38",
         "name": "T room (RTC function)",
         "info": "",
-        "x": 940,
+        "x": 840,
         "y": 280,
         "wires": []
     },
@@ -14038,7 +14248,7 @@
         "y": 740,
         "wires": [
             [
-                "3af8890722ca7be0"
+                "5e9b06898ada7a45"
             ]
         ]
     },
@@ -14048,7 +14258,7 @@
         "z": "a938de76db0b71f6",
         "g": "23847da379e94b05",
         "name": "Send new SP",
-        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n*/\n\n\nvar ThreeWay_Valve_State=global.get('ThreeWay_Valve_State');                    // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)\n\nif (ThreeWay_Valve_State==1)                                                    // If state is 1 (DHW mode), do not do anything.\n    {\n        return null;\n    }\n\nelse \n    {\n    var SP_Final=global.get('SP_Final',\"file\");\n    var current_sp=global.get('Main_Target_Temp');                              // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)    \n    var Correction_0_WAR_on_off=global.get('Correction_0_WAR_on_off',\"file\");\n    var Correction_1_RTC_on_off=global.get('Correction_1_RTC_on_off',\"file\");\n    var Correction_2_softstart_on_off=global.get('Correction_2_softstart_on_off',\"file\");\n\n    \n    if ((Correction_0_WAR_on_off + Correction_1_RTC_on_off + Correction_2_softstart_on_off) == 0 )    \n                                                                                // Check 1, only when one of the functions is enabled. The sum of the states should be 1 or more, otherwise all functions are off.\n            {\n                return null;\n            }\n\n            \n    else    {\n                if (SP_Final ==  current_sp)                                    // Check 1, only if there is a difference between SP and current value, a signal should be sent.\n                    {return null;}\n                else\n                    {msg.payload = SP_Final;\n                    return msg;}\n            }    \n    }\n",
+        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n*/\n\n\nvar ThreeWay_Valve_State=global.get('ThreeWay_Valve_State');                    // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)\n\nif (ThreeWay_Valve_State==1)                                                    // If state is 1 (DHW mode), do not do anything.\n    {\n        return null;\n    }\n\nelse \n    {\n        var SP_Final=global.get('SP_Final',\"file\");\n        var current_sp=global.get('Main_Target_Temp');                              // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)    \n        var Correction_0_WAR_on_off=global.get('Correction_0_WAR_on_off',\"file\");\n        var Correction_1_RTC_on_off=global.get('Correction_1_RTC_on_off',\"file\");\n        var Correction_2_softstart_on_off=global.get('Correction_2_softstart_on_off',\"file\");\n    \n        \n        if ((Correction_0_WAR_on_off + Correction_1_RTC_on_off + Correction_2_softstart_on_off) == 0 )    \n                                                                                    // Check 1, only when one of the functions is enabled. The sum of the states should be 1 or more, otherwise all functions are off.\n                {\n                    return null;\n                }\n    \n                \n        else    \n            {\n                if (SP_Final ==  current_sp)                                    // Check 1, only if there is a difference between SP and current value, a signal should be sent.\n                    {\n                        return null;\n                    }\n                    \n                else\n                    {\n                        msg.payload = SP_Final;\n                        msg.topic = \"SP_Final\";\n                        return msg;\n                    }\n            }    \n    }\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -14058,7 +14268,7 @@
         "y": 700,
         "wires": [
             [
-                "3af8890722ca7be0"
+                "5e9b06898ada7a45"
             ]
         ]
     },
@@ -15766,63 +15976,6 @@
         "wires": []
     },
     {
-        "id": "52329e6605f49657",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2010,
-        "y": 820,
-        "wires": []
-    },
-    {
-        "id": "d8aa12a671130ae8",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2010,
-        "y": 1020,
-        "wires": []
-    },
-    {
-        "id": "92733f56f4ae1c22",
-        "type": "inject",
-        "z": "a938de76db0b71f6",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "1.2",
-        "payloadType": "num",
-        "x": 1750,
-        "y": 760,
-        "wires": [
-            [
-                "f4e55b938e645737"
-            ]
-        ]
-    },
-    {
         "id": "530b23bec05c1f07",
         "type": "function",
         "z": "a938de76db0b71f6",
@@ -15859,6 +16012,52 @@
         "wires": [
             [
                 "35995d04250be2bc"
+            ]
+        ]
+    },
+    {
+        "id": "f95a16dc7ae6773b",
+        "type": "smooth",
+        "z": "a938de76db0b71f6",
+        "g": "5a496e1f1ea93a38",
+        "name": "",
+        "property": "payload",
+        "action": "mean",
+        "count": "15",
+        "round": "2",
+        "mult": "single",
+        "reduce": false,
+        "x": 1040,
+        "y": 280,
+        "wires": [
+            [
+                "581692e893e2d482"
+            ]
+        ]
+    },
+    {
+        "id": "5e9b06898ada7a45",
+        "type": "delay",
+        "z": "a938de76db0b71f6",
+        "g": "23847da379e94b05",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "90",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 880,
+        "y": 720,
+        "wires": [
+            [
+                "3af8890722ca7be0"
             ]
         ]
     },
@@ -26618,136 +26817,6 @@
         "wires": []
     },
     {
-        "id": "9ee44b0aedef39ac",
-        "type": "function",
-        "z": "35d210f042827344",
-        "d": true,
-        "name": "",
-        "func": "// If watertemperature is above 60°C, legionella dies. \n// https://warmtepomp-tips.nl/relevant/legionella/\n// When the PV of the tank = 62, the current time/date will be logged. \n\n\n\n//if DHW_Temp == \n\nvar CurrentTime = new Date().getTime();\nlet msg2={};\n\nif (msg.payload >= 63)\n    {\n        return [null,null];\n    }\n\nif (msg.payload == 62)\n    {\n        context.set(\"PreviousTimeSterilization\",CurrentTime,\"file\");\n        return [null,null];\n    }\n \n    \nif (msg.payload <= 61)\n    {\n        var PreviousTimeSterilization = context.get('PreviousTimeSterilization',\"file\");\n        var TimeElapsed = ((CurrentTime - PreviousTimeSterilization)/1000/60/60);\n\n        TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n            \n        msg2.payload = {\"Count\":TimeElapsed,\"Units\":\"Hours\"}; \n        msg2.payload = (TimeElapsed);\n\n        return [null,msg2];\n\n    }\n\n\n\n\n",
-        "outputs": 2,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 2880,
-        "y": 2360,
-        "wires": [
-            [
-                "fa4626909e2ca382"
-            ],
-            [
-                "133c6648e89da160"
-            ]
-        ]
-    },
-    {
-        "id": "46c974dd824a03ad",
-        "type": "inject",
-        "z": "35d210f042827344",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "63",
-        "payloadType": "num",
-        "x": 2610,
-        "y": 2340,
-        "wires": [
-            [
-                "9ee44b0aedef39ac"
-            ]
-        ]
-    },
-    {
-        "id": "fa4626909e2ca382",
-        "type": "debug",
-        "z": "35d210f042827344",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 3110,
-        "y": 2340,
-        "wires": []
-    },
-    {
-        "id": "e11026d4af3333b9",
-        "type": "inject",
-        "z": "35d210f042827344",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "62",
-        "payloadType": "num",
-        "x": 2610,
-        "y": 2380,
-        "wires": [
-            [
-                "9ee44b0aedef39ac"
-            ]
-        ]
-    },
-    {
-        "id": "bfd3c65af045792e",
-        "type": "inject",
-        "z": "35d210f042827344",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "61",
-        "payloadType": "num",
-        "x": 2610,
-        "y": 2440,
-        "wires": [
-            [
-                "9ee44b0aedef39ac"
-            ]
-        ]
-    },
-    {
-        "id": "133c6648e89da160",
-        "type": "debug",
-        "z": "35d210f042827344",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 3110,
-        "y": 2380,
-        "wires": []
-    },
-    {
         "id": "ed155b604642d354",
         "type": "tab",
         "label": "WP degreedays",
@@ -27384,7 +27453,7 @@
         "g": "e598f3cca51f28d1",
         "name": "kWh + Degree Days (31d)",
         "group": "87be08e6a82ef6a0",
-        "order": 1,
+        "order": 2,
         "width": 15,
         "height": 8,
         "label": "31 days",
@@ -27740,7 +27809,7 @@
         "g": "d44f1a1993a8a44f",
         "name": "kWh + Degree Days (24h)",
         "group": "87be08e6a82ef6a0",
-        "order": 1,
+        "order": 4,
         "width": 15,
         "height": 8,
         "label": "24 hours",
@@ -28321,6 +28390,48 @@
         ]
     },
     {
+        "id": "40b5ddfde5f28d99",
+        "type": "ui_template",
+        "z": "ed155b604642d354",
+        "group": "87be08e6a82ef6a0",
+        "name": "Line",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 10px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 2px solid #a39d99;\n    box-shadow: 0 0 5px #a39d99\";\n\t>\n\n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1590,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67a8d20ae604a58e",
+        "type": "ui_template",
+        "z": "ed155b604642d354",
+        "group": "87be08e6a82ef6a0",
+        "name": "Line",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 10px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 2px solid #a39d99;\n    box-shadow: 0 0 5px #a39d99\";\n\t>\n\n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1590,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "966985d68ebb4990",
         "type": "tab",
         "label": "WP Solar",
@@ -28847,7 +28958,7 @@
         "z": "966985d68ebb4990",
         "g": "6ca6d4d49dde6089",
         "name": "Fallback to SP low below threshold",
-        "label": "Fallback to SP low?",
+        "label": "Fallback to SP low below 0 W?",
         "tooltip": "Default = disable (no).",
         "group": "b7f22c282fde0f86",
         "order": 7,
@@ -28974,7 +29085,7 @@
         "order": 4,
         "width": 14,
         "height": 17,
-        "format": "<h3>What can this function do for you?</h3>\nThe aim of this function is to increase efficiency (and save cost) by utilize solar energy as much as possible.\nWhen there is solar energy in abundance, you can tell the heatpump to use that energy to heat up your DHW water tank. \nTo determine if there is enough solar energy, you need any form of power measurement. This can be a P1 power meter, or a meter directly behind your panels.</br></br>\n\nThe Instruction is split into two parts. </br> </br>\n1st part in Node-Red flow page (http://IP:1880/#flow)</br>\nFollow the instructions in the white comments in the tab: “WP Solar”</br></br>\n2nd part is the instruction of this dashboard and is written below.</br></br>\n\n<h3>Solar function</h3>\nThis enables / disables this function.</br></br>\n<h3>DHW temperature setpoint – low/high</h3>\nThis is the target temperature for the water in DHW tank. The high setpoint will be used when solar power reached the threshold. By default, setpoint low is used at the beginning of each day. Note: Setpoint low is the same setpoint as set in HOME tab (DHW SP)</br></br>\n<h3>Power detection method</h3> \nThere are two options are available. Option 1: “kW production now” and option 2: “kWh production today”.</br>\nkW production now – Live energy export of the house expressed in Watt. See image 1.</br>\nkWh production today – Todays cumulative energy export of the house, expressed in kWh. See image 2. This value will only increase. Energy import (at a later time) will not be subtracted from the value.</br></br>\n<h3>Solar Production threshold (XX)</h3>\nThe threshold above which the new “DHW temperature setpoint – high” should be sent to the heatpump as a new target. </br></br>\n<h3>Fallback to SP low?</h3>\nBy default, once setpoint high is used, it will not switch back to setpoint low on the same day. If you do want to fall back to SP low, enable 'fallback to SP low below threshold. This will only apply for the power detection method kW. Be aware that this might cause oscillating behavior. </br></br>\n\n<h3>Override power state</h3>\nWhen the heatpump is turned off, do you want this function to turn the heatpump on again? Enable switch to allow 'turn on' action",
+        "format": "<h3>What can this function do for you?</h3>\nThe aim of this function is to increase efficiency (and save cost) by utilize solar energy as much as possible.\nWhen there is solar energy in abundance, you can tell the heatpump to use that energy to heat up your DHW water tank. \nTo determine if there is enough solar energy, you need any form of power measurement. This can be a P1 power meter, or a meter directly behind your panels.</br></br>\n\nThe Instruction is split into two parts. </br> </br>\n1st part in Node-Red flow page (http://IP:1880/#flow)</br>\nFollow the instructions in the white comments in the tab: “WP Solar”</br></br>\n2nd part is the instruction of this dashboard and is written below.</br></br>\n\n<h3>Solar function</h3>\nThis enables / disables this function.</br></br>\n<h3>DHW temperature setpoint – low/high</h3>\nThis is the target temperature for the water in DHW tank. The high setpoint will be used when solar power reached the threshold. By default, setpoint low is used at the beginning of each day. Note: Setpoint low is the same setpoint as set in HOME tab (DHW SP)</br></br>\n<h3>Power detection method</h3> \nThere are two options are available. Option 1: “kW production now” and option 2: “kWh production today”.</br>\nkW production now – Live energy export of the house expressed in Watt. See image 1.</br>\nkWh production today – Todays cumulative energy export of the house, expressed in kWh. See image 2. This value will only increase. Energy import (at a later time) will not be subtracted from the value.</br></br>\n<h3>Solar Production threshold (XX)</h3>\nThe threshold above which the new “DHW temperature setpoint – high” should be sent to the heatpump as a new target. </br></br>\n<h3>Fallback to SP low below 0 W?</h3>\nBy default, once setpoint high is used, it will not switch back to setpoint low on the same day. If you do want to fall back to SP low when power production drops below zero W, enable 'fallback' toggle. This will only apply for the power detection method kW. </br></br>\n\n<h3>Override power state</h3>\nWhen the heatpump is turned off, do you want this function to turn the heatpump on again? Enable switch to allow 'turn on' action",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
@@ -31080,6 +31191,28 @@
         "className": ""
     },
     {
+        "id": "e3cc96332cd59f07",
+        "type": "ui_group",
+        "name": "DHW",
+        "tab": "a5be8588.b8fbc8",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "74946a73578ea096",
+        "type": "ui_group",
+        "name": "ROOM",
+        "tab": "a5be8588.b8fbc8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
         "id": "e27cfec311892d88",
         "type": "ui_group",
         "name": "Settings",
@@ -31121,6 +31254,17 @@
         "disp": true,
         "width": "9",
         "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1179fa790d2d89ca",
+        "type": "ui_group",
+        "name": "Advanced Functions",
+        "tab": "a5be8588.b8fbc8",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
         "className": ""
     },
     {
@@ -31228,8 +31372,19 @@
         "name": "Power",
         "tab": "1a08b96c5aeb8d6e",
         "order": 1,
-        "disp": true,
-        "width": 26,
+        "disp": false,
+        "width": "26",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6cad29eeb8b60520",
+        "type": "ui_group",
+        "name": "Commands History",
+        "tab": "ef5f47f5f4dd9eb3",
+        "order": 1,
+        "disp": false,
+        "width": "10",
         "collapse": false,
         "className": ""
     },
@@ -31276,6 +31431,15 @@
         "width": "14",
         "collapse": false,
         "className": ""
+    },
+    {
+        "id": "a5be8588.b8fbc8",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "d6d4a43045260ac9",
@@ -31337,6 +31501,15 @@
         "name": "Charts Energy",
         "icon": "dashboard",
         "order": 9,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ef5f47f5f4dd9eb3",
+        "type": "ui_tab",
+        "name": "Logs",
+        "icon": "dashboard",
+        "order": 12,
         "disabled": false,
         "hidden": false
     },
