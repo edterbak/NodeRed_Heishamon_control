@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 14 beta 11<br/>
+Current version: 14 beta 12<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -310,6 +310,9 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Improved reduction of SET messages even further. 
 - FEATURE: Added a LOG page on the dashboard. 
 - Added smoothening filter (moving average over last 15 minutes) to reduce frequent SP changes.
+
+[2022-06-01] (v14 beta12) Things done are:
+- BUG (critical): Oscillation behaviour (turn on/off heatpump) due to the RTC + Solar function not playing nice. https://github.com/edterbak/NodeRed_Heishamon_control/issues/29 
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
