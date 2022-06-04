@@ -119,7 +119,7 @@ It is advised to create a separate tab for your external sources. Any source ava
 There is no easy solution currently know by me to update only changed nodes or flows. <br/>
 First: Create a backup of current version. Select all tabs by holding CTRL. Then in the right menu select Export > Download. <br/><br/>
 
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/Backup_animation1.gif) <br/>
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/Backup_animation1.gif) <br/>RightMouseClick on the GIF and select open in a new tab to see it full screen.<br/>
 </details>
 	
 ## How to update to a newer version
@@ -133,7 +133,7 @@ I found it is easiest to:<br/>
 5, re-connect your personalization’s.<br/> 
 If there are better ideas about this, please inform me. <br/> <br/>
 
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/Update_animation_final.gif?raw=true) <br/>
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/Update_animation_final.gif?raw=true) <br/>RightMouseClick on the GIF and select open in a new tab to see it full screen.<br/>
 	
 </details>
 
