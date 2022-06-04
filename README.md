@@ -113,19 +113,28 @@ As explained by the image below, you CAN use the Panasonic sensors for this. To 
 It is advised to create a separate tab for your external sources. Any source available in Node Red can be conditioned and used as a sensor in the functions. If you do this in an 'personal tab', then it is likely easier to update later to newer versions. (no guarantees of course)<br/>
 </details>
 
-## How to update to a newer version
+## How to create a backup of your current flow
 
 <details>
 There is no easy solution currently know by me to update only changed nodes or flows. <br/>
 First: Create a backup of current version. Select all tabs by holding CTRL. Then in the right menu select Export > Download. <br/><br/>
-Then:	
+
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/Backup_animation1.gif) <br/>
+</details>
+	
+## How to update to a newer version
+<details>	
+Update to newer version:<br/>	
 I found it is easiest to:<br/> 
 1, remove the tabs, WP MQTT, WP Dash, WP Control, WP Solar, WP Scheduler completely<br/> 
 2, remove all ui_base, ui_group and ui_tab references from the flows.<br/> 
 3, import new version<br/> 
 4, correct setup, eg. MQTT server.<br/> 
 5, re-connect your personalization’s.<br/> 
-If there are better ideas about this, please inform me. <br/> 
+If there are better ideas about this, please inform me. <br/> <br/>
+
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/Update_animation_final.gif?raw=true) <br/>
+	
 </details>
 
 ## The Dashboard
