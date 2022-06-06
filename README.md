@@ -269,7 +269,6 @@ All older changelog items are colapsed below. only the latest changelog will alw
 [2022-04-23] (v13.1) Things done are:
 - BUG fix: COP was not working
 - ENHANCEMENT: Made the Energy chart look a little better with titels etc. 
-</details><br/>
 
 [2022-05-05] (v14 beta1) Things done are:
 - ENHANCEMENT: Feature request; first attempt to turn heatpump off with RTC-function, when room temperature is above threshold. 
@@ -328,10 +327,12 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - BUG: Logs text color not being correct.
 - Improved logs: Added toggle status changes to log 
 - Removed smoothening filter again on room temperature (add it in personal area if you needed it.)
+</details><br/>
 
 [2022-06-06] (v14 final) Things done are:
-- Improved visuals in log page, increased amount of lines to 40.
-- Improved chart storage.
+- Compared to 14beta13, Improved visuals in log page, increased amount of lines to 40.
+- Compared to 14beta13, Improved chart storage.
+- A lot: see details in above changelogs.
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
