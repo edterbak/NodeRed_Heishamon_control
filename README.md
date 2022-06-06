@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 14 beta 13<br/>
+Current version: 14 final<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -329,6 +329,9 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Improved logs: Added toggle status changes to log 
 - Removed smoothening filter again on room temperature (add it in personal area if you needed it.)
 
+[2022-06-06] (v14 final) Things done are:
+- Improved visuals in log page, increased amount of lines to 40.
+- Improved chart storage.
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
