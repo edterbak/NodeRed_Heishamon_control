@@ -145,7 +145,7 @@ Set the 'Virtual SP'. This resembles the Ta in direct mode. <br/>
 If you do not enable any other function, the Virtual SP will be the actual target temperature.<br/>
 But, if you enable the WAR function, this will override the virtual SP. <br/>
 If you enable the RTC function, the virtual SP or WAR result will be corrected by the RTC function. <br/>
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/Home1.png?raw=true)
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Home1.png?raw=true)
 <br/>
 ## Function 1: WAR (weather dependent temperature control)
 The target water temperature is influenced by the outside temperature. When it gets colder, the temperature of the water should increase. I have built a GUI including a graph to create a temperature profile.
@@ -157,7 +157,7 @@ When the temperature in a room gets too high, it will add a "-1" to the setpoint
 Through the GUI, you can set the room target temperature. And you can set the limits when you want to increase or decrease the SP by 1, 2 or 3 degrees.<br/>
 A recent addition is the possibility to have the pump shut down when above the fourth limit. If you do not set a value, it will not turn off. If you have and dont want this function anymore. set the on/off values to extremes so they are never reached.<br/>
 Note that when you let the HP shut down above a threshold, you need to look at your Scheduled actions. If you do want the scheduler to operate, use the override toggle here. <br/>
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/rtc2.png?raw=true" width=60%>
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/rtc2.png?raw=true" width=60%>
 
 ## Function 3: SoftStart (EXPERIMENTAL!!)
 This function is present but not advised to be used yet. I have not tested this well enough. Last time I tested it worked, but not stable resulting in early stops. This function still needs work.<br/>
@@ -167,7 +167,7 @@ This function is present but not advised to be used yet. I have not tested this 
 The aim of this function is to increase efficiency (and save cost) by utilizing solar energy as much as possible.
 When there is solar energy in abundance, you can tell the heatpump to use that energy to heat up your DHW water tank. 
 To determine if there is enough solar energy, you need any form of power measurement. This can be a P1 power meter, or a meter directly behind your panels.<br/>
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/solar3.png?raw=true)
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/solar3.png?raw=true)
 
 ## Scheduler
 I have added an option to create 10x schedules (in dashboard) for:
@@ -178,7 +178,7 @@ I have added an option to create 10x schedules (in dashboard) for:
 <br/>You can enable/disable a schedule, multiselect a day of the week, specify the time (hour + minute) and give the schedule a name.<br/>
 In addition, the override toggle will allow you to start a planned action, even when the HeatPump is turned off at that time. If this toggle is disabled, a switched off heatpump will not do the scheduled task.<br/>
 
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/scheduler5.png?raw=true" width=70%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Scheduler3_multiselect_day.png?raw=true" width=15%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/scheduler3_actions.png?raw=true" width=14%>
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/scheduler5.png?raw=true" width=70%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Scheduler3_multiselect_day.png?raw=true" width=15%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/scheduler3_actions.png?raw=true" width=14%>
 Image: [Scheduler] [Multiselect the day] [possible actions to select]
 
 ### Dashboard
