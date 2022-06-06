@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 13.1<br/>
+Current version: 14 final<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -26,6 +26,9 @@ I have chosen option 4 in the list above. In this GIT you can find NR functions 
 When you choose to use/try this (Feel free to do so), PLEASE give feedback on any issues you encounter. You can use the [Issues] section to report to me. <br/>
 When making an issue, please give as much info as you think is required to solve this. Steps to reproduce. Maybe a screenshot etc. Reporting this will help me help you :) <br/>Thank you in advance. 
 
+## installation 
+<details>
+	
 ## Required heat pump setting
 This Node Red flow generates and controls the setpoint for the T outlet (Ta). This means you need to put your pump in DIRECT mode on the thermostat itself. 
 From within Heishamon, TOP76, will inform you if you currently are in WAR mode or DIRECT mode. <br/>(0=WAR, 1=DIRECT)
@@ -108,24 +111,41 @@ As explained by the image below, you CAN use the Panasonic sensors for this. To 
 
 ## How to personalize or customize
 It is advised to create a separate tab for your external sources. Any source available in Node Red can be conditioned and used as a sensor in the functions. If you do this in an 'personal tab', then it is likely easier to update later to newer versions. (no guarantees of course)<br/>
+</details>
 
-## How to update to a newer version
+## How to create a backup of your current flow
+
+<details>
 There is no easy solution currently know by me to update only changed nodes or flows. <br/>
+First: Create a backup of current version. Select all tabs by holding CTRL. Then in the right menu select Export > Download. <br/><br/>
+
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/Backup_animation1.gif) <br/>RightMouseClick on the GIF and select open in a new tab to see it full screen.<br/>
+</details>
+	
+## How to update to a newer version
+<details>	
+Update to newer version:<br/>	
 I found it is easiest to:<br/> 
-1, remove the tabs, WP MQTT, WP Dash, WP Control, WP Scheduler completely<br/> 
+1, remove the tabs, WP MQTT, WP Dash, WP Control, WP Solar, WP Scheduler completely<br/> 
 2, remove all ui_base, ui_group and ui_tab references from the flows.<br/> 
 3, import new version<br/> 
 4, correct setup, eg. MQTT server.<br/> 
 5, re-connect your personalization’s.<br/> 
-If there are better ideas about this, please inform me. <br/> 
+If there are better ideas about this, please inform me. <br/> <br/>
+
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/Update_animation_final.gif?raw=true) <br/>RightMouseClick on the GIF and select open in a new tab to see it full screen.<br/>
+	
+</details>
 
 ## The Dashboard
+<details>
 This is currently the first page of the dashboard. From here, you can enable each function separate but you can ALSO use WAR + RTC or WAR + SS together. It does not matter. they add on top of each other. You can use multiple combinations. Virtual SP + RTC function. Or WAR + RTC functions or only set a Virtual SP. 
 
 Set the 'Virtual SP'. This resembles the Ta in direct mode. <br/>
-You can enable the WAR function, which will overwrite the chosen virtual SP. <br/>
+If you do not enable any other function, the Virtual SP will be the actual target temperature.<br/>
+But, if you enable the WAR function, this will override the virtual SP. <br/>
 If you enable the RTC function, the virtual SP or WAR result will be corrected by the RTC function. <br/>
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Main.png?raw=true)
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/Home1.png?raw=true)
 <br/>
 ## Function 1: WAR (weather dependent temperature control)
 The target water temperature is influenced by the outside temperature. When it gets colder, the temperature of the water should increase. I have built a GUI including a graph to create a temperature profile.
@@ -134,12 +154,20 @@ The target water temperature is influenced by the outside temperature. When it g
 ## Function 2: RTC (RoomTemperatureControl)
 This function adjusts the SP of the water depending on the room temperature. <br/>
 When the temperature in a room gets too high, it will add a "-1" to the setpoint of the water temperature. <br/>
-Through the GUI, you can set the room target temperature. And you can set the limits when you want to increase or lower the SP with 1, 2 or 3 degrees.
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/RTC.png?raw=true" width=60%>
+Through the GUI, you can set the room target temperature. And you can set the limits when you want to increase or decrease the SP by 1, 2 or 3 degrees.<br/>
+A recent addition is the possibility to have the pump shut down when above the fourth limit. If you do not set a value, it will not turn off. If you have and dont want this function anymore. set the on/off values to extremes so they are never reached.<br/>
+Note that when you let the HP shut down above a threshold, you need to look at your Scheduled actions. If you do want the scheduler to operate, use the override toggle here. <br/>
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/rtc2.png?raw=true" width=60%>
 
 ## Function 3: SoftStart (EXPERIMENTAL!!)
 This function is present but not advised to be used yet. I have not tested this well enough. Last time I tested it worked, but not stable resulting in early stops. This function still needs work.<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/SS.png?raw=true)
+
+## Function 4: Solar
+The aim of this function is to increase efficiency (and save cost) by utilizing solar energy as much as possible.
+When there is solar energy in abundance, you can tell the heatpump to use that energy to heat up your DHW water tank. 
+To determine if there is enough solar energy, you need any form of power measurement. This can be a P1 power meter, or a meter directly behind your panels.<br/>
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/solar3.png?raw=true)
 
 ## Scheduler
 I have added an option to create 10x schedules (in dashboard) for:
@@ -147,17 +175,19 @@ I have added an option to create 10x schedules (in dashboard) for:
 - Sterilization runs
 - Quiet modes
 - Operation modes
-You can enable/disable a schedule, multiselect a day of the week, specify the time (hour + minute) and give the schedule a name.<br/>
+<br/>You can enable/disable a schedule, multiselect a day of the week, specify the time (hour + minute) and give the schedule a name.<br/>
+In addition, the override toggle will allow you to start a planned action, even when the HeatPump is turned off at that time. If this toggle is disabled, a switched off heatpump will not do the scheduled task.<br/>
 
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Scheduler3.png?raw=true" width=70%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Scheduler3_multiselect_day.png?raw=true" width=15%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/scheduler3_actions.png?raw=true" width=14%>
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/v14-beta1/images/scheduler5.png?raw=true" width=70%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Scheduler3_multiselect_day.png?raw=true" width=15%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/scheduler3_actions.png?raw=true" width=14%>
 Image: [Scheduler] [Multiselect the day] [possible actions to select]
 
 ### Dashboard
 You can find the link to the dashboard like this:<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard2.png?raw=true) ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard1.png?raw=true)
+</details>
 
 ## Changelog / Notes
-all older changelog items are colapsed below. only the latest changelog will always be shown.
+All older changelog items are colapsed below. only the latest changelog will always be shown.
 <details>
 [2021-11-09] (v1) First release. Current versions of the function seem rough. I will polish it at a later time and update here. The Flows do contain comments to clarify. In future I will also publish my verion of a NR dashboard. Currently Im not fully happy with it.
 
@@ -227,7 +257,7 @@ all older changelog items are colapsed below. only the latest changelog will alw
 - ENHANCEMENT: issue #20 Night reduction - accuracy to 0,1 instead of 1 - (https://github.com/edterbak/NodeRed_Heishamon_control/issues/20)
 - ENHANCEMENT: issue #21. Night reduction - add toggle in the Home screen to controle it manually (https://github.com/edterbak/NodeRed_Heishamon_control/issues/21)
 - ENHANCEMENT: First attempt to include degree days (graaddagen) in the dashboard. It is NOT finished yet, and on my personal tab, but might affect basic dashboard / 
-</details><br/>
+
 
 [2022-04-23] (v13) Things done are:
 - ENHANCEMENT: issue #17. "Add graaddagen to dashboard" implemented (https://github.com/edterbak/NodeRed_Heishamon_control/issues/17) The result should be a good step in the richt direction. If this needs more work or you have other suggestions, please add to the issue in githug.
@@ -239,11 +269,72 @@ all older changelog items are colapsed below. only the latest changelog will alw
 [2022-04-23] (v13.1) Things done are:
 - BUG fix: COP was not working
 - ENHANCEMENT: Made the Energy chart look a little better with titels etc. 
+</details><br/>
+
+[2022-05-05] (v14 beta1) Things done are:
+- ENHANCEMENT: Feature request; first attempt to turn heatpump off with RTC-function, when room temperature is above threshold. 
+- Fixes in Energy Charts
+
+[2022-05-08] (v14 beta2) Things done are:
+- ENHANCEMENT: Feature request; second attempt to turn heatpump off with RTC-function, when room temperature is above threshold. Added DHW to the mix. it should be safe to use now. I have tested it and it does seem to work. Could use some more love to make sure it works propperly.
+
+[2022-05-12] (v14 beta3) Things done are:
+- ENHANCEMENT: Feature request; third attempt to turn heatpump off with RTC-function. Bug fixed that the stored rtc_on / rtc_off temperature ranges are not persistent.
+- BUG: Fixed scheduler bug where the 'override' toggles were not persistent over reboot.
+
+[2022-05-18] (v14 beta4) Things done are:
+- ENHANCEMENT: Feature request; fourth attempt to turn heatpump off with RTC-function. https://github.com/edterbak/NodeRed_Heishamon_control/issues/24
+- BUG: fixed incorrect calculated dhw/heat kwh values. (https://github.com/edterbak/NodeRed_Heishamon_control/issues/27) Needs to be confirmed working.
+- ENHANCEMENT: Feature reuqest; Solar function. (https://github.com/edterbak/NodeRed_Heishamon_control/issues/26) This is the first attempt. 
+
+[2022-05-19] (v14 beta5) Things done are:
+- BUG: Solar function. not producing kWh values. fixed
+
+[2022-05-20] (v14 beta6) Things done are:
+- ENHANCEMENT: General polishing of the Solar functionality
+- Fixed other issues.
+- ENHANCEMENT: Changed the gauge by a multicolor chart. Hope this is nicer. Added threshold to the graph.
+
+[2022-05-22] (v14 beta7) Things done are:
+- ENHANCEMENT: General polishing of the Solar functionality.
+- Removed the need for the contrib "Media". Doesnt work after you imported. 
+- improved logic on COP calculation. store/restore.
+- Solar function: Rounded power readings to 0 decimals.
+
+[2022-05-27] (v14 beta8) Things done are:
+- Reduced excess SET commands to nearly zero (Thanks for the tip!)
+
+[2022-05-29] (v14 beta9) Things done are:
+- BUG: Fixed issue HeatPump being turned off when using the on/off temperature from RTC function
+- BUG: Fixed issue where OperatingMode would not stick, also RTC function on/off related.
+- removed bar-chart for COP. It keeps throwing errors or NaN value for DHW. Need to dive in at a later time.
+- Solar function: for the time being use JavaBoon's code. Thank you !!!
+
+[2022-05-29] (v14 beta10) Things done are:
+- BUG: I forgot to enable the SET9 command again after some debugging. Re-enabled it.
+- Feature request: Added a button on the request of klerk (and added some lines to make it look better)
+- re-added bar-chart for COP. It seems to work. It should start building a chart once DHW + HEAT info is available. untill then it will be empty. Need time to test if this is solid or not.
+
+[2022-05-31] (v14 beta11) Things done are:
+- Improved reduction of SET messages even further. 
+- FEATURE: Added a LOG page on the dashboard. 
+- Added smoothening filter (moving average over last 15 minutes) to reduce frequent SP changes.
+
+[2022-06-01] (v14 beta12) Things done are:
+- BUG (critical): Oscillation behaviour (turn on/off heatpump) due to the RTC + Solar function not playing nice. https://github.com/edterbak/NodeRed_Heishamon_control/issues/29 
+
+[2022-06-04] (v14 beta13) Things done are:
+- Improved reduction of SET messages. Now also no messages after NR reboot. 
+- BUG: Logs text color not being correct.
+- Improved logs: Added toggle status changes to log 
+- Removed smoothening filter again on room temperature (add it in personal area if you needed it.)
+
+[2022-06-06] (v14 final) Things done are:
+- Improved visuals in log page, increased amount of lines to 40.
+- Improved chart storage.
 
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
-- [x] Add more info in dashboard so it shows energy usages and other nice stuffs. 
-- [x] Add more options for the scheduler, eg. operation mode, silent mode, etc. 
 
 ## Acknowledgments
 * []() Egyras: The original creator of Heishamon. https://github.com/Egyras
@@ -253,5 +344,7 @@ all older changelog items are colapsed below. only the latest changelog will alw
 * []() lampy25. For unselfishly giving supportive feedback and good idea's. Thanks!
 * []() timovd for his contributions. ! Thanks.
 * []() E1cid from Node Red forum, for the help with the bar-chart. 
+* []() Javaboon for his assistance in the Solar functionality
+* []() klerk for his feature requests and helping.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
