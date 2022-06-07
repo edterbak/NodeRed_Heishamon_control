@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 14 final<br/>
+Current version: 15<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -334,6 +334,11 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Compared to 14beta13, Improved chart storage.
 - A lot: see details in above changelogs.
 
+[2022-06-07] (v15) Things done are:
+- Feature request: Compressor runtime added to home dashboard (https://github.com/edterbak/NodeRed_Heishamon_control/issues/28)
+- Feature request: remove Fan 2 from home dashboard (https://github.com/edterbak/NodeRed_Heishamon_control/issues/28)
+- Improvement: Logging - SOLAR function triggers and actions now loggged.
+
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
 
@@ -346,6 +351,6 @@ All older changelog items are colapsed below. only the latest changelog will alw
 * []() timovd for his contributions. ! Thanks.
 * []() E1cid from Node Red forum, for the help with the bar-chart. 
 * []() Javaboon for his assistance in the Solar functionality
-* []() klerk for his feature requests and helping.
+* []() klerk for his feature requests and helping with testing. MEGAAA THANKS :) .
 
 <p align="right">(<a href="#top">back to top</a>)</p>
