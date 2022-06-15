@@ -343,7 +343,7 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Improvement: Logging - SOLAR function triggers and actions now loggged even better. In other section the logging has improved as well.
 - Improvement: Reduce SET commands even further. Example, when due to RTC function the HP is off, but WAR function calculates a change in SetPoint. This setpoint is then NOT communicated to HP now. 
 - Enhancement: Layout of the [Function Solar] has been improved with buttons which hide/show the chart/help section.
-- Breaking change !! : The connection node for P1 power meter has changed (simplified). This needs to be corrected manually after import of this version (16) or later.
+- BREAKING CHANGE !! : The connection node for P1 power meter has changed (simplified). This needs to be corrected manually after import of this version (16) or later.
 	
 	
 ## TODO list
