@@ -1,5 +1,5 @@
 # NodeRed <> Heishamon control option
-Current version: 15<br/>
+Current version: 16<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -327,7 +327,6 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - BUG: Logs text color not being correct.
 - Improved logs: Added toggle status changes to log 
 - Removed smoothening filter again on room temperature (add it in personal area if you needed it.)
-</details><br/>
 
 [2022-06-06] (v14 final) Things done are:
 - Compared to 14beta13, Improved visuals in log page, increased amount of lines to 40.
@@ -338,7 +337,15 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Feature request: Compressor runtime added to home dashboard (https://github.com/edterbak/NodeRed_Heishamon_control/issues/28)
 - Feature request: remove Fan 2 from home dashboard (https://github.com/edterbak/NodeRed_Heishamon_control/issues/28)
 - Improvement: Logging - SOLAR function triggers and actions now loggged.
+</details><br/>
 
+[2022-06-07] (v16) Things done are:
+- Improvement: Logging - SOLAR function triggers and actions now loggged even better. In other section the logging has improved as well.
+- Improvement: Reduce SET commands even further. Example, when due to RTC function the HP is off, but WAR function calculates a change in SetPoint. This setpoint is then NOT communicated to HP now. 
+- Enhancement: Layout of the [Function Solar] has been improved with buttons which hide/show the chart/help section.
+- BREAKING CHANGE !! : The connection node for P1 power meter has changed (simplified). This needs to be corrected manually after import of this version (16) or later.
+	
+	
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
 
