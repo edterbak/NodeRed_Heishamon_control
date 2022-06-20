@@ -363,5 +363,6 @@ All older changelog items are colapsed below. only the latest changelog will alw
 * []() E1cid from Node Red forum, for the help with the bar-chart. 
 * []() Javaboon for his assistance in the Solar functionality
 * []() klerk for his feature requests and helping with testing. MEGAAA THANKS :) .
+* []() klerk (yes, again) for contributing to this project and helping with a FAQ !!!!! :) .
 
 <p align="right">(<a href="#top">back to top</a>)</p>
