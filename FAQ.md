@@ -57,6 +57,6 @@ Q - How to update flow to latest version and keep my inputs, MQTT and Home Assis
     Give those inputs.sensors each an own [Link Out] node<br/>
     Connect those [Link Out] nodes to the already excisting [Link In] nodes by double clicking the [Link Out] node and select the corresponding one from the list.<br/>
      Some images to explain this:<br/>
-    <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/ce92e6c7e48323f48742035acb441fb9d3d76aba/images/WP_Personal_tab1.png?raw=true" width=50%> <br/>
+    <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/8f62fbce4816944de337439dd60ab32d9d4a384f/images/WP_Personal_tab1.png?raw=true" width=50%> <br/>
 </details>
 //work in progress
