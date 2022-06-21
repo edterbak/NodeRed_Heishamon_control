@@ -48,7 +48,7 @@ Q - How to use a dark theme in the dashboard?
  <details>
     In the Node Red Gui (http://Your_NodeRed_IP:1880/ui) press the top most right arrow-down sign and select dashboard;<br/>
     Now press the Theme-tab and pick your style.<br/>
-    <img src="https://github.com/boutermw/NodeRed_Heishamon_control/blob/6fbaf1d72decabeac121a09436de1cd55ae00af0/images/0bLlK7FeiaLpv0ygk9P9EcrC.png?raw=true" width=50%> <br/>
+    <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/ce92e6c7e48323f48742035acb441fb9d3d76aba/images/ChangeTheme.png?raw=true" width=50%> <br/>
 <details>
 
 //work in progress
