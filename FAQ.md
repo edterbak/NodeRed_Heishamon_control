@@ -49,14 +49,14 @@ Q - How to use a dark theme in the dashboard?
     In the Node Red Gui (http://Your_NodeRed_IP:1880/ui) press the top most right arrow-down sign and select dashboard;<br/>
     Now press the Theme-tab and pick your style.<br/>
     <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/ce92e6c7e48323f48742035acb441fb9d3d76aba/images/ChangeTheme.png?raw=true" width=50%> <br/>
-<details>
+</details>
 
-    Q - How to update flow to latest version and keep my inputs, MQTT and Home Assistant settings?
+Q - How to update flow to latest version and keep my inputs, MQTT and Home Assistant settings?
  <details>
     Create a personal tab (WP Personal) and place your inputs here (P1, Temperature sensors)<br/>
     Give those inputs.sensors each an own [Link Out] node<br/>
     Connect those [Link Out] nodes to the already excisting [Link In] nodes by double clicking the [Link Out] node and select the corresponding one from the list.<br/>
      Some images to explain this:<br/>
     <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/ce92e6c7e48323f48742035acb441fb9d3d76aba/images/WP_Personal_tab1.png?raw=true" width=50%> <br/>
-<details>
+</details>
 //work in progress
