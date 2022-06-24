@@ -189,8 +189,7 @@ You can find the link to the dashboard like this:<br/>
 </details>
 
 ## FAQ
-See: https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/FAQ.md
-
+See: [here](FAQ.md)
 
 ## Changelog / Notes
 All older changelog items are colapsed below. only the latest changelog will always be shown.
