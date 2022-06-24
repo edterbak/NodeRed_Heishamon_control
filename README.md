@@ -1,4 +1,6 @@
-# NodeRed <> Heishamon control option
+
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/banner_NodeRedflowforHeishamon.png.jpg" width="1000">
+
 Current version: 16<br/>
 <br/>
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
