@@ -30,21 +30,19 @@ I have chosen option 4 in the list above. In this GIT you can find NR functions 
 **What do I need to make use of this flow?**<br/>
 1: A functional MQTT broker. (Mosquitto/HiveMQ/etc)<br/>
 2: A functional NodeRed instance. <br/>
+3: Heatpump in DIRECT mode. <br/>
 <br/>
 1: You can use any broker that is 24/7 available. You can install it on any system, as long as the heishamon and the broker can communicate with eachother.<br/>
 <br/>
-2: You can install node red on a lot of deviced. It can be directly on Linux or a device like Raspberry Pi. You can also run it in a container (self hosted) or within Home Assistant (add-on). For all options see: https://nodered.org/ <br/> All of these options are good, as long as the Node Red application can communicate with the broker and the Node Red instance has persistant storage enabled.<br/><br/>
-The NodeRed flow is stand-alone so: You do not require a database. You do not require HomeAssistant.
+2: You can install node red on a lot of deviced. It can be directly on Linux or a device like Raspberry Pi. You can also run it in a container (self hosted) or within Home Assistant (add-on). For all options see: https://nodered.org/ <br/> All of these options are good, as long as the Node Red application can communicate with the broker and the Node Red instance has persistant storage enabled.<br/>
+The NodeRed flow is stand-alone so: You do not require a database. You do not require HomeAssistant.<br/><br/>
+3: This Node Red flow generates and controls the setpoint for the T outlet (Ta). This means you need to put your pump in DIRECT mode on the thermostat itself. 
+From within Heishamon, TOP76, will inform you if you currently are in WAR mode or DIRECT mode. <br/>(0=WAR, 1=DIRECT)
 <br/>
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/install.png" width="500">
 
 <details>
-	
-## Required heat pump setting
-This Node Red flow generates and controls the setpoint for the T outlet (Ta). This means you need to put your pump in DIRECT mode on the thermostat itself. 
-From within Heishamon, TOP76, will inform you if you currently are in WAR mode or DIRECT mode. <br/>(0=WAR, 1=DIRECT)
-
 ## Requirements on the Node Red install:
 A - Persistent data folder.
 
