@@ -1,5 +1,5 @@
 
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/banner_NodeRedflowforHeishamon.png.jpg" width="1000">
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
 
 Current version: 16<br/>
 <br/>
