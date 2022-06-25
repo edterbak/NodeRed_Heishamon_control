@@ -4,17 +4,17 @@
 Current version: 16<br/>
 <br/>
 ## Introduction
-Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
+Heishamon hardware is created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
 It is able to communicate with a range of Panasonic Heatpumps. 
 - Heishamon sends information from the Panasonic heat pump to a MQTT-broker.  
 - Heishamon sends commands from the MQTT-broker to the Panasonic heatpump. 
 
-There are multiple options to use this information or control the heat pump.<br/>
+There are multiple options to connect to the heishamon and control your heatpump.<br/>
 * []() 1: MQTT > Home Assistant
 * []() 2: MQTT > OpenHab
 * []() 3: MQTT > Domoticz
-* []() 4: MQTT > NodeRed
+* []() 4: MQTT > Node Red
 * []() 5: MQTT > ... any other 
 
 All of the above options are ways to interact with the HP. (And all are good if your happy with it)<br/>
