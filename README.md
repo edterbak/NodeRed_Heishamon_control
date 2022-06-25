@@ -3,11 +3,12 @@
 
 Current version: 16<br/>
 <br/>
+## Introduction
 Heishamon hardware and software is originally created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
-It is able to communicate with a range of Panasonic Heat pumps. 
-- Heishamon pushes a lot of readings and information from the Panasonic heat pump to a MQTT-broker in a 100+ topics.  
-- Heishamon is also able to receive MQTT commands from the broker to control the heat pump.  
+It is able to communicate with a range of Panasonic Heatpumps. 
+- Heishamon sends information from the Panasonic heat pump to a MQTT-broker.  
+- Heishamon sends commands from the MQTT-broker to the Panasonic heatpump. 
 
 There are multiple options to use this information or control the heat pump.<br/>
 * []() 1: MQTT > Home Assistant
@@ -24,9 +25,17 @@ BUT...I choose the NR option because if I update or restart HA, the controller a
 <br/>
 I have chosen option 4 in the list above. In this GIT you can find NR functions to control the Panasonic.  
 <br/>
-**My request to you:**<br/>
-When you choose to use/try this (Feel free to do so), PLEASE give feedback on any issues you encounter. You can use the [Issues] section to report to me. <br/>
-When making an issue, please give as much info as you think is required to solve this. Steps to reproduce. Maybe a screenshot etc. Reporting this will help me help you :) <br/>Thank you in advance. 
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/requirements.png" width="500">
+
+**What do I need to make use of this flow?**<br/>
+1: A functional MQTT broker. (Mosquitto/HiveMQ/etc)<br/>
+2: A functional NodeRed instance. <br/>
+<br/>
+1: You can use any broker that is 24/7 available. You can install it on any system, as long as the heishamon and the broker can communicate with eachother.<br/>
+<br/>
+2: You can install node red on a lot of deviced. It can be directly on Linux or a device like Raspberry Pi. You can also run it in a container (self hosted) or within Home Assistant (add-on). For all options see: https://nodered.org/ <br/> All of these options are good, as long as the Node Red application can communicate with the broker and the Node Red instance has persistant storage enabled.<br/><br/>
+The NodeRed flow is stand-alone so: You do not require a database. You do not require HomeAssistant.
+<br/>
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/install.png" width="500">
 
@@ -36,8 +45,8 @@ When making an issue, please give as much info as you think is required to solve
 This Node Red flow generates and controls the setpoint for the T outlet (Ta). This means you need to put your pump in DIRECT mode on the thermostat itself. 
 From within Heishamon, TOP76, will inform you if you currently are in WAR mode or DIRECT mode. <br/>(0=WAR, 1=DIRECT)
 
-## Prerequisite on the Node Red install:
-A - Data folder.
+## Requirements on the Node Red install:
+A - Persistent data folder.
 
 B - Adjust settings.js.
 
@@ -56,6 +65,9 @@ If you have Node Red running in a docker container, make sure you install with t
 ```
 Here you can choose the name "FOLDER" yourself which will be the local storage folder of NR.<br/>
 
+If you are node red withing Home Assistand, which is a HA controlled container, follow these instructions:
+https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
+<br/>	
 ### B - Adjust settings.js
 You need to change some settings in settings.js<br/>
 Why? If you reboot node red, you will notice some of the variables are not populated yet. Setpoints we have programmed earlier are gone. To make them persistent after reboots, you have to enable the local storage option. Below I have set the flush interval (write to disk) to 300s. 
@@ -436,5 +448,9 @@ All older changelog items are colapsed below. only the latest changelog will alw
 * []() Javaboon for his assistance in the Solar functionality
 * []() klerk for his feature requests and helping with testing. MEGAAA THANKS :) .
 * []() klerk (yes, again) for contributing to this project and helping with a FAQ !!!!! :) .
+
+**My request to you:**<br/>
+When you choose to use/try this (Feel free to do so), PLEASE give feedback on any issues you encounter. You can use the [Issues] section to report to me. <br/>
+When making an issue, please give as much info as you think is required to solve this. Steps to reproduce. Maybe a screenshot etc. Reporting this will help me help you :) <br/>Thank you in advance. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
