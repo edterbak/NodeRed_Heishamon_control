@@ -28,7 +28,8 @@ I have chosen option 4 in the list above. In this GIT you can find NR functions 
 When you choose to use/try this (Feel free to do so), PLEASE give feedback on any issues you encounter. You can use the [Issues] section to report to me. <br/>
 When making an issue, please give as much info as you think is required to solve this. Steps to reproduce. Maybe a screenshot etc. Reporting this will help me help you :) <br/>Thank you in advance. 
 
-## installation 
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/install.png" width="500">
+
 <details>
 	
 ## Required heat pump setting
@@ -115,6 +116,8 @@ As explained by the image below, you CAN use the Panasonic sensors for this. To 
 It is advised to create a separate tab for your external sources. Any source available in Node Red can be conditioned and used as a sensor in the functions. If you do this in an 'personal tab', then it is likely easier to update later to newer versions. (no guarantees of course)<br/>
 </details>
 
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/Updating.png" width="500">
+
 ## How to create a backup of your current flow
 
 <details>
@@ -123,7 +126,8 @@ First: Create a backup of current version. Select all tabs by holding CTRL. Then
 
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Backup_animation1.gif) <br/>RightMouseClick on the GIF and select open in a new tab to see it full screen.<br/>
 </details>
-	
+
+
 ## How to update to a newer version
 <details>	
 Update to newer version:<br/>	
@@ -141,7 +145,7 @@ If there are better ideas about this, please inform me. <br/> <br/>
 	
 </details>
 
-## The Dashboard
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/dashboard.png" width="500">
 <details>
 This is currently the first page of the dashboard. From here, you can enable each function separate but you can ALSO use WAR + RTC or WAR + SS together. It does not matter. they add on top of each other. You can use multiple combinations. Virtual SP + RTC function. Or WAR + RTC functions or only set a Virtual SP. 
 
@@ -190,10 +194,74 @@ You can find the link to the dashboard like this:<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard2.png?raw=true) ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard1.png?raw=true)
 </details>
 
-## FAQ
-See: [here](FAQ.md)
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/faq.png" width="500">
 
-## Changelog / Notes
+Q - I use the Node Red Addon in Home Assistant, how to go to the Node Red Gui for editing?
+<details>
+    Most users should visit via a browser: 'http://Your_NodeRed_IP:1880/ui'<br/>
+    In my case this wasn't working, perhabs due to the use of the DuckDNS addon. <br/>
+    Use something like 'https://your.duckdns.org:1880/endpoint/ui/' instead.<br/>
+</details>
+    
+Q - Can I use both WAR and RTC at the same time?
+<details>
+    Yes, the SP (Setpoint) will be adjusted depending on outside temperature and controlled by the settings in RTC
+</details>
+
+Q - If I switch off the Heatpomp via the Remote Controller will it disable the automation from the Node Red flow also?
+<details>
+    No, both will work seperatly. If you turn the Heatpump on via the Remote Controller, the pump will switch on.<br/>
+    Keep in mind however that if the Node Red flow decides it time to adjust some settings it will act accordingly and overwrite settings.<br/>
+</details>
+
+Q - I know the function SOFTSTART is experimental, but can you explain what this function does?
+<details>
+    ...
+</details>
+
+Q - Is there an overview and explanation of all settings from the dashboards?
+<details>
+    I will try to help Edterbak adding more HELP/INFO pages for all seprate dashboards, like at the moment you'll find on the "Function (Solar)"-dashboard.
+</details>
+
+Q - How do I add my Entities from Home Assistant like Livingroom temperature?
+<details>
+    In the Nope Red Gui (http://Your_NodeRed_IP:1880/ui) you will have to go to the [WP Control] tab;<br/>
+    In the square "REQUIRED INPUTS FOR FUNCTIONS" you will have to add a node (left pane under Home Assistant) named "Events: state".<br/>
+    You can drag and drop this in the square mentioned first.<br/>
+    It will replace the "TOP33 - panasonic_heat_pump/main/Room_Thermostat_Temp"-node eventually, which you should disable if not using.<br/>
+    Select the newly created node, then double click to open up the properties window;<br/>
+    Give is a name of your choosings like 'LivingRoom_temperature'<br/>
+    In the Entitie box you can try to find your sensor entitie (assuming you have already setup the MQTT settings earlier).<br/>
+    Make sure that in the 'Output properties' you have a MSG.PAYLOAD = EVENT STATE<br/>
+    Check the box 'output on connect' and make sure at the bottom this node is enabled.<br/>
+    Finally press DONE to close the properties dialog and connect your node to the function node 'set.T_woonkamer_BT'<br/>
+    <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/External%20sources2.png?raw=true" width=75%> <br/>
+ </details>
+ 
+Q - How to use a dark theme in the dashboard?
+ <details>
+    In the Node Red Gui (http://Your_NodeRed_IP:1880/ui) press the top most right arrow-down sign and select dashboard;<br/>
+    Now press the Theme-tab and pick your style.<br/>
+    <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/ce92e6c7e48323f48742035acb441fb9d3d76aba/images/ChangeTheme.png?raw=true" width=50%> <br/>
+</details>
+
+Q - How to update flow to latest version and keep my inputs, MQTT and Home Assistant settings?
+ <details>
+    Create a personal tab (WP Personal) and place your inputs here (P1, Temperature sensors)<br/>
+    Give those inputs.sensors each an own [Link Out] node<br/>
+    Connect those [Link Out] nodes to the already excisting [Link In] nodes by double clicking the [Link Out] node and select the corresponding one from the list.<br/>
+     Some images to explain this:<br/>
+    <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/8f62fbce4816944de337439dd60ab32d9d4a384f/images/WP_Personal_tab1.png?raw=true" width=50%> <br/>
+    <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/49247191465139a9ee67749accd87a6f65600fcc/images/WP_Personal_tab2.png?raw=true" width=50%> <br/>
+    <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/5095a6e0640ca666a06a1487f71c55de10c06946/images/WP_Personal_tab3.png?raw=true" width=50%> <br/>
+    Follow the update procedure from the Readme as desciped here: https://github.com/edterbak/NodeRed_Heishamon_control#how-to-update-to-a-newer-version
+    
+    
+    
+</details>
+
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/changelog.png" width="500">
 All older changelog items are colapsed below. only the latest changelog will always be shown.
 <details>
 [2021-11-09] (v1) First release. Current versions of the function seem rough. I will polish it at a later time and update here. The Flows do contain comments to clarify. In future I will also publish my verion of a NR dashboard. Currently Im not fully happy with it.
@@ -356,7 +424,8 @@ All older changelog items are colapsed below. only the latest changelog will alw
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
 
-## Acknowledgments
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/acknowledgments.png" width="500">
+
 * []() Egyras: The original creator of Heishamon. https://github.com/Egyras
 * []() Egyras: For the MQTT topic list - https://github.com/Egyras/HeishaMon/blob/master/MQTT-Topics.md
 * []() CurlyMo: The original calculation for automagical 'Stooklijn' correction - https://gathering.tweakers.net/forum/list_messages/2039982#Automagische_stooklijncorrectie
