@@ -7,8 +7,8 @@ Current version: 16<br/>
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
 It is able to communicate with a range of Panasonic Heatpumps. 
-- Heishamon sends information from the Panasonic heat pump to a MQTT-broker.  
-- Heishamon sends commands from the MQTT-broker to the Panasonic heatpump. 
+- Heishamon receives information from the Panasonic heat pump and sends it to a MQTT-broker.  
+- Heishamon receives commands from the MQTT-broker and sends it to the Panasonic heatpump. 
 
 There are multiple options to connect to the heishamon and control your heatpump.<br/>
 * []() 1: MQTT > Home Assistant
