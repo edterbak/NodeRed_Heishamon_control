@@ -4050,7 +4050,7 @@
         "interpolate": "step",
         "nodata": "",
         "dot": false,
-        "ymin": "",
+        "ymin": "10",
         "ymax": "",
         "removeOlder": "12",
         "removeOlderPoints": "1000",
@@ -4097,7 +4097,7 @@
         "interpolate": "step",
         "nodata": "",
         "dot": false,
-        "ymin": "",
+        "ymin": "10",
         "ymax": "",
         "removeOlder": "12",
         "removeOlderPoints": "",
@@ -5406,8 +5406,8 @@
         "offcolor": "",
         "animate": true,
         "className": "",
-        "x": 3390,
-        "y": 680,
+        "x": 3490,
+        "y": 700,
         "wires": [
             [
                 "94942dfd61d7fa3d"
@@ -5784,7 +5784,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "c3b7d9597903239c",
         "name": "Chart Water (ROOM)",
-        "func": "var SP_Ta                   = global.get('SP_Final',\"file\");                    // Current Setpoint Ta\nvar PV_Tr                   = global.get('Main_Inlet_Temp');                    // Current inlet temperature\nvar PV_Ta                   = global.get('Main_Outlet_Temp');                   // Current outlet temperature\nvar DHW_Temp                = global.get('DHW_Temp');                           // Current TANK temperature\nvar ThreeWay_Valve_State    = global.get(\"ThreeWay_Valve_State\");               // Current state of the 3-way valve\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={};\n\nmsg1.payload = SP_Ta;                                                           //\nmsg1.payload = Number(msg1.payload).toFixed(0);\nmsg1.payload = parseFloat(msg1.payload);\nmsg1.topic='SP Ta';                                                             // \n\nmsg2.payload = PV_Tr;                                                           // \nmsg2.payload = Number(msg2.payload).toFixed(1);\nmsg2.payload = parseFloat(msg2.payload);\nmsg2.topic='PV Tr';                                                             // \n\nmsg3.payload = PV_Ta;                                                           // \nmsg3.payload = Number(msg3.payload).toFixed(1);\nmsg3.payload = parseFloat(msg3.payload);\nmsg3.topic='PV Ta';                                                             // \n\nmsg4.payload = ThreeWay_Valve_State;                                            // \nmsg4.payload = Number(msg4.payload).toFixed(0);\nmsg4.payload = parseFloat(msg4.payload);\nmsg4.topic='ThreeWay Valve State';                                              //  \n\nmsg5.payload = DHW_Temp;                                                        // \nmsg5.payload = Number(msg5.payload).toFixed(0);\nmsg5.payload = parseFloat(msg5.payload);\nmsg5.topic='Tank PV';                                                           //  \n\n\n\n// ThreeWay_Valve_state = ROOM mode > output value to pin 1\nif (ThreeWay_Valve_State == 0) {\n    return [ [msg1, msg2, msg3] , null ];\n    } \n\n// ThreeWay_Valve_state = DHW mode > output value to pin 2, including the PV_Tank\nelse {\n    return [ null , [msg1, msg2, msg3, msg5] ];\n    }",
+        "func": "var SP_Ta                   = global.get('SP_Final',\"file\");                    // Current Setpoint Ta\nvar PV_Tr                   = global.get('Main_Inlet_Temp');                    // Current inlet temperature\nvar PV_Ta                   = global.get('Main_Outlet_Temp');                   // Current outlet temperature\nvar DHW_Temp                = global.get('DHW_Temp');                           // Current TANK temperature\nvar ThreeWay_Valve_State    = global.get(\"ThreeWay_Valve_State\");               // Current state of the 3-way valve\nvar DHW_Target_Temp         = global.get('DHW_Target_Temp',\"file\");             // Current Setpoint DHW\n\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={};\n\nmsg1.payload = SP_Ta;                                                           //\nmsg1.payload = Number(msg1.payload).toFixed(0);\nmsg1.payload = parseFloat(msg1.payload);\nmsg1.topic='SP Ta';                                                             // \n\nmsg2.payload = PV_Tr;                                                           // \nmsg2.payload = Number(msg2.payload).toFixed(1);\nmsg2.payload = parseFloat(msg2.payload);\nmsg2.topic='PV Tr';                                                             // \n\nmsg3.payload = PV_Ta;                                                           // \nmsg3.payload = Number(msg3.payload).toFixed(1);\nmsg3.payload = parseFloat(msg3.payload);\nmsg3.topic='PV Ta';                                                             // \n\nmsg4.payload = ThreeWay_Valve_State;                                            // \nmsg4.payload = Number(msg4.payload).toFixed(0);\nmsg4.payload = parseFloat(msg4.payload);\nmsg4.topic='ThreeWay Valve State';                                              //  \n\nmsg5.payload = DHW_Temp;                                                        // \nmsg5.payload = Number(msg5.payload).toFixed(0);\nmsg5.payload = parseFloat(msg5.payload);\nmsg5.topic='Tank PV';                                                           //  \n\nmsg6.payload = DHW_Target_Temp;                                                           //\nmsg6.payload = Number(msg6.payload).toFixed(0);\nmsg6.payload = parseFloat(msg6.payload);\nmsg6.topic='SP Ta';  \n\n\n// ThreeWay_Valve_state = ROOM mode > output value to pin 1\nif (ThreeWay_Valve_State == 0) {\n    return [ [msg1, msg2, msg3] , null ];\n    } \n\n// ThreeWay_Valve_state = DHW mode > output value to pin 2, including the PV_Tank\nelse {\n    return [ null , [msg6, msg2, msg3, msg5] ];\n    }",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -5861,7 +5861,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "c3b7d9597903239c",
         "name": "Chart Roomtemperatures",
-        "func": "var SP                          = global.get('SP_Final',\"file\");                // Current Setpoint of the water (Ta)\nvar T_woonkamer_BT              = global.get('T_woonkamer_BT');                 // Current Livingroom sensor 1 (air)\nvar T_woonkamer_BT2             = global.get('T_woonkamer_BT2');                // Current Livingroom sensor 2 (air)\nvar T_woonkamer_BT3_vvw         = global.get('T_woonkamer_BT3_vvw');            // Current Livingroom sensor 3 (floor)\nvar T_woonkamer_BT4_vvw         = global.get('T_woonkamer_BT4_vvw');            // Current Livingroom sensor 4 (floor)\nvar Tado                        = global.get(\"Tado_Thermostaat_Temp\");          // Current Livingroom sensor 5 (floor)\nvar Echo_Temp                   = global.get(\"Echo_Temp\");                      // Current Livingroom sensor 6 (ECHO)\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={}, msg9={}, msg10={}, msg11={}, msg12={};\n\nmsg1.payload = SP;\nmsg1.payload = Number(msg1.payload).toFixed(2);\nmsg1.payload = parseFloat(msg1.payload);\nmsg1.topic='SP Ta';\n\nmsg2.payload = T_woonkamer_BT;\nmsg2.payload = Number(msg2.payload).toFixed(2);\nmsg2.payload = parseFloat(msg2.payload);\nmsg2.topic='Woonkamer PV (bt)';\n\nmsg3.payload = T_woonkamer_BT2;\nmsg3.payload = Number(msg3.payload).toFixed(2);\nmsg3.payload = parseFloat(msg3.payload);\nmsg3.topic='Woonkamer PV2 (bt)'; \n\nmsg4.payload = T_woonkamer_BT3_vvw;\nmsg4.payload = Number(msg4.payload).toFixed(2);\nmsg4.payload = parseFloat(msg4.payload);\nmsg4.topic='T_woonkamer_BT3_vvw';\n\nmsg5.payload = T_woonkamer_BT4_vvw;\nmsg5.payload = Number(msg5.payload).toFixed(1);\nmsg5.payload = parseFloat(msg5.payload);\nmsg5.topic='T_woonkamer_BT4_vvw';\n\nmsg6.payload = Tado;\nmsg6.payload = Number(msg6.payload).toFixed(1);\nmsg6.payload = parseFloat(msg6.payload);\nmsg6.topic='Tado';  \n\nmsg7.payload = Echo_Temp;\nmsg7.payload = Number(msg7.payload).toFixed(1);\nmsg7.payload = parseFloat(msg7.payload);\nmsg7.topic='Echo'; \n\nreturn [[msg1, msg2, msg3, msg4, msg5, msg6, msg7]];\n\n",
+        "func": "var SP                          = global.get('SP_Final',\"file\");                // Current Setpoint of the water (Ta)\nvar T_woonkamer_BT              = global.get('T_woonkamer_BT');                 // Current Livingroom sensor 1 (air)\nvar T_woonkamer_BT2             = global.get('T_woonkamer_BT2');                // Current Livingroom sensor 2 (air)\nvar T_woonkamer_BT3_vvw         = global.get('T_woonkamer_BT3_vvw');            // Current Livingroom sensor 3 (floor)\nvar T_woonkamer_BT4_vvw         = global.get('T_woonkamer_BT4_vvw');            // Current Livingroom sensor 4 (floor)\nvar Tado                        = global.get(\"Tado_Thermostaat_Temp\");          // Current Livingroom sensor 5 (floor)\nvar Echo_Temp                   = global.get(\"Echo_Temp\");                      // Current Livingroom sensor 6 (ECHO)\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={}, msg9={}, msg10={}, msg11={}, msg12={};\n\nif (SP !== undefined)\n{\n    msg1.payload = SP;\n    msg1.payload = Number(msg1.payload).toFixed(2);\n    msg1.payload = parseFloat(msg1.payload);\n    msg1.topic='SP Ta';\n}\n\nif (T_woonkamer_BT !== undefined)\n{\n    msg2.payload = T_woonkamer_BT;\n    msg2.payload = Number(msg2.payload).toFixed(2);\n    msg2.payload = parseFloat(msg2.payload);\n    msg2.topic='Woonkamer PV (bt)';\n}\n\nif (T_woonkamer_BT2 !== undefined)\n{\n    msg3.payload = T_woonkamer_BT2;\n    msg3.payload = Number(msg3.payload).toFixed(2);\n    msg3.payload = parseFloat(msg3.payload);\n    msg3.topic='Woonkamer PV2 (bt)'; \n}\n\nif (T_woonkamer_BT3_vvw !== undefined)\n{\n    msg4.payload = T_woonkamer_BT3_vvw;\n    msg4.payload = Number(msg4.payload).toFixed(2);\n    msg4.payload = parseFloat(msg4.payload);\n    msg4.topic='T_woonkamer_BT3_vvw';\n}\n\nif (T_woonkamer_BT4_vvw !== undefined)\n{\n    msg5.payload = T_woonkamer_BT4_vvw;\n    msg5.payload = Number(msg5.payload).toFixed(1);\n    msg5.payload = parseFloat(msg5.payload);\n    msg5.topic='T_woonkamer_BT4_vvw';\n}\n\nif (Tado !== undefined)\n{\n    msg6.payload = Tado;\n    msg6.payload = Number(msg6.payload).toFixed(1);\n    msg6.payload = parseFloat(msg6.payload);\n    msg6.topic='Tado';  \n}\n\nif (Echo_Temp !== undefined)\n{\n    msg7.payload = Echo_Temp;\n    msg7.payload = Number(msg7.payload).toFixed(1);\n    msg7.payload = parseFloat(msg7.payload);\n    msg7.topic='Echo'; \n}\n\nreturn [[msg1, msg2, msg3, msg4, msg5, msg6, msg7]];\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12288,7 +12288,8 @@
             "35995d04250be2bc",
             "530b23bec05c1f07",
             "f5a1b8d1616afcb8",
-            "5e9b06898ada7a45"
+            "5e9b06898ada7a45",
+            "671dc57f483dbfb9"
         ],
         "x": 114,
         "y": 399,
@@ -13657,7 +13658,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1200,
+        "x": 1060,
         "y": 480,
         "wires": [
             [
@@ -13707,7 +13708,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1170,
+        "x": 1030,
         "y": 600,
         "wires": [
             [
@@ -13867,7 +13868,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1210,
+        "x": 1070,
         "y": 560,
         "wires": [
             [
@@ -13924,7 +13925,7 @@
         "z": "a938de76db0b71f6",
         "g": "23847da379e94b05",
         "name": "WAR + RTC + Softstart function",
-        "func": "//\n//      [SP0_start]                 = Value is set through the dashboard. Compares to a virtual Ta Direct.\n//      \n//      [correction_war]            = calculate a correction in this function if it is enabled\n//      [SP1_war]                   = [SP0_start] + [correction_war]\n//\n//      [correction_rtc]            = calculate a correction in this function if it is enabled\n//      [SP2_rtc]                   = [SP1_war] + [correction_rtc]\n//\n//      [correction_softstart]      = calculate a correction in this function if it is enabled\n//      [SP3_softstart]             = [SP2_rtc] + [Correction_softstart]\n//\n//      [SP4_night_reduction]       = [SP3_softstart] + [NightReduction_current_value]\n//\n//      [SP_Final]                  = [SP4_night_reduction] = New real SP to [SET5 SetZ1HeatRequestTemperature]\n//\n//////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////\n\n// All these functions ONLY need to be executed when the heatpump is in HEAT mode. \nvar ThreeWay_Valve_State=global.get('ThreeWay_Valve_State');                    // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)\n\nif (ThreeWay_Valve_State==1){msg.payload=0;return msg;}                         // If state is 1 (DHW mode), correction 0 is direclty exported to the message and the function ends here.\nelse\n{\n    ////////////////////////////////////////////////////////////////////////////\n    ////////////////////////////////////////////////////////////////////////////\n    \n    var SP0_start       = global.get('SP_DIRECT_virt',\"file\");                  // Get the global variable for SP_DIRECT_virt. Value is set through the dashboard\n    if (global.get(\"SP_DIRECT_virt\",\"file\") === undefined) \n        {\n        throw \"Virtual SP (Ta) is not correctly set in Dashboards. Please set it.\"\n        }\n        \n        \n    //////////////////////////////// WAR /////////////////////////////////////////\n    // This function replaces the virtual Ta Direct set from the dashboard. \n    //\n    // Design example\n    //          OUTSIDE                 WATER\n    //          Temperature     >>      Temperature\n    //----------------------------------------------------------------------------\n    // Range 1\n    //          (OT1=)  20      >>  25  (=WT1)\n    // Range 2\n    //          (OT2=)  5       >>  31  (=WT2)\n    //----------------------------------------------------------------------------\n    //          (OT2=)  5       >>  31  (=WT2)\n    // Range 3\n    //          (OT3=)  -10     >>  37  (=WT3)\n    // Range 4\n    //----------------------------------------------------------------------------\n    var war_state       = global.get('Correction_0_WAR_on_off',\"file\");             // Get the global variable. Used to see if the WAR function is enabled.\n    var war_Tb          = global.get('T_outside',\"file\");                           // Outdoor temperature.\n    if (isNaN(war_Tb))               // if the variable is Not a Number, produce an error message.\n            {throw \"WAR function: T_outside is not valid. Please correct this in the flow-configuration screen of NodeRed.\"}\n    var SP1_war                                                                     // set variable\n    \n    if (war_state==1 && war_Tb > -50)                                               // If the state is 1 (enabled), AND outside temperature contains a value.\n                                                                                    // Only if above conditions are met, we will go through the calculation.\n        {\n            var war_ot1         = global.get('war_ot1',\"file\");                 // Outside temperature high         (warm outside)\n            var war_ot2         = global.get('war_ot2',\"file\");                 // Outside temperature intermediate (intermediate outside temperature)\n            var war_ot3         = global.get('war_ot3',\"file\");                 // Outside temperature low          (cold outside)\n            var war_wt1         = global.get('war_wt1',\"file\");                 // Water temperature low            (cold water)\n            var war_wt2         = global.get('war_wt2',\"file\");                 // Water temperature intermediate   (intermediate water temperature)\n            var war_wt3         = global.get('war_wt3',\"file\");                 // Water temperature high           (warm water)\n\n                if (isNaN(war_ot1+war_ot2+war_ot3+war_wt1+war_wt2+war_wt3))     // if the variables are added to eachother and the result is Not a Number, produce an error message.\n                {throw \"WAR function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"}\n\n            if (war_Tb => war_ot1) \n                {SP1_war = war_wt1;}                                        // Range 1\n            \n            if (war_Tb < war_ot1 && war_Tb > war_ot2)                       // Range 2\n                {SP1_war = (((war_wt1-war_wt2)*((war_Tb-war_ot1)/(war_ot1-war_ot2)))+war_wt1);}\n                \n            if (war_Tb == war_ot2) {SP1_war = war_wt2;}                     // transition point 2|3\n            \n            if (war_Tb < war_ot2 && war_Tb > war_ot3)                       // Range 3\n                {SP1_war = (((war_wt2-war_wt3)*((war_Tb-war_ot2)/(war_ot2-war_ot3)))+war_wt2);}\n                \n            if (war_Tb <= war_ot3)                                          // Range 4\n                {SP1_war = war_wt3;}                                            \n    \n            SP1_war = Number(SP1_war).toFixed(0);\n            SP1_war = parseFloat(SP1_war);\n        }\n        \n    else\n        {\n            SP1_war = SP0_start;                                                // Get the global variable for SP_DIRECT_virt. Value is set through the dashboard\n        }\n        \n    \n    ////////////////////////////////////////////////////////////////////////////\n    //////////////////////////////// RTC ///////////////////////////////////////\n    //\n    // Automagical RoomTemperatureCompensation (=RTC) (original StooklijnDelta by CurlyMo, translated to NodeRed by EdterBak)\n    // This function checks a virtual setpoint of a room against a measured temperature of the room.\n    //\n    //\n    // [Function explanation]\n    // First check: Is the function enabled (through GUI/Dashboard). If not, correction will be 0.\n    // When enabled; Each IF checks the value of dT_rtc against an offset. If the check is true, the local variable \"Correction_1_RTC\" is corrected by -1 or +1.\n    // Additionally. If TWO IFs are true, then the correction is added twice. \n    // Eg. It is too hot inside (PV). When it is 1.5°C too warm, the RoomTemperatureCompensation variable will be -3.\n    //\n    //    \n    // If the RTC function is disabled, the correction is set to 0 so it is also visible as 0 in the dashboard.    \n    //\n\n    var rtc_state       = global.get('Correction_1_RTC_on_off',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n    \n    if (rtc_state == 0) {rtc_correction = 0;}                                   // If RTC is disabled, set correction to 0. end if\n    else\n        {\n\n        // Declaration of variables including their values.    \n        var rtc_correction  = 0;                                                // declare local variable, start with value zero\n        var rtc_PV          = global.get('T_woonkamer_BT');                     // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n        var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard. \n        var rtc_Tb          = global.get('T_outside',\"file\");                   // Outdoor temperature.\n        var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n        \n        //\n        // below are the variables containing the temperature ranges.\n        var rtc_off         = global.get('rtc_off',\"file\");                     // Range turn heatpump off\n        var rtc_t1          = global.get('rtc_t1',\"file\");                      // Range +3\n        var rtc_t2          = global.get('rtc_t2',\"file\");                      // Range +2\n        var rtc_t3          = global.get('rtc_t3',\"file\");                      // Range +1\n        \n        var rtc_on          = global.get('rtc_on',\"file\");                      // Range turn heatpump on\n        var rtc_t4          = global.get('rtc_t4',\"file\");                      // Range -1\n        var rtc_t5          = global.get('rtc_t5',\"file\");                      // Range -2\n        var rtc_t6          = global.get('rtc_t6',\"file\");                      // Range -3\n        \n            if (isNaN(rtc_t1+rtc_t2+rtc_t3+rtc_t4+rtc_t5+rtc_t6+rtc_off+rtc_on))               // if the variables are added to eachother and the result is Not a Number, produce an error message.\n            {throw \"RTC function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"}\n        \n        // ADJUST THE VALUES BELOW TO YOUR OWN SITUATION\n        if (rtc_dT >= rtc_t3) {rtc_correction = rtc_correction -1;}             // It is a little too hot.\n        if (rtc_dT >= rtc_t2) {rtc_correction = rtc_correction -1;}             // It is too hot.\n        if (rtc_dT >= rtc_t1) {rtc_correction = rtc_correction -1;}             // It is way too hot.\n\n        if (rtc_dT < rtc_t4) {rtc_correction = rtc_correction +1;}              // It is a little too cold\n        if (rtc_Tb < 18)                                                        // Extra check to justify increasing the setpoint this much.\n            {\n            if (rtc_dT < rtc_t5) {rtc_correction = rtc_correction +1;}          // It is too cold.\n            if (rtc_dT < rtc_t6) {rtc_correction = rtc_correction +1;}          // It is way too cold\n            }\n\n        //RTC turn off heatpump functionality\n        var heatpump_power = 99;\n        var new_Operating_Mode_State = 99;\n        var old_Operating_Mode_State = global.get('old_Operating_Mode_State',\"file\");\n        var current_Operating_Mode_State = global.get('Operating_Mode_State',\"file\");   // get current operating mode\n        \n        // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n        \n        var Heatpump_State  = global.get('Heatpump_State',\"file\");              // get current state of the heatpump. on or off (1 or 0)\n        \n        if (rtc_off <= rtc_on)\n            {\n                throw \"Warning RTC-Function.The current OFF temperature is lower than the ON temperature. You MUST correct this !!\"\n            }\n        \n        if (rtc_dT > rtc_off && Heatpump_State == 1)                            // It is waaaaaay way too hot. Turn off heatpump\n            {\n                if (current_Operating_Mode_State == 0)      {heatpump_power = 0;                                        global.set(\"old_Operating_Mode_State\",0,\"file\");}\n                if (current_Operating_Mode_State == 2)      {heatpump_power = 0;                                        global.set(\"old_Operating_Mode_State\",2,\"file\");}\n                if (current_Operating_Mode_State == 4)                              {new_Operating_Mode_State = 3;      global.set(\"old_Operating_Mode_State\",4,\"file\");}\n                if (current_Operating_Mode_State == 6)                              {new_Operating_Mode_State = 3;      global.set(\"old_Operating_Mode_State\",6,\"file\");}\n            }      \n        if(rtc_dT <= rtc_off && rtc_dT >= rtc_on)                              // It is right in between, functioning heatpump. Dont do anything\n            {\n            }     \n        if (rtc_dT < rtc_on && Heatpump_State == 0)                             // It is cold enough again, turn on heatpump\n            {\n                heatpump_power = 1;\n            }     \n        if (rtc_dT < rtc_on && Heatpump_State == 1 && old_Operating_Mode_State != 99)                             // It is cold enough again, turn on old_Operating_Mode again.\n            {\n                if (old_Operating_Mode_State == 4)          {new_Operating_Mode_State = 4;                              global.set('old_Operating_Mode_State',99,\"file\");}\n                if (old_Operating_Mode_State == 6)          {new_Operating_Mode_State = 6;                              global.set('old_Operating_Mode_State',99,\"file\");}\n            }   \n        \n        }\n    \n    // SolarFunction_active\n    \n    ////////////////////////////////////////////////////////////////////////////////\n    //\n    //      [SP0_start]                 = Value is set through the dashboard. Compares to a virtual Ta Direct.\n    //      \n    //      [correction_war]            = calculate a correction in this function if it is enabled\n    //      [SP1_war]                   = [SP0_start] + [correction_war]\n    //\n    //      [correction_rtc]            = calculate a correction in this function if it is enabled\n    //      [SP2_rtc]                   = [SP1_war] + [correction_rtc]\n    //\n    //      [correction_softstart]      = calculate a correction in this function if it is enabled\n    //      [SP3_softstart]             = [SP2_rtc] + [Correction_softstart]\n    //\n    //      [SP_Final]                  = [SP3_softstart] = New real SP to [SET5 SetZ1HeatRequestTemperature]\n    //\n    var SP2_rtc = SP1_war + rtc_correction;\n    \n    \n    \n    \n    \n    //////////////////////////////// SOFTSTART /////////////////////////////////////\n    // Declaration of variables including their values.\n    var ss_state            = global.get('Correction_2_softstart_on_off',\"file\");          // Get the global variable. Used to see if the softstart function is enabled.\n    if (ss_state == 0) {ss_correction = 0;} \n    \n    else \n        {\n            var ss_PV_Ta            = global.get('Main_Outlet_Temp');               // PV (Ta/outlet) Temperature of water.\n            var ss_PV_Tr            = global.get('Main_Inlet_Temp');                // PV (Tr/inlet) Temperature of water.            \n            var ss_dTmax            = 2;                                            // Maximum alowed temperature difference\n            var ss_Tb               = global.get('T_outside',\"file\");               // Outdoor temperature.\n                if (isNaN(ss_Tb))               // if the variable is Not a Number, produce an error message.\n                {throw \"SoftStart function: T_outside is not valid. Please correct this in the flow-configuration screen of NodeRed.\"}\n                \n            var ss_Hz               = global.get('compressor_frequency');           // Get the global variable for current compressor frequency\n            var ss_Threshold         = 30;                                           // Hz compressor treshold, initial value. This value is used if in case of error or the values for T_outside is unavailable. \n            var ss_correction_old   = global.get('Correction_2_softstart');         // Get the global variable. The variable correction by softstart function, from memory.\n                if (ss_correction_old === undefined) \n                {ss_correction_old = 0;}                                            // make sure there is a value present.\n            var ss_correction       = 0;                                            // set initial value new_correction as a basis for the calculation\n                    \n                    // Treshold calculation based on outside temperatures. Change these values to your own liking.\n                    if (ss_Tb >= 3)                     {ss_Threshold=30;}\n                    if (ss_Tb < 3 &&  ss_Tb >= 1)       {ss_Threshold=32;}\n                    if (ss_Tb < 1 &&  ss_Tb >= -2)      {ss_Threshold=37;}\n                    if (ss_Tb < -2 && ss_Tb >= -5)      {ss_Threshold=43;}\n                    if (ss_Tb < -5 && ss_Tb >= -7)      {ss_Threshold=46;}\n                    if (ss_Tb < -7 && ss_Tb >= -9)      {ss_Threshold=49;}\n                    if (ss_Tb < -9 && ss_Tb >= -11)     {ss_Threshold=51;}\n                    if (ss_Tb < -11)                    {ss_Threshold=53;}\n                    \n            // CONDITIONS and calculation for new_correction of the SP.\n                // 1 - Compressor frequency must be above 0\n                // 2 - Softstart function must be enabled (GUI boolean)\n                // 3 - Prevent intervention when the HP is coming back from DHW mode with very hot water. (PVTr < 32) (removed mow)\n            \n            if (ss_Hz > 5 && (SP2_rtc - ss_PV_Ta) > ss_dTmax) \n                {ss_correction = (ss_PV_Ta + ss_dTmax - SP2_rtc);\n                    if (ss_correction < -4){ss_correction = -4;}\n                }\n\n            else\n                {ss_correction = 0;} // because the conditions are not met, ss_correction is set to 0.\n            \n            // When a new correction value is found, it is compared to the old correction value (= ss_diff). \n            //\n                // ss_diff = [new] - [old]\n                // ss_diff = [-5]  - [0]  = -5     case 1; Allowed. Startup phase, correction required of -5.\n                // ss_diff = [-5]  - [-4] = -1     case 2; Allowed. Not startup phase, but bigger correction required\n                // ss_diff = [0]   - [0]  =  0     case 3; Allowed. Current correction the same as old correction.\n                // ss_diff = [-5]  - [-5] =  0     case 3; Allowed. Current correction the same as old correction.\n                // ss_diff = [-4]  - [-5] = +1     case 4; Restrict. Correction reduction. This is only allowed if rules below are met.\n                // ss_diff = [-1]  - [-5] = +4     case 5; Restrict. BIG correction reduction. This is not allowed if rules below are met.\n                \n            var ss_diff = (ss_correction - ss_correction_old);\n            \n            if (ss_diff <= 0)                                                       // Allowed. case 1, 2 and 3. \n                {ss_correction = ss_correction;}\n            \n            if (ss_diff > 0 && ss_Hz > ss_Threshold)                                // Do not allow. Case 4, 5. Check frequency against treshold if it is allow or not. Frequency is too high, so NEW_correction is overwritten with OLD_correction.\n                {ss_correction = ss_correction_old;}                        // Keep old correction.    \n    \n            if (ss_diff > 0 && ss_Hz <= ss_Threshold)                               // Allow. Restrict. Case 4, 5. Check frequency gainst treshold if it is allow or not. Frequency is low enough, so NEW_correction is kept.\n                {ss_correction = ss_correction_old + 1;}                            // Keep new correction. Note: this line can actually be taken out, but does no harm and helps understanding. New_correction is already determined above.\n        }\n    \n    ////////////////////////////////////////////////////////////////////////////////\n    //      [SP1_war]                   = [SP0_Start] + [war_correction]\n    //      [SP2_rtc]                   = [SP1_war] + [rtc_correction]\n    //      [SP3_Softstart]             = [SP2_trc] + [Correction_Softstart]\n    //      [SP_Final]                  = [SP3_Softstart] = New real SP to [SET5 SetZ1HeatRequestTemperature]\n    var SP3_ss = SP2_rtc + ss_correction;\n    ////////////////////////////////////////////////////////////////////////////////\n    \n    ////////////////////////////////////////////////////////////////////////////////\n    // Night Reduction\n    var nr_corr = global.get('NightReduction_current_value',\"file\");\n    if (nr_corr === undefined)\n        {nr_corr = 0;}\n    var SP4_nr = SP3_ss + nr_corr;\n    ////////////////////////////////////////////////////////////////////////////////\n    \n    \n    var SP_Final                        = SP4_nr;\n    \n    \n    \n    ////////////////////////////////////////////////////////////////////////////////\n    //  Make sure the calculated final setpoint is within the upper and the lower limit.\n    var SP_lower_limit                  = global.get('HEAT_SP_lower_limit',\"file\");\n    var SP_upper_limit                  = global.get('HEAT_SP_upper_limit',\"file\");\n    \n    \n    if      (SP_lower_limit === undefined)      {}                                  //\n    else    {\n                if (SP_Final < SP_lower_limit)      {SP_Final = SP_lower_limit;}    //\n            }\n            \n    if      (SP_upper_limit === undefined)      {}                                  //\n    else    {\n                if (SP_Final > SP_upper_limit)      {SP_Final = SP_upper_limit;}    //\n            }\n    \n    let msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={}, msg9={}, msg10={};\n    \n    msg1.payload = SP0_start;                                                       // not required, for debugging\n    msg1.topic='SP0_start';                                                         // not required, for debugging\n    \n    msg2.payload = null;                                                            // required\n    msg2.topic='empty';                                                             // required\n    \n    msg3.payload = SP1_war;                                                         // required\n    msg3.topic='SP1_war';                                                           // required\n    \n    msg4.payload = rtc_correction;                                                  // not required, for debugging\n    msg4.topic = 'rtc_correction';                                                  // not required, for debugging\n    \n    msg5.payload = SP2_rtc;                                                         // required\n    msg5.topic = 'SP2_rtc';                                                         // required\n    \n    msg6.payload = ss_correction;                                                   // required\n    msg6.topic = 'ss_correction';                                                   // required\n    \n    msg7.payload = SP3_ss;                                                          // not required, for debugging\n    msg7.topic = 'SP3_ss';                                                          // not required, for debugging\n    \n    msg8.payload = SP_Final;                                                        // required\n    msg8.topic = 'SP_Final';                                                        // required\n    \n    var SolarFunction_active            = global.get('SolarFunction_active',\"file\");\n    if (heatpump_power != 99 && heatpump_power !== undefined && SolarFunction_active == 0)\n        {\n            msg9.payload = heatpump_power;\n            msg9.topic = 'heatpump_power_on/off (rtc-function)';                    // required, to turn on / off the heatpump\n        }\n    else {msg9.payload=99;}\n\n    if (new_Operating_Mode_State != 99 && new_Operating_Mode_State !== undefined)\n        {\n            msg10.payload = new_Operating_Mode_State;\n            msg10.topic = 'new_Operating_Mode_State (rtc-function)';\n        }\n    else {msg10.payload=99;}\n    \n    \n    return [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10];\n    \n    \n}",
+        "func": "//\n//      [SP0_start]                 = Value is set through the dashboard. Compares to a virtual Ta Direct.\n//      \n//      [correction_war]            = calculate a correction in this function if it is enabled\n//      [SP1_war]                   = [SP0_start] + [correction_war]\n//\n//      [correction_rtc]            = calculate a correction in this function if it is enabled\n//      [SP2_rtc]                   = [SP1_war] + [correction_rtc]\n//\n//      [correction_softstart]      = calculate a correction in this function if it is enabled\n//      [SP3_softstart]             = [SP2_rtc] + [Correction_softstart]\n//\n//      [SP4_night_reduction]       = [SP3_softstart] + [NightReduction_current_value]\n//\n//      [SP_Final]                  = [SP4_night_reduction] = New real SP to [SET5 SetZ1HeatRequestTemperature]\n//\n//////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////\n\n// All these functions ONLY need to be executed when the heatpump is in HEAT mode. \nvar ThreeWay_Valve_State=global.get('ThreeWay_Valve_State');                    // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)\n\nif (ThreeWay_Valve_State==1){return null;}                                      // If state is 1 (DHW mode), correction 0 is direclty exported to the message and the function ends here.\nelse\n{\n    ////////////////////////////////////////////////////////////////////////////\n    ////////////////////////////////////////////////////////////////////////////\n    \n    var SP0_start       = global.get('SP_DIRECT_virt',\"file\");                  // Get the global variable for SP_DIRECT_virt. Value is set through the dashboard\n    if (global.get(\"SP_DIRECT_virt\",\"file\") === undefined) \n        {\n        throw \"Virtual SP (Ta) is not correctly set in Dashboards. Please set it.\"\n        }\n        \n        \n    //////////////////////////////// WAR /////////////////////////////////////////\n    // This function replaces the virtual Ta Direct set from the dashboard. \n    //\n    // Design example\n    //          OUTSIDE                 WATER\n    //          Temperature     >>      Temperature\n    //----------------------------------------------------------------------------\n    // Range 1\n    //          (OT1=)  20      >>  25  (=WT1)\n    // Range 2\n    //          (OT2=)  5       >>  31  (=WT2)\n    //----------------------------------------------------------------------------\n    //          (OT2=)  5       >>  31  (=WT2)\n    // Range 3\n    //          (OT3=)  -10     >>  37  (=WT3)\n    // Range 4\n    //----------------------------------------------------------------------------\n    var war_state       = global.get('Correction_0_WAR_on_off',\"file\");             // Get the global variable. Used to see if the WAR function is enabled.\n    var war_Tb          = global.get('T_outside',\"file\");                           // Outdoor temperature.\n    if (isNaN(war_Tb))               // if the variable is Not a Number, produce an error message.\n            {throw \"WAR function: T_outside is not valid. Please correct this in the flow-configuration screen of NodeRed.\"}\n    var SP1_war                                                                     // set variable\n    \n    if (war_state==1 && war_Tb > -50)                                               // If the state is 1 (enabled), AND outside temperature contains a value.\n                                                                                    // Only if above conditions are met, we will go through the calculation.\n        {\n            var war_ot1         = global.get('war_ot1',\"file\");                 // Outside temperature high         (warm outside)\n            var war_ot2         = global.get('war_ot2',\"file\");                 // Outside temperature intermediate (intermediate outside temperature)\n            var war_ot3         = global.get('war_ot3',\"file\");                 // Outside temperature low          (cold outside)\n            var war_wt1         = global.get('war_wt1',\"file\");                 // Water temperature low            (cold water)\n            var war_wt2         = global.get('war_wt2',\"file\");                 // Water temperature intermediate   (intermediate water temperature)\n            var war_wt3         = global.get('war_wt3',\"file\");                 // Water temperature high           (warm water)\n\n                if (isNaN(war_ot1+war_ot2+war_ot3+war_wt1+war_wt2+war_wt3))     // if the variables are added to eachother and the result is Not a Number, produce an error message.\n                {throw \"WAR function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"}\n\n            if (war_Tb => war_ot1) \n                {SP1_war = war_wt1;}                                        // Range 1\n            \n            if (war_Tb < war_ot1 && war_Tb > war_ot2)                       // Range 2\n                {SP1_war = (((war_wt1-war_wt2)*((war_Tb-war_ot1)/(war_ot1-war_ot2)))+war_wt1);}\n                \n            if (war_Tb == war_ot2) {SP1_war = war_wt2;}                     // transition point 2|3\n            \n            if (war_Tb < war_ot2 && war_Tb > war_ot3)                       // Range 3\n                {SP1_war = (((war_wt2-war_wt3)*((war_Tb-war_ot2)/(war_ot2-war_ot3)))+war_wt2);}\n                \n            if (war_Tb <= war_ot3)                                          // Range 4\n                {SP1_war = war_wt3;}                                            \n    \n            SP1_war = Number(SP1_war).toFixed(0);\n            SP1_war = parseFloat(SP1_war);\n        }\n        \n    else\n        {\n            SP1_war = SP0_start;                                                // Get the global variable for SP_DIRECT_virt. Value is set through the dashboard\n        }\n        \n    \n    ////////////////////////////////////////////////////////////////////////////\n    //////////////////////////////// RTC ///////////////////////////////////////\n    //\n    // Automagical RoomTemperatureCompensation (=RTC) (original StooklijnDelta by CurlyMo, translated to NodeRed by EdterBak)\n    // This function checks a virtual setpoint of a room against a measured temperature of the room.\n    //\n    //\n    // [Function explanation]\n    // First check: Is the function enabled (through GUI/Dashboard). If not, correction will be 0.\n    // When enabled; Each IF checks the value of dT_rtc against an offset. If the check is true, the local variable \"Correction_1_RTC\" is corrected by -1 or +1.\n    // Additionally. If TWO IFs are true, then the correction is added twice. \n    // Eg. It is too hot inside (PV). When it is 1.5°C too warm, the RoomTemperatureCompensation variable will be -3.\n    //\n    //    \n    // If the RTC function is disabled, the correction is set to 0 so it is also visible as 0 in the dashboard.    \n    //\n\n    var rtc_state       = global.get('Correction_1_RTC_on_off',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n    \n    if (rtc_state == 0) {rtc_correction = 0;}                                   // If RTC is disabled, set correction to 0. end if\n    else\n        {\n\n        // Declaration of variables including their values.    \n        var rtc_correction  = 0;                                                // declare local variable, start with value zero\n        var rtc_PV          = global.get('T_woonkamer_BT');                     // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n        var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard. \n        var rtc_Tb          = global.get('T_outside',\"file\");                   // Outdoor temperature.\n        var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n        \n        //\n        // below are the variables containing the temperature ranges.\n        var rtc_off         = global.get('rtc_off',\"file\");                     // Range turn heatpump off\n        var rtc_t1          = global.get('rtc_t1',\"file\");                      // Range +3\n        var rtc_t2          = global.get('rtc_t2',\"file\");                      // Range +2\n        var rtc_t3          = global.get('rtc_t3',\"file\");                      // Range +1\n        \n        var rtc_on          = global.get('rtc_on',\"file\");                      // Range turn heatpump on\n        var rtc_t4          = global.get('rtc_t4',\"file\");                      // Range -1\n        var rtc_t5          = global.get('rtc_t5',\"file\");                      // Range -2\n        var rtc_t6          = global.get('rtc_t6',\"file\");                      // Range -3\n        var new_Operating_Mode_State_topic;                                     // declare logging variable\n        \n            if (isNaN(rtc_t1+rtc_t2+rtc_t3+rtc_t4+rtc_t5+rtc_t6+rtc_off+rtc_on))               // if the variables are added to eachother and the result is Not a Number, produce an error message.\n            {throw \"RTC function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"}\n        \n        // ADJUST THE VALUES BELOW TO YOUR OWN SITUATION\n\n        if (rtc_dT >= rtc_t1) {rtc_correction = rtc_correction -1; if(new_Operating_Mode_State_topic===undefined){new_Operating_Mode_State_topic=\"NR Function RTC - Correction +3;\"}}             // It is way too hot.\n        if (rtc_dT >= rtc_t2) {rtc_correction = rtc_correction -1; if(new_Operating_Mode_State_topic===undefined){new_Operating_Mode_State_topic=\"NR Function RTC - Correction +2;\"}}             // It is too hot.\n        if (rtc_dT >= rtc_t3) {rtc_correction = rtc_correction -1; if(new_Operating_Mode_State_topic===undefined){new_Operating_Mode_State_topic=\"NR Function RTC - Correction +1;\"}}             // It is a little too hot.\n\n        if (rtc_dT >= rtc_t3 && rtc_dT <= rtc_t4) {rtc_correction = 0; if(new_Operating_Mode_State_topic===undefined){new_Operating_Mode_State_topic=\"NR Function RTC - Correction 0;\"}}             // It is right in the middle.\n\n        if (rtc_Tb < 18)                                                        // Extra check to justify increasing the setpoint this much.\n            {\n            if (rtc_dT < rtc_t6) {rtc_correction = rtc_correction +1; if(new_Operating_Mode_State_topic===undefined){new_Operating_Mode_State_topic=\"NR Function RTC - Correction -3;\"}}          // It is way too cold\n            if (rtc_dT < rtc_t5) {rtc_correction = rtc_correction +1; if(new_Operating_Mode_State_topic===undefined){new_Operating_Mode_State_topic=\"NR Function RTC - Correction -2;\"}}          // It is too cold.\n            }\n        if (rtc_dT < rtc_t4) {rtc_correction = rtc_correction +1; if(new_Operating_Mode_State_topic===undefined){new_Operating_Mode_State_topic=\"NR Function RTC - Correction -1;\"}}              // It is a little too cold\n\n\n        //RTC turn off heatpump functionality\n        var heatpump_power = 99;\n        var new_Operating_Mode_State = 99;\n        \n        var old_Operating_Mode_State = global.get('old_Operating_Mode_State',\"file\");\n        var current_Operating_Mode_State = global.get('Operating_Mode_State',\"file\");   // get current operating mode\n        \n        // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n        \n        var Heatpump_State  = global.get('Heatpump_State',\"file\");              // get current state of the heatpump. on or off (1 or 0)\n        \n        if (rtc_off <= rtc_on)\n            {\n                throw \"Warning RTC-Function.The current OFF temperature is lower than the ON temperature. You MUST correct this !!\"\n            }\n        \n        if (rtc_dT > rtc_off && Heatpump_State == 1)                            // It is waaaaaay way too hot. Turn off heatpump\n            {\n                if (current_Operating_Mode_State == 0)      {heatpump_power = 0;                                        global.set(\"old_Operating_Mode_State\",0,\"file\"); new_Operating_Mode_State_topic = \"NR Function RTC - Turn off power\";}\n                if (current_Operating_Mode_State == 2)      {heatpump_power = 0;                                        global.set(\"old_Operating_Mode_State\",2,\"file\"); new_Operating_Mode_State_topic = \"NR Function RTC - Turn off power\";}\n                if (current_Operating_Mode_State == 4)                              {new_Operating_Mode_State = 3;      global.set(\"old_Operating_Mode_State\",4,\"file\"); new_Operating_Mode_State_topic = \"NR Function RTC - Change OperatingMode from 4 to 3\";}\n                if (current_Operating_Mode_State == 6)                              {new_Operating_Mode_State = 3;      global.set(\"old_Operating_Mode_State\",6,\"file\"); new_Operating_Mode_State_topic = \"NR Function RTC - Change OperatingMode from 6 to 3\";}\n            }      \n        if(rtc_dT <= rtc_off && rtc_dT >= rtc_on)                              // It is right in between, functioning heatpump. Dont do anything\n            {\n            }     \n        if (rtc_dT < rtc_on && Heatpump_State == 0)                             // It is cold enough again, turn on heatpump\n            {\n                heatpump_power = 1;\n            }     \n        if (rtc_dT < rtc_on && Heatpump_State == 1 && old_Operating_Mode_State != 99)                             // It is cold enough again, turn on old_Operating_Mode again.\n            {\n                if (current_Operating_Mode_State == 3)                              {new_Operating_Mode_State = 4;      global.set(\"old_Operating_Mode_State\",99,\"file\"); new_Operating_Mode_State_topic = \"NR Function RTC - Change OperatingMode from 3 to 4\";}\n//                if (old_Operating_Mode_State == 4)          {new_Operating_Mode_State = 4;                              global.set('old_Operating_Mode_State',99,\"file\");}\n//                if (old_Operating_Mode_State == 6)          {new_Operating_Mode_State = 6;                              global.set('old_Operating_Mode_State',99,\"file\");}\n            }   \n        \n        }\n    \n    ///////////////////////////////////////////////////////////////////////////////\n    //\n    //      [SP0_start]                 = Value is set through the dashboard. Compares to a virtual Ta Direct.\n    //      \n    //      [correction_war]            = calculate a correction in this function if it is enabled\n    //      [SP1_war]                   = [SP0_start] + [correction_war]\n    //\n    //      [correction_rtc]            = calculate a correction in this function if it is enabled\n    //      [SP2_rtc]                   = [SP1_war] + [correction_rtc]\n    //\n    //      [correction_softstart]      = calculate a correction in this function if it is enabled\n    //      [SP3_softstart]             = [SP2_rtc] + [Correction_softstart]\n    //\n    //      [SP_Final]                  = [SP3_softstart] = New real SP to [SET5 SetZ1HeatRequestTemperature]\n    //\n    var SP2_rtc = SP1_war + rtc_correction;\n    \n    \n    \n    \n    \n    //////////////////////////////// SOFTSTART /////////////////////////////////////\n    // Declaration of variables including their values.\n    var ss_state            = global.get('Correction_2_softstart_on_off',\"file\");          // Get the global variable. Used to see if the softstart function is enabled.\n    if (ss_state == 0) {ss_correction = 0;} \n    \n    else \n        {\n            var ss_PV_Ta            = global.get('Main_Outlet_Temp');               // PV (Ta/outlet) Temperature of water.\n            var ss_PV_Tr            = global.get('Main_Inlet_Temp');                // PV (Tr/inlet) Temperature of water.            \n            var ss_dTmax            = 2;                                            // Maximum alowed temperature difference\n            var ss_Tb               = global.get('T_outside',\"file\");               // Outdoor temperature.\n                if (isNaN(ss_Tb))               // if the variable is Not a Number, produce an error message.\n                {throw \"SoftStart function: T_outside is not valid. Please correct this in the flow-configuration screen of NodeRed.\"}\n                \n            var ss_Hz               = global.get('compressor_frequency');           // Get the global variable for current compressor frequency\n            var ss_Threshold         = 30;                                           // Hz compressor treshold, initial value. This value is used if in case of error or the values for T_outside is unavailable. \n            var ss_correction_old   = global.get('Correction_2_softstart');         // Get the global variable. The variable correction by softstart function, from memory.\n                if (ss_correction_old === undefined) \n                {ss_correction_old = 0;}                                            // make sure there is a value present.\n            var ss_correction       = 0;                                            // set initial value new_correction as a basis for the calculation\n                    \n                    // Treshold calculation based on outside temperatures. Change these values to your own liking.\n                    if (ss_Tb >= 3)                     {ss_Threshold=30;}\n                    if (ss_Tb < 3 &&  ss_Tb >= 1)       {ss_Threshold=32;}\n                    if (ss_Tb < 1 &&  ss_Tb >= -2)      {ss_Threshold=37;}\n                    if (ss_Tb < -2 && ss_Tb >= -5)      {ss_Threshold=43;}\n                    if (ss_Tb < -5 && ss_Tb >= -7)      {ss_Threshold=46;}\n                    if (ss_Tb < -7 && ss_Tb >= -9)      {ss_Threshold=49;}\n                    if (ss_Tb < -9 && ss_Tb >= -11)     {ss_Threshold=51;}\n                    if (ss_Tb < -11)                    {ss_Threshold=53;}\n                    \n            // CONDITIONS and calculation for new_correction of the SP.\n                // 1 - Compressor frequency must be above 0\n                // 2 - Softstart function must be enabled (GUI boolean)\n                // 3 - Prevent intervention when the HP is coming back from DHW mode with very hot water. (PVTr < 32) (removed mow)\n            \n            if (ss_Hz > 5 && (SP2_rtc - ss_PV_Ta) > ss_dTmax) \n                {ss_correction = (ss_PV_Ta + ss_dTmax - SP2_rtc);\n                    if (ss_correction < -4){ss_correction = -4;}\n                }\n\n            else\n                {ss_correction = 0;} // because the conditions are not met, ss_correction is set to 0.\n            \n            // When a new correction value is found, it is compared to the old correction value (= ss_diff). \n            //\n                // ss_diff = [new] - [old]\n                // ss_diff = [-5]  - [0]  = -5     case 1; Allowed. Startup phase, correction required of -5.\n                // ss_diff = [-5]  - [-4] = -1     case 2; Allowed. Not startup phase, but bigger correction required\n                // ss_diff = [0]   - [0]  =  0     case 3; Allowed. Current correction the same as old correction.\n                // ss_diff = [-5]  - [-5] =  0     case 3; Allowed. Current correction the same as old correction.\n                // ss_diff = [-4]  - [-5] = +1     case 4; Restrict. Correction reduction. This is only allowed if rules below are met.\n                // ss_diff = [-1]  - [-5] = +4     case 5; Restrict. BIG correction reduction. This is not allowed if rules below are met.\n                \n            var ss_diff = (ss_correction - ss_correction_old);\n            \n            if (ss_diff <= 0)                                                       // Allowed. case 1, 2 and 3. \n                {ss_correction = ss_correction;}\n            \n            if (ss_diff > 0 && ss_Hz > ss_Threshold)                                // Do not allow. Case 4, 5. Check frequency against treshold if it is allow or not. Frequency is too high, so NEW_correction is overwritten with OLD_correction.\n                {ss_correction = ss_correction_old;}                        // Keep old correction.    \n    \n            if (ss_diff > 0 && ss_Hz <= ss_Threshold)                               // Allow. Restrict. Case 4, 5. Check frequency gainst treshold if it is allow or not. Frequency is low enough, so NEW_correction is kept.\n                {ss_correction = ss_correction_old + 1;}                            // Keep new correction. Note: this line can actually be taken out, but does no harm and helps understanding. New_correction is already determined above.\n        }\n    \n    ////////////////////////////////////////////////////////////////////////////////\n    //      [SP1_war]                   = [SP0_Start] + [war_correction]\n    //      [SP2_rtc]                   = [SP1_war] + [rtc_correction]\n    //      [SP3_Softstart]             = [SP2_trc] + [Correction_Softstart]\n    //      [SP_Final]                  = [SP3_Softstart] = New real SP to [SET5 SetZ1HeatRequestTemperature]\n    var SP3_ss = SP2_rtc + ss_correction;\n    ////////////////////////////////////////////////////////////////////////////////\n    \n    ////////////////////////////////////////////////////////////////////////////////\n    // Night Reduction\n    var nr_corr = global.get('NightReduction_current_value',\"file\");\n    if (nr_corr === undefined)\n        {nr_corr = 0;}\n    var SP4_nr = SP3_ss + nr_corr;\n    ////////////////////////////////////////////////////////////////////////////////\n    \n    \n    var SP_Final                        = SP4_nr;\n    \n    \n    \n    ////////////////////////////////////////////////////////////////////////////////\n    //  Make sure the calculated final setpoint is within the upper and the lower limit.\n    var SP_lower_limit                  = global.get('HEAT_SP_lower_limit',\"file\");\n    var SP_upper_limit                  = global.get('HEAT_SP_upper_limit',\"file\");\n    \n    \n    if      (SP_lower_limit === undefined)      {}                                  //\n    else    {\n                if (SP_Final < SP_lower_limit)      {SP_Final = SP_lower_limit;}    //\n            }\n            \n    if      (SP_upper_limit === undefined)      {}                                  //\n    else    {\n                if (SP_Final > SP_upper_limit)      {SP_Final = SP_upper_limit;}    //\n            }\n    \n    let msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={}, msg9={}, msg10={};\n    \n    msg1.payload = SP0_start;                                                       // not required, for debugging\n    msg1.topic='SP0_start';                                                         // not required, for debugging\n    \n    msg2.payload = null;                                                            // required\n    msg2.topic='empty';                                                             // required\n    \n    msg3.payload = SP1_war;                                                         // required\n    msg3.topic='SP1_war';                                                           // required\n    \n    msg4.payload = rtc_correction;                                                  // not required, for debugging\n    msg4.topic = 'rtc_correction';                                                  // not required, for debugging\n    \n    msg5.payload = SP2_rtc;                                                         // required\n    msg5.topic = 'SP2_rtc';                                                         // required\n    \n    msg6.payload = ss_correction;                                                   // required\n    msg6.topic = 'ss_correction';                                                   // required\n    \n    msg7.payload = SP3_ss;                                                          // not required, for debugging\n    msg7.topic = 'SP3_ss';                                                          // not required, for debugging\n    \n    msg8.payload = SP_Final;                                                        // required\n    msg8.topic = 'SP_Final';                                                        // required\n    \n    var SolarFunction_active            = global.get('SolarFunction_active',\"file\");\n    if (heatpump_power != 99 && heatpump_power !== undefined && SolarFunction_active == 0)\n        {\n            msg9.payload = heatpump_power;                                      // required, to turn on / off the heatpump\n            msg9.topic = new_Operating_Mode_State_topic;                        // to log\n        }\n    else {msg9.payload=99;}\n\n    if (new_Operating_Mode_State != 99 && new_Operating_Mode_State !== undefined)\n        {\n            msg10.payload = new_Operating_Mode_State;                           // required, to change operatingmode.\n            msg10.topic = new_Operating_Mode_State_topic;                       // to log\n        }\n    else {msg10.payload=99;}\n    \n    \n    return [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10];\n    \n    \n}",
         "outputs": 10,
         "noerr": 0,
         "initialize": "if (global.get(\"Correction_0_WAR_on_off\",\"file\") === undefined) {\n    global.set(\"Correction_0_WAR_on_off\", 0,\"file\");\n    throw \"Variable Correction_0_WAR_on_off is undefined. Please set it in the dashboards, toggle the switch.\"\n}\n\nif (global.get(\"T_outside\",\"file\") === undefined) {\n    global.set(\"T_outside\", -99,\"file\");\n    throw \"T_outside is undefined. Make sure sensor data is comming in as a variable correctly.\"\n}\n\nif (global.get(\"Correction_1_RTC_on_off\",\"file\") === undefined) {\n    global.set(\"Correction_1_RTC_on_off\", 0,\"file\")\n    throw \"Correction_1_RTC_on_off is undefined. Please set it in the dashboards, toggle the switch.\"\n}\n\nif (global.get(\"Correction_2_softstart_on_off\",\"file\") === undefined) {\n    global.set(\"Correction_2_softstart_on_off\", 0,\"file\");\n    throw \"Correction_2_softstart_on_off is undefined. Please set it in the dashboards, toggle the switch.\"\n}\n",
@@ -14010,7 +14011,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1170,
+        "x": 1030,
         "y": 440,
         "wires": [
             [
@@ -14044,7 +14045,7 @@
             "1bb2933854287555",
             "02f25651d70831c9"
         ],
-        "x": 1115,
+        "x": 975,
         "y": 520,
         "wires": []
     },
@@ -14376,7 +14377,7 @@
         "links": [
             "93404b62f7fb0fb2"
         ],
-        "x": 375,
+        "x": 235,
         "y": 740,
         "wires": [
             [
@@ -14423,7 +14424,7 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 650,
+        "x": 470,
         "y": 740,
         "wires": [
             [
@@ -14436,14 +14437,14 @@
         "type": "function",
         "z": "a938de76db0b71f6",
         "g": "23847da379e94b05",
-        "name": "Send new SP",
-        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n\nCondition: \nHeatpump is on\nThreewayvalve is in position HEAT\n\n*/\n\n\nvar ThreeWay_Valve_State=global.get('ThreeWay_Valve_State');                    // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)\nvar Heatpump_State=global.get('Heatpump_State',\"file\");\n\n\nif (ThreeWay_Valve_State==1 || Heatpump_State==0)                                                    // If pump is off or state is 1 (DHW mode), do not do anything.\n    {\n        return null;\n    }\n\nelse \n    {\n        var SP_Final=global.get('SP_Final',\"file\");\n        var current_sp=global.get('Main_Target_Temp');                              // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)    \n        var Correction_0_WAR_on_off=global.get('Correction_0_WAR_on_off',\"file\");\n        var Correction_1_RTC_on_off=global.get('Correction_1_RTC_on_off',\"file\");\n        var Correction_2_softstart_on_off=global.get('Correction_2_softstart_on_off',\"file\");\n    \n        \n        if ((Correction_0_WAR_on_off + Correction_1_RTC_on_off + Correction_2_softstart_on_off) == 0 )    \n                                                                                    // Check 1, only when one of the functions is enabled. The sum of the states should be 1 or more, otherwise all functions are off.\n                {\n                    return null;\n                }\n    \n                \n        else    \n            {\n                if (SP_Final ==  current_sp)                                    // Check 1, only if there is a difference between SP and current value, a signal should be sent.\n                    {\n                        return null;\n                    }\n                    \n                else\n                    {\n                        msg.payload = SP_Final;\n                        msg.topic = \"SP_Final\";\n                        return msg;\n                    }\n            }    \n    }\n",
+        "name": "Compare SP",
+        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n*/\n\n\nvar SP_Final=global.get('SP_Final',\"file\");\nvar current_sp=global.get('Main_Target_Temp');                              // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)    \nvar Correction_0_WAR_on_off=global.get('Correction_0_WAR_on_off',\"file\");\nvar Correction_1_RTC_on_off=global.get('Correction_1_RTC_on_off',\"file\");\nvar Correction_2_softstart_on_off=global.get('Correction_2_softstart_on_off',\"file\");\n\n\nif ((Correction_0_WAR_on_off + Correction_1_RTC_on_off + Correction_2_softstart_on_off) == 0 )    \n                                                                            // Check 1, only when one of the functions is enabled. The sum of the states should be 1 or more, otherwise all functions are off.\n        {\n            return null;\n        }\n\n        \nelse    \n    {\n        if (SP_Final ==  current_sp)                                    // Check 1, only if there is a difference between SP and current value, a signal should be sent.\n            {\n                return null;\n            }\n            \n        else\n            {\n                msg.payload = SP_Final;\n                msg.topic = \"SP_Final\";\n                return msg;\n            }\n    }    \n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 440,
+        "x": 490,
         "y": 700,
         "wires": [
             [
@@ -16160,14 +16161,14 @@
         "type": "function",
         "z": "a938de76db0b71f6",
         "g": "23847da379e94b05",
-        "name": "block 99",
+        "name": "block 99 - heatpump_power_on/off (rtc-function)",
         "func": "if (msg.payload != 99)\n{return msg;}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1160,
+        "x": 1140,
         "y": 640,
         "wires": [
             [
@@ -16180,7 +16181,7 @@
         "type": "function",
         "z": "a938de76db0b71f6",
         "g": "23847da379e94b05",
-        "name": "block 99",
+        "name": "block 99 - new_Operating_Mode_State (rtc-function)",
         "func": "if (msg.payload != 99)\n{return msg;}",
         "outputs": 1,
         "noerr": 0,
@@ -16213,11 +16214,11 @@
         "drop": true,
         "allowrate": false,
         "outputs": 1,
-        "x": 880,
-        "y": 720,
+        "x": 680,
+        "y": 740,
         "wires": [
             [
-                "3af8890722ca7be0"
+                "671dc57f483dbfb9"
             ]
         ]
     },
@@ -16262,6 +16263,26 @@
         "x": 1355,
         "y": 3260,
         "wires": []
+    },
+    {
+        "id": "671dc57f483dbfb9",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "23847da379e94b05",
+        "name": "Block needless sending",
+        "func": "/*\nCondition: \nHeatpump is on\nThreewayvalve is in position HEAT\nOperatingMode contains HEAT\n*/\n\n\nvar ThreeWay_Valve_State=global.get('ThreeWay_Valve_State');                    // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)\nvar Heatpump_State=global.get('Heatpump_State',\"file\");\nvar Operating_Mode_State=global.get('Operating_Mode_State',\"file\");\n\n\n\n     // 0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW\nif (    ThreeWay_Valve_State == 1 || Heatpump_State == 0 || Operating_Mode_State == 1 || Operating_Mode_State == 3 || Operating_Mode_State == 5 || Operating_Mode_State == 7 || Operating_Mode_State == 8)\n                \n    {\n        return null;\n    }\n\nelse \n    {return msg}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 740,
+        "wires": [
+            [
+                "3af8890722ca7be0"
+            ]
+        ]
     },
     {
         "id": "35d210f042827344",
@@ -17791,7 +17812,7 @@
         "z": "35d210f042827344",
         "g": "b63004182c33d3b9",
         "name": "Schedule execution",
-        "func": "// >> trigger 1\n// DHW / Sterilisation? This is defined in the topic\n// Topic: DHW or topic: Sterilization\n// payload 1 > initiate sequence. \n\n\n// Declaration of the variables. \nlet msg1={}, msg2={}, msg3={}, msg4={};\n// msg1     Output towards Operation mode on/off\n// msg2     Output towards Force DHW mode on/off\n// msg3     output towards Force Sterilization on/off\n// msg4     empty\n\n\nvar ThreeWay_Valve_State=global.get('ThreeWay_Valve_State');                    // valvue position\n\nvar DHW_Temp=global.get('DHW_Temp');                                            // Current temperature of DHW vessel. \nvar DHW_Target_Temp=global.get('DHW_Target_Temp',\"file\");                       // Programmed DHW target temperature\nvar Force_DHW_State=global.get('Force_DHW_State');                              // Current DHW state (on / off). \n\n\nvar Sterilization_State=global.get('Sterilization_State');                      // Current sterilization state (on / off)\nvar Sterilization_Temp=global.get('Sterilization_Temp',\"file\");                 // Programmed sterilization target temperature\nvar DHW_treshold=global.get('DHW_treshold',\"file\");                             // Programmed treshold DHW tank temperature set from GUI\n////////////////////////////////////////////////////////////////////////////////\n//                           START OF THE CYCLE                               //\n////////////////////////////////////////////////////////////////////////////////\n\n// START DHW cycle\nif (msg.topic == 'DHW' && msg.payload == 1 && DHW_Temp < DHW_treshold)          // There is a temperature condition to start DHW heating or not. Change to your own desire.\n    {\n                msg1.payload = 3;                                               // set operationmode to 3: DHW-Only\n                msg2.payload = 1;                                               // Turn on Force DHW mode\n                return [msg1, msg2];\n    }\n\n// START Sterilization cycle\nif (msg.topic == 'Sterilization' && msg.payload == 1)                           \n    {\n                msg1.payload = 3;                                               // set operationmode to 3: DHW-Only\n                msg2.payload = 1;                                               // Turn on Force DHW mode\n                msg3.payload = 1;                                               // Turn on Force Sterilization mode\n                return [msg1, msg2, msg3];\n    }\n\n////////////////////////////////////////////////////////////////////////////////\n//                           END OF THE CYCLE                                 //\n////////////////////////////////////////////////////////////////////////////////\n\n\n// END DHW cycle (Automatic)\nif (Force_DHW_State == 1 && Sterilization_State == 0 && DHW_Temp >= DHW_Target_Temp)\n    {\n                setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg1.payload = 0;                                           // set operationmode to 0: HEAT-Only\n                    node.send([msg1,null,null,null]);                                     // send msg1 only, other outputs are null\n                    }, 5000);\n                msg2.payload = 0;                                               // Turn off Force DHW mode\n                return [null, msg2];\n    }\n\n\n// END Sterilization cycle (Automatic)\nif (Sterilization_State == 1 && Sterilization_State == 1 && DHW_Temp >= Sterilization_Temp)\n    {\n                setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg1.payload = 0;                                           // set operationmode to 0: HEAT-Only\n                    node.send([msg1,null,null,null]);                           // send msg1 only, other outputs are null\n                    }, 5000);\n\n                setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg2.payload = 0;                                           // Turn off Force DHW mode \n                    node.send([null,msg2,null,null]);                                     // send msg2 only, other outputs are null\n                    }, 2000);\n\n//                msg1.payload = 0;                                               // set operationmode to 0: HEAT-Only\n//                msg2.payload = 0;                                               // Turn off Force DHW mode \n                msg3.payload = 0;                                               // Turn off Force Sterilization mode\n                return [null, null, msg3];\n    }\n\n\n",
+        "func": "// >> trigger 1\n// DHW / Sterilisation? This is defined in the topic\n// Topic: DHW or topic: Sterilization\n// payload 1 > initiate sequence. \n\n// Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n\n// Declaration of the variables. \nlet msg1={}, msg2={}, msg3={}, msg4={};\n// msg1     Output towards Operation mode\n// msg2     Output towards Force DHW mode on/off\n// msg3     output towards Force Sterilization on/off\n// msg4     empty\n\n\nvar ThreeWay_Valve_State=global.get('ThreeWay_Valve_State');                    // valvue position\n\nvar DHW_Temp=global.get('DHW_Temp');                                            // Current temperature of DHW vessel. \nvar DHW_Target_Temp=global.get('DHW_Target_Temp',\"file\");                       // Programmed DHW target temperature\nvar Force_DHW_State=global.get('Force_DHW_State');                              // Current DHW state (on / off). \n\nvar Operating_Mode_State=global.get('Operating_Mode_State',\"file\");             // get Current OperationMode\nvar new_OM;                                                                     // create empty variable.\n\nvar Sterilization_State=global.get('Sterilization_State');                      // Current sterilization state (on / off)\nvar Sterilization_Temp=global.get('Sterilization_Temp',\"file\");                 // Programmed sterilization target temperature\nvar DHW_treshold=global.get('DHW_treshold',\"file\");                             // Programmed treshold DHW tank temperature set from GUI\n////////////////////////////////////////////////////////////////////////////////\n//                           START OF THE CYCLE                               //\n////////////////////////////////////////////////////////////////////////////////\n\n// START Force DHW cycle\nif (msg.topic == 'DHW' && msg.payload == 1 && DHW_Temp < DHW_treshold)          // There is a temperature condition to start DHW heating or not. Change to your own desire.\n    {\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (Operating_Mode_State==0){new_OM = 4;}\n                if (Operating_Mode_State==1){new_OM = 5;}\n                if (Operating_Mode_State==2){new_OM = 6;}\n                if (Operating_Mode_State==3){new_OM = 3;}\n                if (Operating_Mode_State==4){new_OM = 4;}\n                if (Operating_Mode_State==5){new_OM = 5;}\n                if (Operating_Mode_State==6){new_OM = 6;}\n                if (Operating_Mode_State==7){new_OM = 8;}\n                if (Operating_Mode_State==8){new_OM = 8;}\n                \n                \n                msg1.payload = new_OM;                                          // set operationmode to add DHW mode\n                msg2.payload = 1;                                               // Turn on Force DHW mode\n                if (Operating_Mode_State!=new_OM)\n                    {return [msg1, msg2];}\n                else {return [null, msg2];}\n    }\n\n// START Force Sterilization cycle\nif (msg.topic == 'Sterilization' && msg.payload == 1)                           \n    {\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (Operating_Mode_State==0){new_OM = 4;}\n                if (Operating_Mode_State==1){new_OM = 5;}\n                if (Operating_Mode_State==2){new_OM = 6;}\n                if (Operating_Mode_State==3){new_OM = 3;}\n                if (Operating_Mode_State==4){new_OM = 4;}\n                if (Operating_Mode_State==5){new_OM = 5;}\n                if (Operating_Mode_State==6){new_OM = 6;}\n                if (Operating_Mode_State==7){new_OM = 8;}\n                if (Operating_Mode_State==8){new_OM = 8;}\n                \n                \n                msg1.payload = new_OM;                                               // set operationmode to 3: DHW-Only\n                msg2.payload = 1;                                               // Turn on Force DHW mode\n                msg3.payload = 1;                                               // Turn on Force Sterilization mode\n                \n                if (Operating_Mode_State!=new_OM)\n                    {return [msg1, msg2, msg3];}\n                else\n                    {return [null, msg2, msg3];}\n                \n                \n    }\n\n////////////////////////////////////////////////////////////////////////////////\n//                           END OF THE CYCLE                                 //\n////////////////////////////////////////////////////////////////////////////////\n\n\n// END DHW cycle (Automatic)\nif (Force_DHW_State == 1 && Sterilization_State == 0 && DHW_Temp >= DHW_Target_Temp)\n    {\n                \n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (Operating_Mode_State==0){new_OM = 0;}\n                if (Operating_Mode_State==1){new_OM = 1;}\n                if (Operating_Mode_State==2){new_OM = 2;}\n                if (Operating_Mode_State==3){new_OM = 0;}\n                if (Operating_Mode_State==4){new_OM = 0;}\n                if (Operating_Mode_State==5){new_OM = 1;}\n                if (Operating_Mode_State==6){new_OM = 2;}\n                if (Operating_Mode_State==7){new_OM = 7;}\n                if (Operating_Mode_State==8){new_OM = 7;}  \n                \n                if (Operating_Mode_State!=new_OM)\n                {setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg1.payload = new_OM;                                      // set operationmode to remove DHW\n                    node.send([msg1,null,null,null]);                           // send msg1 only, other outputs are null\n                    }, 5000);}\n                msg2.payload = 0;                                               // Turn off Force DHW mode\n                return [null, msg2];\n    }\n\n\n// END Sterilization cycle (Automatic)\nif (Sterilization_State == 1 && DHW_Temp >= Sterilization_Temp)\n    {\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (Operating_Mode_State==0){new_OM = 0;}\n                if (Operating_Mode_State==1){new_OM = 1;}\n                if (Operating_Mode_State==2){new_OM = 2;}\n                if (Operating_Mode_State==3){new_OM = 0;}\n                if (Operating_Mode_State==4){new_OM = 0;}\n                if (Operating_Mode_State==5){new_OM = 1;}\n                if (Operating_Mode_State==6){new_OM = 2;}\n                if (Operating_Mode_State==7){new_OM = 7;}\n                if (Operating_Mode_State==8){new_OM = 7;} \n                \n                if (Operating_Mode_State!=new_OM)\n                {setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg1.payload = new_OM;                                      // set operationmode to remove DHW\n                    node.send([msg1,null,null,null]);                           // send msg1 only, other outputs are null\n                    }, 5000);\n                }\n                setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg2.payload = 0;                                           // Turn off Force DHW mode \n                    node.send([null,msg2,null,null]);                           // send msg2 only, other outputs are null\n                    }, 2000);\n\n                msg3.payload = 0;                                               // Turn off Force Sterilization mode\n                return [null, null, msg3];\n    }\n\n\n",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
@@ -17951,7 +17972,7 @@
         "type": "inject",
         "z": "35d210f042827344",
         "g": "b63004182c33d3b9",
-        "name": "Check",
+        "name": "Check each minute",
         "props": [
             {
                 "p": "payload"
@@ -17968,7 +17989,7 @@
         "topic": "trigger",
         "payload": "1",
         "payloadType": "num",
-        "x": 2800,
+        "x": 2820,
         "y": 2100,
         "wires": [
             [
@@ -26843,7 +26864,7 @@
         "type": "function",
         "z": "35d210f042827344",
         "name": "Function schedule",
-        "func": "var topic   =   msg.topic;\n\nvar state   =   global.get(topic+'_state',\"file\");                              // Get state of the agenda item. \nif      (state === undefined)\n        {state = 0;}\n\nif      (state == 0)                                                            // Is it disabled? \n        {return [null, null, null, null, null, null];}                          // output null to all pins and exit. else to continue.\n////////////////////////////////////////////////////////////////////////////////\n////////////////////////////////////////////////////////////////////////////////\n\nelse    {                                                                       // if not, continue...\n        var day_check       =global.get(topic+'_day',\"file\");                   // get schedule variables.\n        var hour_check      =global.get(topic+'_hour',\"file\");                  // get schedule variables.\n        var minutes_check   =global.get(topic+'_minutes',\"file\");               // get schedule variables.\n\n                                                                                // Check the programmed day compared current day.\n        if (day_check.includes(msg.payload[0]))         {day_check = { payload: 1, topic: \"DayOfTheWeek\"};}\n        else                                            {day_check = { payload: 0, topic: \"DayOfTheWeek\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed hour compared current hour.        \n        if (msg.payload[1] == hour_check)               {hour_check = { payload: 1, topic: \"Hour\"};}\n        else                                            {hour_check = { payload: 0, topic: \"Hour\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed minutes compared current minutes.\n        if (msg.payload[2] == minutes_check)            {minutes_check = { payload: 1, topic: \"Minutes\"};}\n        else                                            {minutes_check = { payload: 0, topic: \"Minutes\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n        if (day_check.payload == 1 && hour_check.payload == 1 && minutes_check.payload == 1)        // If all of the conditions are met (day + hour + minutes), then....\n            {\n                let msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={};\n                msg1.payload = 99; msg2.payload = 99; msg3.payload = 99; msg4.payload = 99; msg5.payload = 99; msg6.payload = 99; \n                \n                ////////////////////////////////////////////////////////////////\n                //  Override the current powerstate of heat pump? //////////////\n\n                var override    =   global.get(topic+'_override',\"file\");       // get the current override state.\n                var HP_state    = global.get('Heatpump_State',\"file\");          // get the current state of the heatpump. Is it on or off.\n                ////////////////////////////////////////////////////////////////\n                if  (override == 1 && HP_state == 0)                            // check if the override state is enabled, AND currently heatpump state is off\n                    {\n                        msg1 = { payload: 1, topic: \"override\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                var action  =   global.get(topic+'_action',\"file\");             // get the action\n                ////////////////////////////////////////////////////////////////\n                \n                if  (action == \"HP_turn_on\" && HP_state == 0)                   // check the action\n                    {\n                        msg1 = { payload: 1, topic: \"Turn ON HeatPump\" };       // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                if  (action == \"HP_turn_off\" && HP_state == 1)                                   // check the action\n                    {\n                        msg1 = { payload: 0, topic: \"Turn OFF HeatPump\" };      // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                ////////////////////////////////////////////////////////////////\n                if  (action == \"DHW\")                                           // check the action\n                    {\n                        msg2 = { payload: 1, topic: \"DHW\" };                     // DHW action? >> to DHW output pin 2\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                ////////////////////////////////////////////////////////////////\n                if  (action == \"Sterilization\")                                 // check the action\n                    {\n                        msg3 = { payload: 1, topic:  \"Sterilization\" };         // Sterilization action? >> to Sterilization output pin 3\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                ////////////////////////////////////////////////////////////////                \n                if  (action == \"QM_0\")                                          // check the action\n                    {\n                        msg4 = { payload: 0, topic: \"Quiet Mode 0\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                if  (action == \"QM_1\")                                          // check the action\n                    {\n                        msg4 = { payload: 1, topic: \"Quiet Mode 1\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                if  (action == \"QM_2\")                                          // check the action\n                    {\n                        msg4 = { payload: 2, topic: \"Quiet Mode 2\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                if  (action == \"QM_3\")                                          // check the action\n                    {\n                        msg4 = { payload: 3, topic: \"Quiet Mode 3\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                ////////////////////////////////////////////////////////////////\n                \n                ////////////////////////////////////////////////////////////////\n                if  (action == \"OperationMode0\")                                // check the action\n                    {\n                        msg5 = { payload: 0, topic: \"Operation Mode 0\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }                \n                if  (action == \"OperationMode1\")                                // check the action\n                    {\n                        msg5 = { payload: 1, topic: \"Operation Mode 1\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode2\")                                // check the action\n                    {\n                        msg5 = { payload: 2, topic: \"Operation Mode 2\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode3\")                                // check the action\n                    {\n                        msg5 = { payload: 3, topic: \"Operation Mode 3\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode4\")                                // check the action\n                    {\n                        msg5 = { payload: 4, topic: \"Operation Mode 4\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode5\")                                // check the action\n                    {\n                        msg5 = { payload: 5, topic: \"Operation Mode 5\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode6\")                                // check the action\n                    {\n                        msg5 = { payload: 6, topic: \"Operation Mode 6\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"NightReductionOn\")                                // check the action\n                    {\n                        var correction = global.get(\"NightReduction_correction\",\"file\");           // get the current override state.\n                        global.set(\"NightReduction_current_value\",correction,\"file\");\n                        global.set(\"nightreduction_on_off\",1,\"file\");\n                        msg6 = { payload: correction, topic: \"Nightreduction\" };\n                    }\n                if  (action == \"NightReductionOff\")                                // check the action\n                    {\n                        global.set(\"NightReduction_current_value\",0,\"file\");\n                        global.set(\"nightreduction_on_off\",0,\"file\");\n                        msg6 = { payload: 0, topic: \"Nightreduction\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n\n            return [msg1, msg2, msg3, msg4, msg5, msg6];\n\n            }   \n        else\n            {   \n                return [null, null, null, null, null, null];\n            }\n        \n\n        }",
+        "func": "var topic   =   msg.topic;\n\nvar state   =   global.get(topic+'_state',\"file\");                              // Get state of the agenda item. \nif      (state === undefined)\n        {state = 0;}\n\nif      (state == 0)                                                            // Is it disabled? \n        {return [null, null, null, null, null, null];}                          // output null to all pins and exit. else to continue.\n////////////////////////////////////////////////////////////////////////////////\n////////////////////////////////////////////////////////////////////////////////\n\nelse    {                                                                       // if not, continue...\n        var day_check       =global.get(topic+'_day',\"file\");                   // get schedule variables.\n        var hour_check      =global.get(topic+'_hour',\"file\");                  // get schedule variables.\n        var minutes_check   =global.get(topic+'_minutes',\"file\");               // get schedule variables.\n\n        var solar_block_scheduler =global.get('solar_block_scheduler',\"file\");\n        var SolarFunction_active =global.get('SolarFunction_active',\"file\");\n        var block_it = false;\n        if (solar_block_scheduler == true && SolarFunction_active == 1)\n            {\n                block_it = true;\n                \n            }\n        \n\n                                                                                // Check the programmed day compared current day.\n        if (day_check.includes(msg.payload[0]))         {day_check = { payload: 1, topic: \"DayOfTheWeek\"};}\n        else                                            {day_check = { payload: 0, topic: \"DayOfTheWeek\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed hour compared current hour.        \n        if (msg.payload[1] == hour_check)               {hour_check = { payload: 1, topic: \"Hour\"};}\n        else                                            {hour_check = { payload: 0, topic: \"Hour\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed minutes compared current minutes.\n        if (msg.payload[2] == minutes_check)            {minutes_check = { payload: 1, topic: \"Minutes\"};}\n        else                                            {minutes_check = { payload: 0, topic: \"Minutes\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n        if (day_check.payload == 1 && hour_check.payload == 1 && minutes_check.payload == 1)        // If all of the conditions are met (day + hour + minutes), then....\n            {\n                let msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={};\n                msg1.payload = 99; msg2.payload = 99; msg3.payload = 99; msg4.payload = 99; msg5.payload = 99; msg6.payload = 99; \n                //\n                //\n                //\n                //\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                //  Override the current powerstate of heat pump? //////////////\n                //\n                var override    =   global.get(topic+'_override',\"file\");       // get the current override state.\n                var HP_state    = global.get('Heatpump_State',\"file\");          // get the current state of the heatpump. Is it on or off.\n                ////////////////////////////////////////////////////////////////\n                if  (override == 1 && HP_state == 0)                            // check if the override state is enabled, AND currently heatpump state is off\n                    {\n                        msg1 = { payload: 1, topic: \"override\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                //\n                var action  =   global.get(topic+'_action',\"file\");             // get the action\n                ////////////////////////////////////////////////////////////////\n                \n                if  (action == \"HP_turn_on\" && HP_state == 0)                   // check the action\n                    {\n                        msg1 = { payload: 1, topic: \"Turn ON HeatPump\" };       // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                if  (action == \"HP_turn_off\" && HP_state == 1 && block_it === false)                                   // check the action\n                    {\n                        msg1 = { payload: 0, topic: \"Turn OFF HeatPump\" };      // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"DHW\")                                           // check the action if DHW (=Force DHW)\n                    {\n                        msg2 = { payload: 1, topic: \"DHW\" };                     // DHW action? >> to DHW output pin 2\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"Sterilization\" && block_it === false)                                 // check the action\n                    {\n                        msg3 = { payload: 1, topic:  \"Sterilization\" };         // Sterilization action? >> to Sterilization output pin 3\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////                \n                if  (action == \"QM_0\")                                          // check the action\n                    {\n                        msg4 = { payload: 0, topic: \"Quiet Mode 0\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                if  (action == \"QM_1\")                                          // check the action\n                    {\n                        msg4 = { payload: 1, topic: \"Quiet Mode 1\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                if  (action == \"QM_2\")                                          // check the action\n                    {\n                        msg4 = { payload: 2, topic: \"Quiet Mode 2\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                if  (action == \"QM_3\")                                          // check the action\n                    {\n                        msg4 = { payload: 3, topic: \"Quiet Mode 3\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                \n                if  (action == \"OperationMode0\" && block_it === false)                                // check the action\n                    {\n                        msg5 = { payload: 0, topic: \"Operation Mode 0\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }                \n                if  (action == \"OperationMode1\" && block_it === false)                                // check the action\n                    {\n                        msg5 = { payload: 1, topic: \"Operation Mode 1\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode2\" && block_it === false)                                // check the action\n                    {\n                        msg5 = { payload: 2, topic: \"Operation Mode 2\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode3\")                                // check the action\n                    {\n                        msg5 = { payload: 3, topic: \"Operation Mode 3\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode4\")                                // check the action\n                    {\n                        msg5 = { payload: 4, topic: \"Operation Mode 4\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode5\")                                // check the action\n                    {\n                        msg5 = { payload: 5, topic: \"Operation Mode 5\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                if  (action == \"OperationMode6\")                                // check the action\n                    {\n                        msg5 = { payload: 6, topic: \"Operation Mode 6\" };       // Operation Mode action? >> to Operation MOde output pin 5\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"NightReductionOn\")                              // check the action\n                    {\n                        var correction = global.get(\"NightReduction_correction\",\"file\");           // get the nightreduction correction.\n                        global.set(\"NightReduction_current_value\",correction,\"file\");\n                        global.set(\"nightreduction_on_off\",1,\"file\");\n                        msg6 = { payload: correction, topic: \"Nightreduction\" };\n                    }\n                if  (action == \"NightReductionOff\")                             // check the action\n                    {\n                        global.set(\"NightReduction_current_value\",0,\"file\");\n                        global.set(\"nightreduction_on_off\",0,\"file\");\n                        msg6 = { payload: 0, topic: \"Nightreduction\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n            return [msg1, msg2, msg3, msg4, msg5, msg6];\n\n            }   \n        else\n            {   \n                return [null, null, null, null, null, null];\n            }\n        \n\n        }",
         "outputs": 6,
         "noerr": 0,
         "initialize": "\n",
@@ -29017,12 +29038,13 @@
             "67fe5d78fed38255",
             "7bc1cea7963d95f8",
             "8e16d1ef3e972c95",
-            "922cd93fccc2e603"
+            "922cd93fccc2e603",
+            "faec1f32cc57da16"
         ],
         "x": 54,
         "y": 1573,
         "w": 1332,
-        "h": 1154
+        "h": 1214
     },
     {
         "id": "6f4cdc97add442ff",
@@ -29046,8 +29068,8 @@
             "78507acac200e031"
         ],
         "x": 94,
-        "y": 2759,
-        "w": 972,
+        "y": 2859,
+        "w": 942,
         "h": 257
     },
     {
@@ -29204,12 +29226,13 @@
             "39a4db5e9a226488",
             "200de001362093f8",
             "87da7c125b68ad72",
-            "2b03f7e8408f5f56"
+            "2b03f7e8408f5f56",
+            "5a8afa57e2ad537d"
         ],
         "x": 434,
         "y": 1599,
         "w": 392,
-        "h": 1102
+        "h": 1162
     },
     {
         "id": "233708268636f815",
@@ -29376,7 +29399,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 560,
-        "y": 2620,
+        "y": 2680,
         "wires": [
             []
         ]
@@ -29481,7 +29504,7 @@
         "z": "966985d68ebb4990",
         "g": "2efa0af27c69d4d0",
         "name": "Function schedule export",
-        "func": "\n////////////////////////////////////////////////////////////////////////////////\n////////////////////////////////////////////////////////////////////////////////\nvar start_today_export  = flow.get(\"start_today_export\");\nvar total_kwh_export    = flow.get('total_kwh_export');\nlet msg1={};\nlet msg2={};\nlet msg99={};               // to log\n\nif (total_kwh_export === undefined) {total_kwh_export = flow.get('total_kwh_export',\"file\");}\nif (total_kwh_export === undefined) {total_kwh_export = msg.payload;}\nif (total_kwh_export === undefined) {total_kwh_export = 0;}\n\n\nif (start_today_export === undefined)       {start_today_export = flow.get(\"start_today_export\",\"file\")}                               // if start today export is not available, set current \nif (start_today_export === undefined)\n    {\n        start_today_export = total_kwh_export;\n        flow.set(\"start_today_export\",total_kwh_export);\n        \n    }   \n\n\n\nif (msg.topic == \"time\")                                                        // When @ midnight, reset start_today_export to 0.\n    {\n        var DHW_SP_LOW      = global.get('DHW_SP_LOW',\"file\");                  //\n        var DHW_Target_Temp = global.get('DHW_Target_Temp',\"file\");             //\n        var solar_state     = global.get('solar_state',\"file\");                 //\n//        flow.set('total_kwh_export',0,\"file\");\n        global.set(\"SolarFunction_active\",0,\"file\");        \n        msg.topic           = \"kWh\";\n        msg.payload         = 0;\n        msg99.topic         = \"NR Solar Function\";\n        \n        if (total_kwh_export !== undefined)\n            {\n                flow.set('start_today_export',total_kwh_export,\"file\");\n                flow.set('start_today_export',total_kwh_export);\n            }\n\n        if (DHW_Target_Temp != DHW_SP_LOW && solar_state == true)\n            {\n                \n                msg2.payload = DHW_SP_LOW;\n                msg99.payload       = \"New day; Reset Solar function. Set DHW SP to \" + DHW_SP_LOW;\n                return [msg, msg2, msg99];\n            }\n        else \n            {\n                msg99.payload       = \"New day; Reset Solar function.\";\n                return [msg,null];\n            }\n    }\nelse if (msg.topic == \"start\")\n    {\n        msg1.payload = total_kwh_export - start_today_export;\n        msg1.payload = Number(msg1.payload).toFixed(2);\n        msg1.payload = parseFloat(msg1.payload);\n        msg1.topic = \"kWh\";\n        return [msg1,null,null];\n    }\nelse\n    {\n        var until_now       =   (msg.payload - start_today_export);            // calculate todays production in kWh\n        msg.payload = until_now;\n        msg.payload = Number(msg.payload).toFixed(2);\n        msg.payload = parseFloat(msg.payload);\n        msg.topic = \"kWh\";\n        return [msg,null,null];\n    }\n    ",
+        "func": "\n////////////////////////////////////////////////////////////////////////////////\n////////////////////////////////////////////////////////////////////////////////\nvar start_today_export  = flow.get(\"start_today_export\");\nvar total_kwh_export    = flow.get('total_kwh_export');\nlet msg1={};                // pin 1: kwh\nlet msg2={};                // pin 2: SP_DHW\nlet msg99={};               // pin 3: to log\nmsg99.topic = \"NR Solar Function\";\n\nif (total_kwh_export === undefined) {total_kwh_export = flow.get('total_kwh_export',\"file\");}\nif (total_kwh_export === undefined) {total_kwh_export = msg.payload;}\nif (total_kwh_export === undefined) {total_kwh_export = 0;}\n\n\nif (start_today_export === undefined)       {start_today_export = flow.get(\"start_today_export\",\"file\")}                               // if start today export is not available, set current \nif (start_today_export === undefined)\n    {\n        start_today_export = total_kwh_export;\n        flow.set(\"start_today_export\",total_kwh_export);\n        \n    }   \n\n\n\nif (msg.topic == \"time\")                                                        // When @ midnight, reset start_today_export to 0.\n    {\n        var DHW_SP_LOW      = global.get('DHW_SP_LOW',\"file\");                  //\n        var DHW_Target_Temp = global.get('DHW_Target_Temp',\"file\");             //\n        var solar_state     = global.get('solar_state',\"file\");                 //\n        global.set(\"SolarFunction_active\",0,\"file\");        \n        msg.topic           = \"kWh\";\n        msg.payload         = 0;\n        \n        \n        if (total_kwh_export !== undefined)\n            {\n                flow.set('start_today_export',total_kwh_export,\"file\");\n                flow.set('start_today_export',total_kwh_export);\n            }\n\n        if (DHW_Target_Temp != DHW_SP_LOW && solar_state == true)\n            {\n                \n                msg2.payload = DHW_SP_LOW;\n                msg99.payload       = \"New day; Reset Solar function. Set DHW SP to \" + DHW_SP_LOW;\n                return [msg, msg2, msg99];\n            }\n        else \n            {\n                msg99.payload       = \"New day; Reset Solar function. DHW SP already SP_LOW\";\n                return [msg,null,msg99];\n            }\n    }\nelse if (msg.topic == \"start\")\n    {\n        msg1.payload = total_kwh_export - start_today_export;\n        msg1.payload = Number(msg1.payload).toFixed(2);\n        msg1.payload = parseFloat(msg1.payload);\n        msg1.topic = \"kWh\";\n        return [msg1,null,null];\n    }\nelse\n    {\n        var until_now       =   (msg.payload - start_today_export);            // calculate todays production in kWh\n        msg.payload = until_now;\n        msg.payload = Number(msg.payload).toFixed(2);\n        msg.payload = parseFloat(msg.payload);\n        msg.topic = \"kWh\";\n        return [msg,null,null];\n    }\n    ",
         "outputs": 3,
         "noerr": 0,
         "initialize": "\n",
@@ -29516,8 +29539,8 @@
         "timeout": "5",
         "timeoutUnits": "seconds",
         "rate": "1",
-        "nbRateUnits": "30",
-        "rateUnits": "second",
+        "nbRateUnits": "2",
+        "rateUnits": "minute",
         "randomFirst": "1",
         "randomLast": "5",
         "randomUnits": "seconds",
@@ -29621,7 +29644,7 @@
             "071320367f2b7a40"
         ],
         "x": 165,
-        "y": 2500,
+        "y": 2560,
         "wires": [
             [
                 "329a022ba526c218"
@@ -29639,7 +29662,7 @@
             "1d3adb29b3360e7d"
         ],
         "x": 295,
-        "y": 2620,
+        "y": 2680,
         "wires": [
             [
                 "3a7ce33e7b19cff8"
@@ -29926,7 +29949,8 @@
                 "2acf2118927e2814",
                 "54b33637f9684c64",
                 "2b2aec0a8404885d",
-                "1e0f4db7208e5055"
+                "1e0f4db7208e5055",
+                "faec1f32cc57da16"
             ]
         ]
     },
@@ -30155,7 +30179,7 @@
         "payload": "[ ]",
         "payloadType": "json",
         "x": 530,
-        "y": 2660,
+        "y": 2720,
         "wires": [
             [
                 "3a7ce33e7b19cff8"
@@ -30168,14 +30192,14 @@
         "z": "966985d68ebb4990",
         "g": "6f4cdc97add442ff",
         "name": "Watt trigger",
-        "func": "var solar_state                     = global.get('solar_state',\"file\");\nif (solar_state === true)\n{\n    \n    var solar_detection_method          = global.get('solar_detection_method',\"file\");\n    var solar_threshold                 = global.get('solar_threshold',\"file\");  \n    var DHW_Current                     = global.get('DHW_Target_Temp',\"file\");\n    var solar_fallback                  = global.get('solar_fallback',\"file\");\n    var DHW_SP_LOW                      = global.get('DHW_SP_LOW',\"file\");\n    var DHW_SP_HIGH                     = global.get('DHW_SP_HIGH',\"file\");\n    var Operating_Mode_State            = global.get('Operating_Mode_State',\"file\");\n    var new_Operating_Mode_State;       // just create a variable, empty.\n    var solar_turn_on                   = global.get('solar_turn_on',\"file\");\n    var Heatpump_State                  = global.get('Heatpump_State',\"file\");\n    var SolarFunction_active            = global.get(\"SolarFunction_active\",\"file\");\n    \n    let msg1={};                                                            // output to DHW setpoint\n    let msg2={};                                                            // output to Operation Mode\n    let msg3={};                                                            // output to turn on power to heatpump.\n    let msg4={};                                                            // output to log\n    \n    \n    // Check if all required states are available.\n    if (solar_detection_method === undefined || solar_threshold === undefined || solar_fallback === undefined || DHW_SP_HIGH === undefined || Operating_Mode_State === undefined || solar_turn_on === undefined || Heatpump_State === undefined)\n        {\n            msg4.topic = \"NR Solar Function\";\n            msg4.payload = \"ERROR: Not all settings in 'Function Solar' are programmed in GUI yet.\";\n            return [null,null,null,msg4];                                           // debug output\n        }\n    else\n        {\n\n    \n            \n            if (solar_detection_method == \"kW\" && solar_threshold < (msg.payload / 1000) && DHW_Current != DHW_SP_HIGH && SolarFunction_active!=2)\n            {\n                if (Operating_Mode_State == 0){new_Operating_Mode_State = 4;} // add DHW modus\n                if (Operating_Mode_State == 1){new_Operating_Mode_State = 5;} // add DHW modus\n                if (Operating_Mode_State == 2){new_Operating_Mode_State = 6;} // add DHW modus\n                if (Operating_Mode_State == 7){new_Operating_Mode_State = 8;} // add DHW modus\n                \n                if (Operating_Mode_State == 3){new_Operating_Mode_State = 3;} // prevent undefined\n                if (Operating_Mode_State == 4){new_Operating_Mode_State = 4;} // prevent undefined\n                if (Operating_Mode_State == 5){new_Operating_Mode_State = 5;} // prevent undefined\n                if (Operating_Mode_State == 6){new_Operating_Mode_State = 6;} // prevent undefined\n                if (Operating_Mode_State == 8){new_Operating_Mode_State = 8;} // prevent undefined\n                \n                \n                msg1.payload = DHW_SP_HIGH;\n                msg2.payload = new_Operating_Mode_State;\n                global.set(\"SolarFunction_active\",1,\"file\");\n                if (Heatpump_State == 0 && solar_turn_on === true)\n                    {   \n                        msg3.payload = 1;                                           // send 1 to turn on the heatpump\n                        msg4.payload = \"triggered (kW). DHW SP to \" + DHW_SP_HIGH + \", change operationmode and turn on Heatpump\";\n                        msg4.topic = \"NR Solar Function\";\n                        return [msg1, msg2, msg3, msg4];\n                    }\n                else    \n                    {   \n                        msg4.payload = \"triggered (kW). DHW SP to \" + DHW_SP_HIGH + \" and change operation mode\";\n                        msg4.topic = \"NR Solar Function\";\n                        return [msg1, msg2, null, msg4];\n                    }    \n            }\n            else if (solar_detection_method == \"kW\" &&  msg.payload < 0 && DHW_Current == DHW_SP_HIGH && solar_fallback === true)\n            {\n                \n                msg1.payload = DHW_SP_LOW;\n                global.set(\"SolarFunction_active\",0,\"file\");\n                msg4.payload = \"Triggered (kW). Below 0W threshold. DHW SP to \" + DHW_SP_LOW;\n                msg4.topic = \"NR Solar Function\";\n                return [msg1,null,null,msg4];\n            }\n            else {return [null,null,null,null];}\n            \n            //DHW_Target_Temp\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n        \n        }\n}",
+        "func": "var solar_state                     = global.get('solar_state',\"file\");\nif (solar_state === true)\n{\n    var solar_detection_method          = global.get('solar_detection_method',\"file\");\n    var solar_threshold                 = global.get('solar_threshold',\"file\");  \n    var DHW_Current_SP                  = global.get('DHW_Target_Temp',\"file\");\n    var solar_fallback                  = global.get('solar_fallback',\"file\");\n    var DHW_SP_LOW                      = global.get('DHW_SP_LOW',\"file\");\n    var DHW_SP_HIGH                     = global.get('DHW_SP_HIGH',\"file\");\n    var Current_Operating_Mode          = global.get('Operating_Mode_State',\"file\");\n    var new_Operating_Mode_State;       // just create a variable, empty.\n    var solar_turn_on                   = global.get('solar_turn_on',\"file\");\n    var Heatpump_State                  = global.get('Heatpump_State',\"file\");\n    var SolarFunction_active            = global.get(\"SolarFunction_active\",\"file\");\n    \n    let msg1={};                                                                // output to DHW setpoint\n    let msg2={};                                                                // output to Operation Mode\n    let msg3={};                                                                // output to turn on power to heatpump.\n    let msg4={};                                                                // output to log\n    \n    // Check if all required states are available.\n    if (solar_detection_method === undefined || solar_threshold === undefined || solar_fallback === undefined || DHW_SP_HIGH === undefined || Current_Operating_Mode === undefined || solar_turn_on === undefined || Heatpump_State === undefined)\n        {\n            \n            msg4.topic = \"NR Solar Function\";\n            msg4.payload = \"ERROR: Not all settings in 'Function Solar' are programmed in GUI yet.\";\n            return [null,null,null,msg4];                                       // log output\n        }\n    else\n        {\n        \n\n            if (solar_detection_method == \"kW\" && solar_threshold < (msg.payload) && DHW_Current_SP != DHW_SP_HIGH && SolarFunction_active != 2)\n            {\n                if (Current_Operating_Mode == 0){new_Operating_Mode_State = 4;} // add DHW modus\n                if (Current_Operating_Mode == 1){new_Operating_Mode_State = 5;} // add DHW modus\n                if (Current_Operating_Mode == 2){new_Operating_Mode_State = 6;} // add DHW modus\n                if (Current_Operating_Mode == 7){new_Operating_Mode_State = 8;} // add DHW modus\n                \n                if (Current_Operating_Mode == 3){new_Operating_Mode_State = 3;} // prevent undefined\n                if (Current_Operating_Mode == 4){new_Operating_Mode_State = 4;} // prevent undefined\n                if (Current_Operating_Mode == 5){new_Operating_Mode_State = 5;} // prevent undefined\n                if (Current_Operating_Mode == 6){new_Operating_Mode_State = 6;} // prevent undefined\n                if (Current_Operating_Mode == 8){new_Operating_Mode_State = 8;} // prevent undefined\n                \n                \n                msg1.payload = DHW_SP_HIGH;\n                msg2.payload = new_Operating_Mode_State;\n                global.set(\"SolarFunction_active\",1,\"file\");\n                if (Heatpump_State == 0 && solar_turn_on === true)\n                    {   \n                        msg4.payload = \"triggered (kW). DHW SP to \" + DHW_SP_HIGH + \", change operationmode and turn on Heatpump\";\n                        msg4.topic = \"NR Solar Function\";\n                        \n                        msg3.payload = 1;                                           // send 1 to turn on the heatpump\n                        return [msg1, msg2, msg3, msg4];\n                    }\n                else    \n                    {   \n                        msg4.payload = \"triggered (kW). DHW SP to \" + DHW_SP_HIGH + \" and change operation mode\";\n                        msg4.topic = \"NR Solar Function\";\n                        return [msg1, msg2, null, msg4];\n                    }    \n            }\n            else if (solar_detection_method == \"kW\" &&  msg.payload < 0 && DHW_Current_SP == DHW_SP_HIGH && solar_fallback === true && SolarFunction_active == 1)\n            {\n                msg1.payload = DHW_SP_LOW;\n                global.set(\"SolarFunction_active\",0,\"file\");\n                msg4.payload = \"Triggered (kW). Below 0W threshold. DHW SP to \" + DHW_SP_LOW;\n                msg4.topic = \"NR Solar Function\";\n                return [msg1,null,null,msg4];\n            }\n            else {return [null,null,null,null];}\n            \n            //DHW_Target_Temp\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n        \n        }\n}",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 370,
-        "y": 2840,
+        "y": 2940,
         "wires": [
             [
                 "78507acac200e031"
@@ -30325,7 +30349,7 @@
             "a540502a94c0c030"
         ],
         "x": 175,
-        "y": 2840,
+        "y": 2940,
         "wires": [
             [
                 "07cc0b87ee9c6f05"
@@ -30343,7 +30367,7 @@
             "1d3adb29b3360e7d"
         ],
         "x": 175,
-        "y": 2960,
+        "y": 3060,
         "wires": [
             [
                 "e5767c67ab606448"
@@ -30358,7 +30382,7 @@
         "name": "W",
         "info": "",
         "x": 170,
-        "y": 2800,
+        "y": 2900,
         "wires": []
     },
     {
@@ -30369,7 +30393,7 @@
         "name": "kWh",
         "info": "",
         "x": 170,
-        "y": 2920,
+        "y": 3020,
         "wires": []
     },
     {
@@ -30382,8 +30406,8 @@
         "links": [
             "3f63919ddd4f0ea7"
         ],
-        "x": 1005,
-        "y": 2840,
+        "x": 995,
+        "y": 2940,
         "wires": []
     },
     {
@@ -30392,14 +30416,14 @@
         "z": "966985d68ebb4990",
         "g": "6f4cdc97add442ff",
         "name": "kWh trigger",
-        "func": "var solar_state                     = global.get('solar_state',\"file\");\nif (solar_state === true)\n{\n    var solar_detection_method          = global.get('solar_detection_method',\"file\");\n    var solar_threshold                 = global.get('solar_threshold',\"file\");  \n    var DHW_Current                     = global.get('DHW_Target_Temp',\"file\");\n    var solar_fallback                  = global.get('solar_fallback',\"file\");\n    var DHW_SP_LOW                      = global.get('DHW_SP_LOW',\"file\");\n    var DHW_SP_HIGH                     = global.get('DHW_SP_HIGH',\"file\");\n    var Operating_Mode_State            = global.get('Operating_Mode_State',\"file\");\n    var new_Operating_Mode_State;       // just create a variable, empty.\n    var solar_turn_on                   = global.get('solar_turn_on',\"file\");\n    var Heatpump_State                  = global.get('Heatpump_State',\"file\");\n    var SolarFunction_active            = global.get(\"SolarFunction_active\",\"file\");\n    \n    let msg1={};                                                                // output to DHW setpoint\n    let msg2={};                                                                // output to Operation Mode\n    let msg3={};                                                                // output to turn on power to heatpump.\n    let msg4={};                                                                // output to log\n    \n    // Check if all required states are available.\n    if (solar_detection_method === undefined || solar_threshold === undefined || solar_fallback === undefined || DHW_SP_HIGH === undefined || Operating_Mode_State === undefined || solar_turn_on === undefined || Heatpump_State === undefined)\n        {\n            \n            msg4.topic = \"NR Solar Function\";\n            msg4.payload = \"ERROR: Not all settings in 'Function Solar' are programmed in GUI yet.\";\n            return [null,null,null,msg4];                                       // log output\n        }\n    else\n        {\n        \n\n            if (solar_detection_method == \"kWh\" && solar_threshold < (msg.payload) && DHW_Current != DHW_SP_HIGH && SolarFunction_active !=2)\n            {\n                if (Operating_Mode_State == 0){new_Operating_Mode_State = 4;} // add DHW modus\n                if (Operating_Mode_State == 1){new_Operating_Mode_State = 5;} // add DHW modus\n                if (Operating_Mode_State == 2){new_Operating_Mode_State = 6;} // add DHW modus\n                if (Operating_Mode_State == 7){new_Operating_Mode_State = 8;} // add DHW modus\n                \n                if (Operating_Mode_State == 3){new_Operating_Mode_State = 3;} // prevent undefined\n                if (Operating_Mode_State == 4){new_Operating_Mode_State = 4;} // prevent undefined\n                if (Operating_Mode_State == 5){new_Operating_Mode_State = 5;} // prevent undefined\n                if (Operating_Mode_State == 6){new_Operating_Mode_State = 6;} // prevent undefined\n                if (Operating_Mode_State == 8){new_Operating_Mode_State = 8;} // prevent undefined\n                \n                \n                msg1.payload = DHW_SP_HIGH;\n                msg2.payload = new_Operating_Mode_State;\n                global.set(\"SolarFunction_active\",1,\"file\");\n                if (Heatpump_State == 0 && solar_turn_on === true)\n                    {   \n                        msg4.payload = \"triggered (kWh). DHW SP to \" + DHW_SP_HIGH + \", change operationmode and turn on Heatpump\";\n                        msg4.topic = \"NR Solar Function\";\n                        \n                        msg3.payload = 1;                                           // send 1 to turn on the heatpump\n                        return [msg1, msg2, msg3, msg4];\n                    }\n                else    \n                    {   \n                        msg4.payload = \"triggered (kWh). DHW SP to \" + DHW_SP_HIGH + \" and change operation mode\";\n                        msg4.topic = \"NR Solar Function\";\n                        return [msg1, msg2, null, msg4];\n                    }    \n            }\n            else if (solar_detection_method == \"kWh\" &&  msg.payload < 0 && DHW_Current == DHW_SP_HIGH && solar_fallback === true)\n            {\n                msg1.payload = DHW_SP_LOW;\n                global.set(\"SolarFunction_active\",0,\"file\");\n                msg4.payload = \"Triggered (kWh). Below 0W threshold. DHW SP to \" + DHW_SP_LOW;\n                msg4.topic = \"NR Solar Function\";\n                return [msg1,null,null,msg4];\n            }\n            else {return [null,null,null,null];}\n            \n            //DHW_Target_Temp\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n        \n        }\n}",
+        "func": "var solar_state                     = global.get('solar_state',\"file\");\nif (solar_state === true)\n{\n    var solar_detection_method          = global.get('solar_detection_method',\"file\");\n    var solar_threshold                 = global.get('solar_threshold',\"file\");  \n    var DHW_Current_SP                  = global.get('DHW_Target_Temp',\"file\");\n    var solar_fallback                  = global.get('solar_fallback',\"file\");\n    var DHW_SP_LOW                      = global.get('DHW_SP_LOW',\"file\");\n    var DHW_SP_HIGH                     = global.get('DHW_SP_HIGH',\"file\");\n    var Operating_Mode_State            = global.get('Operating_Mode_State',\"file\");\n    var new_Operating_Mode_State;       // just create a variable, empty.\n    var solar_turn_on                   = global.get('solar_turn_on',\"file\");\n    var Heatpump_State                  = global.get('Heatpump_State',\"file\");\n    var SolarFunction_active            = global.get(\"SolarFunction_active\",\"file\");\n    \n    let msg1={};                                                                // output to DHW setpoint\n    let msg2={};                                                                // output to Operation Mode\n    let msg3={};                                                                // output to turn on power to heatpump.\n    let msg4={};                                                                // output to log\n    \n    // Check if all required states are available.\n    if (solar_detection_method === undefined || solar_threshold === undefined || solar_fallback === undefined || DHW_SP_HIGH === undefined || Operating_Mode_State === undefined || solar_turn_on === undefined || Heatpump_State === undefined)\n        {\n            \n            msg4.topic = \"NR Solar Function\";\n            msg4.payload = \"ERROR: Not all settings in 'Function Solar' are programmed in GUI yet.\";\n            return [null,null,null,msg4];                                       // log output\n        }\n    else\n        {\n        \n\n            if (solar_detection_method == \"kWh\" && solar_threshold < (msg.payload) && DHW_Current_SP != DHW_SP_HIGH && SolarFunction_active != 2)\n            {\n                if (Operating_Mode_State == 0){new_Operating_Mode_State = 4;} // add DHW modus\n                if (Operating_Mode_State == 1){new_Operating_Mode_State = 5;} // add DHW modus\n                if (Operating_Mode_State == 2){new_Operating_Mode_State = 6;} // add DHW modus\n                if (Operating_Mode_State == 7){new_Operating_Mode_State = 8;} // add DHW modus\n                \n                if (Operating_Mode_State == 3){new_Operating_Mode_State = 3;} // prevent undefined\n                if (Operating_Mode_State == 4){new_Operating_Mode_State = 4;} // prevent undefined\n                if (Operating_Mode_State == 5){new_Operating_Mode_State = 5;} // prevent undefined\n                if (Operating_Mode_State == 6){new_Operating_Mode_State = 6;} // prevent undefined\n                if (Operating_Mode_State == 8){new_Operating_Mode_State = 8;} // prevent undefined\n                \n                \n                msg1.payload = DHW_SP_HIGH;\n                msg2.payload = new_Operating_Mode_State;\n                global.set(\"SolarFunction_active\",1,\"file\");\n                if (Heatpump_State == 0 && solar_turn_on === true)\n                    {   \n                        msg4.payload = \"triggered (kWh). DHW SP to \" + DHW_SP_HIGH + \", change operationmode and turn on Heatpump\";\n                        msg4.topic = \"NR Solar Function\";\n                        \n                        msg3.payload = 1;                                           // send 1 to turn on the heatpump\n                        return [msg1, msg2, msg3, msg4];\n                    }\n                else    \n                    {   \n                        msg4.payload = \"triggered (kWh). DHW SP to \" + DHW_SP_HIGH + \" and change operation mode\";\n                        msg4.topic = \"NR Solar Function\";\n                        return [msg1, msg2, null, msg4];\n                    }    \n            }\n            else if (solar_detection_method == \"kWh\" &&  msg.payload < 0 && DHW_Current_SP == DHW_SP_HIGH && solar_fallback === true && SolarFunction_active == 1)\n            {\n                msg1.payload = DHW_SP_LOW;\n                global.set(\"SolarFunction_active\",0,\"file\");\n                msg4.payload = \"Triggered (kWh). Below 0kWh threshold. DHW SP to \" + DHW_SP_LOW;\n                msg4.topic = \"NR Solar Function\";\n                return [msg1,null,null,msg4];\n            }\n            else {return [null,null,null,null];}\n            \n            //DHW_Target_Temp\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n        \n        }\n}",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 370,
-        "y": 2960,
+        "y": 3060,
         "wires": [
             [
                 "78507acac200e031"
@@ -30469,8 +30493,8 @@
         "links": [
             "6d5e44060139d9d1"
         ],
-        "x": 1025,
-        "y": 2960,
+        "x": 995,
+        "y": 3000,
         "wires": []
     },
     {
@@ -30614,7 +30638,7 @@
             "071ac5a0f08a8fdb"
         ],
         "x": 735,
-        "y": 2960,
+        "y": 3060,
         "wires": []
     },
     {
@@ -30636,7 +30660,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 780,
-        "y": 2900,
+        "y": 3000,
         "wires": [
             [
                 "b50ab0a4981f9d17"
@@ -30662,7 +30686,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 780,
-        "y": 2840,
+        "y": 2940,
         "wires": [
             [
                 "e62a354ce682ea6f"
@@ -30709,7 +30733,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 550,
-        "y": 2460,
+        "y": 2520,
         "wires": []
     },
     {
@@ -30722,7 +30746,7 @@
             "d54ac3b979428b64"
         ],
         "x": 385,
-        "y": 2420,
+        "y": 2480,
         "wires": [
             [
                 "39a4db5e9a226488"
@@ -30769,11 +30793,9 @@
         "useDifferentColor": false,
         "className": "",
         "x": 560,
-        "y": 2540,
+        "y": 2600,
         "wires": [
-            [
-                "05a64622b7dd57fb"
-            ]
+            []
         ]
     },
     {
@@ -30793,7 +30815,7 @@
         "templateScope": "local",
         "className": "",
         "x": 580,
-        "y": 2380,
+        "y": 2440,
         "wires": [
             []
         ]
@@ -30809,7 +30831,7 @@
             "6c24c2f990c17968"
         ],
         "x": 165,
-        "y": 2580,
+        "y": 2640,
         "wires": [
             [
                 "329a022ba526c218"
@@ -30829,7 +30851,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 2540,
+        "y": 2600,
         "wires": [
             [
                 "bdd8cc1b7fb80f3f"
@@ -30855,7 +30877,7 @@
         "payload": "[ ]",
         "payloadType": "json",
         "x": 530,
-        "y": 2580,
+        "y": 2640,
         "wires": [
             [
                 "bdd8cc1b7fb80f3f"
@@ -31070,7 +31092,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 550,
-        "y": 2420,
+        "y": 2480,
         "wires": []
     },
     {
@@ -31083,7 +31105,7 @@
             "dd45b1caa253346b"
         ],
         "x": 385,
-        "y": 2460,
+        "y": 2520,
         "wires": [
             [
                 "5a4e594ff048795f"
@@ -31382,15 +31404,15 @@
         "id": "e7f6912a40ec057f",
         "type": "function",
         "z": "966985d68ebb4990",
-        "name": "",
-        "func": "var solar_state                     = global.get('solar_state',\"file\");\nvar DHW_Current                     = global.get('DHW_Target_Temp',\"file\");\nvar DHW_SP_HIGH                     = global.get('DHW_SP_HIGH',\"file\");\nvar SolarFunction_active            = global.get('SolarFunction_active',\"file\");\nvar Operating_Mode_State            = global.get('Operating_Mode_State',\"file\");\nvar ThreeWay_Valve_State            = global.get('ThreeWay_Valve_State');\nvar new_Operating_Mode_State;\n\nif (solar_state === true && DHW_Current >= DHW_SP_HIGH && SolarFunction_active == 1 && ThreeWay_Valve_State == 0)\n    {\n            \n            \n            let msg1={};        // DHW_Current\n            let msg2={};        // SolarFunction_active\n            let msg3={};        // new_Operating_Mode_State\n            let msg4={};        // to log\n            \n            if (Operating_Mode_State == 4){new_Operating_Mode_State = 0;} // remove DHW modus\n            if (Operating_Mode_State == 5){new_Operating_Mode_State = 1;} // remove DHW modus\n            if (Operating_Mode_State == 6){new_Operating_Mode_State = 2;} // remove DHW modus\n            if (Operating_Mode_State == 8){new_Operating_Mode_State = 7;} // remove DHW modus\n            \n            if (Operating_Mode_State == 0){new_Operating_Mode_State = 0;} // do nothing, prevent undefined\n            if (Operating_Mode_State == 1){new_Operating_Mode_State = 1;} // do nothing, prevent undefined\n            if (Operating_Mode_State == 2){new_Operating_Mode_State = 2;} // do nothing, prevent undefined\n            if (Operating_Mode_State == 3){new_Operating_Mode_State = 3;} // do nothing, prevent undefined\n            if (Operating_Mode_State == 7){new_Operating_Mode_State = 7;} // do nothing, prevent undefined\n            \n// Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    \n            msg1.payload    = DHW_Current;\n            msg1.topic      = \"DHW_Current\";\n            \n            msg2.payload    = 2;                                                   // get rid of block\n            msg2.topic      = \"SolarFunction_active\";\n            \n            msg3.payload    = new_Operating_Mode_State;\n            msg3.topic      = \"new_Operating_Mode_State\";\n\n            msg4.topic = \"NR Solar Function\";\n            msg4.payload = \"DHW temperature reached DHW SP High. Revert operating mode (-DHW)\";\n            \n            return [msg1,msg2,msg3,msg4];\n\n    }\n\nelse\n    {\n        return [null,null,null,null];\n        \n    }",
+        "name": "Function: End solar run",
+        "func": "var solar_state                     = global.get('solar_state',\"file\");\nvar DHW_Target_Temp                 = global.get('DHW_Target_Temp',\"file\");\nvar DHW_Temp                        = global.get('DHW_Temp');\nvar DHW_SP_HIGH                     = global.get('DHW_SP_HIGH',\"file\");\nvar SolarFunction_active            = global.get('SolarFunction_active',\"file\");\nvar Operating_Mode_State            = global.get('Operating_Mode_State',\"file\");\n//var ThreeWay_Valve_State          = global.get('ThreeWay_Valve_State');       // threewayvalvue 1 = DHW, 0 = HEAT\nvar new_Operating_Mode_State;\n\n//if (solar_state === true && DHW_Temp >= (DHW_SP_HIGH -1) && SolarFunction_active >= 1 && ThreeWay_Valve_State == 0)\nif (solar_state === true && DHW_Temp >= (DHW_SP_HIGH) && SolarFunction_active == 1)\n    {\n            \n            \n            let msg1={};        // pin 1: DHW_Target_Temp\n            let msg2={};        // pin 2: SolarFunction_active\n            let msg3={};        // pin 3: new_Operating_Mode_State\n            let msg4={};        // pin 4: to log\n            \n            if (Operating_Mode_State == 4){new_Operating_Mode_State = 0;} // remove DHW modus\n            if (Operating_Mode_State == 5){new_Operating_Mode_State = 1;} // remove DHW modus\n            if (Operating_Mode_State == 6){new_Operating_Mode_State = 2;} // remove DHW modus\n            if (Operating_Mode_State == 8){new_Operating_Mode_State = 7;} // remove DHW modus\n            \n            if (Operating_Mode_State == 0){new_Operating_Mode_State = 0;} // do nothing, prevent undefined\n            if (Operating_Mode_State == 1){new_Operating_Mode_State = 1;} // do nothing, prevent undefined\n            if (Operating_Mode_State == 2){new_Operating_Mode_State = 2;} // do nothing, prevent undefined\n            if (Operating_Mode_State == 3){new_Operating_Mode_State = 3;} // do nothing, prevent undefined\n            if (Operating_Mode_State == 7){new_Operating_Mode_State = 7;} // do nothing, prevent undefined\n            \n// Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    \n            msg1.payload    = DHW_Target_Temp;\n            msg1.topic      = \"DHW_Target_Temp\";\n            \n            msg2.payload    = 2;                                                // SolarFunction_active - get rid of block\n            msg2.topic      = \"SolarFunction_active\";\n            \n            msg3.payload    = new_Operating_Mode_State;\n            msg3.topic      = \"new_Operating_Mode_State\";\n\n            msg4.topic      = \"NR Solar Function\";\n            msg4.payload    = \"DHW temperature reached DHW SP High. Removing DHW-mode. New mode: \" + new_Operating_Mode_State;\n            \n            return [msg1,msg2,msg3,msg4];\n\n    }\n\nelse\n    {\n        return [null,null,null,null];\n        \n    }",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
-        "y": 3160,
+        "x": 410,
+        "y": 3260,
         "wires": [
             [],
             [
@@ -31421,8 +31443,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 960,
-        "y": 3160,
+        "x": 1200,
+        "y": 3260,
         "wires": [
             []
         ],
@@ -31447,8 +31469,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 640,
-        "y": 3160,
+        "x": 780,
+        "y": 3260,
         "wires": [
             [
                 "b463820910564b36"
@@ -31466,13 +31488,13 @@
                 "vt": "str"
             }
         ],
-        "repeat": "300",
+        "repeat": "60",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "trigger",
         "x": 180,
-        "y": 3160,
+        "y": 3260,
         "wires": [
             [
                 "e7f6912a40ec057f"
@@ -31486,7 +31508,7 @@
         "name": "Solar functie deactivate",
         "info": "",
         "x": 200,
-        "y": 3100,
+        "y": 3200,
         "wires": []
     },
     {
@@ -31558,8 +31580,8 @@
         "links": [
             "47e2a8d99d332229"
         ],
-        "x": 550,
-        "y": 3060,
+        "x": 370,
+        "y": 3420,
         "wires": [],
         "l": true
     },
@@ -31875,8 +31897,8 @@
         "timeout": "5",
         "timeoutUnits": "seconds",
         "rate": "1",
-        "nbRateUnits": "30",
-        "rateUnits": "second",
+        "nbRateUnits": "2",
+        "rateUnits": "minute",
         "randomFirst": "1",
         "randomLast": "5",
         "randomUnits": "seconds",
@@ -32019,7 +32041,7 @@
         "templateScope": "local",
         "className": "",
         "x": 550,
-        "y": 2500,
+        "y": 2560,
         "wires": [
             []
         ]
@@ -32176,51 +32198,6 @@
         "wires": []
     },
     {
-        "id": "821158914f8b1904",
-        "type": "inject",
-        "z": "966985d68ebb4990",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "START",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1390,
-        "y": 2860,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "05a64622b7dd57fb",
-        "type": "function",
-        "z": "966985d68ebb4990",
-        "d": true,
-        "name": "",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1520,
-        "y": 2520,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "0b65e03bcdead714",
         "type": "ui_text",
         "z": "966985d68ebb4990",
@@ -32236,6 +32213,109 @@
         "x": 2292,
         "y": 383,
         "wires": []
+    },
+    {
+        "id": "faec1f32cc57da16",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "g": "81ff790f84afd46d",
+        "name": "Load on boot",
+        "func": "var variable                    = global.get('solar_block_scheduler',\"file\");\nlet msg1={};\n\nif(variable === undefined)      {return null;}\n                            \nelse                        \n    {\n        msg1.payload = variable;\n//        msg1.topic = 'solar_block_scheduler'; \n        return msg1;\n    }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 2380,
+        "wires": [
+            [
+                "5a8afa57e2ad537d"
+            ]
+        ],
+        "outputLabels": [
+            "Heatpump_State"
+        ]
+    },
+    {
+        "id": "5a8afa57e2ad537d",
+        "type": "ui_switch",
+        "z": "966985d68ebb4990",
+        "g": "6ca6d4d49dde6089",
+        "name": "Block scheduled tasks",
+        "label": "Block scheduled tasks",
+        "tooltip": "When the solar function is active and a scheduled task tries to change current operating mode, this toggle can block it.",
+        "group": "b7f22c282fde0f86",
+        "order": 8,
+        "width": 9,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 580,
+        "y": 2380,
+        "wires": [
+            [
+                "be1532097f7d59f1"
+            ]
+        ]
+    },
+    {
+        "id": "be1532097f7d59f1",
+        "type": "rbe",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 2380,
+        "wires": [
+            [
+                "d0f0ba7210e57b84"
+            ]
+        ]
+    },
+    {
+        "id": "d0f0ba7210e57b84",
+        "type": "change",
+        "z": "966985d68ebb4990",
+        "name": "set variable solar_block_scheduler",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(file)::solar_block_scheduler",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 2380,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "92e5b2c.00a8b5",
