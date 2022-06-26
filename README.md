@@ -228,7 +228,7 @@ Q - I use the Node Red Addon in Home Assistant, how to go to the Node Red Gui fo
     
 Q - Can I use both WAR and RTC at the same time?
 <details>
-    Yes, the SP (Setpoint) will be adjusted depending on outside temperature and controlled by the settings in RTC
+    Yes. If you have both enabled, the WAR function first calculates the SP (Setpoint) depending on outside temperature. Next the RTC function will correct that SP(war) depending on the roomtemperature. The only SP going to the heatpump will be SP at the end of all the calculations/corrections.
 </details>
 
 Q - If I switch off the Heatpomp via the Remote Controller will it disable the automation from the Node Red flow also?
@@ -239,7 +239,10 @@ Q - If I switch off the Heatpomp via the Remote Controller will it disable the a
 
 Q - I know the function SOFTSTART is experimental, but can you explain what this function does?
 <details>
-    ...
+    The idea behind this function is that when the compressor is just started, the frequency of the compressor goes up to 45+Hz. Well out of the efficient range. This is caused by the inner controller of the heatpump. When turned on, it 'wants' to see the impact of the compressor. It looks at the returning watertemperature for this. Only when the water temperature returning towards the heatpump is nearing the target temperature, it will start to lower the compressor frequency and get in a stable/efficient mode. Throttling... <br/>
+This late throttling behaviour can be quiet energy consuming, it can cause the heat pump to generate too much heat at the start and turn off again. <br/><br/>
+This SOFTSTART function, when enabled, looks at the moment when the compressor is on, and lower the setpoint to just above the temperature of the returning water. This will in theory cause the heatpump to start throttling down a lot quicker. 
+<br/>This function can be usefull directly after defrost cycles when the pump starts again, or when the temperature difference between outside/inside is getting smaller. 
 </details>
 
 Q - Is there an overview and explanation of all settings from the dashboards?
