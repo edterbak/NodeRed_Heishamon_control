@@ -1,8 +1,7 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-
 Current version: 16<br/>
-<br/>
+
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -25,20 +24,28 @@ BUT...I choose the NR option because if I update or restart HA, the controller a
 <br/>
 I have chosen option 4 in the list above. In this GIT you can find NR functions to control the Panasonic.  
 <br/>
+
+********
+
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/requirements.png" width="500">
 
 **What do I need to make use of this flow?**<br/>
-1: A functional MQTT broker. (Mosquitto/HiveMQ/etc)<br/>
-2: A functional NodeRed instance. <br/>
-3: Heatpump in DIRECT mode. <br/>
+1: The heishamon module working with your heatpump.<br/>
+2: A functional MQTT broker. (Mosquitto/HiveMQ/etc)<br/>
+3: A functional NodeRed instance. <br/>
+4: Heatpump in DIRECT mode. <br/>
+ 
 <br/>
-1: You can use any broker that is 24/7 available. You can install it on any system, as long as the heishamon and the broker can communicate with eachother.<br/>
+1: Obviously, you need the heishamon module connected to your heatpump and have it functional. Without this module, you can stop reading. 😄 See this site to get one: https://www.tindie.com/stores/thehognl/ <br/><br/>
+2: You can use any broker that is 24/7 available. You can install it on any system, as long as the heishamon and the broker can communicate with eachother.<br/>
 <br/>
-2: You can install node red on a lot of deviced. It can be directly on Linux or a device like Raspberry Pi. You can also run it in a container (self hosted) or within Home Assistant (add-on). For all options see: https://nodered.org/ <br/> All of these options are good, as long as the Node Red application can communicate with the broker and the Node Red instance has persistant storage enabled.<br/>
+3: You can install node red on a lot of deviced. It can be directly on Linux or a device like Raspberry Pi. You can also run it in a container (self hosted) or within Home Assistant (add-on). For all options see: https://nodered.org/ <br/> All of these options are good, as long as the Node Red application can communicate with the broker and the Node Red instance has persistant storage enabled.<br/>
 The NodeRed flow is stand-alone so: You do not require a database. You do not require HomeAssistant.<br/><br/>
-3: This Node Red flow generates and controls the setpoint for the T outlet (Ta). This means you need to put your pump in DIRECT mode on the thermostat itself. 
+4: This Node Red flow generates and controls the setpoint for the T outlet (Ta). This means you need to put your pump in DIRECT mode on the thermostat itself. 
 From within Heishamon, TOP76, will inform you if you currently are in WAR mode or DIRECT mode. <br/>(0=WAR, 1=DIRECT)
-<br/>
+<br/><br/>
+
+********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/install.png" width="500">
 
@@ -126,6 +133,8 @@ As explained by the image below, you CAN use the Panasonic sensors for this. To 
 It is advised to create a separate tab for your external sources. Any source available in Node Red can be conditioned and used as a sensor in the functions. If you do this in an 'personal tab', then it is likely easier to update later to newer versions. (no guarantees of course)<br/>
 </details>
 
+********
+
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/Updating.png" width="500">
 
 ## How to create a backup of your current flow
@@ -154,6 +163,8 @@ If there are better ideas about this, please inform me. <br/> <br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Update_animation_final.gif) <br/>RightMouseClick on the GIF and select open in a new tab to see it full screen.<br/>
 	
 </details>
+
+********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/dashboard.png" width="500">
 <details>
@@ -203,6 +214,8 @@ Image: [Scheduler] [Multiselect the day] [possible actions to select]
 You can find the link to the dashboard like this:<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard2.png?raw=true) ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard1.png?raw=true)
 </details>
+
+********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/faq.png" width="500">
 
@@ -266,10 +279,9 @@ Q - How to update flow to latest version and keep my inputs, MQTT and Home Assis
     <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/49247191465139a9ee67749accd87a6f65600fcc/images/WP_Personal_tab2.png?raw=true" width=50%> <br/>
     <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/5095a6e0640ca666a06a1487f71c55de10c06946/images/WP_Personal_tab3.png?raw=true" width=50%> <br/>
     Follow the update procedure from the Readme as desciped here: https://github.com/edterbak/NodeRed_Heishamon_control#how-to-update-to-a-newer-version
-    
-    
-    
 </details>
+
+********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/changelog.png" width="500">
 All older changelog items are colapsed below. only the latest changelog will always be shown.
@@ -430,9 +442,11 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Enhancement: Layout of the [Function Solar] has been improved with buttons which hide/show the chart/help section.
 - BREAKING CHANGE !! : The connection node for P1 power meter has changed (simplified). This needs to be corrected manually after import of this version (16) or later.
 	
-	
+********
+
 ## TODO list
 - [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
+********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/acknowledgments.png" width="500">
 
@@ -446,6 +460,8 @@ All older changelog items are colapsed below. only the latest changelog will alw
 * []() Javaboon for his assistance in the Solar functionality
 * []() klerk for his feature requests and helping with testing. MEGAAA THANKS :) .
 * []() klerk (yes, again) for contributing to this project and helping with a FAQ !!!!! :) .
+
+********
 
 **My request to you:**<br/>
 When you choose to use/try this (Feel free to do so), PLEASE give feedback on any issues you encounter. You can use the [Issues] section to report to me. <br/>
