@@ -39,7 +39,7 @@ I have chosen option 4 in the list above. In this GIT you can find NR functions 
 1: Obviously, you need the heishamon module connected to your heatpump and have it functional. Without this module, you can stop reading. 😄 See this site to get one: https://www.tindie.com/stores/thehognl/ <br/><br/>
 2: You can use any broker that is 24/7 available. You can install it on any system, as long as the heishamon and the broker can communicate with eachother.<br/>
 <br/>
-3: You can install node red on a lot of deviced. It can be directly on Linux or a device like Raspberry Pi. You can also run it in a container (self hosted) or within Home Assistant (add-on). For all options see: https://nodered.org/ <br/> All of these options are good, as long as the Node Red application can communicate with the broker and the Node Red instance has persistant storage enabled.<br/>
+3: You can install node red on a lot of devices. It can be directly on Linux or a device like Raspberry Pi. You can also run it in a container (self hosted) or within Home Assistant (add-on). For all options see: https://nodered.org/ <br/> All of these options are good, as long as the Node Red application can communicate with the broker and the Node Red instance has persistant storage enabled.<br/>
 The NodeRed flow is stand-alone so: You do not require a database. You do not require HomeAssistant.<br/><br/>
 4: This Node Red flow generates and controls the setpoint for the T outlet (Ta). This means you need to put your pump in DIRECT mode on the thermostat itself. 
 From within Heishamon, TOP76, will inform you if you currently are in WAR mode or DIRECT mode. <br/>(0=WAR, 1=DIRECT)
