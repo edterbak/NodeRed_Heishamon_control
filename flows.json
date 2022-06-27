@@ -27750,7 +27750,7 @@
         "z": "ed155b604642d354",
         "g": "1c223a510a8ec72d",
         "name": "Function - bucket 1 + 2 +3 combined",
-        "func": "var myArray1 = global.get(\"kwh_HEAT_31d\",\"file\");\nvar myArray2 = global.get(\"degreedays_31d\",\"file\");\nvar myArray3 = global.get(\"kwh_DHW_31d\",\"file\");\n\nlet msg1={}, msg2={}, msg3={};\n\nmsg1 = myArray1;\nmsg2 = myArray2;\nmsg3 = myArray3;\n\nvar varlabels           = msg1.payload[0].labels;\nvar varkwh_heat_data    = msg1.payload[0].data[0];\nvar vargraaddagen_data  = msg2.payload[0].data[0];\nvar varkwh_dhw_data     = msg3.payload[0].data[0];\n\nvar m={};\n    m.labels    = varlabels;\n    m.series    = ['DegreeDays (°C)', 'Energy consumption HEAT (kWh)', 'Energy consumption DHW (kWh)'];\n    m.data      = [vargraaddagen_data, varkwh_heat_data, varkwh_dhw_data];\n\nreturn {payload:[m]};",
+        "func": "var myArray1 = global.get(\"kwh_HEAT_31d\",\"file\");\nvar myArray2 = global.get(\"degreedays_31d\",\"file\");\nvar myArray3 = global.get(\"kwh_DHW_31d\",\"file\");\nif (myArray1 === undefined || myArray2 === undefined || myArray3 === undefined)\n    {\n        return null;\n        \n    }\n\nelse\n    {\n        let msg1={}, msg2={}, msg3={};\n        \n        msg1 = myArray1;\n        msg2 = myArray2;\n        msg3 = myArray3;\n        \n        var varlabels           = msg1.payload[0].labels;\n        var varkwh_heat_data    = msg1.payload[0].data[0];\n        var vargraaddagen_data  = msg2.payload[0].data[0];\n        var varkwh_dhw_data     = msg3.payload[0].data[0];\n        \n        var m={};\n            m.labels    = varlabels;\n            m.series    = ['DegreeDays (°C)', 'Energy consumption HEAT (kWh)', 'Energy consumption DHW (kWh)'];\n            m.data      = [vargraaddagen_data, varkwh_heat_data, varkwh_dhw_data];\n        \n        return {payload:[m]};\n    }",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -27838,7 +27838,7 @@
         "z": "ed155b604642d354",
         "g": "6a01f1b80ccf3218",
         "name": "T_outside",
-        "func": "/////\n\n///////////////////////////// MSG = T_outside //////////////////////////////////\n\n\nvar T_outside = global.get('T_outside',\"file\");\nif (isNaN(T_outside)) \n    {   \n        return null;\n    }\n    \nelse\n    {\n\n        msg.payload = T_outside;\n        msg.topic = 'T_outside';\n        Number(msg.payload).toFixed(1);\n        return msg;\n}\n\n////////////////////////////////////////////////////////////////////////////////\n",
+        "func": "/////\n\n///////////////////////////// MSG = T_outside //////////////////////////////////\n\n\nvar T_outside = global.get('T_outside',\"file\");\nif (T_outside === undefined)\n    {   \n        return null;\n    }\n    \nelse\n    {\n\n        msg.payload = T_outside;\n        msg.topic = 'T_outside';\n        Number(msg.payload).toFixed(1);\n        return msg;\n}\n\n////////////////////////////////////////////////////////////////////////////////\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -27861,7 +27861,7 @@
         "z": "ed155b604642d354",
         "g": "6a01f1b80ccf3218",
         "name": "graaddagen_calc",
-        "func": "/////\n\n///////////////////////////// Calculate T_outside //////////////////////////////\n\n\nvar T_outside = global.get('T_outside',\"file\");\nif (isNaN(T_outside)) \n    {   \n        return null;\n    }\n    \nelse\n    {\n        \n////\n\n///////////////////////////// MSG = graaddagen_calc ////////////////////////////\n\n\n        graaddagen_calc = T_outside;\n        graaddagen_calc = 18 - T_outside;\n        if (graaddagen_calc < 0)    \n            {\n                msg.payload = 0;\n                \n            }\n        \n        else\n            {\n                msg.payload = graaddagen_calc;\n                Number(msg.payload).toFixed(1);\n                msg.topic = 'graaddagen_calc';\n                \n                var graaddagen_calc = msg.payload;\n                global.set(\"graaddagen_calc\", graaddagen_calc, \"file\");\n\n                return msg;\n                \n            }\n    }\n\n",
+        "func": "/////\n\n///////////////////////////// Calculate T_outside //////////////////////////////\n\n\nvar T_outside = global.get('T_outside',\"file\");\nif (T_outside === undefined)\n    {   \n        return null;\n    }\n    \nelse\n    {\n        \n////\n\n///////////////////////////// MSG = graaddagen_calc ////////////////////////////\n\n        let msg1={};\n\n        var graaddagen_calc = 18 - T_outside;\n        \n        if (graaddagen_calc < 0)    {graaddagen_calc = 0;}\n                \n        msg1.topic = 'graaddagen_calc';\n        msg1.payload = graaddagen_calc;\n        Number(msg1.payload).toFixed(1);\n        \n        global.set(\"graaddagen_calc\", msg1.payload, \"file\");\n\n        return msg1;\n    }\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -28217,7 +28217,7 @@
         "z": "ed155b604642d354",
         "g": "5ffcc1056a276bf5",
         "name": "Function - bucket 1 + 2 + 3 combined",
-        "func": "var myArray3 = global.get(\"kwh_HEAT_24h\",\"file\");\nvar myArray4 = global.get(\"degreedays_24h\",\"file\");\nvar myArray1 = global.get(\"kwh_DHW_24h\",\"file\");\nlet msg1={}, msg2={}, msg3={};\nmsg1 = myArray3;\nmsg2 = myArray4;\nmsg3 = myArray1;\n\nvar varlabels = msg1.payload[0].labels;\nvar varkwh_data_heat        = msg1.payload[0].data[0];\nvar varkwh_data_dhw         = msg3.payload[0].data[0];\nvar vargraaddagen_data      = msg2.payload[0].data[0];\nvar m={};\n    m.labels    = varlabels;\n    m.series    = ['DegreeDays (°C)', 'Energy consumption HEAT (kWh)',  'Energy consumption DHW (kWh)'];\n    m.data      = [vargraaddagen_data, varkwh_data_heat, varkwh_data_dhw];\n\nreturn {payload:[m]};\n",
+        "func": "var myArray3 = global.get(\"kwh_HEAT_24h\",\"file\");\nvar myArray4 = global.get(\"degreedays_24h\",\"file\");\nvar myArray1 = global.get(\"kwh_DHW_24h\",\"file\");\nif (myArray3 === undefined || myArray4 === undefined || myArray1 === undefined)\n    {\n        return null;\n    }\n        \nelse\n    {\n        let msg1={}, msg2={}, msg3={};\n        msg1 = myArray3;\n        msg2 = myArray4;\n        msg3 = myArray1;\n        \n        var varlabels = msg1.payload[0].labels;\n        var varkwh_data_heat        = msg1.payload[0].data[0];\n        var varkwh_data_dhw         = msg3.payload[0].data[0];\n        var vargraaddagen_data      = msg2.payload[0].data[0];\n        var m={};\n            m.labels    = varlabels;\n            m.series    = ['DegreeDays (°C)', 'Energy consumption HEAT (kWh)',  'Energy consumption DHW (kWh)'];\n            m.data      = [vargraaddagen_data, varkwh_data_heat, varkwh_data_dhw];\n        \n        return {payload:[m]};\n    }",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -28870,49 +28870,6 @@
                 "cff31036dc296d8d",
                 "550d61dd1ac867d3",
                 "1073d8f9d7a572a1"
-            ]
-        ]
-    },
-    {
-        "id": "7859b4e11da15a97",
-        "type": "inject",
-        "z": "ed155b604642d354",
-        "name": "",
-        "props": [
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "111",
-        "x": 410,
-        "y": 1800,
-        "wires": [
-            [
-                "824f860359d733b2"
-            ]
-        ]
-    },
-    {
-        "id": "824f860359d733b2",
-        "type": "function",
-        "z": "ed155b604642d354",
-        "name": "",
-        "func": "delete msg.topic;\nmsg = {\"payload\":[{\"labels\":[\"04-18\",\"04-19\",\"04-20\",\"04-21\",\"04-22\",\"04-23\",\"04-24\",\"04-25\",\"04-26\",\"04-27\",\"04-28\",\"04-29\",\"04-30\",\"05-01\",\"05-02\",\"05-03\",\"05-04\",\"05-05\",\"05-06\",\"05-07\",\"05-08\",\"05-09\",\"05-10\",\"05-11\",\"05-12\",\"05-13\",\"05-14\",\"05-15\",\"05-16\",\"05-17\",\"05-18\"],\"series\":[\"Energy_Consumption_HEAT_kWh\"],\"data\":[[0,0,0,0.202,2.132,0.341,1.312,1.922,1.307,0.411,2.174,4.679,1.984,1.914,2.146,2.656,1.918,2.164,2.777,0.176,1.569,1.547,0.29,0.266,0.067,2.166,0,0,0,0,0]]}],\"topic\":\"Energy_Consumption_HEAT_kWh\",\"_msgid\":\"e541c0849949aecc\",\"_event\":\"node:974b24f717fe8560\",\"bar_keys\":[\"20220418\",\"20220419\",\"20220420\",\"20220421\",\"20220422\",\"20220423\",\"20220424\",\"20220425\",\"20220426\",\"20220427\",\"20220428\",\"20220429\",\"20220430\",\"20220501\",\"20220502\",\"20220503\",\"20220504\",\"20220505\",\"20220506\",\"20220507\",\"20220508\",\"20220509\",\"20220510\",\"20220511\",\"20220512\",\"20220513\",\"20220514\",\"20220515\",\"20220516\",\"20220517\",\"20220518\"],\"data_counter\":[0],\"topics\":[\"Energy_Consumption_HEAT_kWh\"],\"Energy_Consumption_HEAT_kWh_last\":0,\"data_min\":0,\"data_max\":89527530.931,\"data_sum\":89527567.051,\"settings\":{\"unit\":\"\",\"x_size\":\"31\",\"precision\":\"3\",\"is_meter_reading\":false,\"agg_by\":\"sum\"}};\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 620,
-        "y": 1800,
-        "wires": [
-            [
-                "550d61dd1ac867d3"
             ]
         ]
     },
