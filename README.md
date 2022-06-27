@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 17<br/>
+Current version: 17.1<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -448,6 +448,9 @@ All older changelog items are colapsed below. only the latest changelog will alw
 [2022-06-26] (v17) Things done are:
 - Improvement: ability to prioritize SOLAR function above all other functions with a toggle.
 - little clean up. less mqtt messages being sent now.
+
+[2022-06-27] (v17.1) Things done are:
+- BUG: #35. Fixed error in degreedays calculation. it kept throwing an error. https://github.com/edterbak/NodeRed_Heishamon_control/issues/35
 
 ********
 
