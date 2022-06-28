@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 17.2<br/>
+Current version: 17.3<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -451,6 +451,12 @@ All older changelog items are colapsed below. only the latest changelog will alw
 
 [2022-06-27] (v17.1) Things done are:
 - BUG: #35. Fixed error in degreedays calculation. it kept throwing an error. https://github.com/edterbak/NodeRed_Heishamon_control/issues/35
+
+[2022-06-27] (v17.2) Things done are:
+- Silly mistake corrected during export.
+
+[2022-06-27] (v17.3) Things done are:
+- BUG / Improvement: using custom temperature sensor for room / outside temperature. Now automatic.
 
 ********
 
