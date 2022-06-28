@@ -121,13 +121,13 @@ Once imported, you probably need to adjust the settings of the MQTT server. <br/
 Click on the hamburger icon and then configuration nodes. Find the MQTT broker part, double click it and change to your settings.<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard3.png?raw=true)<br/>
 
-Important >> After import and correcting the MQTT settings, you still need to connect two sensors for the functions to work as designed.<br/>
+Important >> After import and correcting the MQTT settings, you could want to connect two custom sensors for the functions to work as designed.<br/>
 1: a good room temperature sensor<br/>
-2: the outside temperature<br/>
-As explained by the image below, you CAN use the Panasonic sensors for this. To do this, in tab (1), WP Control, you only need to remove the LinkIN arrows at (2) and (3), Enable both MQTT sensors in the purple box (4). (double-click on them, on the bottom it says 'disabled', click it to enable)<br/>
+2: a custom outside temperature sensor<br/>
+As explained by the image below, you CAN use the Panasonic sensors for this. To do this, in tab (1), WP Control, you only need to connect your custom sensor to the [CONNECT >> ..... ] nodes. The flows now automatically use the custom sensor when supplied. <br/>
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/External%20sources2.png?raw=true" width=75%> <br/>
 ** Note 1: The Panasonic Room Thermostat is not very accurate which might cause bad temperature control. <br/>
-** Note 2: The Outside temperature sensor on the Panasonic might be subject to heating up due to direct sunlight. This can also have a negative impact on the functions.<br/>
+** Note 2: The Outside temperature sensor on the Panasonic might be subject to heating up due to direct sunlight. This can also have a negative impact on the functions. Personally I use DarkSky sensor for outside temperature, but anything is possible.<br/>
 
 ## How to personalize or customize
 It is advised to create a separate tab for your external sources. Any source available in Node Red can be conditioned and used as a sensor in the functions. If you do this in an 'personal tab', then it is likely easier to update later to newer versions. (no guarantees of course)<br/>
