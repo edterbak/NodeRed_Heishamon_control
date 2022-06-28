@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 17.1<br/>
+Current version: 17.2<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
