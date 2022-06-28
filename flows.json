@@ -3011,10 +3011,10 @@
             "7b3d20aa8c9abb1e",
             "47799574391c942f"
         ],
-        "x": 1224,
-        "y": 79,
-        "w": 1382,
-        "h": 1582
+        "x": 1234,
+        "y": 119,
+        "w": 1372,
+        "h": 1542
     },
     {
         "id": "f9448182b177e40e",
@@ -5254,7 +5254,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "name": "Chart RTC",
-        "func": "var rtc_PV          = global.get('T_woonkamer_BT');                             // Measurement of room temperature\n\nif (rtc_PV === undefined) \n{\n    return null;\n}\n\nelse \n{\n    \n    var rtc_SP          = global.get('WoonkamerSP',\"file\");                         // SetPoint of room temperature.\n    \n    var rtc_t1          = global.get('rtc_t1',\"file\");\n    var rtc_t2          = global.get('rtc_t2',\"file\");\n    var rtc_t3          = global.get('rtc_t3',\"file\");\n    \n    var rtc_t4          = global.get('rtc_t4',\"file\");\n    var rtc_t5          = global.get('rtc_t5',\"file\");\n    var rtc_t6          = global.get('rtc_t6',\"file\");\n    var rtc_on          = global.get('rtc_on',\"file\");\n    var rtc_off          = global.get('rtc_off',\"file\");\n    \n    var rtc_vvw1        = global.get('T_woonkamer_BT3_vvw');                        // Measurement of room temperature \n    var rtc_vvw2        = global.get('T_woonkamer_BT4_vvw');                        // Measurement of room temperature \n    \n    let msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={}, msg9={}, msg10={}, msg11={}, msg12={};\n    \n    \n    msg1.payload = rtc_SP;                                                          //\n    msg1.payload = Number(msg1.payload).toFixed(1);\n    msg1.payload = parseFloat(msg1.payload);\n    msg1.topic='Room SP';                                                                // \n    \n    msg2.payload = rtc_PV;                                                          // \n    msg2.payload = Number(msg2.payload).toFixed(2);\n    msg2.payload = parseFloat(msg2.payload);\n    msg2.topic='Room PV';                                                                // \n    \n    msg3.payload = (rtc_SP+rtc_t1);                                                 // \n    msg3.payload = Number(msg3.payload).toFixed(1);\n    msg3.payload = parseFloat(msg3.payload);\n    msg3.topic='-3';                                                          // \n    \n    msg4.payload = (rtc_SP+rtc_t2);                                                 // \n    msg4.payload = Number(msg4.payload).toFixed(1);\n    msg4.payload = parseFloat(msg4.payload);\n    msg4.topic='-2';                                                          // \n    \n    msg5.payload = (rtc_SP+rtc_t3);                                                 // \n    msg5.payload = Number(msg5.payload).toFixed(1);\n    msg5.payload = parseFloat(msg5.payload);\n    msg5.topic='-1';                                                          // \n    \n    msg6.payload = (rtc_SP+rtc_t4);                                                 // \n    msg6.payload = Number(msg6.payload).toFixed(1);\n    msg6.payload = parseFloat(msg6.payload);\n    msg6.topic='+1';                                                          // \n    \n    msg7.payload = (rtc_SP+rtc_t5);                                                 // \n    msg7.payload = Number(msg7.payload).toFixed(1);\n    msg7.payload = parseFloat(msg7.payload);\n    msg7.topic='+2';                                                          // \n    \n    msg8.payload = (rtc_SP+rtc_t6);                                                 // \n    msg8.payload = Number(msg8.payload).toFixed(1);\n    msg8.payload = parseFloat(msg8.payload);\n    msg8.topic='+3';                                                          // \n    \n    msg9.payload = rtc_vvw1;                                                        // \n    msg9.payload = Number(msg9.payload).toFixed(2);\n    msg9.payload = parseFloat(msg9.payload);\n    msg9.topic='Floor T1';\n    \n    msg10.payload = rtc_vvw2;                                                        // \n    msg10.payload = Number(msg10.payload).toFixed(2);\n    msg10.payload = parseFloat(msg10.payload);\n    msg10.topic='Floor T2';  \n    \n    msg11.payload = (rtc_SP+rtc_on);                                                        // \n    msg11.payload = Number(msg11.payload).toFixed(1);\n    msg11.payload = parseFloat(msg11.payload);\n    msg11.topic='On';  \n    \n    msg12.payload = (rtc_SP+rtc_off);                                                        // \n    msg12.payload = Number(msg12.payload).toFixed(1);\n    msg12.payload = parseFloat(msg12.payload);\n    msg12.topic='Off';  \n    \n    \n    return [[msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10, msg11, msg12], msg2];\n    \n}",
+        "func": "var rtc_PV          = global.get('T_woonkamer_BT',\"file\");                             // Measurement of room temperature\n\nif (rtc_PV === undefined) \n{\n    return null;\n}\n\nelse \n{\n    \n    var rtc_SP          = global.get('WoonkamerSP',\"file\");                         // SetPoint of room temperature.\n    \n    var rtc_t1          = global.get('rtc_t1',\"file\");\n    var rtc_t2          = global.get('rtc_t2',\"file\");\n    var rtc_t3          = global.get('rtc_t3',\"file\");\n    \n    var rtc_t4          = global.get('rtc_t4',\"file\");\n    var rtc_t5          = global.get('rtc_t5',\"file\");\n    var rtc_t6          = global.get('rtc_t6',\"file\");\n    var rtc_on          = global.get('rtc_on',\"file\");\n    var rtc_off          = global.get('rtc_off',\"file\");\n    \n    var rtc_vvw1        = global.get('T_woonkamer_BT3_vvw');                        // Measurement of room temperature \n    var rtc_vvw2        = global.get('T_woonkamer_BT4_vvw');                        // Measurement of room temperature \n    \n    let msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={}, msg9={}, msg10={}, msg11={}, msg12={};\n    \n    \n    msg1.payload = rtc_SP;                                                          //\n    msg1.payload = Number(msg1.payload).toFixed(1);\n    msg1.payload = parseFloat(msg1.payload);\n    msg1.topic='Room SP';                                                                // \n    \n    msg2.payload = rtc_PV;                                                          // \n    msg2.payload = Number(msg2.payload).toFixed(2);\n    msg2.payload = parseFloat(msg2.payload);\n    msg2.topic='Room PV';                                                                // \n    \n    msg3.payload = (rtc_SP+rtc_t1);                                                 // \n    msg3.payload = Number(msg3.payload).toFixed(1);\n    msg3.payload = parseFloat(msg3.payload);\n    msg3.topic='-3';                                                          // \n    \n    msg4.payload = (rtc_SP+rtc_t2);                                                 // \n    msg4.payload = Number(msg4.payload).toFixed(1);\n    msg4.payload = parseFloat(msg4.payload);\n    msg4.topic='-2';                                                          // \n    \n    msg5.payload = (rtc_SP+rtc_t3);                                                 // \n    msg5.payload = Number(msg5.payload).toFixed(1);\n    msg5.payload = parseFloat(msg5.payload);\n    msg5.topic='-1';                                                          // \n    \n    msg6.payload = (rtc_SP+rtc_t4);                                                 // \n    msg6.payload = Number(msg6.payload).toFixed(1);\n    msg6.payload = parseFloat(msg6.payload);\n    msg6.topic='+1';                                                          // \n    \n    msg7.payload = (rtc_SP+rtc_t5);                                                 // \n    msg7.payload = Number(msg7.payload).toFixed(1);\n    msg7.payload = parseFloat(msg7.payload);\n    msg7.topic='+2';                                                          // \n    \n    msg8.payload = (rtc_SP+rtc_t6);                                                 // \n    msg8.payload = Number(msg8.payload).toFixed(1);\n    msg8.payload = parseFloat(msg8.payload);\n    msg8.topic='+3';                                                          // \n    \n    msg9.payload = rtc_vvw1;                                                        // \n    msg9.payload = Number(msg9.payload).toFixed(2);\n    msg9.payload = parseFloat(msg9.payload);\n    msg9.topic='Floor T1';\n    \n    msg10.payload = rtc_vvw2;                                                        // \n    msg10.payload = Number(msg10.payload).toFixed(2);\n    msg10.payload = parseFloat(msg10.payload);\n    msg10.topic='Floor T2';  \n    \n    msg11.payload = (rtc_SP+rtc_on);                                                        // \n    msg11.payload = Number(msg11.payload).toFixed(1);\n    msg11.payload = parseFloat(msg11.payload);\n    msg11.topic='On';  \n    \n    msg12.payload = (rtc_SP+rtc_off);                                                        // \n    msg12.payload = Number(msg12.payload).toFixed(1);\n    msg12.payload = parseFloat(msg12.payload);\n    msg12.topic='Off';  \n    \n    \n    return [[msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10, msg11, msg12], msg2];\n    \n}",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -9291,13 +9291,14 @@
         "links": [
             "5701fbba24da9674",
             "f217f942f56cbfa9",
-            "ee7e3fc1d241d09e"
+            "ee7e3fc1d241d09e",
+            "a0d8b4706f8d61b1"
         ],
-        "x": 1655,
-        "y": 140,
+        "x": 1645,
+        "y": 160,
         "wires": [
             [
-                "9281d7ca9b292f9f"
+                "7b3d20aa8c9abb1e"
             ]
         ]
     },
@@ -11293,7 +11294,7 @@
         "animate": false,
         "className": "",
         "x": 1850,
-        "y": 120,
+        "y": 160,
         "wires": [
             [
                 "47799574391c942f"
@@ -11313,8 +11314,8 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 2090,
-        "y": 160,
+        "x": 2070,
+        "y": 180,
         "wires": [
             [
                 "7b3d20aa8c9abb1e",
@@ -12320,14 +12321,37 @@
             "df9c3a6c0a51be9b",
             "219066f9a22a1c23",
             "6782b41fb1659549",
-            "ede82249f74ed7ec",
-            "23f4dfbc7c8ce972",
-            "4a0c387e1ddc0dc9"
+            "4a0c387e1ddc0dc9",
+            "45e8564bc5779454",
+            "b122913e258a4ec3",
+            "e0563a18c1b95632",
+            "9c94c9210206cd04",
+            "0564f7a406df196e",
+            "41acd570f04f324c",
+            "0fc49e124d4f36cf"
         ],
-        "x": 134,
+        "x": 114,
         "y": 39,
         "w": 1572,
         "h": 322
+    },
+    {
+        "id": "581692e893e2d482",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "5a496e1f1ea93a38",
+        "name": "set.T_woonkamer_BT",
+        "func": "msg.payload = Number(msg.payload).toFixed(2);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'T_woonkamer_BT';\n\n\nif (msg.payload === undefined)                                                      // check if the value is a number. if not, give a warning .\n{\nthrow \"Warning: Room temperature sensor does not apear to be functioning. This means >> The RTC function can not be used!\"\n}\n\nglobal.set(\"T_woonkamer_BT\",msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 300,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "cd2050a861736ec5",
@@ -12922,7 +12946,7 @@
         "z": "a938de76db0b71f6",
         "g": "0077cf76d14c5757",
         "name": "set.Heatpump_State",
-        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'Heatpump_State';\nglobal.set(\"Heatpump_State\",msg.payload,\"file\");\nreturn msg;",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'Heatpump_State';\n\nvar Heatpump_State = global.get(\"Heatpump_State\",\"file\");\n\nif (msg.payload != Heatpump_State)\n{\n    global.set(\"Heatpump_State\",msg.payload,\"file\");\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -13164,9 +13188,9 @@
         "z": "a938de76db0b71f6",
         "g": "0077cf76d14c5757",
         "name": "Heatpump_State",
+        "mode": "link",
         "links": [
-            "5eef2d3a1816ae18",
-            "5f3bf84b25568561"
+            "071ac5a0f08a8fdb"
         ],
         "x": 1515,
         "y": 960,
@@ -13367,30 +13391,9 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1590,
+        "x": 1570,
         "y": 280,
         "wires": []
-    },
-    {
-        "id": "581692e893e2d482",
-        "type": "function",
-        "z": "a938de76db0b71f6",
-        "g": "5a496e1f1ea93a38",
-        "name": "set.T_woonkamer_BT",
-        "func": "msg.payload = Number(msg.payload).toFixed(2);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'T_woonkamer_BT';\nglobal.set(\"T_woonkamer_BT\",msg.payload);\n\nif (msg.payload === isNaN)                                                      // check if the value is a number. if not, give a warning .\n{\nthrow \"Warning: Room temperature sensor does not apear to be functioning. This means >> The RTC function can not be used!\"\n}\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1260,
-        "y": 280,
-        "wires": [
-            [
-                "17580adb3781c57f",
-                "a22898dfdc4ff0ca"
-            ]
-        ]
     },
     {
         "id": "a22898dfdc4ff0ca",
@@ -13404,7 +13407,7 @@
             "02f25651d70831c9",
             "13ef5341a6b8f4e8"
         ],
-        "x": 1535,
+        "x": 1515,
         "y": 320,
         "wires": []
     },
@@ -14182,7 +14185,6 @@
         "id": "6051d06bc75eda72",
         "type": "mqtt in",
         "z": "a938de76db0b71f6",
-        "d": true,
         "g": "5a496e1f1ea93a38",
         "name": "TOP33 - panasonic_heat_pump/main/Room_Thermostat_Temp",
         "topic": "panasonic_heat_pump/main/Room_Thermostat_Temp",
@@ -14193,11 +14195,11 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 390,
-        "y": 280,
+        "x": 370,
+        "y": 300,
         "wires": [
             [
-                "581692e893e2d482"
+                "e0563a18c1b95632"
             ]
         ]
     },
@@ -14206,27 +14208,28 @@
         "type": "link in",
         "z": "a938de76db0b71f6",
         "g": "5a496e1f1ea93a38",
-        "name": "Control_RTC_livingroom_input",
+        "name": "CONNECT >> Custom sensor - livingroom temperature",
         "links": [
             "5b8382118c6c3e1e"
         ],
-        "x": 675,
-        "y": 280,
+        "x": 340,
+        "y": 260,
         "wires": [
             [
-                "581692e893e2d482"
+                "b122913e258a4ec3"
             ]
-        ]
+        ],
+        "l": true
     },
     {
         "id": "e9504e95fc5e9a19",
         "type": "comment",
         "z": "a938de76db0b71f6",
         "g": "5a496e1f1ea93a38",
-        "name": "Enable the Room_Thermostat sensor. Or use your own custom external sensor ",
+        "name": "You can use your own custom external sensors",
         "info": "",
-        "x": 440,
-        "y": 320,
+        "x": 320,
+        "y": 80,
         "wires": [],
         "icon": "node-red/alert.svg"
     },
@@ -14237,8 +14240,8 @@
         "g": "5a496e1f1ea93a38",
         "name": "T room (RTC function)",
         "info": "",
-        "x": 840,
-        "y": 280,
+        "x": 1160,
+        "y": 320,
         "wires": []
     },
     {
@@ -14251,11 +14254,12 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1590,
-        "y": 180,
+        "x": 1570,
+        "y": 140,
         "wires": []
     },
     {
@@ -14263,19 +14267,18 @@
         "type": "function",
         "z": "a938de76db0b71f6",
         "g": "5a496e1f1ea93a38",
-        "name": "set.T_outside",
-        "func": "var TOP14=global.get('TOP14_Outside_Temp'); \nvar T_outside=global.get('dark_sky_temperature'); \n\nif (T_outside===undefined)\n    {T_outside = TOP14;}\n\nmsg.payload = T_outside;\nmsg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'T_outside';\nglobal.set(\"T_outside\",msg.payload,\"file\");\nreturn msg;",
+        "name": "filter T_outside",
+        "func": "var TOP14               =global.get('TOP14_Outside_Temp');                      // The default heatpump outside temperature sensor\nvar T_outside_custom    =global.get('T_outside_custom');                        // Custom outside temperature sensor\n\nvar T_outside = T_outside_custom;\n\nif (T_outside === undefined )\n    {\n        T_outside = TOP14;\n    }\n\n\nlet msg1={};\n\nmsg1.payload = T_outside;\nmsg1.payload = Number(msg1.payload).toFixed(1);\nmsg1.payload = parseFloat(msg1.payload);\nmsg1.topic = 'T_outside';\n\nvar stored_value        = global.get('T_outside',\"file\");\n\nif (stored_value != T_outside)\n{\n    global.set(\"T_outside\",msg1.payload,\"file\");\n    \n}\n\n\nreturn msg1;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1240,
-        "y": 180,
+        "x": 1140,
+        "y": 140,
         "wires": [
             [
-                "fe6995b4c379cfd7",
-                "d6a9c376dde9c43f"
+                "41acd570f04f324c"
             ]
         ]
     },
@@ -14291,8 +14294,8 @@
             "6401ec360e3666b2",
             "6a3c45d7a5c5ab3d"
         ],
-        "x": 1535,
-        "y": 220,
+        "x": 1515,
+        "y": 180,
         "wires": []
     },
     {
@@ -14309,8 +14312,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 350,
-        "y": 180,
+        "x": 330,
+        "y": 160,
         "wires": [
             [
                 "4a0c387e1ddc0dc9"
@@ -14322,17 +14325,18 @@
         "type": "link in",
         "z": "a938de76db0b71f6",
         "g": "5a496e1f1ea93a38",
-        "name": "",
+        "name": "CONNECT >> Custom sensor - outside temperature",
         "links": [
             "3a1c7ae1443e0666"
         ],
-        "x": 855,
-        "y": 140,
+        "x": 330,
+        "y": 120,
         "wires": [
             [
-                "3d671794ce872bcd"
+                "45e8564bc5779454"
             ]
-        ]
+        ],
+        "l": true
     },
     {
         "id": "6782b41fb1659549",
@@ -14341,31 +14345,8 @@
         "g": "5a496e1f1ea93a38",
         "name": "T outside sensors (WAR function)",
         "info": "",
-        "x": 970,
+        "x": 1190,
         "y": 180,
-        "wires": []
-    },
-    {
-        "id": "ede82249f74ed7ec",
-        "type": "comment",
-        "z": "a938de76db0b71f6",
-        "g": "5a496e1f1ea93a38",
-        "name": "Enable the Outside_temperature sensor. Or use your own custom external sensor ",
-        "info": "",
-        "x": 440,
-        "y": 220,
-        "wires": [],
-        "icon": "node-red/alert.svg"
-    },
-    {
-        "id": "23f4dfbc7c8ce972",
-        "type": "comment",
-        "z": "a938de76db0b71f6",
-        "g": "5a496e1f1ea93a38",
-        "name": "MANDATORY",
-        "info": "# Mandatory",
-        "x": 230,
-        "y": 80,
         "wires": []
     },
     {
@@ -15471,14 +15452,14 @@
         "z": "a938de76db0b71f6",
         "g": "5a496e1f1ea93a38",
         "name": "set.TOP14_Outside_Temp",
-        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"TOP14_Outside_Temp\",msg.payload);\nreturn msg;",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nvar stored_value = global.get('TOP14_Outside_Temp');\nif (stored_value != msg.payload)\n{\n    global.set(\"TOP14_Outside_Temp\",msg.payload);\n    \n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
-        "y": 180,
+        "x": 760,
+        "y": 160,
         "wires": [
             [
                 "3d671794ce872bcd"
@@ -16281,6 +16262,142 @@
         "wires": [
             [
                 "3af8890722ca7be0"
+            ]
+        ]
+    },
+    {
+        "id": "45e8564bc5779454",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "5a496e1f1ea93a38",
+        "name": "set.T_outside_custom",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\n\nvar stored_value = global.get('T_outside_custom');\nif (stored_value != msg.payload)\n{\n    global.set(\"T_outside_custom\",msg.payload);\n    \n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 120,
+        "wires": [
+            [
+                "3d671794ce872bcd"
+            ]
+        ]
+    },
+    {
+        "id": "b122913e258a4ec3",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "5a496e1f1ea93a38",
+        "name": "set.T_room_custom",
+        "func": "msg.payload = Number(msg.payload).toFixed(2);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'T_room_custom';\n\nvar stored_value = global.get('T_room_custom');\nif (stored_value != msg.payload)\n{\n    global.set(\"T_room_custom\",msg.payload);\n    \n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 260,
+        "wires": [
+            [
+                "9c94c9210206cd04"
+            ]
+        ]
+    },
+    {
+        "id": "e0563a18c1b95632",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "5a496e1f1ea93a38",
+        "name": "set.TOP33_Room_Thermostat_Temp",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nvar stored_value = global.get('TOP33_Room_Thermostat_Temp');\nif (stored_value != msg.payload)\n{\n    global.set(\"TOP33_Room_Thermostat_Temp\",msg.payload);\n    \n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 300,
+        "wires": [
+            [
+                "9c94c9210206cd04"
+            ]
+        ]
+    },
+    {
+        "id": "9c94c9210206cd04",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "5a496e1f1ea93a38",
+        "name": "filter T_woonkamer_BT",
+        "func": "var TOP33               = global.get('TOP33_Room_Thermostat_Temp');             // The default heatpump outside temperature sensor\nvar T_room_custom       = global.get('T_room_custom');                          // Custom outside temperature sensor\n\nvar T_woonkamer_BT = T_room_custom;\n\nif (T_woonkamer_BT === undefined )\n    {\n        T_woonkamer_BT = TOP33;\n    }\n    \nif (T_woonkamer_BT === undefined )\n    {\n        return null;\n    }\n\nlet msg1={};\n\nmsg1.payload = T_woonkamer_BT;\nmsg1.payload = Number(msg1.payload).toFixed(2);\nmsg1.payload = parseFloat(msg1.payload);\nmsg1.topic = 'T_woonkamer_BT';\n\nvar stored_value        = global.get('T_woonkamer_BT',\"file\");\n\nif (stored_value != T_woonkamer_BT)\n{\n    global.set(\"T_woonkamer_BT\",msg1.payload,\"file\");\n    \n}\n\nreturn msg1;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 280,
+        "wires": [
+            [
+                "0fc49e124d4f36cf"
+            ]
+        ]
+    },
+    {
+        "id": "0564f7a406df196e",
+        "type": "comment",
+        "z": "a938de76db0b71f6",
+        "g": "5a496e1f1ea93a38",
+        "name": "You can use your own custom external sensors",
+        "info": "",
+        "x": 320,
+        "y": 220,
+        "wires": [],
+        "icon": "node-red/alert.svg"
+    },
+    {
+        "id": "41acd570f04f324c",
+        "type": "rbe",
+        "z": "a938de76db0b71f6",
+        "g": "5a496e1f1ea93a38",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1370,
+        "y": 140,
+        "wires": [
+            [
+                "fe6995b4c379cfd7",
+                "d6a9c376dde9c43f"
+            ]
+        ]
+    },
+    {
+        "id": "0fc49e124d4f36cf",
+        "type": "rbe",
+        "z": "a938de76db0b71f6",
+        "g": "5a496e1f1ea93a38",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1370,
+        "y": 280,
+        "wires": [
+            [
+                "17580adb3781c57f",
+                "a22898dfdc4ff0ca"
             ]
         ]
     },
