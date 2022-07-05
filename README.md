@@ -196,7 +196,7 @@ This function is present but not advised to be used yet. I have not tested this 
 The aim of this function is to increase efficiency (and save cost) by utilizing solar energy as much as possible.
 When there is solar energy in abundance, you can tell the heatpump to use that energy to heat up your DHW water tank. 
 To determine if there is enough solar energy, you need any form of power measurement. This can be a P1 power meter, or a meter directly behind your panels.<br/>
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/solar6.png?raw=true" width=80%>
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/solar7.png?raw=true" width=80%>
 
 ## Scheduler
 I have added an option to create 10x schedules (in dashboard) for:
