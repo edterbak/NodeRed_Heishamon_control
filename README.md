@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 17.3<br/>
+Current version: 17.4<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -457,6 +457,9 @@ All older changelog items are colapsed below. only the latest changelog will alw
 
 [2022-06-27] (v17.3) Things done are:
 - BUG / Improvement: using custom temperature sensor for room / outside temperature. Now automatic.
+
+[2022-07-7] (v17.4) Things done are:
+- GUI: mostly layout improvements in solar function tab.
 
 ********
 
