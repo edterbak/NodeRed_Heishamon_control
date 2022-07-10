@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 17.4<br/>
+Current version: 17.5<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -458,8 +458,12 @@ All older changelog items are colapsed below. only the latest changelog will alw
 [2022-06-27] (v17.3) Things done are:
 - BUG / Improvement: using custom temperature sensor for room / outside temperature. Now automatic.
 
-[2022-07-7] (v17.4) Things done are:
+[2022-07-07] (v17.4) Things done are:
 - GUI: mostly layout improvements in solar function tab.
+
+[2022-07-10] (v17.5) Things done are:
+- BUG: Fixed a bug where the RTC function was not working correctly. Cause was linking to an incorrect variable.
+- Enhancement: automatic detection of external sensor. For room temperature sensor and for outside temperature sensor.
 
 ********
 
