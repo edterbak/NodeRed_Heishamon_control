@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 17.5<br/>
+Current version: 18.0<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -437,7 +437,6 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Feature request: Compressor runtime added to home dashboard (https://github.com/edterbak/NodeRed_Heishamon_control/issues/28)
 - Feature request: remove Fan 2 from home dashboard (https://github.com/edterbak/NodeRed_Heishamon_control/issues/28)
 - Improvement: Logging - SOLAR function triggers and actions now loggged.
-</details><br/>
 
 [2022-06-07] (v16) Things done are:
 - Improvement: Logging - SOLAR function triggers and actions now loggged even better. In other section the logging has improved as well.
@@ -464,6 +463,17 @@ All older changelog items are colapsed below. only the latest changelog will alw
 [2022-07-10] (v17.5) Things done are:
 - BUG: Fixed a bug where the RTC function was not working correctly. Cause was linking to an incorrect variable.
 - Enhancement: automatic detection of external sensor. For room temperature sensor and for outside temperature sensor.
+</details><br/>
+
+
+[2022-07-14] (v18.0) Things done are:
+- BREAKING CHANGE (Solar function)! You need to reconnect and setup the P1 measurements to the flow in WP Solar tab. The correction ( x 1/-1 or x 1000/-1000 ) you put in, probably need to be adjusted. 
+- BREAKING CHANGE (Solar function)! In the dashboard you need to setup the threshold and method again, even if they seem correct. Just reapply them. 
+- The mentioned breaking changes are compared to v17.5 and earlier
+- Enhancement: Solar function: a 3rd option as trigger is added. Now you can use Live value (kW) / kWh result of today / kWh exported. 
+- Enhancement: HELP sections are added to for the most part. 
+- Enhancement: Various tabs have layout improvements.
+
 
 ********
 
