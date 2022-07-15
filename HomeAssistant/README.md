@@ -9,6 +9,8 @@ in HomeAssistant, the configuration section, state the required npm modules.
 npm_packages:
   - node-red-dashboard
   - node-red-contrib-moment
+  - node-red-contrib-noop
+  - node-red-contrib-dashboard-bar-chart-data
 ```
 
 Then SSH into your homeassistant instance through Putty or the the SSH Add-on.
