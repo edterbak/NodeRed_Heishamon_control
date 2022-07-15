@@ -109,7 +109,7 @@ node-red-contrib-dashboard-bar-chart-data (from v13+)<br/>
 https://flows.nodered.org/node/node-red-contrib-dashboard-bar-chart-data <br/>
 
 ## How to install the NR flows
-Dashboard: http://IP:1880/ui
+Dashboard: http://IP:1880/ui	(For HomeAssistant: http://IP:1880/endpoint/ui)
 Flows: http://IP:1880/#flow
 
 * []() In NR, click on the hamburger icon (three horizontal stripes) in the top right corner
