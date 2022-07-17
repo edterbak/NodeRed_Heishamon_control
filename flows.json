@@ -12816,37 +12816,12 @@
             "3bab99eab669bd21",
             "182df2f14a9ca82f",
             "ce9434fc05a5b849",
-            "f0583a8e8a92ec90",
             "bf5c0eefd9f68f35"
         ],
         "x": 134,
         "y": 2359,
-        "w": 1392,
+        "w": 1162,
         "h": 982
-    },
-    {
-        "id": "f0583a8e8a92ec90",
-        "type": "trigger",
-        "z": "a938de76db0b71f6",
-        "g": "cd2050a861736ec5",
-        "name": "",
-        "op1": "1",
-        "op2": "0",
-        "op1type": "val",
-        "op2type": "val",
-        "duration": "250",
-        "extend": "false",
-        "overrideDelay": "false",
-        "units": "ms",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 1420,
-        "y": 2900,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "94f57429e16c8e82",
@@ -12899,29 +12874,6 @@
         "h": 302
     },
     {
-        "id": "f2aa79821dfd1110",
-        "type": "group",
-        "z": "a938de76db0b71f6",
-        "g": "992121a08b66faa3",
-        "name": "Relative humidity > Dewpoint calculation",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "2bb5988706fb572a",
-            "37a369fd9ad03085",
-            "0df0e84326dbeec7",
-            "f5ab18df4746f79b",
-            "cdd89d5c10c71407",
-            "030fbd5026e5a295",
-            "7122d217051222ff"
-        ],
-        "x": 2374,
-        "y": 79,
-        "w": 1172,
-        "h": 162
-    },
-    {
         "id": "992121a08b66faa3",
         "type": "group",
         "z": "a938de76db0b71f6",
@@ -12961,12 +12913,37 @@
             "f5ccbd22c1c9fe22",
             "6fc958da73fbdf09",
             "4dfb2312d5cb06d5",
-            "f2aa79821dfd1110"
+            "f2aa79821dfd1110",
+            "1d63998e541e4d5a",
+            "dea135ecc9872411"
         ],
         "x": 2348,
         "y": 53,
         "w": 1738,
         "h": 888
+    },
+    {
+        "id": "f2aa79821dfd1110",
+        "type": "group",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "Relative humidity > Dewpoint calculation",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2bb5988706fb572a",
+            "37a369fd9ad03085",
+            "0df0e84326dbeec7",
+            "f5ab18df4746f79b",
+            "cdd89d5c10c71407",
+            "030fbd5026e5a295",
+            "7122d217051222ff"
+        ],
+        "x": 2374,
+        "y": 79,
+        "w": 1172,
+        "h": 162
     },
     {
         "id": "2c893b32851ad2a2",
@@ -17410,7 +17387,8 @@
         "y": 120,
         "wires": [
             [
-                "37a369fd9ad03085"
+                "37a369fd9ad03085",
+                "1d63998e541e4d5a"
             ]
         ],
         "l": true
@@ -17428,7 +17406,8 @@
         "y": 200,
         "wires": [
             [
-                "0df0e84326dbeec7"
+                "0df0e84326dbeec7",
+                "dea135ecc9872411"
             ]
         ],
         "l": true
@@ -17656,7 +17635,7 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "name": "",
-        "func": "var FloorCoolDelta                      = global.get('FloorCoolDelta',\"file\");\nvar Z1_Cool_Request_Temp                = global.get(\"Z1_Cool_Request_Temp\");\nvar dew_point                           = flow.get(\"dew_point\");\ndew_point                               = dew_point.payload;\nlet msg1={};\nif (FloorCoolDelta !== undefined && Z1_Cool_Request_Temp !== undefined && dew_point !== undefined)\n{\n    if (msg.payload >= (dew_point + FloorCoolDelta))\n        {\n            return msg;\n            \n        }\n    \n    else\n        {\n            msg.payload = (dew_point + FloorCoolDelta);\n            msg.payload = Math.ceil(msg.payload);\n            return msg;\n            \n        }\n\n}",
+        "func": "var FloorCoolDelta                      = global.get('FloorCoolDelta',\"file\");\nvar Z1_Cool_Request_Temp                = global.get(\"Z1_Cool_Request_Temp\");\nvar dew_point                           = flow.get(\"dew_point\");\ndew_point                               = dew_point.payload;\nlet msg1={};\n\n\nif (FloorCoolDelta !== undefined && Z1_Cool_Request_Temp !== undefined && dew_point !== undefined)\n{\n    if (msg.payload >= (dew_point + FloorCoolDelta))\n        {\n            return msg;\n            \n        }\n    \n    else\n        {\n            msg.payload = (dew_point + FloorCoolDelta);\n            msg.payload = Math.ceil(msg.payload);\n            return msg;\n            \n        }\n\n}\nelse \n{\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -17715,7 +17694,7 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "group": "830a81a1c54c6ef5",
-        "order": 6,
+        "order": 8,
         "width": 0,
         "height": 0,
         "name": "",
@@ -17748,6 +17727,42 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "1d63998e541e4d5a",
+        "type": "ui_text",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "830a81a1c54c6ef5",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Humidity",
+        "format": "{{msg.payload}} %",
+        "layout": "row-spread",
+        "className": "",
+        "x": 3700,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "dea135ecc9872411",
+        "type": "ui_text",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "830a81a1c54c6ef5",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Room Temperature",
+        "format": "{{msg.payload}} °C",
+        "layout": "row-spread",
+        "className": "",
+        "x": 3730,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "35d210f042827344",
