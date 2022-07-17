@@ -2610,7 +2610,8 @@
             "719e11414721599e",
             "081dae9f3555ade6",
             "b51f6522ce8b3103",
-            "05f3b66c7b91e0c6"
+            "05f3b66c7b91e0c6",
+            "5bada38f261d4a06"
         ],
         "x": 114,
         "y": 1279,
@@ -3141,7 +3142,8 @@
             "3217c29f6d5b7567",
             "d4787944cad86813",
             "413c215e9533c864",
-            "4a3be4a49807cbac"
+            "4a3be4a49807cbac",
+            "365096b9acf7e2f7"
         ],
         "x": 1188,
         "y": 1799,
@@ -3959,7 +3961,7 @@
         "y": 1380,
         "wires": [
             [
-                "081dae9f3555ade6"
+                "5bada38f261d4a06"
             ]
         ]
     },
@@ -4303,8 +4305,8 @@
         "max": "35",
         "step": 1,
         "className": "",
-        "x": 3080,
-        "y": 100,
+        "x": 3130,
+        "y": 60,
         "wires": [
             [
                 "9535722dad6d0995"
@@ -11459,7 +11461,7 @@
         "g": "f3ab3ae5d93d2da8",
         "name": "Refresh",
         "group": "6cad29eeb8b60520",
-        "order": 7,
+        "order": 8,
         "width": 2,
         "height": 1,
         "passthru": false,
@@ -11487,8 +11489,8 @@
         "z": "8c9d42231fd19d3c",
         "g": "f3ab3ae5d93d2da8",
         "group": "6cad29eeb8b60520",
-        "order": 4,
-        "width": 8,
+        "order": 5,
+        "width": 13,
         "height": 1,
         "name": "filler",
         "label": "",
@@ -11505,7 +11507,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "f3ab3ae5d93d2da8",
         "group": "6cad29eeb8b60520",
-        "order": 3,
+        "order": 4,
         "width": 1,
         "height": 1,
         "name": "filler",
@@ -11624,7 +11626,7 @@
         "g": "f3ab3ae5d93d2da8",
         "name": "Clear",
         "group": "6cad29eeb8b60520",
-        "order": 5,
+        "order": 6,
         "width": 2,
         "height": 1,
         "passthru": false,
@@ -11653,7 +11655,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "f3ab3ae5d93d2da8",
         "group": "6cad29eeb8b60520",
-        "order": 6,
+        "order": 7,
         "width": 1,
         "height": 1,
         "name": "filler",
@@ -11671,7 +11673,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "f3ab3ae5d93d2da8",
         "group": "6cad29eeb8b60520",
-        "order": 8,
+        "order": 9,
         "width": 1,
         "height": 1,
         "name": "filler",
@@ -11788,9 +11790,9 @@
         "z": "8c9d42231fd19d3c",
         "g": "f3ab3ae5d93d2da8",
         "group": "6cad29eeb8b60520",
-        "order": 2,
-        "width": 15,
-        "height": 14,
+        "order": 3,
+        "width": 20,
+        "height": 17,
         "name": "",
         "label": "",
         "format": "{{msg.payload[0]}}<br/>{{msg.payload[1]}}<br/>{{msg.payload[2]}}<br/>{{msg.payload[3]}}<br/>{{msg.payload[4]}}<br/>{{msg.payload[5]}}<br/>{{msg.payload[6]}}<br/>{{msg.payload[7]}}<br/>{{msg.payload[8]}}<br/>{{msg.payload[9]}}<br/>{{msg.payload[10]}}<br/>{{msg.payload[11]}}<br/>{{msg.payload[12]}}<br/>{{msg.payload[13]}}<br/>{{msg.payload[14]}}<br/>{{msg.payload[15]}}<br/>{{msg.payload[16]}}<br/>{{msg.payload[17]}}<br/>{{msg.payload[18]}}<br/>{{msg.payload[19]}}<br/>{{msg.payload[20]}}<br/>{{msg.payload[21]}}<br/>{{msg.payload[22]}}<br/>{{msg.payload[23]}}<br/>{{msg.payload[24]}}<br/>{{msg.payload[25]}}<br/>{{msg.payload[26]}}<br/>{{msg.payload[27]}}<br/>{{msg.payload[28]}}<br/>{{msg.payload[29]}}<br/>{{msg.payload[30]}}<br/>{{msg.payload[31]}}<br/>{{msg.payload[32]}}<br/>{{msg.payload[33]}}<br/>{{msg.payload[34]}}<br/>{{msg.payload[35]}}<br/>{{msg.payload[36]}}<br/>",
@@ -11807,10 +11809,10 @@
         "g": "f3ab3ae5d93d2da8",
         "group": "6cad29eeb8b60520",
         "name": "",
-        "order": 1,
-        "width": 15,
+        "order": 2,
+        "width": 20,
         "height": 1,
-        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 10px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 3px solid #a39d99;\n    box-shadow: 0 0 5px #a39d99\";\n\t>\n<right>[Date] [Time] - [Source] or [SET command]: [Value/Text]</right> \n</html>\n\n\n<style>\n    [node-id=\"d4787944cad86813\"] p.value {\n        font-weight: normal;\n    }\n    [node-id=\"d4787944cad86813\"] p.label {\n        font-weight: bold;\n    }\n</style>\n",
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 10px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 3px solid #a39d99;\n    box-shadow: 0 0 5px #a39d99\";\n\t>\n<right></right> \n</html>\n\n\n<style>\n    [node-id=\"d4787944cad86813\"] p.value {\n        font-weight: normal;\n    }\n    [node-id=\"d4787944cad86813\"] p.label {\n        font-weight: bold;\n    }\n</style>\n",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -12501,6 +12503,328 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "87250b8b6ece1c3f",
+        "type": "mqtt out",
+        "z": "8c9d42231fd19d3c",
+        "name": "SET6 SetZ1CoolRequestTemperature",
+        "topic": "panasonic_heat_pump/commands/SetZ1CoolRequestTemperature",
+        "qos": "",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "92e5b2c.00a8b5",
+        "x": 3730,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "90bba3e8f0f63067",
+        "type": "ui_numeric",
+        "z": "8c9d42231fd19d3c",
+        "name": "",
+        "label": "COOL (SP)",
+        "tooltip": "",
+        "group": "273f74f363a57507",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "5",
+        "max": "20",
+        "step": 1,
+        "className": "",
+        "x": 3190,
+        "y": 1800,
+        "wires": [
+            [
+                "e340453a462836bc"
+            ]
+        ]
+    },
+    {
+        "id": "e340453a462836bc",
+        "type": "trigger",
+        "z": "8c9d42231fd19d3c",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "3",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 3340,
+        "y": 1800,
+        "wires": [
+            [
+                "a223a7e41faad5ef"
+            ]
+        ]
+    },
+    {
+        "id": "a223a7e41faad5ef",
+        "type": "rbe",
+        "z": "8c9d42231fd19d3c",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 3490,
+        "y": 1800,
+        "wires": [
+            [
+                "87250b8b6ece1c3f",
+                "7c8962de3d041cba"
+            ]
+        ]
+    },
+    {
+        "id": "5edac14d1e949422",
+        "type": "debug",
+        "z": "8c9d42231fd19d3c",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3650,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "3288269f0e45b644",
+        "type": "mqtt in",
+        "z": "8c9d42231fd19d3c",
+        "name": "TOP28 - panasonic_heat_pump/main/Z1_Cool_Request_Temp",
+        "topic": "panasonic_heat_pump/main/Z1_Cool_Request_Temp",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 3150,
+        "y": 1720,
+        "wires": [
+            [
+                "5edac14d1e949422",
+                "cd16ed36a7781d40"
+            ]
+        ]
+    },
+    {
+        "id": "7c8962de3d041cba",
+        "type": "debug",
+        "z": "8c9d42231fd19d3c",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3650,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "cd16ed36a7781d40",
+        "type": "delay",
+        "z": "8c9d42231fd19d3c",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "30",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 3000,
+        "y": 1800,
+        "wires": [
+            [
+                "90bba3e8f0f63067"
+            ]
+        ]
+    },
+    {
+        "id": "1416db1ddc5ccc64",
+        "type": "ui_text",
+        "z": "8c9d42231fd19d3c",
+        "group": "273f74f363a57507",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "name": "COOL Status",
+        "label": "COOL Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 3710,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "4f9b7c0c084cdf8d",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "num",
+                "to": "OFF",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "ON",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3520,
+        "y": 1920,
+        "wires": [
+            [
+                "1416db1ddc5ccc64"
+            ]
+        ]
+    },
+    {
+        "id": "858156da56848039",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "name": "Check operation mode",
+        "func": "var OM = global.get('Operating_Mode_State',\"file\");\nlet msg1={};\nif (OM == 1 || OM == 5 || OM == 7 || OM == 8)\n{\n    msg1.payload = OM;\n    return [msg,msg1];\n}\nelse\n{\n    msg.payload = 1;\n    return msg;}\n\n\n// Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3260,
+        "y": 1920,
+        "wires": [
+            [
+                "4f9b7c0c084cdf8d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "32693e0b1629f74a",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "name": "",
+        "links": [
+            "aec0cb2b18e02d8b"
+        ],
+        "x": 3015,
+        "y": 1920,
+        "wires": [
+            [
+                "858156da56848039"
+            ]
+        ]
+    },
+    {
+        "id": "5bada38f261d4a06",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "e7187e0c9dc038f0",
+        "name": "Check operation mode",
+        "func": "var OM = global.get('Operating_Mode_State',\"file\");\nlet msg1={};\nif (OM == 0 || OM == 2 || OM == 3 || OM == 4 || OM == 6)\n{\n    msg1.payload = OM;\n    return [msg,msg1];\n}\nelse\n{\n    msg.payload = 1;\n    return msg;}\n\n\n// Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 1380,
+        "wires": [
+            [
+                "081dae9f3555ade6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b605c2eb6c77bec7",
+        "type": "ui_template",
+        "z": "8c9d42231fd19d3c",
+        "group": "273f74f363a57507",
+        "name": "Line - Setup ",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 3132,
+        "y": 1983.25,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "365096b9acf7e2f7",
+        "type": "ui_text",
+        "z": "8c9d42231fd19d3c",
+        "g": "f3ab3ae5d93d2da8",
+        "group": "6cad29eeb8b60520",
+        "order": 1,
+        "width": 20,
+        "height": 1,
+        "name": "filler",
+        "label": "[Date] [Time] - [Source] or [SET command]: [Value/Text]",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 2470,
+        "y": 1860,
+        "wires": []
     },
     {
         "id": "a938de76db0b71f6",
@@ -13501,7 +13825,8 @@
             "5eef2d3a1816ae18",
             "6bdcf84066368733",
             "b51f6522ce8b3103",
-            "5f3bf84b25568561"
+            "5f3bf84b25568561",
+            "32693e0b1629f74a"
         ],
         "x": 1515,
         "y": 1520,
@@ -31681,7 +32006,7 @@
         "height": 7,
         "label": "Today's result (kWh)",
         "chartType": "line",
-        "legend": "true",
+        "legend": "false",
         "xformat": "HH:mm",
         "interpolate": "linear",
         "nodata": "Waiting for data ...  (will start at midnight) ",
@@ -33035,7 +33360,7 @@
         "type": "debug",
         "z": "966985d68ebb4990",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -33051,7 +33376,7 @@
         "type": "debug",
         "z": "966985d68ebb4990",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -33067,7 +33392,7 @@
         "type": "debug",
         "z": "966985d68ebb4990",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -34447,7 +34772,7 @@
     {
         "id": "1179fa790d2d89ca",
         "type": "ui_group",
-        "name": "Advanced Functions",
+        "name": "HEAT Functions",
         "tab": "a5be8588.b8fbc8",
         "order": 4,
         "disp": true,
@@ -34572,7 +34897,18 @@
         "tab": "ef5f47f5f4dd9eb3",
         "order": 1,
         "disp": false,
-        "width": 15,
+        "width": 20,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "273f74f363a57507",
+        "type": "ui_group",
+        "name": "COOL Functions",
+        "tab": "a5be8588.b8fbc8",
+        "order": 5,
+        "disp": true,
+        "width": "6",
         "collapse": false,
         "className": ""
     },
