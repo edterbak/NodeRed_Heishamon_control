@@ -3026,7 +3026,8 @@
             "4694bfeaa76d43f1",
             "db41038f69a63144",
             "f66e9fca72401ab4",
-            "9e59dd1bbe56fc88"
+            "9e59dd1bbe56fc88",
+            "3ed1fd544412f391"
         ],
         "x": 1174,
         "y": 119,
@@ -8207,7 +8208,9 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "FloorCoolDelta",
+        "mode": "link",
         "links": [
+            "25041e53f134e3fb",
             "c32298a87a338b1d"
         ],
         "x": 2195,
@@ -12505,268 +12508,6 @@
         ]
     },
     {
-        "id": "87250b8b6ece1c3f",
-        "type": "mqtt out",
-        "z": "8c9d42231fd19d3c",
-        "name": "SET6 SetZ1CoolRequestTemperature",
-        "topic": "panasonic_heat_pump/commands/SetZ1CoolRequestTemperature",
-        "qos": "",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "92e5b2c.00a8b5",
-        "x": 3730,
-        "y": 1800,
-        "wires": []
-    },
-    {
-        "id": "90bba3e8f0f63067",
-        "type": "ui_numeric",
-        "z": "8c9d42231fd19d3c",
-        "name": "",
-        "label": "COOL (SP)",
-        "tooltip": "",
-        "group": "273f74f363a57507",
-        "order": 3,
-        "width": 6,
-        "height": 1,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": "5",
-        "max": "20",
-        "step": 1,
-        "className": "",
-        "x": 3190,
-        "y": 1800,
-        "wires": [
-            [
-                "e340453a462836bc"
-            ]
-        ]
-    },
-    {
-        "id": "e340453a462836bc",
-        "type": "trigger",
-        "z": "8c9d42231fd19d3c",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "payl",
-        "duration": "3",
-        "extend": true,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 3340,
-        "y": 1800,
-        "wires": [
-            [
-                "a223a7e41faad5ef"
-            ]
-        ]
-    },
-    {
-        "id": "a223a7e41faad5ef",
-        "type": "rbe",
-        "z": "8c9d42231fd19d3c",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 3490,
-        "y": 1800,
-        "wires": [
-            [
-                "87250b8b6ece1c3f",
-                "7c8962de3d041cba"
-            ]
-        ]
-    },
-    {
-        "id": "5edac14d1e949422",
-        "type": "debug",
-        "z": "8c9d42231fd19d3c",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 3650,
-        "y": 1720,
-        "wires": []
-    },
-    {
-        "id": "3288269f0e45b644",
-        "type": "mqtt in",
-        "z": "8c9d42231fd19d3c",
-        "name": "TOP28 - panasonic_heat_pump/main/Z1_Cool_Request_Temp",
-        "topic": "panasonic_heat_pump/main/Z1_Cool_Request_Temp",
-        "qos": "0",
-        "datatype": "auto",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 3150,
-        "y": 1720,
-        "wires": [
-            [
-                "5edac14d1e949422",
-                "cd16ed36a7781d40"
-            ]
-        ]
-    },
-    {
-        "id": "7c8962de3d041cba",
-        "type": "debug",
-        "z": "8c9d42231fd19d3c",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 3650,
-        "y": 1760,
-        "wires": []
-    },
-    {
-        "id": "cd16ed36a7781d40",
-        "type": "delay",
-        "z": "8c9d42231fd19d3c",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "30",
-        "rateUnits": "minute",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": true,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 3000,
-        "y": 1800,
-        "wires": [
-            [
-                "90bba3e8f0f63067"
-            ]
-        ]
-    },
-    {
-        "id": "1416db1ddc5ccc64",
-        "type": "ui_text",
-        "z": "8c9d42231fd19d3c",
-        "group": "273f74f363a57507",
-        "order": 1,
-        "width": 6,
-        "height": 1,
-        "name": "COOL Status",
-        "label": "COOL Status",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 3710,
-        "y": 1920,
-        "wires": []
-    },
-    {
-        "id": "4f9b7c0c084cdf8d",
-        "type": "change",
-        "z": "8c9d42231fd19d3c",
-        "name": "",
-        "rules": [
-            {
-                "t": "change",
-                "p": "payload",
-                "pt": "msg",
-                "from": "1",
-                "fromt": "num",
-                "to": "OFF",
-                "tot": "str"
-            },
-            {
-                "t": "change",
-                "p": "payload",
-                "pt": "msg",
-                "from": "0",
-                "fromt": "num",
-                "to": "ON",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 3520,
-        "y": 1920,
-        "wires": [
-            [
-                "1416db1ddc5ccc64"
-            ]
-        ]
-    },
-    {
-        "id": "858156da56848039",
-        "type": "function",
-        "z": "8c9d42231fd19d3c",
-        "name": "Check operation mode",
-        "func": "var OM = global.get('Operating_Mode_State',\"file\");\nlet msg1={};\nif (OM == 1 || OM == 5 || OM == 7 || OM == 8)\n{\n    msg1.payload = OM;\n    return [msg,msg1];\n}\nelse\n{\n    msg.payload = 1;\n    return msg;}\n\n\n// Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n",
-        "outputs": 2,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 3260,
-        "y": 1920,
-        "wires": [
-            [
-                "4f9b7c0c084cdf8d"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "32693e0b1629f74a",
-        "type": "link in",
-        "z": "8c9d42231fd19d3c",
-        "name": "",
-        "links": [
-            "aec0cb2b18e02d8b"
-        ],
-        "x": 3015,
-        "y": 1920,
-        "wires": [
-            [
-                "858156da56848039"
-            ]
-        ]
-    },
-    {
         "id": "5bada38f261d4a06",
         "type": "function",
         "z": "8c9d42231fd19d3c",
@@ -12788,27 +12529,6 @@
         ]
     },
     {
-        "id": "b605c2eb6c77bec7",
-        "type": "ui_template",
-        "z": "8c9d42231fd19d3c",
-        "group": "273f74f363a57507",
-        "name": "Line - Setup ",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 3132,
-        "y": 1983.25,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "365096b9acf7e2f7",
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
@@ -12825,6 +12545,23 @@
         "x": 2470,
         "y": 1860,
         "wires": []
+    },
+    {
+        "id": "3ed1fd544412f391",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "",
+        "links": [
+            "158b8983b1dd0aa9"
+        ],
+        "x": 1405,
+        "y": 1360,
+        "wires": [
+            [
+                "2d364a067e4a7b4a"
+            ]
+        ]
     },
     {
         "id": "a938de76db0b71f6",
@@ -13077,12 +12814,39 @@
             "a815d38c5137d852",
             "a0f14e8ff8b7b008",
             "3bab99eab669bd21",
-            "182df2f14a9ca82f"
+            "182df2f14a9ca82f",
+            "ce9434fc05a5b849",
+            "f0583a8e8a92ec90",
+            "bf5c0eefd9f68f35"
         ],
         "x": 134,
         "y": 2359,
-        "w": 1132,
-        "h": 922
+        "w": 1392,
+        "h": 982
+    },
+    {
+        "id": "f0583a8e8a92ec90",
+        "type": "trigger",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "val",
+        "op2type": "val",
+        "duration": "250",
+        "extend": "false",
+        "overrideDelay": "false",
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1420,
+        "y": 2900,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "94f57429e16c8e82",
@@ -13133,6 +12897,76 @@
         "y": 3459,
         "w": 1292,
         "h": 302
+    },
+    {
+        "id": "f2aa79821dfd1110",
+        "type": "group",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "Relative humidity > Dewpoint calculation",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2bb5988706fb572a",
+            "37a369fd9ad03085",
+            "0df0e84326dbeec7",
+            "f5ab18df4746f79b",
+            "cdd89d5c10c71407",
+            "030fbd5026e5a295",
+            "7122d217051222ff"
+        ],
+        "x": 2374,
+        "y": 79,
+        "w": 1172,
+        "h": 162
+    },
+    {
+        "id": "992121a08b66faa3",
+        "type": "group",
+        "z": "a938de76db0b71f6",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "e248409fb553d16c",
+            "914dbce5e778229e",
+            "472cd4f84e3e8b1d",
+            "36f8eea1b3a6c839",
+            "b11c041a52cb0712",
+            "5b8f3786bc1abbb1",
+            "a56752bf989fc576",
+            "c5060d82a2dec953",
+            "2649d773ad06b50d",
+            "2a06d5d8012e9ce7",
+            "f6ed813fba6b5c87",
+            "7c9af6a20115c38e",
+            "dee73ffd96da5786",
+            "13909c8cd33f26ef",
+            "1cf37ff9fa4fc42b",
+            "6c93a57f910e03c2",
+            "de3a55570f77aeb2",
+            "f0ae9eea42cf90ea",
+            "25041e53f134e3fb",
+            "158b8983b1dd0aa9",
+            "25323c5d6bbdbebe",
+            "79d819b649cddcfb",
+            "467ba90fcd17c451",
+            "f5ccbd22c1c9fe22",
+            "6fc958da73fbdf09",
+            "4dfb2312d5cb06d5",
+            "f2aa79821dfd1110"
+        ],
+        "x": 2348,
+        "y": 53,
+        "w": 1738,
+        "h": 888
     },
     {
         "id": "2c893b32851ad2a2",
@@ -13826,7 +13660,8 @@
             "6bdcf84066368733",
             "b51f6522ce8b3103",
             "5f3bf84b25568561",
-            "32693e0b1629f74a"
+            "32693e0b1629f74a",
+            "7c9af6a20115c38e"
         ],
         "x": 1515,
         "y": 1520,
@@ -15315,10 +15150,11 @@
         "property": "payload",
         "topi": "topic",
         "x": 810,
-        "y": 2880,
+        "y": 2940,
         "wires": [
             [
-                "e164eaa22e0fa1dc"
+                "e164eaa22e0fa1dc",
+                "bf5c0eefd9f68f35"
             ]
         ]
     },
@@ -15335,7 +15171,7 @@
         "finalize": "",
         "libs": [],
         "x": 1090,
-        "y": 2880,
+        "y": 2940,
         "wires": [
             []
         ]
@@ -15354,7 +15190,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 810,
-        "y": 2940,
+        "y": 3000,
         "wires": [
             [
                 "f9edb4875d3f2c5b"
@@ -15374,7 +15210,7 @@
         "finalize": "",
         "libs": [],
         "x": 1090,
-        "y": 2940,
+        "y": 3000,
         "wires": [
             []
         ]
@@ -15423,7 +15259,7 @@
             "7139256ff024b872"
         ],
         "x": 635,
-        "y": 2860,
+        "y": 2920,
         "wires": [
             [
                 "1281e2b1451c301f"
@@ -15440,7 +15276,7 @@
             "c803b9ad018fe78e"
         ],
         "x": 635,
-        "y": 2920,
+        "y": 2980,
         "wires": [
             [
                 "a25d1f5d91c84a33"
@@ -15461,7 +15297,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 810,
-        "y": 3000,
+        "y": 3060,
         "wires": [
             [
                 "e11f7d8caf20dbba"
@@ -15481,7 +15317,7 @@
         "finalize": "",
         "libs": [],
         "x": 1100,
-        "y": 3000,
+        "y": 3060,
         "wires": [
             []
         ]
@@ -15500,7 +15336,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 810,
-        "y": 3060,
+        "y": 3120,
         "wires": [
             [
                 "460a1a83313cfcc5"
@@ -15520,7 +15356,7 @@
         "finalize": "",
         "libs": [],
         "x": 1100,
-        "y": 3060,
+        "y": 3120,
         "wires": [
             []
         ]
@@ -15539,7 +15375,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 810,
-        "y": 3120,
+        "y": 3180,
         "wires": [
             [
                 "58a904f891a8e2cc"
@@ -15559,7 +15395,7 @@
         "finalize": "",
         "libs": [],
         "x": 1100,
-        "y": 3120,
+        "y": 3180,
         "wires": [
             []
         ]
@@ -15578,7 +15414,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 810,
-        "y": 3180,
+        "y": 3240,
         "wires": [
             [
                 "5f758eb9af24eb35"
@@ -15598,7 +15434,7 @@
         "finalize": "",
         "libs": [],
         "x": 1120,
-        "y": 3180,
+        "y": 3240,
         "wires": [
             []
         ]
@@ -15613,7 +15449,7 @@
             "4021cdadbdc7768d"
         ],
         "x": 635,
-        "y": 2980,
+        "y": 3040,
         "wires": [
             [
                 "78ddc73a94ec89be"
@@ -15630,7 +15466,7 @@
             "78816343589b199a"
         ],
         "x": 635,
-        "y": 3040,
+        "y": 3100,
         "wires": [
             [
                 "3fb7221a7218435a"
@@ -15647,7 +15483,7 @@
             "a2d7de4325e4bf91"
         ],
         "x": 635,
-        "y": 3100,
+        "y": 3160,
         "wires": [
             [
                 "8121e5bfa638e9ab"
@@ -15664,7 +15500,7 @@
             "089ba42c8f7f7a61"
         ],
         "x": 635,
-        "y": 3160,
+        "y": 3220,
         "wires": [
             [
                 "7caff8b1418d65da"
@@ -15713,7 +15549,7 @@
         "finalize": "",
         "libs": [],
         "x": 1110,
-        "y": 3240,
+        "y": 3300,
         "wires": [
             []
         ]
@@ -15732,7 +15568,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 810,
-        "y": 3240,
+        "y": 3300,
         "wires": [
             [
                 "5d952499e2fba893"
@@ -15749,7 +15585,7 @@
             "0a683587ca4fc25c"
         ],
         "x": 175,
-        "y": 3240,
+        "y": 3300,
         "wires": [
             [
                 "e2291dc27fc9ede7"
@@ -15972,7 +15808,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 370,
-        "y": 3120,
+        "y": 3180,
         "wires": [
             [
                 "8121e5bfa638e9ab"
@@ -15994,7 +15830,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 370,
-        "y": 3060,
+        "y": 3120,
         "wires": [
             [
                 "3fb7221a7218435a"
@@ -16016,7 +15852,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 370,
-        "y": 3000,
+        "y": 3060,
         "wires": [
             [
                 "78ddc73a94ec89be"
@@ -16038,7 +15874,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 360,
-        "y": 2940,
+        "y": 3000,
         "wires": [
             [
                 "a25d1f5d91c84a33"
@@ -16082,7 +15918,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 340,
-        "y": 2880,
+        "y": 2940,
         "wires": [
             [
                 "1281e2b1451c301f"
@@ -16170,7 +16006,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 380,
-        "y": 3180,
+        "y": 3240,
         "wires": [
             [
                 "7caff8b1418d65da"
@@ -17119,6 +16955,798 @@
             [
                 "b122913e258a4ec3"
             ]
+        ]
+    },
+    {
+        "id": "e248409fb553d16c",
+        "type": "mqtt out",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "SET6 SetZ1CoolRequestTemperature",
+        "topic": "panasonic_heat_pump/commands/SetZ1CoolRequestTemperature",
+        "qos": "",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "92e5b2c.00a8b5",
+        "x": 3910,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "914dbce5e778229e",
+        "type": "ui_numeric",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "label": "COOL (SP)",
+        "tooltip": "",
+        "group": "273f74f363a57507",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "5",
+        "max": "20",
+        "step": 1,
+        "className": "",
+        "x": 3170,
+        "y": 480,
+        "wires": [
+            [
+                "472cd4f84e3e8b1d",
+                "6c93a57f910e03c2"
+            ]
+        ]
+    },
+    {
+        "id": "472cd4f84e3e8b1d",
+        "type": "trigger",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "3",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 3360,
+        "y": 480,
+        "wires": [
+            [
+                "36f8eea1b3a6c839"
+            ]
+        ]
+    },
+    {
+        "id": "36f8eea1b3a6c839",
+        "type": "rbe",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 3510,
+        "y": 480,
+        "wires": [
+            [
+                "a56752bf989fc576",
+                "79d819b649cddcfb"
+            ]
+        ]
+    },
+    {
+        "id": "b11c041a52cb0712",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3830,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "5b8f3786bc1abbb1",
+        "type": "mqtt in",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "TOP28 - panasonic_heat_pump/main/Z1_Cool_Request_Temp",
+        "topic": "panasonic_heat_pump/main/Z1_Cool_Request_Temp",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 2610,
+        "y": 480,
+        "wires": [
+            [
+                "b11c041a52cb0712",
+                "c5060d82a2dec953",
+                "467ba90fcd17c451"
+            ]
+        ]
+    },
+    {
+        "id": "a56752bf989fc576",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3830,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "c5060d82a2dec953",
+        "type": "delay",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "15",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 2980,
+        "y": 480,
+        "wires": [
+            [
+                "914dbce5e778229e",
+                "6c93a57f910e03c2"
+            ]
+        ]
+    },
+    {
+        "id": "2649d773ad06b50d",
+        "type": "ui_text",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "273f74f363a57507",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "name": "COOL Status",
+        "label": "COOL Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 3170,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "2a06d5d8012e9ce7",
+        "type": "change",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "num",
+                "to": "OFF",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "ON",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2980,
+        "y": 360,
+        "wires": [
+            [
+                "2649d773ad06b50d"
+            ]
+        ]
+    },
+    {
+        "id": "f6ed813fba6b5c87",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "Check operation mode",
+        "func": "var OM = global.get('Operating_Mode_State',\"file\");\nlet msg1={};\nif (OM == 1 || OM == 5 || OM == 7 || OM == 8)\n{\n    msg1.payload = OM;\n    return [msg,msg1];\n}\nelse\n{\n    msg.payload = 1;\n    return msg;}\n\n\n// Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2720,
+        "y": 360,
+        "wires": [
+            [
+                "2a06d5d8012e9ce7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7c9af6a20115c38e",
+        "type": "link in",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "links": [
+            "aec0cb2b18e02d8b"
+        ],
+        "x": 2475,
+        "y": 360,
+        "wires": [
+            [
+                "f6ed813fba6b5c87"
+            ]
+        ]
+    },
+    {
+        "id": "dee73ffd96da5786",
+        "type": "ui_template",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "273f74f363a57507",
+        "name": "Line - Setup ",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 3170,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2bb5988706fb572a",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "f2aa79821dfd1110",
+        "name": "",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\n\nif (msg.topic == \"RH\")\n{\n    context.set('RH',msg.payload);\n}\nif (msg.topic == \"Temperature\")\n{\n    context.set('Temperature',msg.payload);\n}\n\n\nvar RH = context.get('RH');\nvar T = context.get('Temperature');\n\nif (RH !== undefined && T !== undefined)\n{\n    var Td = T - (( 100-RH ) / 5);\n    let msg1={};\n    msg1.payload = Td;\n    msg1.payload = Number(msg1.payload).toFixed(1);\n    msg1.payload = parseFloat(msg1.payload);\n\n    msg1.topic = \"Dew Point (°C)\";\n    flow.set(\"dew_point\",msg1);\n    return msg1;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3180,
+        "y": 160,
+        "wires": [
+            [
+                "f5ab18df4746f79b",
+                "cdd89d5c10c71407",
+                "6fc958da73fbdf09"
+            ]
+        ]
+    },
+    {
+        "id": "37a369fd9ad03085",
+        "type": "change",
+        "z": "a938de76db0b71f6",
+        "g": "f2aa79821dfd1110",
+        "name": "RH",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "RH",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2990,
+        "y": 120,
+        "wires": [
+            [
+                "2bb5988706fb572a"
+            ]
+        ]
+    },
+    {
+        "id": "0df0e84326dbeec7",
+        "type": "change",
+        "z": "a938de76db0b71f6",
+        "g": "f2aa79821dfd1110",
+        "name": "Temperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Temperature",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2970,
+        "y": 200,
+        "wires": [
+            [
+                "2bb5988706fb572a",
+                "cdd89d5c10c71407"
+            ]
+        ]
+    },
+    {
+        "id": "f5ab18df4746f79b",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "f2aa79821dfd1110",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3430,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "cdd89d5c10c71407",
+        "type": "ui_chart",
+        "z": "a938de76db0b71f6",
+        "g": "f2aa79821dfd1110",
+        "name": "",
+        "group": "397a51ddac8419aa",
+        "order": 1,
+        "width": 11,
+        "height": 10,
+        "label": "",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 3410,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "030fbd5026e5a295",
+        "type": "link in",
+        "z": "a938de76db0b71f6",
+        "g": "f2aa79821dfd1110",
+        "name": "CONNECT >> Custom sensor - Humidity (for humidity dewpoint)",
+        "links": [
+            "b70243b30a7c5db8"
+        ],
+        "x": 2630,
+        "y": 120,
+        "wires": [
+            [
+                "37a369fd9ad03085"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "7122d217051222ff",
+        "type": "link in",
+        "z": "a938de76db0b71f6",
+        "g": "f2aa79821dfd1110",
+        "name": "CONNECT >> Custom sensor - Temperature  (for humidity dewpoint)",
+        "links": [
+            "21b7700ac74fcbe8"
+        ],
+        "x": 2640,
+        "y": 200,
+        "wires": [
+            [
+                "0df0e84326dbeec7"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "13909c8cd33f26ef",
+        "type": "ui_text",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "830a81a1c54c6ef5",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "name": "COOL Status",
+        "label": "COOL Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 3170,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "1cf37ff9fa4fc42b",
+        "type": "ui_template",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "830a81a1c54c6ef5",
+        "name": "Line - Setup ",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 3170,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6c93a57f910e03c2",
+        "type": "ui_numeric",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "label": "COOL (SP)",
+        "tooltip": "",
+        "group": "830a81a1c54c6ef5",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}} °C",
+        "min": "5",
+        "max": "20",
+        "step": 1,
+        "className": "",
+        "x": 3170,
+        "y": 740,
+        "wires": [
+            [
+                "de3a55570f77aeb2"
+            ]
+        ]
+    },
+    {
+        "id": "de3a55570f77aeb2",
+        "type": "rbe",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 3350,
+        "y": 740,
+        "wires": [
+            [
+                "914dbce5e778229e"
+            ]
+        ]
+    },
+    {
+        "id": "f0ae9eea42cf90ea",
+        "type": "ui_numeric",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "Floor Cool Delta",
+        "label": "Floor Cool Delta",
+        "tooltip": "Set floor cooling delta in degrees C",
+        "group": "830a81a1c54c6ef5",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}} °C",
+        "min": "1",
+        "max": "15",
+        "step": 1,
+        "className": "",
+        "x": 3180,
+        "y": 780,
+        "wires": [
+            [
+                "25323c5d6bbdbebe"
+            ]
+        ]
+    },
+    {
+        "id": "25041e53f134e3fb",
+        "type": "link in",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "cool input",
+        "links": [
+            "7139256ff024b872",
+            "ce9434fc05a5b849"
+        ],
+        "x": 3035,
+        "y": 780,
+        "wires": [
+            [
+                "f0ae9eea42cf90ea"
+            ]
+        ]
+    },
+    {
+        "id": "158b8983b1dd0aa9",
+        "type": "link out",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "3ed1fd544412f391"
+        ],
+        "x": 3485,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "25323c5d6bbdbebe",
+        "type": "trigger",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "3",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 3360,
+        "y": 780,
+        "wires": [
+            [
+                "158b8983b1dd0aa9"
+            ]
+        ]
+    },
+    {
+        "id": "ce9434fc05a5b849",
+        "type": "link out",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "Source TOP24 cool_delta",
+        "mode": "link",
+        "links": [
+            "25041e53f134e3fb"
+        ],
+        "x": 1255,
+        "y": 2900,
+        "wires": []
+    },
+    {
+        "id": "bf5c0eefd9f68f35",
+        "type": "delay",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "30",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1080,
+        "y": 2900,
+        "wires": [
+            [
+                "ce9434fc05a5b849"
+            ]
+        ]
+    },
+    {
+        "id": "79d819b649cddcfb",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "func": "var FloorCoolDelta                      = global.get('FloorCoolDelta',\"file\");\nvar Z1_Cool_Request_Temp                = global.get(\"Z1_Cool_Request_Temp\");\nvar dew_point                           = flow.get(\"dew_point\");\ndew_point                               = dew_point.payload;\nlet msg1={};\nif (FloorCoolDelta !== undefined && Z1_Cool_Request_Temp !== undefined && dew_point !== undefined)\n{\n    if (msg.payload >= (dew_point + FloorCoolDelta))\n        {\n            return msg;\n            \n        }\n    \n    else\n        {\n            msg.payload = (dew_point + FloorCoolDelta);\n            msg.payload = Math.ceil(msg.payload);\n            return msg;\n            \n        }\n\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3680,
+        "y": 480,
+        "wires": [
+            [
+                "e248409fb553d16c"
+            ]
+        ]
+    },
+    {
+        "id": "467ba90fcd17c451",
+        "type": "rbe",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2750,
+        "y": 540,
+        "wires": [
+            [
+                "f5ccbd22c1c9fe22"
+            ]
+        ]
+    },
+    {
+        "id": "f5ccbd22c1c9fe22",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "set.Z1_Cool_Request_Temp",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'Z1_Cool_Request_Temp';\nglobal.set(\"Z1_Cool_Request_Temp\",msg.payload);\n//return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2760,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6fc958da73fbdf09",
+        "type": "ui_text",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "830a81a1c54c6ef5",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Calculated DewPoint",
+        "format": "{{msg.payload}} °C",
+        "layout": "row-spread",
+        "className": "",
+        "x": 3200,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "4dfb2312d5cb06d5",
+        "type": "ui_template",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "830a81a1c54c6ef5",
+        "name": "Line - Setup ",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 3170,
+        "y": 860,
+        "wires": [
+            []
         ]
     },
     {
@@ -34913,6 +35541,28 @@
         "className": ""
     },
     {
+        "id": "397a51ddac8419aa",
+        "type": "ui_group",
+        "name": "Chart",
+        "tab": "575dc22256fd966c",
+        "order": 1,
+        "disp": false,
+        "width": 11,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "830a81a1c54c6ef5",
+        "type": "ui_group",
+        "name": "Settings",
+        "tab": "575dc22256fd966c",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "2b0c8e162d47abbb",
         "type": "ui_group",
         "name": "Schedules",
@@ -35034,7 +35684,7 @@
         "type": "ui_tab",
         "name": "Charts Temperature",
         "icon": "dashboard",
-        "order": 8,
+        "order": 9,
         "disabled": false,
         "hidden": false
     },
@@ -35052,7 +35702,7 @@
         "type": "ui_tab",
         "name": "Function (SoftStart)",
         "icon": "dashboard",
-        "order": 5,
+        "order": 6,
         "disabled": false,
         "hidden": false
     },
@@ -35070,7 +35720,7 @@
         "type": "ui_tab",
         "name": "Scheduler",
         "icon": "dashboard",
-        "order": 7,
+        "order": 8,
         "disabled": false,
         "hidden": false
     },
@@ -35079,7 +35729,7 @@
         "type": "ui_tab",
         "name": "Charts Energy",
         "icon": "dashboard",
-        "order": 9,
+        "order": 10,
         "disabled": false,
         "hidden": false
     },
@@ -35093,11 +35743,20 @@
         "hidden": false
     },
     {
+        "id": "575dc22256fd966c",
+        "type": "ui_tab",
+        "name": "Function (COOL)",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    },
+    {
         "id": "a681244e6db9a6a7",
         "type": "ui_tab",
         "name": "Chart Degree Days",
         "icon": "dashboard",
-        "order": 10,
+        "order": 11,
         "disabled": false,
         "hidden": false
     },
@@ -35106,7 +35765,7 @@
         "type": "ui_tab",
         "name": "Function (Solar)",
         "icon": "dashboard",
-        "order": 6,
+        "order": 7,
         "disabled": false,
         "hidden": false
     }
