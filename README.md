@@ -9,6 +9,9 @@ Current version: 19 beta cool<br/>
 this 19.0 beta version is a quick addition befor I go on holiday. This addition enables the COOL mode to be used from the dashboard.<br/>
 This version works on my system, but has not been well tested. If it happens that this version is not stable, roll back to v18.0 which is still the current main branch. <br/>
 The COOL setpoint can be changed from the Home Dashboard page. <br/>
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/19-beta---cool/images/cool.png?raw=true)
+<br/>
+
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
