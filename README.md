@@ -7,7 +7,7 @@ Current version: 19 beta cool<br/>
 ## BETA BETA BETA BETA BETA BETA BETA BETA BETA BETA BETA BETA
 
 this 19.0 beta version is a quick addition befor I go on holiday. This addition enables the COOL mode to be used from the dashboard.
-
+This version works on my system, but has not been well tested. If it happens that this version is not stable, roll back to v18.0 which is still the current main branch. 
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
