@@ -1,6 +1,13 @@
 
+## BETA BETA BETA BETA BETA BETA BETA BETA BETA BETA BETA BETA
+
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 18.0<br/>
+Current version: 19 beta cool<br/>
+
+## BETA BETA BETA BETA BETA BETA BETA BETA BETA BETA BETA BETA
+
+this 19.0 beta version is a quick addition befor I go on holiday. This addition enables the COOL mode to be used from the dashboard.
+
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -473,6 +480,9 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Enhancement: Solar function: a 3rd option as trigger is added. Now you can use Live value (kW) / kWh result of today / kWh exported. 
 - Enhancement: HELP sections are added to for the most part. 
 - Enhancement: Various tabs have layout improvements.
+
+[2022-07-17] (v19 beta cool) Things done are:
+- Add ability to set cooling temperature SETPOINT from dashboard.
 
 
 ********
