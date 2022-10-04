@@ -45,6 +45,11 @@ The NodeRed flow is stand-alone so: You do not require a database. You do not re
 From within Heishamon, TOP76, will inform you if you currently are in WAR mode or DIRECT mode. <br/>(0=WAR, 1=DIRECT)
 <br/><br/>
 
+**How to check / set your heatpump into DIRECT mode**</br>
+See the images below from my manual. It should be similar for others.
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/manual%20-%20direct1.png?raw=true">
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/manual%20-%20direct2.png?raw=true">
+
 ********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/install.png" width="500">
