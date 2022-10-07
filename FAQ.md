@@ -67,4 +67,20 @@ Q - How to update flow to latest version and keep my inputs, MQTT and Home Assis
 </details>
 
 
-//work in progress
+Q - How should I configure the Remote Controller for use with this Node Red Flow?
+ <details>
+    Make sure the Panasonic Heatpump is off <br/>
+    in Dutch:<br/>
+    -Intellingen installateur->Systeem instellingen->Zone&Sensor: Watertemperatuur <br/>
+    -Intellingen installateur->Systeem instellingen->Ruimtethermostaat: Intern <br/>
+    -Intellingen installateur->Bedrijfsinstellingen->Verw.->Watertemperatuurverwarmen: Direct <br/>
+    -Intellingen installateur->Bedrijfsinstellingen->Buitentemp voor verw. UIT: 20 (*) <br/>
+    *voorbeeld: Bij buitentemp boven 20 graden stopt de WP en gaat waterpomp uit <br/>
+    
+    in English:<br/>
+    -Installer Setup->Systeem Setup->Zone&Sensor: Water temperature <br/>
+    -Installer Setup->Systeem Setup->Room thermostat: Intern <br/>
+    -Installer Setup->Operation Setup->HEAT.->Water temp for heating ON: Direct <br/>
+    -Installer Setup->Operation Setup->Outdooor temp for heating OFF: 20 (*) <br/>
+    *example: at an outdourt temp of 20 degrees the Heatpump will stop <br/>    
+</details>
