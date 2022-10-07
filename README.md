@@ -303,7 +303,7 @@ Q - How should I configure the Remote Controller for use with this Node Red Flow
     -Installer Setup->Systeem Setup->Zone&Sensor: Water temperature <br/>
     -Installer Setup->Operation Setup->HEAT.->Water temp for heating ON: Direct <br/>
     -Installer Setup->Operation Setup->Outdooor temp for heating OFF: 20 (*) <br/>
-    *example: at an outdourt temp of 20 degrees the Heatpump will stop <br/>  
+    *example: at an outdour temp of 20 degrees the Heatpump will stop <br/>  
 	(Set this at 20 degrees to avoid unexpected behavour)<br/>
 </details>
 
