@@ -33,7 +33,7 @@ I have chosen option 4 in the list above. In this GIT you can find NR functions 
 1: The heishamon module working with your heatpump.<br/>
 2: A functional MQTT broker. (Mosquitto/HiveMQ/etc)<br/>
 3: A functional NodeRed instance. <br/>
-4: Heatpump in DIRECT mode. <br/>
+4: Heatpump in DIRECT mode. see FAQ "How should I configure the Remote Controller for use with this Node Red Flow?"<br/>
  
 <br/>
 1: Obviously, you need the heishamon module connected to your heatpump and have it functional. Without this module, you can stop reading. 😄 See this site to get one: https://www.tindie.com/stores/thehognl/ <br/><br/>
@@ -287,6 +287,23 @@ Q - How to update flow to latest version and keep my inputs, MQTT and Home Assis
     <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/49247191465139a9ee67749accd87a6f65600fcc/images/WP_Personal_tab2.png?raw=true" width=50%> <br/>
     <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/5095a6e0640ca666a06a1487f71c55de10c06946/images/WP_Personal_tab3.png?raw=true" width=50%> <br/>
     Follow the update procedure from the Readme as desciped here: https://github.com/edterbak/NodeRed_Heishamon_control#how-to-update-to-a-newer-version
+</details>
+
+Q - How should I configure the Remote Controller for use with this Node Red Flow?
+ <details>
+    Make sure the Panasonic Heatpump is off <br/>
+    in Dutch:<br/>
+    -Intellingen installateur->Systeem instellingen->Zone&Sensor: Watertemperatuur <br/>
+    -Intellingen installateur->Systeem instellingen->Ruimtethermostaat: Intern <br/>
+    -Intellingen installateur->Bedrijfsinstellingen->Verw.->Watertemperatuurverwarmen: Direct <br/>
+    -Intellingen installateur->Bedrijfsinstellingen->Buitentemp voor verw. UIT: 20 (*) <br/>
+    *voorbeeld: Bij buitentemp boven 20 graden stopt de WP en gaat waterpomp uit <br/>
+    in English:<br/>
+    -Installer Setup->Systeem Setup->Zone&Sensor: Water temperature <br/>
+    -Installer Setup->Systeem Setup->Room thermostat: Intern <br/>
+    -Installer Setup->Operation Setup->HEAT.->Water temp for heating ON: Direct <br/>
+    -Installer Setup->Operation Setup->Outdooor temp for heating OFF: 20 (*) <br/>
+    *example: at an outdourt temp of 20 degrees the Heatpump will stop <br/>    
 </details>
 
 ********
