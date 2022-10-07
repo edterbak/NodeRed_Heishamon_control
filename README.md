@@ -33,7 +33,7 @@ I have chosen option 4 in the list above. In this GIT you can find NR functions 
 1: The heishamon module working with your heatpump.<br/>
 2: A functional MQTT broker. (Mosquitto/HiveMQ/etc)<br/>
 3: A functional NodeRed instance. <br/>
-4: Heatpump in DIRECT mode. see FAQ "How should I configure the Remote Controller for use with this Node Red Flow?"<br/>
+4: Heatpump in DIRECT mode. (See FAQ "How should I configure the Remote Controller for use with this Node Red Flow?")<br/>
  
 <br/>
 1: Obviously, you need the heishamon module connected to your heatpump and have it functional. Without this module, you can stop reading. 😄 See this site to get one: https://www.tindie.com/stores/thehognl/ <br/><br/>
