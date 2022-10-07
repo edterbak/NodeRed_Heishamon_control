@@ -21,7 +21,11 @@ Q - If I switch off the Heatpomp via the Remote Controller will it disable the a
 
 Q - I know the function SOFTSTART is experimental, but can you explain what this function does?
 <details>
-    ...
+   When the heatpump starts up the compressor will go to high Hz for a period. Only when the returning water temperature approaches the setpoint, <br/>
+   it ramps down the Hz and get more economic. <br/>
+   If the SoftStart function is enabled, the HEAT setpoint will be lowered. <br/>
+   This should cause the compressor to ramp down within minutes instead of 10+ minutes. <br/>
+   When ramp down has occured, the HEAT SP will slowly be increased to the original SP.<br/>
 </details>
 
 Q - Is there an overview and explanation of all settings from the dashboards?
