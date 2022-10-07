@@ -76,7 +76,6 @@ Q - How should I configure the Remote Controller for use with this Node Red Flow
     -Intellingen installateur->Bedrijfsinstellingen->Verw.->Watertemperatuurverwarmen: Direct <br/>
     -Intellingen installateur->Bedrijfsinstellingen->Buitentemp voor verw. UIT: 20 (*) <br/>
     *voorbeeld: Bij buitentemp boven 20 graden stopt de WP en gaat waterpomp uit <br/>
-    
     in English:<br/>
     -Installer Setup->Systeem Setup->Zone&Sensor: Water temperature <br/>
     -Installer Setup->Systeem Setup->Room thermostat: Intern <br/>
