@@ -21,12 +21,10 @@ Q - If I switch off the Heatpomp via the Remote Controller will it disable the a
 
 Q - I know the function SOFTSTART is experimental, but can you explain what this function does?
 <details>
-   When the heatpump starts up the compressor will go to high Hz for a period. <br/>
-   Only when the returning water temperature approaches the setpoint, <br/>
-   it ramps down the Hz and get more economic. <br/>
-   If the SoftStart function is enabled, the HEAT setpoint will be lowered. <br/>
-   This should cause the compressor to ramp down within minutes instead of 10+ minutes. <br/>
-   When ramp down has occured, the HEAT SP will slowly be increased to the original SP.<br/>
+    The idea behind this function is that when the compressor is just started, the frequency of the compressor goes up to 45+Hz. Well out of the efficient range. This is caused by the inner controller of the heatpump. When turned on, it 'wants' to see the impact of the compressor. It looks at the returning watertemperature for this. Only when the water temperature returning towards the heatpump is nearing the target temperature, it will start to lower the compressor frequency and get in a stable/efficient mode. Throttling... <br/>
+This late throttling behaviour can be quiet energy consuming, it can cause the heat pump to generate too much heat at the start and turn off again. <br/><br/>
+This SOFTSTART function, when enabled, looks at the moment when the compressor is on, and lower the setpoint to just above the temperature of the returning water. This will in theory cause the heatpump to start throttling down a lot quicker. 
+<br/>This function can be usefull directly after defrost cycles when the pump starts again, or when the temperature difference between outside/inside is getting smaller. 
 </details>
 
 Q - Is there an overview and explanation of all settings from the dashboards?
