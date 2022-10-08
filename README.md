@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 18.0<br/>
+Current version: 20.0 test version<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -486,8 +486,6 @@ All older changelog items are colapsed below. only the latest changelog will alw
 [2022-07-10] (v17.5) Things done are:
 - BUG: Fixed a bug where the RTC function was not working correctly. Cause was linking to an incorrect variable.
 - Enhancement: automatic detection of external sensor. For room temperature sensor and for outside temperature sensor.
-</details><br/>
-
 
 [2022-07-14] (v18.0) Things done are:
 - BREAKING CHANGE (Solar function)! You need to reconnect and setup the P1 measurements to the flow in WP Solar tab. The correction ( x 1/-1 or x 1000/-1000 ) you put in, probably need to be adjusted. 
@@ -496,12 +494,22 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Enhancement: Solar function: a 3rd option as trigger is added. Now you can use Live value (kW) / kWh result of today / kWh exported. 
 - Enhancement: HELP sections are added to for the most part. 
 - Enhancement: Various tabs have layout improvements.
+</details><br/>
 
+
+[2022-10-08] (v20.0 test version) Things done are:
+- Major rewrite of functions.
+- Fix attempt: https://github.com/edterbak/NodeRed_Heishamon_control/issues/33 Hopefully this rewrite and added logic will improve behaviour of multiple functions together.
+- Fix attempt: https://github.com/edterbak/NodeRed_Heishamon_control/issues/38 Hopefully this rewrite and added logic will help against this bug.
+- Added the real limits to the dashboard. Setpoint of heat <20 are not allowed by HP, now this will be the limit in the dashboard as well.
+- Fixed SoftStart logic. It now works robustly and has the option to prolongue runs by increasing the setpoint if needed.
+
+Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their input and feedback. :) FYI: https://gathering.tweakers.net/forum/list_messages/2108208
 
 ********
 
 ## TODO list
-- [ ] Fix SoftStart routine. (it might be working for some, but be cautious)
+- [x] Fix SoftStart routine. (it might be working for some, but be cautious)
 ********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/acknowledgments.png" width="500">
