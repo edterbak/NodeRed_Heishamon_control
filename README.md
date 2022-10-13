@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 20.0 test version<br/>
+Current version: 20.1 test version<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -505,11 +505,17 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Fixed SoftStart logic. It now works robustly and has the option to prolongue runs by increasing the setpoint if needed.
 
 Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their input and feedback. :) FYI: https://gathering.tweakers.net/forum/list_messages/2108208
+[2022-10-13] (v20.1 test version) Things done are:
+- SoftStart function: fixed bug where SP Start (softstart) was not populated
+- improved set max pump speed option
+- WAR function: added option to be able to send WAR profile to heatpump when in WAR mode on heatpump. 
+- Solar function: Corrections for P1 can now be configured though dashboard
+- Added panasonic information in settings tab.
 
 ********
 
 ## TODO list
-- [x] Fix SoftStart routine. (it might be working for some, but be cautious)
+- [x] Fix SoftStart routine.
 ********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/acknowledgments.png" width="500">
