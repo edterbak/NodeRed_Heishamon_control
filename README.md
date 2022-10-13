@@ -505,6 +505,7 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Fixed SoftStart logic. It now works robustly and has the option to prolongue runs by increasing the setpoint if needed.
 
 Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their input and feedback. :) FYI: https://gathering.tweakers.net/forum/list_messages/2108208
+
 [2022-10-13] (v20.1 test version) Things done are:
 - SoftStart function: fixed bug where SP Start (softstart) was not populated
 - improved set max pump speed option
