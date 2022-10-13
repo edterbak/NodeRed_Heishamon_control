@@ -3039,14 +3039,11 @@
             "dcec18e192df8d64",
             "be17c89704b598d8",
             "ea184fe6e1240203",
-            "179e949de525e0b0",
             "2c13c33324bb6c6e",
             "27a10b679e112595",
             "684cdf95f8172514",
-            "24c2f0f95a92571d",
             "c9428fcff7af5f3a",
             "c12983167828c39b",
-            "52733045b5344b49",
             "9e1f07f9825bd79d",
             "32c4b461266d4a6e",
             "b4efe8320bae812d",
@@ -3064,78 +3061,6 @@
         "y": 119,
         "w": 1432,
         "h": 1722
-    },
-    {
-        "id": "179e949de525e0b0",
-        "type": "ui_text_input",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "name": "",
-        "label": "",
-        "tooltip": "",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "mode": "text",
-        "delay": 300,
-        "topic": "topic",
-        "sendOnBlur": true,
-        "className": "",
-        "topicType": "msg",
-        "x": 1980,
-        "y": 520,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "24c2f0f95a92571d",
-        "type": "switch",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1990,
-        "y": 480,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "52733045b5344b49",
-        "type": "delay",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 1320,
-        "y": 820,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "f9448182b177e40e",
@@ -34388,7 +34313,7 @@
         "z": "966985d68ebb4990",
         "g": "9fca714df21ffac0",
         "name": "Correction function",
-        "func": "if (msg.topic == \"correction\")\n    {\n        var F_Solar_export_correction = msg.payload;\n        global.set('F_Solar_export_correction',F_Solar_export_correction,\"file\")\n        \n        return null;\n    }\nelse\n    {\n    var F_Solar_export_correction = global.get('F_Solar_export_correction',\"file\");   \n        if (F_Solar_export_correction === undefined)\n            {\n                F_Solar_import_correction = -1;\n            }\n        \n        msg.payload = msg.payload * F_Solar_export_correction; \n\n        msg.topic = \"W\";\n        return msg;\n    }",
+        "func": "if (msg.topic == \"correction\")\n    {\n        var F_Solar_export_correction = msg.payload;\n        global.set('F_Solar_export_correction',F_Solar_export_correction,\"file\")\n        \n        return null;\n    }\nelse\n    {\n    var F_Solar_export_correction = global.get('F_Solar_export_correction',\"file\");   \n        if (F_Solar_export_correction === undefined)\n            {\n                F_Solar_import_correction = -1;\n            }\n        msg.payload = Number(msg.payload).toFixed(4);\n        msg.payload = parseFloat(msg.payload);\n        msg.payload = msg.payload * F_Solar_export_correction; \n\n        msg.topic = \"W\";\n        return msg;\n    }",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -35368,7 +35293,7 @@
         "z": "966985d68ebb4990",
         "g": "b85d6aca6a841215",
         "name": "Correction function",
-        "func": "if (msg.topic == \"correction\")\n    {\n        var F_Solar_import_correction = msg.payload;\n        global.set('F_Solar_import_correction',F_Solar_import_correction,\"file\")\n        \n        return null;\n    }\nelse\n    {\n    var F_Solar_import_correction = global.get('F_Solar_import_correction',\"file\");   \n        if (F_Solar_import_correction === undefined)\n            {\n                F_Solar_import_correction = 1;\n            }\n        \n        msg.payload = msg.payload * F_Solar_import_correction; \n\n        msg.topic = \"W\";\n        return msg;\n    }",
+        "func": "if (msg.topic == \"correction\")\n    {\n        var F_Solar_import_correction = msg.payload;\n        global.set('F_Solar_import_correction',F_Solar_import_correction,\"file\")\n        \n        return null;\n    }\nelse\n    {\n    var F_Solar_import_correction = global.get('F_Solar_import_correction',\"file\");   \n        if (F_Solar_import_correction === undefined)\n            {\n                F_Solar_import_correction = 1;\n            }\n        msg.payload = Number(msg.payload).toFixed(4);\n        msg.payload = parseFloat(msg.payload);\n        msg.payload = msg.payload * F_Solar_import_correction; \n\n        msg.topic = \"W\";\n        return msg;\n    }",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
