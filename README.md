@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 20.1 test version<br/>
+Current version: 20.4 test version<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -512,6 +512,15 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - WAR function: added option to be able to send WAR profile to heatpump when in WAR mode on heatpump. 
 - Solar function: Corrections for P1 can now be configured though dashboard
 - Added panasonic information in settings tab.
+
+
+[2022-10-13] (v20.2/3/4 test version) Things done are:
+- Scheduler column width enlarged
+- Solar function: fixed error in correction factors
+- Solar function: improved data filtering on given input
+- WAR function: On HOME > HEAT functions, the current WAR result SP value is now correctly shown
+- WAR function: On Function (WAR) > the current WAR result SP value is now correctly shown
+
 
 ********
 
