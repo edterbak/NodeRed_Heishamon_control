@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 20.4 test version<br/>
+Current version: 20.5 test version<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -508,11 +508,10 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 
 [2022-10-13] (v20.1 test version) Things done are:
 - SoftStart function: fixed bug where SP Start (softstart) was not populated
-- improved set max pump speed option
+- improved set max pump speed option. Now by slider and SET button
 - WAR function: added option to be able to send WAR profile to heatpump when in WAR mode on heatpump. 
 - Solar function: Corrections for P1 can now be configured though dashboard
 - Added panasonic information in settings tab.
-
 
 [2022-10-13] (v20.2/3/4 test version) Things done are:
 - Scheduler column width enlarged
@@ -521,6 +520,10 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - WAR function: On HOME > HEAT functions, the current WAR result SP value is now correctly shown
 - WAR function: On Function (WAR) > the current WAR result SP value is now correctly shown
 
+[2022-10-14] (v20.2/3/4 test version) Things done are:
+- Softstart function: added a lower threshold to the function, so it does never drop below starting SP -3
+- Fixed Home dashboard not showing WAR result
+- Settings: Added general information about panasonic type. (number 255 = unknown to heishamon)
 
 ********
 
