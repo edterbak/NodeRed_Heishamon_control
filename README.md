@@ -520,7 +520,7 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - WAR function: On HOME > HEAT functions, the current WAR result SP value is now correctly shown
 - WAR function: On Function (WAR) > the current WAR result SP value is now correctly shown
 
-[2022-10-14] (v20.2/3/4 test version) Things done are:
+[2022-10-14] (v20.5 test version) Things done are:
 - Softstart function: added a lower threshold to the function, so it does never drop below starting SP -3
 - Fixed Home dashboard not showing WAR result
 - Settings: Added general information about panasonic type. (number 255 = unknown to heishamon)
