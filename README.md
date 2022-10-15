@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 20.5 test version<br/>
+Current version: 20.6 test version<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -112,6 +112,8 @@ node-red-contrib-noop is used as well <br/>
 https://flows.nodered.org/node/node-red-contrib-noop <br/>
 node-red-contrib-dashboard-bar-chart-data (from v13+)<br/>
 https://flows.nodered.org/node/node-red-contrib-dashboard-bar-chart-data <br/>
+node-red-node-smooth (from 20+)<br/>
+https://flows.nodered.org/node/node-red-node-smooth<br/>
 
 ## How to install the NR flows
 Dashboard: http://IP:1880/ui	(For HomeAssistant: http://IP:1880/endpoint/ui)
@@ -524,6 +526,17 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - Softstart function: added a lower threshold to the function, so it does never drop below starting SP -3
 - Fixed Home dashboard not showing WAR result
 - Settings: Added general information about panasonic type. (number 255 = unknown to heishamon)
+
+[2022-10-15] (v20.6 test version) Things done are:
+- Home Functions: when function is disabled, the result is grayed out.
+- WAR function: major rewrite to make it simpler. Strayed off the path for a while.
+- WAR function: button for export NodeRed settings to Panasonic.
+- WAR function: with a fresh install, by default Panasonic WAR temperature profole is automatically imported.
+- RTC function: with a fresh install, by default values are entered in the function. (Setpoint / +1.5/1.0/0.5/-0.5/-1.0/-1.5)
+- NR function: with a fresh install, by default some values are entered.
+- Softstart function: with a fresh install, by default values are entered in the function (15 minutes / 2 degree cap)
+
+
 
 ********
 
