@@ -534,7 +534,7 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - WAR function: with a fresh install, by default Panasonic WAR temperature profole is automatically imported.
 - RTC function: with a fresh install, by default values are entered in the function. (Setpoint / +1.5/1.0/0.5/-0.5/-1.0/-1.5)
 - NR function: with a fresh install, by default some values are entered.
-- Softstart function: with a fresh install, by default values are entered in the function (15 minutes / 2 degree cap)
+- Softstart function: with a fresh install, by default values are entered in the function (15 minutes / 1 degree cap)
 
 
 
