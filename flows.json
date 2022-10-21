@@ -7969,7 +7969,7 @@
         "topic": "trigger",
         "payload": "",
         "payloadType": "date",
-        "x": 1360,
+        "x": 1320,
         "y": 1280,
         "wires": [
             [
@@ -8227,7 +8227,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "",
-        "func": "rbe",
+        "func": "rbei",
         "gap": "",
         "start": "",
         "inout": "out",
@@ -8248,7 +8248,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "",
-        "func": "rbe",
+        "func": "rbei",
         "gap": "",
         "start": "",
         "inout": "out",
@@ -14522,7 +14522,8 @@
             "4223b24f5dc06d8e",
             "b19026440632f6e1",
             "7c2d97ab870b3fff",
-            "f7d933a6f6921600"
+            "f7d933a6f6921600",
+            "06d36c3bda52da9f"
         ],
         "x": 144,
         "y": 619,
@@ -17984,7 +17985,7 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "name": "",
-        "func": "rbe",
+        "func": "rbei",
         "gap": "",
         "start": "",
         "inout": "out",
@@ -18998,7 +18999,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Calculate new SP",
-        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n*/\n//*****************************************************************************\nlet msg1={},msg2={},msg3={},msg4={},msg5={},msg99={};\n\nvar SP_Final            =global.get('SP_DIRECT_virt',\"file\");\n\nvar F_WAR_onoff         =global.get('Correction_0_WAR_on_off',\"file\");\n    if (F_WAR_onoff === undefined) {F_WAR_onoff=0;}\n    \nvar F_WAR_SP            =global.get('F_WAR_SP');\n\nvar F_RTC_state         =global.get('Correction_1_RTC_on_off',\"file\");\n        if (F_RTC_state === undefined) {F_RTC_state=0;}\n        \nvar F_RTC_correction    =global.get('F_RTC_correction');\n\nvar F_SS_state          =global.get('Correction_2_softstart_on_off',\"file\");\n        if (F_SS_state === undefined) {F_SS_state=0;}\n        \nvar F_SS_correction     =global.get('F_SS_correction');\n\nvar F_NR_state          =global.get('nightreduction_on_off',\"file\");\n        if (F_NR_state === undefined) {F_NR_state=0;}\n        \nvar F_NR_correction     =global.get('F_NR_correction');\n\nvar current_sp          =global.get('Main_Target_Temp');\n\nvar Operating_Mode      =global.get('Operating_Mode_State',\"file\")\n\nvar HEAT_SP_lower_limit =global.get('HEAT_SP_lower_limit',\"file\")\n    if (HEAT_SP_lower_limit === undefined)  {HEAT_SP_lower_limit = 20;}\n    \nvar HEAT_SP_upper_limit =global.get('HEAT_SP_upper_limit',\"file\")\n    if (HEAT_SP_upper_limit === undefined)  {HEAT_SP_upper_limit = 100;}\n\n\n//*****************************************************************************\nif (SP_Final === undefined || current_sp === undefined || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                         // check if all variables are present befor checking\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    {\n        return null;\n    }\n//*****************************************************************************\n//*****************************************************************************\nif (current_sp == 0)\n    {\n        SHIFT_Final_old = global.get('SHIFT_Final',\"file\");\n            if (SHIFT_Final_old === undefined) {SHIFT_Final=0;}\n        \n        if (F_RTC_state == 0)   {F_RTC_correction = 0;}\n        if (F_SS_state == 0)    {F_SS_correction = 0;}\n        if (F_NR_state == 0)    {F_NR_correction = 0;}\n        \n        msg2.payload = F_RTC_correction + F_SS_correction + F_NR_correction;\n        if (msg2.payload < -5)  {msg2.payload = -5;}\n        if (msg2.payload > 5)   {msg2.payload = 5;}\n        msg2.topic = \"Shift\";\n        \n        if (SHIFT_Final_old != SHIFT_Final)\n            {\n                global.set('SHIFT_Final',msg2.payload,\"file\");\n            }\n        return [null,null,msg2]\n    }\n//*****************************************************************************\n//*****************************************************************************\nif (current_sp >= 20)\n    {\n        if (F_WAR_onoff==1)                 {SP_Final   =F_WAR_SP;}\n        if (F_RTC_state==1)                 {SP_Final   =SP_Final   + F_RTC_correction;}\n        if (F_NR_state==1)                  {SP_Final   =SP_Final   + F_NR_correction;}\n        if (F_SS_state==1)                  {SP_Final   =SP_Final   + F_SS_correction;}\n        if (SP_Final<HEAT_SP_lower_limit)   {SP_Final   =HEAT_SP_lower_limit}\n        if (SP_Final>HEAT_SP_upper_limit)   {SP_Final   =HEAT_SP_upper_limit}\n        if (SP_Final<20)                    {SP_Final   =20;}\n    \n        //*****************************************************************************\n\n        msg1.payload    = SP_Final;                             msg1.topic  = \"SP_Final\";\n        global.set('SP_Final',SP_Final,\"file\")\n        \n        msg99.payload   = \"New final SP: \" + SP_Final + \" °C\";  msg99.topic = \"Result Functions\";        // ToLog\n\n\n\n        //*****************************************************************************\n\n        if (SP_Final ==  current_sp)                                            // Check only if there is a difference between SP and current value, a signal should be sent.\n            {\n                return null;\n            }\n        else\n            {\n                return [msg1,msg99];\n            }\n    }\n    \n",
+        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n*/\n//*****************************************************************************\nlet msg1={},msg2={},msg3={},msg4={},msg5={},msg99={};\n\nvar SP_Final            =global.get('SP_DIRECT_virt',\"file\");                   //\n\nvar F_WAR_onoff         =global.get('Correction_0_WAR_on_off',\"file\");          //\n    if (F_WAR_onoff === undefined) {F_WAR_onoff = 0;}\n    \nvar F_WAR_SP            =global.get('F_WAR_SP');                                //\n\nvar F_RTC_state         =global.get('Correction_1_RTC_on_off',\"file\");          //\n        if (F_RTC_state === undefined) {F_RTC_state=0;}\n        \nvar F_RTC_correction    =global.get('F_RTC_correction');                        //\n\nvar F_SS_state          =global.get('Correction_2_softstart_on_off',\"file\");    //\n        if (F_SS_state === undefined) {F_SS_state=0;}\n        \nvar F_SS_correction     =global.get('F_SS_correction');                         //\n\nvar F_NR_state          =global.get('nightreduction_on_off',\"file\");            //\n        if (F_NR_state === undefined) {F_NR_state=0;}\n        \nvar F_NR_correction     =global.get('F_NR_correction');                         //\n\nvar current_sp          =global.get('Main_Target_Temp');                        //\n\nvar Operating_Mode      =global.get('Operating_Mode_State',\"file\")              //\n\nvar HEAT_SP_lower_limit =global.get('HEAT_SP_lower_limit',\"file\")               //\n    if (HEAT_SP_lower_limit === undefined)  {HEAT_SP_lower_limit = 20;}\n    \nvar HEAT_SP_upper_limit =global.get('HEAT_SP_upper_limit',\"file\")               //\n    if (HEAT_SP_upper_limit === undefined)  {HEAT_SP_upper_limit = 100;}\n\n\n//*****************************************************************************\nif (SP_Final === undefined || current_sp === undefined || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                         // check if all variables are present befor checking\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    {\n        return null;\n    }\n//*****************************************************************************\n//*****************************************************************************\nif (current_sp == 0)\n    {\n        SHIFT_Final_old = global.get('SHIFT_Final',\"file\");\n            if (SHIFT_Final_old === undefined) {SHIFT_Final=0;}\n        \n        if (F_RTC_state == 0)   {F_RTC_correction = 0;}\n        if (F_SS_state == 0)    {F_SS_correction = 0;}\n        if (F_NR_state == 0)    {F_NR_correction = 0;}\n        \n        msg2.payload = F_RTC_correction + F_SS_correction + F_NR_correction;\n        msg2.topic = \"Shift\";\n        if (msg2.payload < -5)  {msg2.payload = -5;}\n        if (msg2.payload > 5)   {msg2.payload = 5;}\n        \n        \n        if (SHIFT_Final_old != SHIFT_Final)\n            {\n                global.set('SHIFT_Final',msg2.payload,\"file\");\n            }\n        return [null,null,msg2]\n    }\n//*****************************************************************************\n//*****************************************************************************\nif (current_sp >= 20)\n    {\n        if (F_WAR_onoff==1)                 {SP_Final   =F_WAR_SP;}\n        if (F_RTC_state==1)                 {SP_Final   =SP_Final   + F_RTC_correction;}\n        if (F_NR_state==1)                  {SP_Final   =SP_Final   + F_NR_correction;}\n        if (F_SS_state==1)                  {SP_Final   =SP_Final   + F_SS_correction;}\n        if (SP_Final<HEAT_SP_lower_limit)   {SP_Final   =HEAT_SP_lower_limit}\n        if (SP_Final>HEAT_SP_upper_limit)   {SP_Final   =HEAT_SP_upper_limit}\n        if (SP_Final<20)                    {SP_Final   =20;}\n    \n        //*****************************************************************************\n\n        msg1.payload    = SP_Final;\n        msg1.topic  = \"SP_Final\";\n        global.set('SP_Final',SP_Final,\"file\")\n        \n        msg99.payload   = \"New final SP: \" + SP_Final + \" °C\";  msg99.topic = \"Result Functions\";        // ToLog\n\n\n\n        //*****************************************************************************\n\n        if (SP_Final ==  current_sp)                                            // Check only if there is a difference between SP and current value, a signal should be sent.\n            {\n                return [msg1,null,null];\n            }\n        else\n            {\n                return [msg1,msg99,null];\n            }\n    }\n    \n",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
@@ -19169,8 +19170,8 @@
             "05065bbd47aa9dd3",
             "1f4a153d2239272b"
         ],
-        "x": 1145,
-        "y": 1320,
+        "x": 1165,
+        "y": 1220,
         "wires": []
     },
     {
@@ -19252,8 +19253,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1720,
-        "y": 980,
+        "x": 1600,
+        "y": 780,
         "wires": []
     },
     {
@@ -19262,7 +19263,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "",
-        "func": "rbe",
+        "func": "rbei",
         "gap": "",
         "start": "",
         "inout": "out",
@@ -19414,8 +19415,7 @@
         "g": "d2b7e1d6e85a96cf",
         "name": "",
         "scope": [
-            "2ade66982bca360c",
-            "612499563cacf8a0"
+            "2ade66982bca360c"
         ],
         "uncaught": false,
         "x": 300,
@@ -20249,7 +20249,8 @@
         "y": 820,
         "wires": [
             [
-                "18fd7ac120089042"
+                "18fd7ac120089042",
+                "96d18f1260a97fed"
             ],
             [
                 "c54efadb07816cb9"
@@ -20313,7 +20314,8 @@
         "y": 980,
         "wires": [
             [
-                "4223b24f5dc06d8e"
+                "4223b24f5dc06d8e",
+                "06d36c3bda52da9f"
             ],
             [
                 "663fd79ce5a1610d"
@@ -20408,7 +20410,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "",
-        "func": "rbe",
+        "func": "rbei",
         "gap": "",
         "start": "",
         "inout": "out",
@@ -20462,6 +20464,23 @@
                 "b19026440632f6e1"
             ]
         ]
+    },
+    {
+        "id": "06d36c3bda52da9f",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "debug 36",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1620,
+        "y": 900,
+        "wires": []
     },
     {
         "id": "35d210f042827344",
