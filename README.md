@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 20.79 test version<br/>
+Current version: 20.80 test version<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -536,6 +536,10 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - NR function: with a fresh install, by default some values are entered.
 - Softstart function: with a fresh install, by default values are entered in the function (15 minutes / 1 degree cap)
 
+[2022-10-22] (v20.80 test version) Things done are:
+- Enhancement: Clean install / first boot optimizations.
+- Enhancement: Experimental - this version allows "Compensation curve" mode as well as Direct mode.
+- Enhancement: Reworked the T outside logic into a single function node. 
 
 
 ********
