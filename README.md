@@ -552,6 +552,9 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - Enhancement: WAR function. Added extra temperature line in the WAR graph. T_SP, T_outside and now new T_outside_custom. 
 - Enhancement: Settings. Moved min/max water temperatures to the setup page (instead of the scheduler page.
 
+[2022-10-26] (v20.83 test version) Things done are:
+- BUG: Fixed custom outside temperature logic. Now it does not keep switching anymore. 
+
 ********
 
 ## TODO list
