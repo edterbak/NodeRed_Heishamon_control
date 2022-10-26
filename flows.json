@@ -3187,9 +3187,9 @@
             "48b67765f5bf4521"
         ],
         "x": 1228,
-        "y": 1899,
+        "y": 1919,
         "w": 1398,
-        "h": 702
+        "h": 682
     },
     {
         "id": "5c6e3f50e1a2328b",
@@ -13299,14 +13299,14 @@
         "z": "8c9d42231fd19d3c",
         "g": "4f352fdae09316c2",
         "name": "Create table in context",
-        "func": "let sctab = [];\nflow.set(\"sctab\", sctab);\n",
+        "func": "var stored_value = flow.get(\"sctab\");     //mem of file?\n\nif (stored_value !== undefined) {\n    let sctab = [];\n    flow.set(\"sctab\", sctab); \n    }",
         "outputs": "1",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 2180,
-        "y": 2260,
+        "y": 2280,
         "wires": [
             []
         ]
@@ -13375,7 +13375,7 @@
         "width": 14,
         "height": 1,
         "name": "Flow version",
-        "label": "Flow version 20.84",
+        "label": "Flow version 20.85",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
@@ -13405,7 +13405,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 1970,
-        "y": 2200,
+        "y": 2220,
         "wires": [
             [
                 "1fc3414887db6c0f",
@@ -13493,7 +13493,7 @@
         "once": true,
         "onceDelay": "1",
         "topic": "SYSTEM",
-        "payload": "Start----------------------------------------------------------------",
+        "payload": "Start--------------------------------------------------------",
         "payloadType": "str",
         "x": 1360,
         "y": 2040,
@@ -13927,11 +13927,12 @@
         "topic": "",
         "payload": "Start",
         "payloadType": "str",
-        "x": 1890,
-        "y": 1940,
+        "x": 2050,
+        "y": 1980,
         "wires": [
             [
-                "e4ab365ba6d16f6e"
+                "e4ab365ba6d16f6e",
+                "1fc3414887db6c0f"
             ]
         ]
     },
@@ -13942,8 +13943,8 @@
         "g": "4f352fdae09316c2",
         "name": "",
         "events": "all",
-        "x": 1880,
-        "y": 1980,
+        "x": 2040,
+        "y": 2020,
         "wires": [
             [
                 "e4ab365ba6d16f6e"
