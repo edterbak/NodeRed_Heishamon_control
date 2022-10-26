@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 20.80 test version<br/>
+Current version: 20.82 test version<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -541,6 +541,16 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - Enhancement: Experimental - this version allows "Compensation curve" mode as well as Direct mode.
 - Enhancement: Reworked the T outside logic into a single function node. 
 
+[2022-10-26] (v20.82 test version) Things done are:
+- BUG: Fixed 2 missing operation modes in settings > operation modes
+- BUG: Fixed issue where water setpoints were being sent when heatpump is off.
+- Enhancement: Logging page and logging additions. Mega thangs for Maarten69 for his contribution on this 
+- Enhancement: Corrected a lot of grammar errors. Mega thanks to Aikon for his contribution on this 
+- Enhancement: Increased the responsiveness of the flow overall. 
+- Enhancement: WAR function. Added information of the curve in panasonic controller (read only)
+- Enhancement: WAR function. Added Import / Export buttons for the curves
+- Enhancement: WAR function. Added extra temperature line in the WAR graph. T_SP, T_outside and now new T_outside_custom. 
+- Enhancement: Settings. Moved min/max water temperatures to the setup page (instead of the scheduler page.
 
 ********
 
