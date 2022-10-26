@@ -555,6 +555,9 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 [2022-10-26] (v20.83 test version) Things done are:
 - BUG: Fixed custom outside temperature logic. Now it does not keep switching anymore. 
 
+[2022-10-26] (v20.84 test version) Things done are:
+- BUG: Fixed WAR time-chart.
+
 ********
 
 ## TODO list
