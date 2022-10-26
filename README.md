@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 20.82 test version<br/>
+Current version: 20.85 test version<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -557,6 +557,9 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 
 [2022-10-26] (v20.84 test version) Things done are:
 - BUG: Fixed WAR time-chart.
+
+[2022-10-26] (v20.85 test version) Things done are:
+- BUG: Fixed log startup
 
 ********
 
