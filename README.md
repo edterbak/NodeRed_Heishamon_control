@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 20.85 test version<br/>
+Current version: 20.86 test version<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -560,6 +560,13 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 
 [2022-10-26] (v20.85 test version) Things done are:
 - BUG: Fixed log startup
+
+[2022-10-26] (v20.86 test version) Things done are:
+- Enhancement: HA interaction with offering linkin/out (WIP)
+- BUG: Log. Not showing after restart, but only poping up after a new value.
+- Enhancement: Chart SoftStart now persistent.
+- Enhancement: Chart Solar now persistent (first attempt, but buggy still working on the reset after reload)
+- Enhancement: Chart Cool now persistent (when used)
 
 ********
 
