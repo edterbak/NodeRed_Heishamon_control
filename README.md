@@ -561,7 +561,7 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 [2022-10-26] (v20.85 test version) Things done are:
 - BUG: Fixed log startup
 
-[2022-10-26] (v20.86 test version) Things done are:
+[2022-10-27] (v20.86 test version) Things done are:
 - Enhancement: HA interaction with offering linkin/out (WIP)
 - BUG: Log. Not showing after restart, but only poping up after a new value.
 - Enhancement: Chart SoftStart now persistent.
