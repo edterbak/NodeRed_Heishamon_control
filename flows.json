@@ -2783,7 +2783,8 @@
             "5bcad017001638fd",
             "e64935081974f391",
             "0d3da6a8d7fa38ee",
-            "4faba89ea8ec838c"
+            "4faba89ea8ec838c",
+            "b1f2db1845798273"
         ],
         "x": 2734,
         "y": 739,
@@ -2817,7 +2818,6 @@
             "2081818c5b84e07f",
             "5ebd5b33f81038ea",
             "1eb00088db267256",
-            "992a8dcc098e3f91",
             "2b065128513763fa",
             "9548ee234cc5af7a",
             "69b1892c29513016",
@@ -2826,11 +2826,12 @@
             "0a397aae1191ff03",
             "47e76e01a5cfb304",
             "cdf7664223f16687",
-            "00dd6c3fd833a5cf"
+            "00dd6c3fd833a5cf",
+            "cac91a6a0390c860"
         ],
         "x": 2754,
         "y": 1439,
-        "w": 1332,
+        "w": 1472,
         "h": 322
     },
     {
@@ -3159,8 +3160,6 @@
         },
         "nodes": [
             "1fc3414887db6c0f",
-            "c97e6a7ba7ea8e5c",
-            "e4ab365ba6d16f6e",
             "e649dffb7b88341d",
             "87de9f606819ee7c",
             "031e62b0bf3df7d7",
@@ -3184,12 +3183,17 @@
             "bee7b2de27a2ac09",
             "2e07cb8c215afb98",
             "c83f2c1b98fec551",
-            "48b67765f5bf4521"
+            "48b67765f5bf4521",
+            "47cc58d8c2f4aae6",
+            "c17ea62551b198aa",
+            "8a78dd26f20bb676",
+            "48995ebf225d6dd2",
+            "7818af2ee38ecbf9"
         ],
         "x": 1228,
         "y": 1919,
-        "w": 1398,
-        "h": 682
+        "w": 1358,
+        "h": 562
     },
     {
         "id": "5c6e3f50e1a2328b",
@@ -3317,6 +3321,29 @@
         "y": 2099,
         "w": 1092,
         "h": 82
+    },
+    {
+        "id": "b1f2db1845798273",
+        "type": "group",
+        "z": "8c9d42231fd19d3c",
+        "g": "a8ac5b148d851a6b",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "af715d4c79137c30",
+            "9a106cdefc873348"
+        ],
+        "x": 2874,
+        "y": 1059,
+        "w": 82,
+        "h": 122
     },
     {
         "id": "de9229159c024a54",
@@ -3863,7 +3890,8 @@
         "wires": [
             [
                 "11c68fc0d3095541",
-                "7d582005c7d66f28"
+                "7d582005c7d66f28",
+                "af715d4c79137c30"
             ]
         ]
     },
@@ -4219,7 +4247,11 @@
             "873ab80499b9156b",
             "ef1f42fcf697a0b6",
             "662bb3cfb11c3c63",
-            "031e62b0bf3df7d7"
+            "031e62b0bf3df7d7",
+            "c3fc3dd0823391e4",
+            "6b34f737dac1d48f",
+            "b08c84a2e3145411",
+            "91641c3ebfbec364"
         ],
         "x": 3825,
         "y": 1560,
@@ -4295,7 +4327,11 @@
             "873ab80499b9156b",
             "ef1f42fcf697a0b6",
             "662bb3cfb11c3c63",
-            "031e62b0bf3df7d7"
+            "031e62b0bf3df7d7",
+            "c3fc3dd0823391e4",
+            "6b34f737dac1d48f",
+            "b08c84a2e3145411",
+            "91641c3ebfbec364"
         ],
         "x": 4075,
         "y": 780,
@@ -4629,7 +4665,11 @@
             "873ab80499b9156b",
             "ef1f42fcf697a0b6",
             "662bb3cfb11c3c63",
-            "031e62b0bf3df7d7"
+            "031e62b0bf3df7d7",
+            "c3fc3dd0823391e4",
+            "6b34f737dac1d48f",
+            "b08c84a2e3145411",
+            "91641c3ebfbec364"
         ],
         "x": 3775,
         "y": 180,
@@ -5500,7 +5540,7 @@
         "y": 1500,
         "wires": [
             [
-                "992a8dcc098e3f91"
+                "cac91a6a0390c860"
             ]
         ]
     },
@@ -5510,7 +5550,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "6788a89266ed3c87",
         "name": "Chart SS",
-        "func": "var ss_SP           = global.get('SP_Final',\"file\");                // Current compressor frequency.\nvar ss_Tr           = global.get('Main_Inlet_Temp');                             // Measurement of room temperature \nvar ss_Ta           = global.get('Main_Outlet_Temp');\nvar ss_hz           = global.get('compressor_frequency',\"file\");\nvar ss_corr         = global.get('F_SS_correction');\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={};\n\n\nmsg1.payload = ss_SP;                                                           //\nmsg1.payload = Number(msg1.payload).toFixed(1);\nmsg1.payload = parseFloat(msg1.payload);\nmsg1.topic='Setpoint';                                                          // \n\nmsg2.payload = ss_Tr;                                                           // required\nmsg2.payload = Number(msg2.payload).toFixed(1);\nmsg2.payload = parseFloat(msg2.payload);\nmsg2.topic='Water inlet';                                                       // required\n\nmsg3.payload = ss_Ta;                                                           // required\nmsg3.payload = Number(msg3.payload).toFixed(1);\nmsg3.payload = parseFloat(msg3.payload);\nmsg3.topic='Water outlet';                                                      // required\n\nmsg4.payload = ss_hz;                                                           // required\nmsg4.payload = Number(msg4.payload).toFixed(0);\nmsg4.payload = parseFloat(msg4.payload);\nmsg4.topic='Frequency';                                                         // required\n\n\nmsg5.payload = ss_corr;                                                           // required\nmsg5.payload = Number(msg5.payload).toFixed(0);\nmsg5.payload = parseFloat(msg5.payload);\nmsg5.topic='ss_correction';                                                     // required\n\n\n\nreturn [[msg1, msg2, msg3, msg4, msg5]];",
+        "func": "var ss_SP           = global.get('SP_Final',\"file\");                // Current compressor frequency.\nvar ss_Tr           = global.get('Main_Inlet_Temp');                             // Measurement of room temperature \nvar ss_Ta           = global.get('Main_Outlet_Temp');\nvar ss_hz           = global.get('compressor_frequency',\"file\");\nvar ss_corr         = global.get('F_SS_correction');\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={};\n\n\nmsg1.payload = ss_SP;                                                           //\nmsg1.payload = Number(msg1.payload).toFixed(1);\nmsg1.payload = parseFloat(msg1.payload);\nmsg1.topic='Setpoint';                                                          // \n\nmsg2.payload = ss_Tr;                                                           //\nmsg2.payload = Number(msg2.payload).toFixed(1);\nmsg2.payload = parseFloat(msg2.payload);\nmsg2.topic='Water inlet';                                                       // \n\nmsg3.payload = ss_Ta;                                                           // \nmsg3.payload = Number(msg3.payload).toFixed(1);\nmsg3.payload = parseFloat(msg3.payload);\nmsg3.topic='Water outlet';                                                      // \n\nmsg4.payload = ss_hz;                                                           // \nmsg4.payload = Number(msg4.payload).toFixed(0);\nmsg4.payload = parseFloat(msg4.payload);\nmsg4.topic='Frequency';                                                         // \n\n\nmsg5.payload = ss_corr;                                                           // \nmsg5.payload = Number(msg5.payload).toFixed(0);\nmsg5.payload = parseFloat(msg5.payload);\nmsg5.topic='ss_correction';                                                     // \n\n\n\nreturn [[msg1, msg2, msg3, msg4, msg5]];",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5542,7 +5582,7 @@
         "repeat": "60",
         "crontab": "",
         "once": true,
-        "onceDelay": "1",
+        "onceDelay": "10",
         "topic": "trigger",
         "payload": "",
         "payloadType": "date",
@@ -5912,8 +5952,7 @@
         "g": "6788a89266ed3c87",
         "name": "softstart on_off",
         "links": [
-            "84f7cbc2cc8c135d",
-            "b8c6be5205c6525c"
+            "84f7cbc2cc8c135d"
         ],
         "x": 3025,
         "y": 1500,
@@ -6199,7 +6238,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "6788a89266ed3c87",
         "name": "Load on boot SS",
-        "func": "var Correction_2_softstart_on_off           = global.get('Correction_2_softstart_on_off',\"file\");\n\nlet msg1={};\nif (Correction_2_softstart_on_off === undefined) \n    {\n        Correction_2_softstart_on_off = 0;\n        global.set('Correction_2_softstart_on_off',0,\"file\");\n        \n    }\n\nmsg1.payload = Correction_2_softstart_on_off;\n\n\nreturn msg1;",
+        "func": "var Correction_2_softstart_on_off           = global.get('Correction_2_softstart_on_off',\"file\");\n\nlet msg1={};\n//if (Correction_2_softstart_on_off === undefined) \n    {\n        Correction_2_softstart_on_off = 0;\n        global.set('Correction_2_softstart_on_off',0,\"file\");\n        \n    }\n\nmsg1.payload = Correction_2_softstart_on_off;\n\n\nreturn msg1;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6225,20 +6264,15 @@
         "name": "1 Trigger / minute",
         "props": [
             {
-                "p": "payload"
-            },
-            {
                 "p": "topic",
                 "vt": "str"
             }
         ],
-        "repeat": "180",
+        "repeat": "1800",
         "crontab": "",
         "once": true,
-        "onceDelay": "5",
+        "onceDelay": "10",
         "topic": "trigger",
-        "payload": "",
-        "payloadType": "date",
         "x": 2890,
         "y": 1520,
         "wires": [
@@ -8974,14 +9008,14 @@
         "z": "8c9d42231fd19d3c",
         "g": "6788a89266ed3c87",
         "name": "Store information",
-        "func": "var ss_chart = msg;\nglobal.set(\"ss_chart\", ss_chart,\"file\") || [];",
+        "func": "var ss_chart = msg;\nglobal.set(\"ss_chart\", ss_chart,\"file\");",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3970,
-        "y": 1540,
+        "x": 4110,
+        "y": 1500,
         "wires": [
             []
         ],
@@ -9026,7 +9060,7 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "1",
+        "onceDelay": "5",
         "topic": "",
         "payload": "trigger",
         "payloadType": "str",
@@ -9035,32 +9069,6 @@
         "wires": [
             [
                 "9548ee234cc5af7a"
-            ]
-        ]
-    },
-    {
-        "id": "992a8dcc098e3f91",
-        "type": "delay",
-        "z": "8c9d42231fd19d3c",
-        "g": "6788a89266ed3c87",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "30",
-        "rateUnits": "minute",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": true,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 3970,
-        "y": 1500,
-        "wires": [
-            [
-                "2b065128513763fa"
             ]
         ]
     },
@@ -12067,10 +12075,10 @@
         "type": "function",
         "z": "8c9d42231fd19d3c",
         "name": "Load on boot SS",
-        "func": "\nvar F_SS_stage2     = global.get('F_SS_stage2',\"file\");\n    if (F_SS_stage2===undefined)    \n        {\n            F_SS_stage2 = 15;\n            //global.set('F_SS_stage2',F_SS_stage2,\"file\");\n        }\n\nlet msg1={};\n\nmsg1.payload = F_SS_stage2; msg1.topic = \"F_SS_stage2\";\nreturn [msg1];        \n",
+        "func": "\nvar F_SS_stage2     = global.get('F_SS_stage2',\"file\");\n    if (F_SS_stage2===undefined)    \n        {\n            F_SS_stage2 = 15;\n            global.set('F_SS_stage2',F_SS_stage2,\"file\");\n        }\n\nlet msg1={};\n\nmsg1.payload = F_SS_stage2; msg1.topic = \"F_SS_stage2\";\nreturn [msg1];        \n\n\n",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\n\n\n\n\n// Code added here will be run once\n// whenever the node is started.\n\n\n\nvar F_SS_stage2     = global.get('F_SS_stage2',\"file\");\nif (F_SS_stage2===undefined || isNaN(F_SS_stage2))    \n    {\n        global.set('F_SS_stage2',60,\"file\");\n    }",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\n\n\n\n\n// Code added here will be run once\n// whenever the node is started.\n\n\n",
         "finalize": "",
         "libs": [],
         "x": 3090,
@@ -12232,10 +12240,10 @@
         "type": "function",
         "z": "8c9d42231fd19d3c",
         "name": "Load on boot SS",
-        "func": "\nvar F_SS_stage2_limit     = global.get('F_SS_stage2_limit',\"file\");\n    if (F_SS_stage2_limit===undefined)    \n        {\n            F_SS_stage2_limit = 1;\n            //global.set('F_SS_stage2_limit',F_SS_stage2_limit,\"file\");\n        }\n\nlet msg1={};\n\nmsg1.payload = F_SS_stage2_limit; msg1.topic = \"F_SS_stage2_limit\";\nreturn [msg1];        \n",
+        "func": "\nvar F_SS_stage2_limit     = global.get('F_SS_stage2_limit',\"file\");\n    if (F_SS_stage2_limit===undefined)    \n        {\n            F_SS_stage2_limit = 1;\n            global.set('F_SS_stage2_limit',F_SS_stage2_limit,\"file\");\n        }\n\nlet msg1={};\n\nmsg1.payload = F_SS_stage2_limit; msg1.topic = \"F_SS_stage2_limit\";\nreturn [msg1];        \n",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\nvar F_SS_stage2_limit     = global.get('F_SS_stage2_limit',\"file\");\nif (F_SS_stage2_limit===undefined || isNaN(F_SS_stage2_limit))    \n    {\n        global.set('F_SS_stage2_limit',0,\"file\");\n    }",
+        "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 3090,
@@ -13299,66 +13307,14 @@
         "z": "8c9d42231fd19d3c",
         "g": "4f352fdae09316c2",
         "name": "Create table in context",
-        "func": "var stored_value = flow.get(\"sctab\");     //mem of file?\n\nif (stored_value !== undefined) {\n    let sctab = [];\n    flow.set(\"sctab\", sctab); \n    }",
+        "func": "var stored_value = flow.get(\"sctab\",\"file\");\n\nif (stored_value !== undefined) \n    {\n        let sctab = [];\n        sctab = stored_value; \n        msg.payload = [...sctab];\n         \n        return msg;\n    }\n\nelse \n    {\n    let sctab = [];\n    flow.set(\"sctab\", sctab,\"file\");        \n    }\n    \n    \n\n",
         "outputs": "1",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 2180,
-        "y": 2280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c97e6a7ba7ea8e5c",
-        "type": "change",
-        "z": "8c9d42231fd19d3c",
-        "g": "4f352fdae09316c2",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload",
-                "pt": "msg",
-                "to": "#:(file)::logs",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 2510,
-        "y": 2140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e4ab365ba6d16f6e",
-        "type": "change",
-        "z": "8c9d42231fd19d3c",
-        "g": "4f352fdae09316c2",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "#:(file)::logs",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 2280,
-        "y": 2020,
+        "y": 2040,
         "wires": [
             [
                 "ccf20ebdd2bc2ad5"
@@ -13375,7 +13331,7 @@
         "width": 14,
         "height": 1,
         "name": "Flow version",
-        "label": "Flow version 20.85",
+        "label": "Flow version 20.86",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
@@ -13405,7 +13361,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 1970,
-        "y": 2220,
+        "y": 2000,
         "wires": [
             [
                 "1fc3414887db6c0f",
@@ -13423,7 +13379,6 @@
             "0380b395668eee8e",
             "1b0aafd65d5593dd",
             "9a7dda15052b4034",
-            "6966950676b3438b",
             "40abfbbe563b32ac",
             "84f7cbc2cc8c135d",
             "8e16d1ef3e972c95",
@@ -13469,7 +13424,7 @@
         "y": 2080,
         "wires": [
             [
-                "5e4c3c30025c30ee"
+                "47cc58d8c2f4aae6"
             ]
         ]
     },
@@ -13491,15 +13446,16 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "1",
+        "onceDelay": "0.1",
         "topic": "SYSTEM",
-        "payload": "Start--------------------------------------------------------",
+        "payload": "Start---------------------------------------------------------------",
         "payloadType": "str",
         "x": 1360,
         "y": 2040,
         "wires": [
             [
-                "6966950676b3438b"
+                "6966950676b3438b",
+                "c17ea62551b198aa"
             ]
         ]
     },
@@ -13511,11 +13467,10 @@
         "name": "ToLogs",
         "mode": "link",
         "links": [
-            "031e62b0bf3df7d7",
             "dc6f884b1aa816ef"
         ],
-        "x": 1565,
-        "y": 2040,
+        "x": 1485,
+        "y": 2060,
         "wires": []
     },
     {
@@ -13531,8 +13486,8 @@
         ],
         "repeat": "",
         "crontab": "00 00 * * *",
-        "once": false,
-        "onceDelay": 0.1,
+        "once": true,
+        "onceDelay": "0",
         "topic": "",
         "payload": "------------------------------------------------------------------------------------------------",
         "payloadType": "str",
@@ -13620,7 +13575,7 @@
         "y": 2380,
         "wires": [
             [
-                "5e4c3c30025c30ee"
+                "47cc58d8c2f4aae6"
             ]
         ]
     },
@@ -13701,7 +13656,7 @@
             "6966950676b3438b"
         ],
         "x": 1555,
-        "y": 2520,
+        "y": 2220,
         "wires": [
             [
                 "2dc5c2ac3212179c"
@@ -13714,14 +13669,14 @@
         "z": "8c9d42231fd19d3c",
         "g": "4f352fdae09316c2",
         "name": "function 2",
-        "func": "if (msg.payload == \"Start\")\n {flow.set(\"persistency_test\",msg,\"file\");}\n\nvar stored_value = flow.get(\"persistency_test\",\"file\")\n\n\n\nif (stored_value !== undefined)\n {return null;}\nelse \n {\n msg.payload = \"Persistent storage is not configured correctly. This flow will not function correctly until you do!\";\n msg.topic = \"SYSTEM WARNING\";\n return msg;\n }\n",
+        "func": "if (msg.payload == \"Start---------------------------------------------------------------\")\n {flow.set(\"persistency_test\",msg,\"file\");}\n\nvar stored_value = flow.get(\"persistency_test\",\"file\")\n\n\n\nif (stored_value !== undefined)\n {return null;}\nelse \n {\n msg.payload = \"Persistent storage is not configured correctly. This flow will not function correctly until you do!\";\n msg.topic = \"SYSTEM WARNING\";\n return msg;\n }\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 1760,
-        "y": 2560,
+        "y": 2260,
         "wires": [
             [
                 "9a7dda15052b4034"
@@ -13739,7 +13694,7 @@
             "031e62b0bf3df7d7"
         ],
         "x": 1875,
-        "y": 2560,
+        "y": 2260,
         "wires": []
     },
     {
@@ -13765,7 +13720,7 @@
         "payload": "Persistence",
         "payloadType": "str",
         "x": 1400,
-        "y": 2560,
+        "y": 2260,
         "wires": [
             [
                 "2dc5c2ac3212179c"
@@ -13780,7 +13735,7 @@
         "name": "Persistent storage check",
         "info": "",
         "x": 1390,
-        "y": 2520,
+        "y": 2220,
         "wires": []
     },
     {
@@ -13799,8 +13754,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 2510,
-        "y": 2080,
+        "x": 2470,
+        "y": 2140,
         "wires": [
             []
         ]
@@ -13811,7 +13766,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "bee7b2de27a2ac09",
         "name": "Add word to scrolling table",
-        "func": "let pay = msg.payload;\n\n// Read scrolling table from context\nlet sctab = flow.get(\"sctab\");\n\nif (sctab === undefined || pay === undefined)\n{\n return null;\n \n}\n\nelse\n{\n // Modify scrolling table by adding msg.payload as first element\n let size = sctab.unshift(pay);\n \n // Remove last element from scrolling table\n if (size >300) sctab.pop(); //37\n \n // Update context for scrolling text\n flow.set(\"sctab\",sctab);\n \n // Shalow copy updated scrolling table to msg.payload\n msg.payload = [...sctab];\n \n return msg;\n}",
+        "func": "let pay = msg.payload;\n\n// Read scrolling table from context\nlet sctab = flow.get('sctab',\"file\");\n\nif (sctab === undefined || pay === undefined)\n    {\n        return null;\n    }\nelse if (msg.topic==\"populate\")\n    {\n        msg.payload = flow.get('sctab',\"file\");\n        \n        return msg;\n    }\n\nelse\n    {\n        // Modify scrolling table by adding msg.payload as first element\n        let size = sctab.unshift(pay);\n         \n        // Remove last element from scrolling table\n        if (size >300) sctab.pop();\n         \n        // Update context for scrolling text\n        flow.set('sctab',sctab,\"file\");\n         \n        // Shalow copy updated scrolling table to msg.payload\n        msg.payload = [...sctab];\n         \n        return msg;\n    }",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -13821,8 +13776,8 @@
         "y": 2140,
         "wires": [
             [
-                "c97e6a7ba7ea8e5c",
-                "ccf20ebdd2bc2ad5"
+                "ccf20ebdd2bc2ad5",
+                "7818af2ee38ecbf9"
             ]
         ]
     },
@@ -13901,7 +13856,7 @@
         "y": 2140,
         "wires": [
             [
-                "5e4c3c30025c30ee"
+                "47cc58d8c2f4aae6"
             ]
         ]
     },
@@ -13920,19 +13875,19 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "900",
         "crontab": "",
         "once": true,
-        "onceDelay": "0.1",
+        "onceDelay": "0",
         "topic": "",
         "payload": "Start",
         "payloadType": "str",
-        "x": 2050,
-        "y": 1980,
+        "x": 1970,
+        "y": 2040,
         "wires": [
             [
-                "e4ab365ba6d16f6e",
-                "1fc3414887db6c0f"
+                "1fc3414887db6c0f",
+                "48995ebf225d6dd2"
             ]
         ]
     },
@@ -13943,11 +13898,11 @@
         "g": "4f352fdae09316c2",
         "name": "",
         "events": "all",
-        "x": 2040,
-        "y": 2020,
+        "x": 1960,
+        "y": 1960,
         "wires": [
             [
-                "e4ab365ba6d16f6e"
+                "1fc3414887db6c0f"
             ]
         ]
     },
@@ -13990,6 +13945,280 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "47cc58d8c2f4aae6",
+        "type": "delay",
+        "z": "8c9d42231fd19d3c",
+        "g": "4f352fdae09316c2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1820,
+        "y": 2140,
+        "wires": [
+            [
+                "5e4c3c30025c30ee"
+            ]
+        ]
+    },
+    {
+        "id": "c17ea62551b198aa",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "g": "4f352fdae09316c2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time",
+                "pt": "msg",
+                "to": "$now('[D01]/[M01] [H01]:[m01]:[s01]', '+0200')",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1650,
+        "y": 2040,
+        "wires": [
+            [
+                "5e4c3c30025c30ee"
+            ]
+        ]
+    },
+    {
+        "id": "8a78dd26f20bb676",
+        "type": "inject",
+        "z": "8c9d42231fd19d3c",
+        "g": "4f352fdae09316c2",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "populate",
+        "x": 2140,
+        "y": 2240,
+        "wires": [
+            [
+                "9fb2ab0ff0488d63"
+            ]
+        ]
+    },
+    {
+        "id": "48995ebf225d6dd2",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "d": true,
+        "g": "4f352fdae09316c2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(file)::logs",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2160,
+        "y": 2080,
+        "wires": [
+            [
+                "ccf20ebdd2bc2ad5"
+            ]
+        ]
+    },
+    {
+        "id": "7818af2ee38ecbf9",
+        "type": "change",
+        "z": "8c9d42231fd19d3c",
+        "d": true,
+        "g": "4f352fdae09316c2",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(file)::logs",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2470,
+        "y": 2180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "86f33eb67600b81e",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "name": "Restore chart",
+        "func": "let msg1={};\nmsg1 = flow.get(\"chart_softstart\",\"file\");\nif (msg1 === undefined)\n    {return null;}\nreturn msg1;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3520,
+        "y": 2260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "113ff916f90d8b38",
+        "type": "inject",
+        "z": "8c9d42231fd19d3c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3330,
+        "y": 2260,
+        "wires": [
+            [
+                "86f33eb67600b81e"
+            ]
+        ]
+    },
+    {
+        "id": "49cd7a9360526a9d",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "name": "Store chart",
+        "func": "var myArray = msg;\nflow.set(\"chart_softstart\", myArray,\"file\");",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3530,
+        "y": 2220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "125ce7bdd39ba9ad",
+        "type": "inject",
+        "z": "8c9d42231fd19d3c",
+        "name": "RESET",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[ ]",
+        "payloadType": "json",
+        "x": 4170,
+        "y": 1820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cac91a6a0390c860",
+        "type": "trigger",
+        "z": "8c9d42231fd19d3c",
+        "g": "6788a89266ed3c87",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 3940,
+        "y": 1500,
+        "wires": [
+            [
+                "2b065128513763fa"
+            ]
+        ]
+    },
+    {
+        "id": "9a106cdefc873348",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "g": "b1f2db1845798273",
+        "name": "Link in from HA - Room Setpoint",
+        "links": [],
+        "x": 2915,
+        "y": 1140,
+        "wires": [
+            [
+                "1b8f5447c498c1d6"
+            ]
+        ]
+    },
+    {
+        "id": "af715d4c79137c30",
+        "type": "link out",
+        "z": "8c9d42231fd19d3c",
+        "g": "b1f2db1845798273",
+        "name": "Link out to HA - Room Setpoint",
+        "mode": "link",
+        "links": [],
+        "x": 2915,
+        "y": 1100,
+        "wires": []
     },
     {
         "id": "a938de76db0b71f6",
@@ -14273,9 +14502,7 @@
             "914dbce5e778229e",
             "472cd4f84e3e8b1d",
             "36f8eea1b3a6c839",
-            "b11c041a52cb0712",
             "5b8f3786bc1abbb1",
-            "a56752bf989fc576",
             "c5060d82a2dec953",
             "2649d773ad06b50d",
             "2a06d5d8012e9ce7",
@@ -14298,7 +14525,11 @@
             "f2aa79821dfd1110",
             "1d63998e541e4d5a",
             "dea135ecc9872411",
-            "f13532d971be853e"
+            "f13532d971be853e",
+            "b665e9aa13d44f8e",
+            "6a50ef63d9d35647",
+            "0e8ca4bb561b59ed",
+            "497a87221c5618c5"
         ],
         "x": 2348,
         "y": 53,
@@ -14431,7 +14662,6 @@
             "2bb5988706fb572a",
             "37a369fd9ad03085",
             "0df0e84326dbeec7",
-            "f5ab18df4746f79b",
             "cdd89d5c10c71407",
             "030fbd5026e5a295",
             "7122d217051222ff"
@@ -15717,11 +15947,9 @@
         "z": "a938de76db0b71f6",
         "g": "5a496e1f1ea93a38",
         "name": "T_outside",
+        "mode": "link",
         "links": [
-            "5eef2d3a1816ae18",
             "02f25651d70831c9",
-            "6401ec360e3666b2",
-            "6a3c45d7a5c5ab3d",
             "4051d3cb1ad86dbd"
         ],
         "x": 885,
@@ -17327,7 +17555,11 @@
             "873ab80499b9156b",
             "ef1f42fcf697a0b6",
             "662bb3cfb11c3c63",
-            "031e62b0bf3df7d7"
+            "031e62b0bf3df7d7",
+            "c3fc3dd0823391e4",
+            "6b34f737dac1d48f",
+            "b08c84a2e3145411",
+            "91641c3ebfbec364"
         ],
         "x": 1335,
         "y": 4240,
@@ -17469,7 +17701,11 @@
             "873ab80499b9156b",
             "ef1f42fcf697a0b6",
             "662bb3cfb11c3c63",
-            "031e62b0bf3df7d7"
+            "031e62b0bf3df7d7",
+            "c3fc3dd0823391e4",
+            "6b34f737dac1d48f",
+            "b08c84a2e3145411",
+            "91641c3ebfbec364"
         ],
         "x": 2125,
         "y": 260,
@@ -17640,27 +17876,9 @@
         "y": 480,
         "wires": [
             [
-                "a56752bf989fc576",
                 "79d819b649cddcfb"
             ]
         ]
-    },
-    {
-        "id": "b11c041a52cb0712",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "992121a08b66faa3",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 3830,
-        "y": 400,
-        "wires": []
     },
     {
         "id": "5b8f3786bc1abbb1",
@@ -17680,28 +17898,10 @@
         "y": 480,
         "wires": [
             [
-                "b11c041a52cb0712",
                 "c5060d82a2dec953",
                 "467ba90fcd17c451"
             ]
         ]
-    },
-    {
-        "id": "a56752bf989fc576",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "992121a08b66faa3",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 3830,
-        "y": 440,
-        "wires": []
     },
     {
         "id": "c5060d82a2dec953",
@@ -17853,19 +18053,18 @@
         "z": "a938de76db0b71f6",
         "g": "f2aa79821dfd1110",
         "name": "",
-        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\n\nif (msg.topic == \"RH\")\n{\n    context.set('RH',msg.payload);\n}\nif (msg.topic == \"Temperature\")\n{\n    context.set('Temperature',msg.payload);\n}\n\n\nvar RH = context.get('RH');\nvar T = context.get('Temperature');\n\nif (RH !== undefined && T !== undefined)\n{\n    var Td = T - (( 100-RH ) / 5);\n    let msg1={};\n    msg1.payload = Td;\n    msg1.payload = Number(msg1.payload).toFixed(1);\n    msg1.payload = parseFloat(msg1.payload);\n\n    msg1.topic = \"Dew Point (°C)\";\n    flow.set(\"dew_point\",msg1);\n    return msg1;\n}\n",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\n\nvar RH = context.get('RH');\nvar T = context.get('Temperature');\n\nif (msg.topic == \"RH\")\n{\n    context.set('RH',msg.payload);\n    if (T===undefined)\n        {return null;}\n}\n\n\nif (msg.topic == \"Temperature\")\n{\n    context.set('Temperature',msg.payload);\n    if (RH===undefined)\n        {return null;}\n}\n\n\n\n\nif (RH !== undefined && T !== undefined)\n{\n    var Td = T - (( 100-RH ) / 5);\n    let msg1={};\n    let msg2={};\n    \n    msg1.payload = Td;\n    msg1.payload = Number(msg1.payload).toFixed(1);\n    msg1.payload = parseFloat(msg1.payload);\n    msg1.topic = \"Dew Point (°C)\";\n    flow.set(\"dew_point\",msg1);\n    \n    \n    msg2.payload = T;\n    msg2.payload = Number(msg2.payload).toFixed(1);\n    msg2.payload = parseFloat(msg2.payload);\n    msg2.topic = \"Temperature\"\n    \n    return [[msg1,msg2]];\n    \n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3180,
+        "x": 3140,
         "y": 160,
         "wires": [
             [
-                "f5ab18df4746f79b",
-                "cdd89d5c10c71407",
-                "6fc958da73fbdf09"
+                "6fc958da73fbdf09",
+                "497a87221c5618c5"
             ]
         ]
     },
@@ -17917,31 +18116,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2970,
+        "x": 2990,
         "y": 200,
         "wires": [
             [
-                "2bb5988706fb572a",
-                "cdd89d5c10c71407"
+                "2bb5988706fb572a"
             ]
         ]
-    },
-    {
-        "id": "f5ab18df4746f79b",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "f2aa79821dfd1110",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 3430,
-        "y": 160,
-        "wires": []
     },
     {
         "id": "cdd89d5c10c71407",
@@ -17982,10 +18163,12 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 3410,
+        "x": 3470,
         "y": 200,
         "wires": [
-            []
+            [
+                "6a50ef63d9d35647"
+            ]
         ]
     },
     {
@@ -18376,8 +18559,8 @@
         "format": "{{msg.payload}} °C",
         "layout": "row-spread",
         "className": "",
-        "x": 3730,
-        "y": 200,
+        "x": 3450,
+        "y": 260,
         "wires": []
     },
     {
@@ -18424,8 +18607,8 @@
         "name": "COOL gui changes to function trigger2",
         "mode": "link",
         "links": [],
-        "x": 3685,
-        "y": 640,
+        "x": 3485,
+        "y": 740,
         "wires": []
     },
     {
@@ -18546,7 +18729,10 @@
         "name": "link in WAR2DIRECT function",
         "links": [
             "a7ed974cef55c457",
-            "f93ad9032a6a4938"
+            "f93ad9032a6a4938",
+            "64872d3d1653b8b6",
+            "ad72b966241d5837",
+            "ab55c60aba66b566"
         ],
         "x": 245,
         "y": 740,
@@ -18833,7 +19019,11 @@
             "873ab80499b9156b",
             "ef1f42fcf697a0b6",
             "662bb3cfb11c3c63",
-            "031e62b0bf3df7d7"
+            "031e62b0bf3df7d7",
+            "c3fc3dd0823391e4",
+            "6b34f737dac1d48f",
+            "b08c84a2e3145411",
+            "91641c3ebfbec364"
         ],
         "x": 1275,
         "y": 1560,
@@ -19753,7 +19943,11 @@
             "873ab80499b9156b",
             "ef1f42fcf697a0b6",
             "662bb3cfb11c3c63",
-            "031e62b0bf3df7d7"
+            "031e62b0bf3df7d7",
+            "c3fc3dd0823391e4",
+            "6b34f737dac1d48f",
+            "b08c84a2e3145411",
+            "91641c3ebfbec364"
         ],
         "x": 1155,
         "y": 4780,
@@ -20577,6 +20771,100 @@
         "wires": [
             [
                 "add6fa4d403dd143"
+            ]
+        ]
+    },
+    {
+        "id": "b665e9aa13d44f8e",
+        "type": "inject",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2950,
+        "y": 280,
+        "wires": [
+            [
+                "0e8ca4bb561b59ed"
+            ]
+        ]
+    },
+    {
+        "id": "6a50ef63d9d35647",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "Store chart",
+        "func": "var myArray = msg;\nflow.set(\"chart_cool\", myArray,\"file\");",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3710,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0e8ca4bb561b59ed",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "Restore chart",
+        "func": "let msg1={};\nmsg1 = flow.get(\"chart_cool\",\"file\");\nif (msg1 === undefined)\n    {return null;}\nreturn msg1;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3120,
+        "y": 280,
+        "wires": [
+            [
+                "cdd89d5c10c71407"
+            ]
+        ]
+    },
+    {
+        "id": "497a87221c5618c5",
+        "type": "delay",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 3300,
+        "y": 160,
+        "wires": [
+            [
+                "cdd89d5c10c71407"
             ]
         ]
     },
@@ -31484,7 +31772,11 @@
             "873ab80499b9156b",
             "ef1f42fcf697a0b6",
             "662bb3cfb11c3c63",
-            "031e62b0bf3df7d7"
+            "031e62b0bf3df7d7",
+            "c3fc3dd0823391e4",
+            "6b34f737dac1d48f",
+            "b08c84a2e3145411",
+            "91641c3ebfbec364"
         ],
         "x": 3985,
         "y": 2160,
@@ -33375,7 +33667,6 @@
             "67fe5d78fed38255",
             "7bc1cea7963d95f8",
             "8e16d1ef3e972c95",
-            "922cd93fccc2e603",
             "9765c40bf881d992",
             "460148df6a225d24",
             "5c90f480e0f6e8ac",
@@ -33391,11 +33682,14 @@
             "bd079d704c31d5a7",
             "a8beed6bcea8ec08",
             "5fb3c7be3b428b42",
-            "ac392c197fe09917"
+            "ac392c197fe09917",
+            "092043375da1c8a9",
+            "153d971fff0a3ed3",
+            "663fdd592413d066"
         ],
-        "x": 54,
+        "x": 44,
         "y": 1693,
-        "w": 1332,
+        "w": 1342,
         "h": 1228
     },
     {
@@ -33902,16 +34196,16 @@
         "type": "link in",
         "z": "966985d68ebb4990",
         "g": "81ff790f84afd46d",
-        "name": "Input - Current power production",
+        "name": "Input - Current power",
         "links": [
-            "071320367f2b7a40"
+            "071320367f2b7a40",
+            "6c24c2f990c17968"
         ],
-        "x": 215,
-        "y": 2840,
+        "x": 85,
+        "y": 2800,
         "wires": [
             [
-                "329a022ba526c218",
-                "5f2ca6fd7cf3d5c5"
+                "663fdd592413d066"
             ]
         ]
     },
@@ -34889,7 +35183,9 @@
         "x": 570,
         "y": 2760,
         "wires": [
-            []
+            [
+                "092043375da1c8a9"
+            ]
         ]
     },
     {
@@ -34912,25 +35208,6 @@
         "y": 2600,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "922cd93fccc2e603",
-        "type": "link in",
-        "z": "966985d68ebb4990",
-        "g": "81ff790f84afd46d",
-        "name": "",
-        "links": [
-            "3daf0b2f13b7c0e2",
-            "6c24c2f990c17968"
-        ],
-        "x": 215,
-        "y": 2760,
-        "wires": [
-            [
-                "329a022ba526c218",
-                "5f2ca6fd7cf3d5c5"
-            ]
         ]
     },
     {
@@ -35009,9 +35286,8 @@
         "name": "P1 Output - Power consumption (W)",
         "mode": "link",
         "links": [
-            "922cd93fccc2e603",
-            "4047483a87ea6ec9",
-            "c193dd7c180a36de"
+            "c193dd7c180a36de",
+            "d10277056d1d02fe"
         ],
         "x": 1230,
         "y": 1060,
@@ -35413,7 +35689,11 @@
             "873ab80499b9156b",
             "ef1f42fcf697a0b6",
             "662bb3cfb11c3c63",
-            "031e62b0bf3df7d7"
+            "031e62b0bf3df7d7",
+            "c3fc3dd0823391e4",
+            "6b34f737dac1d48f",
+            "b08c84a2e3145411",
+            "91641c3ebfbec364"
         ],
         "x": 1165,
         "y": 1880,
@@ -35430,7 +35710,11 @@
             "873ab80499b9156b",
             "ef1f42fcf697a0b6",
             "662bb3cfb11c3c63",
-            "031e62b0bf3df7d7"
+            "031e62b0bf3df7d7",
+            "c3fc3dd0823391e4",
+            "6b34f737dac1d48f",
+            "b08c84a2e3145411",
+            "91641c3ebfbec364"
         ],
         "x": 430,
         "y": 3240,
@@ -35505,7 +35789,9 @@
         "x": 980,
         "y": 1540,
         "wires": [
-            []
+            [
+                "70ae9b1f03816b95"
+            ]
         ]
     },
     {
@@ -35861,7 +36147,11 @@
             "873ab80499b9156b",
             "ef1f42fcf697a0b6",
             "662bb3cfb11c3c63",
-            "031e62b0bf3df7d7"
+            "031e62b0bf3df7d7",
+            "c3fc3dd0823391e4",
+            "6b34f737dac1d48f",
+            "b08c84a2e3145411",
+            "91641c3ebfbec364"
         ],
         "x": 885,
         "y": 640,
@@ -35949,7 +36239,10 @@
         "x": 1010,
         "y": 1620,
         "wires": [
-            []
+            [
+                "b9470df85359e040",
+                "6d7bd030e2ed99b8"
+            ]
         ]
     },
     {
@@ -36177,7 +36470,7 @@
         "type": "link in",
         "z": "966985d68ebb4990",
         "g": "81ff790f84afd46d",
-        "name": "",
+        "name": "Chart - Live Gauge",
         "links": [
             "d6bf90086794b1ac"
         ],
@@ -36228,9 +36521,10 @@
         "type": "link in",
         "z": "966985d68ebb4990",
         "g": "81ff790f84afd46d",
-        "name": "",
+        "name": "Chart Power history (W)",
         "links": [
-            "77e1377aea412936"
+            "77e1377aea412936",
+            "c921d9cfc05712ec"
         ],
         "x": 385,
         "y": 2720,
@@ -36305,6 +36599,7 @@
         "id": "39f52a7b4d2f12c9",
         "type": "inject",
         "z": "966985d68ebb4990",
+        "d": true,
         "g": "2efa0af27c69d4d0",
         "name": "",
         "props": [
@@ -36330,6 +36625,7 @@
         "id": "441d5424780d9523",
         "type": "inject",
         "z": "966985d68ebb4990",
+        "d": true,
         "g": "233708268636f815",
         "name": "",
         "props": [
@@ -36343,8 +36639,8 @@
         "once": true,
         "onceDelay": "6",
         "topic": "time",
-        "x": 330,
-        "y": 1360,
+        "x": 430,
+        "y": 1400,
         "wires": [
             [
                 "4d12c082bff0d9a8"
@@ -36396,8 +36692,8 @@
         "links": [
             "c193dd7c180a36de"
         ],
-        "x": 605,
-        "y": 1600,
+        "x": 635,
+        "y": 1580,
         "wires": []
     },
     {
@@ -37204,6 +37500,306 @@
         "className": "",
         "x": 650,
         "y": 360,
+        "wires": []
+    },
+    {
+        "id": "092043375da1c8a9",
+        "type": "trigger",
+        "z": "966985d68ebb4990",
+        "g": "81ff790f84afd46d",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 980,
+        "y": 2760,
+        "wires": [
+            [
+                "153d971fff0a3ed3"
+            ]
+        ]
+    },
+    {
+        "id": "153d971fff0a3ed3",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "g": "81ff790f84afd46d",
+        "name": "Store chart",
+        "func": "var myArray = msg;\nflow.set(\"chart_solar_power_history\", myArray,\"file\");",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 2760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cc71fabeef44a7fe",
+        "type": "inject",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1530,
+        "y": 2760,
+        "wires": [
+            [
+                "19e1b78cc7d0e897"
+            ]
+        ]
+    },
+    {
+        "id": "19e1b78cc7d0e897",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "name": "Restore chart",
+        "func": "let msg1={};\nmsg1 = flow.get(\"chart_solar_power_history\",\"file\");\nif (msg1 === undefined)\n    {return null;}\nreturn msg1;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1700,
+        "y": 2760,
+        "wires": [
+            [
+                "c921d9cfc05712ec"
+            ]
+        ]
+    },
+    {
+        "id": "c921d9cfc05712ec",
+        "type": "link out",
+        "z": "966985d68ebb4990",
+        "name": "link out 13",
+        "mode": "link",
+        "links": [
+            "45de8d4b61f74361"
+        ],
+        "x": 1835,
+        "y": 2760,
+        "wires": []
+    },
+    {
+        "id": "663fdd592413d066",
+        "type": "delay",
+        "z": "966985d68ebb4990",
+        "g": "81ff790f84afd46d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "6",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 180,
+        "y": 2800,
+        "wires": [
+            [
+                "329a022ba526c218",
+                "5f2ca6fd7cf3d5c5"
+            ]
+        ]
+    },
+    {
+        "id": "b9947e738c3857dd",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "name": "Restore chart",
+        "func": "let msg1={};\nmsg1 = flow.get(\"chart_solar_todays_result\",\"file\");\nif (msg1 === undefined)\n    {return null;}\nreturn msg1;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1620,
+        "wires": [
+            [
+                "65b8f729748b5ecc"
+            ]
+        ]
+    },
+    {
+        "id": "2590f42325cddaa0",
+        "type": "inject",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 1620,
+        "wires": [
+            [
+                "b9947e738c3857dd",
+                "74c43f1541cb9220"
+            ]
+        ]
+    },
+    {
+        "id": "70ae9b1f03816b95",
+        "type": "trigger",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1240,
+        "y": 1540,
+        "wires": [
+            [
+                "241a32186671a626"
+            ]
+        ]
+    },
+    {
+        "id": "241a32186671a626",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "name": "Store chart",
+        "func": "var myArray = msg;\nflow.set(\"chart_solar_todays_result\", myArray,\"file\");",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1410,
+        "y": 1540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "74c43f1541cb9220",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "name": "Restore chart",
+        "func": "let msg1={};\nmsg1 = flow.get(\"chart_solar_import_export_result\",\"file\");\nif (msg1 === undefined)\n    {return null;}\nreturn msg1;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1660,
+        "wires": [
+            [
+                "80ef562075a4181e"
+            ]
+        ]
+    },
+    {
+        "id": "6d7bd030e2ed99b8",
+        "type": "trigger",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1240,
+        "y": 1620,
+        "wires": [
+            [
+                "67613761035e311d"
+            ]
+        ]
+    },
+    {
+        "id": "67613761035e311d",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "name": "Store chart",
+        "func": "var myArray = msg;\nflow.set(\"chart_solar_import_export_result\", myArray,\"file\");",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1410,
+        "y": 1620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b9470df85359e040",
+        "type": "debug",
+        "z": "966985d68ebb4990",
+        "name": "debug 47",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1280,
+        "y": 1660,
         "wires": []
     },
     {
