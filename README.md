@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 20.86 test version<br/>
+Current version: 20.87 test version<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -567,6 +567,11 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - Enhancement: Chart SoftStart now persistent.
 - Enhancement: Chart Solar now persistent (first attempt, but buggy still working on the reset after reload)
 - Enhancement: Chart Cool now persistent (when used)
+
+[2022-10-28] (v20.86 test version) Things done are:
+- BUG: Fixed softstart automatically turning off. 
+- Enhancement: tried not to force a graph/value reset for Solar
+
 
 ********
 
