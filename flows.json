@@ -3188,8 +3188,7 @@
             "c17ea62551b198aa",
             "8a78dd26f20bb676",
             "48995ebf225d6dd2",
-            "7818af2ee38ecbf9",
-            "c52c06e1c5d92d0f"
+            "7818af2ee38ecbf9"
         ],
         "x": 1228,
         "y": 1919,
@@ -6226,7 +6225,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 230,
-        "y": 80,
+        "y": 60,
         "wires": [
             [
                 "8c2afa46f759d9cd"
@@ -13332,7 +13331,7 @@
         "width": 14,
         "height": 1,
         "name": "Flow version",
-        "label": "Flow version 20.88",
+        "label": "Flow version 20.89",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
@@ -13609,7 +13608,7 @@
         "y": 2440,
         "wires": [
             [
-                "c52c06e1c5d92d0f"
+                "6215a77a119228d1"
             ]
         ]
     },
@@ -13619,13 +13618,13 @@
         "z": "8c9d42231fd19d3c",
         "g": "4f352fdae09316c2",
         "name": "function 1",
-        "func": "//Only check Heating_Mode at startup and display in log (filter will block same messages)\n    \nif (msg.payload == 0)\n    {\n    msg.payload = \"Heatpump is WAR mode (compensation curve). \";\n    msg.topic = \"SYSTEM\";\n    global.set(\"Heating_Mode\", 0);\n    return msg;\n    }\n\nif (msg.payload == 1) \n    {\n    msg.payload = \"Heatpump is in DIRECT mode\";\n    msg.topic = \"SYSTEM\";\n    global.set(\"Heating_Mode\", 1);\n    return msg;\n    }\nreturn null;",
+        "func": "//Only check Heating_Mode at startup and display in log (filter will block same messages)\nlet msg1={};\n\nvar Heating_Mode = global.get(\"Heating_Mode\",\"file\");\n\nif (msg.payload == 0)\n    {\n        msg1.payload = \"Heatpump is WAR mode (compensation curve)\";\n        msg1.topic = \"SYSTEM\";\n        if (Heating_Mode != 0)\n            {\n                global.set(\"Heating_Mode\",0,\"file\");\n            }\n        return msg1;\n    }\n\nelse if (msg.payload == 1) \n    {\n    msg1.payload = \"Heatpump is in DIRECT mode\";\n    msg1.topic = \"SYSTEM\";\n    if (Heating_Mode != 1)\n            {\n                global.set(\"Heating_Mode\",1,\"file\");\n            }\n    return msg1;\n    }\nelse\n    {\n        return null\n    }",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1900,
+        "x": 1840,
         "y": 2440,
         "wires": [
             [
@@ -14222,27 +14221,6 @@
         "wires": []
     },
     {
-        "id": "c52c06e1c5d92d0f",
-        "type": "rbe",
-        "z": "8c9d42231fd19d3c",
-        "g": "4f352fdae09316c2",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 1750,
-        "y": 2440,
-        "wires": [
-            [
-                "6215a77a119228d1"
-            ]
-        ]
-    },
-    {
         "id": "a938de76db0b71f6",
         "type": "tab",
         "label": "WP Control",
@@ -14366,7 +14344,7 @@
             "9e0ae6aff4c599b2",
             "ae708cb35f6a5163",
             "ea89c213947bdf26",
-            "cbbd790f0fe57bd4"
+            "a8d51c8773f8f17f"
         ],
         "x": 114,
         "y": 59,
@@ -15996,7 +15974,7 @@
         "y": 180,
         "wires": [
             [
-                "cbbd790f0fe57bd4"
+                "a8d51c8773f8f17f"
             ]
         ]
     },
@@ -16013,7 +15991,7 @@
         "y": 140,
         "wires": [
             [
-                "cbbd790f0fe57bd4"
+                "a8d51c8773f8f17f"
             ]
         ],
         "l": true
@@ -20354,37 +20332,6 @@
         "wires": []
     },
     {
-        "id": "cbbd790f0fe57bd4",
-        "type": "function",
-        "z": "a938de76db0b71f6",
-        "g": "5a496e1f1ea93a38",
-        "name": "T_outside - Input selector",
-        "func": "//***********************************************************************************\nlet msg1={};            //  pin 1 - panasonic_heat_pump/main/Outside_Temp output\nlet msg99={};           //  pin 2 - To log\nlet msg2={};            //  pin 3 - custom sensor output\nlet msg3={};            //  pin 4 - final output. selected custom sensor or default panasonic_heat_pump/.. sensor\n//  \n//  return [msg1,msg99,msg2,msg3]\n\nvar Heating_Mode    = global.get('Heating_Mode',\"file\");\n    if (Heating_Mode === undefined)     {return null;}\n\nvar T_outside_custom = global.get(\"T_outside_custom\");\n\n//***********************************************************************************\n// Timer how long the compressoris on. Runtime\n//\nvar CurrentTime = new Date().getTime();\nvar StartTime = context.get(\"StartTime\");\nif (StartTime === undefined)\n    {\n        context.set(\"StartTime\",CurrentTime);\n        return null;\n    }\nelse\n    {\n        TimeElapsed = ((CurrentTime - StartTime)/1000);\n        TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n//        node.warn(TimeElapsed);\n    }\n//***********************************************************************************\n\n//***********************************************************************************\n//\n//  Set delay after which the function will switch back from custom sensor to panasonic internal sensor. \n//  Choosen delay is 2 hours, 60 seconds x 60 x 2 = 7200 seconds\n//\n//***********************************************************************************\n\n//***********************************************************************************\n//  \nif (msg.topic == \"panasonic_heat_pump/main/Outside_Temp\")\n\n    {\n        msg1 = msg;\n        msg1.payload = Number(msg1.payload).toFixed(1);\n        msg1.payload = parseFloat(msg1.payload);\n        global.set(\"T_outside_panasonic\",msg1.payload);\n        \n        msg3 = msg1;\n\n        if (Heating_Mode == 0)                                                  // if heating mode is compensationcurve\n            {\n                msg99.topic = \"SETUP - Sensors\";\n                msg99.payload = \"Heatpump is in compensation mode. Custom outside temperature sensor ignored. Using TOP14 instead\";\n                global.set(\"T_outside\",msg3.payload);\n                \n                return [msg1,msg99,null,msg3]\n            }\n        else if (Heating_Mode == 1 && TimeElapsed > 7200)                                            // if too long no custom T sensor\n            {\n                msg99.topic = \"SETUP - Sensors\";\n                msg99.payload = \"Custom outside temperature sensor LOST. Using TOP14 instead\";\n                global.set(\"T_outside_custom\",undefined);\n                global.set(\"T_outside\",msg3.payload);\n                \n                return [msg1,msg99,null,msg3]\n            }\n        else if (Heating_Mode == 1 && T_outside_custom === undefined)                        // if heating mode is Direct, with no external \n            {\n                global.set(\"T_outside\",msg3.payload);\n                return [msg1,null,null,msg3]\n            }\n        else\n            {\n                return [msg1,null,null,null]\n            }\n        \n    }\n//***********************************************************************************\n//\nelse                                                                            // if topic is not as defined by heatpump mqtt topic, then this is a custom sensor.\n    {\n        msg2 = msg;\n        msg2.payload = Number(msg2.payload).toFixed(1);\n        msg2.payload = parseFloat(msg2.payload);\n        global.set(\"T_outside_custom\",msg2.payload);\n        \n        if (Heating_Mode == 1)                                                  // Only in direct mode, allow currentTime to be set\n            {\n                context.set(\"StartTime\",CurrentTime);\n                \n                msg3 = msg2;\n                msg3.topic = \"custom sensor\";\n                \n                global.set(\"T_outside\",msg3.payload);\n                global.set(\"T_outside_custom\",msg2.payload);\n                \n                \n                msg99.topic = \"SETUP - Sensors\";\n                msg99.payload = \"Custom outside temperature sensor FOUND\";\n                \n                return [null,msg99,msg2,msg3];        \n            }\n        return [null,null,msg2,null]\n    }",
-        "outputs": 4,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 710,
-        "y": 160,
-        "wires": [
-            [],
-            [
-                "ea89c213947bdf26"
-            ],
-            [],
-            [
-                "d6a9c376dde9c43f"
-            ]
-        ],
-        "outputLabels": [
-            "panasonic_heat_pump/main/Outside_Temp output",
-            "To log",
-            "custom sensor output",
-            "Final output"
-        ]
-    },
-    {
         "id": "ea89c213947bdf26",
         "type": "rbe",
         "z": "a938de76db0b71f6",
@@ -20888,6 +20835,37 @@
             [
                 "cdd89d5c10c71407"
             ]
+        ]
+    },
+    {
+        "id": "a8d51c8773f8f17f",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "5a496e1f1ea93a38",
+        "name": "T_outside - Input selector",
+        "func": "//***********************************************************************************\nlet msg1={};            //  pin 1 - panasonic_heat_pump/main/Outside_Temp output\nlet msg99={};           //  pin 2 - To log\nlet msg2={};            //  pin 3 - custom sensor output\nlet msg3={};            //  pin 4 - final output. selected custom sensor or default panasonic_heat_pump/.. sensor\n//  \n//  return [msg1,msg99,msg2,msg3]\n\nmsg99.topic = \"SETUP - Sensors\";\n\n\nvar Heating_Mode    = global.get('Heating_Mode',\"file\");\n    if (Heating_Mode === undefined)     {return null;}\n\nvar T_outside_custom = global.get(\"T_outside_custom\");\n\n//***********************************************************************************\n// Timer how long the compressoris on. Runtime\n//\nvar CurrentTime = new Date().getTime();\nvar StartTime = context.get(\"StartTime\");\nif (StartTime === undefined)\n    {\n        context.set(\"StartTime\",CurrentTime);\n        return null;\n    }\nelse\n    {\n        TimeElapsed = ((CurrentTime - StartTime)/1000);\n        TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n//        node.warn(TimeElapsed);\n    }\n//***********************************************************************************\n\n//***********************************************************************************\n//\n//  Set delay after which the function will switch back from custom sensor to panasonic internal sensor. \n//  Choosen delay is 2 hours, 60 seconds x 60 x 2 = 7200 seconds\n//\n//***********************************************************************************\n\n//***********************************************************************************\n//  \nif (msg.topic == \"panasonic_heat_pump/main/Outside_Temp\")\n    {\n        msg1 = msg;\n        msg1.payload = Number(msg1.payload).toFixed(1);\n        msg1.payload = parseFloat(msg1.payload);\n        \n        global.set(\"T_outside_panasonic\",msg1.payload);\n\n        if (T_outside_custom === undefined)\n            {\n                msg3 = msg1;\n                global.set(\"T_outside\",msg3.payload);\n                msg99.payload = \"Custom outside temperature sensor not found\";\n                return [msg1,null,null,msg3]\n            //  return [msg1,msg99,msg2,msg3]\n            }\n        else if (Heating_Mode == 1 && TimeElapsed > 7200)\n            {\n                msg3 = msg1;\n                global.set(\"T_outside_custom\",undefined);\n                global.set(\"T_outside\",msg3.payload);\n                msg99.payload = \"Custom outside temperature sensor LOST. Using TOP14 instead\";\n                return [msg1,null,null,msg3]\n            //  return [msg1,msg99,msg2,msg3]\n            }\n        else if (Heating_Mode == 0)\n            {\n                msg3 = msg1;\n                global.set(\"T_outside\",msg3.payload);\n                msg99.payload = \"Heatpump is in compensation mode (WAR). Custom outside temperature sensor ignored. Using TOP14 instead\";\n                return [msg1,null,null,msg3]\n            //  return [msg1,msg99,msg2,msg3]\n            }\n        else\n            {\n                return [msg1,null,null,null]\n            //  return [msg1,msg99,msg2,msg3]\n            }\n    }    \n//******************************************************************************\nelse\n    {\n        msg2 = msg;\n        msg2.payload = Number(msg2.payload).toFixed(1);\n        msg2.payload = parseFloat(msg2.payload);\n        global.set(\"T_outside_custom\",msg2.payload);\n        \n        if (Heating_Mode == 0)\n            {\n                context.set(\"StartTime\",CurrentTime);\n                msg99.payload = \"Custom outside temperature sensor FOUND, but not used. Heatpump is in compensation mode (WAR) and using TOP14\";\n                return [null,msg99,msg2,null];\n            //  return [msg1,msg99,msg2,msg3]\n            }\n        if (Heating_Mode == 1)\n            {\n                context.set(\"StartTime\",CurrentTime);\n                msg3 = msg2;\n                msg3.topic = \"custom sensor\";\n                msg99.payload = \"Custom outside temperature sensor FOUND and used\";\n                return [null,msg99,msg2,msg3];\n            //  return [msg1,msg99,msg2,msg3]\n            }\n    }\n",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 160,
+        "wires": [
+            [],
+            [
+                "ea89c213947bdf26"
+            ],
+            [],
+            [
+                "d6a9c376dde9c43f"
+            ]
+        ],
+        "outputLabels": [
+            "panasonic_heat_pump/main/Outside_Temp output",
+            "To log",
+            "custom sensor output",
+            "Final output"
         ]
     },
     {
@@ -33682,13 +33660,11 @@
             "1e0f4db7208e5055",
             "329a022ba526c218",
             "992b1344cc8fd4eb",
-            "6ca6d4d49dde6089",
             "473053520368f99d",
             "28c7a4a25703f3c5",
             "67fe5d78fed38255",
             "7bc1cea7963d95f8",
             "8e16d1ef3e972c95",
-            "9765c40bf881d992",
             "460148df6a225d24",
             "5c90f480e0f6e8ac",
             "d4b0a313434a3fd9",
@@ -33706,7 +33682,8 @@
             "ac392c197fe09917",
             "092043375da1c8a9",
             "153d971fff0a3ed3",
-            "663fdd592413d066"
+            "663fdd592413d066",
+            "e5578a7ea3257441"
         ],
         "x": 44,
         "y": 1693,
@@ -33786,17 +33763,15 @@
             "c7ec48dc3c78df80",
             "4219518104b1ef5d",
             "aad8f63921d33903",
-            "9001c99705ba1e90",
-            "cdc88bca276de61b",
             "794528b156d90283",
             "42734e97a85d5537",
             "40abfbbe563b32ac",
             "39f52a7b4d2f12c9"
         ],
         "x": 114,
-        "y": 519,
+        "y": 551.5,
         "w": 812,
-        "h": 202
+        "h": 169.5
     },
     {
         "id": "9fca714df21ffac0",
@@ -33837,7 +33812,33 @@
         "h": 82
     },
     {
-        "id": "6ca6d4d49dde6089",
+        "id": "233708268636f815",
+        "type": "group",
+        "z": "966985d68ebb4990",
+        "g": "3b5324e3d80d96a1",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "8f12203bf931d988",
+            "cf528e5358dce9df",
+            "4d12c082bff0d9a8",
+            "3bd892e72c39999a",
+            "441d5424780d9523"
+        ],
+        "x": 154,
+        "y": 1279,
+        "w": 612,
+        "h": 162
+    },
+    {
+        "id": "e5578a7ea3257441",
         "type": "group",
         "z": "966985d68ebb4990",
         "g": "81ff790f84afd46d",
@@ -33847,6 +33848,7 @@
             "label": true
         },
         "nodes": [
+            "9765c40bf881d992",
             "5a4e594ff048795f",
             "bdd8cc1b7fb80f3f",
             "0a090bd1c44b08c6",
@@ -33870,41 +33872,13 @@
         "x": 434,
         "y": 1719,
         "w": 392,
-        "h": 1122
-    },
-    {
-        "id": "233708268636f815",
-        "type": "group",
-        "z": "966985d68ebb4990",
-        "g": "3b5324e3d80d96a1",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "8f12203bf931d988",
-            "cf528e5358dce9df",
-            "4d12c082bff0d9a8",
-            "9dfba925c77906cc",
-            "aac9a5d5754051a7",
-            "3bd892e72c39999a",
-            "441d5424780d9523"
-        ],
-        "x": 154,
-        "y": 1279,
-        "w": 732,
-        "h": 162
+        "h": 1162
     },
     {
         "id": "ce2634259bc8d6eb",
         "type": "ui_dropdown",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "Power detection method",
         "label": "Power detection method",
         "tooltip": "",
@@ -33941,7 +33915,8 @@
         "wires": [
             [
                 "aa0fc024b66f7bef",
-                "941e2e6b17a45171"
+                "941e2e6b17a45171",
+                "e5c006c4a3b36492"
             ]
         ]
     },
@@ -33949,7 +33924,7 @@
         "id": "33af265aa8cd105a",
         "type": "ui_numeric",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "DHW temperature setpoint - low",
         "label": "DHW temperature setpoint - low",
         "tooltip": "This setpoint is active below the {{msg.threshold}} treshold",
@@ -33978,7 +33953,7 @@
         "id": "16fc69e4b9ff74fd",
         "type": "ui_numeric",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "DHW temperature setpoint - high",
         "label": "DHW temperature setpoint - high",
         "tooltip": "This setpoint is active above the {{msg.threshold}} treshold",
@@ -34007,7 +33982,7 @@
         "id": "608ac27952261ad4",
         "type": "ui_numeric",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "Solar Production Threshold",
         "label": "Threshold",
         "tooltip": "",
@@ -34029,7 +34004,8 @@
         "wires": [
             [
                 "7ed70179e6faf792",
-                "9593ad422bc31478"
+                "9593ad422bc31478",
+                "02cba8a8d828e859"
             ]
         ]
     },
@@ -34037,7 +34013,7 @@
         "id": "7ed70179e6faf792",
         "type": "change",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "",
         "rules": [
             {
@@ -34066,7 +34042,7 @@
         "id": "2e9d5424e80ef967",
         "type": "ui_switch",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "Fallback to DHW temperature setpoint low",
         "label": "Fallback to DHW temperature setpoint low below 0 W?",
         "tooltip": "",
@@ -34113,7 +34089,7 @@
         "y": 600,
         "wires": [
             [
-                "cdc88bca276de61b"
+                "39f8d3463d10ccfb"
             ],
             [
                 "42734e97a85d5537"
@@ -34129,36 +34105,10 @@
         ]
     },
     {
-        "id": "9001c99705ba1e90",
-        "type": "delay",
-        "z": "966985d68ebb4990",
-        "g": "2efa0af27c69d4d0",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "2",
-        "rateUnits": "minute",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": true,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 360,
-        "y": 600,
-        "wires": [
-            [
-                "aad8f63921d33903"
-            ]
-        ]
-    },
-    {
         "id": "f3f4f51165a33ae4",
         "type": "ui_switch",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "Solar",
         "label": "Solar",
         "tooltip": "",
@@ -34193,7 +34143,7 @@
         "id": "bfade373dc6bae1e",
         "type": "ui_template",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "group": "b7f22c282fde0f86",
         "name": "Line - Setup ",
         "order": 6,
@@ -34278,21 +34228,7 @@
         "y": 600,
         "wires": [
             [
-                "9001c99705ba1e90"
-            ]
-        ]
-    },
-    {
-        "id": "cdc88bca276de61b",
-        "type": "no-op",
-        "z": "966985d68ebb4990",
-        "g": "2efa0af27c69d4d0",
-        "name": "OUT",
-        "x": 850,
-        "y": 560,
-        "wires": [
-            [
-                "39f8d3463d10ccfb"
+                "aad8f63921d33903"
             ]
         ]
     },
@@ -34332,7 +34268,8 @@
             [
                 "071320367f2b7a40",
                 "c980bba812a20bc2",
-                "ce787867699a6a50"
+                "ce787867699a6a50",
+                "1cdfeab71adfa30d"
             ]
         ]
     },
@@ -34340,7 +34277,7 @@
         "id": "e5cb66afb46c891b",
         "type": "comment",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "DASHBOARD",
         "info": "",
         "x": 550,
@@ -34365,7 +34302,8 @@
             [
                 "794528b156d90283",
                 "edf195c89ff83486",
-                "70bacba09eb9f884"
+                "70bacba09eb9f884",
+                "5f64cf19b054068a"
             ]
         ],
         "outputLabels": [
@@ -34387,7 +34325,7 @@
             "44925c267016b3f7"
         ],
         "x": 1170,
-        "y": 540,
+        "y": 580,
         "wires": [],
         "l": true
     },
@@ -34838,7 +34776,8 @@
         "y": 3080,
         "wires": [
             [
-                "e5767c67ab606448"
+                "e5767c67ab606448",
+                "2c50324516dbe73c"
             ]
         ]
     },
@@ -34857,6 +34796,7 @@
         "id": "e62a354ce682ea6f",
         "type": "link out",
         "z": "966985d68ebb4990",
+        "d": true,
         "g": "6f4cdc97add442ff",
         "name": "",
         "mode": "link",
@@ -34873,7 +34813,7 @@
         "z": "966985d68ebb4990",
         "g": "6f4cdc97add442ff",
         "name": "kWh trigger",
-        "func": "var solar_state                     = global.get('solar_state',\"file\");\nif (solar_state === true)\n{\n    var solar_detection_method          = global.get('solar_detection_method',\"file\");\n    var solar_threshold                 = global.get('solar_threshold',\"file\");\n    var DHW_Current_SP                  = global.get('DHW_Target_Temp',\"file\");\n    var solar_fallback                  = global.get('solar_fallback',\"file\");\n        if (solar_fallback===undefined)     {solar_fallback=0}\n    var DHW_SP_LOW                      = global.get('DHW_SP_LOW',\"file\");\n    var DHW_SP_HIGH                     = global.get('DHW_SP_HIGH',\"file\");\n    var Operating_Mode_State            = global.get('Operating_Mode_State',\"file\");\n    var new_Operating_Mode_State;       // just create a variable, empty.\n    var old_Operating_Mode_State;       // just create a variable, empty.\n    var solar_turn_on                   = global.get('solar_turn_on',\"file\");\n    var Heatpump_State                  = global.get('Heatpump_State',\"file\");\n    var SolarFunction_active            = global.get(\"SolarFunction_active\",\"file\");\n\n    var F_rtc_on_off_active             = global.get('F_rtc_on_off_active',\"file\");\n    var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n\n    let msg1={};                                                                // output to DHW setpoint\n    let msg2={};                                                                // output to Operation Mode\n    let msg3={};                                                                // output to turn on power to heatpump.\n    let msg99={};                                                               // output to log\n\n    // Check if all required states are available.\n    if (solar_detection_method === undefined || solar_threshold === undefined || solar_fallback === undefined || DHW_SP_HIGH === undefined || Operating_Mode_State === undefined || solar_turn_on === undefined || Heatpump_State === undefined)\n        {\n            msg99.topic = \"NR Solar Function\";\n            msg99.payload = \"ERROR: Not all settings in 'Function Solar' are programmed in GUI yet.\";\n            return [null,null,null,msg99];                                       // log output\n        }\n    else\n        {\n\n//              msg.topic = \"W\";            < > nul\n//              msg.topic = 'GRID power production kWh';\n//              msg.topic = 'GRID power consumption kWh';\n//              msg.topic = '(+) Import (-) Export';\n\n//Threshold\n//  kW\n//  kWh_prod\n//  kWh_result\n//\n        \n        if (solar_detection_method == \"kW\"          && msg.topic != 'W' )                               {return null;}\n        if (solar_detection_method == \"kWh_prod\"    && msg.topic != 'kWh' )                             {return null;}\n        if (solar_detection_method == \"kWh_result\"  && msg.topic != '(+) Import (-) Export' )           {return null;}\n        \n        if (solar_detection_method == \"kW\")                                                             {msg.payload = msg.payload / 1000;}           // convert W to kW.\n\n        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n        //             (solar_threshold > (msg.payload) >>> Note that msg.payload is negative number if energy production is high\n        if (solar_threshold > (msg.payload) && DHW_Current_SP != DHW_SP_HIGH && SolarFunction_active != 2)      \n            {\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                \n                if (Operating_Mode_State == 0){new_Operating_Mode_State = 4; old_Operating_Mode_State = Operating_Mode_State} // add DHW modus\n                if (Operating_Mode_State == 1){new_Operating_Mode_State = 5; old_Operating_Mode_State = Operating_Mode_State} // add DHW modus\n                if (Operating_Mode_State == 2){new_Operating_Mode_State = 6; old_Operating_Mode_State = Operating_Mode_State} // add DHW modus\n                if (Operating_Mode_State == 7){new_Operating_Mode_State = 8; old_Operating_Mode_State = Operating_Mode_State} // add DHW modus\n                \n                if (Operating_Mode_State == 3){new_Operating_Mode_State = 3;} // prevent undefined new_Operating_Mode_State\n                if (Operating_Mode_State == 4){new_Operating_Mode_State = 4;} // prevent undefined new_Operating_Mode_State\n                if (Operating_Mode_State == 5){new_Operating_Mode_State = 5;} // prevent undefined new_Operating_Mode_State\n                if (Operating_Mode_State == 6){new_Operating_Mode_State = 6;} // prevent undefined new_Operating_Mode_State\n                if (Operating_Mode_State == 8){new_Operating_Mode_State = 8;} // prevent undefined new_Operating_Mode_State\n                \n                var tag;    // declare variable for tag in log line.\n                if (solar_detection_method == \"kW\")         {tag = 'kW';}         // convert W to kW.\n                if (solar_detection_method == \"kWh_prod\")   {tag = \"Today's export (kWh)\";}         \n                if (solar_detection_method == \"kWh_result\") {tag = \"kWh todays result\";}  \n                \n                if (F_stored_next_operating_mode === undefined && old_Operating_Mode_State !== undefined)\n                    {\n                        global.set('F_stored_next_operating_mode',old_Operating_Mode_State,\"file\");\n                    }\n                \n\n                msg1.payload = DHW_SP_HIGH;\n                msg2.payload = new_Operating_Mode_State;\n                \n                global.set(\"SolarFunction_active\",1,\"file\");\n                \n                if (Heatpump_State == 0 && solar_turn_on === true)\n                    {   \n                        msg99.payload = \"triggered thhreshold (\" + tag + \"). DHW SP to \" + DHW_SP_HIGH + \", change operationmode and turn on Heatpump\";\n                        msg99.topic = \"Function Solar\";\n                        msg3.payload = 1;                                           // send 1 to turn on the heatpump\n\n                        return [msg1, msg2, msg3, msg99];\n                    }\n                else    \n                    {   \n                        msg99.payload = \"triggered thhreshold (\" + tag + \"). DHW SP to \" + DHW_SP_HIGH + \" and change operation mode\";\n                        msg99.topic = \"Function Solar\";\n\n                        return [msg1, msg2, null, msg99];\n                    }    \n            }\n            else if (msg.payload > 0 && DHW_Current_SP == DHW_SP_HIGH && solar_fallback === true && SolarFunction_active == 1)\n            {\n                msg1.payload = DHW_SP_LOW;\n                global.set(\"SolarFunction_active\",0,\"file\");\n                \n                msg99.payload = \"triggered threshold (\" + tag + \"). Above 0kWh threshold. DHW SP to \" + DHW_SP_LOW;\n                msg99.topic = \"Function Solar\";\n                return [msg1,null,null,msg99];\n            }\n            else {return [null,null,null,null];}\n            \n            //DHW_Target_Temp\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n        \n        }\n}",
+        "func": "var solar_state                     = global.get('solar_state',\"file\");\nif (solar_state === true)\n{\n    var solar_detection_method          = global.get('solar_detection_method',\"file\");\n    var solar_threshold                 = global.get('solar_threshold',\"file\");\n    var DHW_Current_SP                  = global.get('DHW_Target_Temp',\"file\");\n    var solar_fallback                  = global.get('solar_fallback',\"file\");\n        if (solar_fallback===undefined)     {solar_fallback=0}\n    var DHW_SP_LOW                      = global.get('DHW_SP_LOW',\"file\");\n    var DHW_SP_HIGH                     = global.get('DHW_SP_HIGH',\"file\");\n    var Operating_Mode_State            = global.get('Operating_Mode_State',\"file\");\n    var new_Operating_Mode_State;       // just create a variable, empty.\n    var old_Operating_Mode_State;       // just create a variable, empty.\n    var solar_turn_on                   = global.get('solar_turn_on',\"file\");\n    var Heatpump_State                  = global.get('Heatpump_State',\"file\");\n    var SolarFunction_active            = global.get(\"SolarFunction_active\",\"file\");\n\n    var F_rtc_on_off_active             = global.get('F_rtc_on_off_active',\"file\");\n    var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n\n    let msg1={};                                                                // pin 1 - output to DHW setpoint\n    let msg2={};                                                                // pin 2 - output to Operation Mode\n    let msg3={};                                                                // pin 3 - output to turn on power to heatpump.\n    let msg99={};                                                               // pin 4 - output to log\n\n//  return [msg1,msg2,msg3,msg99]\n\n    // Check if all required states are available.\n    if (solar_detection_method === undefined || solar_threshold === undefined || solar_fallback === undefined || DHW_SP_HIGH === undefined || Operating_Mode_State === undefined || solar_turn_on === undefined || Heatpump_State === undefined)\n        {\n            msg99.topic = \"NR Solar Function\";\n            msg99.payload = \"ERROR: Not all settings in 'Function Solar' are programmed in GUI yet.\";\n            return [null,null,null,msg99];                                       // log output\n        }\n    else\n        {\n\n//              msg.topic = \"W\";            < > nul\n//              msg.topic = 'GRID power production kWh';\n//              msg.topic = 'GRID power consumption kWh';\n//              msg.topic = '(+) Import (-) Export';\n\n//Threshold\n//  kW\n//  kWh_prod\n//  kWh_result\n//\n        \n        if (solar_detection_method == \"kW\"          && msg.topic != 'W' )                               {return null;}\n        if (solar_detection_method == \"kWh_prod\"    && msg.topic != 'kWh' )                             {return null;}\n        if (solar_detection_method == \"kWh_result\"  && msg.topic != '(+) Import (-) Export' )           {return null;}\n//        node.warn(msg.payload)\n        if (solar_detection_method == \"kW\")                                                             {msg.payload = msg.payload / 1000;}           // convert W to kW.\n\n        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n        //             (solar_threshold > (msg.payload) >>> Note that msg.payload is negative number if energy production is high\n        if (solar_threshold > (msg.payload) && DHW_Current_SP != DHW_SP_HIGH && SolarFunction_active != 2)      \n            {\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                \n                if (Operating_Mode_State == 0){new_Operating_Mode_State = 4; old_Operating_Mode_State = Operating_Mode_State} // add DHW modus\n                if (Operating_Mode_State == 1){new_Operating_Mode_State = 5; old_Operating_Mode_State = Operating_Mode_State} // add DHW modus\n                if (Operating_Mode_State == 2){new_Operating_Mode_State = 6; old_Operating_Mode_State = Operating_Mode_State} // add DHW modus\n                if (Operating_Mode_State == 7){new_Operating_Mode_State = 8; old_Operating_Mode_State = Operating_Mode_State} // add DHW modus\n                \n                if (Operating_Mode_State == 3){new_Operating_Mode_State = 3;} // prevent undefined new_Operating_Mode_State\n                if (Operating_Mode_State == 4){new_Operating_Mode_State = 4;} // prevent undefined new_Operating_Mode_State\n                if (Operating_Mode_State == 5){new_Operating_Mode_State = 5;} // prevent undefined new_Operating_Mode_State\n                if (Operating_Mode_State == 6){new_Operating_Mode_State = 6;} // prevent undefined new_Operating_Mode_State\n                if (Operating_Mode_State == 8){new_Operating_Mode_State = 8;} // prevent undefined new_Operating_Mode_State\n                \n                var tag;    // declare variable for tag in log line.\n                if (solar_detection_method == \"kW\")         {tag = 'kW';}         // convert W to kW.\n                if (solar_detection_method == \"kWh_prod\")   {tag = \"Today's export (kWh)\";}         \n                if (solar_detection_method == \"kWh_result\") {tag = \"kWh todays result\";}  \n                \n                if (F_stored_next_operating_mode === undefined && old_Operating_Mode_State !== undefined)\n                    {\n                        global.set('F_stored_next_operating_mode',old_Operating_Mode_State,\"file\");\n                    }\n                \n                msg1.payload = DHW_SP_HIGH;\n                msg2.payload = new_Operating_Mode_State;\n                \n                global.set(\"SolarFunction_active\",1,\"file\");\n                \n                if (Heatpump_State == 0 && solar_turn_on === true)\n                    {   \n                        msg99.payload = \"triggered thhreshold (\" + tag + \"). DHW SP to \" + DHW_SP_HIGH + \", change operationmode and turn on Heatpump\";\n                        msg99.topic = \"Function Solar\";\n                        msg3.payload = 1;                                           // send 1 to turn on the heatpump\n\n                        return [msg1, msg2, msg3, msg99];\n                    }\n                else    \n                    {   \n                        msg99.payload = \"triggered thhreshold (\" + tag + \"). DHW SP to \" + DHW_SP_HIGH + \" and change operation mode\";\n                        msg99.topic = \"Function Solar\";\n\n                        return [msg1, msg2, null, msg99];\n                    }    \n            }\n            else if (msg.payload > 0 && DHW_Current_SP == DHW_SP_HIGH && solar_fallback === true && SolarFunction_active == 1)\n            {\n                msg1.payload = DHW_SP_LOW;\n                global.set(\"SolarFunction_active\",0,\"file\");\n                \n                msg99.payload = \"triggered threshold (\" + tag + \"). Above 0kWh threshold. DHW SP to \" + DHW_SP_LOW;\n                msg99.topic = \"Function Solar\";\n                return [msg1,null,null,msg99];\n            }\n            else {return [null,null,null,null];}\n            \n            //DHW_Target_Temp\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n        \n        }\n}",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
@@ -34901,7 +34841,7 @@
         "outputLabels": [
             "DHW_SP_HIGH",
             "new_Operating_Mode_State",
-            "solar_turn_on",
+            "solar_turn_on_heatpump",
             "log"
         ]
     },
@@ -34947,6 +34887,7 @@
         "id": "b50ab0a4981f9d17",
         "type": "link out",
         "z": "966985d68ebb4990",
+        "d": true,
         "g": "6f4cdc97add442ff",
         "name": "",
         "mode": "link",
@@ -34986,7 +34927,7 @@
         "id": "2a4ffebda936e1bf",
         "type": "ui_switch",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "Override power state",
         "label": "Solar function active when heat pump is off",
         "tooltip": "Powers on heat pump when power is above treshold",
@@ -35091,13 +35032,14 @@
         "id": "ee7e3fc1d241d09e",
         "type": "link out",
         "z": "966985d68ebb4990",
+        "d": true,
         "g": "6f4cdc97add442ff",
         "name": "",
         "mode": "link",
         "links": [
             "071ac5a0f08a8fdb"
         ],
-        "x": 695,
+        "x": 955,
         "y": 3140,
         "wires": []
     },
@@ -35131,7 +35073,7 @@
         "id": "5a4e594ff048795f",
         "type": "ui_text",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "group": "b7f22c282fde0f86",
         "order": 16,
         "width": 9,
@@ -35166,7 +35108,7 @@
         "id": "bdd8cc1b7fb80f3f",
         "type": "ui_chart",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "",
         "group": "2bd11d2d909e2ba3",
         "order": 2,
@@ -35213,7 +35155,7 @@
         "id": "0a090bd1c44b08c6",
         "type": "ui_template",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "group": "b7f22c282fde0f86",
         "name": "Line - Current values",
         "order": 14,
@@ -35255,7 +35197,7 @@
         "id": "992ca6239bbe7308",
         "type": "inject",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "RESET",
         "props": [
             {
@@ -35295,7 +35237,8 @@
             [
                 "4896062be182fe15",
                 "6c24c2f990c17968",
-                "890a57ef3afcf284"
+                "890a57ef3afcf284",
+                "0d21490b3af3b54c"
             ]
         ]
     },
@@ -35333,7 +35276,8 @@
             [
                 "13a19fc3eda5bac1",
                 "3bd892e72c39999a",
-                "cfd69d5fa56c8a3d"
+                "cfd69d5fa56c8a3d",
+                "7317e838553d28c3"
             ]
         ],
         "outputLabels": [
@@ -35408,7 +35352,7 @@
         "id": "39a4db5e9a226488",
         "type": "ui_text",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "group": "b7f22c282fde0f86",
         "order": 15,
         "width": 9,
@@ -35496,7 +35440,7 @@
         "id": "200de001362093f8",
         "type": "rbe",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "",
         "func": "rbe",
         "gap": "",
@@ -35520,7 +35464,7 @@
         "id": "87da7c125b68ad72",
         "type": "change",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "",
         "rules": [
             {
@@ -35737,7 +35681,7 @@
             "b08c84a2e3145411",
             "91641c3ebfbec364"
         ],
-        "x": 430,
+        "x": 510,
         "y": 3240,
         "wires": [],
         "l": true
@@ -35747,7 +35691,7 @@
         "type": "function",
         "z": "966985d68ebb4990",
         "name": "Function - Production - Consumption (kWh)",
-        "func": "let msg1={};                    // todays_result\nlet msg2={};                    // export_result\nlet msg3={};                    // import_result\nlet msg4={};                    // todays_result\n\nvar start_today_export = flow.get(\"start_today_export\",\"file\");\nif (start_today_export === undefined) {start_today_export = 0}\n\nvar total_kwh_export = flow.get(\"total_kwh_export\",\"file\");\nif (total_kwh_export === undefined) {start_today_export = 0}\n\nvar export_result = total_kwh_export - start_today_export;                      // negative value = export\n\nvar start_today_import = flow.get(\"start_today_import\",\"file\");                        //\nif (start_today_import === undefined) {start_today_import = 0}\n\nvar total_kwh_import = flow.get(\"total_kwh_import\",\"file\");\nif (total_kwh_import === undefined) {total_kwh_import = 0}\n\nvar import_result =  total_kwh_import - start_today_import;                      // posotive value = import\n//if (import_result === undefined) {import_result = 0;}\n\nvar todays_result = import_result + export_result;                              // result\n\n\nif (todays_result <= 0 || todays_result > 0)\n    {\n        msg1.topic      = \"(+) Import (-) Export\";\n        msg1.payload    = todays_result;\n        msg1.payload    = Number(msg1.payload).toFixed(2);\n        msg1.payload    = parseFloat(msg1.payload);\n        \n        msg2.payload    = export_result;\n        msg2.payload    = Number(msg2.payload).toFixed(2);\n        msg2.payload    = parseFloat(msg2.payload);\n        msg2.topic      = \"Export\";\n        \n        msg3.payload    = import_result;\n        msg3.payload    = Number(msg3.payload).toFixed(2);\n        msg3.payload    = parseFloat(msg3.payload);\n        msg3.topic      = \"Import\";\n        \n        msg4.payload    = todays_result;\n        msg4.payload    = Number(msg4.payload).toFixed(2);\n        msg4.payload    = parseFloat(msg4.payload);\n        msg4.topic      = \"Result\";\n        \n        \n        return [msg1,[msg2,msg3,msg4]];\n    }\n    \nelse {return null;}",
+        "func": "let msg1={};                    // pin 1 - todays_result            Chart 1\nlet msg2={};                    // pin 2 - export_result                Chart 2\nlet msg3={};                    // pin 3 - import_result                Chart 2\nlet msg4={};                    // pin 4 - todays_result                Chart 2\n\n\nvar start_today_export = flow.get(\"start_today_export\",\"file\");\nif (start_today_export === undefined) {start_today_export = 0}\n\nvar total_kwh_export = flow.get(\"total_kwh_export\",\"file\");\nif (total_kwh_export === undefined) {start_today_export = 0}\n\nvar export_result = total_kwh_export - start_today_export;                      // negative value = export\n\nvar start_today_import = flow.get(\"start_today_import\",\"file\");                        //\nif (start_today_import === undefined) {start_today_import = 0}\n\nvar total_kwh_import = flow.get(\"total_kwh_import\",\"file\");\nif (total_kwh_import === undefined) {total_kwh_import = 0}\n\nvar import_result =  total_kwh_import - start_today_import;                      // posotive value = import\n//if (import_result === undefined) {import_result = 0;}\n\nvar todays_result = import_result + export_result;                              // result\n\n\nif (todays_result <= 0 || todays_result > 0)\n    {\n        msg1.topic      = \"(+) Import (-) Export\";\n        msg1.payload    = todays_result;\n        msg1.payload    = Number(msg1.payload).toFixed(2);\n        msg1.payload    = parseFloat(msg1.payload);\n        \n        msg2.payload    = export_result;\n        msg2.payload    = Number(msg2.payload).toFixed(2);\n        msg2.payload    = parseFloat(msg2.payload);\n        msg2.topic      = \"Export\";\n        \n        msg3.payload    = import_result;\n        msg3.payload    = Number(msg3.payload).toFixed(2);\n        msg3.payload    = parseFloat(msg3.payload);\n        msg3.topic      = \"Import\";\n        \n        msg4.payload    = todays_result;\n        msg4.payload    = Number(msg4.payload).toFixed(2);\n        msg4.payload    = parseFloat(msg4.payload);\n        msg4.topic      = \"Result\";\n        \n        \n        return [msg1,[msg2,msg3,msg4]];\n    }\n    \nelse {return null;}",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -35761,7 +35705,8 @@
                 "88d0285e2915c5d9"
             ],
             [
-                "80ef562075a4181e"
+                "80ef562075a4181e",
+                "63334186a6447cb9"
             ]
         ],
         "outputLabels": [
@@ -35993,51 +35938,11 @@
         "y": 1320,
         "wires": [
             [
-                "aac9a5d5754051a7"
+                "75c312c1494fea2e"
             ]
         ],
         "outputLabels": [
             "kWh today"
-        ]
-    },
-    {
-        "id": "9dfba925c77906cc",
-        "type": "delay",
-        "z": "966985d68ebb4990",
-        "g": "233708268636f815",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "2",
-        "rateUnits": "minute",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": true,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 400,
-        "y": 1320,
-        "wires": [
-            [
-                "4d12c082bff0d9a8"
-            ]
-        ]
-    },
-    {
-        "id": "aac9a5d5754051a7",
-        "type": "no-op",
-        "z": "966985d68ebb4990",
-        "g": "233708268636f815",
-        "name": "OUT",
-        "x": 810,
-        "y": 1320,
-        "wires": [
-            [
-                "75c312c1494fea2e"
-            ]
         ]
     },
     {
@@ -36050,7 +35955,7 @@
         "y": 1320,
         "wires": [
             [
-                "9dfba925c77906cc"
+                "4d12c082bff0d9a8"
             ]
         ]
     },
@@ -36058,7 +35963,7 @@
         "id": "2b03f7e8408f5f56",
         "type": "ui_template",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "group": "2bd11d2d909e2ba3",
         "name": "Line - Charts",
         "order": 6,
@@ -36144,7 +36049,7 @@
         "id": "9765c40bf881d992",
         "type": "ui_gauge",
         "z": "966985d68ebb4990",
-        "g": "81ff790f84afd46d",
+        "g": "e5578a7ea3257441",
         "name": "Live Gauge",
         "group": "2bd11d2d909e2ba3",
         "order": 1,
@@ -36670,7 +36575,7 @@
         "id": "941e2e6b17a45171",
         "type": "change",
         "z": "966985d68ebb4990",
-        "g": "6ca6d4d49dde6089",
+        "g": "e5578a7ea3257441",
         "name": "",
         "rules": [
             {
@@ -36865,47 +36770,50 @@
         "id": "a3349f3570fff719",
         "type": "debug",
         "z": "966985d68ebb4990",
-        "name": "",
-        "active": false,
+        "name": "Set DHW_SP",
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1070,
-        "y": 3000,
+        "x": 1120,
+        "y": 3020,
         "wires": []
     },
     {
         "id": "5a0c4be0644e5fe8",
         "type": "debug",
         "z": "966985d68ebb4990",
-        "name": "",
-        "active": false,
+        "name": "new_Operating_Mode_State",
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1110,
-        "y": 3120,
+        "x": 1160,
+        "y": 3080,
         "wires": []
     },
     {
         "id": "159c3eb0ca69458c",
         "type": "debug",
         "z": "966985d68ebb4990",
-        "name": "",
-        "active": false,
+        "name": "solar_turn_on_heatpump",
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1070,
+        "x": 1150,
         "y": 3140,
         "wires": []
     },
@@ -37770,6 +37678,161 @@
         "statusType": "auto",
         "x": 1280,
         "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "e5c006c4a3b36492",
+        "type": "debug",
+        "z": "966985d68ebb4990",
+        "name": "debug 48",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1580,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "02cba8a8d828e859",
+        "type": "debug",
+        "z": "966985d68ebb4990",
+        "name": "debug 49",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1540,
+        "y": 2260,
+        "wires": []
+    },
+    {
+        "id": "5f64cf19b054068a",
+        "type": "debug",
+        "z": "966985d68ebb4990",
+        "name": "debug 50",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "7317e838553d28c3",
+        "type": "debug",
+        "z": "966985d68ebb4990",
+        "name": "debug 51",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1560,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "0d21490b3af3b54c",
+        "type": "debug",
+        "z": "966985d68ebb4990",
+        "name": "debug 52",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1560,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "1cdfeab71adfa30d",
+        "type": "debug",
+        "z": "966985d68ebb4990",
+        "name": "debug 53",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "2c50324516dbe73c",
+        "type": "debug",
+        "z": "966985d68ebb4990",
+        "name": "debug 54",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 3220,
+        "wires": []
+    },
+    {
+        "id": "58f4dcb609fc506a",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "d": true,
+        "name": "kWh trigger",
+        "func": "var solar_state                     = global.get('solar_state',\"file\");\nif (solar_state === true)\n{\n    var solar_detection_method          = global.get('solar_detection_method',\"file\");\n    var solar_threshold                 = global.get('solar_threshold',\"file\");\n    var DHW_Current_SP                  = global.get('DHW_Target_Temp',\"file\");\n    var solar_fallback                  = global.get('solar_fallback',\"file\");\n        if (solar_fallback===undefined)     {solar_fallback=0}\n    var DHW_SP_LOW                      = global.get('DHW_SP_LOW',\"file\");\n    var DHW_SP_HIGH                     = global.get('DHW_SP_HIGH',\"file\");\n    var Operating_Mode_State            = global.get('Operating_Mode_State',\"file\");\n    var new_Operating_Mode_State;       // just create a variable, empty.\n    var old_Operating_Mode_State;       // just create a variable, empty.\n    var solar_turn_on                   = global.get('solar_turn_on',\"file\");\n    var Heatpump_State                  = global.get('Heatpump_State',\"file\");\n    var SolarFunction_active            = global.get(\"SolarFunction_active\",\"file\");\n\n    var F_rtc_on_off_active             = global.get('F_rtc_on_off_active',\"file\");\n    var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n\n    let msg1={};                                                                // pin 1 - output to DHW setpoint\n    let msg2={};                                                                // pin 2 - output to Operation Mode\n    let msg3={};                                                                // pin 3 - output to turn on power to heatpump.\n    let msg99={};                                                               // pin 4 - output to log\n\n//  return [msg1,msg2,msg3,msg99]\n\n    // Check if all required states are available.\n    if (solar_detection_method === undefined || solar_threshold === undefined || solar_fallback === undefined || DHW_SP_HIGH === undefined || Operating_Mode_State === undefined || solar_turn_on === undefined || Heatpump_State === undefined)\n        {\n            msg99.topic = \"NR Solar Function\";\n            msg99.payload = \"ERROR: Not all settings in 'Function Solar' are programmed in GUI yet.\";\n            return [null,null,null,msg99];                                       // log output\n        }\n    else\n        {\n\n//              msg.topic = \"W\";            < > nul\n//              msg.topic = 'GRID power production kWh';\n//              msg.topic = 'GRID power consumption kWh';\n//              msg.topic = '(+) Import (-) Export';\n\n//Threshold\n//  kW\n//  kWh_prod\n//  kWh_result\n//\n        \n        if (solar_detection_method == \"kW\"          && msg.topic != 'W' )                               {return null;}\n        if (solar_detection_method == \"kWh_prod\"    && msg.topic != 'kWh' )                             {return null;}\n        if (solar_detection_method == \"kWh_result\"  && msg.topic != '(+) Import (-) Export' )           {return null;}\n//        node.warn(msg.payload)\n        if (solar_detection_method == \"kW\")                                                             {msg.payload = msg.payload / 1000;}           // convert W to kW.\n\n        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n        //             (solar_threshold > (msg.payload) >>> Note that msg.payload is negative number if energy production is high\n        if (solar_threshold > (msg.payload) && DHW_Current_SP != DHW_SP_HIGH && SolarFunction_active != 2)      \n            {\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                \n                if (Operating_Mode_State == 0){new_Operating_Mode_State = 4; old_Operating_Mode_State = Operating_Mode_State} // add DHW modus\n                if (Operating_Mode_State == 1){new_Operating_Mode_State = 5; old_Operating_Mode_State = Operating_Mode_State} // add DHW modus\n                if (Operating_Mode_State == 2){new_Operating_Mode_State = 6; old_Operating_Mode_State = Operating_Mode_State} // add DHW modus\n                if (Operating_Mode_State == 7){new_Operating_Mode_State = 8; old_Operating_Mode_State = Operating_Mode_State} // add DHW modus\n                \n                if (Operating_Mode_State == 3){new_Operating_Mode_State = 3;} // prevent undefined new_Operating_Mode_State\n                if (Operating_Mode_State == 4){new_Operating_Mode_State = 4;} // prevent undefined new_Operating_Mode_State\n                if (Operating_Mode_State == 5){new_Operating_Mode_State = 5;} // prevent undefined new_Operating_Mode_State\n                if (Operating_Mode_State == 6){new_Operating_Mode_State = 6;} // prevent undefined new_Operating_Mode_State\n                if (Operating_Mode_State == 8){new_Operating_Mode_State = 8;} // prevent undefined new_Operating_Mode_State\n                \n                var tag;    // declare variable for tag in log line.\n                if (solar_detection_method == \"kW\")         {tag = 'kW';}         // convert W to kW.\n                if (solar_detection_method == \"kWh_prod\")   {tag = \"Today's export (kWh)\";}         \n                if (solar_detection_method == \"kWh_result\") {tag = \"kWh todays result\";}  \n                \n                if (F_stored_next_operating_mode === undefined && old_Operating_Mode_State !== undefined)\n                    {\n                        global.set('F_stored_next_operating_mode',old_Operating_Mode_State,\"file\");\n                    }\n                \n                msg1.payload = DHW_SP_HIGH;\n                msg2.payload = new_Operating_Mode_State;\n                \n                global.set(\"SolarFunction_active\",1,\"file\");\n                \n                if (Heatpump_State == 0 && solar_turn_on === true)\n                    {   \n                        msg99.payload = \"triggered thhreshold (\" + tag + \"). DHW SP to \" + DHW_SP_HIGH + \", change operationmode and turn on Heatpump\";\n                        msg99.topic = \"Function Solar\";\n                        msg3.payload = 1;                                           // send 1 to turn on the heatpump\n\n                        return [msg1, msg2, msg3, msg99];\n                    }\n                else    \n                    {   \n                        msg99.payload = \"triggered thhreshold (\" + tag + \"). DHW SP to \" + DHW_SP_HIGH + \" and change operation mode\";\n                        msg99.topic = \"Function Solar\";\n\n                        return [msg1, msg2, null, msg99];\n                    }    \n            }\n            else if (msg.payload > 0 && DHW_Current_SP == DHW_SP_HIGH && solar_fallback === true && SolarFunction_active == 1)\n            {\n                msg1.payload = DHW_SP_LOW;\n                global.set(\"SolarFunction_active\",0,\"file\");\n                \n                msg99.payload = \"triggered threshold (\" + tag + \"). Above 0kWh threshold. DHW SP to \" + DHW_SP_LOW;\n                msg99.topic = \"Function Solar\";\n                return [msg1,null,null,msg99];\n            }\n            else {return [null,null,null,null];}\n            \n            //DHW_Target_Temp\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n        \n        }\n}",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1650,
+        "y": 1580,
+        "wires": [
+            [],
+            [],
+            [],
+            []
+        ],
+        "outputLabels": [
+            "DHW_SP_HIGH",
+            "new_Operating_Mode_State",
+            "solar_turn_on_heatpump",
+            "log"
+        ]
+    },
+    {
+        "id": "63334186a6447cb9",
+        "type": "debug",
+        "z": "966985d68ebb4990",
+        "name": "debug 55",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1600,
+        "y": 1680,
         "wires": []
     },
     {
