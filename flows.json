@@ -3188,7 +3188,8 @@
             "c17ea62551b198aa",
             "8a78dd26f20bb676",
             "48995ebf225d6dd2",
-            "7818af2ee38ecbf9"
+            "7818af2ee38ecbf9",
+            "2cb940cabdae70e5"
         ],
         "x": 1228,
         "y": 1919,
@@ -13624,11 +13625,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1840,
+        "x": 1780,
         "y": 2440,
         "wires": [
             [
-                "a2c6183556ca72d1"
+                "2cb940cabdae70e5"
             ]
         ]
     },
@@ -13642,7 +13643,7 @@
         "links": [
             "031e62b0bf3df7d7"
         ],
-        "x": 2005,
+        "x": 2065,
         "y": 2440,
         "wires": []
     },
@@ -14219,6 +14220,27 @@
         "x": 2915,
         "y": 1100,
         "wires": []
+    },
+    {
+        "id": "2cb940cabdae70e5",
+        "type": "rbe",
+        "z": "8c9d42231fd19d3c",
+        "g": "4f352fdae09316c2",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1930,
+        "y": 2440,
+        "wires": [
+            [
+                "a2c6183556ca72d1"
+            ]
+        ]
     },
     {
         "id": "a938de76db0b71f6",
