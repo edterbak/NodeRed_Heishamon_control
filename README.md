@@ -33,7 +33,7 @@ I have chosen option 4 in the list above. In this GIT you can find NR functions 
 1: The heishamon module working with your heatpump.<br/>
 2: A functional MQTT broker. (Mosquitto/HiveMQ/etc)<br/>
 3: A functional NodeRed instance. <br/>
-4: Heatpump in DIRECT mode. (See FAQ "How should I configure the Remote Controller for use with this Node Red Flow?")<br/>
+
  
 <br/>
 1: Obviously, you need the heishamon module connected to your heatpump and have it functional. Without this module, you can stop reading. 😄 See this site to get one: https://www.tindie.com/stores/thehognl/ <br/><br/>
@@ -41,8 +41,6 @@ I have chosen option 4 in the list above. In this GIT you can find NR functions 
 <br/>
 3: You can install node red on a lot of devices. It can be directly on Linux or a device like Raspberry Pi. You can also run it in a container (self hosted) or within Home Assistant (add-on). For all options see: https://nodered.org/ <br/> All of these options are good, as long as the Node Red application can communicate with the broker and the Node Red instance has persistant storage enabled.<br/>
 The NodeRed flow is stand-alone so: You do not require a database. You do not require HomeAssistant.<br/><br/>
-4: This Node Red flow generates and controls the setpoint for the T outlet (Ta). This means you need to put your pump in DIRECT mode on the thermostat itself. 
-From within Heishamon, TOP76, will inform you if you currently are in WAR mode or DIRECT mode. <br/>(0=WAR, 1=DIRECT)
 <br/><br/>
 
 **How to check / set your heatpump into DIRECT mode**</br>
@@ -60,7 +58,9 @@ A - Persistent data folder.
 
 B - Adjust settings.js.
 
-C - Required Node Red libraries/pallets
+C - TimeZone setup
+
+D - Required Node Red libraries/pallets
 
 But first; Why?<br/>
 I found that after reboot of node red, the logic did not have all variables populated yet. This caused the system not to start automatically where it left off before reboot. <br/>
@@ -103,7 +103,18 @@ ATTENTION: <br/>
 After you have done this, and you seem to have it operational, be sure to test if all settings *stick* after a reboot of Node Red. Things that should stick are: Virtual SP (Ta), Function toggles on the main page, Setpoints in WAR function/graph. Setpoints for RTC function/graph, Heat Pump power toggle on/off
 If this is not the case for you, you either need to correct this in settings (like given above), or choose not to use this NR flow, or even accept manual action needed after power loss situations.
 
-### C - Required Node Red libraries/pallets
+### C - Timezone setup
+If you use a linux version, make sure you set your correct timezone. You can do this by running this command from CLI root and go through the setup proces.
+```
+dpkg-reconfigure tzdata
+```
+You can check if it was succesful by executing this command
+```
+timedatectl 
+```
+If you are running Node Red from within HomeAssistant, follow the instructions from HomeAssistant on how to do that.
+
+### D - Required Node Red libraries/pallets
 To make use of the dashboard functionality, you need to install the dashboard library.<br/>
 https://flows.nodered.org/node/node-red-dashboard <br/>
 The scheduler makes use of the moment lib.<br/>
