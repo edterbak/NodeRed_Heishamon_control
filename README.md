@@ -590,7 +590,7 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - BUG: Fixed bug in heating_mode logging
 - Enhancement: Solar graph now seems to be persistent. we need to find yout however how it behaves on new installs.
 
-[2022-11-01] (v20.89 test version) Things done are:   (not uploaded yet !)
+[2022-11-01] (v20.89 test version) Things done are:
 - BUG: Trying to fix external T sensor routine. It is not always detected correctly. Rewritten the logic.
 - BUG: Heating_Mode was not stored correctly. Impacted WAR function. Should now be fixed
 - Enhancement: Sumertime/Winter time and timezone now automatically detected correctly. This does requires TimeZone to be set on the system!!
