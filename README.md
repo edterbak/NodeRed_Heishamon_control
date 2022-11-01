@@ -598,6 +598,7 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - BUG: trying to fix Solar function. It had too many triggers. changed the source trigger because of this. Testing now.
 - BUG: Moved all T_outside measurements from memory_only to file storage location. This to catch spikes in WAR measurements/graph
 - BUG: Moved T_room_custom measurement from memory_only to file storage location. This is to catch spikes in the RTC function/graph. 
+- BUG: Fixed CLEAR button in log page. It did nothing, now it is clear.
 
 ********
 
