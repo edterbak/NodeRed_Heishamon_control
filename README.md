@@ -596,6 +596,7 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - Enhancement: Sumertime/Winter time and timezone now automatically detected correctly. This does requires TimeZone to be set on the system!!
 - BUG: Outside temperature not stored correctly. Impacted WAR function. Should now be fixed.
 - BUG: trying to fix Solar function. It had too many triggers. changed the source trigger because of this. Testing now.
+- BUG: Moved all T_outside measurements to from memory_only to file. This to catch spikes in measurements
 
 ********
 
