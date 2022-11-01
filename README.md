@@ -206,8 +206,10 @@ A recent addition is the possibility to have the pump shut down when above the f
 Note that when you let the HP shut down above a threshold, you need to look at your Scheduled actions. If you do want the scheduler to operate, use the override toggle here. <br/>
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/rtc2.png?raw=true" width=60%>
 
-## Function 3: SoftStart (EXPERIMENTAL!!)
-This function is present but not advised to be used yet. I have not tested this well enough. Last time I tested it worked, but not stable resulting in early stops. This function still needs work.<br/>
+## Function 3: SoftStart
+Default behaviour of the heatpump is when it starts up the compressor will go to high Hz for a period. Only when the returning water temperature approaches the setpoint, it ramps down the Hz and get more economic.<br/><br/>
+
+If the SoftStart function is enabled and the compressor starts, the water setpoint will be lowered. This should cause the compressor to ramp the compressor down within minutes. When ramp down has occured, the HEAT SP restrictions will be lifted.<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/SS.png?raw=true)
 
 ## Function 4: Solar
@@ -588,9 +590,12 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - BUG: Fixed bug in heating_mode logging
 - Enhancement: Solar graph now seems to be persistent. we need to find yout however how it behaves on new installs.
 
-[2022-10-30] (v20.89 test version) Things done are:
+[2022-11-01] (v20.89 test version) Things done are:
 - BUG: Trying to fix external T sensor routine. It is not always detected correctly. Rewritten the logic.
 - BUG: Heating_Mode was not stored correctly. Impacted WAR function. Should now be fixed
+- Enhancement: Sumertime/Winter time and timezone now automatically detected correctly. This does requires TimeZone to be set on the system!!
+- BUG: Outside temperature not stored correctly. Impacted WAR function. Should now be fixed.
+- BUG: trying to fix Solar function. It had too many triggers. changed the source trigger because of this. Testing now.
 
 ********
 
