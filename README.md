@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 20.89 test version<br/>
+Current version: 20.90 test version<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -599,6 +599,13 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - BUG: Moved all T_outside measurements from memory_only to file storage location. This to catch spikes in WAR measurements/graph
 - BUG: Moved T_room_custom measurement from memory_only to file storage location. This is to catch spikes in the RTC function/graph. 
 - BUG: Fixed CLEAR button in log page. It did nothing, now it is clear.
+
+[2022-11-08] (v20.90 test version) Things done are:
+- BUG: RTC on/off function should now be working better. Big THANKS to Maarten69 for this. !!!
+- Enhancement: Softstart rewritten. Startup 0-5minuts tMax=0. 5-10minutes Tmax=1. >10 minutes unrestricted
+- Enhancement: Softstart rewritten. hold back setpoint increases for 1 minute. Delay from within the function itself.
+- Enhancement: increased logging to assist in error finding. 
+
 
 ********
 
