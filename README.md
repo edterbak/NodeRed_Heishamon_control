@@ -27,6 +27,16 @@ I have chosen option 4 in the list above. In this GIT you can find NR functions 
 
 ********
 
+## What can this Node Red flow do for you?
+1 - The default room controller has a horrible temperature measurement. 1 degree accuracy and 1 degree hystresis. This is not suitable for controlling room temperature in a comfortable and stable manner.<br/>
+This flow allows you to connect any custom temperature sensor to it. This temperature can be used to correct the water setpoint for ROOM heating. the RTC function was designed to do just this.
+<br/><br/>
+2 - The default outside temperature is sensative for direct sunlight. The temperature measured can be up to 15 degrees higher compared to reality. <br/>
+This will result in unexpected behaviour, e.g. the pump stops functioning. The Panasonic native WAR function (compensation curve) is becuase of this sometimes not doing you would want. <br/>
+This node offers a custom external temperature sensor to be connected. It can be your own sensor, or directly form a web sourse. <br/>
+But we aware. This custom outside sensor is NOT able to feed the measurement value directly to the heishamon>panasonic for the pump to be used in compensation curve mode. This is not possible. However, when you set the pump in direct mode, the WAR function can take over this function based on your source and logic.
+<br/>
+
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/requirements.png" width="500">
 
 **What do I need to make use of this flow?**<br/>
