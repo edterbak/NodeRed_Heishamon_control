@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 20.90 test version<br/>
+Current version: 21.00 - Stable<br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -32,7 +32,7 @@ I have chosen option 4 in the list above. In this GIT you can find NR functions 
 **What do I need to make use of this flow?**<br/>
 1: The heishamon module working with your heatpump.<br/>
 2: A functional MQTT broker. (Mosquitto/HiveMQ/etc)<br/>
-3: A functional NodeRed instance. <br/>
+3: A functional NodeRed instance.<br/>
 
  
 <br/>
@@ -40,13 +40,8 @@ I have chosen option 4 in the list above. In this GIT you can find NR functions 
 2: You can use any broker that is 24/7 available. You can install it on any system, as long as the heishamon and the broker can communicate with eachother.<br/>
 <br/>
 3: You can install node red on a lot of devices. It can be directly on Linux or a device like Raspberry Pi. You can also run it in a container (self hosted) or within Home Assistant (add-on). For all options see: https://nodered.org/ <br/> All of these options are good, as long as the Node Red application can communicate with the broker and the Node Red instance has persistant storage enabled.<br/>
-The NodeRed flow is stand-alone so: You do not require a database. You do not require HomeAssistant.<br/><br/>
+The NodeRed flow is stand-alone so: You do not require a database. You do not require HomeAssistant. If you have HomeAssistant also connected to heishamon >> Disable all related automations!! 2 captains on 1 ship does not go well....<br/><br/>
 <br/><br/>
-
-**How to check / set your heatpump into DIRECT mode**</br>
-See the images below from my manual. It should be similar for others.
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/manual%20-%20direct1.png?raw=true">
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/manual%20-%20direct2.png?raw=true">
 
 ********
 
@@ -188,35 +183,35 @@ If there are better ideas about this, please inform me. <br/> <br/>
 <details>
 This is currently the first page of the dashboard. From here, you can enable each function separate but you can ALSO use WAR + RTC or WAR + SS together. It does not matter. they add on top of each other. You can use multiple combinations. Virtual SP + RTC function. Or WAR + RTC functions or only set a Virtual SP. 
 
-Set the 'Virtual SP'. This resembles the Ta in direct mode. <br/>
-If you do not enable any other function, the Virtual SP will be the actual target temperature.<br/>
-But, if you enable the WAR function, this will override the virtual SP. <br/>
-If you enable the RTC function, the virtual SP or WAR result will be corrected by the RTC function. <br/>
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Home1.png?raw=true)
+Set the 'Default water temp'. This is the starting temperature for Toutlet setpoint.<br/>
+If you do not enable any other function, the 'Default water temp' will be the actual target temperature.<br/>
+But, if you enable the Node-Red WAR function, this will override the setpoint. <br/>
+If you enable the RTC function, the 'Default water temp' setpoint or WAR setpoint will be corrected by the RTC function.<br/>
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/home.png?raw=true)
 <br/>
 ## Function 1: WAR (weather dependent temperature control)
 The target water temperature is influenced by the outside temperature. When it gets colder, the temperature of the water should increase. I have built a GUI including a graph to create a temperature profile.
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/WAR2.png?raw=true)
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/WAR.png?raw=true)
 
-## Function 2: RTC (RoomTemperatureControl)
+## Function 2: RTC (RoomTemperatureCorection)
 This function adjusts the SP of the water depending on the room temperature. <br/>
 When the temperature in a room gets too high, it will add a "-1" to the setpoint of the water temperature. <br/>
 Through the GUI, you can set the room target temperature. And you can set the limits when you want to increase or decrease the SP by 1, 2 or 3 degrees.<br/>
 A recent addition is the possibility to have the pump shut down when above the fourth limit. If you do not set a value, it will not turn off. If you have and dont want this function anymore. set the on/off values to extremes so they are never reached.<br/>
 Note that when you let the HP shut down above a threshold, you need to look at your Scheduled actions. If you do want the scheduler to operate, use the override toggle here. <br/>
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/rtc2.png?raw=true" width=60%>
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/RTC.png?raw=true" width=60%>
 
 ## Function 3: SoftStart
 Default behaviour of the heatpump is when it starts up the compressor will go to high Hz for a period. Only when the returning water temperature approaches the setpoint, it ramps down the Hz and get more economic.<br/><br/>
 
 If the SoftStart function is enabled and the compressor starts, the water setpoint will be lowered. This should cause the compressor to ramp the compressor down within minutes. When ramp down has occured, the HEAT SP restrictions will be lifted.<br/>
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/SS.png?raw=true)
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/SoftStart.png?raw=true)
 
 ## Function 4: Solar
 The aim of this function is to increase efficiency (and save cost) by utilizing solar energy as much as possible.
 When there is solar energy in abundance, you can tell the heatpump to use that energy to heat up your DHW water tank. 
 To determine if there is enough solar energy, you need any form of power measurement. This can be a P1 power meter, or a meter directly behind your panels.<br/>
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/solar7.png?raw=true" width=80%>
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Solar.png?raw=true" width=80%>
 
 ## Scheduler
 I have added an option to create 10x schedules (in dashboard) for:
@@ -509,8 +504,6 @@ All older changelog items are colapsed below. only the latest changelog will alw
 - Enhancement: Solar function: a 3rd option as trigger is added. Now you can use Live value (kW) / kWh result of today / kWh exported. 
 - Enhancement: HELP sections are added to for the most part. 
 - Enhancement: Various tabs have layout improvements.
-</details><br/>
-
 
 [2022-10-08] (v20.0 test version) Things done are:
 - Major rewrite of functions.
@@ -605,12 +598,27 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 - Enhancement: Softstart rewritten. Startup 0-5minuts tMax=0. 5-10minutes Tmax=1. >10 minutes unrestricted
 - Enhancement: Softstart rewritten. hold back setpoint increases for 1 minute. Delay from within the function itself.
 - Enhancement: increased logging to assist in error finding. 
+</details><br/>
 
+
+[2022-11-12] (v21.00 - Stable) Things done are:
+Changelog compared to v18 is:... 
+- I would like to give a big thank Aikon for his input on the grammar corrections. Still some bits to improve, but its getting a lot better. Thanks to Aikon!!
+- Also a huge thank you to Maarten69 and MikeyMan. Their help with testing, their improvments and suggestions are golden. There will be more things to come from them after this stable release. So keep hold on tight...
+- Enhancement: Clean install / first boot optimizations.
+- Enhancement: Softstart function rewritten. Logic is now more stable, but still not 100% flawless. This is still work in progress.
+- Enhancement: Experimental - this version allows "Compensation curve" mode as well as Direct mode.
+- Home all Functions: when function is disabled, the result is grayed out.
+- Enhancement: WAR function. With a fresh install, by default Panasonic WAR temperature profole is automatically imported.
+- Enhancement: WAR function. Added information of the curve in panasonic controller (read only)
+- Enhancement: WAR function. Added Import / Export buttons for the curves
+- Enhancement: Solar function. Corrections for P1 can now be configured though dashboard
+- Enhancement: Log page now shows 300 lines. More logging now shown which helps with possible debugging.
 
 ********
 
 ## TODO list
-- [x] Fix SoftStart routine.
+- [x] Stabalize SoftStart routine. Still work in progress
 ********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/acknowledgments.png" width="500">
@@ -622,9 +630,14 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 * []() lampy25. For unselfishly giving supportive feedback and good idea's. Thanks!
 * []() timovd for his contributions. ! Thanks.
 * []() E1cid from Node Red forum, for the help with the bar-chart. 
-* []() Javaboon for his assistance in the Solar functionality
-* []() klerk for his feature requests and helping with testing. MEGAAA THANKS :) .
-* []() klerk (yes, again) for contributing to this project and helping with a FAQ !!!!! :) .
+* []() Javaboon for his assistance in the Solar functionality.
+* []() klerk for his feature requests and helping with testing. MEGAAA THANKS :).
+* []() klerk (yes, again) for contributing to this project and helping with a FAQ !!!!! :).
+* []() Aikon for contributing to this project and helping with layout/textual improvements.
+* []() Maarten69 for contributing to this project. New additions can be expected from him on this project. Mega sweet!!
+* []() MikeyMan for contributing with testing and discussing a lot about this. Good testing is very valuable!
+
+
 
 ********
 
