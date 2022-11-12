@@ -602,9 +602,9 @@ Thanks to Aikon Maarten69 and Maarten69 from the tweakers.net forum for their in
 
 
 [2022-11-12] (v21.00 - Stable) Things done are:
-Changelog compared to v18 is:... 
-I would like to give a big thank Aikon for his input on the grammar corrections. Still some bits to improve, but its getting a lot better. Thanks to Aikon!!
-Also a huge thank you to Maarten69 and MikeyMan. Their help with testing, their improvments and suggestions are golden. There will be more things to come from them after this stable release. So keep hold on tight...
+Changelog compared to v18 is:... <br/>
+I would like to give a big thank Aikon for his input on the grammar corrections. Still some bits to improve, but its getting a lot better. Thanks to Aikon!!<br/>
+Also a huge thank you to Maarten69 and MikeyMan. Their help with testing, their improvments and suggestions are golden. There will be more things to come from them after this stable release. So keep hold on tight...<br/>
 - Enhancement: Clean install / first boot optimizations.
 - Enhancement: Softstart function rewritten. Logic is now more stable, but still not 100% flawless. This is still work in progress.
 - Enhancement: Experimental - this version allows "Compensation curve" mode as well as Direct mode.
