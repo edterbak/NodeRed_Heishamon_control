@@ -614,6 +614,7 @@ Changelog compared to v18 is:...
 - Enhancement: WAR function. Added Import / Export buttons for the curves
 - Enhancement: Solar function. Corrections for P1 can now be configured though dashboard
 - Enhancement: Log page now shows 300 lines. More logging now shown which helps with possible debugging.
+- Enhancement: Added timezone awareness to node red. (nice to have with the scheduler and logs)
 
 ********
 
