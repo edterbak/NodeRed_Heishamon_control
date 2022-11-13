@@ -19,6 +19,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)
 -Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log.<br/>
 -Show current status of heater on HOME dashboard (DHW running, Backup-heater used, Steralisation running)<br/>
 -Move settings from scheduler tab --> settings tab<br/>
+-Fix temp sensor log messages: SETUP - Sensors: Custom room temperature sensor FOUND , SETUP - Sensors: Custom outside temperature sensor FOUND and used<br/>
 
 <<<<<<<<< BETA VERSION <<<<<<<<<<
 
