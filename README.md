@@ -8,7 +8,7 @@ Current version: 21.1 - beta (Maarten69)<br/>
 -none
 
 ##First upcoming change:
--add Nightmode to scheduler (Nightmode reduses Room setpoint)
+-add Nightmode to scheduler (Nightmode reduces Room setpoint)
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
