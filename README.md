@@ -11,16 +11,16 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)
 -[Fixed] Fixed problem with falling back to built-in temperature sensor from remote controller when using a custom one. (@Restart of flow)<br/>
 -[New] Added nightreduction room setpoint to scheduler and update the HELP text. <br/>
 -[Fixed] Fix temp sensor log messages: SETUP - Sensors: Custom room temperature sensor FOUND.<br/>
+-[New] Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode 3)<br/>
 
 ## First upcoming change:
--Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode)<br/>
+-Move settings from scheduler tab --> settings tab<br/>
 
 ## To do:
--Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode)<br/>
 -Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
 -Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log.<br/>
 -Show current status of heater on HOME dashboard (DHW running, Backup-heater used, Steralisation running)<br/>
--Move settings from scheduler tab --> settings tab<br/>
+
 
 
 <<<<<<<<< BETA VERSION <<<<<<<<<<
