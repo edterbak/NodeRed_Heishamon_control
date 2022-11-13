@@ -10,7 +10,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)
 <br/>
 -[Fixed] Fixed problem with falling back to built-in temperature sensor from remote controller when using a custom one. (@Restart of flow)<br/>
 -[New] Added nightreduction room setpoint to scheduler and update the HELP text. <br/>
--[Fixed] Fix temp sensor log messages: SETUP - Sensors: Custom room temperature sensor FOUND. Now also showing temps<br/>
+-[Fixed] Fix temp sensor log messages: SETUP - Sensors: Custom room temperature sensor FOUND.<br/>
 
 ## First upcoming change:
 -Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode)<br/>
