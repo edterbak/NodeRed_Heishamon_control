@@ -1,6 +1,11 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.00 - Stable<br/>
+Current version: 21.1 - beta (Maarten69)<br/>
+
+>>>>> BETA VERSION <<<<<
+
+##Current changes compared to Main:
+-none
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -642,8 +647,8 @@ Also a huge thank you to Maarten69 and MikeyMan. Their help with testing, their 
 * []() timovd for his contributions. ! Thanks.
 * []() E1cid from Node Red forum, for the help with the bar-chart. 
 * []() Javaboon for his assistance in the Solar functionality.
-* []() klerk for his feature requests and helping with testing. MEGAAA THANKS :).
-* []() klerk (yes, again) for contributing to this project and helping with a FAQ !!!!! :).
+* []() Maarten69 for his feature requests and helping with testing. MEGAAA THANKS :).
+* []() Maarten69 (yes, again) for contributing to this project and helping with a FAQ !!!!! :).
 * []() Aikon for contributing to this project and helping with layout/textual improvements.
 * []() Maarten69 for contributing to this project. New additions can be expected from him on this project. Mega sweet!!
 * []() MikeyMan for contributing with testing and discussing a lot about this. Good testing is very valuable!
