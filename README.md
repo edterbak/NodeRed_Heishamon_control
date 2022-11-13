@@ -9,10 +9,10 @@ Current version: 21.1 - beta (Maarten69)<br/>
 https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)/HomeAssistant
 
 ## First upcoming change:
--add Nightmode to scheduler (Nightmode reduces Room setpoint)  [nightreduction water temperature] / [nightreduction room setpoint]<br/>
+-add nightreduction room setpoint to scheduler. <br/>
 
 ## To do:
--add Nightmode to scheduler (Nightmode reduces Room setpoint)<br/>
+-add nightreduction room setpoint to scheduler. <br/>
 -Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode)<br/>
 -Fix problem with falling back to built-in temperature sensor from remote controller when using a custom one. (@Restart of flow)<br/>
 -Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
