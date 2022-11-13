@@ -13,6 +13,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)
 -[Fixed] Fix temp sensor log messages: SETUP - Sensors: Custom room temperature sensor FOUND.<br/>
 -[New] Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode 3) Limits freq to 35 Hz<br/>
 -[Request] Moved all settings from scheduler tab --> settings tab<br/>
+-[New] Write panasonic_heat_pump last Error to log.<br/>
 
 ## First upcoming change:
 ?
@@ -21,7 +22,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)
 -Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
 -Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log.<br/>
 -Show current status of heater on HOME dashboard (DHW running, Backup-heater used, Steralisation running)<br/>
--panasonic_heat_pump last Error to log.<br/>
+
 
 
 
