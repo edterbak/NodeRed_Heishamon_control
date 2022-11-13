@@ -1,0 +1,15 @@
+climate woonkamer: # climate entity Heatpump (Virtual)
+  - platform: generic_thermostat
+    name: Warmtepomp
+    heater: switch.dummy # You can also use a real other switch
+    target_sensor: sensor.woonkamer # Which temp sensor for room should it use
+    min_temp: 18
+    max_temp: 24
+    ac_mode: false
+    target_temp: 21 # Default target temp after a restart of HA
+    cold_tolerance: 0.2
+    hot_tolerance: 0.1
+    min_cycle_duration:
+      seconds: 600
+    initial_hvac_mode: "heat"
+    precision: 0.1
