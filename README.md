@@ -7,14 +7,14 @@ Current version: 21.1 - beta (Maarten69)<br/>
 ## Current changes compared to Main:
 -HA climate control to adjust the Room setpoint for RTC (Serarate flow, now in folder Home Assistant)<br/>
 https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)/HomeAssistant
+-Fixed problem with falling back to built-in temperature sensor from remote controller when using a custom one. (@Restart of flow)<br/>
+-Added nightreduction room setpoint to scheduler and update the HELP text. <br/>
 
 ## First upcoming change:
--Add nightreduction room setpoint to scheduler. <br/>
+
 
 ## To do:
--Add nightreduction room setpoint to scheduler. <br/>
 -Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode)<br/>
--Fix problem with falling back to built-in temperature sensor from remote controller when using a custom one. (@Restart of flow)<br/>
 -Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
 -Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log.<br/>
 
