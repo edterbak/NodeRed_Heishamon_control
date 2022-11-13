@@ -1,4 +1,4 @@
-## HA_flow.json </br>
+## HA_flow.json (v 1.0)</br>
 HA climate control to adjust the Room setpoint for RTC (Serarate flow)</br>
 
 
