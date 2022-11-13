@@ -7,6 +7,7 @@ Current version: 21.1 - beta (Maarten69)<br/>
 ## Current changes compared to Main 21.0:
 -[Optional] HA climate control to adjust the Room setpoint for RTC (Serarate flow, now in folder Home Assistant)<br/>
 https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)/HomeAssistant<br/>
+<br/>
 -[Fixed] Fixed problem with falling back to built-in temperature sensor from remote controller when using a custom one. (@Restart of flow)<br/>
 -[New] Added nightreduction room setpoint to scheduler and update the HELP text. <br/>
 -[Fixed] Fix temp sensor log messages: SETUP - Sensors: Custom room temperature sensor FOUND. Now also showing temps<br/>
