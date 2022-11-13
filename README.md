@@ -2,10 +2,13 @@
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
 Current version: 21.1 - beta (Maarten69)<br/>
 
->>>>> BETA VERSION <<<<<
+<<<<<< BETA VERSION <<<<<
 
 ##Current changes compared to Main:
 -none
+
+##First upcoming change:
+-add Nightmode to scheduler (Nightmode reduses Room setpoint)
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
