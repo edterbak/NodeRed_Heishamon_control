@@ -2,15 +2,15 @@
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
 Current version: 21.1 - beta (Maarten69)<br/>
 
-<<<<<<<<<<< BETA VERSION <<<<<<<<<<<<
+<<<<<<<<< BETA VERSION <<<<<<<<<<
 
-##Current changes compared to Main:
+## Current changes compared to Main:
 -none
 
-##First upcoming change:
+## First upcoming change:
 -add Nightmode to scheduler (Nightmode reduces Room setpoint)
 
-##To do:
+## To do:
 -add Nightmode to scheduler (Nightmode reduces Room setpoint)
 -Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode)
 -Fix problem with falling back to built in temperature sensor from remote controller if using a custom one.
