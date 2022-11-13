@@ -16,6 +16,7 @@ Current version: 21.1 - beta (Maarten69)<br/>
 -Fix problem with falling back to built in temperature sensor from remote controller if using a custom one.
 -Integrate HA climate control to adjust the Room setpoint for RTC
 
+<<<<<<<<< BETA VERSION <<<<<<<<<<
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
