@@ -11,10 +11,10 @@ Current version: 21.1 - beta (Maarten69)<br/>
 -add Nightmode to scheduler (Nightmode reduces Room setpoint)
 
 ## To do:
--add Nightmode to scheduler (Nightmode reduces Room setpoint)
--Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode)
--Fix problem with falling back to built in temperature sensor from remote controller if using a custom one.
--Integrate HA climate control to adjust the Room setpoint for RTC
+-add Nightmode to scheduler (Nightmode reduces Room setpoint)<br/>
+-Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode)<br/>
+-Fix problem with falling back to built in temperature sensor from remote controller if using a custom one.<br/>
+-Integrate HA climate control to adjust the Room setpoint for RTC<br/>
 
 <<<<<<<<< BETA VERSION <<<<<<<<<<
 
