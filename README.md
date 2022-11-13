@@ -5,7 +5,7 @@ Current version: 21.1 - beta (Maarten69)<br/>
 <<<<<<<<< BETA VERSION <<<<<<<<<<
 
 ## Current changes compared to Main:
--none
+-HA climate control to adjust the Room setpoint for RTC (Serarate flow, now in folder Home Assistant)<br/>
 
 ## First upcoming change:
 -add Nightmode to scheduler (Nightmode reduces Room setpoint)
@@ -14,7 +14,6 @@ Current version: 21.1 - beta (Maarten69)<br/>
 -add Nightmode to scheduler (Nightmode reduces Room setpoint)<br/>
 -Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode)<br/>
 -Fix problem with falling back to built-in temperature sensor from remote controller when using a custom one. (@Restart of flow)<br/>
--Integrate HA climate control to adjust the Room setpoint for RTC (Serarate flow, in folder Home Assistant)<br/>
 
 <<<<<<<<< BETA VERSION <<<<<<<<<<
 
