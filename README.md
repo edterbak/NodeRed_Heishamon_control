@@ -9,13 +9,14 @@ Current version: 21.1 - beta (Maarten69)<br/>
 https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)/HomeAssistant
 
 ## First upcoming change:
--add nightreduction room setpoint to scheduler. <br/>
+-Add nightreduction room setpoint to scheduler. <br/>
 
 ## To do:
--add nightreduction room setpoint to scheduler. <br/>
+-Add nightreduction room setpoint to scheduler. <br/>
 -Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode)<br/>
 -Fix problem with falling back to built-in temperature sensor from remote controller when using a custom one. (@Restart of flow)<br/>
 -Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
+-Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log.<br/>
 
 <<<<<<<<< BETA VERSION <<<<<<<<<<
 
@@ -471,7 +472,7 @@ All older changelog items are colapsed below. only the latest changelog will alw
 
 [2022-05-29] (v14 beta10) Things done are:
 - BUG: I forgot to enable the SET9 command again after some debugging. Re-enabled it.
-- Feature request: Added a button on the request of klerk (and added some lines to make it look better)
+- Feature request: Added a button on the request of Maarten69 (and added some lines to make it look better)
 - re-added bar-chart for COP. It seems to work. It should start building a chart once DHW + HEAT info is available. untill then it will be empty. Need time to test if this is solid or not.
 
 [2022-05-31] (v14 beta11) Things done are:
