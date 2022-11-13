@@ -12,9 +12,10 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)
 -[New] Added nightreduction room setpoint to scheduler and update the HELP text. <br/>
 -[Fixed] Fix temp sensor log messages: SETUP - Sensors: Custom room temperature sensor FOUND.<br/>
 -[New] Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode 3) Limits freq to 35 Hz<br/>
+-[Request] Moved all settings from scheduler tab --> settings tab<br/>
 
 ## First upcoming change:
--Move settings from scheduler tab --> settings tab<br/>
+?
 
 ## To do:
 -Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
