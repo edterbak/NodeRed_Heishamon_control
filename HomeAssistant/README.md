@@ -3,7 +3,7 @@ HA climate control to adjust the Room setpoint for RTC (Serarate flow)</br>
 
 
 ## configuration.yaml </br>
-example code to put in configuration.yaml to add a climate entity for use in NodeRED </br>
+example code for creating a virtual climate entity for use in NodeRED </br>
 Carefull: Do NOT replace existing configuration.yaml with this one!</br>
 </br>
 </br>
