@@ -14,6 +14,7 @@ Current version: 21.1 - beta (Maarten69)<br/>
 -add Nightmode to scheduler (Nightmode reduces Room setpoint)<br/>
 -Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode)<br/>
 -Fix problem with falling back to built-in temperature sensor from remote controller when using a custom one. (@Restart of flow)<br/>
+-Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
 
 <<<<<<<<< BETA VERSION <<<<<<<<<<
 
