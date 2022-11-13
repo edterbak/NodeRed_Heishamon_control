@@ -8,7 +8,7 @@ Current version: 21.1 - beta (Maarten69)<br/>
 -HA climate control to adjust the Room setpoint for RTC (Serarate flow, now in folder Home Assistant)<br/>
 
 ## First upcoming change:
--add Nightmode to scheduler (Nightmode reduces Room setpoint)
+-add Nightmode to scheduler (Nightmode reduces Room setpoint)  [nightreduction water temperature] / [nightreduction room setpoint]<br/>
 
 ## To do:
 -add Nightmode to scheduler (Nightmode reduces Room setpoint)<br/>
