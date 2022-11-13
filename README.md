@@ -6,6 +6,7 @@ Current version: 21.1 - beta (Maarten69)<br/>
 
 ## Current changes compared to Main:
 -HA climate control to adjust the Room setpoint for RTC (Serarate flow, now in folder Home Assistant)<br/>
+https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)/HomeAssistant
 
 ## First upcoming change:
 -add Nightmode to scheduler (Nightmode reduces Room setpoint)  [nightreduction water temperature] / [nightreduction room setpoint]<br/>
