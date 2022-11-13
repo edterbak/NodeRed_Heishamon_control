@@ -14,10 +14,11 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)
 -[New] Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode 3) Limits freq to 35 Hz<br/>
 -[Request] Moved all settings from scheduler tab --> settings tab<br/>
 -[New] Write panasonic_heat_pump last Error to log.<br/>
--[new] Show current status of heater on HOME dashboard.
+-[new] Show current status of heater on HOME dashboard.<br/>
 
 ## First upcoming change:
-
+-(RTC) Send Changed Room setpoint to log<br/>
+-Enable debugging options (switch) for more temperature logging.<br/>
 
 ## To do:
 -Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
