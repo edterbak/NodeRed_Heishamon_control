@@ -11,7 +11,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)
 -Added nightreduction room setpoint to scheduler and update the HELP text. <br/>
 
 ## First upcoming change:
-
+-Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode)<br/>
 
 ## To do:
 -Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode)<br/>
