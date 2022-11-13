@@ -22,6 +22,8 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)
 ## To do:
 -Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
 -Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log. (TOP44)<br/>
+-Force DHW run when the boiler comes below a custom setpoint (via scheduler, SYSTEM task?)<br/>
+-New COP sCOP calculation using custom 1-wire and custom kWh-device (connected to Heishamon)<br/>
 
 
 
