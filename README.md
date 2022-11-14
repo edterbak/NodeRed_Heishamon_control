@@ -652,6 +652,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 ********
 
 ## TODO list
+- [ ] Store Quietmode to restore if Addon-Quietmode for SoftStart routine is used.
 - [x] Stabalize SoftStart routine. Still work in progress
 - [ ] Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
 - [ ] Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log. (TOP44)<br/>
