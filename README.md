@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.1 <br/>
+Current version: 21.11 <br/>
 
 
 ## Introduction
@@ -628,7 +628,7 @@ Also a huge thank you to Maarten69 and MikeyMan. Their help with testing, their 
 - Enhancement: Added timezone awareness to node red. (nice to have with the scheduler and logs)
 
 
-[2022-11-12] v21.1 - Changes compared to Main 21.00:
+[2022-11-13] v21.1 - Changes compared to Main 21.00:
 - [Optional] HA climate control to adjust the Room setpoint for RTC (Separate flow, now in folder Home Assistant)<br/>
 https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - BUG: Fixed problem with falling back to built-in temperature sensor from remote controller when using a custom one. (@Restart of flow)
@@ -640,6 +640,13 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - Enhancement: [New] Show current status of heater on HOME dashboard.
 - Enhancement: [New] (RTC) Send Changed Room setpoint to log
 - Enhancement: [New] Enable debug temperatures (switch) for more temperature logging.
+
+
+[2022-11-13] v21.11 - Changes compared to Main 21.10:
+- BUG: Log - fixed extra debug switch. From start it was auto-enabled.
+- Enhancement: Re-implemented some of Aikons textual corrections.
+- Enhancement: Fixed location of HELP button for settings, improved text overal in help buttons, size of the box etc.
+- Enhancement: Moved 'Scheduler related settings' to Scheduler.
 
 
 ********
