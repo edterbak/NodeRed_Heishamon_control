@@ -3,10 +3,6 @@
 Current version: 21.1 <br/>
 
 
-
-
-<<<<<<<<< BETA VERSION <<<<<<<<<<
-
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
