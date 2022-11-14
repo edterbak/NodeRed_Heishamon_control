@@ -1,6 +1,36 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.00 - Stable<br/>
+Current version: 21.1 - beta (Maarten69)<br/>
+
+<<<<<<<<< BETA VERSION <<<<<<<<<<
+
+## Current changes compared to Main 21.0:
+-[Optional] HA climate control to adjust the Room setpoint for RTC (Separate flow, now in folder Home Assistant)<br/>
+https://github.com/edterbak/NodeRed_Heishamon_control/tree/beta-21.1-(Maarten69)/HomeAssistant<br/>
+<br/>
+-[Fixed] Fixed problem with falling back to built-in temperature sensor from remote controller when using a custom one. (@Restart of flow)<br/>
+-[New] Added nightreduction room setpoint to scheduler and update the HELP text. <br/>
+-[Fixed] Fix temp sensor log messages: SETUP - Sensors: Custom room temperature sensor FOUND.<br/>
+-[New] Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode 3) Limits freq to 35 Hz<br/>
+-[Request] Moved all settings from scheduler tab --> settings tab<br/>
+-[New] Write panasonic_heat_pump last Error to log.<br/>
+-[New] Show current status of heater on HOME dashboard.<br/>
+-[New] (RTC) Send Changed Room setpoint to log<br/>
+-[New] Enable debug temperatures (switch) for more temperature logging.<br/>
+
+## First upcoming change:
+?
+
+## To do:
+-Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
+-Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log. (TOP44)<br/>
+-Force DHW run when the boiler comes below a custom setpoint (via scheduler, reserved-SYSTEM task?)<br/>
+-New COP sCOP calculation using custom 1-wire and custom kWh-device (connected to Heishamon)<br/>
+
+
+
+
+<<<<<<<<< BETA VERSION <<<<<<<<<<
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -454,7 +484,7 @@ All older changelog items are colapsed below. only the latest changelog will alw
 
 [2022-05-29] (v14 beta10) Things done are:
 - BUG: I forgot to enable the SET9 command again after some debugging. Re-enabled it.
-- Feature request: Added a button on the request of klerk (and added some lines to make it look better)
+- Feature request: Added a button on the request of Maarten69 (and added some lines to make it look better)
 - re-added bar-chart for COP. It seems to work. It should start building a chart once DHW + HEAT info is available. untill then it will be empty. Need time to test if this is solid or not.
 
 [2022-05-31] (v14 beta11) Things done are:
@@ -642,8 +672,8 @@ Also a huge thank you to Maarten69 and MikeyMan. Their help with testing, their 
 * []() timovd for his contributions. ! Thanks.
 * []() E1cid from Node Red forum, for the help with the bar-chart. 
 * []() Javaboon for his assistance in the Solar functionality.
-* []() klerk for his feature requests and helping with testing. MEGAAA THANKS :).
-* []() klerk (yes, again) for contributing to this project and helping with a FAQ !!!!! :).
+* []() Maarten69 for his feature requests and helping with testing. MEGAAA THANKS :).
+* []() Maarten69 (yes, again) for contributing to this project and helping with a FAQ !!!!! :).
 * []() Aikon for contributing to this project and helping with layout/textual improvements.
 * []() Maarten69 for contributing to this project. New additions can be expected from him on this project. Mega sweet!!
 * []() MikeyMan for contributing with testing and discussing a lot about this. Good testing is very valuable!

@@ -1,3 +1,17 @@
+## HA_flow.json (v 1.0)</br>
+HA climate control to adjust the Room setpoint for RTC (Serarate flow)</br>
+
+
+## configuration.yaml </br>
+example code for creating a virtual climate entity for use in NodeRED </br>
+Carefull: Do NOT replace existing configuration.yaml with this one!</br>
+</br>
+</br>
+</br>
+</br>
+
+
+
 If you are running the HomeAssistant Node-Red add-on, you have the install details written here. They differ a little bit compared to a bare Linux install of Node-Red. 
 1: A persistent folder is automatically present for HomeAssistant.
 2: The settings.js is located on a different location. 
