@@ -2684,9 +2684,9 @@
             "9faace07ea16ba4d",
             "b65cef840ae30edb"
         ],
-        "x": 114,
+        "x": 104,
         "y": 639,
-        "w": 972,
+        "w": 982,
         "h": 562
     },
     {
@@ -2906,7 +2906,7 @@
         ],
         "x": 2754,
         "y": -21,
-        "w": 1772,
+        "w": 1782,
         "h": 602
     },
     {
@@ -3064,11 +3064,13 @@
             "0db2bdc455e4bffe",
             "2989d5851e2457ae",
             "a845813900ca9e55",
-            "9717750d0d528f9c"
+            "9717750d0d528f9c",
+            "5be142bd732c8d96",
+            "238183547350dfc1"
         ],
-        "x": 1174,
+        "x": 1164,
         "y": 119,
-        "w": 1412,
+        "w": 1422,
         "h": 1722
     },
     {
@@ -3194,9 +3196,9 @@
             "46c5b8fae5c96441",
             "7ec2785759270a3f"
         ],
-        "x": 1188,
+        "x": 1178,
         "y": 1899,
-        "w": 1378,
+        "w": 1388,
         "h": 562
     },
     {
@@ -3213,9 +3215,9 @@
             "087a748b7ca8e4f0",
             "7a34ac864bf1ebf1"
         ],
-        "x": 2754,
+        "x": 2744,
         "y": 1279,
-        "w": 682,
+        "w": 692,
         "h": 82
     },
     {
@@ -3236,8 +3238,8 @@
             "66c194231726cbcd"
         ],
         "x": 2754,
-        "y": 2139,
-        "w": 922,
+        "y": 2339,
+        "w": 932,
         "h": 122
     },
     {
@@ -3251,19 +3253,22 @@
         "nodes": [
             "69581a5f53d2c488",
             "a423271481d5d54d",
-            "9084a0427069a091",
             "9445da7cceab14b2",
             "66396fc1dbfcc832",
             "2a72a0a50c226d0f",
-            "fdb0539020c4d07c",
-            "82069998eff40707",
-            "edc9398758b5e5c3",
-            "a3195a537640d528"
+            "a3195a537640d528",
+            "5444f8ed7b1fa765",
+            "ce7653d3e7a11177",
+            "042a326783f2a657",
+            "344b1fdaa89016c8",
+            "98d6df4515c25447",
+            "ab31019d5a2a15b3",
+            "32f39bf7fb5e5369"
         ],
         "x": 2754,
-        "y": 1919,
-        "w": 1142,
-        "h": 162
+        "y": 1979,
+        "w": 1152,
+        "h": 222
     },
     {
         "id": "5c6e3f50e1a2328b",
@@ -3281,9 +3286,9 @@
             "aa33ae9640c6a434",
             "db206585adea91d8"
         ],
-        "x": 3794,
+        "x": 3784,
         "y": 339,
-        "w": 462,
+        "w": 472,
         "h": 202
     },
     {
@@ -3387,9 +3392,9 @@
             "5e4c3c30025c30ee",
             "49edcd3fcf15db5c"
         ],
-        "x": 1214,
+        "x": 1204,
         "y": 2079,
-        "w": 1152,
+        "w": 1162,
         "h": 82
     },
     {
@@ -6577,7 +6582,8 @@
         "wires": [
             [
                 "1f4d1ff3b733216c",
-                "cb924439a66154f1"
+                "cb924439a66154f1",
+                "5be142bd732c8d96"
             ]
         ]
     },
@@ -6913,7 +6919,8 @@
         "name": "Link-in Quietmode set",
         "links": [
             "14327004637e05c7",
-            "7c6f02c851467bc0"
+            "7c6f02c851467bc0",
+            "32f39bf7fb5e5369"
         ],
         "x": 1595,
         "y": 300,
@@ -12016,7 +12023,7 @@
         "tooltip": "",
         "place": "Select option",
         "group": "c2a0123d2e2c91f0",
-        "order": 7,
+        "order": 8,
         "width": 2,
         "height": 1,
         "passthru": true,
@@ -12180,7 +12187,7 @@
         "label": "Max water temp. increase",
         "tooltip": "",
         "group": "c2a0123d2e2c91f0",
-        "order": 8,
+        "order": 11,
         "width": 6,
         "height": 1,
         "wrap": false,
@@ -12325,7 +12332,7 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "c2a0123d2e2c91f0",
-        "order": 11,
+        "order": 14,
         "width": 6,
         "height": 1,
         "name": "Current runtime",
@@ -12372,7 +12379,7 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "c2a0123d2e2c91f0",
-        "order": 6,
+        "order": 7,
         "width": 4,
         "height": 1,
         "name": "Minimum runtime",
@@ -12389,7 +12396,7 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "c2a0123d2e2c91f0",
-        "order": 10,
+        "order": 13,
         "width": 6,
         "height": 1,
         "name": "Compressor",
@@ -12407,7 +12414,7 @@
         "z": "8c9d42231fd19d3c",
         "group": "c2a0123d2e2c91f0",
         "name": "Line",
-        "order": 5,
+        "order": 6,
         "width": 6,
         "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Setup</left> \n</html>\n",
@@ -12428,7 +12435,7 @@
         "z": "8c9d42231fd19d3c",
         "group": "c2a0123d2e2c91f0",
         "name": "Line",
-        "order": 9,
+        "order": 12,
         "width": 6,
         "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Compressor</left> \n</html>\n",
@@ -12449,7 +12456,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "6788a89266ed3c87",
         "group": "c2a0123d2e2c91f0",
-        "order": 15,
+        "order": 16,
         "width": 6,
         "height": 1,
         "name": "Function softstart - Current correction (SS)",
@@ -12467,7 +12474,7 @@
         "z": "8c9d42231fd19d3c",
         "group": "c2a0123d2e2c91f0",
         "name": "Line",
-        "order": 12,
+        "order": 15,
         "width": 6,
         "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Result</left> \n</html>\n",
@@ -13216,7 +13223,7 @@
         "g": "4f352fdae09316c2",
         "group": "16ec453c8cb345ac",
         "order": 3,
-        "width": 8,
+        "width": 5,
         "height": 1,
         "name": "Flow version",
         "label": "Flow version 21.12 beta",
@@ -13235,7 +13242,7 @@
         "name": "Clear",
         "group": "16ec453c8cb345ac",
         "order": 2,
-        "width": 2,
+        "width": "3",
         "height": 1,
         "passthru": false,
         "label": "Clear",
@@ -13283,7 +13290,11 @@
             "7c92e0b9848865b4",
             "2989d5851e2457ae",
             "e7e7a120cf9e9001",
-            "744883c501bbb79e"
+            "744883c501bbb79e",
+            "c560d42f8fe61a5b",
+            "37cde18eb34c1bbc",
+            "238183547350dfc1",
+            "fc8adbd756b4bb38"
         ],
         "x": 1370,
         "y": 2060,
@@ -15050,8 +15061,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 2980,
-        "y": 2220,
+        "x": 2990,
+        "y": 2420,
         "wires": [
             [
                 "7b49b17e0ac79c49"
@@ -15070,8 +15081,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3320,
-        "y": 2220,
+        "x": 3330,
+        "y": 2420,
         "wires": [
             [
                 "1cd249c7943700fd"
@@ -15091,8 +15102,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 3510,
-        "y": 2220,
+        "x": 3520,
+        "y": 2420,
         "wires": [
             [
                 "744883c501bbb79e"
@@ -15109,8 +15120,8 @@
         "links": [
             "031e62b0bf3df7d7"
         ],
-        "x": 3635,
-        "y": 2220,
+        "x": 3645,
+        "y": 2420,
         "wires": []
     },
     {
@@ -15131,8 +15142,8 @@
         "topic": "",
         "payload": "0",
         "payloadType": "num",
-        "x": 2860,
-        "y": 2180,
+        "x": 2870,
+        "y": 2380,
         "wires": [
             [
                 "c46ca835e09079c7"
@@ -15145,11 +15156,11 @@
         "z": "8c9d42231fd19d3c",
         "g": "fdf17b49c89985aa",
         "name": "Debug",
-        "label": "[Debug] temperatures",
+        "label": "Gather temp data",
         "tooltip": "Show more data in log",
         "group": "16ec453c8cb345ac",
         "order": 4,
-        "width": 5,
+        "width": 4,
         "height": 1,
         "passthru": true,
         "decouple": "false",
@@ -15166,8 +15177,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 3010,
-        "y": 2180,
+        "x": 3020,
+        "y": 2380,
         "wires": [
             [
                 "66c194231726cbcd"
@@ -15186,8 +15197,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3160,
-        "y": 2180,
+        "x": 3170,
+        "y": 2380,
         "wires": [
             [
                 "7b49b17e0ac79c49"
@@ -15207,11 +15218,10 @@
         "finalize": "",
         "libs": [],
         "x": 2950,
-        "y": 2040,
+        "y": 2060,
         "wires": [
             [
-                "a423271481d5d54d",
-                "fdb0539020c4d07c"
+                "a423271481d5d54d"
             ]
         ],
         "outputLabels": [
@@ -15227,7 +15237,7 @@
         "label": "Softstart Quietmode",
         "tooltip": "",
         "group": "c2a0123d2e2c91f0",
-        "order": 4,
+        "order": 5,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -15246,24 +15256,12 @@
         "animate": true,
         "className": "",
         "x": 3250,
-        "y": 2040,
+        "y": 2060,
         "wires": [
             [
-                "9445da7cceab14b2",
-                "82069998eff40707"
+                "9445da7cceab14b2"
             ]
         ]
-    },
-    {
-        "id": "9084a0427069a091",
-        "type": "comment",
-        "z": "8c9d42231fd19d3c",
-        "g": "17610af3c50fa4f3",
-        "name": "Softstart add-on - Quietmode 3",
-        "info": "",
-        "x": 2910,
-        "y": 1960,
-        "wires": []
     },
     {
         "id": "9445da7cceab14b2",
@@ -15279,11 +15277,10 @@
         "property": "payload",
         "topi": "topic",
         "x": 3450,
-        "y": 2040,
+        "y": 2060,
         "wires": [
             [
-                "66396fc1dbfcc832",
-                "edc9398758b5e5c3"
+                "66396fc1dbfcc832"
             ]
         ]
     },
@@ -15293,17 +15290,20 @@
         "z": "8c9d42231fd19d3c",
         "g": "17610af3c50fa4f3",
         "name": "set.Correction_2_softstart_on_off",
-        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = \"Softstart add-on Quietmode\";\nglobal.set(\"SS_Quietmode_on_off\",msg.payload,\"file\");\nif (msg.payload == 1 ) { msg.payload = \"ON\"; }\n    else { msg.payload = \"OFF\"; }\nreturn msg;\n\n//gets handled in function node: Softstart",
-        "outputs": 1,
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = \"Function - SoftStart Quietmode\";\nglobal.set(\"SS_Quietmode_on_off\",msg.payload,\"file\");\nlet msg2 = {};\n\n//get Quietmode_time, error when no time!\nvar Quietmode_time = global.get('Quietmode_time', \"file\"); //after this time the Quietmode will restore to its previous level\nif (Quietmode_time === undefined) { node.warn(\"Error: No Quietmode_time found!\"); }\n\nif (msg.payload == 1) \n    { \n        var Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); //check current Quietmode level\n        if (Quiet_Mode_Level === undefined) { Quiet_Mode_Level = 0; }\n\n        \n        //if Previous_Quiet_Mode_Level excists, set it to current Quiet_Mode_Level\n        var Storedlevel = global.get('Previous_Quiet_Mode_Level', \"file\");\n        if (Storedlevel != undefined) { Quiet_Mode_Level = Storedlevel; } //geen vorige waarde bij boot\n \n        msg.payload = \"ON (Timer: \" + Quietmode_time + \" min, Restore level \" + Quiet_Mode_Level + \")\"; \n        global.set('Previous_Quiet_Mode_Level', Quiet_Mode_Level, \"file\"); // save current level for restore\n\n        //set the new Quietlevel now if needed:\n        var Current = Quiet_Mode_Level; //current level\n        //only send msg when change needed\n        if (Current != Previous_Quiet_Mode_Level) \n            {\n                msg2.topic = \"Function - SoftStart Quietmode\";\n                msg2.payload = 3; //send Quietlevel 3\n                return [msg, msg2];\n            } else { return [msg, null]; }     //send nothing to Exit to Quietlevel-change\n     }\n\nif (msg.payload == 0) \n    { \n        msg.payload = \"OFF\";  \n        var Previous_Quiet_Mode_Level = global.get('Previous_Quiet_Mode_Level', \"file\"); //check previous Quietmode level\n        if (Previous_Quiet_Mode_Level === undefined) { Previous_Quiet_Mode_Level = 0; } \n        var Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); //check current Quietmode level\n        //restore when user switches Quietmode-Add-on to OFF\n        \n        //set the old Quietlevel now if needed:\n        var Current = Quiet_Mode_Level; //current level\n        \n        //only send msg when change needed\n        if (Current != Previous_Quiet_Mode_Level) \n            {\n                msg2.topic = \"Function - SoftStart Quietmode\";\n                msg2.payload = Previous_Quiet_Mode_Level; //send previous Quietlevel \n                return [msg, msg2];\n            } else { return [msg, null]; }     //send nothing to Exit to Quietlevel-change\n    }\n\nreturn [msg, msg2]; // Pin1 to log    Pin2 to Setquitemode inputbox\n\n\n\n//Quietmode-Addon further handled in function node: Function Quietmode add-on (WP Control)\n",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 3680,
-        "y": 2040,
+        "y": 2060,
         "wires": [
             [
                 "2a72a0a50c226d0f"
+            ],
+            [
+                "32f39bf7fb5e5369"
             ]
         ]
     },
@@ -15317,8 +15317,8 @@
         "links": [
             "031e62b0bf3df7d7"
         ],
-        "x": 3855,
-        "y": 2040,
+        "x": 3865,
+        "y": 2020,
         "wires": []
     },
     {
@@ -15416,60 +15416,6 @@
         ]
     },
     {
-        "id": "fdb0539020c4d07c",
-        "type": "debug",
-        "z": "8c9d42231fd19d3c",
-        "g": "17610af3c50fa4f3",
-        "name": "debug 66",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 3200,
-        "y": 1980,
-        "wires": []
-    },
-    {
-        "id": "82069998eff40707",
-        "type": "debug",
-        "z": "8c9d42231fd19d3c",
-        "g": "17610af3c50fa4f3",
-        "name": "debug 67",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 3440,
-        "y": 1980,
-        "wires": []
-    },
-    {
-        "id": "edc9398758b5e5c3",
-        "type": "debug",
-        "z": "8c9d42231fd19d3c",
-        "g": "17610af3c50fa4f3",
-        "name": "debug 68",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 3620,
-        "y": 1980,
-        "wires": []
-    },
-    {
         "id": "a3195a537640d528",
         "type": "inject",
         "z": "8c9d42231fd19d3c",
@@ -15483,12 +15429,12 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "1",
+        "onceDelay": "10",
         "topic": "",
         "payload": "0",
         "payloadType": "num",
         "x": 2860,
-        "y": 2000,
+        "y": 2020,
         "wires": [
             [
                 "69581a5f53d2c488"
@@ -15538,6 +15484,333 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "344b1fdaa89016c8",
+        "type": "trigger",
+        "z": "8c9d42231fd19d3c",
+        "g": "17610af3c50fa4f3",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "5",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 3560,
+        "y": 2160,
+        "wires": [
+            [
+                "98d6df4515c25447"
+            ]
+        ]
+    },
+    {
+        "id": "98d6df4515c25447",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "17610af3c50fa4f3",
+        "name": "set.Quietmode time",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\n\nglobal.set(\"Quietmode_time\",msg.payload,\"file\");\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3740,
+        "y": 2160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5444f8ed7b1fa765",
+        "type": "inject",
+        "z": "8c9d42231fd19d3c",
+        "g": "17610af3c50fa4f3",
+        "name": "1 Trigger / 30 minute",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1800",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "10",
+        "topic": "trigger",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2900,
+        "y": 2160,
+        "wires": [
+            [
+                "ce7653d3e7a11177"
+            ]
+        ]
+    },
+    {
+        "id": "ce7653d3e7a11177",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "17610af3c50fa4f3",
+        "name": "Load on boot Quietmode time",
+        "func": "\nvar Quietmode_time = global.get('Quietmode_time',\"file\");\n    if (Quietmode_time===undefined)    \n        {\n            Quietmode_time = 5; //default 5 minutes\n            global.set('Quietmode_time', Quietmode_time,\"file\");\n        }\n\nlet msg1={};\n\nmsg1.payload = Quietmode_time; msg1.topic = \"Quietmode_time\";\nreturn [msg1];        \n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "\n",
+        "finalize": "",
+        "libs": [],
+        "x": 3170,
+        "y": 2160,
+        "wires": [
+            [
+                "042a326783f2a657"
+            ]
+        ],
+        "outputLabels": [
+            "Correction_1_RTC_on_off"
+        ]
+    },
+    {
+        "id": "042a326783f2a657",
+        "type": "ui_dropdown",
+        "z": "8c9d42231fd19d3c",
+        "g": "17610af3c50fa4f3",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "c2a0123d2e2c91f0",
+        "order": 10,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "5 mins",
+                "value": 5,
+                "type": "num"
+            },
+            {
+                "label": "10 mins",
+                "value": 10,
+                "type": "num"
+            },
+            {
+                "label": "15 mins",
+                "value": 15,
+                "type": "num"
+            },
+            {
+                "label": "20 mins",
+                "value": 20,
+                "type": "num"
+            },
+            {
+                "label": "25 mins",
+                "value": 25,
+                "type": "num"
+            },
+            {
+                "label": "30 mins",
+                "value": 30,
+                "type": "num"
+            },
+            {
+                "label": "45 mins",
+                "value": 45,
+                "type": "num"
+            },
+            {
+                "label": "1 hour",
+                "value": 60,
+                "type": "num"
+            },
+            {
+                "label": "1 h 15 mins",
+                "value": 75,
+                "type": "num"
+            },
+            {
+                "label": "1 h 30 mins",
+                "value": 90,
+                "type": "num"
+            },
+            {
+                "label": "1 h 45 mins",
+                "value": 105,
+                "type": "num"
+            },
+            {
+                "label": "2 hours",
+                "value": 120,
+                "type": "num"
+            },
+            {
+                "label": "3 hours",
+                "value": 180,
+                "type": "num"
+            },
+            {
+                "label": "4 hours",
+                "value": 240,
+                "type": "num"
+            },
+            {
+                "label": "5 hours",
+                "value": 300,
+                "type": "num"
+            },
+            {
+                "label": "6 hours",
+                "value": 360,
+                "type": "num"
+            },
+            {
+                "label": "7 hours",
+                "value": 420,
+                "type": "num"
+            },
+            {
+                "label": "8 hours",
+                "value": 480,
+                "type": "num"
+            },
+            {
+                "label": "9 hours",
+                "value": 540,
+                "type": "num"
+            },
+            {
+                "label": "10 hours",
+                "value": 600,
+                "type": "num"
+            },
+            {
+                "label": "12 hours",
+                "value": 720,
+                "type": "num"
+            },
+            {
+                "label": "18 hours",
+                "value": 1080,
+                "type": "num"
+            },
+            {
+                "label": "24 hours",
+                "value": 1440,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 3400,
+        "y": 2160,
+        "wires": [
+            [
+                "344b1fdaa89016c8"
+            ]
+        ]
+    },
+    {
+        "id": "ab31019d5a2a15b3",
+        "type": "ui_text",
+        "z": "8c9d42231fd19d3c",
+        "g": "17610af3c50fa4f3",
+        "group": "c2a0123d2e2c91f0",
+        "order": 9,
+        "width": 4,
+        "height": 1,
+        "name": "Quietmode time",
+        "label": "Quietmode time",
+        "format": "",
+        "layout": "row-spread",
+        "className": "",
+        "x": 3320,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "5be142bd732c8d96",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "Warn user if changed",
+        "func": "var Quiet_Mode_Level = msg.payload; //check new Quietmode level\nglobal.set('Previous_Quiet_Mode_Level', Quiet_Mode_Level, \"file\"); // save current level for restore\n\n//if (msg.topic = \"Function - SoftStart Quietmode\") // topic from switch SoftStart Quietmode-Addon, do not change\n //   {\n//        msg.topic = \"Function - SoftStart Quietmode\"; \n//        msg.payload = \"set level \" + msg.payload; \n//        return msg; \n//    }     \n\n\n\n//check if SoftStart Add-on switch is enabled and update message to log\nvar SS_Quietmode_on_off = global.get(\"SS_Quietmode_on_off\", \"file\"); // Status switch SS_Quietmode Add-on\nif (SS_Quietmode_on_off === 1) //if on then warn user in log\n    { \n        msg.topic = \"USER\";\n        msg.payload = \"SoftStart Quietmode will now restore to level \" + Quiet_Mode_Level ; \n    } \n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2120,
+        "y": 220,
+        "wires": [
+            [
+                "238183547350dfc1"
+            ]
+        ]
+    },
+    {
+        "id": "238183547350dfc1",
+        "type": "link out",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "link out 19",
+        "mode": "link",
+        "links": [
+            "031e62b0bf3df7d7"
+        ],
+        "x": 2295,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "32f39bf7fb5e5369",
+        "type": "link out",
+        "z": "8c9d42231fd19d3c",
+        "g": "17610af3c50fa4f3",
+        "name": "link out to set Quietlevel",
+        "mode": "link",
+        "links": [
+            "765b4d77a9fd44cc"
+        ],
+        "x": 3865,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "579bc2c10d3c83a1",
+        "type": "comment",
+        "z": "8c9d42231fd19d3c",
+        "name": "Exit to Set Quietlevel link-in",
+        "info": "",
+        "x": 4020,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "a3ab6c0ec376501c",
+        "type": "comment",
+        "z": "8c9d42231fd19d3c",
+        "name": "Exit to InputLOGS",
+        "info": "",
+        "x": 3990,
+        "y": 2020,
+        "wires": []
     },
     {
         "id": "a938de76db0b71f6",
@@ -15625,9 +15898,9 @@
             "aea8ceb9687abadf",
             "9e366042611cd253"
         ],
-        "x": 94,
+        "x": 84,
         "y": 1739,
-        "w": 1442,
+        "w": 1452,
         "h": 1342
     },
     {
@@ -15664,9 +15937,9 @@
             "2caf61fe8673aedb",
             "2faa41b2319da528"
         ],
-        "x": 114,
+        "x": 104,
         "y": 59,
-        "w": 2072,
+        "w": 2082,
         "h": 422
     },
     {
@@ -15743,9 +16016,9 @@
             "8f0e209ac14bdb9a",
             "0b10bc17b24896b7"
         ],
-        "x": 94,
+        "x": 84,
         "y": 3119,
-        "w": 1162,
+        "w": 1172,
         "h": 982
     },
     {
@@ -15849,9 +16122,9 @@
             "0e8ca4bb561b59ed",
             "497a87221c5618c5"
         ],
-        "x": 2348,
+        "x": 2338,
         "y": 53,
-        "w": 1738,
+        "w": 1748,
         "h": 888
     },
     {
@@ -15927,11 +16200,13 @@
             "7c6f02c851467bc0",
             "b4fb9f63c90d4afb",
             "0f365a79d7e2857d",
-            "6d1801c9cf02324f"
+            "0add6ff01269bdad",
+            "fc8adbd756b4bb38",
+            "9261f4a9927ff20a"
         ],
         "x": 144,
         "y": 619,
-        "w": 1942,
+        "w": 1952,
         "h": 882
     },
     {
@@ -15961,9 +16236,9 @@
             "c0a54684ef46f711",
             "07bfc2f9f00870d7"
         ],
-        "x": 74,
+        "x": 64,
         "y": 4559,
-        "w": 1122,
+        "w": 1132,
         "h": 302
     },
     {
@@ -15983,9 +16258,9 @@
             "030fbd5026e5a295",
             "7122d217051222ff"
         ],
-        "x": 2374,
+        "x": 2364,
         "y": 79,
-        "w": 1172,
+        "w": 1182,
         "h": 162
     },
     {
@@ -21368,7 +21643,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Function SoftStart",
-        "func": "//////////////////////////////// SOFTSTART /////////////////////////////////////\n// Declaration of variables including their values.\nlet msg1={};        // pin 1 - F_SS_correction\nlet msg99={};       // pin 2 - To Log\n//  return [msg1,msg99];\n\nmsg99.topic = \"Function SoftStart\";\n\n///////Add-on Quietmode 3////////////////////////////////////////////////////////\nvar SS_Quietmode_on_off = global.get(\"SS_Quietmode_on_off\", \"file\"); //if switch SS_Quietmode enabled continue\nvar Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); //check current level\nvar SS_Quitmode_levelchange = global.set(\"SS_Quitmode_levelchange\", Quiet_Mode_Level, \"file\"); \n///////Add-on Quietmode 3////////////////////////////////////////////////////////\n\nvar ThreeWay_Valve_State= global.get('ThreeWay_Valve_State');\n    if(ThreeWay_Valve_State===undefined){return null;}\n    \nvar F_SS_state          = global.get('Correction_2_softstart_on_off',\"file\");    // Get the global variable. Used to see if the softstart function is enabled.\n    if(F_SS_state===undefined)  {global.set('Correction_2_softstart_on_off',0,\"file\");F_SS_state=0;}\n    \nvar F_SS_correction     = 0;\nvar F_SS_old_correction = global.get('F_SS_correction');\n    if (F_SS_old_correction===undefined)    {F_SS_old_correction='n/a'}\n    \nvar ss_Hz               = global.get('compressor_frequency');                       // Get the global variable for current compressor frequency\nvar Operating_Mode      = global.get('Operating_Mode_State',\"file\");\nvar SP_start            = global.get('F_WAR_SP');                           //  Setpoint after WAR calculation\nvar F_RTC_correction    = global.get('F_RTC_correction');                //  Correction of the RTC function \n        if (F_RTC_correction===undefined) {F_RTC_correction=0}\nvar F_NR_correction     = global.get('F_NR_correction');                 //  Correction of the NightReduction function\n        if (F_NR_correction===undefined) {F_NR_correction=0}\nvar F_SS_SP_start       = SP_start + F_RTC_correction + F_NR_correction;    //  Calculate the starting temperature (SP) for the SoftStart function        \n\n\n//\n\n//***********************************************************************************\nif (F_SS_state == 0 || ss_Hz == 0 || ThreeWay_Valve_State != 0 || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                     //  Check if the function is enabled. Check if the compressor is running. Check if 3wayvalvue is in HEAT mode(0).\n    {\n        F_SS_correction = 0;                                                        //  If the function is off, or the compressor is off, set  correction to zero\n        global.set('F_SS_correction',F_SS_correction);                              //  Set the correctionvalue\n        context.set(\"StartTime\",undefined);\n        \n        msg1.payload = F_SS_correction; \n        msg1.topic = 'Compressor off. F_SS_correction 0';\n        \n        msg99.payload = \"Compressor Inactive - Correction: 0\"\n        \n        return [msg1,msg99];\n    }\n//***********************************************************************************\n//\nelse\n    {\n\n        var F_SS_new_SP;                                                            //  declare an empty variable\n        var ss_PV_Ta            = global.get('Main_Outlet_Temp');                   //  PV (Ta/outlet) Temperature of water.\n        var ss_PV_Tr            = global.get('Main_Inlet_Temp');                    //  PV (Tr/inlet) Temperature of water\n        var T = '';\n        var C = '';\n        \n        //\n        //***********************************************************************************\n        /////// Timer how long the compressoris on. Runtime //////////\n        var CurrentTime = new Date().getTime();\n        var StartTime = context.get(\"StartTime\");\n        if (StartTime === undefined)\n            {\n                StartTime = CurrentTime;\n                context.set(\"StartTime\",StartTime);\n            }\n        var TimeElapsed = ((CurrentTime - StartTime)/1000);\n        TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n        \n        \n        \n        \n        //***********************************************************************************\n        var Stage_1_Duration    =   180;                                        // Phase 1 duration in seconds\n        //***********************************************************************************\n        // Stage 1 - Pump just started\n        if (SS_Quietmode_on_off === 1 && Operating_Mode === 0) //only if HEAT only and switch is on\n            {\n                global.set('SS_Quitmode_levelchange', 3, \"file\"); //todo save it first for restore!\n            }\n            \n        if (TimeElapsed < Stage_1_Duration)\n            {\n                global.set('F_SS_correction_active',1);\n                F_SS_correction = -2;                                               //  Set the starting correction to -3\n                F_SS_new_SP = F_SS_SP_start + F_SS_correction;                      //  Calculate the NEW SP.\n                \n                T = ' - (STARTUP)';\n                \n                if (ss_PV_Ta -2 > F_SS_new_SP)                                     //  Check if the NEW SP is not too low (2C below Ta) \n                    {\n                        F_SS_new_SP             = ss_PV_Ta -2;                      //  NEW SP\n                        F_SS_correction         = F_SS_new_SP - F_SS_SP_start;      //  NEW CORRECTION\n                        T = ' - (CATCH)';\n                    }\n                if (F_SS_new_SP > F_SS_SP_start + 6)                                //  Check if the NEW SP is not too high (4C above original SP) \n                    {\n                        F_SS_new_SP             = F_SS_SP_start + 6;                //  NEW SP\n                        F_SS_correction         = 6;                                //  NEW CORRECTION\n                        T = ' - (CATCH)';\n                    }\n                \n            }\n        \n        //***********************************************************************************\n        //      Stage 2 - waiting for pump to relax\n        //***********************************************************************************\n        var F_SS_stage2 = global.get('F_SS_stage2',\"file\");\n        var F_SS_stage2_limit = global.get('F_SS_stage2_limit',\"file\");\n        F_SS_stage2 = F_SS_stage2 * 60;                         // convert minutes to seconds\n        \n        \n        if (TimeElapsed >= Stage_1_Duration && TimeElapsed < (F_SS_stage2))\n            {\n                //Turn off Quietmode add-on:\n            if (SS_Quietmode_on_off === 1 && Operating_Mode === 0) //only if HEAT only and switch is on\n                {\n                    global.set('SS_Quitmode_levelchange', 0, \"file\"); //todo save it first for restore!\n                }\n                global.set('F_SS_correction_active',1);\n                \n                F_SS_new_SP                     = ss_PV_Ta -1;                      //  NEW SP\n                    if (F_SS_new_SP < F_SS_SP_start -3)\n                        {\n                            F_SS_new_SP = F_SS_SP_start -3;\n                        }\n                F_SS_correction                 = F_SS_new_SP - F_SS_SP_start;      //  NEW CORRECTION\n                \n                if (F_SS_correction > F_SS_stage2_limit)\n                    {\n                        F_SS_correction = F_SS_stage2_limit;\n                        F_SS_new_SP = F_SS_SP_start + F_SS_stage2_limit;\n                        C = ' (Capped)'\n                    }\n                T = ' - (STABLE)';\n                \n                if (TimeElapsed <= 300 && F_SS_correction > 0)\n                    {\n                        F_SS_correction = 0;\n                    }\n                if (TimeElapsed > 300 && TimeElapsed <= 600 && F_SS_correction > 1)\n                    {\n                        F_SS_correction = 1;\n                    }\n                \n            }\n        //***********************************************************************************\n        //      Stage 3 - Pump has relaxed. Remove correction, back to original setpoint\n        if (TimeElapsed >= F_SS_stage2)\n            {\n            ////////////////////////\n                    global.set('F_SS_correction_active',0);\n                    F_SS_correction             = 0;                                //  NEW CORRECTION\n                    F_SS_new_SP                 = F_SS_SP_start                     //  NEW SP\n                    T = ' - (ENDING)';\n            }\n    }\n//***********************************************************************************\n//\n\nglobal.set('F_SS_correction',F_SS_correction);\nmsg1.payload = F_SS_correction; \nmsg1.topic = 'F_SS_correction ' + T;\n\nif (F_SS_old_correction == F_SS_correction)\n    {\n        context.set(\"StartTime_phase2\",undefined);\n        //msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, Tout: \" + ss_PV_Ta + \"°C\"; \n        return [msg1,null];\n    }\nif (F_SS_correction > F_SS_old_correction)                                      //  reduced response scenario (stage 2)\n    {\n        var StartTime_phase2 = context.get(\"StartTime_phase2\");\n        if (StartTime_phase2 === undefined)\n            {\n                StartTime_phase2 = CurrentTime;\n                context.set(\"StartTime_phase2\",StartTime_phase2);\n            }\n        var TimeElapsed_phase2 = ((CurrentTime - StartTime_phase2)/1000);\n        TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n        \n        if (TimeElapsed_phase2 < 80 || (TimeElapsed_phase2 > 1 && TimeElapsed < Stage_1_Duration))\n            {\n                global.set('F_SS_correction',F_SS_old_correction);\n                return null;}\n        else\n            {\n                msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, Tout: \" + ss_PV_Ta + \"°C\"; \n                context.set(\"StartTime_phase2\",CurrentTime);\n//                global.set('F_SS_correction',F_SS_correction);\n                return [msg1,msg99];\n            }\n        \n    }\n\nelse\n    {\n        msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, Tout: \" + ss_PV_Ta + \"°C\"; \n        context.set(\"StartTime_phase2\",CurrentTime);\n        \n        \n        \n        //***********************************************************************************\n        return [msg1,msg99];\n    }",
+        "func": "//////////////////////////////// SOFTSTART /////////////////////////////////////\n// Declaration of variables including their values.\nlet msg1={};        // pin 1 - F_SS_correction\nlet msg99={};       // pin 2 - To Log\n//  return [msg1,msg99];\n\nmsg99.topic = \"Function SoftStart\";\n\nvar ThreeWay_Valve_State= global.get('ThreeWay_Valve_State');\n    if(ThreeWay_Valve_State===undefined){return null;}\n    \nvar F_SS_state          = global.get('Correction_2_softstart_on_off',\"file\");    // Get the global variable. Used to see if the softstart function is enabled.\n    if(F_SS_state===undefined)  {global.set('Correction_2_softstart_on_off',0,\"file\");F_SS_state=0;}\n    \nvar F_SS_correction     = 0;\nvar F_SS_old_correction = global.get('F_SS_correction');\n    if (F_SS_old_correction===undefined)    {F_SS_old_correction='n/a'}\n    \nvar ss_Hz               = global.get('compressor_frequency');                       // Get the global variable for current compressor frequency\nvar Operating_Mode      = global.get('Operating_Mode_State',\"file\");\nvar SP_start            = global.get('F_WAR_SP');                           //  Setpoint after WAR calculation\nvar F_RTC_correction    = global.get('F_RTC_correction');                //  Correction of the RTC function \n        if (F_RTC_correction===undefined) {F_RTC_correction=0}\nvar F_NR_correction     = global.get('F_NR_correction');                 //  Correction of the NightReduction function\n        if (F_NR_correction===undefined) {F_NR_correction=0}\nvar F_SS_SP_start       = SP_start + F_RTC_correction + F_NR_correction;    //  Calculate the starting temperature (SP) for the SoftStart function        \n\n\n//\n\n//***********************************************************************************\nif (F_SS_state == 0 || ss_Hz == 0 || ThreeWay_Valve_State != 0 || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                     //  Check if the function is enabled. Check if the compressor is running. Check if 3wayvalvue is in HEAT mode(0).\n    {\n        F_SS_correction = 0;                                                        //  If the function is off, or the compressor is off, set  correction to zero\n        global.set('F_SS_correction',F_SS_correction);                              //  Set the correctionvalue\n        context.set(\"StartTime\",undefined);\n        \n        msg1.payload = F_SS_correction; \n        msg1.topic = 'Compressor off. F_SS_correction 0';\n        \n        msg99.payload = \"Compressor Inactive - Correction: 0\"\n        \n        return [msg1,msg99];\n    }\n//***********************************************************************************\n//\nelse\n    {\n\n        var F_SS_new_SP;                                                            //  declare an empty variable\n        var ss_PV_Ta            = global.get('Main_Outlet_Temp');                   //  PV (Ta/outlet) Temperature of water.\n        var ss_PV_Tr            = global.get('Main_Inlet_Temp');                    //  PV (Tr/inlet) Temperature of water\n        var T = '';\n        var C = '';\n        \n        //\n        //***********************************************************************************\n        /////// Timer how long the compressoris on. Runtime //////////\n        var CurrentTime = new Date().getTime();\n        var StartTime = context.get(\"StartTime\");\n        if (StartTime === undefined)\n            {\n                StartTime = CurrentTime;\n                context.set(\"StartTime\",StartTime);\n            }\n        var TimeElapsed = ((CurrentTime - StartTime)/1000);\n        TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n        \n        \n        \n        \n        //***********************************************************************************\n        var Stage_1_Duration    =   180;                                        // Phase 1 duration in seconds\n        //***********************************************************************************\n        // Stage 1 - Pump just started\n            \n        if (TimeElapsed < Stage_1_Duration)\n            {\n                global.set('F_SS_correction_active',1);\n                F_SS_correction = -2;                                               //  Set the starting correction to -3\n                F_SS_new_SP = F_SS_SP_start + F_SS_correction;                      //  Calculate the NEW SP.\n                \n                T = ' - (STARTUP)';\n                \n                if (ss_PV_Ta -2 > F_SS_new_SP)                                     //  Check if the NEW SP is not too low (2C below Ta) \n                    {\n                        F_SS_new_SP             = ss_PV_Ta -2;                      //  NEW SP\n                        F_SS_correction         = F_SS_new_SP - F_SS_SP_start;      //  NEW CORRECTION\n                        T = ' - (CATCH)';\n                    }\n                if (F_SS_new_SP > F_SS_SP_start + 6)                                //  Check if the NEW SP is not too high (4C above original SP) \n                    {\n                        F_SS_new_SP             = F_SS_SP_start + 6;                //  NEW SP\n                        F_SS_correction         = 6;                                //  NEW CORRECTION\n                        T = ' - (CATCH)';\n                    }\n                \n            }\n        \n        //***********************************************************************************\n        //      Stage 2 - waiting for pump to relax\n        //***********************************************************************************\n        var F_SS_stage2 = global.get('F_SS_stage2',\"file\");\n        var F_SS_stage2_limit = global.get('F_SS_stage2_limit',\"file\");\n        F_SS_stage2 = F_SS_stage2 * 60;                         // convert minutes to seconds\n        \n        \n        if (TimeElapsed >= Stage_1_Duration && TimeElapsed < (F_SS_stage2))\n            {\n                global.set('F_SS_correction_active',1);\n                \n                F_SS_new_SP                     = ss_PV_Ta -1;                      //  NEW SP\n                    if (F_SS_new_SP < F_SS_SP_start -3)\n                        {\n                            F_SS_new_SP = F_SS_SP_start -3;\n                        }\n                F_SS_correction                 = F_SS_new_SP - F_SS_SP_start;      //  NEW CORRECTION\n                \n                if (F_SS_correction > F_SS_stage2_limit)\n                    {\n                        F_SS_correction = F_SS_stage2_limit;\n                        F_SS_new_SP = F_SS_SP_start + F_SS_stage2_limit;\n                        C = ' (Capped)'\n                    }\n                T = ' - (STABLE)';\n                \n                if (TimeElapsed <= 300 && F_SS_correction > 0)\n                    {\n                        F_SS_correction = 0;\n                    }\n                if (TimeElapsed > 300 && TimeElapsed <= 600 && F_SS_correction > 1)\n                    {\n                        F_SS_correction = 1;\n                    }\n                \n            }\n        //***********************************************************************************\n        //      Stage 3 - Pump has relaxed. Remove correction, back to original setpoint\n        if (TimeElapsed >= F_SS_stage2)\n            {\n            ////////////////////////\n                    global.set('F_SS_correction_active',0);\n                    F_SS_correction             = 0;                                //  NEW CORRECTION\n                    F_SS_new_SP                 = F_SS_SP_start                     //  NEW SP\n                    T = ' - (ENDING)';\n            }\n    }\n//***********************************************************************************\n//\n\nglobal.set('F_SS_correction',F_SS_correction);\nmsg1.payload = F_SS_correction; \nmsg1.topic = 'F_SS_correction ' + T;\n\nif (F_SS_old_correction == F_SS_correction)\n    {\n        context.set(\"StartTime_phase2\",undefined);\n        //msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, Tout: \" + ss_PV_Ta + \"°C\"; \n        return [msg1,null];\n    }\nif (F_SS_correction > F_SS_old_correction)                                      //  reduced response scenario (stage 2)\n    {\n        var StartTime_phase2 = context.get(\"StartTime_phase2\");\n        if (StartTime_phase2 === undefined)\n            {\n                StartTime_phase2 = CurrentTime;\n                context.set(\"StartTime_phase2\",StartTime_phase2);\n            }\n        var TimeElapsed_phase2 = ((CurrentTime - StartTime_phase2)/1000);\n        TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n        \n        if (TimeElapsed_phase2 < 80 || (TimeElapsed_phase2 > 1 && TimeElapsed < Stage_1_Duration))\n            {\n                global.set('F_SS_correction',F_SS_old_correction);\n                return null;}\n        else\n            {\n                msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, Tout: \" + ss_PV_Ta + \"°C\"; \n                context.set(\"StartTime_phase2\",CurrentTime);\n//                global.set('F_SS_correction',F_SS_correction);\n                return [msg1,msg99];\n            }\n        \n    }\n\nelse\n    {\n        msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, Tout: \" + ss_PV_Ta + \"°C\"; \n        context.set(\"StartTime_phase2\",CurrentTime);\n        \n        \n        \n        //***********************************************************************************\n        return [msg1,msg99];\n    }",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -21378,8 +21653,7 @@
         "y": 1120,
         "wires": [
             [
-                "16054e8334890ad8",
-                "b4fb9f63c90d4afb"
+                "16054e8334890ad8"
             ],
             [
                 "663fd79ce5a1610d"
@@ -22119,7 +22393,7 @@
             "765b4d77a9fd44cc"
         ],
         "x": 1295,
-        "y": 1080,
+        "y": 1020,
         "wires": []
     },
     {
@@ -22127,19 +22401,21 @@
         "type": "function",
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
-        "name": "func",
-        "func": "msg.topic = \"Quiet Mode 3\";\nvar Current = global.get('Quiet_Mode_Level', \"file\"); //check current setting\nvar Next = global.get('SS_Quitmode_levelchange', \"file\");//check next setting:\n\n//only send when change needed\nif (Current != Next)\n    {\n        msg.payload = Next; //send Quietlevel\n        return msg;\n    } else return null;     //send nothing\n\n\n\n\n\n\n",
-        "outputs": 1,
+        "name": "Function Quietmode Add-on",
+        "func": "let msg2 = {}; //to InputLOGS\n\nvar SS_Quietmode_on_off = global.get(\"SS_Quietmode_on_off\", \"file\"); // Status switch SS_Quietmode \nif (SS_Quietmode_on_off === 0) { return [null, null]; } //leave function when switch is off\nif (SS_Quietmode_on_off === undefined) { return [null, null]; } //leave function when switch not stored\n\nvar Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); //check current Quietmode level\nvar Previous_Quiet_Mode_Level = global.get('Previous_Quiet_Mode_Level', \"file\"); //check previous Quietmode level\n//check previous mode\nif (Previous_Quiet_Mode_Level === undefined) { node.warn(\"error function Quietmode Addon; Previous_Quiet_Mode_Level doesn't exists!\"); }\n\n//get Quietmode_time, error when no time!\nvar Quietmode_time = global.get('Quietmode_time', \"file\"); //after this time the Quietmode will restore to its previous level\nif (Quietmode_time === undefined) { node.warn(\"Error: No Quietmode_time found!\"); }\n\n//debugging\n//node.warn(\"Previous_Quiet_Mode_Level: \" + Previous_Quiet_Mode_Level);\n//node.warn(\"Quiet_Mode_Level: \" + Quiet_Mode_Level);\n//node.warn(\"Quietmode_time: \" + Quietmode_time + \" min\");\n\n//test if compressor is off\nvar ss_Hz = global.get('compressor_frequency');  // Get the global variable for current compressor frequency\n\n// now the real action:\n\nif (ss_Hz == 0) { context.set(\"StartTimeQuietmode\", undefined); } //reset time\n\n\nif (ss_Hz > 0) //start counting\n{\n    /////// Timer how long the compressoris on. Runtime //////////   Thank you for borowing Edterbak! haha\n    var CurrentTime = new Date().getTime();\n    var StartTimeQuietmode = context.get(\"StartTimeQuietmode\");\n    if (StartTimeQuietmode === undefined) \n        {\n            StartTimeQuietmode = CurrentTime;\n            context.set(\"StartTimeQuietmode\", StartTimeQuietmode);\n        }\n    var TimeElapsed = ((CurrentTime - StartTimeQuietmode) / 1000);\n    TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n\n    //***********************************************************************************\n    var Stage_1_Duration = (Quietmode_time * 60);                                        // Phase 1 duration in seconds\n    //***********************************************************************************\n\n    // Stage 1 - Compressor just started\n    if (TimeElapsed < Stage_1_Duration) \n        {\n            //do nothing, mayby something to log...\n        }\n\n    // Stage 2 - time to switch Quitemode back to previous state\n    if (TimeElapsed >= Stage_1_Duration) \n    {\n        var Current = global.get('Quiet_Mode_Level', \"file\"); //check current setting Should be level 3\n        //only send msg when change needed (but send end Quietmode to log anyway)\n        msg2.topic = \"Function - SoftStart Quietmode\";\n        msg2.payload = \"finished, now restoring to level \" + Previous_Quiet_Mode_Level;\n        if (Current != Previous_Quiet_Mode_Level) {\n            msg.payload = Previous_Quiet_Mode_Level; //restore Quietlevel\n            return [msg, msg2];\n        } else { return [null, null]; }     //send nothing\n    }\n\n}\n\nreturn [null, null];\n\n\n",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1190,
-        "y": 1080,
+        "x": 980,
+        "y": 1040,
         "wires": [
             [
-                "7c6f02c851467bc0",
-                "6d1801c9cf02324f"
+                "7c6f02c851467bc0"
+            ],
+            [
+                "fc8adbd756b4bb38"
             ]
         ]
     },
@@ -22150,26 +22426,8 @@
         "g": "d2b7e1d6e85a96cf",
         "name": "Exit to Set Quietlevel link-in",
         "info": "",
-        "x": 1540,
-        "y": 1040,
-        "wires": []
-    },
-    {
-        "id": "6d1801c9cf02324f",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "debug 69",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1480,
-        "y": 1080,
+        "x": 1440,
+        "y": 1020,
         "wires": []
     },
     {
@@ -22192,6 +22450,69 @@
                 "846a789dca74329d"
             ]
         ]
+    },
+    {
+        "id": "0add6ff01269bdad",
+        "type": "inject",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "every 60s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 750,
+        "y": 1040,
+        "wires": [
+            [
+                "b4fb9f63c90d4afb"
+            ]
+        ]
+    },
+    {
+        "id": "fc8adbd756b4bb38",
+        "type": "link out",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "link out 20",
+        "mode": "link",
+        "links": [
+            "47e2a8d99d332229",
+            "873ab80499b9156b",
+            "ef1f42fcf697a0b6",
+            "662bb3cfb11c3c63",
+            "031e62b0bf3df7d7",
+            "c3fc3dd0823391e4",
+            "6b34f737dac1d48f",
+            "b08c84a2e3145411",
+            "91641c3ebfbec364"
+        ],
+        "x": 1295,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "9261f4a9927ff20a",
+        "type": "comment",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "ToLog",
+        "info": "",
+        "x": 1370,
+        "y": 1060,
+        "wires": []
     },
     {
         "id": "ed155b604642d354",
@@ -22225,7 +22546,7 @@
         ],
         "x": 54,
         "y": 1119,
-        "w": 1388,
+        "w": 1398,
         "h": 602
     },
     {
@@ -22288,9 +22609,9 @@
             "d44f1a1993a8a44f",
             "e68356272f1f529b"
         ],
-        "x": 54,
+        "x": 44,
         "y": 439,
-        "w": 1388,
+        "w": 1398,
         "h": 622
     },
     {
@@ -22418,7 +22739,7 @@
         ],
         "x": 84,
         "y": 579,
-        "w": 1322,
+        "w": 1332,
         "h": 82
     },
     {
@@ -22440,7 +22761,7 @@
         ],
         "x": 84,
         "y": 1239,
-        "w": 1332,
+        "w": 1342,
         "h": 82
     },
     {
@@ -22460,9 +22781,9 @@
         "nodes": [
             "2ee679408e4ccc6f"
         ],
-        "x": 1134,
+        "x": 1124,
         "y": 919,
-        "w": 272,
+        "w": 292,
         "h": 82
     },
     {
@@ -22482,9 +22803,9 @@
         "nodes": [
             "4eaa2cfa2749c551"
         ],
-        "x": 1134,
+        "x": 1124,
         "y": 1579,
-        "w": 272,
+        "w": 292,
         "h": 82
     },
     {
@@ -23806,9 +24127,9 @@
             "59e73e3a2c2985fa",
             "88ea0371f9cecd37"
         ],
-        "x": 74,
+        "x": 64,
         "y": 19,
-        "w": 1292,
+        "w": 1302,
         "h": 728
     },
     {
@@ -23928,9 +24249,9 @@
             "a9994ef2e592aee1",
             "375bbd780529afe0"
         ],
-        "x": 74,
+        "x": 64,
         "y": 779,
-        "w": 1332,
+        "w": 1352,
         "h": 688
     },
     {
@@ -23954,7 +24275,7 @@
         ],
         "x": 114,
         "y": 551.5,
-        "w": 812,
+        "w": 822,
         "h": 169.5
     },
     {
@@ -24054,7 +24375,7 @@
         ],
         "x": 434,
         "y": 1719,
-        "w": 392,
+        "w": 402,
         "h": 1162
     },
     {
@@ -27906,9 +28227,9 @@
             "9f75b032f8c2eeb5",
             "bcda44f3140d86e9"
         ],
-        "x": 134,
+        "x": 124,
         "y": 139,
-        "w": 632,
+        "w": 642,
         "h": 342
     },
     {
@@ -27928,9 +28249,9 @@
             "43be81558a98b102",
             "c2935eeb2b0919cf"
         ],
-        "x": 214,
+        "x": 204,
         "y": 499,
-        "w": 622,
+        "w": 632,
         "h": 202
     },
     {
@@ -27950,9 +28271,9 @@
             "8982c1e161d9d215",
             "3c3c8472da1fb85a"
         ],
-        "x": 1094,
+        "x": 1084,
         "y": 139,
-        "w": 582,
+        "w": 592,
         "h": 202
     },
     {
@@ -27977,9 +28298,9 @@
             "8090bc95e8512738",
             "7ca958b4b94243f8"
         ],
-        "x": 1114,
+        "x": 1104,
         "y": 379,
-        "w": 582,
+        "w": 592,
         "h": 262
     },
     {
@@ -28004,9 +28325,9 @@
             "1dc467ae4cf20867",
             "8d47d305edaedefa"
         ],
-        "x": 1114,
+        "x": 1104,
         "y": 679,
-        "w": 582,
+        "w": 592,
         "h": 262
     },
     {
@@ -28950,7 +29271,7 @@
         "name": "Line - Instructions text",
         "order": 4,
         "width": 12,
-        "height": "16",
+        "height": 16,
         "format": "<h3>SoftStart</h3>\n<br/>\n<h3>What can the SoftStart function do for you?</h3>\nThis function tries to reduce the frequency of the compressor asap after starting. This will likely give you a longer\nrun, uses less energy and generating less noise. It does make heating slower.\n<br/>\nDefault behaviour of the heatpump means the compressor will go to medium to high frequency (Hz) until the returning\nwater temperature (See Temp. inlet (PV) at the Home screen) approaches the Final water temperature. Only then the\ncompressor ramps down.\n<br/>\nWith the SoftStart function enabled, the Panasonic will be fooled to believe it is almost at the desired water\ntemperature. This should cause the compressor to ramp down within minutes. When ramp down has occured, the water\ntemperature will slowly be increased to the intented value. This all happens internally and is not visible for the user,\nbut you can see the corrections in the log.\n<br/><br/>\n<h3>How to setup?</h3>\n\n<u>Minimum runtime</u><br/>\nThis will set the period this function is active. Is does not necessarily mean the compressor won't turn off within this\ntime limit. Normal internal logic of the Panasonic still applies, so when the water is warm enough the compressor stops.\nThis is where the following option steps in.\n<br/><br/>\nDefault value: 15 minutes\n<br/><br/>\n<u>Max water temp. increase</u><br/>\nThis will set the maximum increase in water temperature on top of the normally calculated water temperature. The higher\nincease allowed, the longer the compressor will run, but of course, the higher the overshoot in room temperature could\nbe.<br/><br/>\nDefault value: 1 °C<br/><br/>\n<h3>Note:</h3>\n- This function works only for Operating modes which include Heat\n\n\n\n\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -29283,9 +29604,9 @@
             "d0fda364deccc7f0",
             "47fe4c3f4736bcc8"
         ],
-        "x": 2334,
+        "x": 2314,
         "y": 1979,
-        "w": 1352,
+        "w": 1372,
         "h": 242
     },
     {
@@ -40932,12 +41253,78 @@
         ]
     },
     {
+        "id": "a3bb4f674ce72d99",
+        "type": "function",
+        "z": "35d210f042827344",
+        "name": "Debug Scheduler",
+        "func": "var topic = \"Debugging\"\nlet msg1 = {}, msg2 = {}, msg3 = {};\n\nmsg1.topic = topic;\nmsg2.topic = topic;\nmsg3.topic = topic;\n\nmsg1.payload = \"solar_block_scheduler: \"        + global.get('solar_block_scheduler', \"file\");\nmsg2.payload = \"SolarFunction_active: \"         + global.get('SolarFunction_active', \"file\");\nmsg3.payload = \"F_stored_next_operating_mode: \" + global.get('F_stored_next_operating_mode', \"file\");\nreturn [msg1 ,msg2, msg3];",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 2020,
+        "wires": [
+            [
+                "c560d42f8fe61a5b"
+            ],
+            [
+                "c560d42f8fe61a5b"
+            ],
+            [
+                "c560d42f8fe61a5b"
+            ]
+        ]
+    },
+    {
+        "id": "c560d42f8fe61a5b",
+        "type": "link out",
+        "z": "35d210f042827344",
+        "name": "link out 18",
+        "mode": "link",
+        "links": [
+            "031e62b0bf3df7d7"
+        ],
+        "x": 1355,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "2a76a4870ce14fd6",
+        "type": "ui_button",
+        "z": "35d210f042827344",
+        "name": "Debug2",
+        "group": "16ec453c8cb345ac",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Debug scheduler",
+        "tooltip": "Press one time to show some scheduler settings",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 960,
+        "y": 2020,
+        "wires": [
+            [
+                "a3bb4f674ce72d99"
+            ]
+        ]
+    },
+    {
         "id": "92e5b2c.00a8b5",
         "type": "mqtt-broker",
         "name": "MQTT (x.x.x.x)",
-        "broker": "x.x.x.x",
+        "broker": "core-mosquitto",
         "port": "1883",
-        "clientid": "Node_Red_Client",
+        "clientid": "",
         "autoConnect": true,
         "usetls": false,
         "compatmode": false,
