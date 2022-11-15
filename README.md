@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.11 <br/>
+Current version: 21.12 <br/>
 
 
 ## Introduction
@@ -647,6 +647,12 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - Enhancement: Re-implemented some of Aikons textual corrections.
 - Enhancement: Fixed location of HELP button for settings, improved text overal in help buttons, size of the box etc.
 - Enhancement: Moved 'Scheduler related settings' to Scheduler.
+
+[2022-11-15] v21.12 - Changes:
+- BUG: Home sceen operatoin mode actual not updating fixed.
+- Enhancement: Layout Home
+- Enhancement: typos in various places.
+
 
 
 ********
