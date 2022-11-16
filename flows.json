@@ -3066,7 +3066,8 @@
             "a845813900ca9e55",
             "9717750d0d528f9c",
             "5be142bd732c8d96",
-            "238183547350dfc1"
+            "238183547350dfc1",
+            "625620e079bcddd3"
         ],
         "x": 1164,
         "y": 119,
@@ -3263,7 +3264,8 @@
             "344b1fdaa89016c8",
             "98d6df4515c25447",
             "ab31019d5a2a15b3",
-            "32f39bf7fb5e5369"
+            "32f39bf7fb5e5369",
+            "8bd83650dae791b5"
         ],
         "x": 2754,
         "y": 1979,
@@ -15290,7 +15292,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "17610af3c50fa4f3",
         "name": "set.Correction_2_softstart_on_off",
-        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = \"Function - SoftStart Quietmode\";\nglobal.set(\"SS_Quietmode_on_off\",msg.payload,\"file\");\nlet msg2 = {};\n\n//get Quietmode_time, error when no time!\nvar Quietmode_time = global.get('Quietmode_time', \"file\"); //after this time the Quietmode will restore to its previous level\nif (Quietmode_time === undefined) { node.warn(\"Error: No Quietmode_time found!\"); }\n\nif (msg.payload == 1) \n    { \n        var Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); //check current Quietmode level\n        if (Quiet_Mode_Level === undefined) { Quiet_Mode_Level = 0; }\n\n        \n        //if Previous_Quiet_Mode_Level excists, set it to current Quiet_Mode_Level\n        var Storedlevel = global.get('Previous_Quiet_Mode_Level', \"file\");\n        if (Storedlevel != undefined) { Quiet_Mode_Level = Storedlevel; } //geen vorige waarde bij boot\n \n        msg.payload = \"ON (Timer: \" + Quietmode_time + \" min, Restore level \" + Quiet_Mode_Level + \")\"; \n        global.set('Previous_Quiet_Mode_Level', Quiet_Mode_Level, \"file\"); // save current level for restore\n\n        //set the new Quietlevel now if needed:\n        var Current = Quiet_Mode_Level; //current level\n        //only send msg when change needed\n        if (Current != Previous_Quiet_Mode_Level) \n            {\n                msg2.topic = \"Function - SoftStart Quietmode\";\n                msg2.payload = 3; //send Quietlevel 3\n                return [msg, msg2];\n            } else { return [msg, null]; }     //send nothing to Exit to Quietlevel-change\n     }\n\nif (msg.payload == 0) \n    { \n        msg.payload = \"OFF\";  \n        var Previous_Quiet_Mode_Level = global.get('Previous_Quiet_Mode_Level', \"file\"); //check previous Quietmode level\n        if (Previous_Quiet_Mode_Level === undefined) { Previous_Quiet_Mode_Level = 0; } \n        var Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); //check current Quietmode level\n        //restore when user switches Quietmode-Add-on to OFF\n        \n        //set the old Quietlevel now if needed:\n        var Current = Quiet_Mode_Level; //current level\n        \n        //only send msg when change needed\n        if (Current != Previous_Quiet_Mode_Level) \n            {\n                msg2.topic = \"Function - SoftStart Quietmode\";\n                msg2.payload = Previous_Quiet_Mode_Level; //send previous Quietlevel \n                return [msg, msg2];\n            } else { return [msg, null]; }     //send nothing to Exit to Quietlevel-change\n    }\n\nreturn [msg, msg2]; // Pin1 to log    Pin2 to Setquitemode inputbox\n\n\n\n//Quietmode-Addon further handled in function node: Function Quietmode add-on (WP Control)\n",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = \"Function - SoftStart Quietmode\";\nglobal.set(\"SS_Quietmode_on_off\",msg.payload,\"file\");\nlet msg2 = {};\n\n//get Quietmode_time, error when no time!\nvar Quietmode_time = global.get('Quietmode_time', \"file\"); //after this time the Quietmode will restore to its previous level\nif (Quietmode_time === undefined) { node.warn(\"Error: No Quietmode_time found!\"); }\n\nif (msg.payload == 1) \n    { \n        var Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); //check current Quietmode level\n        if (Quiet_Mode_Level === undefined) { Quiet_Mode_Level = 0; }\n\n        \n        //if Previous_Quiet_Mode_Level excists, set it to current Quiet_Mode_Level\n        var Storedlevel = global.get('Previous_Quiet_Mode_Level', \"file\");\n        if (Storedlevel != undefined) { Quiet_Mode_Level = Storedlevel; } //geen vorige waarde bij boot\n \n        msg.payload = \"ON (Timer: \" + Quietmode_time + \" min, Restore level \" + Quiet_Mode_Level + \")\"; \n        global.set('Previous_Quiet_Mode_Level', Quiet_Mode_Level, \"file\"); // save current level for restore\n\n        //set the new Quietlevel now if needed:\n        var Current = Quiet_Mode_Level; //current level\n        //only send msg when change needed\n        if (Current != Previous_Quiet_Mode_Level) \n            {\n                msg2.topic = \"Function - SoftStart Quietmode\";\n                msg2.payload = 3; //send Quietlevel 3\n                return [msg, msg2];\n            } else { return [msg, null]; }     //send nothing to Exit to Quietlevel-change\n     }\n\nif (msg.payload == 0) \n    { \n        var Previous_Quiet_Mode_Level = global.get('Previous_Quiet_Mode_Level', \"file\"); //check previous Quietmode level\n        if (Previous_Quiet_Mode_Level === undefined) { Previous_Quiet_Mode_Level = 0; } \n        msg.payload = \"OFF (restored to level \" + Previous_Quiet_Mode_Level + \")\";  \n        var Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); //check current Quietmode level\n\n        //restore when user switches SoftStart Quietmode OFF\n        global.set('Previous_Quiet_Mode_Level', undefined, \"file\");//delete old stored Previous_Quiet_Mode_Level\n        //set the old Quietlevel now if needed:\n        var Current = Quiet_Mode_Level; //current level\n        \n        //only send msg when change needed\n        if (Current != Previous_Quiet_Mode_Level) \n            {\n                msg2.topic = \"Function - SoftStart Quietmode\";\n                msg2.payload = Previous_Quiet_Mode_Level; //send previous Quietlevel \n                return [msg, msg2];\n            } else { return [msg, null]; }     //send nothing to Exit to Quietlevel-change\n    }\n\nreturn [msg, msg2]; // Pin1 to log    Pin2 to Setquitemode inputbox\n\n\n\n//Quietmode-Addon further handled in function node: Function Quietmode add-on (WP Control)\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -15750,8 +15752,8 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Warn user if changed",
-        "func": "var Quiet_Mode_Level = msg.payload; //check new Quietmode level\nglobal.set('Previous_Quiet_Mode_Level', Quiet_Mode_Level, \"file\"); // save current level for restore\n\n//if (msg.topic = \"Function - SoftStart Quietmode\") // topic from switch SoftStart Quietmode-Addon, do not change\n //   {\n//        msg.topic = \"Function - SoftStart Quietmode\"; \n//        msg.payload = \"set level \" + msg.payload; \n//        return msg; \n//    }     \n\n\n\n//check if SoftStart Add-on switch is enabled and update message to log\nvar SS_Quietmode_on_off = global.get(\"SS_Quietmode_on_off\", \"file\"); // Status switch SS_Quietmode Add-on\nif (SS_Quietmode_on_off === 1) //if on then warn user in log\n    { \n        msg.topic = \"USER\";\n        msg.payload = \"SoftStart Quietmode will now restore to level \" + Quiet_Mode_Level ; \n    } \n\n\n\nreturn msg;",
-        "outputs": 1,
+        "func": "var Quiet_Mode_Level = msg.payload; //check new Quietmode level\nglobal.set('Previous_Quiet_Mode_Level', Quiet_Mode_Level, \"file\"); // save current level for restore\n\n//if (msg.topic = \"Function - SoftStart Quietmode\") // topic from switch SoftStart Quietmode-Addon, do not change\n //   {\n//        msg.topic = \"Function - SoftStart Quietmode\"; \n//        msg.payload = \"set level \" + msg.payload; \n//        return msg; \n//    }     \n\n\n\n//check if SS_Quietmode_on_off switch is enabled and update message to log\nvar SS_Quietmode_on_off = global.get(\"SS_Quietmode_on_off\", \"file\"); // Status switch SS_Quietmode Add-on\nif (SS_Quietmode_on_off === 1) //if on then warn user in log\n    { \n        let msg2 = {};\n        msg.topic = \"USER\";\n        msg.payload = \"SoftStart Quietmode will now restore to level \" + Quiet_Mode_Level ; \n        //also disable SS_Quietmode_on_off switch if user selects Quietmode 0 (no use to set and restore both te level 0)\n        if (Quiet_Mode_Level == 0) {\n            msg.payload = \"SoftStart Quietmode makes no sence to set and restore to \" + Quiet_Mode_Level + \" DISABLED\"; \n            msg2.payload = 0; //send to switch SS_Quietmode_on_off to disable\n            return [msg, msg2];\n            }\n        //also disable SS_Quietmode_on_off switch if user selects Quietmode 3 (no use to set and restore both te level 3)\n        if (Quiet_Mode_Level == 3) {\n            msg.payload = \"SoftStart Quietmode makes no sence to set and restore to \" + Quiet_Mode_Level + \" DISABLED\"; \n            msg2.payload = 0; //send to switch SS_Quietmode_on_off to disable\n            return [msg, msg2];\n            }\n    } \n\n\n\n\nreturn msg;\n\n\n",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -15761,6 +15763,9 @@
         "wires": [
             [
                 "238183547350dfc1"
+            ],
+            [
+                "625620e079bcddd3"
             ]
         ]
     },
@@ -15811,6 +15816,37 @@
         "x": 3990,
         "y": 2020,
         "wires": []
+    },
+    {
+        "id": "625620e079bcddd3",
+        "type": "link out",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "link out 21",
+        "mode": "link",
+        "links": [
+            "8bd83650dae791b5"
+        ],
+        "x": 2405,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "8bd83650dae791b5",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "g": "17610af3c50fa4f3",
+        "name": "SS_Quietmode_on_off",
+        "links": [
+            "625620e079bcddd3"
+        ],
+        "x": 3065,
+        "y": 2020,
+        "wires": [
+            [
+                "a423271481d5d54d"
+            ]
+        ]
     },
     {
         "id": "a938de76db0b71f6",
@@ -16202,7 +16238,8 @@
             "0f365a79d7e2857d",
             "0add6ff01269bdad",
             "fc8adbd756b4bb38",
-            "9261f4a9927ff20a"
+            "9261f4a9927ff20a",
+            "d8a6057be4ca32cd"
         ],
         "x": 144,
         "y": 619,
@@ -22402,7 +22439,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Function Quietmode Add-on",
-        "func": "let msg2 = {}; //to InputLOGS\n\nvar SS_Quietmode_on_off = global.get(\"SS_Quietmode_on_off\", \"file\"); // Status switch SS_Quietmode \nif (SS_Quietmode_on_off === 0) { return [null, null]; } //leave function when switch is off\nif (SS_Quietmode_on_off === undefined) { return [null, null]; } //leave function when switch not stored\n\nvar Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); //check current Quietmode level\nvar Previous_Quiet_Mode_Level = global.get('Previous_Quiet_Mode_Level', \"file\"); //check previous Quietmode level\n//check previous mode\nif (Previous_Quiet_Mode_Level === undefined) { node.warn(\"error function Quietmode Addon; Previous_Quiet_Mode_Level doesn't exists!\"); }\n\n//get Quietmode_time, error when no time!\nvar Quietmode_time = global.get('Quietmode_time', \"file\"); //after this time the Quietmode will restore to its previous level\nif (Quietmode_time === undefined) { node.warn(\"Error: No Quietmode_time found!\"); }\n\n//debugging\n//node.warn(\"Previous_Quiet_Mode_Level: \" + Previous_Quiet_Mode_Level);\n//node.warn(\"Quiet_Mode_Level: \" + Quiet_Mode_Level);\n//node.warn(\"Quietmode_time: \" + Quietmode_time + \" min\");\n\n//test if compressor is off\nvar ss_Hz = global.get('compressor_frequency');  // Get the global variable for current compressor frequency\n\n// now the real action:\n\nif (ss_Hz == 0) { context.set(\"StartTimeQuietmode\", undefined); } //reset time\n\n\nif (ss_Hz > 0) //start counting\n{\n    /////// Timer how long the compressoris on. Runtime //////////   Thank you for borowing Edterbak! haha\n    var CurrentTime = new Date().getTime();\n    var StartTimeQuietmode = context.get(\"StartTimeQuietmode\");\n    if (StartTimeQuietmode === undefined) \n        {\n            StartTimeQuietmode = CurrentTime;\n            context.set(\"StartTimeQuietmode\", StartTimeQuietmode);\n        }\n    var TimeElapsed = ((CurrentTime - StartTimeQuietmode) / 1000);\n    TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n\n    //***********************************************************************************\n    var Stage_1_Duration = (Quietmode_time * 60);                                        // Phase 1 duration in seconds\n    //***********************************************************************************\n\n    // Stage 1 - Compressor just started\n    if (TimeElapsed < Stage_1_Duration) \n        {\n            //do nothing, mayby something to log...\n        }\n\n    // Stage 2 - time to switch Quitemode back to previous state\n    if (TimeElapsed >= Stage_1_Duration) \n    {\n        var Current = global.get('Quiet_Mode_Level', \"file\"); //check current setting Should be level 3\n        //only send msg when change needed (but send end Quietmode to log anyway)\n        msg2.topic = \"Function - SoftStart Quietmode\";\n        msg2.payload = \"finished, now restoring to level \" + Previous_Quiet_Mode_Level;\n        if (Current != Previous_Quiet_Mode_Level) {\n            msg.payload = Previous_Quiet_Mode_Level; //restore Quietlevel\n            return [msg, msg2];\n        } else { return [null, null]; }     //send nothing\n    }\n\n}\n\nreturn [null, null];\n\n\n",
+        "func": "let msg2 = {}; //to InputLOGS\n\nvar SS_Quietmode_on_off = global.get(\"SS_Quietmode_on_off\", \"file\"); // Status switch SS_Quietmode \nif (SS_Quietmode_on_off === 0) { return [null, null]; } //leave function when switch is off\nif (SS_Quietmode_on_off === undefined) { return [null, null]; } //leave function when switch not stored\n\nvar Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); //check current Quietmode level\nvar Previous_Quiet_Mode_Level = global.get('Previous_Quiet_Mode_Level', \"file\"); //check previous Quietmode level\n//check previous mode\nif (Previous_Quiet_Mode_Level === undefined) { node.warn(\"error function Quietmode Addon; Previous_Quiet_Mode_Level doesn't exists!\"); }\n\n//get Quietmode_time, error when no time!\nvar Quietmode_time = global.get('Quietmode_time', \"file\"); //after this time the Quietmode will restore to its previous level\nif (Quietmode_time === undefined) { node.warn(\"Error: No Quietmode_time found!\"); }\n\n//debugging\n//node.warn(\"Previous_Quiet_Mode_Level: \" + Previous_Quiet_Mode_Level);\n//node.warn(\"Quiet_Mode_Level: \" + Quiet_Mode_Level);\n//node.warn(\"Quietmode_time: \" + Quietmode_time + \" min\");\n\n//test if compressor is off\nvar ss_Hz = global.get('compressor_frequency');  // Get the global variable for current compressor frequency\n\n// now the real action:\n\nif (ss_Hz == 0) { \n    context.set(\"StartTimeQuietmode\", undefined); // reset count time\n    if (Quiet_Mode_Level == Previous_Quiet_Mode_Level)  //allready finsihed Quietmode run and reset to Previous_Quiet_Mode_Level\n        {\n            // set Quietmode again for next run\n            msg2.topic = \"Function - SoftStart Quietmode\";\n            msg2.payload = \"Run finished, reset for next run\";\n            msg.payload = 3;//send to Quietmode edsitbox again\n            return [msg, msg2];\n        }\n    return [null, null]; // xit \n    } //reset time \n\n\nif (ss_Hz > 0) //start counting\n{\n    /////// Timer how long the compressoris on. Runtime //////////   Thank you for borowing Edterbak! haha\n    var CurrentTime = new Date().getTime();\n    var StartTimeQuietmode = context.get(\"StartTimeQuietmode\");\n    if (StartTimeQuietmode === undefined) \n        {\n            StartTimeQuietmode = CurrentTime;\n            context.set(\"StartTimeQuietmode\", StartTimeQuietmode);\n        }\n    var TimeElapsed = ((CurrentTime - StartTimeQuietmode) / 1000);\n    TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n\n    //***********************************************************************************\n    var Stage_1_Duration = (Quietmode_time * 60);                                        // Phase 1 duration in seconds\n    //***********************************************************************************\n\n    // Stage 1 - Compressor just started\n    if (TimeElapsed < Stage_1_Duration) \n        {\n            //do nothing, mayby something to log...\n        }\n\n    // Stage 2 - time to switch Quitemode back to previous state\n    if (TimeElapsed >= Stage_1_Duration) \n    {\n        var Current = global.get('Quiet_Mode_Level', \"file\"); //check current setting Should be level 3\n        //only send msg when change needed (but send end Quietmode to log anyway)\n        msg2.topic = \"Function - SoftStart Quietmode\";\n        msg2.payload = \"finished, now restoring to level \" + Previous_Quiet_Mode_Level;\n        if (Current != Previous_Quiet_Mode_Level) {\n            msg.payload = Previous_Quiet_Mode_Level; //restore Quietlevel\n            return [msg, msg2];\n        } else { return [null, null]; }     //send nothing\n    }\n\n}\n\nreturn [null, null];\n\n\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -22412,7 +22449,7 @@
         "y": 1040,
         "wires": [
             [
-                "7c6f02c851467bc0"
+                "d8a6057be4ca32cd"
             ],
             [
                 "fc8adbd756b4bb38"
@@ -22513,6 +22550,27 @@
         "x": 1370,
         "y": 1060,
         "wires": []
+    },
+    {
+        "id": "d8a6057be4ca32cd",
+        "type": "rbe",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1210,
+        "y": 1020,
+        "wires": [
+            [
+                "7c6f02c851467bc0"
+            ]
+        ]
     },
     {
         "id": "ed155b604642d354",
