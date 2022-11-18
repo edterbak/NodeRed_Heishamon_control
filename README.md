@@ -218,6 +218,16 @@ Default behaviour of the heatpump is when it starts up the compressor will go to
 If the SoftStart function is enabled and the compressor starts, the water setpoint will be lowered. This should cause the compressor to ramp the compressor down within minutes. When ramp down has occured, the HEAT SP restrictions will be lifted.<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/SoftStart.png?raw=true)
 
+There's an add-on to the SoftStart called SoftStart-Quietmode
+
+## SoftStart Quietmode
+This is an extra (add-on) function to reduce the compressor frequency at startup even more.<br/>
+Some heatpump models will start a run and always go up to 45 Hz in de first minute(s) regardless of the target temperature.<br/>
+This Quietmode (when switched on) will put the heatpump in the Quietmode (level 3) at rest and waits till the run starts.<br/>
+When the compressor turns on, the Quietmode will remain active for an amount of time and after this time switches back to the previous Quietmode (if set).<br/>
+You can specify this fallback time in the Setup - Quietmode time (default 5 min).<br/>
+<br/>
+
 ## Function 4: Solar
 The aim of this function is to increase efficiency (and save cost) by utilizing solar energy as much as possible.
 When there is solar energy in abundance, you can tell the heatpump to use that energy to heat up your DHW water tank. 
@@ -657,6 +667,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - Added 4 new Panasonic models to the list
 - Removed debugging options from LOG dashboard
 - Fix: Store Quietmode to restore if Addon-Quietmode for SoftStart routine is used.
+- Updated SoftStart help for the new function SoftStart-Quietmode.
 
 ********
 
