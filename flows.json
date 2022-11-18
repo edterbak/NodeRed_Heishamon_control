@@ -3070,9 +3070,9 @@
             "625620e079bcddd3",
             "354789ecaf155dbb"
         ],
-        "x": 1164,
+        "x": 1174,
         "y": 99,
-        "w": 1422,
+        "w": 1412,
         "h": 1742
     },
     {
@@ -3152,9 +3152,9 @@
             "e1f45532e4338e4a",
             "25a5987e8a1aaf9c"
         ],
-        "x": 84,
+        "x": 94,
         "y": 2519,
-        "w": 1408,
+        "w": 1398,
         "h": 602
     },
     {
@@ -4456,7 +4456,8 @@
             "6d890380e00e164d",
             "3ab7a10b46379da2",
             "126583bf986bb2c7",
-            "4c81e32b9d30b212"
+            "4c81e32b9d30b212",
+            "3f0803a3a230aca2"
         ],
         "x": 3715,
         "y": 60,
@@ -4690,7 +4691,8 @@
             "c3fc3dd0823391e4",
             "6b34f737dac1d48f",
             "b08c84a2e3145411",
-            "91641c3ebfbec364"
+            "91641c3ebfbec364",
+            "126583bf986bb2c7"
         ],
         "x": 3775,
         "y": 180,
@@ -9531,7 +9533,7 @@
                 "t": "set",
                 "p": "topic",
                 "pt": "msg",
-                "to": "Heat | Energy consumption",
+                "to": "Heat | Energy production",
                 "tot": "str"
             }
         ],
@@ -9588,7 +9590,7 @@
                 "t": "set",
                 "p": "topic",
                 "pt": "msg",
-                "to": "DHW | Energy consumption",
+                "to": "DHW | Energy production",
                 "tot": "str"
             }
         ],
@@ -13208,7 +13210,7 @@
         "width": 5,
         "height": 1,
         "name": "Flow version",
-        "label": "Flow version 21.13 beta",
+        "label": "Flow version 21.14 beta",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
@@ -15812,9 +15814,9 @@
             "2caf61fe8673aedb",
             "2faa41b2319da528"
         ],
-        "x": 104,
+        "x": 114,
         "y": 59,
-        "w": 2082,
+        "w": 2072,
         "h": 422
     },
     {
@@ -16076,14 +16078,15 @@
             "b4fb9f63c90d4afb",
             "0f365a79d7e2857d",
             "0add6ff01269bdad",
-            "fc8adbd756b4bb38",
-            "9261f4a9927ff20a",
             "d8a6057be4ca32cd",
-            "ac600598fc817e89"
+            "d53e66c37991fa8e",
+            "1cbf3f3272baec48",
+            "1a9b736187a463f7",
+            "148fdf6802233c77"
         ],
         "x": 144,
         "y": 619,
-        "w": 1942,
+        "w": 1982,
         "h": 882
     },
     {
@@ -16113,9 +16116,9 @@
             "c0a54684ef46f711",
             "07bfc2f9f00870d7"
         ],
-        "x": 64,
+        "x": 74,
         "y": 4559,
-        "w": 1132,
+        "w": 1122,
         "h": 302
     },
     {
@@ -16698,7 +16701,8 @@
             "43b60b667e5e5610",
             "5eef2d3a1816ae18",
             "9dc0d35330d31725",
-            "18262dc9129cb370"
+            "18262dc9129cb370",
+            "126583bf986bb2c7"
         ],
         "x": 1495,
         "y": 2180,
@@ -20053,7 +20057,7 @@
         "y": 740,
         "wires": [
             [
-                "0d996033de2ed84e"
+                "148fdf6802233c77"
             ]
         ]
     },
@@ -20076,10 +20080,10 @@
         "payload": "",
         "payloadType": "date",
         "x": 750,
-        "y": 820,
+        "y": 860,
         "wires": [
             [
-                "2ade66982bca360c"
+                "1a9b736187a463f7"
             ]
         ]
     },
@@ -20105,7 +20109,7 @@
         "y": 1120,
         "wires": [
             [
-                "cb987aa12172f46f"
+                "d53e66c37991fa8e"
             ]
         ]
     },
@@ -20116,11 +20120,8 @@
         "g": "d2b7e1d6e85a96cf",
         "name": "link in WAR2DIRECT function",
         "links": [
-            "a7ed974cef55c457",
-            "f93ad9032a6a4938",
-            "64872d3d1653b8b6",
-            "ad72b966241d5837",
-            "ab55c60aba66b566"
+            "8dcafc6e30726812",
+            "a7ed974cef55c457"
         ],
         "x": 245,
         "y": 740,
@@ -20144,8 +20145,7 @@
         "y": 840,
         "wires": [
             [
-                "4e9f98728f7e93f3",
-                "ac600598fc817e89"
+                "4e9f98728f7e93f3"
             ]
         ]
     },
@@ -20156,6 +20156,8 @@
         "g": "d2b7e1d6e85a96cf",
         "name": "Link in SoftStart function",
         "links": [
+            "0380b395668eee8e",
+            "35ca9241fc9fc7a1",
             "8dcafc6e30726812",
             "b1118094796c2de3",
             "c57a81d1dee5b8a9"
@@ -20164,7 +20166,7 @@
         "y": 1120,
         "wires": [
             [
-                "cb987aa12172f46f"
+                "d53e66c37991fa8e"
             ]
         ]
     },
@@ -20190,7 +20192,7 @@
         "y": 980,
         "wires": [
             [
-                "c5506b5fe3e4d571"
+                "1cbf3f3272baec48"
             ]
         ]
     },
@@ -20284,8 +20286,7 @@
         "y": 840,
         "wires": [
             [
-                "2ade66982bca360c",
-                "612499563cacf8a0"
+                "1a9b736187a463f7"
             ]
         ]
     },
@@ -20306,7 +20307,7 @@
         "y": 980,
         "wires": [
             [
-                "c5506b5fe3e4d571"
+                "1cbf3f3272baec48"
             ]
         ]
     },
@@ -20346,7 +20347,7 @@
             "4c49268a7054041c",
             "02f25651d70831c9"
         ],
-        "x": 1295,
+        "x": 1555,
         "y": 1120,
         "wires": []
     },
@@ -20362,7 +20363,7 @@
             "080c11bcc5a2ac73",
             "11338381e8665522"
         ],
-        "x": 1295,
+        "x": 1555,
         "y": 740,
         "wires": []
     },
@@ -20377,7 +20378,7 @@
             "02f25651d70831c9",
             "e6999514a091fd05"
         ],
-        "x": 1295,
+        "x": 1555,
         "y": 780,
         "wires": []
     },
@@ -20450,7 +20451,7 @@
         "links": [
             "1bb2933854287555"
         ],
-        "x": 1295,
+        "x": 1555,
         "y": 820,
         "wires": []
     },
@@ -20630,7 +20631,8 @@
         "g": "d2b7e1d6e85a96cf",
         "name": "",
         "scope": [
-            "c5506b5fe3e4d571"
+            "c5506b5fe3e4d571",
+            "b4fb9f63c90d4afb"
         ],
         "uncaught": false,
         "x": 300,
@@ -20648,7 +20650,7 @@
         "g": "d2b7e1d6e85a96cf",
         "name": "",
         "pauseType": "delay",
-        "timeout": "10",
+        "timeout": "1",
         "timeoutUnits": "milliseconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -20663,8 +20665,7 @@
         "y": 880,
         "wires": [
             [
-                "2ade66982bca360c",
-                "612499563cacf8a0"
+                "1a9b736187a463f7"
             ]
         ]
     },
@@ -20675,7 +20676,7 @@
         "g": "d2b7e1d6e85a96cf",
         "name": "",
         "pauseType": "delay",
-        "timeout": "10",
+        "timeout": "1",
         "timeoutUnits": "milliseconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -20690,7 +20691,7 @@
         "y": 1020,
         "wires": [
             [
-                "c5506b5fe3e4d571"
+                "1cbf3f3272baec48"
             ]
         ]
     },
@@ -20701,7 +20702,7 @@
         "g": "d2b7e1d6e85a96cf",
         "name": "",
         "pauseType": "delay",
-        "timeout": "10",
+        "timeout": "1",
         "timeoutUnits": "milliseconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -20716,7 +20717,7 @@
         "y": 1160,
         "wires": [
             [
-                "cb987aa12172f46f"
+                "d53e66c37991fa8e"
             ]
         ]
     },
@@ -20730,7 +20731,7 @@
         "links": [
             "071ac5a0f08a8fdb"
         ],
-        "x": 1295,
+        "x": 1555,
         "y": 900,
         "wires": []
     },
@@ -20744,7 +20745,7 @@
         "links": [
             "6d5e44060139d9d1"
         ],
-        "x": 1295,
+        "x": 1555,
         "y": 940,
         "wires": []
     },
@@ -20777,8 +20778,8 @@
         "g": "d2b7e1d6e85a96cf",
         "name": "FUNCTIONS",
         "info": "",
-        "x": 930,
-        "y": 660,
+        "x": 1190,
+        "y": 680,
         "wires": []
     },
     {
@@ -20866,7 +20867,7 @@
         "correl": "",
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
-        "x": 1850,
+        "x": 1890,
         "y": 1460,
         "wires": []
     },
@@ -20889,10 +20890,10 @@
         "allowrate": false,
         "outputs": 1,
         "x": 740,
-        "y": 680,
+        "y": 700,
         "wires": [
             [
-                "0d996033de2ed84e"
+                "148fdf6802233c77"
             ]
         ]
     },
@@ -20935,8 +20936,7 @@
         "y": 800,
         "wires": [
             [
-                "2ade66982bca360c",
-                "612499563cacf8a0"
+                "1a9b736187a463f7"
             ]
         ]
     },
@@ -20962,7 +20962,7 @@
         "y": 740,
         "wires": [
             [
-                "0d996033de2ed84e"
+                "148fdf6802233c77"
             ]
         ]
     },
@@ -20988,7 +20988,7 @@
         "y": 1080,
         "wires": [
             [
-                "cb987aa12172f46f"
+                "d53e66c37991fa8e"
             ]
         ]
     },
@@ -21081,7 +21081,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 1330,
+        "x": 1590,
         "y": 860,
         "wires": [
             [
@@ -21127,7 +21127,7 @@
         "y": 4500,
         "wires": [
             [
-                "bed3575ecb7ab79b"
+                "6c9d5ffb9a8e3cb8"
             ]
         ]
     },
@@ -21135,37 +21135,17 @@
         "id": "8ef3101cc4e83705",
         "type": "function",
         "z": "a938de76db0b71f6",
-        "name": "Heatpump type",
-        "func": "panasonic = global.get('Panasonic',\"file\");\nif (panasonic===undefined)\n    {\n        //setup var (gave error without it @edterbak)\n        var model = 0;\n        var phase = 0;\n        var type = 0;\n        var power = 0;\n        if (msg.payload == 0) {model = 'WH-MDC05H3E5';}\n        if (msg.payload == 1) {model = 'WH-MDC07H3E5';}\n        if (msg.payload == 2) {model = 'WH-UX09HE5';}\n        if (msg.payload == 3) {model = 'WH-UD09HE8';}\n        if (msg.payload == 4) {model = 'WH-UX09HE8';}\n        if (msg.payload == 5) {model = 'WH-UX12HE8';}\n        if (msg.payload == 6) {model = 'WH-UX16HE8';}\n        if (msg.payload == 7) {model = 'WH-UD05HE5';}\n        if (msg.payload == 8) {model = 'WH-UD09JE5';}\n        if (msg.payload == 9) {model = 'WH-MDC05J3E5';}\n        if (msg.payload == 10) {model = 'WH-MDC09H3E5';}\n        if (msg.payload == 11) {model = 'WH-MXC09H3E5';}\n        if (msg.payload == 12) {model = 'WH-UD09JE5';}\n        if (msg.payload == 13) {model = 'WH-UX12HE8';}\n        if (msg.payload == 14) {model = 'WH-UQ09HE8';}\n        if (msg.payload == 15) {model = 'WH-UD09HE5';}\n        if (msg.payload == 16) {model = 'WH-UD09HE5';}\n        if (msg.payload == 17) {model = 'WH-UD05JE5';}\n        if (msg.payload == 18) {model = 'WH-UD07JE5';}\n        if (msg.payload == 19) {model = 'WH-UD07HE5-1';}\n        if (msg.payload == 20) {model = 'WH-MDC07J3E5';}\n        if (msg.payload == 21) {model = 'WH-MDC09J3E5';}\n        if (msg.payload == 22) {model = 'WH-UD05JE5';}\n        if (msg.payload == 23) {model = 'WH-MXC09J3E8';}\n        if (msg.payload == 24) {model = 'WH-MXC12J9E8';}\n        if (msg.payload == 25) {model = 'WH-UD12HE5';}\n        if (msg.payload == 26) {model = 'WH-UD07JE5';}\n        if (msg.payload == 255) {model = 'unknown';}\n        \n        //**********************************************************************\n        \n        if (msg.payload == 0) {power = '5';}\n        if (msg.payload == 1) {power = '7';}\n        if (msg.payload == 2) {power = '9';}\n        if (msg.payload == 3) {power = '9';}\n        if (msg.payload == 4) {power = '9';}\n        if (msg.payload == 5) {power = '12';}\n        if (msg.payload == 6) {power = '16';}\n        if (msg.payload == 7) {power = '5';}\n        if (msg.payload == 8) {power = '9';}\n        if (msg.payload == 9) {power = '5';}\n        if (msg.payload == 10) {power = '9';}\n        if (msg.payload == 11) {power = '9';}\n        if (msg.payload == 12) {power = '9';}\n        if (msg.payload == 13) {power = '12';}\n        if (msg.payload == 14) {power = '9';}\n        if (msg.payload == 15) {power = '9';}\n        if (msg.payload == 16) {power = '9';}\n        if (msg.payload == 17) {power = '5';}\n        if (msg.payload == 18) {power = '7';}\n        if (msg.payload == 19) {power = '7';}\n        if (msg.payload == 20) {power = '7';}\n        if (msg.payload == 21) {power = '9';}\n        if (msg.payload == 22) {power = '5';}\n        if (msg.payload == 23) {power = '9'; }\n        if (msg.payload == 24) {power = '12'; }\n        if (msg.payload == 25) {power = '12'; }\n        if (msg.payload == 26) {power = '7'; }\n        if (msg.payload == 255){power = 'unknown';}\n        \n        //**********************************************************************\n        \n        if (msg.payload == 0) {phase = '1';}\n        if (msg.payload == 1) {phase = '1';}\n        if (msg.payload == 2) {phase = '1';}\n        if (msg.payload == 3) {phase = '3';}\n        if (msg.payload == 4) {phase = '3';}\n        if (msg.payload == 5) {phase = '3';}\n        if (msg.payload == 6) {phase = '3';}\n        if (msg.payload == 7) {phase = '1';}\n        if (msg.payload == 8) {phase = '1';}\n        if (msg.payload == 9) {phase = '1';}\n        if (msg.payload == 10) {phase = '1';}\n        if (msg.payload == 11) {phase = '1';}\n        if (msg.payload == 12) {phase = '1';}\n        if (msg.payload == 13) {phase = '3';}\n        if (msg.payload == 14) {phase = '3';}\n        if (msg.payload == 15) {phase = '1';}\n        if (msg.payload == 16) {phase = '1';}\n        if (msg.payload == 17) {phase = '1';}\n        if (msg.payload == 18) {phase = '1';}\n        if (msg.payload == 19) {phase = '1';}\n        if (msg.payload == 20) {phase = '1';}\n        if (msg.payload == 21) {phase = '1';}\n        if (msg.payload == 22) {phase = '1';}\n        if (msg.payload == 23) {phase = '3'; }\n        if (msg.payload == 24) {phase = '3';}\n        if (msg.payload == 25) {phase = '1';}\n        if (msg.payload == 26) {phase = '1';}\n        if (msg.payload == 255){phase = 'unknown';}\n\n        if (msg.payload == 0) {type = 'HP';}\n        if (msg.payload == 1) {type = 'HP';}\n        if (msg.payload == 2) {type = 'T-CAP';}\n        if (msg.payload == 3) {type = 'HP';}\n        if (msg.payload == 4) {type = 'T-CAP';}\n        if (msg.payload == 5) {type = 'T-CAP';}\n        if (msg.payload == 6) {type = 'T-CAP';}\n        if (msg.payload == 7) {type = 'HP';}\n        if (msg.payload == 8) {type = 'HP';}\n        if (msg.payload == 9) {type = 'HP';}\n        if (msg.payload == 10) {type = 'HP';}\n        if (msg.payload == 11) {type = 'T-CAP';}\n        if (msg.payload == 12) {type = 'HP - All-In-One';}\n        if (msg.payload == 13) {type = 'T-CAP - All-In-One';}\n        if (msg.payload == 14) {type = 'T-CAP - Super Quiet';}\n        if (msg.payload == 15) {type = 'HP';}\n        if (msg.payload == 16) {type = 'HP - All-In-One';}\n        if (msg.payload == 17) {type = 'HP - All-In-One';}\n        if (msg.payload == 18) {type = 'HP';}\n        if (msg.payload == 19) {type = 'HP';}\n        if (msg.payload == 20) {type = 'HP';}\n        if (msg.payload == 21) {type = 'HP';}\n        if (msg.payload == 22) {type = 'HP';}\n        if (msg.payload == 23) {type = 'T-CAP';}\n        if (msg.payload == 24) {type = 'T-CAP';}\n        if (msg.payload == 25) {type = 'T-CAP';}\n        if (msg.payload == 26) {type = 'HP - All-In-One Compact';}\n        if (msg.payload == 255){type = 'unknown';}\n\n        var panasonic={};\n            panasonic.type = type;\n            panasonic.phase = phase;\n            panasonic.power = power;\n            panasonic.model = model;\n        \n        global.set('panasonic',{payload:[panasonic]},\"file\");\n        return msg;\n    }\n\n\nelse\n    {\n        return null\n    }\n    \n    \n\n/*\n        var varlabels = msg1.payload[0].labels;\n        var varkwh_data_heat        = msg1.payload[0].data[0];\n        var varkwh_data_dhw         = msg3.payload[0].data[0];\n        var vargraaddagen_data      = msg2.payload[0].data[0];\n        var m={};\n            m.labels    = varlabels;\n            m.series    = ['DegreeDays (°C)', 'Energy consumption HEAT (kWh)',  'Energy consumption DHW (kWh)'];\n            m.data      = [vargraaddagen_data, varkwh_data_heat, varkwh_data_dhw];\n        \n        return {payload:[m]};\n\n*/",
+        "name": "Heatpump type (Panasonic)",
+        "func": "if (msg.topic == 'reset')\n    {\n        global.set('panasonic',undefined,\"file\");\n        return null;\n    }\n\npanasonic = global.get('panasonic',\"file\");\nif (panasonic===undefined)\n    {\n        //setup var (gave error without it @edterbak)\n        var model;\n        var phase;\n        var type;\n        var power;\n        if (msg.payload == 0) {model = 'WH-MDC05H3E5';}\n        if (msg.payload == 1) {model = 'WH-MDC07H3E5';}\n        if (msg.payload == 2) {model = 'WH-UX09HE5';}\n        if (msg.payload == 3) {model = 'WH-UD09HE8';}\n        if (msg.payload == 4) {model = 'WH-UX09HE8';}\n        if (msg.payload == 5) {model = 'WH-UX12HE8';}\n        if (msg.payload == 6) {model = 'WH-UX16HE8';}\n        if (msg.payload == 7) {model = 'WH-UD05HE5';}\n        if (msg.payload == 8) {model = 'WH-UD09JE5';}\n        if (msg.payload == 9) {model = 'WH-MDC05J3E5';}\n        if (msg.payload == 10) {model = 'WH-MDC09H3E5';}\n        if (msg.payload == 11) {model = 'WH-MXC09H3E5';}\n        if (msg.payload == 12) {model = 'WH-UD09JE5';}\n        if (msg.payload == 13) {model = 'WH-UX12HE8';}\n        if (msg.payload == 14) {model = 'WH-UQ09HE8';}\n        if (msg.payload == 15) {model = 'WH-UD09HE5';}\n        if (msg.payload == 16) {model = 'WH-UD09HE5';}\n        if (msg.payload == 17) {model = 'WH-UD05JE5';}\n        if (msg.payload == 18) {model = 'WH-UD07JE5';}\n        if (msg.payload == 19) {model = 'WH-UD07HE5-1';}\n        if (msg.payload == 20) {model = 'WH-MDC07J3E5';}\n        if (msg.payload == 21) {model = 'WH-MDC09J3E5';}\n        if (msg.payload == 22) {model = 'WH-UD05JE5';}\n        if (msg.payload == 23) {model = 'WH-MXC09J3E8';}\n        if (msg.payload == 24) {model = 'WH-MXC12J9E8';}\n        if (msg.payload == 25) {model = 'WH-UD12HE5';}\n        if (msg.payload == 26) {model = 'WH-UD07JE5';}\n        if (msg.payload == 255) {model = 'unknown';}\n        \n        //**********************************************************************\n        \n        if (msg.payload == 0) {power = '5';}\n        if (msg.payload == 1) {power = '7';}\n        if (msg.payload == 2) {power = '9';}\n        if (msg.payload == 3) {power = '9';}\n        if (msg.payload == 4) {power = '9';}\n        if (msg.payload == 5) {power = '12';}\n        if (msg.payload == 6) {power = '16';}\n        if (msg.payload == 7) {power = '5';}\n        if (msg.payload == 8) {power = '9';}\n        if (msg.payload == 9) {power = '5';}\n        if (msg.payload == 10) {power = '9';}\n        if (msg.payload == 11) {power = '9';}\n        if (msg.payload == 12) {power = '9';}\n        if (msg.payload == 13) {power = '12';}\n        if (msg.payload == 14) {power = '9';}\n        if (msg.payload == 15) {power = '9';}\n        if (msg.payload == 16) {power = '9';}\n        if (msg.payload == 17) {power = '5';}\n        if (msg.payload == 18) {power = '7';}\n        if (msg.payload == 19) {power = '7';}\n        if (msg.payload == 20) {power = '7';}\n        if (msg.payload == 21) {power = '9';}\n        if (msg.payload == 22) {power = '5';}\n        if (msg.payload == 23) {power = '9';}\n        if (msg.payload == 24) {power = '12';}\n        if (msg.payload == 25) {power = '12';}\n        if (msg.payload == 26) {power = '7';}\n        if (msg.payload == 255){power = 'unknown';}\n        \n        //**********************************************************************\n        \n        if (msg.payload == 0) {phase = '1';}\n        if (msg.payload == 1) {phase = '1';}\n        if (msg.payload == 2) {phase = '1';}\n        if (msg.payload == 3) {phase = '3';}\n        if (msg.payload == 4) {phase = '3';}\n        if (msg.payload == 5) {phase = '3';}\n        if (msg.payload == 6) {phase = '3';}\n        if (msg.payload == 7) {phase = '1';}\n        if (msg.payload == 8) {phase = '1';}\n        if (msg.payload == 9) {phase = '1';}\n        if (msg.payload == 10) {phase = '1';}\n        if (msg.payload == 11) {phase = '1';}\n        if (msg.payload == 12) {phase = '1';}\n        if (msg.payload == 13) {phase = '3';}\n        if (msg.payload == 14) {phase = '3';}\n        if (msg.payload == 15) {phase = '1';}\n        if (msg.payload == 16) {phase = '1';}\n        if (msg.payload == 17) {phase = '1';}\n        if (msg.payload == 18) {phase = '1';}\n        if (msg.payload == 19) {phase = '1';}\n        if (msg.payload == 20) {phase = '1';}\n        if (msg.payload == 21) {phase = '1';}\n        if (msg.payload == 22) {phase = '1';}\n        if (msg.payload == 23) {phase = '3';}\n        if (msg.payload == 24) {phase = '3';}\n        if (msg.payload == 25) {phase = '1';}\n        if (msg.payload == 26) {phase = '1';}\n        if (msg.payload == 255){phase = 'unknown';}\n        \n        //**********************************************************************\n        \n        if (msg.payload == 0) {type = 'HP';}\n        if (msg.payload == 1) {type = 'HP';}\n        if (msg.payload == 2) {type = 'T-CAP';}\n        if (msg.payload == 3) {type = 'HP';}\n        if (msg.payload == 4) {type = 'T-CAP';}\n        if (msg.payload == 5) {type = 'T-CAP';}\n        if (msg.payload == 6) {type = 'T-CAP';}\n        if (msg.payload == 7) {type = 'HP';}\n        if (msg.payload == 8) {type = 'HP';}\n        if (msg.payload == 9) {type = 'HP';}\n        if (msg.payload == 10) {type = 'HP';}\n        if (msg.payload == 11) {type = 'T-CAP';}\n        if (msg.payload == 12) {type = 'HP - All-In-One';}\n        if (msg.payload == 13) {type = 'T-CAP - All-In-One';}\n        if (msg.payload == 14) {type = 'T-CAP - Super Quiet';}\n        if (msg.payload == 15) {type = 'HP';}\n        if (msg.payload == 16) {type = 'HP - All-In-One';}\n        if (msg.payload == 17) {type = 'HP - All-In-One';}\n        if (msg.payload == 18) {type = 'HP';}\n        if (msg.payload == 19) {type = 'HP';}\n        if (msg.payload == 20) {type = 'HP';}\n        if (msg.payload == 21) {type = 'HP';}\n        if (msg.payload == 22) {type = 'HP';}\n        if (msg.payload == 23) {type = 'T-CAP';}\n        if (msg.payload == 24) {type = 'T-CAP';}\n        if (msg.payload == 25) {type = 'T-CAP';}\n        if (msg.payload == 26) {type = 'HP - All-In-One Compact';}\n        if (msg.payload == 255){type = 'unknown';}\n\n        var panasonic={};\n            panasonic.type = type;\n            panasonic.phase = phase;\n            panasonic.power = power;\n            panasonic.model = model;\n        \n        global.set('panasonic',{payload:[panasonic]},\"file\");\n        return msg;\n    }\n\n\nelse\n    {\n        return null\n    }",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 900,
+        "x": 1100,
         "y": 4500,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "bed3575ecb7ab79b",
-        "type": "rbe",
-        "z": "a938de76db0b71f6",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 650,
-        "y": 4500,
-        "wires": [
-            [
-                "8ef3101cc4e83705"
-            ]
         ]
     },
     {
@@ -21408,7 +21388,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 970,
+        "x": 1230,
         "y": 740,
         "wires": [
             [
@@ -21436,7 +21416,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 970,
+        "x": 1230,
         "y": 820,
         "wires": [
             [
@@ -21469,7 +21449,7 @@
         "initialize": "// Code added here will be run once\n// whenever the node is started.\n//global.set('F_stored_next_operating_mode',4,\"file\");",
         "finalize": "",
         "libs": [],
-        "x": 960,
+        "x": 1220,
         "y": 900,
         "wires": [
             [
@@ -21500,7 +21480,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 970,
+        "x": 1230,
         "y": 980,
         "wires": [
             [
@@ -21527,7 +21507,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 950,
+        "x": 1210,
         "y": 1120,
         "wires": [
             [
@@ -21552,7 +21532,7 @@
         "links": [
             "91bece54d7a13eb3"
         ],
-        "x": 1295,
+        "x": 1555,
         "y": 980,
         "wires": []
     },
@@ -22011,7 +21991,7 @@
         "op2": "",
         "op1type": "nul",
         "op2type": "payl",
-        "duration": "200",
+        "duration": "5",
         "extend": true,
         "overrideDelay": false,
         "units": "ms",
@@ -22019,7 +21999,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 540,
+        "x": 530,
         "y": 1360,
         "wires": [
             [
@@ -22162,15 +22142,15 @@
         "op2": "",
         "op1type": "nul",
         "op2type": "payl",
-        "duration": "5",
+        "duration": "100",
         "extend": true,
         "overrideDelay": false,
-        "units": "s",
+        "units": "ms",
         "reset": "",
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 1560,
+        "x": 1580,
         "y": 1460,
         "wires": [
             [
@@ -22270,7 +22250,7 @@
         "links": [
             "765b4d77a9fd44cc"
         ],
-        "x": 1295,
+        "x": 1555,
         "y": 1020,
         "wires": []
     },
@@ -22286,14 +22266,14 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
+        "x": 1240,
         "y": 1040,
         "wires": [
             [
                 "d8a6057be4ca32cd"
             ],
             [
-                "fc8adbd756b4bb38"
+                "663fd79ce5a1610d"
             ]
         ]
     },
@@ -22304,7 +22284,7 @@
         "g": "d2b7e1d6e85a96cf",
         "name": "Exit to Set Quietlevel link-in",
         "info": "",
-        "x": 1440,
+        "x": 1700,
         "y": 1020,
         "wires": []
     },
@@ -22360,39 +22340,6 @@
         ]
     },
     {
-        "id": "fc8adbd756b4bb38",
-        "type": "link out",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "link out 20",
-        "mode": "link",
-        "links": [
-            "47e2a8d99d332229",
-            "873ab80499b9156b",
-            "ef1f42fcf697a0b6",
-            "662bb3cfb11c3c63",
-            "031e62b0bf3df7d7",
-            "c3fc3dd0823391e4",
-            "6b34f737dac1d48f",
-            "b08c84a2e3145411",
-            "91641c3ebfbec364"
-        ],
-        "x": 1295,
-        "y": 1060,
-        "wires": []
-    },
-    {
-        "id": "9261f4a9927ff20a",
-        "type": "comment",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "ToLog",
-        "info": "",
-        "x": 1370,
-        "y": 1060,
-        "wires": []
-    },
-    {
         "id": "d8a6057be4ca32cd",
         "type": "rbe",
         "z": "a938de76db0b71f6",
@@ -22405,7 +22352,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 1210,
+        "x": 1470,
         "y": 1020,
         "wires": [
             [
@@ -22414,22 +22361,158 @@
         ]
     },
     {
-        "id": "ac600598fc817e89",
-        "type": "debug",
+        "id": "768cc0133931f609",
+        "type": "inject",
+        "z": "a938de76db0b71f6",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "reset",
+        "payload": "-1",
+        "payloadType": "str",
+        "x": 670,
+        "y": 4520,
+        "wires": [
+            [
+                "6c9d5ffb9a8e3cb8"
+            ]
+        ]
+    },
+    {
+        "id": "d53e66c37991fa8e",
+        "type": "trigger",
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
-        "name": "debug 71",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 340,
-        "y": 760,
-        "wires": []
+        "name": "",
+        "op1": "",
+        "op2": "ping",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "3",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 970,
+        "y": 1120,
+        "wires": [
+            [
+                "cb987aa12172f46f"
+            ]
+        ]
+    },
+    {
+        "id": "1cbf3f3272baec48",
+        "type": "trigger",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "",
+        "op1": "",
+        "op2": "ping",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "3",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 970,
+        "y": 980,
+        "wires": [
+            [
+                "c5506b5fe3e4d571"
+            ]
+        ]
+    },
+    {
+        "id": "1a9b736187a463f7",
+        "type": "trigger",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "",
+        "op1": "",
+        "op2": "ping",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "3",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 970,
+        "y": 860,
+        "wires": [
+            [
+                "612499563cacf8a0",
+                "2ade66982bca360c"
+            ]
+        ]
+    },
+    {
+        "id": "148fdf6802233c77",
+        "type": "trigger",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "",
+        "op1": "",
+        "op2": "ping",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "3",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 970,
+        "y": 740,
+        "wires": [
+            [
+                "0d996033de2ed84e"
+            ]
+        ]
+    },
+    {
+        "id": "6c9d5ffb9a8e3cb8",
+        "type": "rbe",
+        "z": "a938de76db0b71f6",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 870,
+        "y": 4500,
+        "wires": [
+            [
+                "8ef3101cc4e83705"
+            ]
+        ]
     },
     {
         "id": "ed155b604642d354",
@@ -22463,7 +22546,7 @@
         ],
         "x": 54,
         "y": 1119,
-        "w": 1398,
+        "w": 1388,
         "h": 602
     },
     {
@@ -22656,7 +22739,7 @@
         ],
         "x": 84,
         "y": 579,
-        "w": 1332,
+        "w": 1322,
         "h": 82
     },
     {
@@ -22678,7 +22761,7 @@
         ],
         "x": 84,
         "y": 1239,
-        "w": 1342,
+        "w": 1332,
         "h": 82
     },
     {
@@ -22698,9 +22781,9 @@
         "nodes": [
             "2ee679408e4ccc6f"
         ],
-        "x": 1124,
+        "x": 1134,
         "y": 919,
-        "w": 292,
+        "w": 272,
         "h": 82
     },
     {
@@ -22720,9 +22803,9 @@
         "nodes": [
             "4eaa2cfa2749c551"
         ],
-        "x": 1124,
+        "x": 1134,
         "y": 1579,
-        "w": 292,
+        "w": 272,
         "h": 82
     },
     {
@@ -24166,9 +24249,9 @@
             "a9994ef2e592aee1",
             "375bbd780529afe0"
         ],
-        "x": 64,
+        "x": 74,
         "y": 779,
-        "w": 1352,
+        "w": 1332,
         "h": 688
     },
     {
@@ -24292,7 +24375,7 @@
         ],
         "x": 434,
         "y": 1719,
-        "w": 402,
+        "w": 392,
         "h": 1162
     },
     {
@@ -41661,9 +41744,9 @@
         "id": "92e5b2c.00a8b5",
         "type": "mqtt-broker",
         "name": "MQTT (x.x.x.x)",
-        "broker": "core-mosquitto",
+        "broker": "x.x.x.x",
         "port": "1883",
-        "clientid": "",
+        "clientid": "Node_Red_Client",
         "autoConnect": true,
         "usetls": false,
         "compatmode": false,
