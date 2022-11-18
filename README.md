@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.13 beta <br/>
+Current version: 21.14 beta <br/>
 
 
 ## Introduction
@@ -668,6 +668,12 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - Removed debugging options from LOG dashboard
 - Fix: Store Quietmode to restore if Addon-Quietmode for SoftStart routine is used.
 - Updated SoftStart help for the new function SoftStart-Quietmode.
+
+[2022-11-18] v21.14 beta - Changes:
+- BUG: Energie graph was incorrect. Fixed
+- Added reset Panasonic Heatpump information (in FLOW)
+- Changed some timing and amount of triggers in Control / function nodes. should reduce machine load.
+
 
 ********
 
