@@ -654,13 +654,13 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - Enhancement: typos in various places.
 
 [2022-11-18] v21.13 beta - Changes:
-- Added new Panasonic model WH-MXC09J3E8
+- Added 4 new Panasonic models to the list
 - Removed debugging options from LOG dashboard
+- Fix: Store Quietmode to restore if Addon-Quietmode for SoftStart routine is used.
 
 ********
 
 ## TODO list
-- [ ] Store Quietmode to restore if Addon-Quietmode for SoftStart routine is used.
 - [x] Stabalize SoftStart routine. Still work in progress
 - [ ] Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
 - [ ] Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log. (TOP44)<br/>
