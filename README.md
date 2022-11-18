@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.12 <br/>
+Current version: 21.13 beta <br/>
 
 
 ## Introduction
@@ -653,7 +653,9 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - Enhancement: Layout Home
 - Enhancement: typos in various places.
 
-
+[2022-11-18] v21.13 beta - Changes:
+- Added new Panasonic model WH-MXC09J3E8
+- Removed debugging options from LOG dashboard
 
 ********
 
