@@ -678,7 +678,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 ********
 
 ## TODO list
-- [x] Stabalize SoftStart routine. Still work in progress.<br/>
+- [x] Stabalize SoftStart routine. Still work in progress. Give user custom stage time setting<br/>
 - [ ] When changing RTC room setpoint, match Night-reduction room temperature (normal) accordingly.<br/>
 - [ ] Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
 - [ ] Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log. (TOP44)<br/>
