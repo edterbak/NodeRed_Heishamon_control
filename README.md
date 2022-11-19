@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.14 beta <br/>
+Current version: 21.15 beta <br/>
 
 
 ## Introduction
@@ -673,6 +673,10 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - BUG: Energie graph was incorrect. Fixed
 - Added reset Panasonic Heatpump information (in FLOW)
 - Changed some timing and amount of triggers in Control / function nodes. should reduce machine load.
+
+[2022-11-18] v21.15 beta - Changes:
+- BUG: Fixed RTC function. +1 was the highest it went. now +3 again.
+- Enhancement: CLEAR button in the log tab now automatically refreshes the page. 
 
 
 ********
