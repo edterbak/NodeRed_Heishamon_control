@@ -674,9 +674,12 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - Added reset Panasonic Heatpump information (in FLOW)
 - Changed some timing and amount of triggers in Control / function nodes. should reduce machine load.
 
-[2022-11-18] v21.15 beta - Changes:
+[2022-11-20] v21.15 beta - Changes:
 - BUG: Fixed RTC function. +1 was the highest it went. now +3 again.
 - Enhancement: CLEAR button in the log tab now automatically refreshes the page. 
+- BUG: Fixed showing wrong Operation Mode on Home dashboard.
+- BUG: Fixed log spamming bug caused by SoftStart Quietmode.
+- Added some extra's to System Check (Derfrost counter etc).
 
 
 ********
