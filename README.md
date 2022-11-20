@@ -679,7 +679,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - Enhancement: CLEAR button in the log tab now automatically refreshes the page. 
 - BUG: Fixed showing wrong Operation Mode on Home dashboard.
 - BUG: Fixed log spamming bug caused by SoftStart Quietmode.
-- Added some extra's to System Check (Derfrost counter etc).
+- Added some extra's to System Check (Defrost counter etc).
 
 
 ********
