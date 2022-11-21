@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.15 beta <br/>
+Current version: 21.16 beta <br/>
 
 
 ## Introduction
@@ -680,6 +680,11 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - BUG: Fixed showing wrong Operation Mode on Home dashboard.
 - BUG: Fixed log spamming bug caused by SoftStart Quietmode.
 - Added some extra's to System Check (Defrost counter etc).
+
+[2022-11-21] v21.16 beta - Changes:
+- BUG: Fixed incorrect line (25) in [debug] tab, mqtt counter
+- BUG: first attempt to fix on/off/on/off/on/off issue reported. 
+- Enhancement: Added delete button for scheduled tasks.
 
 
 ********
