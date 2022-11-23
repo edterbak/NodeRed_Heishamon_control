@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.16 beta <br/>
+Current version: 22.00 beta <br/>
 
 
 ## Introduction
@@ -59,7 +59,7 @@ The NodeRed flow is stand-alone so: You do not require a database. You do not re
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/install.png" width="500">
 
 <details>
-## Requirements on the Node Red install:
+## Requirements on the Node Red install:<br/>
 A - Persistent data folder.
 
 B - Adjust settings.js.
@@ -686,6 +686,15 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - BUG: first attempt to fix on/off/on/off/on/off issue reported. 
 - Enhancement: Added delete button for scheduled tasks.
 
+[2022-11-23] v22.00 beta - Changes:
+- Layout improvement SYTEM.
+- Use change of Room_Setpoint to trigger RTC heat on/off instead of timer.
+- SYSTEM Health can detect custom devices connected to Heishamon (1-wire, kWh).
+- Added MQTT-Blocker to System incl. warning through Notification.
+- Check F_rtc_on_off_active on all false conditions.
+- Added System "Repair settings" button to fix only this RTC on/off problem.
+- Added: System Check includes Error counter, show last error message.
+- Changed labels on settings page (status TOP90 / 91) Backup heater hours (HEAT), Backup heater hours (DHW).
 
 ********
 
