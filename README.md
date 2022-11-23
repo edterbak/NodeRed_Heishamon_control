@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.00 beta <br/>
+Current version: 21.17 beta <br/>
 
 
 ## Introduction
@@ -686,7 +686,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - BUG: first attempt to fix on/off/on/off/on/off issue reported. 
 - Enhancement: Added delete button for scheduled tasks.
 
-[2022-11-23] v22.00 beta - Changes:
+[2022-11-23] v21.17 beta - Changes:
 - Layout improvement SYTEM.
 - Use change of Room_Setpoint to trigger RTC heat on/off instead of timer.
 - SYSTEM Health can detect custom devices connected to Heishamon (1-wire, kWh).
