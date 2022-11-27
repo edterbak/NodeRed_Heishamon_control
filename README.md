@@ -696,6 +696,10 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - Added: System Check includes Error counter, show last error message.
 - Changed labels on settings page (status TOP90 / 91) Backup heater hours (HEAT), Backup heater hours (DHW).
 
+[2022-11-27] v21.17 beta - Fixes:
+- MQTT-Blocker; user can set the daily limit. (default 200 messages/day)
+- Small fixes regarding saving of today/yesterday counter values.
+
 ********
 
 ## TODO list
