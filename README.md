@@ -700,6 +700,10 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - MQTT-Blocker; user can set the daily limit. (default 200 messages/day)
 - Small fixes regarding saving of today/yesterday counter values.
 
+[2022-11-28] v21.17 beta - Changes:
+- Auto increase MQTT-Blocker limit when disabling after a block. (+100)
+- Write status MQTT-Block active to output-node (request)
+
 ********
 
 ## TODO list
