@@ -713,6 +713,9 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [ ] Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log. (TOP44)<br/>
 - [ ] Force DHW run when the boiler comes below a custom setpoint (via scheduler, reserved-SYSTEM task?)<br/>
 - [ ] New COP sCOP calculation using custom 1-wire and custom kWh-device (connected to Heishamon)<br/>
+- [ ] Apply WAR calculations to setpoint only before starting next run, not immediately.<br/>
+- [ ] Add 2 setpoints columns to task scheduler; heat/cool setpoint (DHW setpoint use from settings).<br/>
+- [ ] Add 4th value to RTC with free SP increase value (for use as a booster) or disable WAR option (in scheduler?).<br/>
 
 
 ********
