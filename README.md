@@ -1,7 +1,8 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.17 beta <br/>
-
+Current version: 21.18 beta (experimental) <br/> 
+Make a backup of your current flow. (free tip)<br/><br/>
+This version is not for the faint hearted... <br/>
 
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
@@ -703,6 +704,16 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 [2022-11-28] v21.17 beta - Changes:
 - Auto increase MQTT-Blocker limit when disabling after a block. (+100)
 - Write status MQTT-Block active to output-node (request)
+
+[2022-11-30] v21.18 beta (experimental). Changes:
+- NEW: Introduce a popup when the pump is turned OFF on the controller. This is now detected. In the popup you can choose what the pump should be doing and what the default behaviour should be. You can find this popup under: Settings > Heat Pump > Shutdown response SETUP. 
+- NEW: MQTT-Blocker; adjusted so it allows the settings entered in the popup mentioned 1 line up.
+- FIX: Small attempt of a fix to get rid of the incorrect 'RoomThermostat found or using Compensation curve. Using internal Panasonic WAR function. NodeRed WAR function is now disabled' This might do it.
+- CHANGED: RTC on/off function. This will now always trigger, more than once, as long as the rtc_off temp is below the actual temp. 
+- CHANGED: The RTC function does NOT need to be on for the RTC on/off function to be active. Two separate functions they are now actually.
+
+>> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to <<
+
 
 ********
 
