@@ -710,7 +710,10 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - NEW: MQTT-Blocker; adjusted so it allows the settings entered in the popup mentioned 1 line up.
 - FIX: Small attempt of a fix to get rid of the incorrect 'RoomThermostat found or using Compensation curve. Using internal Panasonic WAR function. NodeRed WAR function is now disabled' This might do it.
 - CHANGED: RTC on/off function. This will now always trigger, more than once, as long as the rtc_off temp is below the actual temp. 
-- CHANGED: The RTC function does NOT need to be on for the RTC on/off function to be active. Two separate functions they are now actually.
+- CHANGED: RTC on/off function. When it is active, toggling off the function will result in reverting the taken actions.
+- CHANGED: RTC function does NOT need to be on for the RTC on/off function to be active. Two separate functions they are now actually.
+- CHANGED: Solar function. When it is active, toggling off the function will result in reverting the taken actions.
+
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to <<
 
