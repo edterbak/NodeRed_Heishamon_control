@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.18 beta (experimental) <br/> 
+Current version: 21.19 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -713,6 +713,14 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - CHANGED: RTC on/off function. When it is active, toggling off the function will result in reverting the taken actions.
 - CHANGED: RTC function does NOT need to be on for the RTC on/off function to be active. Two separate functions they are now actually.
 - CHANGED: Solar function. When it is active, toggling off the function will result in reverting the taken actions.
+
+[2022-12-02] v21.19 beta (experimental). Changes:
+- FIX: Defrost_Counter_Today not reset anymore at restart of flow.
+- NEW: Removed fixed scale for RTC-Chart, now chart will auto-set it's range.
+- CHANGED: Re-Added F_rtc_on_off_active to System Check.
+- NEW: Added frequency gauge to HOME instead of number in Hz
+- CHANGED: messages from RTC on/off (looked like error message) and displays OM in text instead of number.
+- FIX: Update log version at start
 
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to <<
