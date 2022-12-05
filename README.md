@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.20 beta (experimental) <br/> 
+Current version: 21.21 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -727,6 +727,13 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - NEW: Added a "force defrost" button to page System Health. (+confirmation dialog)
 - NEW: Added a 4th RTC correction to RTC for use as a booster.
 - NEW: Added Actual room temp to log message RTC result.
+
+[2022-12-05] v21.21 beta (experimental). Changes:
+- FIX: Shutdown pup-up. It was not functioning correctly. Now it works a lot better. 
+- FIX: Shutdown pop-up. You should get only onece a popup with a question to lift block.
+- FIX: Improved layout RTC tab and added new T Custom to the help section.
+- FIX: Heatpump model detection now working as it should. 
+- FIX: attempt at a fix for DHW NaN value. NOt sure if this will work. Need to wait and see.
 
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to <<
