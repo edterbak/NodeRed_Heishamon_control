@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.22 beta (experimental) <br/> 
+Current version: 21.23 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -739,6 +739,10 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [FIX] 4th RTC threshold was not calculated correctly after previous update (always +10)
 - [NEW] New function Reduce pump speed added to System Health (temporary location)
 - [NEW] Flow can now handle quarter water temperatures from inlet and outlet.
+
+[2022-12-07] v21.23 beta (experimental). Changes:
+- [FIX] DHW COP graph and HEAT COP graph are now more robust. prevent 'infinite' result. Got rid of incorrect old code.
+
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to <<
 
