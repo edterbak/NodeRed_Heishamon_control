@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.23 beta (experimental) <br/> 
+Current version: 21.24 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -743,6 +743,9 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 [2022-12-07] v21.23 beta (experimental). Changes:
 - [FIX] DHW COP graph and HEAT COP graph are now more robust. prevent 'infinite' result. Got rid of incorrect old code.
 
+[2022-12-07] v21.24 beta (experimental). Changes:
+- [FIX] Small round problem in System Check showed 20.200000000000003°C
+- [NEW] Reduce pump speed not reducing pump speed during defrost cycle.
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to <<
 
