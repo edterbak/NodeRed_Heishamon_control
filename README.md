@@ -748,7 +748,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [NEW] Reduce pump speed not reducing pump speed during defrost cycle.
 
 [2022-12-08] v21.25 beta (experimental). Changes:
-- [NEW] - Added fan(s) and COP speed to Gather HP data.
+- [NEW] - Added fan(s) speed and COP to Gather HP data.
 - [Improvement] - Polling room setpoint more efficiently to log.
 - [TEST] - Test RTC booster temp leveling between +3 and +custom levels (currently showing only in log).
 
