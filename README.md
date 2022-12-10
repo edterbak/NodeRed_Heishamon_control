@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.25 beta (experimental) <br/> 
+Current version: 21.26 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -751,6 +751,15 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [NEW] - Added fan(s) speed and COP to Gather HP data.
 - [Improvement] - Polling room setpoint more efficiently to log.
 - [TEST] - Test RTC booster temp leveling between +3 and +custom levels (currently showing only in log).
+
+[2022-12-08] v21.26 beta (experimental). Changes:
+-[NEW] Reduced SoftStart messages (skip unnecessary corrections).
+-[NEW] Disabling SoftStart during defrost.
+-[Fix] Changed compressor status to log (includes defrost state).
+-[Change] Renamed button 'Gather HP data'' to 'Extend logging'. (Function off by default/restart).
+-[Change] Extend logging shows all SoftStart corrections in log (incl. those not affecting setpoint)
+-[Change] Extend logging shows compressor start/stops during defrost cycle.
+-[Change] Increased default max MQTT messages per day to 300 (new users).
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to <<
 
