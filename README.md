@@ -756,7 +756,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 -[NEW] Reduced SoftStart messages (skip unnecessary corrections).
 -[NEW] Disabling SoftStart during defrost.
 -[Fix] Changed compressor status to log (includes defrost state).
--[Change] Renamed button 'Gather HP data'' to 'Extend logging'. (Function off by default/restart).
+-[Change] Renamed switch 'Gather HP data'' to 'Extend logging'. (Function off by default/restart).
 -[Change] Extend logging shows all SoftStart corrections in log (incl. those not affecting setpoint)
 -[Change] Extend logging shows compressor start/stops during defrost cycle.
 -[Change] Increased default max MQTT messages per day to 300 (new users).
