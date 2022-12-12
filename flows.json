@@ -2795,7 +2795,8 @@
             "ab1290025b96a1df",
             "5be8fe10022fcc46",
             "bb54f8581c258040",
-            "fb7f16aa29565d78"
+            "fb7f16aa29565d78",
+            "ecbb543ba37d9962"
         ],
         "x": 3034,
         "y": 699,
@@ -3123,7 +3124,10 @@
             "d97d956176d73ba3",
             "29837f54b5380d5a",
             "7ee3f2d0d77550c4",
-            "127ae065f140e020"
+            "127ae065f140e020",
+            "5d5f0593f629d4f6",
+            "89467c0f49c8ec80",
+            "4a2670b477ab7f75"
         ],
         "x": 1154,
         "y": 59,
@@ -5321,8 +5325,7 @@
                 "b32f014cb3ec752e"
             ],
             [
-                "1f5d513050d612a1",
-                "dade0dbb40c3945a"
+                "1f5d513050d612a1"
             ]
         ],
         "outputLabels": [
@@ -6537,7 +6540,7 @@
         "tooltip": "",
         "place": "Select option",
         "group": "548e51986bce11b0",
-        "order": 7,
+        "order": 9,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -7282,7 +7285,7 @@
         "label": "Holiday Mode",
         "tooltip": "Off / On Holiday mode",
         "group": "548e51986bce11b0",
-        "order": 8,
+        "order": 10,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -7399,6 +7402,7 @@
         "id": "45a93847a1d11766",
         "type": "ui_switch",
         "z": "8c9d42231fd19d3c",
+        "d": true,
         "g": "3151681b2157872c",
         "name": "Force defrost",
         "label": "Force defrost",
@@ -7710,7 +7714,7 @@
         "tooltip": "",
         "place": "Set powerful mode run time in minutes",
         "group": "548e51986bce11b0",
-        "order": 6,
+        "order": 8,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -13743,7 +13747,7 @@
         "g": "4f352fdae09316c2",
         "group": "16ec453c8cb345ac",
         "order": 5,
-        "width": 1,
+        "width": 11,
         "height": 1,
         "name": "spacer 1x1",
         "label": "",
@@ -15070,7 +15074,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "17610af3c50fa4f3",
         "name": "SS_Quietmode_on_off",
-        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = \"Function - SoftStart Quietmode\";\nglobal.set(\"SS_Quietmode_on_off\",msg.payload,\"file\");\nlet msg2 = {};\n\n//get Quietmode_time, error when no time!\nvar Quietmode_time = global.get('Quietmode_time', \"file\"); //after this time the Quietmode will restore to its previous level\nif (Quietmode_time === undefined) { node.warn(\"Error: No Quietmode_time found!\"); }\n\nif (msg.payload == 1) \n    { \n        var Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); //check current Quietmode level\n        if (Quiet_Mode_Level === undefined) { Quiet_Mode_Level = 0; }\n\n        \n        //if Previous_Quiet_Mode_Level excists, set it to current Quiet_Mode_Level\n        var Storedlevel = global.get('Previous_Quiet_Mode_Level', \"file\");\n        if (Storedlevel != undefined) { Quiet_Mode_Level = Storedlevel; } //geen vorige waarde bij boot\n \n        msg.payload = \"ON (Timer: \" + Quietmode_time + \" min, Restore level \" + Quiet_Mode_Level + \")\"; \n        global.set('Previous_Quiet_Mode_Level', Quiet_Mode_Level, \"file\"); // save current level for restore\n\n        //set the new Quietlevel now if needed:\n        var Current = Quiet_Mode_Level; //current level\n        //only send msg when change needed\n        if (Current != Previous_Quiet_Mode_Level) \n            {\n                msg2.topic = \"Function - SoftStart Quietmode\";\n                msg2.payload = 3; //send Quietlevel 3\n                return [msg, msg2];\n            } else { return [msg, null]; }     // send nothing to Exit to Quietlevel-change\n     }\n\nif (msg.payload == 0) \n    { \n        var Previous_Quiet_Mode_Level = global.get('Previous_Quiet_Mode_Level', \"file\"); // check previous Quietmode level\n        if (Previous_Quiet_Mode_Level === undefined) { Previous_Quiet_Mode_Level = 0; } \n        //todo: fix not showing to log if not needed.\n        msg.payload = \"OFF (restored to level \" + Previous_Quiet_Mode_Level + \")\";  \n        var Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); // check current Quietmode level\n\n        //restore when user switches SoftStart Quietmode OFF\n        global.set('Previous_Quiet_Mode_Level', undefined, \"file\"); // delete old stored Previous_Quiet_Mode_Level\n        //set the old Quietlevel now if needed:\n        var Current = Quiet_Mode_Level; //current level\n        \n        //only send msg when change needed\n        if (Current != Previous_Quiet_Mode_Level) \n            {\n                msg2.topic = \"Function - SoftStart Quietmode\";\n                msg2.payload = Previous_Quiet_Mode_Level; //send previous Quietlevel \n                return [msg, msg2];\n            } else { return [msg, null]; }     //send nothing to Exit to Quietlevel-change\n    }\n\nreturn [msg, msg2]; // Pin1 to log    Pin2 to Setquitemode inputbox\n\n\n\n//Quietmode-Addon further handled in function node: Function Quietmode add-on (WP Control)\n",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = \"Function - SoftStart Quietmode\";\nglobal.set(\"SS_Quietmode_on_off\",msg.payload,\"file\");\nlet msg2 = {};\n\n//get Quietmode_time, error when no time!\nvar Quietmode_time = global.get('Quietmode_time', \"file\"); //after this time the Quietmode will restore to its previous level\nif (Quietmode_time === undefined) { node.warn(\"Error: No Quietmode_time found!\"); }\n\nif (msg.payload == 1) \n    { \n        var Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); //check current Quietmode level\n        if (Quiet_Mode_Level === undefined) { Quiet_Mode_Level = 0; }\n\n        \n        //if Previous_Quiet_Mode_Level excists, set it to current Quiet_Mode_Level\n        var Storedlevel = global.get('Previous_Quiet_Mode_Level', \"file\");\n        if (Storedlevel != undefined) { Quiet_Mode_Level = Storedlevel; } //geen vorige waarde bij boot\n \n        msg.payload = \"ON (Timer: \" + Quietmode_time + \" min, Restore level \" + Quiet_Mode_Level + \")\"; \n        global.set('Previous_Quiet_Mode_Level', Quiet_Mode_Level, \"file\"); // save current level for restore\n\n        //set the new Quietlevel now if needed:\n        var Current = Quiet_Mode_Level; //current level\n        //only send msg when change needed\n        if (Current != Previous_Quiet_Mode_Level) \n            {\n                msg2.topic = \"Function - SoftStart Quietmode\";\n                msg2.payload = 3; //send Quietlevel 3\n                return [msg, msg2];\n            } else { return [msg, null]; }     // send nothing to Exit to Quietlevel-change\n     }\n\nif (msg.payload == 0) \n    { \n        var Previous_Quiet_Mode_Level = global.get('Previous_Quiet_Mode_Level', \"file\"); // check previous Quietmode level\n        if (Previous_Quiet_Mode_Level === undefined) { Previous_Quiet_Mode_Level = 0; } \n        // fix: not showing to log if not needed:\n        var Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\"); // check current Quietmode level\n        if (Quiet_Mode_Level == Previous_Quiet_Mode_Level)\n            {\n            msg.payload = \"OFF\";        \n            } else\n            {\n            msg.payload = \"OFF (restored to level \" + Previous_Quiet_Mode_Level + \")\";\n            }\n\n        //restore when user switches SoftStart Quietmode OFF\n        global.set('Previous_Quiet_Mode_Level', undefined, \"file\"); // delete old stored Previous_Quiet_Mode_Level\n        //set the old Quietlevel now if needed:\n        var Current = Quiet_Mode_Level; //current level\n        \n        //only send msg when change needed\n        if (Current != Previous_Quiet_Mode_Level) \n            {\n                msg2.topic = \"Function - SoftStart Quietmode\";\n                msg2.payload = Previous_Quiet_Mode_Level; //send previous Quietlevel \n                return [msg, msg2];\n            } else { return [msg, null]; }     //send nothing to Exit to Quietlevel-change\n    }\n\nreturn [msg, msg2]; // Pin1 to log    Pin2 to Setquitemode inputbox\n\n\n\n//Quietmode-Addon further handled in function node: Function Quietmode add-on (WP Control)\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -16508,7 +16512,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "21.28 beta (experimental)",
+        "payload": "21.29 beta (experimental)",
         "payloadType": "str",
         "x": 1350,
         "y": 1960,
@@ -16989,6 +16993,85 @@
         ]
     },
     {
+        "id": "5d5f0593f629d4f6",
+        "type": "ui_template",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "group": "fea7672db2f050c9",
+        "name": "Line - Setup 4",
+        "order": 17,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1440,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "89467c0f49c8ec80",
+        "type": "ui_template",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "group": "fea7672db2f050c9",
+        "name": "Line - Setup 3",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1440,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ecbb543ba37d9962",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "g": "a8ac5b148d851a6b",
+        "name": "link in 20",
+        "links": [
+            "a22898dfdc4ff0ca"
+        ],
+        "x": 3355,
+        "y": 1040,
+        "wires": [
+            [
+                "dade0dbb40c3945a"
+            ]
+        ]
+    },
+    {
+        "id": "4a2670b477ab7f75",
+        "type": "ui_text",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "group": "548e51986bce11b0",
+        "order": 6,
+        "width": 4,
+        "height": 1,
+        "name": "Force defrost",
+        "label": "Force defrost routine",
+        "format": "",
+        "layout": "row-left",
+        "className": "",
+        "x": 1820,
+        "y": 900,
+        "wires": []
+    },
+    {
         "id": "a938de76db0b71f6",
         "type": "tab",
         "label": "WP Control",
@@ -17113,9 +17196,9 @@
             "a8d51c8773f8f17f",
             "2caf61fe8673aedb"
         ],
-        "x": 114,
+        "x": 104,
         "y": 59,
-        "w": 1562,
+        "w": 1572,
         "h": 422
     },
     {
@@ -17333,9 +17416,9 @@
             "c0a54684ef46f711",
             "07bfc2f9f00870d7"
         ],
-        "x": 74,
+        "x": 64,
         "y": 4559,
-        "w": 1122,
+        "w": 1132,
         "h": 302
     },
     {
@@ -18149,7 +18232,8 @@
             "ea8203d2d9d4529b",
             "02f25651d70831c9",
             "13ef5341a6b8f4e8",
-            "899964bbc5334847"
+            "899964bbc5334847",
+            "ecbb543ba37d9962"
         ],
         "x": 1635,
         "y": 440,
@@ -23441,7 +23525,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Function RTC correction",
-        "func": "var Operating_Mode      =global.get('Operating_Mode_State',\"file\")\n\nif (Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)\n    {   \n        return null;\n    }\n\nelse \n{   \n    let msg1={};    // pin 1 - current correction\n    let msg2={};    // pin 2 - current sp\n    let msg99={};   // pin 3\n    msg99.topic = \"Function RTC\"\n    let msg3={};    //  pin 4 - start sp\n    \n    \n    \n    var rtc_state               =   global.get('Correction_1_RTC_on_off',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n        if (rtc_state===undefined)                  {rtc_state = 0; global.set('Correction_1_RTC_on_off',0,\"file\");}\n        \n    var F_RTC_old_correction    =   global.get('F_RTC_correction');\n        if (F_RTC_old_correction === undefined)     {F_RTC_old_correction=0; global.set('F_RTC_correction',0);}\n    \n    var F_WAR_SP                =   global.get('F_WAR_SP');\n        if (F_WAR_SP === undefined) {node.warn('RTC correction F_WAR_SP');return null}\n    \n    if (rtc_state == 0)                         \n        {\n            rtc_correction = 0;               // If RTC is disabled, set correction to 0. end if\n            msg1.payload = rtc_correction; \n            msg1.topic = \"rtc_correction\";\n            \n            msg2.payload = F_WAR_SP + rtc_correction; \n            msg2.topic = \"SP RTC result\";\n            \n            msg3.payload = F_WAR_SP;\n            msg3.topic = \"Start SP\";\n            \n            global.set('F_RTC_correction',rtc_correction);\n            return [msg1,msg2,null,msg3]; \n            \n        }\n    \n    else\n        {\n        \n            // Declaration of variables including their values.    \n            var rtc_correction  = 0;                                                // declare local variable, start with value zero\n            var rtc_PV          = global.get('T_room');                             // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n                if (rtc_PV === undefined) {node.warn('RTC correction rtc_PV');return null;}\n            var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard.\n                if (rtc_SP === undefined) {node.warn('RTC correction rtc_SP');return null;}\n            //var rtc_Tb          = global.get('T_outside',\"file\");                   // Outdoor temperature.\n        \n            var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n            \n            //\n            // below are the variables containing the temperature ranges.\n            var rtc_t1          = global.get('rtc_t1',\"file\");                      // Range +3\n            var rtc_t2          = global.get('rtc_t2',\"file\");                      // Range +2\n            var rtc_t3          = global.get('rtc_t3',\"file\");                      // Range +1\n            \n            var rtc_t4          = global.get('rtc_t4',\"file\");                      // Range -1\n            var rtc_t5          = global.get('rtc_t5',\"file\");                      // Range -2\n            var rtc_t6          = global.get('rtc_t6',\"file\");                      // Range -3\n            var rtc_t7          = global.get('rtc_t7', \"file\");                     // Range -custom\n                if (rtc_t7 === undefined) { rtc_t7 = rtc_t6 -0.1;}                  // default just below rtc_t6        \n\n            var rtc_t7_custom_cor = global.get('rtc_t7_custom_cor', \"file\");\n                if (rtc_t7_custom_cor === undefined) {\n                    rtc_t7_custom_cor = 10; // +10 correction default\n                    global.set('rtc_t7_custom_cor', rtc_t7_custom_cor, \"file\");\n                }\n\n            if (isNaN(rtc_t1+rtc_t2+rtc_t3+rtc_t4+rtc_t5+rtc_t6+rtc_t7) === true)               // if the variables are added to eachother and the result is Not a Number, produce an error message.\n                {\n                    msg99.payload = \"RTC function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"\n                    return [null,null,msg99,null]\n                    \n                }\n            \n            // ADJUST THE VALUES BELOW TO YOUR OWN SITUATION\n        \n            if (rtc_dT >= rtc_t1) {rtc_correction = rtc_correction -1;}                 // It is way too hot.\n            if (rtc_dT >= rtc_t2) {rtc_correction = rtc_correction -1;}                 // It is too hot.\n            if (rtc_dT >= rtc_t3) {rtc_correction = rtc_correction -1;}                 // It is a little too hot.\n        \n            if (rtc_dT < rtc_t3 && rtc_dT > rtc_t4) {rtc_correction = 0;}               // It is right in the middle.... Nice\n\n            if (rtc_dT <= rtc_t4) {rtc_correction = rtc_correction +1;}                 // It is a little too cold\n            if (rtc_dT <= rtc_t5) {rtc_correction = rtc_correction +1;}                 // It is a little a fair bit colder\n            if (rtc_dT <= rtc_t6) {rtc_correction = rtc_correction +1;}                 // It is a little way too cold\n            // insert booster here...\n            if (rtc_dT <= rtc_t6 && rtc_dT >= rtc_t7)                                   // in booster range (between +3 and +custom)\n                {\n                    // calculate correction (between +3 and +custom):\n                    rtc_correction = rtc_t7_custom_cor - 3;                             // example 12 degrees\n                    // calculate temp range:\n                    var Booster_range = (rtc_t6 - rtc_t7); // -2.2 - -2.7 = 0.5         //calculate No. steps    0.1 degrees steps?\n                    Booster_range = (Booster_range * 10);                               // 5 steps\n                    // devide rtc_correction through steps:\n                    rtc_correction = (rtc_correction / Booster_range);                  // 12 / 5 = 2.4 degrees-steps\n                    // apply correction for actual room temp:\n                    // op hoeveel stappen beneden +3 level zitten we nu?\n                    var Actual_step = ( rtc_t6 - rtc_dT) * 10;                          // rtc_dT= -2.5 --->     ---> -2.2 - -2.5 = 0.3  --> * 10 = 3 (stap 3 van 5)\n                    // Apply correction at this step:\n                    rtc_correction = (Actual_step * rtc_correction);    \n                    // Show in log what booster correction should be and continue:\n                    msg99.payload = \"Booster correction at \" + rtc_PV + \"°C \" + \"should be \" + rtc_correction + \"°C\";\n                    node.send([null, null, msg99, null]); // only to log and continue code from here\n                }\n            if (rtc_dT <= rtc_t7) {rtc_correction = rtc_t7_custom_cor;}                 // It is way too cold: use custom\n        \n            /////////////////////////////////////////////////////////\n            /////////////////////////////////////////////////////////\n        }\n//****************************************************************************** \n    msg1.payload = rtc_correction; \n    msg1.topic = \"rtc_correction\";\n    \n    msg2.payload = F_WAR_SP + rtc_correction; \n    msg2.topic = \"SP RTC result\";\n\n    msg3.payload = F_WAR_SP;\n    msg3.topic = \"Start SP\";\n\n    var T_room = global.get('T_room'); // memory only\n            \n    if (F_RTC_old_correction == rtc_correction)\n        {\n            return [msg1,msg2,null,msg3]; \n        }\n    \n    else\n        {\n            global.set('F_RTC_correction',msg1.payload)\n        msg99.payload = \"Correction change: From \" + F_RTC_old_correction + \" to \" + rtc_correction + \" °C (Room actual: \" + T_room + \" °C)\";\n            return [msg1,msg2,msg99,msg3]; \n        }\n    \n}",
+        "func": "var Operating_Mode      =global.get('Operating_Mode_State',\"file\")\n\nif (Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)\n    {   \n        return null;\n    }\n\nelse \n{   \n    let msg1={};    // pin 1 - current correction\n    let msg2={};    // pin 2 - current sp\n    let msg99={};   // pin 3\n    msg99.topic = \"Function RTC\"\n    let msg3={};    //  pin 4 - start sp\n    \n    \n    \n    var rtc_state               =   global.get('Correction_1_RTC_on_off',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n        if (rtc_state===undefined)                  {rtc_state = 0; global.set('Correction_1_RTC_on_off',0,\"file\");}\n        \n    var F_RTC_old_correction    =   global.get('F_RTC_correction');\n        if (F_RTC_old_correction === undefined)     {F_RTC_old_correction=0; global.set('F_RTC_correction',0);}\n    \n    var F_WAR_SP                =   global.get('F_WAR_SP');\n        if (F_WAR_SP === undefined) {node.warn('RTC correction F_WAR_SP');return null}\n    \n    if (rtc_state == 0)                         \n        {\n            rtc_correction = 0;               // If RTC is disabled, set correction to 0. end if\n            msg1.payload = rtc_correction; \n            msg1.topic = \"rtc_correction\";\n            \n            msg2.payload = F_WAR_SP + rtc_correction; \n            msg2.topic = \"SP RTC result\";\n            \n            msg3.payload = F_WAR_SP;\n            msg3.topic = \"Start SP\";\n            \n            global.set('F_RTC_correction',rtc_correction);\n            return [msg1,msg2,null,msg3]; \n            \n        }\n    \n    else\n        {\n        \n            // Declaration of variables including their values.    \n            var rtc_correction  = 0;                                                // declare local variable, start with value zero\n            var rtc_PV          = global.get('T_room');                             // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n                if (rtc_PV === undefined) {node.warn('RTC correction rtc_PV');return null;}\n            var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard.\n                if (rtc_SP === undefined) {node.warn('RTC correction rtc_SP');return null;}\n            //var rtc_Tb          = global.get('T_outside',\"file\");                   // Outdoor temperature.\n        \n            var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n            \n            //\n            // below are the variables containing the temperature ranges.\n            var rtc_t1          = global.get('rtc_t1',\"file\");                      // Range +3\n            var rtc_t2          = global.get('rtc_t2',\"file\");                      // Range +2\n            var rtc_t3          = global.get('rtc_t3',\"file\");                      // Range +1\n            \n            var rtc_t4          = global.get('rtc_t4',\"file\");                      // Range -1\n            var rtc_t5          = global.get('rtc_t5',\"file\");                      // Range -2\n            var rtc_t6          = global.get('rtc_t6',\"file\");                      // Range -3\n            var rtc_t7          = global.get('rtc_t7', \"file\");                     // Range -custom\n                if (rtc_t7 === undefined) { rtc_t7 = rtc_t6 -0.1;}                  // default just below rtc_t6        \n\n            var rtc_t7_custom_cor = global.get('rtc_t7_custom_cor', \"file\");\n                if (rtc_t7_custom_cor === undefined) {\n                    rtc_t7_custom_cor = 10; // +10 correction default\n                    global.set('rtc_t7_custom_cor', rtc_t7_custom_cor, \"file\");\n                }\n\n            if (isNaN(rtc_t1+rtc_t2+rtc_t3+rtc_t4+rtc_t5+rtc_t6+rtc_t7) === true)               // if the variables are added to eachother and the result is Not a Number, produce an error message.\n                {\n                    msg99.payload = \"RTC function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"\n                    return [null,null,msg99,null]\n                    \n                }\n            \n            // ADJUST THE VALUES BELOW TO YOUR OWN SITUATION\n        \n            if (rtc_dT >= rtc_t1) {rtc_correction = rtc_correction -1;}                 // It is way too hot.\n            if (rtc_dT >= rtc_t2) {rtc_correction = rtc_correction -1;}                 // It is too hot.\n            if (rtc_dT >= rtc_t3) {rtc_correction = rtc_correction -1;}                 // It is a little too hot.\n        \n            if (rtc_dT < rtc_t3 && rtc_dT > rtc_t4) {rtc_correction = 0;}               // It is right in the middle.... Nice\n\n            if (rtc_dT <= rtc_t4) {rtc_correction = rtc_correction +1;}                 // It is a little too cold\n            if (rtc_dT <= rtc_t5) {rtc_correction = rtc_correction +1;}                 // It is a little a fair bit colder\n            if (rtc_dT <= rtc_t6) {rtc_correction = rtc_correction +1;}                 // It is a little way too cold\n            if (rtc_dT <= rtc_t7) {rtc_correction = rtc_t7_custom_cor;}                 // It is way too cold: use custom\n        \n            /////////////////////////////////////////////////////////\n            /////////////////////////////////////////////////////////\n        }\n//****************************************************************************** \n    msg1.payload = rtc_correction; \n    msg1.topic = \"rtc_correction\";\n    \n    msg2.payload = F_WAR_SP + rtc_correction; \n    msg2.topic = \"SP RTC result\";\n\n    msg3.payload = F_WAR_SP;\n    msg3.topic = \"Start SP\";\n\n    var T_room = global.get('T_room'); // memory only\n            \n    if (F_RTC_old_correction == rtc_correction)\n        {\n            return [msg1,msg2,null,msg3]; \n        }\n    \n    else\n        {\n            global.set('F_RTC_correction',msg1.payload)\n            msg99.payload = \"Correction change: From \" + F_RTC_old_correction + \" to \" + rtc_correction + \" °C (Room actual: \" + T_room + \" °C)\";\n            return [msg1,msg2,msg99,msg3]; \n        }\n    \n}",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
@@ -24142,8 +24226,9 @@
         "name": "TOP26 - panasonic_heat_pump/main/Defrosting_State",
         "mode": "link",
         "links": [
+            "afa5bf9f7c3531bc",
             "ffa2e7745e5aed4c",
-            "afa5bf9f7c3531bc"
+            "1ebb1a2803291fd7"
         ],
         "x": 1235,
         "y": 3460,
@@ -24181,7 +24266,7 @@
         ],
         "x": 54,
         "y": 1119,
-        "w": 1388,
+        "w": 1398,
         "h": 602
     },
     {
@@ -24374,7 +24459,7 @@
         ],
         "x": 84,
         "y": 579,
-        "w": 1322,
+        "w": 1332,
         "h": 82
     },
     {
@@ -24396,7 +24481,7 @@
         ],
         "x": 84,
         "y": 1239,
-        "w": 1332,
+        "w": 1342,
         "h": 82
     },
     {
@@ -24416,9 +24501,9 @@
         "nodes": [
             "2ee679408e4ccc6f"
         ],
-        "x": 1134,
+        "x": 1124,
         "y": 919,
-        "w": 272,
+        "w": 292,
         "h": 82
     },
     {
@@ -24438,9 +24523,9 @@
         "nodes": [
             "4eaa2cfa2749c551"
         ],
-        "x": 1134,
+        "x": 1124,
         "y": 1579,
-        "w": 272,
+        "w": 292,
         "h": 82
     },
     {
@@ -25885,9 +25970,9 @@
             "a9994ef2e592aee1",
             "375bbd780529afe0"
         ],
-        "x": 74,
+        "x": 64,
         "y": 779,
-        "w": 1332,
+        "w": 1352,
         "h": 688
     },
     {
@@ -26011,7 +26096,7 @@
         ],
         "x": 434,
         "y": 1719,
-        "w": 392,
+        "w": 402,
         "h": 1162
     },
     {
@@ -31459,9 +31544,9 @@
             "05344a8f5a84a598",
             "ce6d6e5627ec1fa2"
         ],
-        "x": 2374,
+        "x": 2364,
         "y": 2519,
-        "w": 1332,
+        "w": 1342,
         "h": 282
     },
     {
@@ -42459,7 +42544,7 @@
         "z": "35d210f042827344",
         "g": "b63004182c33d3b9",
         "name": "Check Nightreduction room status",
-        "func": "let msg99={};   // pin 1 - ToLog\nlet msg2={};    // pin 2 - SP Room\n\n\nvar Nightmode = global.get(\"Nightmode\",\"file\");\nif (Nightmode === undefined) \n    {\n        global.set(\"Nightmode\",0,\"file\");\n        Nightmode = 0;\n        return null;\n    }\n\n//msg99.topic = \"Scheduler - Nightreduction room setpoint\";\nvar RoomSP;\n\nif (Nightmode == 1) \n    {\n        //retrieve value from dashboard\n        RoomSP = global.get(\"RoomSetpointLOW\",\"file\");\n        global.set(\"WoonkamerSP\", RoomSP, \"file\");\n        msg99.payload = \"ON, Room setpoint: \" + RoomSP + \" °C\";\n        msg2.payload = RoomSP;\n        msg2.currentstatus = 'Active';\n        return [msg99, msg2]; //Pin 1 to log. Pin2 to write Room SP\n    }\n\nif (Nightmode == 0) \n    {\n        //retrieve value from dashboard\n        RoomSP = global.get(\"RoomSetpointNORMAL\",\"file\");\n        global.set(\"WoonkamerSP\", RoomSP, \"file\");\n        msg99.payload = \"OFF, Room setpoint: \" + RoomSP + \" °C\";\n        msg2.payload = RoomSP;\n        msg2.currentstatus = 'Inactive';\n        return [msg99, msg2]; //Pin 1 to log. Pin2 to write Room SP\n    }\n",
+        "func": "let msg99={};   // pin 1 - ToLog\nlet msg2={};    // pin 2 - SP Room\n\nmsg99.topic = msg.topic;\n\n\nvar Nightmode = global.get(\"Nightmode\",\"file\");\nif (Nightmode === undefined) \n    {\n        global.set(\"Nightmode\",0,\"file\");\n        global.set(\"NightReductionRoomPV_CurrentStatus\", 0, \"file\");\n        Nightmode = 0;\n        return null;\n    }\n\nvar RoomSP;\n\nif (Nightmode == 1) \n    {\n        //retrieve value from dashboard\n        RoomSP = global.get(\"RoomSetpointLOW\",\"file\");\n        global.set(\"WoonkamerSP\", RoomSP, \"file\");\n        global.set(\"NightReductionRoomPV_CurrentStatus\", 1, \"file\");\n        msg99.payload = \"ON, Room setpoint: \" + RoomSP + \" °C\";\n        msg2.payload = RoomSP;\n        msg2.currentstatus = 'Active';\n        return [msg99, msg2]; //Pin 1 to log. Pin2 to write Room SP\n    }\n\nif (Nightmode == 0) \n    {\n        //retrieve value from dashboard\n        RoomSP = global.get(\"RoomSetpointNORMAL\",\"file\");\n        global.set(\"WoonkamerSP\", RoomSP, \"file\");\n        global.set(\"NightReductionRoomPV_CurrentStatus\", 0, \"file\");\n        msg99.payload = \"OFF, Room setpoint: \" + RoomSP + \" °C\";\n        msg2.payload = RoomSP;\n        msg2.currentstatus = 'Inactive';\n        return [msg99, msg2]; //Pin 1 to log. Pin2 to write Room SP\n    }\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -42538,7 +42623,7 @@
         "g": "b63004182c33d3b9",
         "name": "Exit to write RoomSP",
         "info": "",
-        "x": 3580,
+        "x": 3570,
         "y": 2340,
         "wires": []
     },
@@ -42742,7 +42827,7 @@
         "z": "35d210f042827344",
         "g": "92293ba8ccc5db0f",
         "name": "Load on boot",
-        "func": "var RoomSetpointLOW = global.get('RoomSetpointLOW',\"file\");\nif (RoomSetpointLOW === undefined)  {\n    RoomSetpointLOW = 18;\n    global.set('RoomSetpointLOW',18,\"file\");\n}\n    \nvar RoomSetpointNORMAL = global.get('RoomSetpointNORMAL',\"file\");\nif (RoomSetpointNORMAL === undefined) {\n    RoomSetpointNORMAL = global.get('WoonkamerSP',\"file\");\n    if  (RoomSetpointNORMAL !== undefined)   {\n        global.set('RoomSetpointNORMAL',RoomSetpointNORMAL,\"file\");\n    }\n    else {return null;}                                                         // prevent setting a default room SP due to timing issue. This is done elsewhere. Just exit and wait for it to populate with next passes.\n}\n\nvar NightReductionRoomPV_CurrentStatus = global.get('NightReductionRoomPV_CurrentStatus',\"file\");\nif (NightReductionRoomPV_CurrentStatus === undefined)   {\n    global.set('NightReductionRoomPV_CurrentStatus',0,\"file\");\n    NightReductionRoomPV_CurrentStatus = 0;\n}\n\n\nlet msg1={};    //  RoomSetpointLOW\nlet msg2={};    //  RoomSetpointNORMAL\nlet msg3={};    //  NightReductionRoomPV_CurrentStatus\n\nmsg1.payload = RoomSetpointLOW;\nmsg2.payload = RoomSetpointNORMAL;\nmsg3.payload = NightReductionRoomPV_CurrentStatus;\n\nreturn [msg1, msg2, msg3];",
+        "func": "var RoomSetpointLOW = global.get('RoomSetpointLOW',\"file\");\nif (RoomSetpointLOW === undefined)  {\n    RoomSetpointLOW = 18;\n    global.set('RoomSetpointLOW',18,\"file\");\n}\n    \nvar RoomSetpointNORMAL = global.get('RoomSetpointNORMAL',\"file\");\nif (RoomSetpointNORMAL === undefined) {\n    RoomSetpointNORMAL = global.get('WoonkamerSP',\"file\");\n    if  (RoomSetpointNORMAL !== undefined)   {\n        global.set('RoomSetpointNORMAL',RoomSetpointNORMAL,\"file\");\n    }\n    else {return null;}     // prevent setting a default room SP due to timing issue. This is done elsewhere. Just exit and wait for it to populate with next passes.\n}\n\nvar NightReductionRoomPV_CurrentStatus = global.get('NightReductionRoomPV_CurrentStatus',\"file\");\nif (NightReductionRoomPV_CurrentStatus === undefined)   {\n    global.set('NightReductionRoomPV_CurrentStatus',0,\"file\");\n    NightReductionRoomPV_CurrentStatus = 0;\n}\n\n\nlet msg1={};    //  RoomSetpointLOW\nlet msg2={};    //  RoomSetpointNORMAL\nlet msg3={};    //  NightReductionRoomPV_CurrentStatus\n\nmsg1.payload = RoomSetpointLOW;\nmsg2.payload = RoomSetpointNORMAL;\nmsg3.payload = NightReductionRoomPV_CurrentStatus;\n\nreturn [msg1, msg2, msg3];",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
@@ -42772,7 +42857,7 @@
         "type": "function",
         "z": "35d210f042827344",
         "name": "Filter",
-        "func": "if (msg.payload != 99)\n{return msg;}",
+        "func": "if (msg.payload != 99)\n{\n    msg.topic = \"Scheduler - Nightreduction room setpoint\";\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -43756,8 +43841,8 @@
                 "t": "set",
                 "p": "topic",
                 "pt": "msg",
-                "to": "Scheduler - Nightreduction room setpoint",
-                "tot": "str"
+                "to": "topic",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -43894,7 +43979,7 @@
         "z": "35d210f042827344",
         "g": "92293ba8ccc5db0f",
         "name": "set NightReductionRoomPV_CurrentStatus",
-        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"NightReductionRoomPV_CurrentStatus\",msg.payload,\"file\");\nreturn msg;",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\n\n//firts check if it's neccesary to set, to avoid log message:\nif (global.get(\"NightReductionRoomPV_CurrentStatus\", \"file\") == msg.payload) { return null;} //disable message to log at start / 30 min\n\nglobal.set(\"NightReductionRoomPV_CurrentStatus\",msg.payload,\"file\");\nglobal.set(\"Nightmode\", msg.payload, \"file\");\n\n//if (msg.topic == \"Scheduler - Nightreduction room setpoint\") { return null; } //disable message to log from scheduler-task\nmsg.topic = \"Function - Nightreduction room setpoint\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -43903,7 +43988,9 @@
         "x": 3510,
         "y": 2760,
         "wires": [
-            []
+            [
+                "4ca97fe11f8196e4"
+            ]
         ]
     },
     {
@@ -43955,9 +44042,9 @@
             "e335ee2f6e1f9957",
             "f4fa02505ab621d5"
         ],
-        "x": 2054,
+        "x": 2044,
         "y": 199,
-        "w": 812,
+        "w": 822,
         "h": 1022
     },
     {
@@ -44060,27 +44147,13 @@
         "nodes": [
             "d285cb89e06e89bb",
             "0f0ace5816c4fe0a",
-            "034e66d7e1970807",
             "77ca9cb2599e736f",
-            "b40919297cc01162",
-            "029f7a8be77105f7",
-            "876ee1da67092c1f",
-            "0ab22cbb79a2f253",
-            "0eaadd0531977437",
-            "63de2161531d65af",
-            "b39e98d3a2ecdecf",
-            "9c9a39333c2213e6",
-            "7b6ff5459f54ec6a",
-            "3353673312e389ef",
-            "a8246d3ffd0db6b1",
-            "11af69f558101d1b",
-            "c20eead6407a71ef",
-            "ecba84afc53db758"
+            "9c9a39333c2213e6"
         ],
         "x": 1074,
         "y": 159,
-        "w": 632,
-        "h": 482
+        "w": 262,
+        "h": 242
     },
     {
         "id": "9ad65d8ac40d3b19",
@@ -44208,24 +44281,6 @@
         "wires": []
     },
     {
-        "id": "d285cb89e06e89bb",
-        "type": "ui_text",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "group": "4a119e18236415e9",
-        "order": 1,
-        "width": 6,
-        "height": 1,
-        "name": "HW CONFIGARATION",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-right",
-        "className": "",
-        "x": 1210,
-        "y": 320,
-        "wires": []
-    },
-    {
         "id": "ad0975065f9323c6",
         "type": "link out",
         "z": "3aa03811830ef29e",
@@ -44287,35 +44342,6 @@
         "topic": "",
         "topicType": "str",
         "x": 900,
-        "y": 200,
-        "wires": [
-            [
-                "ad0975065f9323c6"
-            ]
-        ]
-    },
-    {
-        "id": "0f0ace5816c4fe0a",
-        "type": "ui_button",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "name": "",
-        "group": "70a5fe6af8ed1d29",
-        "order": 4,
-        "width": 5,
-        "height": 1,
-        "passthru": false,
-        "label": "HW CONFIGURATION",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "settings",
-        "payload": "{\"group\":{\"show\":[\"SYSTEM_HW_CONFIGURATION\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_ABOUT\",\"SYSTEM_LOG\"]}}",
-        "payloadType": "json",
-        "topic": "",
-        "topicType": "str",
-        "x": 1210,
         "y": 200,
         "wires": [
             [
@@ -44460,7 +44486,7 @@
         "g": "404eed4ef9d90803",
         "name": "",
         "group": "fea7672db2f050c9",
-        "order": 12,
+        "order": 19,
         "width": 2,
         "height": 1,
         "passthru": true,
@@ -45244,7 +45270,7 @@
         "z": "3aa03811830ef29e",
         "g": "404eed4ef9d90803",
         "group": "fea7672db2f050c9",
-        "order": 11,
+        "order": 18,
         "width": 4,
         "height": 1,
         "name": "",
@@ -45739,361 +45765,6 @@
         "wires": []
     },
     {
-        "id": "034e66d7e1970807",
-        "type": "ui_dropdown",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "name": "",
-        "label": "Outside sensor",
-        "tooltip": "Select which temperature sensor the flow must use",
-        "place": "",
-        "group": "4a119e18236415e9",
-        "order": 6,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "multiple": false,
-        "options": [
-            {
-                "label": "Custom",
-                "value": "Custom",
-                "type": "str"
-            },
-            {
-                "label": "Panasonic",
-                "value": "Panasonic",
-                "type": "str"
-            },
-            {
-                "label": "OpenWeather",
-                "value": "OpenWeather",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 1180,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "77ca9cb2599e736f",
-        "type": "ui_text",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "group": "4a119e18236415e9",
-        "order": 2,
-        "width": 6,
-        "height": 1,
-        "name": "Temperature sensors",
-        "label": "<font size=5>Temperature sensors",
-        "format": "",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1200,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "b40919297cc01162",
-        "type": "ui_dropdown",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "name": "",
-        "label": "Room sensor  ",
-        "tooltip": "Select which temperature sensor the flow must use",
-        "place": "",
-        "group": "4a119e18236415e9",
-        "order": 8,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "multiple": false,
-        "options": [
-            {
-                "label": "Custom",
-                "value": "Custom",
-                "type": "str"
-            },
-            {
-                "label": "Panasonic",
-                "value": "Panasonic",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 1180,
-        "y": 440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "029f7a8be77105f7",
-        "type": "ui_text",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "group": "4a119e18236415e9",
-        "order": 4,
-        "width": 6,
-        "height": 1,
-        "name": "kWh devices",
-        "label": "<font size=5>Energy kWh devices",
-        "format": "",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1610,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "876ee1da67092c1f",
-        "type": "ui_dropdown",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "name": "kWh device 1",
-        "label": "kWh device 1",
-        "tooltip": "Select which temperature sensor the flow must use",
-        "place": "",
-        "group": "4a119e18236415e9",
-        "order": 7,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "multiple": false,
-        "options": [
-            {
-                "label": "Custom no.1",
-                "value": "Custom1",
-                "type": "str"
-            },
-            {
-                "label": "Panasonic",
-                "value": "Panasonic",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 1600,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0ab22cbb79a2f253",
-        "type": "ui_dropdown",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "name": "kWh device 2",
-        "label": "kWh device 2",
-        "tooltip": "Select which temperature sensor the flow must use",
-        "place": "",
-        "group": "4a119e18236415e9",
-        "order": 12,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "multiple": false,
-        "options": [
-            {
-                "label": "Custom no.2",
-                "value": "Custom2",
-                "type": "str"
-            },
-            {
-                "label": "Panasonic",
-                "value": "Panasonic",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 1600,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0eaadd0531977437",
-        "type": "ui_dropdown",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "name": "",
-        "label": "Tinlet  sensor",
-        "tooltip": "Select which temperature sensor the flow must use",
-        "place": "",
-        "group": "4a119e18236415e9",
-        "order": 13,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "multiple": false,
-        "options": [
-            {
-                "label": "Custom",
-                "value": "Custom",
-                "type": "str"
-            },
-            {
-                "label": "1-Wire no.1",
-                "value": "1-Wire1",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 1170,
-        "y": 480,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "63de2161531d65af",
-        "type": "ui_dropdown",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "name": "",
-        "label": "Toutlet sensor",
-        "tooltip": "Select which temperature sensor the flow must use",
-        "place": "",
-        "group": "4a119e18236415e9",
-        "order": 14,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "multiple": false,
-        "options": [
-            {
-                "label": "Custom",
-                "value": "Custom",
-                "type": "str"
-            },
-            {
-                "label": "1-Wire no.2",
-                "value": "1-Wire2",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 1180,
-        "y": 520,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b39e98d3a2ecdecf",
-        "type": "ui_button",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "name": "",
-        "group": "4a119e18236415e9",
-        "order": 17,
-        "width": 3,
-        "height": 1,
-        "passthru": false,
-        "label": "SAVE",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 1290,
-        "y": 600,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9c9a39333c2213e6",
-        "type": "comment",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "name": "Test only",
-        "info": "",
-        "x": 1180,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "7b6ff5459f54ec6a",
-        "type": "ui_text",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "group": "4a119e18236415e9",
-        "order": 3,
-        "width": 4,
-        "height": 1,
-        "name": "4x1",
-        "label": "",
-        "format": "",
-        "layout": "row-right",
-        "className": "",
-        "x": 1390,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "3353673312e389ef",
-        "type": "ui_text",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "group": "4a119e18236415e9",
-        "order": 5,
-        "width": 3,
-        "height": 1,
-        "name": "3x1",
-        "label": "",
-        "format": "",
-        "layout": "row-right",
-        "className": "",
-        "x": 1390,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "a8246d3ffd0db6b1",
-        "type": "ui_text",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "group": "4a119e18236415e9",
-        "order": 9,
-        "width": 3,
-        "height": 1,
-        "name": "3x1",
-        "label": "",
-        "format": "",
-        "layout": "row-right",
-        "className": "",
-        "x": 1390,
-        "y": 400,
-        "wires": []
-    },
-    {
         "id": "776cbfd355ed920f",
         "type": "link out",
         "z": "3aa03811830ef29e",
@@ -46120,60 +45791,6 @@
         "wires": []
     },
     {
-        "id": "11af69f558101d1b",
-        "type": "ui_text",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "group": "4a119e18236415e9",
-        "order": 10,
-        "width": 3,
-        "height": 1,
-        "name": "3x1",
-        "label": "",
-        "format": "",
-        "layout": "row-right",
-        "className": "",
-        "x": 1390,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "c20eead6407a71ef",
-        "type": "ui_text",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "group": "4a119e18236415e9",
-        "order": 18,
-        "width": 3,
-        "height": 1,
-        "name": "3x1",
-        "label": "",
-        "format": "",
-        "layout": "row-right",
-        "className": "",
-        "x": 1390,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "ecba84afc53db758",
-        "type": "ui_text",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "group": "4a119e18236415e9",
-        "order": 19,
-        "width": 3,
-        "height": 1,
-        "name": "3x1",
-        "label": "",
-        "format": "",
-        "layout": "row-right",
-        "className": "",
-        "x": 1390,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "f4fa02505ab621d5",
         "type": "ui_text",
         "z": "3aa03811830ef29e",
@@ -46189,6 +45806,82 @@
         "className": "",
         "x": 2220,
         "y": 720,
+        "wires": []
+    },
+    {
+        "id": "d285cb89e06e89bb",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "c361a153997d2dfd",
+        "group": "4a119e18236415e9",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "name": "HW CONFIGARATION",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-right",
+        "className": "",
+        "x": 1210,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "0f0ace5816c4fe0a",
+        "type": "ui_button",
+        "z": "3aa03811830ef29e",
+        "g": "c361a153997d2dfd",
+        "name": "",
+        "group": "70a5fe6af8ed1d29",
+        "order": 4,
+        "width": 5,
+        "height": 1,
+        "passthru": false,
+        "label": "HW CONFIGURATION",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "settings",
+        "payload": "{\"group\":{\"show\":[\"SYSTEM_HW_CONFIGURATION\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_ABOUT\",\"SYSTEM_LOG\"]}}",
+        "payloadType": "json",
+        "topic": "",
+        "topicType": "str",
+        "x": 1210,
+        "y": 200,
+        "wires": [
+            [
+                "ad0975065f9323c6"
+            ]
+        ]
+    },
+    {
+        "id": "77ca9cb2599e736f",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "c361a153997d2dfd",
+        "group": "4a119e18236415e9",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "name": "Temperature sensors",
+        "label": "<font size=5>Temperature sensors",
+        "format": "",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1200,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "9c9a39333c2213e6",
+        "type": "comment",
+        "z": "3aa03811830ef29e",
+        "g": "c361a153997d2dfd",
+        "name": "Test only",
+        "info": "",
+        "x": 1180,
+        "y": 260,
         "wires": []
     },
     {
@@ -46315,9 +46008,9 @@
             "0af4b3b3445b3ce2",
             "6c6d719592dac8d5"
         ],
-        "x": 84,
+        "x": 74,
         "y": 799,
-        "w": 1022,
+        "w": 1032,
         "h": 142
     },
     {
@@ -46447,11 +46140,13 @@
             "037c668f34165450",
             "1b91aa81aad7c7b5",
             "0b00b03e3c4e9930",
-            "d3a2ef1813673fb5"
+            "d3a2ef1813673fb5",
+            "1ebb1a2803291fd7",
+            "fd2777fee0c73d23"
         ],
-        "x": 84,
+        "x": 74,
         "y": 1859,
-        "w": 1022,
+        "w": 1192,
         "h": 82
     },
     {
@@ -46475,8 +46170,6 @@
             "3ad39d9ca3269c7d",
             "eda7a2931c6f22c4",
             "c40e5d6c866f68df",
-            "5eacb694b39815f9",
-            "7aa34ddf39e0fea6",
             "5dfdbd7fb948ef4a",
             "f09a0c75d24764b9",
             "86a5cfcd771770dd",
@@ -46492,7 +46185,7 @@
             "73a3b137b4661912"
         ],
         "x": 74,
-        "y": 1959,
+        "y": 1999,
         "w": 1192,
         "h": 282
     },
@@ -46648,7 +46341,7 @@
         "z": "d5fea67661261002",
         "g": "aed05096f97f9ba6",
         "name": "System check",
-        "func": "// start\nmsg.topic = \"\";\nmsg.payload = \"-\";\nnode.send(msg);\nmsg.payload = \"- -\";\nnode.send(msg);\nmsg.payload = \"- - -\";\nnode.send(msg);\nmsg.payload = \"----------------------------------------> initialize check\";\nnode.send(msg);\n\n// Warn user is mqtt-messages are blocked: ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nif (global.get('MQTT_Block', \"file\") == 1) {\n    msg.payload = \"*SYSTEM: MQTT-Commands are blocked, this flow will not function correctly.\";\n    node.send(msg);   \n} \n\n// check WP status first /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar Heatpump_State = global.get(\"Heatpump_State\", \"file\");\nif (Heatpump_State == 0 || Heatpump_State === undefined) { Heatpump_State = \"off\"; } else { Heatpump_State = \"on\";}\nvar ThreeWay_Valve_State = global.get('ThreeWay_Valve_State'); // 3-way valve mode (0=Room, 1=DHW)\nif (ThreeWay_Valve_State === undefined) { ThreeWay_Valve_State = \"NA\"; }\nif (ThreeWay_Valve_State == 0) { ThreeWay_Valve_State = \"Room\"; }\nif (ThreeWay_Valve_State == 1) { ThreeWay_Valve_State = \"DHW\"; }\nvar ss_Hz = global.get('compressor_frequency');         // Get the global variable for current compressor frequency\nvar OM = global.get('Operating_Mode_State', \"file\");   \n    if (OM == 0) OM = \"Heat only\";\n    if (OM == 1) OM = \"Cool only\";\n    if (OM == 2) OM = \"Auto(Heat)\";\n    if (OM == 3) OM = \"DHW only\";\n    if (OM == 4) OM = \"Heat+DHW\";\n    if (OM == 5) OM = \"Cool+DHW\";\n    if (OM == 6) OM = \"Auto(Heat)+DHW\";\n    if (OM == 7) OM = \"Auto(Cool)\";\n    if (OM == 8) OM = \"Auto(Cool)+DHW)  \";\nmsg.payload = \"HP power is \" + Heatpump_State + \", operation mode \" + OM + \", threeway valve in position \" + ThreeWay_Valve_State;\nnode.send(msg);\n// temperatures etc:\n    var Freq = ss_Hz;\n    var Ta = global.get('Main_Outlet_Temp');                   //  PV (Ta/outlet) Temperature of water.\n    var Tr = global.get('Main_Inlet_Temp');                    //  PV (Tr/inlet) Temperature of water\n    var SP = global.get('Main_Target_Temp');\n    var QM = global.get('Quiet_Mode_Level', \"file\");            // current Quietmode level\n    var PM = global.get('PowerfulMode', \"file\");                // current PowerfulMode\n    var Watt = global.get('Heat_Energy_Consumption');           // power in Watt (Todo, use custom meter)\n    msg.payload = \"Target=\" + SP + \"°C\" + \", Inlet=\" + Tr + \"°C\" + \",  Outlet=\" + Ta + \"°C\" + \", Freq=\" + Freq + \" Hz\" + \", Quiet mode=\" + QM + \", \" + Watt + \" Watt\";\n    if (PM == 1) msg.payload = msg.payload + \", Powerful mode=\" + PM;\nnode.send(msg);\n\n// check Persistent storage ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nflow.set(\"persistency_test\", \"test\", \"file\");\nvar stored_value = flow.get(\"persistency_test\", \"file\")\nif (stored_value !== undefined) {\n    msg.payload = \"Persistent storage is configured correctly\";\n    msg.topic = \"SYSTEM:\";\n} else {\n    msg.payload = \"Persistent storage is not configured correctly. This flow will not function correctly until you do!\";\n    msg.topic = \"SYSTEM WARNING\";\n}\nnode.send(msg);\n\n//check heating mode ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar Heating_Mode = global.get(\"Heating_Mode\", \"file\");\nif (Heating_Mode == 0) {\n    msg.payload = \"Heatpump is WAR mode (compensation curve)\";\n    msg.topic = \"SYSTEM\";\n}\nelse if (Heating_Mode == 1) {\n    msg.payload = \"Heatpump is in DIRECT mode\";\n    msg.topic = \"SYSTEM\";\n}\nnode.send(msg);\n\n// check how long this flow is running without restart //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar CurrentTime = new Date().getTime();\nvar StartTime = global.get(\"OnlineTimer\");\nvar TimeElapsed = ((CurrentTime - StartTime) / 60000); // minutes\nTimeElapsed = parseFloat(TimeElapsed.toFixed(0));\nmsg.topic = \"\";\nmsg.payload = \"This flow is running for \" + TimeElapsed + \" minutes since restart\";\nif (TimeElapsed > 60) { TimeElapsed = TimeElapsed / 60; TimeElapsed = parseFloat(TimeElapsed.toFixed(0)); msg.payload = \"This flow is running for \" + TimeElapsed + \" hours without a restart.\"; }\nif (TimeElapsed > 24) { TimeElapsed = TimeElapsed / 24; TimeElapsed = parseFloat(TimeElapsed.toFixed(0)); msg.payload = \"This flow is running for \" + TimeElapsed + \" days without a restart.\"; }\nnode.send(msg);\n\n//check MQTT blocked ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nif (global.get('MQTT_Block') == 1 ) { \n    msg.topic = \"MQTT-Commands:\";\n    msg.payload = \"Are blocked (disable switch to unblock)\"\n    node.send(msg);\n    }\n\n// Count TOP44 Error messages ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar Last_Error = global.get('Last_Error', \"file\");      // Last error\nvar Error_Counter = global.get('Error_Counter', \"file\");// Total errors\nmsg.topic = \"\";\nmsg.payload = \"Total errors: \" + Error_Counter + \", last error: \" + Last_Error;\nnode.send(msg);\n\n// check if using own kWh-meter(s) //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar Meters = 0;\nif ( global.get('kWh_meter1') == \"true\") { Meters += 1; } \nif ( global.get('kWh_meter2') == \"true\") { Meters += 1; } \nif (Meters > 0) {\n    msg.payload = \"Found \" + Meters + \" custom kWh-device(s) connected to Heishamon\";\n    node.send(msg);\n} else { msg.payload = \"No custom kWh-devices detected\"; node.send(msg); }\n\n// check if using 1-wire and how many:\nvar oneWire_sensors = flow.get('oneWire_sensors').length; // No. of sensors found\nmsg.payload = \"Found \" + oneWire_sensors + \" 1-wire sensors connected to Heishamon\";\nif (oneWire_sensors == 0) {msg.payload = \"No 1-wire sensors connected to Heishamon\"; }\nnode.send(msg);\n \n// finished checken HP state ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nmsg.topic = \"\";\nmsg.payload = \"----------------------------------------> finished checking HP status\";\nnode.send(msg);\n\n// checking some scheduler vars /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nmsg.topic = \"solar_block_scheduler:\";\nif (global.get('solar_block_scheduler', \"file\") === undefined) msg.payload = \"undefined (ok)\"; else msg.payload = global.get('F_stored_next_operating_mode', \"file\");\n    node.send(msg);\nmsg.topic = \"SolarFunction_active:\";\nif (global.get('SolarFunction_active', \"file\") === undefined) msg.payload = \"undefined (ok)\"; else msg.payload = global.get('F_stored_next_operating_mode', \"file\");\n    node.send(msg);\nmsg.topic = \"F_stored_next_operating_mode:\";\nif (global.get('F_stored_next_operating_mode', \"file\") === undefined) msg.payload = \"undefined (ok)\"; else msg.payload = global.get('F_stored_next_operating_mode', \"file\");\n    node.send(msg);\n\n// checking  scheduler tasks ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar count = 0;\nfor (let i = 1; i < 11; i++) {\n    var state = global.get('Schedule_' + i + '_state', \"file\") || 0; \n    if (state == 1) { count += 1;}\n    } \nmsg.topic = \"Scheduler:\"\nmsg.payload = count + \" tasks are currently active\";\nnode.send(msg);\n\n// show which tasks are active:\nfor (let i = 10; i > 0; i--) {    //for (let i = 1; i < 11; i++) {\n    var schedule_topic = \"Schedule_\" + i;\n\n    //var var0 = global.get(schedule_topic + '_state', \"file\") + \", \";\n    var var1 = global.get(schedule_topic + '_Description', \"file\") + \", \";\n    var var2 = global.get(schedule_topic + '_day', \"file\") + \", \";\n    var var3 = global.get(schedule_topic + '_hour', \"file\");\n    var3 = Number(var3).toFixed(0);\n        if (var3 < 10) { var3 = \"0\" + var3 + \":\"; } else { var3 = var3 + \":\"; } //voorloopnul indien nodig\n    var var4 = global.get(schedule_topic + '_minutes', \"file\");\n    var4 = Number(var4).toFixed(0);\n        if (var4 < 10) { var4 = \"0\" + var4 + \", \" } // voorloopnul indien nodig\n    var var5 = global.get(schedule_topic + '_state', \"file\");\n    var var6 = global.get(schedule_topic + '_action', \"file\") + \" \";\n    if (global.get(schedule_topic + '_override', \"file\") == 1) { var var7 = \"(override)\" } else { var var7 = \"\"; }\n\n    msg.topic = schedule_topic;\n    msg.payload = var1 + var2 + var3 + var4 + var6 + var7;\n    if (var5 == 1) { node.send(msg); } // only show when active\n    }\n//\n\nmsg.topic = \"\";\nmsg.payload = \"----------------------------------------> finished checking scheduler\"; \nnode.send(msg);\n\n// checking  RTC settings /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar F_rtc_on_off_active = global.get('F_rtc_on_off_active',\"file\");\nmsg.topic = \"F_rtc_on_off_active:\";\nmsg.payload = F_rtc_on_off_active;\nnode.send(msg);\nmsg.topic = \"\";\n\nvar rtc_state = global.get('Correction_1_RTC_on_off', \"file\");  // 1 or 0\nvar F_RTC_on_off2 = global.get('F_RTC_on_off2', \"file\");        // 1 or 0\nif (rtc_state     == 1) {msg.payload = \"Function RTC is enabled\"; } else msg.payload = \"Function RTC is disabled\";\nnode.send(msg);\nif (F_RTC_on_off2 == 1) { msg.payload = \"Function RTC turn heat on/off is enabled\"; } else { msg.payload = \"RTC turn heat on/off is disabled\"; }\nnode.send(msg);\n\nif (Heatpump_State == \"on\") Heatpump_State = \"(power is on)\";\nif (Heatpump_State == \"off\") Heatpump_State = \"(power is off)\";\nvar RoomSP = global.get('WoonkamerSP', \"file\"); \n\nif (F_RTC_on_off2 == 1 && rtc_state == 1 && Heatpump_State == \"(power is off)\") {\n    var rtc_on = RoomSP + global.get('rtc_on', \"file\");\n    rtc_on = Number(rtc_on).toFixed(1); // to avoid 20.200000000000003°C\n    if (Heatpump_State == \"(power is off)\") {\n        msg.topic = \"\";\n        msg.payload = \"RTC will switch heatpump on at \" + rtc_on + \"°C \" + Heatpump_State;\n        node.send(msg); //\n        }\n    }\n    \nif (F_RTC_on_off2 == 1 && rtc_state == 1 && Heatpump_State == \"(power is on)\") {\n    var rtc_off = RoomSP + global.get('rtc_off',\"file\");\n    rtc_off = Number(rtc_off).toFixed(1); // to avoid 20.200000000000003°C\n    msg.topic = \"\";\n    msg.payload = \"RTC will switch heatpump off at \" + rtc_off + \"°C\"; node.send(msg); \n    }\n\nmsg.topic = \"\";\n// test possible block:\nif (global.get('Force_DHW_State') == 1) {msg.payload = \"Force_DHW_State = 1 --> RTC will not turn heatpump to on (blocked)\"; node.send(msg);}\nmsg.payload = \"----------------------------------------> finished checking RTC\";\nnode.send(msg);\n\n// check total MQTT messages /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar MQTT_Counter = global.get('MQTT_Counter', \"file\");\nif (MQTT_Counter === undefined) MQTT_Counter = 0;\n// MQTT_Counter_Today\nvar MQTT_Counter_Today = global.get('MQTT_Counter_Today', \"file\");\nif (MQTT_Counter_Today === undefined) MQTT_Counter_Today = 0;\n// MQTT_Counter_Yesterday\nvar MQTT_Counter_Yesterday = global.get('MQTT_Counter_Yesterday', \"file\");\nif (MQTT_Counter_Yesterday === undefined) MQTT_Counter_Yesterday = 0;\n// format the message\nmsg.payload = \"Total MQTT-Commands send: \" + MQTT_Counter + \", today \" + MQTT_Counter_Today + \", yesterday \" + MQTT_Counter_Yesterday;\nnode.send(msg);\n\n\n// check total Defrosts /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar Defrost_Counter = global.get('Defrost_Counter', \"file\");\nif (Defrost_Counter === undefined) Defrost_Counter = 0;\n// Defrost_Counter_Today\nvar Defrost_Counter_Today = global.get('Defrost_Counter_Today', \"file\");\nif (Defrost_Counter_Today === undefined) Defrost_Counter_Today = 0;\n// Defrost_Counter_Yesterday\nvar Defrost_Counter_Yesterday = global.get('Defrost_Counter_Yesterday', \"file\");\nif (Defrost_Counter_Yesterday === undefined) Defrost_Counter_Yesterday = 0;\n// format the message\nmsg.payload = \"Total Defrosts: \" + Defrost_Counter + \", today \" + Defrost_Counter_Today + \", yesterday \" + Defrost_Counter_Yesterday;\nnode.send(msg);\n\n// calc total hours/averige runtime //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar OperationHours   = global.get('OperationHours');\nvar OperationCounter = global.get('OperationCounter');\nvar AverigeRuntime = (OperationHours / OperationCounter); \nAverigeRuntime = parseFloat(AverigeRuntime.toFixed(1));\nmsg.topic = \"\";\nmsg.payload = \"Total hours: \" + OperationHours + \", Starts: \" + OperationCounter + \", averige runtime: \" + AverigeRuntime + \" hours\";\nnode.send(msg);\n\n// highest frequency ever recorded ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar HighestFreq = global.get('HighestFreq', \"file\"); // get last highscore ;)\nif (HighestFreq === undefined) { HighestFreq = 0; }\nmsg.payload = \"Highest compressor frequency ever recorded: \" + HighestFreq + \" Hz\";\nnode.send(msg);\n\n//get Starts_Today:\nvar Starts_Today = global.get('Starts_Today', \"file\");\nif (Starts_Today == undefined) { global.set('Starts_Today', 0, \"file\"); } // not necessary\nmsg.payload = \"The compressor has started \" + Starts_Today + \" times in the last 24 hours\";\nnode.send(msg);\n\n/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nmsg.payload = \"----------------------------------------> finished showing hystorical data\";\nnode.send(msg);\n\n// Check SoftStart //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar F_SS_state = global.get('Correction_2_softstart_on_off', \"file\");    // Get the global variable. Used to see if the softstart function is enabled.\nif (F_SS_state === undefined) { F_SS_state = \"disabled\"; } else { F_SS_state = \"enabled\"; }\nmsg.payload = \"Function - SoftStart is \" + F_SS_state;\nnode.send(msg);\n// Quietmode settings:\nvar Quietmode_time = global.get('Quietmode_time', \"file\");         \nif (Quietmode_time === undefined) { Quietmode_time = 5; } //default 5 minutes\nvar SS_Quietmode_on_off = global.get(\"SS_Quietmode_on_off\", \"file\");                // Status switch SS_Quietmode \nif (SS_Quietmode_on_off === 0 || SS_Quietmode_on_off === undefined) {\n    msg.payload = \"Function - SoftStart Quietmode is disabled\"; node.send(msg); \n    } else { msg.payload = \"Function - SoftStart Quietmode is enabled\"; node.send(msg);}\n\nif (SS_Quietmode_on_off == 1) {\n    var Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\");           //check current Quietmode level\n    var Previous_Quiet_Mode_Level = global.get('Previous_Quiet_Mode_Level', \"file\");  //check previous Quietmode level\n    if (Previous_Quiet_Mode_Level === undefined) { Previous_Quiet_Mode_Level = 0; }\n    msg.payload = \"Current Quietmode level: \" + Quiet_Mode_Level + \", restoring to level: \" + Previous_Quiet_Mode_Level + \" after \" + Quietmode_time + \" minutes runtime.\";\n    node.send(msg);\n    }\n\n\n////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nmsg.payload = \"----------------------------------------> finished checking SoftStart\";\nnode.send(msg);\n\n// Check MQTT-blocker and manual on/off settings ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n// MQTT_Block\n// MQTT_Block_Allow_function_rtc_onoff\n// MQTT_Block_default_1\n// MQTT_Block_default_2\n// MQTT_Block_default_3\n// MQTT_Block_select \n\n\n// ending //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nmsg.topic = \"\";\nmsg.payload = \"- - -\";\nnode.send(msg);\nmsg.payload = \"- -\";\nnode.send(msg);\nmsg.payload = \"-\";\nnode.send(msg);\n\n\nnode.done(); // finished\n",
+        "func": "// start\nmsg.topic = \"\";\nmsg.payload = \"-\";\nnode.send(msg);\nmsg.payload = \"- -\";\nnode.send(msg);\nmsg.payload = \"- - -\";\nnode.send(msg);\nmsg.payload = \"----------------------------------------> initialize check\";\nnode.send(msg);\n\n\n// Warn user is mqtt-messages are blocked: ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nif (global.get('MQTT_Block', \"file\") == 1) {\n    msg.payload = \"*SYSTEM: MQTT-Commands are blocked, this flow will not function correctly.\";\n    node.send(msg);   \n} \n\n// check WP status first /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar Heatpump_State = global.get(\"Heatpump_State\", \"file\");\nif (Heatpump_State == 0 || Heatpump_State === undefined) { Heatpump_State = \"off\"; } else { Heatpump_State = \"on\";}\nvar ThreeWay_Valve_State = global.get('ThreeWay_Valve_State'); // 3-way valve mode (0=Room, 1=DHW)\nif (ThreeWay_Valve_State === undefined) { ThreeWay_Valve_State = \"NA\"; }\nif (ThreeWay_Valve_State == 0) { ThreeWay_Valve_State = \"Room\"; }\nif (ThreeWay_Valve_State == 1) { ThreeWay_Valve_State = \"DHW\"; }\nvar ss_Hz = global.get('compressor_frequency');         // Get the global variable for current compressor frequency\nvar OM = global.get('Operating_Mode_State', \"file\");   \n    if (OM == 0) OM = \"Heat only\";\n    if (OM == 1) OM = \"Cool only\";\n    if (OM == 2) OM = \"Auto(Heat)\";\n    if (OM == 3) OM = \"DHW only\";\n    if (OM == 4) OM = \"Heat+DHW\";\n    if (OM == 5) OM = \"Cool+DHW\";\n    if (OM == 6) OM = \"Auto(Heat)+DHW\";\n    if (OM == 7) OM = \"Auto(Cool)\";\n    if (OM == 8) OM = \"Auto(Cool)+DHW)  \";\nmsg.payload = \"HP power is \" + Heatpump_State + \", operation mode \" + OM + \", threeway valve in position \" + ThreeWay_Valve_State;\nnode.send(msg);\n// temperatures etc:\n    var Freq = ss_Hz;\n    var Ta = global.get('Main_Outlet_Temp');                   //  PV (Ta/outlet) Temperature of water.\n    var Tr = global.get('Main_Inlet_Temp');                    //  PV (Tr/inlet) Temperature of water\n    var SP = global.get('Main_Target_Temp');\n    var QM = global.get('Quiet_Mode_Level', \"file\");            // current Quietmode level\n    var PM = global.get('PowerfulMode', \"file\");                // current PowerfulMode\n    var Watt = global.get('Heat_Energy_Consumption');           // power in Watt (Todo, use custom meter)\n    msg.payload = \"Target=\" + SP + \"°C\" + \", Inlet=\" + Tr + \"°C\" + \",  Outlet=\" + Ta + \"°C\" + \", Freq=\" + Freq + \" Hz\" + \", Quiet mode=\" + QM + \", \" + Watt + \" Watt\";\n    if (PM == 1) msg.payload = msg.payload + \", Powerful mode=\" + PM;\nnode.send(msg);\n\n// check Persistent storage ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nflow.set(\"persistency_test\", \"test\", \"file\");\nvar stored_value = flow.get(\"persistency_test\", \"file\")\nif (stored_value !== undefined) {\n    msg.payload = \"Persistent storage is configured correctly\";\n    msg.topic = \"SYSTEM:\";\n} else {\n    msg.payload = \"Persistent storage is not configured correctly. This flow will not function correctly until you do!\";\n    msg.topic = \"SYSTEM WARNING\";\n}\nnode.send(msg);\n\n//check heating mode ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar Heating_Mode = global.get(\"Heating_Mode\", \"file\");\nif (Heating_Mode == 0) {\n    msg.payload = \"Heatpump is WAR mode (compensation curve)\";\n    msg.topic = \"SYSTEM\";\n}\nelse if (Heating_Mode == 1) {\n    msg.payload = \"Heatpump is in DIRECT mode\";\n    msg.topic = \"SYSTEM\";\n}\nnode.send(msg);\n\n// check how long this flow is running without restart //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar CurrentTime = new Date().getTime();\nvar StartTime = global.get(\"OnlineTimer\");\nvar TimeElapsed = ((CurrentTime - StartTime) / 60000); // minutes\nTimeElapsed = parseFloat(TimeElapsed.toFixed(0));\nmsg.topic = \"\";\nmsg.payload = \"This flow is running for \" + TimeElapsed + \" minutes since restart\";\nif (TimeElapsed > 60) { TimeElapsed = TimeElapsed / 60; TimeElapsed = parseFloat(TimeElapsed.toFixed(0)); msg.payload = \"This flow is running for \" + TimeElapsed + \" hours without a restart.\"; }\nif (TimeElapsed > 24) { TimeElapsed = TimeElapsed / 24; TimeElapsed = parseFloat(TimeElapsed.toFixed(0)); msg.payload = \"This flow is running for \" + TimeElapsed + \" days without a restart.\"; }\nnode.send(msg);\n\n//check MQTT blocked ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nif (global.get('MQTT_Block') == 1 ) { \n    msg.topic = \"MQTT-Commands:\";\n    msg.payload = \"Are blocked (disable switch to unblock)\"\n    node.send(msg);\n    }\n\n// Count TOP44 Error messages ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar Last_Error = global.get('Last_Error', \"file\");      // Last error\nvar Error_Counter = global.get('Error_Counter', \"file\");// Total errors\nmsg.topic = \"\";\nmsg.payload = \"Total errors: \" + Error_Counter + \", last error: \" + Last_Error;\nnode.send(msg);\n\n// check if using own kWh-meter(s) //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar Meters = 0;\nif ( global.get('kWh_meter1') == \"true\") { Meters += 1; } \nif ( global.get('kWh_meter2') == \"true\") { Meters += 1; } \nif (Meters > 0) {\n    msg.payload = \"Found \" + Meters + \" custom kWh-device(s) connected to Heishamon\";\n    node.send(msg);\n} else { msg.payload = \"No custom kWh-devices detected\"; node.send(msg); }\n\n// check if using 1-wire and how many:\nvar oneWire_sensors = flow.get('oneWire_sensors').length; // No. of sensors found\nmsg.payload = \"Found \" + oneWire_sensors + \" 1-wire sensors connected to Heishamon\";\nif (oneWire_sensors == 0) {msg.payload = \"No 1-wire sensors connected to Heishamon\"; }\nnode.send(msg);\n \n// finished checken HP state ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nmsg.topic = \"\";\nmsg.payload = \"----------------------------------------> finished checking HP status\";\nnode.send(msg);\n\n// checking some scheduler vars /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nmsg.topic = \"solar_block_scheduler:\";\nif (global.get('solar_block_scheduler', \"file\") === undefined) msg.payload = \"undefined (ok)\"; else msg.payload = global.get('F_stored_next_operating_mode', \"file\");\n    node.send(msg);\nmsg.topic = \"SolarFunction_active:\";\nif (global.get('SolarFunction_active', \"file\") === undefined) msg.payload = \"undefined (ok)\"; else msg.payload = global.get('F_stored_next_operating_mode', \"file\");\n    node.send(msg);\nmsg.topic = \"F_stored_next_operating_mode:\";\nif (global.get('F_stored_next_operating_mode', \"file\") === undefined) msg.payload = \"undefined (ok)\"; else msg.payload = global.get('F_stored_next_operating_mode', \"file\");\n    node.send(msg);\n\n// checking  scheduler tasks ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar count = 0;\nfor (let i = 1; i < 11; i++) {\n    var state = global.get('Schedule_' + i + '_state', \"file\") || 0; \n    if (state == 1) { count += 1;}\n    } \nmsg.topic = \"Scheduler:\"\nmsg.payload = count + \" tasks are currently active\";\nnode.send(msg);\n\n// show which tasks are active:\nfor (let i = 10; i > 0; i--) {    //for (let i = 1; i < 11; i++) {\n    var schedule_topic = \"Schedule_\" + i;\n\n    //var var0 = global.get(schedule_topic + '_state', \"file\") + \", \";\n    var var1 = global.get(schedule_topic + '_Description', \"file\") + \", \";\n    var var2 = global.get(schedule_topic + '_day', \"file\") + \", \";\n    var var3 = global.get(schedule_topic + '_hour', \"file\");\n    var3 = Number(var3).toFixed(0);\n        if (var3 < 10) { var3 = \"0\" + var3 + \":\"; } else { var3 = var3 + \":\"; } //voorloopnul indien nodig\n    var var4 = global.get(schedule_topic + '_minutes', \"file\");\n    var4 = Number(var4).toFixed(0);\n        if (var4 < 10) { var4 = \"0\" + var4 + \", \" } // voorloopnul indien nodig\n    var var5 = global.get(schedule_topic + '_state', \"file\");\n    var var6 = global.get(schedule_topic + '_action', \"file\") + \" \";\n    if (global.get(schedule_topic + '_override', \"file\") == 1) { var var7 = \"(override)\" } else { var var7 = \"\"; }\n\n    msg.topic = schedule_topic;\n    msg.payload = var1 + var2 + var3 + var4 + var6 + var7;\n    if (var5 == 1) { node.send(msg); } // only show when active\n    }\n//\n\nmsg.topic = \"\";\nmsg.payload = \"----------------------------------------> finished checking scheduler\"; \nnode.send(msg);\n\n// checking  RTC settings /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar F_rtc_on_off_active = global.get('F_rtc_on_off_active',\"file\");\nmsg.topic = \"F_rtc_on_off_active:\";\nmsg.payload = F_rtc_on_off_active;\nnode.send(msg);\nmsg.topic = \"\";\n\nvar rtc_state = global.get('Correction_1_RTC_on_off', \"file\");  // 1 or 0\nvar F_RTC_on_off2 = global.get('F_RTC_on_off2', \"file\");        // 1 or 0\nif (rtc_state     == 1) {msg.payload = \"Function RTC is enabled\"; } else msg.payload = \"Function RTC is disabled\";\nnode.send(msg);\nif (F_RTC_on_off2 == 1) { msg.payload = \"Function RTC turn heat on/off is enabled\"; } else { msg.payload = \"RTC turn heat on/off is disabled\"; }\nnode.send(msg);\n\nif (Heatpump_State == \"on\") Heatpump_State = \"(power is on)\";\nif (Heatpump_State == \"off\") Heatpump_State = \"(power is off)\";\nvar RoomSP = global.get('WoonkamerSP', \"file\"); \n\nif (F_RTC_on_off2 == 1 && rtc_state == 1 && Heatpump_State == \"(power is off)\") {\n    var rtc_on = RoomSP + global.get('rtc_on', \"file\");\n    rtc_on = Number(rtc_on).toFixed(1); // to avoid 20.200000000000003°C\n    if (Heatpump_State == \"(power is off)\") {\n        msg.topic = \"\";\n        msg.payload = \"RTC will switch heatpump on at \" + rtc_on + \"°C \" + Heatpump_State;\n        node.send(msg); //\n        }\n    }\n    \nif (F_RTC_on_off2 == 1 && rtc_state == 1 && Heatpump_State == \"(power is on)\") {\n    var rtc_off = RoomSP + global.get('rtc_off',\"file\");\n    rtc_off = Number(rtc_off).toFixed(1); // to avoid 20.200000000000003°C\n    msg.topic = \"\";\n    msg.payload = \"RTC will switch heatpump off at \" + rtc_off + \"°C\"; node.send(msg); \n    }\n\nmsg.topic = \"\";\n// test possible block:\nif (global.get('Force_DHW_State') == 1) {msg.payload = \"Force_DHW_State = 1 --> RTC will not turn heatpump to on (blocked)\"; node.send(msg);}\nmsg.payload = \"----------------------------------------> finished checking RTC\";\nnode.send(msg);\n\n// check total MQTT messages /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar MQTT_Counter = global.get('MQTT_Counter', \"file\");\nif (MQTT_Counter === undefined) MQTT_Counter = 0;\n// MQTT_Counter_Today\nvar MQTT_Counter_Today = global.get('MQTT_Counter_Today', \"file\");\nif (MQTT_Counter_Today === undefined) MQTT_Counter_Today = 0;\n// MQTT_Counter_Yesterday\nvar MQTT_Counter_Yesterday = global.get('MQTT_Counter_Yesterday', \"file\");\nif (MQTT_Counter_Yesterday === undefined) MQTT_Counter_Yesterday = 0;\n// format the message\nmsg.payload = \"Total MQTT-Commands send: \" + MQTT_Counter + \", today \" + MQTT_Counter_Today + \", yesterday \" + MQTT_Counter_Yesterday;\nnode.send(msg);\n\n\n// check total Defrosts /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar Defrost_Counter = global.get('Defrost_Counter', \"file\");\nif (Defrost_Counter === undefined) Defrost_Counter = 0;\n// Defrost_Counter_Today\nvar Defrost_Counter_Today = global.get('Defrost_Counter_Today', \"file\");\nif (Defrost_Counter_Today === undefined) Defrost_Counter_Today = 0;\n// Defrost_Counter_Yesterday\nvar Defrost_Counter_Yesterday = global.get('Defrost_Counter_Yesterday', \"file\");\nif (Defrost_Counter_Yesterday === undefined) Defrost_Counter_Yesterday = 0;\n// format the message\nmsg.payload = \"Total Defrosts: \" + Defrost_Counter + \", today \" + Defrost_Counter_Today + \", yesterday \" + Defrost_Counter_Yesterday;\nnode.send(msg);\n\n// calc total hours/averige runtime //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar OperationHours   = global.get('OperationHours');\nvar OperationCounter = global.get('OperationCounter');\nvar AverigeRuntime = (OperationHours / OperationCounter); \nAverigeRuntime = parseFloat(AverigeRuntime.toFixed(1));\nmsg.topic = \"\";\nmsg.payload = \"Total hours: \" + OperationHours + \", Starts: \" + OperationCounter + \", averige runtime: \" + AverigeRuntime + \" hours\";\nnode.send(msg);\n\n// highest frequency ever recorded ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar HighestFreq = global.get('HighestFreq', \"file\"); // get last highscore ;)\nif (HighestFreq === undefined) { HighestFreq = 0; }\nmsg.payload = \"Highest compressor frequency ever recorded: \" + HighestFreq + \" Hz\";\nnode.send(msg);\n\n//get Starts_Today:\nvar Starts_Today = global.get('Starts_Today', \"file\");\nif (Starts_Today == undefined) { global.set('Starts_Today', 0, \"file\"); } // not necessary\nmsg.payload = \"The compressor has started \" + Starts_Today + \" times in the last 24 hours\";\nnode.send(msg);\n\n/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nmsg.payload = \"----------------------------------------> finished showing hystorical data\";\nnode.send(msg);\n\n// Check SoftStart //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nvar F_SS_state = global.get('Correction_2_softstart_on_off', \"file\");    // Get the global variable. Used to see if the softstart function is enabled.\nif (F_SS_state === undefined) { F_SS_state = \"disabled\"; } else { F_SS_state = \"enabled\"; }\nmsg.payload = \"Function - SoftStart is \" + F_SS_state;\nnode.send(msg);\n// Quietmode settings:\nvar Quietmode_time = global.get('Quietmode_time', \"file\");         \nif (Quietmode_time === undefined) { Quietmode_time = 5; } //default 5 minutes\nvar SS_Quietmode_on_off = global.get(\"SS_Quietmode_on_off\", \"file\");                // Status switch SS_Quietmode \nif (SS_Quietmode_on_off === 0 || SS_Quietmode_on_off === undefined) {\n    msg.payload = \"Function - SoftStart Quietmode is disabled\"; node.send(msg); \n    } else { msg.payload = \"Function - SoftStart Quietmode is enabled\"; node.send(msg);}\n\nif (SS_Quietmode_on_off == 1) {\n    var Quiet_Mode_Level = global.get('Quiet_Mode_Level', \"file\");           //check current Quietmode level\n    var Previous_Quiet_Mode_Level = global.get('Previous_Quiet_Mode_Level', \"file\");  //check previous Quietmode level\n    if (Previous_Quiet_Mode_Level === undefined) { Previous_Quiet_Mode_Level = 0; }\n    msg.payload = \"Current Quietmode level: \" + Quiet_Mode_Level + \", restoring to level: \" + Previous_Quiet_Mode_Level + \" after \" + Quietmode_time + \" minutes runtime.\";\n    node.send(msg);\n    }\n\n\n////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nmsg.payload = \"----------------------------------------> finished checking SoftStart\";\nnode.send(msg);\n\n// Check MQTT-blocker and manual on/off settings ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n// MQTT_Block\n// MQTT_Block_Allow_function_rtc_onoff\n// MQTT_Block_default_1\n// MQTT_Block_default_2\n// MQTT_Block_default_3\n// MQTT_Block_select \n\n\n// ending //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\nmsg.topic = \"\";\nmsg.payload = \"- - -\";\nnode.send(msg);\nmsg.payload = \"- -\";\nnode.send(msg);\nmsg.payload = \"-\";\nnode.send(msg);\n\n\nnode.done(); // finished\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -47130,10 +46823,10 @@
         "g": "0531f7d830ad5e1b",
         "group": "ec94eaa0930738be",
         "name": "",
-        "order": 16,
+        "order": 10,
         "width": 25,
         "height": 17,
-        "format": "<div ng-repeat=\"line in msg.payload track by $index\">\n    <div ng-style=\"{'margin-bottom':'0'}\">{{line}}</div>\n</div>",
+        "format": "<div ng-repeat=\"line in msg.payload track by $index\">\n    <div ng-style=\"{'margin-top':'0','margin-bottom':'0'}\">{{line}}</div>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": true,
@@ -48280,7 +47973,7 @@
         "repeat": "1800",
         "crontab": "",
         "once": true,
-        "onceDelay": "5",
+        "onceDelay": "60",
         "topic": "",
         "payload": "",
         "payloadType": "date",
@@ -48397,7 +48090,7 @@
         "tooltip": "Select which temperature sensor the flow must use",
         "place": "",
         "group": "4a119e18236415e9",
-        "order": 15,
+        "order": 3,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -48419,22 +48112,22 @@
         "z": "d5fea67661261002",
         "g": "bab76cb8c9631c59",
         "name": "",
-        "group": "ec94eaa0930738be",
-        "order": 5,
-        "width": 3,
+        "group": "548e51986bce11b0",
+        "order": 7,
+        "width": 2,
         "height": 1,
         "passthru": false,
-        "label": "Force defrost",
+        "label": "Defrost",
         "tooltip": "Send a force defrost to HP",
         "color": "",
-        "bgcolor": "",
+        "bgcolor": "{{background}}",
         "className": "",
         "icon": "",
         "payload": "This will start a defrosting routine.",
         "payloadType": "str",
         "topic": "payload",
         "topicType": "msg",
-        "x": 180,
+        "x": 380,
         "y": 1900,
         "wires": [
             [
@@ -48454,7 +48147,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 720,
+        "x": 870,
         "y": 1900,
         "wires": [
             [
@@ -48476,7 +48169,7 @@
             "c764c19340b7b720",
             "fa1495af192e1c1e"
         ],
-        "x": 815,
+        "x": 965,
         "y": 1900,
         "wires": []
     },
@@ -48492,7 +48185,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
+        "x": 720,
         "y": 1900,
         "wires": [
             [
@@ -48515,7 +48208,7 @@
         "correl": "",
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
-        "x": 970,
+        "x": 1130,
         "y": 1900,
         "wires": []
     },
@@ -48535,33 +48228,13 @@
         "className": "",
         "topic": "Send a defrost now to HP?",
         "name": "Defrost?",
-        "x": 380,
+        "x": 540,
         "y": 1900,
         "wires": [
             [
                 "1b91aa81aad7c7b5"
             ]
         ]
-    },
-    {
-        "id": "63d535d6edd7753c",
-        "type": "comment",
-        "z": "d5fea67661261002",
-        "name": "Fixes 8-12-2022",
-        "info": "[NEW] Reduced SoftStart messages (skip unnecessary corrections).\n[NEW] Disabling SoftStart during defrost.\n[Fix] Changed compressor status to log (includes defrost state).\n[Change] Renamed button 'Gather HP data'' to 'Extend logging'. (Function off by default/restart).\n[Change] Extend logging shows all SoftStart corrections in log (incl. those not affecting setpoint)\n[Change] Extend logging shows compressor start/stops during defrost cycle.\n[Change] Increased default max MQTT messages per day to 300 (new users).\n\n[ToDo] - Fix 5 minutes update (now 30 minutes) for defrost state (WP_dash/settings)  Inject timer issue (settings page).",
-        "x": 1220,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "7966bee99f8d4f1c",
-        "type": "comment",
-        "z": "d5fea67661261002",
-        "name": "Todo  (open me)",
-        "info": "[X] Flow can now handle quarter water temperatures from inlet and outlet.\n\n\n[1] Fix logging Quietmode restore in log\n\n[2] Heishamon_MQTT_Reconnects\n    reduce logging\n    \n[3] last run kWh, averige kWh/run. \n    Can be removed by Maarten\n\n[4] Sensor/devices on central place (flow).\n\n[5] Selectable from Dashboard Hardware (if connected in flow).\n\n[6] fix unneeded punmpspeed mqtt sending\n    OK >> First priority. \n\n[7] fix correct function of shutdown + custom scheduler\n    To Do by EdterBak\n\nUsers currently using those devices:\n=====================================\nAikon (kWh + 1-wire)\nMikeyMan (kWh + MQTT sensors)\nMaarten69 (kWh + 1-wire)\nEdterbak (kWh)\n\n\n// todo: predict defrost (look at service manual)\n==================================================\nTOP21   Outside_Pipe_Temp   -2  °C\nTOP52   Defrost_Temp    -31 °C\nTOP53   Eva_Outlet_Temp -1  °C\nTOP54   Bypass_Outlet_Temp  -31\n\n// Call defrost manualy: SET12-SetForceDefrost \t(Forces defrost routine) \tvalues 0, 1\n",
-        "x": 1400,
-        "y": 300,
-        "wires": []
     },
     {
         "id": "879b071f7e013653",
@@ -48576,7 +48249,7 @@
         "finalize": "",
         "libs": [],
         "x": 500,
-        "y": 2040,
+        "y": 2080,
         "wires": [
             [
                 "676beb3babed5817",
@@ -48601,7 +48274,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 770,
-        "y": 2040,
+        "y": 2080,
         "wires": [
             [
                 "315fddd6f5ad04a4"
@@ -48622,7 +48295,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 770,
-        "y": 2080,
+        "y": 2120,
         "wires": [
             [
                 "5c671bda81284e37"
@@ -48645,7 +48318,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 1130,
-        "y": 2040,
+        "y": 2080,
         "wires": []
     },
     {
@@ -48660,7 +48333,7 @@
             "fa1495af192e1c1e"
         ],
         "x": 905,
-        "y": 2200,
+        "y": 2240,
         "wires": []
     },
     {
@@ -48687,7 +48360,7 @@
         "payload": "30",
         "payloadType": "num",
         "x": 270,
-        "y": 2000,
+        "y": 2040,
         "wires": [
             [
                 "879b071f7e013653"
@@ -48718,7 +48391,7 @@
         "payload": "0",
         "payloadType": "num",
         "x": 260,
-        "y": 2080,
+        "y": 2120,
         "wires": [
             [
                 "879b071f7e013653"
@@ -48733,9 +48406,9 @@
         "name": "",
         "label": "Low speed",
         "tooltip": "Set the lowest pump speed when compressor is off",
-        "group": "ec94eaa0930738be",
-        "order": 11,
-        "width": 4,
+        "group": "fea7672db2f050c9",
+        "order": 13,
+        "width": 6,
         "height": 1,
         "wrap": false,
         "passthru": true,
@@ -48747,7 +48420,7 @@
         "step": 1,
         "className": "",
         "x": 490,
-        "y": 2100,
+        "y": 2140,
         "wires": [
             [
                 "86a5cfcd771770dd"
@@ -48759,8 +48432,8 @@
         "type": "ui_text",
         "z": "d5fea67661261002",
         "g": "86eb49a0b0f702bc",
-        "group": "ec94eaa0930738be",
-        "order": 9,
+        "group": "fea7672db2f050c9",
+        "order": 15,
         "width": 4,
         "height": 1,
         "name": "",
@@ -48769,7 +48442,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 930,
-        "y": 2000,
+        "y": 2040,
         "wires": []
     },
     {
@@ -48780,9 +48453,9 @@
         "name": "",
         "label": "Normal speed",
         "tooltip": "Set the normal pump speed when running",
-        "group": "ec94eaa0930738be",
-        "order": 12,
-        "width": 4,
+        "group": "fea7672db2f050c9",
+        "order": 14,
+        "width": 6,
         "height": 1,
         "wrap": false,
         "passthru": true,
@@ -48794,7 +48467,7 @@
         "step": 1,
         "className": "",
         "x": 500,
-        "y": 2140,
+        "y": 2180,
         "wires": [
             [
                 "54cf36e834f5843a",
@@ -48812,57 +48485,17 @@
         "order": 8,
         "width": 25,
         "height": 1,
-        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: 0;\n    margin-right: 0;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n</html>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 1190,
-        "y": 2120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5eacb694b39815f9",
-        "type": "ui_template",
-        "z": "d5fea67661261002",
-        "g": "86eb49a0b0f702bc",
-        "group": "ec94eaa0930738be",
-        "name": "Line",
-        "order": 15,
-        "width": 25,
-        "height": 1,
-        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 1190,
+        "x": 1010,
         "y": 2160,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "7aa34ddf39e0fea6",
-        "type": "ui_text",
-        "z": "d5fea67661261002",
-        "g": "86eb49a0b0f702bc",
-        "group": "ec94eaa0930738be",
-        "order": 14,
-        "width": 5,
-        "height": 1,
-        "name": "2x1",
-        "label": "",
-        "format": "",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1190,
-        "y": 2000,
-        "wires": []
     },
     {
         "id": "5dfdbd7fb948ef4a",
@@ -48877,7 +48510,7 @@
         "finalize": "",
         "libs": [],
         "x": 330,
-        "y": 2140,
+        "y": 2180,
         "wires": [
             [
                 "24979ae4ee624221"
@@ -48913,7 +48546,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 180,
-        "y": 2140,
+        "y": 2180,
         "wires": [
             [
                 "5dfdbd7fb948ef4a"
@@ -48933,7 +48566,7 @@
         "finalize": "",
         "libs": [],
         "x": 650,
-        "y": 2100,
+        "y": 2140,
         "wires": []
     },
     {
@@ -48944,9 +48577,9 @@
         "name": "",
         "label": "Reduce pump speed",
         "tooltip": "Reduce pump speed when compressor is off",
-        "group": "ec94eaa0930738be",
-        "order": 10,
-        "width": 4,
+        "group": "fea7672db2f050c9",
+        "order": 12,
+        "width": 6,
         "height": 1,
         "passthru": true,
         "decouple": "false",
@@ -48964,7 +48597,7 @@
         "animate": false,
         "className": "",
         "x": 520,
-        "y": 2200,
+        "y": 2240,
         "wires": [
             [
                 "cf98942a82cf52e5"
@@ -48977,17 +48610,16 @@
         "z": "d5fea67661261002",
         "g": "86eb49a0b0f702bc",
         "name": "status",
-        "func": "let msg1 = {};// pumpspeed to mqtt-topic\nlet msg99={}; // log\nmsg99.topic = \"Function Pump speed\";\n\nif (msg.payload == 1) {\n    global.set('ReducePumpSpeed', 1, \"file\");\n    msg1.payload = global.get(\"PumpMaxFlowSetting\", \"file\");\n    msg99.payload = 1;\n    return [msg1, msg99];\n}\n\nif (msg.payload == 0) {\n    global.set('ReducePumpSpeed', 0, \"file\");\n\n    // restore default speed when switched off:\n    var PumpSpeed = global.get(\"PumpMaxFlowSetting\", \"file\"); //actual pumpspeed\n\n    var LowSpeed = global.get(\"LowSpeed\", \"file\"); //lowest speed set\n\n    var SavedPumpspeed = global.get(\"SavedPumpspeed\", \"file\"); //if saved then restore this\n    if (SavedPumpspeed === undefined) \n        {\n            SavedPumpspeed = PumpSpeed; // default pumpspeed\n            global.set(\"SavedPumpspeed\", SavedPumpspeed, \"file\");\n        }   \n    //check restore or not:\n    msg99.payload = 0;\n    if (PumpSpeed < SavedPumpspeed) \n        {\n            PumpSpeed = SavedPumpspeed; //restore old speed\n            //****calculate Pumpspeed --> percentage******\n            var var1 = PumpSpeed;\n            var1 = (var1 - 64) / (254 - 64) * 100;\n            var1 = \" (\" + Number(var1).toFixed(0) + \"%)\";\n            //********************************************\n            global.set(\"PumpMaxFlowSetting\", PumpSpeed, \"file\"); //store current setting\n            msg1.payload = PumpSpeed; //to mqtt-topic\n            msg99.payload = \"0 (restored to: \" + PumpSpeed + var1 + \")\"; //to log\n            return [msg1, msg99];\n        }\n    \n}\n    return [null, msg99];\n",
+        "func": "let msg1 = {};// pumpspeed to mqtt-topic\nlet msg99={}; // log\nmsg99.topic = \"Function Pump speed\";\n\nvar PumpSpeed = global.get(\"PumpMaxFlowSetting\", \"file\");   //actual pumpspeed\nvar LowSpeed = global.get(\"LowSpeed\", \"file\");              //lowest speed set\nvar SavedPumpspeed = global.get(\"SavedPumpspeed\", \"file\");  //if saved then restore this\n    if (SavedPumpspeed === undefined) \n        {\n        SavedPumpspeed = PumpSpeed; // default pumpspeed\n        global.set(\"SavedPumpspeed\", SavedPumpspeed, \"file\");\n        }  \n\n\n\n\nif (msg.payload == 1) { // switch is ON\n    global.set('ReducePumpSpeed', 1, \"file\");\n    // check if not already set:\n    //if (PumpSpeed < SavedPumpspeed) \n    msg1.payload = PumpSpeed;\n    msg99.payload = 1;\n    return [msg1, msg99];\n}\n\n\n\n\nif (msg.payload == 0) { // switch is OFF\n    global.set('ReducePumpSpeed', 0, \"file\");\n \n    //check restore or not:\n    msg99.payload = 0;\n    if (PumpSpeed < SavedPumpspeed) \n        {\n            PumpSpeed = SavedPumpspeed; //restore old speed\n            //****calculate Pumpspeed --> percentage******\n            var var1 = PumpSpeed;\n            var1 = (var1 - 64) / (254 - 64) * 100;\n            var1 = \" (\" + Number(var1).toFixed(0) + \"%)\";\n            //********************************************\n            global.set(\"PumpMaxFlowSetting\", PumpSpeed, \"file\"); //store current setting\n            msg1.payload = PumpSpeed; //to mqtt-topic\n            msg99.payload = \"0 (restored to: \" + PumpSpeed + var1 + \")\"; //to log\n            return [msg1, msg99];\n        }\n    \n}\n    return [null, msg99];\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 690,
-        "y": 2200,
+        "y": 2240,
         "wires": [
             [
-                "676beb3babed5817",
                 "83de05bd6c41edda"
             ],
             [
@@ -49008,7 +48640,7 @@
         "finalize": "",
         "libs": [],
         "x": 770,
-        "y": 2000,
+        "y": 2040,
         "wires": [
             [
                 "3ad39d9ca3269c7d"
@@ -49028,7 +48660,7 @@
         "finalize": "",
         "libs": [],
         "x": 650,
-        "y": 2140,
+        "y": 2180,
         "wires": []
     },
     {
@@ -49043,7 +48675,7 @@
             "fa1495af192e1c1e"
         ],
         "x": 995,
-        "y": 2040,
+        "y": 2080,
         "wires": []
     },
     {
@@ -49059,7 +48691,7 @@
         "finalize": "",
         "libs": [],
         "x": 910,
-        "y": 2040,
+        "y": 2080,
         "wires": [
             [
                 "62ecfb10d045c9aa"
@@ -49080,7 +48712,7 @@
             "32c4b461266d4a6e"
         ],
         "x": 805,
-        "y": 2140,
+        "y": 2180,
         "wires": []
     },
     {
@@ -49089,9 +48721,9 @@
         "z": "d5fea67661261002",
         "g": "86eb49a0b0f702bc",
         "name": "",
-        "group": "ec94eaa0930738be",
-        "order": 13,
-        "width": 4,
+        "group": "fea7672db2f050c9",
+        "order": 16,
+        "width": 2,
         "height": 1,
         "passthru": false,
         "label": "SET",
@@ -49105,7 +48737,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 1070,
-        "y": 2000,
+        "y": 2040,
         "wires": [
             [
                 "83de05bd6c41edda",
@@ -49127,7 +48759,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 330,
-        "y": 2200,
+        "y": 2240,
         "wires": [
             [
                 "9c06f243d9fa02cd"
@@ -49199,7 +48831,7 @@
             "c57a81d1dee5b8a9"
         ],
         "x": 195,
-        "y": 2040,
+        "y": 2080,
         "wires": [
             [
                 "879b071f7e013653"
@@ -49207,12 +48839,69 @@
         ]
     },
     {
+        "id": "063df2a7f6bd3813",
+        "type": "comment",
+        "z": "d5fea67661261002",
+        "name": "Fixes 12-12-2022",
+        "info": "[ToDo] - Fix 5 minutes update (now 30 minutes) for defrost state (WP_dash/settings)  Inject timer issue (settings page).\n\n[NEW] - Bypass Softstart Quietmode during defrost.\n[Obsolete] - Removed 'booster'-code from RTC function. (All rtc levels will get a custom correction in future).\n[Obsolete] - Removed layout from dashboard Hardware configuration (was for testing only)\n[FIX] - Nightreduction room temperature / Current status --> Manual on/off now working again.\n[FIX] - Removed log message (@startup) \"Function - SoftStart Quietmode: OFF (restored to level 0)\". (the restored part)\n[FIX] - Unneeded pumpspeed MQTT command (When enabled at a restart).\n[Moved] - Moved Function reduce pump speed to Settings page.\n[Changed] - Replaced defrost toggle with button. Color of button Red: defrosting!\n[FIX] - RTC Room actual temperature didn't update frequently.\n\n\n\n\n\n\n\n\n",
+        "x": 1230,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "48ebdd7a5339da32",
+        "type": "comment",
+        "z": "d5fea67661261002",
+        "name": "Todo  (open me)",
+        "info": "[4] Sensor/devices on central place (flow).\n\n[5] kWh selectable from Dashboard Hardware (if connected in flow).\n\n[7] fix correct function of shutdown + custom scheduler\n    To Do by EdterBak\n\n\n    \n\nUsers currently using those devices:\n=====================================\nAikon (kWh + 1-wire)\nMikeyMan (kWh + MQTT sensors)\nMaarten69 (kWh + 1-wire)\nEdterbak (kWh)\n\n\n// todo: predict defrost (look at service manual)\n==================================================\nTOP21   Outside_Pipe_Temp   -2  °C\nTOP52   Defrost_Temp    -31 °C\nTOP53   Eva_Outlet_Temp -1  °C\nTOP54   Bypass_Outlet_Temp  -31\n\n\n",
+        "x": 1400,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "1ebb1a2803291fd7",
+        "type": "link in",
+        "z": "d5fea67661261002",
+        "g": "bab76cb8c9631c59",
+        "name": "link in 19",
+        "links": [
+            "6c685782864f1787"
+        ],
+        "x": 115,
+        "y": 1900,
+        "wires": [
+            [
+                "fd2777fee0c73d23"
+            ]
+        ]
+    },
+    {
+        "id": "fd2777fee0c73d23",
+        "type": "function",
+        "z": "d5fea67661261002",
+        "g": "bab76cb8c9631c59",
+        "name": "Button look",
+        "func": "if (msg.payload == 0)\n    {\n        msg.background = null;\n    }\n\n\n\nif (msg.payload == 1) \n    {\n    msg.background = \"Red\";\n    }\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 1900,
+        "wires": [
+            [
+                "399e883e6deac7a3"
+            ]
+        ]
+    },
+    {
         "id": "92e5b2c.00a8b5",
         "type": "mqtt-broker",
         "name": "MQTT (x.x.x.x)",
-        "broker": "x.x.x.x",
+        "broker": "core-mosquitto",
         "port": "1883",
-        "clientid": "Node_Red_Client",
+        "clientid": "",
         "autoConnect": true,
         "usetls": false,
         "compatmode": false,
@@ -49623,17 +49312,6 @@
         "className": ""
     },
     {
-        "id": "4a119e18236415e9",
-        "type": "ui_group",
-        "name": "HW CONFIGURATION",
-        "tab": "593cfab8493b6bad",
-        "order": 5,
-        "disp": true,
-        "width": "25",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "84a756fa9e9244a8",
         "type": "ui_group",
         "name": "HW INFORMATION",
@@ -49652,6 +49330,17 @@
         "order": 1,
         "disp": true,
         "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4a119e18236415e9",
+        "type": "ui_group",
+        "name": "HW CONFIGURATION",
+        "tab": "593cfab8493b6bad",
+        "order": 5,
+        "disp": true,
+        "width": "25",
         "collapse": false,
         "className": ""
     },
