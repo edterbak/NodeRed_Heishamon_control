@@ -2632,7 +2632,6 @@
             "14d2ae6b4af7e45e",
             "4982424c661376ea",
             "23197820b73be2c8",
-            "c996259cd0aecf74",
             "21345852944158b2",
             "4cfdc172228a42bb",
             "4f19cd39ac4c4be0",
@@ -2646,7 +2645,8 @@
             "0609b7d54d31dafb",
             "f38de05b84881512",
             "bd709071acae11c7",
-            "b690e6a46d9553ba"
+            "b690e6a46d9553ba",
+            "6366ce3358b65976"
         ],
         "x": 94,
         "y": 19,
@@ -2666,7 +2666,6 @@
             "de9229159c024a54",
             "5d54922367195a62",
             "0e09d25e4fd17042",
-            "1f5320d7c6b7b567",
             "1d97c2a9ed08db30",
             "9dc0d35330d31725",
             "3478273eb4693d84",
@@ -2685,11 +2684,12 @@
             "b65cef840ae30edb",
             "91fcc102b422de3b",
             "8ae2f173954488ad",
-            "b3cbb0e85ba0fb42"
+            "b3cbb0e85ba0fb42",
+            "1daf8c5944f23d71"
         ],
-        "x": 104,
+        "x": 114,
         "y": 639,
-        "w": 982,
+        "w": 972,
         "h": 562
     },
     {
@@ -2916,7 +2916,7 @@
         ],
         "x": 3034,
         "y": 79,
-        "w": 1782,
+        "w": 1772,
         "h": 602
     },
     {
@@ -3127,7 +3127,7 @@
         ],
         "x": 1154,
         "y": 59,
-        "w": 1702,
+        "w": 1692,
         "h": 1782
     },
     {
@@ -3141,7 +3141,6 @@
         "nodes": [
             "ea3029991749f77b",
             "fa2eba3089ca0ef4",
-            "8fd1613ec2d31e77",
             "3b552bccda090181",
             "8a140f3a3a1ff736",
             "1cbdb190d6f52cb6",
@@ -3170,7 +3169,8 @@
             "ba8181d980146bf5",
             "9d4206dc389ad732",
             "2ec8265263c71358",
-            "2347fd7ebf82b618"
+            "2347fd7ebf82b618",
+            "ffa2e7745e5aed4c"
         ],
         "x": 34,
         "y": 1479,
@@ -3259,9 +3259,9 @@
             "8da7c93f059466f2",
             "8d9c639aa58c9a3e"
         ],
-        "x": 1178,
+        "x": 1188,
         "y": 1899,
-        "w": 1388,
+        "w": 1378,
         "h": 562
     },
     {
@@ -3329,9 +3329,9 @@
             "aa33ae9640c6a434",
             "db206585adea91d8"
         ],
-        "x": 4064,
+        "x": 4074,
         "y": 439,
-        "w": 472,
+        "w": 462,
         "h": 202
     },
     {
@@ -3435,9 +3435,9 @@
             "5e4c3c30025c30ee",
             "49edcd3fcf15db5c"
         ],
-        "x": 1204,
+        "x": 1214,
         "y": 2079,
-        "w": 1162,
+        "w": 1152,
         "h": 82
     },
     {
@@ -3526,30 +3526,6 @@
         "x": 910,
         "y": 860,
         "wires": []
-    },
-    {
-        "id": "1f5320d7c6b7b567",
-        "type": "mqtt in",
-        "z": "8c9d42231fd19d3c",
-        "g": "5ab5ca67951ca4de",
-        "name": "TOP8 - panasonic_heat_pump/main/Compressor_Freq",
-        "topic": "panasonic_heat_pump/main/Compressor_Freq",
-        "qos": "0",
-        "datatype": "auto-detect",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 340,
-        "y": 920,
-        "wires": [
-            [
-                "de9229159c024a54",
-                "91fcc102b422de3b",
-                "17c5ba9bb0b58a11"
-            ]
-        ]
     },
     {
         "id": "1d97c2a9ed08db30",
@@ -3888,28 +3864,6 @@
         "wires": [
             [
                 "7386864c75dbce5c"
-            ]
-        ]
-    },
-    {
-        "id": "c996259cd0aecf74",
-        "type": "mqtt in",
-        "z": "8c9d42231fd19d3c",
-        "g": "7c41aa629fb3859e",
-        "name": "TOP70 - panasonic_heat_pump/main/Sterilization_Temp",
-        "topic": "panasonic_heat_pump/main/Sterilization_Temp",
-        "qos": "0",
-        "datatype": "auto-detect",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 350,
-        "y": 300,
-        "wires": [
-            [
-                "23197820b73be2c8"
             ]
         ]
     },
@@ -5994,8 +5948,8 @@
             "0380b395668eee8e",
             "7bd79e0421697e75"
         ],
-        "x": 3315,
-        "y": 280,
+        "x": 3365,
+        "y": 200,
         "wires": [
             [
                 "0c8eb8257035ca5f",
@@ -6180,7 +6134,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3476743a7b29da0d",
         "name": "Load on boot WAR",
-        "func": "var SP_DIRECT_virt          = global.get('SP_DIRECT_virt',\"file\");\n    if (SP_DIRECT_virt === undefined)        {global.set('SP_DIRECT_virt',20,\"file\"); SP_DIRECT_virt=20;}\n    \nvar Correction_0_WAR_on_off = global.get('Correction_0_WAR_on_off',\"file\");\n    if (Correction_0_WAR_on_off === undefined)        {global.set('Correction_0_WAR_on_off',0,\"file\"); Correction_0_WAR_on_off=0;}\n\nvar war_ot1                 = global.get('war_ot1',\"file\");                             // Outside temperature high         (warm outside)\nvar war_ot2                 = global.get('war_ot2',\"file\");                             // Outside temperature intermediate (intermediate outside temperature)\nvar war_ot3                 = global.get('war_ot3',\"file\");                             // Outside temperature low          (cold outside)\nvar war_wt1                 = global.get('war_wt1',\"file\");                             // Water temperature low            (cold water)\nvar war_wt2                 = global.get('war_wt2',\"file\");                             // Water temperature intermediate   (intermediate water temperature)\nvar war_wt3                 = global.get('war_wt3',\"file\");                             // Water temperature high           (warm water)\n\n\n\nvar check = (war_ot1+war_ot2+war_ot3+war_wt1+war_wt2+war_wt3);\nif (isNaN(check) || check === undefined)     // if the variables are added to eachother and the result is Not a Number, produce an error message.\n    {   \n        return null;\n    }\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={};\n\n\nmsg1.payload = SP_DIRECT_virt;\nif (SP_DIRECT_virt === undefined) {msg1=null;}\n\nmsg2.payload = Correction_0_WAR_on_off;\nif (Correction_0_WAR_on_off === undefined) {msg2=null;}\n\nmsg3.payload = war_ot1;\nif (war_ot1 === undefined) {msg3=null;}\n\nmsg4.payload = war_ot2;\nif (war_ot2 === undefined) {msg4=null;}\n\nmsg5.payload = war_ot3;\nif (war_ot3 === undefined) {msg5=null;}\n\nmsg6.payload = war_wt1;\nif (war_wt1 === undefined) {msg6=null;}\n\nmsg7.payload = war_wt2;\nif (war_wt2 === undefined) {msg7=null;}\n\nmsg8.payload = war_wt3;\nif (war_wt3 === undefined) {msg8=null;}\n\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8];\n\n",
+        "func": "var SP_DIRECT_virt          = global.get('SP_DIRECT_virt',\"file\");\n    if (SP_DIRECT_virt === undefined)        {global.set('SP_DIRECT_virt',20,\"file\"); SP_DIRECT_virt=20;}\n    \nvar Correction_0_WAR_on_off = global.get('Correction_0_WAR_on_off',\"file\");\n    if (Correction_0_WAR_on_off === undefined)        {global.set('Correction_0_WAR_on_off',0,\"file\"); Correction_0_WAR_on_off=0;}\n\nvar war_ot1                 = global.get('war_ot1',\"file\");                             // Outside temperature high         (warm outside)\nvar war_ot2                 = global.get('war_ot2',\"file\");                             // Outside temperature intermediate (intermediate outside temperature)\nvar war_ot3                 = global.get('war_ot3',\"file\");                             // Outside temperature low          (cold outside)\nvar war_wt1                 = global.get('war_wt1',\"file\");                             // Water temperature low            (cold water)\nvar war_wt2                 = global.get('war_wt2',\"file\");                             // Water temperature intermediate   (intermediate water temperature)\nvar war_wt3                 = global.get('war_wt3',\"file\");                             // Water temperature high           (warm water)\n\n\n\nvar check = (war_ot1+war_ot2+war_ot3+war_wt1+war_wt2+war_wt3);\nif (isNaN(check) === true || check === undefined)     // if the variables are added to eachother and the result is Not a Number, produce an error message.\n    {   \n        return null;\n    }\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={};\n\n\nmsg1.payload = SP_DIRECT_virt;\nif (SP_DIRECT_virt === undefined) {msg1=null;}\n\nmsg2.payload = Correction_0_WAR_on_off;\nif (Correction_0_WAR_on_off === undefined) {msg2=null;}\n\nmsg3.payload = war_ot1;\nif (war_ot1 === undefined) {msg3=null;}\n\nmsg4.payload = war_ot2;\nif (war_ot2 === undefined) {msg4=null;}\n\nmsg5.payload = war_ot3;\nif (war_ot3 === undefined) {msg5=null;}\n\nmsg6.payload = war_wt1;\nif (war_wt1 === undefined) {msg6=null;}\n\nmsg7.payload = war_wt2;\nif (war_wt2 === undefined) {msg7=null;}\n\nmsg8.payload = war_wt3;\nif (war_wt3 === undefined) {msg8=null;}\n\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8];\n\n",
         "outputs": 8,
         "noerr": 0,
         "initialize": "",
@@ -6241,7 +6195,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "180",
+        "repeat": "300",
         "crontab": "",
         "once": true,
         "onceDelay": "5",
@@ -7425,7 +7379,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "",
-        "func": "rbe",
+        "func": "rbei",
         "gap": "",
         "start": "",
         "inout": "out",
@@ -8874,8 +8828,8 @@
         "format": "",
         "layout": "row-right",
         "className": "",
-        "x": 4210,
-        "y": 280,
+        "x": 4270,
+        "y": 320,
         "wires": []
     },
     {
@@ -9306,28 +9260,6 @@
         "wires": [
             [
                 "ba8181d980146bf5"
-            ]
-        ]
-    },
-    {
-        "id": "8fd1613ec2d31e77",
-        "type": "mqtt in",
-        "z": "8c9d42231fd19d3c",
-        "g": "f9448182b177e40e",
-        "name": "TOP26 - panasonic_heat_pump/main/Defrosting_State",
-        "topic": "panasonic_heat_pump/main/Defrosting_State",
-        "qos": "0",
-        "datatype": "auto-detect",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 320,
-        "y": 1880,
-        "wires": [
-            [
-                "6d77bc12fe8024ee"
             ]
         ]
     },
@@ -10437,7 +10369,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "f1a34e3fea473398",
         "name": "Function - bucket 1 + 2 combined",
-        "func": "var dhw = global.get(\"COP_DHW_24m\",\"file\");\nvar heat = global.get(\"COP_HEAT_24m\",\"file\"); \nlet msg1={}, msg2={};\n\n\nif (dhw === undefined || heat === undefined)                          // check if all is valid.\n    {\n        return null;\n    }\n\nelse\n    {\n        \n        var exit = false;\n        \n        msg1 = dhw;\n        msg2 = heat;\n        \n        var varlabels   = msg2.payload[0].labels;\n        var varData1    = msg1.payload[0].data[0];\n        if (varData1 === undefined)     {exit = true;}\n        var varData2    = msg2.payload[0].data[0];\n        if (varData2 === undefined)     {exit = true;}\n        \n        var varSeries1     = msg1.payload[0].series[0];\n        var varSeries2     = msg2.payload[0].series[0];\n        \n        var m={};\n            m.labels    = varlabels;\n            m.series    = [varSeries1, varSeries2];\n            m.data      = [varData1, varData2];\n        \n        \n        if (exit == false) \n            {\n                return {payload:[m]};\n            }\n        \n        else\n            {\n                return null;\n            }\n    }\n",
+        "func": "var dhw     = global.get(\"COP_DHW_24m\",\"file\");\nvar heat    = global.get(\"COP_HEAT_24m\",\"file\"); \nlet msg1={}, msg2={};\n\nmsg1 = dhw;\nmsg2 = heat;\n\nvar varlabels;\nif (heat === undefined){varlabels = msg1.payload[0].labels;}else{varlabels = msg2.payload[0].labels;}\n\nvar varData1;// dhw\nif (dhw === undefined){varData1 = [0,0,0,0,0,0,0,0,0,0,0,0];}else{varData1 = msg1.payload[0].data[0];}\n\nvar varData2;// heat\nif (heat === undefined){varData2 = [0,0,0,0,0,0,0,0,0,0,0,0];}else{varData2 = msg2.payload[0].data[0];}\n\nvar varSeries1     = \"DHW\"; // dhw\nvar varSeries2     = \"HEAT\"; // heat\n\nvar m={};\n    m.labels    = varlabels;\n    m.series    = [varSeries1, varSeries2];\n    m.data      = [varData1, varData2];\n\n\nreturn {payload:[m]};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -10471,7 +10403,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "f1a34e3fea473398",
         "name": "Load bar-chart data",
-        "func": "var heat = global.get(\"COP_HEAT_24m\",\"file\");\nvar dhw = global.get(\"COP_DHW_24m\",\"file\");\n\n//var dhw = {\"payload\":[{\"labels\":[\"2022-01\",\"2022-02\",\"2022-03\",\"2022-04\",\"2022-05\",\"2022-06\",\"2022-07\",\"2022-08\",\"2022-09\",\"2022-10\",\"2022-11\",\"2022-12\"],\"series\":[\"DHW\"],\"data\":[[0,0,0,0,3.84,3.05,1.13,3.65,3.68,3.89,3.29,2.99]]}],\"topic\":\"DHW\",\"_msgid\":\"141c7bebe0820930\",\"_event\":\"node:5787c91b303f2538\",\"bar_keys\":[\"202201\",\"202202\",\"202203\",\"202204\",\"202205\",\"202206\",\"202207\",\"202208\",\"202209\",\"202210\",\"202211\",\"202212\"],\"data_counter\":[{\"202212\":2893}],\"topics\":[\"DHW\"],\"DHW_last\":0,\"data_min\":0,\"data_max\":3.89,\"data_sum\":23.11,\"settings\":{\"unit\":\"\",\"x_size\":\"12\",\"precision\":2,\"is_meter_reading\":false,\"agg_by\":\"avg\"}};\n\n\nmsg1 = heat;\nmsg2 = dhw;\n\nif (heat === undefined)     {\n    \n    if (dhw === undefined)  {\n        return [null,null];\n    }\n\n    return [null,msg2];\n}\n\nelse    {\n    if (dhw === undefined)  {\n        return [msg1,null];\n    }\n    \n    return [msg1,msg2];\n}",
+        "func": "var heat = global.get(\"COP_HEAT_24m\",\"file\");\nvar dhw = global.get(\"COP_DHW_24m\",\"file\");\n\n// note: if you need to correct the COP monthly chart because it does not show values. Copy/paste the content of \"COP_DHW_24m\" or \"COP_HEAT_24m\" in the lines below. Line 8 or 9. \n// Uncomment the corresponding line 8 or 9. \n// adjust the incorrect value and press [Done] > [Deploy] > [Restore after boot]\n\n//dhw = {\"payload\":[{\"labels\":[\"2022-01\",\"2022-02\",\"2022-03\",\"2022-04\",\"2022-05\",\"2022-06\",\"2022-07\",\"2022-08\",\"2022-09\",\"2022-10\",\"2022-11\",\"2022-12\"],\"series\":[\"DHW\"],\"data\":[[0,0,0,0,3.84,3.05,1.13,3.65,3.68,3.89,3.29,2.79]]}],\"topic\":\"DHW\",\"_msgid\":\"46ca0b6da9dae345\",\"_event\":\"node:5787c91b303f2538\",\"bar_keys\":[\"202201\",\"202202\",\"202203\",\"202204\",\"202205\",\"202206\",\"202207\",\"202208\",\"202209\",\"202210\",\"202211\",\"202212\"],\"data_counter\":[{\"202212\":4814}],\"topics\":[\"DHW\"],\"DHW_last\":0,\"data_min\":0,\"data_max\":3.89,\"data_sum\":25.32,\"settings\":{\"unit\":\"\",\"x_size\":\"12\",\"precision\":2,\"is_meter_reading\":false,\"agg_by\":\"avg\"}};\n//heat = {\"payload\":[{\"labels\":[\"2022-01\",\"2022-02\",\"2022-03\",\"2022-04\",\"2022-05\",\"2022-06\",\"2022-07\",\"2022-08\",\"2022-09\",\"2022-10\",\"2022-11\",\"2022-12\"],\"series\":[\"HEAT\"],\"data\":[[0,0,0,0,4.86,6.01,0.64,0,6.57,7.43,6.32,4.96]]}],\"topic\":\"HEAT\",\"_msgid\":\"a3d2b37df2f169e3\",\"_event\":\"node:306b69356454f3ff\",\"bar_keys\":[\"202201\",\"202202\",\"202203\",\"202204\",\"202205\",\"202206\",\"202207\",\"202208\",\"202209\",\"202210\",\"202211\",\"202212\"],\"data_counter\":[{\"202212\":85520}],\"topics\":[\"HEAT\"],\"HEAT_last\":0,\"data_min\":0,\"data_max\":7.43,\"data_sum\":36.79,\"settings\":{\"unit\":\"\",\"x_size\":\"12\",\"precision\":\"2\",\"is_meter_reading\":false,\"agg_by\":\"avg\"}}\n\nmsg1 = heat;\nmsg2 = dhw;\n\n\n\nif (heat === undefined)     {\n    if (dhw === undefined)  {\n        return [null,null];\n    }\n    \n    return [null,msg2];\n}\n\nelse    {\n    if (dhw === undefined)  {\n        return [msg1,null];\n    }\n    \n    return [msg1,msg2];\n}",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -10557,7 +10489,7 @@
         "type": "ui_chart",
         "z": "8c9d42231fd19d3c",
         "g": "2c380c0bbcfb5eb1",
-        "name": "COP DHW + COP HEAT (24m)",
+        "name": "COP DHW + COP HEAT (12m)",
         "group": "fb77ab43998a2f18",
         "order": 6,
         "width": 26,
@@ -10898,7 +10830,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "",
-        "func": "rbe",
+        "func": "rbei",
         "gap": "",
         "start": "",
         "inout": "out",
@@ -13122,8 +13054,8 @@
         "g": "3476743a7b29da0d",
         "name": "trigger Loaded WAR profile from panasonic",
         "links": [
-            "b46cfcf8ce6d8f91",
-            "93404b62f7fb0fb2"
+            "93404b62f7fb0fb2",
+            "b46cfcf8ce6d8f91"
         ],
         "x": 3135,
         "y": 520,
@@ -13951,7 +13883,8 @@
         "g": "b1f2db1845798273",
         "name": "Link in from HA - Room Setpoint",
         "links": [
-            "7a27b2c8c4721ed9"
+            "7a27b2c8c4721ed9",
+            "fdb278d1edd0e5c5"
         ],
         "x": 3125,
         "y": 1180,
@@ -13969,7 +13902,8 @@
         "name": "Link out to HA - Room Setpoint",
         "mode": "link",
         "links": [
-            "476043129c88de94"
+            "476043129c88de94",
+            "b9baff17524ab299"
         ],
         "x": 3125,
         "y": 1140,
@@ -16576,7 +16510,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "21.26 beta (experimental)",
+        "payload": "21.27 beta (experimental)",
         "payloadType": "str",
         "x": 1350,
         "y": 1960,
@@ -16944,29 +16878,6 @@
         ]
     },
     {
-        "id": "b8a35a7b93a9b60b",
-        "type": "inject",
-        "z": "8c9d42231fd19d3c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"payload\":[{\"labels\":[\"2022-01\",\"2022-02\",\"2022-03\",\"2022-04\",\"2022-05\",\"2022-06\",\"2022-07\",\"2022-08\",\"2022-09\",\"2022-10\",\"2022-11\",\"2022-12\"],\"series\":[\"DHW\"],\"data\":[[0,0,0,0,3.84,3.05,1.13,3.65,3.68,3.89,3.29,2.99]]}],\"topic\":\"DHW\",\"_msgid\":\"141c7bebe0820930\",\"_event\":\"node:5787c91b303f2538\",\"bar_keys\":[\"202201\",\"202202\",\"202203\",\"202204\",\"202205\",\"202206\",\"202207\",\"202208\",\"202209\",\"202210\",\"202211\",\"202212\"],\"data_counter\":[{\"202212\":2893}],\"topics\":[\"DHW\"],\"DHW_last\":0,\"data_min\":0,\"data_max\":3.89,\"data_sum\":23.11,\"settings\":{\"unit\":\"\",\"x_size\":\"12\",\"precision\":2,\"is_meter_reading\":false,\"agg_by\":\"avg\"}}",
-        "payloadType": "str",
-        "x": 450,
-        "y": 3280,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "8ae2f173954488ad",
         "type": "function",
         "z": "8c9d42231fd19d3c",
@@ -17003,6 +16914,79 @@
         "wires": [
             [
                 "9faace07ea16ba4d"
+            ]
+        ]
+    },
+    {
+        "id": "7bc7d135b252025b",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "d": true,
+        "name": "Function - bucket 1 + 2 combined",
+        "func": "// Backup version. Last working version\n\n\nvar dhw = global.get(\"COP_DHW_24m\",\"file\");\nvar heat = global.get(\"COP_HEAT_24m\",\"file\"); \nlet msg1={}, msg2={};\n\n\nif (dhw === undefined || heat === undefined)                          // check if all is valid.\n    {\n        return null;\n    }\n\nelse\n    {\n        \n        var exit = false;\n        \n        msg1 = dhw;\n        msg2 = heat;\n        \n        var varlabels   = msg2.payload[0].labels;\n        var varData1    = msg1.payload[0].data[0];\n        if (varData1 === undefined)     {exit = true;}\n        var varData2    = msg2.payload[0].data[0];\n        if (varData2 === undefined)     {exit = true;}\n        \n        var varSeries1     = msg1.payload[0].series[0];\n        var varSeries2     = msg2.payload[0].series[0];\n        \n        var m={};\n            m.labels    = varlabels;\n            m.series    = [varSeries1, varSeries2];\n            m.data      = [varData1, varData2];\n        \n        \n        if (exit == false) \n            {\n                return {payload:[m]};\n            }\n        \n        else\n            {\n                return null;\n            }\n    }\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 3180,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "graaddagen_calc"
+        ]
+    },
+    {
+        "id": "1daf8c5944f23d71",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "g": "5ab5ca67951ca4de",
+        "name": "link in 12",
+        "links": [
+            "c57a81d1dee5b8a9"
+        ],
+        "x": 515,
+        "y": 920,
+        "wires": [
+            [
+                "17c5ba9bb0b58a11",
+                "91fcc102b422de3b"
+            ]
+        ]
+    },
+    {
+        "id": "6366ce3358b65976",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "g": "7c41aa629fb3859e",
+        "name": "link in 13",
+        "links": [
+            "7ce3c0d525800846"
+        ],
+        "x": 155,
+        "y": 300,
+        "wires": [
+            [
+                "23197820b73be2c8"
+            ]
+        ]
+    },
+    {
+        "id": "ffa2e7745e5aed4c",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "g": "f9448182b177e40e",
+        "name": "link in 14",
+        "links": [
+            "6c685782864f1787"
+        ],
+        "x": 235,
+        "y": 1880,
+        "wires": [
+            [
+                "6d77bc12fe8024ee"
             ]
         ]
     },
@@ -17092,12 +17076,11 @@
             "aea8ceb9687abadf",
             "9e366042611cd253",
             "10068b1def52810f",
-            "241b2a8a8945563f",
-            "8f31aa3aa84f4202"
+            "241b2a8a8945563f"
         ],
-        "x": 84,
+        "x": 94,
         "y": 1739,
-        "w": 1452,
+        "w": 1442,
         "h": 1342
     },
     {
@@ -17132,9 +17115,9 @@
             "a8d51c8773f8f17f",
             "2caf61fe8673aedb"
         ],
-        "x": 104,
+        "x": 114,
         "y": 59,
-        "w": 1572,
+        "w": 1562,
         "h": 422
     },
     {
@@ -17209,11 +17192,12 @@
             "bf5c0eefd9f68f35",
             "d90d8243969aecef",
             "8f0e209ac14bdb9a",
-            "0b10bc17b24896b7"
+            "0b10bc17b24896b7",
+            "6c685782864f1787"
         ],
-        "x": 84,
+        "x": 114,
         "y": 3119,
-        "w": 1172,
+        "w": 1162,
         "h": 982
     },
     {
@@ -17319,9 +17303,9 @@
             "6b2644c3a510f50f",
             "b43820fd5a21f4e7"
         ],
-        "x": 2338,
+        "x": 2348,
         "y": 53,
-        "w": 1968,
+        "w": 1958,
         "h": 888
     },
     {
@@ -17351,9 +17335,9 @@
             "c0a54684ef46f711",
             "07bfc2f9f00870d7"
         ],
-        "x": 64,
+        "x": 74,
         "y": 4559,
-        "w": 1132,
+        "w": 1122,
         "h": 302
     },
     {
@@ -17440,15 +17424,16 @@
             "0eae7353f71aad0c",
             "bba46d589404d925",
             "893c7ca52013a7c7",
-            "76b66e7888fbeb08",
-            "b00981cea5e9bdf1",
             "a03c7589a8b95ce2",
-            "113e5b7fd58b2281",
             "41510757b9c4f394",
-            "885563a7a0aca258",
-            "8e66f534027305a9",
             "2f5e3d38d1cdd9b2",
-            "cf39aea60b622a67"
+            "cf39aea60b622a67",
+            "823ef896afa239af",
+            "7fafbc0171abf5e3",
+            "dc59e4105ac39717",
+            "1bf606367c4ff65f",
+            "e81634fb88703859",
+            "5e9da82d3dfe26da"
         ],
         "x": 144,
         "y": 539,
@@ -17472,9 +17457,9 @@
             "030fbd5026e5a295",
             "7122d217051222ff"
         ],
-        "x": 2364,
+        "x": 2374,
         "y": 79,
-        "w": 1182,
+        "w": 1172,
         "h": 162
     },
     {
@@ -17496,8 +17481,7 @@
         "wires": [
             [
                 "241b2a8a8945563f",
-                "a0d8b4706f8d61b1",
-                "8f31aa3aa84f4202"
+                "a0d8b4706f8d61b1"
             ]
         ]
     },
@@ -17850,9 +17834,7 @@
         "x": 1240,
         "y": 2060,
         "wires": [
-            [
-                "4ff74e2b48b1d597"
-            ]
+            []
         ]
     },
     {
@@ -18114,7 +18096,8 @@
         "g": "0077cf76d14c5757",
         "name": "Sterilization_Temp",
         "links": [
-            "5eef2d3a1816ae18"
+            "5eef2d3a1816ae18",
+            "6366ce3358b65976"
         ],
         "x": 1495,
         "y": 2480,
@@ -18460,14 +18443,14 @@
         "type": "link out",
         "z": "a938de76db0b71f6",
         "g": "0077cf76d14c5757",
-        "name": "compressor_frequency",
+        "name": "TOP8 - panasonic_heat_pump/main/Compressor_Freq",
+        "mode": "link",
         "links": [
-            "5eef2d3a1816ae18",
-            "96ebe58652c06e4e",
-            "87c545af2ed49c31",
-            "6672c414d234331c",
             "126583bf986bb2c7",
-            "f3ab44f6bb3c013a"
+            "1daf8c5944f23d71",
+            "f3ab44f6bb3c013a",
+            "32c013973096ab65",
+            "73a3b137b4661912"
         ],
         "x": 1495,
         "y": 2780,
@@ -18721,7 +18704,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 3220,
         "wires": [
             [
@@ -18741,7 +18724,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1070,
+        "x": 1090,
         "y": 3220,
         "wires": [
             []
@@ -18754,7 +18737,7 @@
         "g": "cd2050a861736ec5",
         "name": "",
         "links": [],
-        "x": 595,
+        "x": 615,
         "y": 3200,
         "wires": [
             [
@@ -18775,7 +18758,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 3280,
         "wires": [
             [
@@ -18795,7 +18778,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1050,
+        "x": 1070,
         "y": 3280,
         "wires": [
             []
@@ -18814,7 +18797,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 3340,
         "wires": [
             [
@@ -18834,7 +18817,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1050,
+        "x": 1070,
         "y": 3340,
         "wires": [
             []
@@ -18849,7 +18832,7 @@
         "links": [
             "bdb7e8e0217cec66"
         ],
-        "x": 595,
+        "x": 615,
         "y": 3260,
         "wires": [
             [
@@ -18866,7 +18849,7 @@
         "links": [
             "979c5ca99c054740"
         ],
-        "x": 595,
+        "x": 615,
         "y": 3320,
         "wires": [
             [
@@ -18887,7 +18870,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 3400,
         "wires": [
             [
@@ -18907,7 +18890,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1040,
+        "x": 1060,
         "y": 3400,
         "wires": [
             []
@@ -18922,7 +18905,7 @@
         "links": [
             "092a9db0d9b923b3"
         ],
-        "x": 135,
+        "x": 155,
         "y": 3400,
         "wires": [
             [
@@ -18943,7 +18926,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 3460,
         "wires": [
             [
@@ -18963,10 +18946,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1040,
+        "x": 1060,
         "y": 3460,
         "wires": [
-            []
+            [
+                "6c685782864f1787"
+            ]
         ]
     },
     {
@@ -18978,7 +18963,7 @@
         "links": [
             "5e3a9447502864ad"
         ],
-        "x": 595,
+        "x": 615,
         "y": 3440,
         "wires": [
             [
@@ -18999,7 +18984,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 3520,
         "wires": [
             [
@@ -19019,7 +19004,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1030,
+        "x": 1050,
         "y": 3520,
         "wires": [
             []
@@ -19038,7 +19023,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 3580,
         "wires": [
             [
@@ -19058,7 +19043,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1050,
+        "x": 1070,
         "y": 3580,
         "wires": [
             []
@@ -19077,7 +19062,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 3700,
         "wires": [
             [
@@ -19098,7 +19083,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1050,
+        "x": 1070,
         "y": 3700,
         "wires": [
             []
@@ -19117,7 +19102,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 3760,
         "wires": [
             [
@@ -19137,7 +19122,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1050,
+        "x": 1070,
         "y": 3760,
         "wires": [
             []
@@ -19152,7 +19137,7 @@
         "links": [
             "2ed9d626c929fb95"
         ],
-        "x": 595,
+        "x": 615,
         "y": 3500,
         "wires": [
             [
@@ -19169,7 +19154,7 @@
         "links": [
             "9b2a45a90495e067"
         ],
-        "x": 595,
+        "x": 615,
         "y": 3560,
         "wires": [
             [
@@ -19186,7 +19171,7 @@
         "links": [
             "7139256ff024b872"
         ],
-        "x": 595,
+        "x": 615,
         "y": 3680,
         "wires": [
             [
@@ -19203,7 +19188,7 @@
         "links": [
             "c803b9ad018fe78e"
         ],
-        "x": 595,
+        "x": 615,
         "y": 3740,
         "wires": [
             [
@@ -19224,7 +19209,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 3820,
         "wires": [
             [
@@ -19244,7 +19229,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1060,
+        "x": 1080,
         "y": 3820,
         "wires": [
             []
@@ -19263,7 +19248,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 3880,
         "wires": [
             [
@@ -19283,7 +19268,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1060,
+        "x": 1080,
         "y": 3880,
         "wires": [
             []
@@ -19302,7 +19287,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 3940,
         "wires": [
             [
@@ -19322,7 +19307,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1060,
+        "x": 1080,
         "y": 3940,
         "wires": [
             []
@@ -19341,7 +19326,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 4000,
         "wires": [
             [
@@ -19361,7 +19346,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1080,
+        "x": 1100,
         "y": 4000,
         "wires": [
             []
@@ -19376,7 +19361,7 @@
         "links": [
             "4021cdadbdc7768d"
         ],
-        "x": 595,
+        "x": 615,
         "y": 3800,
         "wires": [
             [
@@ -19393,7 +19378,7 @@
         "links": [
             "78816343589b199a"
         ],
-        "x": 595,
+        "x": 615,
         "y": 3860,
         "wires": [
             [
@@ -19410,7 +19395,7 @@
         "links": [
             "a2d7de4325e4bf91"
         ],
-        "x": 595,
+        "x": 615,
         "y": 3920,
         "wires": [
             [
@@ -19427,7 +19412,7 @@
         "links": [
             "089ba42c8f7f7a61"
         ],
-        "x": 595,
+        "x": 615,
         "y": 3980,
         "wires": [
             [
@@ -19442,7 +19427,7 @@
         "g": "cd2050a861736ec5",
         "name": "Put settings from GUI - DASH into variables",
         "info": "",
-        "x": 390,
+        "x": 410,
         "y": 3160,
         "wires": []
     },
@@ -19476,7 +19461,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1070,
+        "x": 1090,
         "y": 4060,
         "wires": [
             []
@@ -19495,7 +19480,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 4060,
         "wires": [
             [
@@ -19512,7 +19497,7 @@
         "links": [
             "0a683587ca4fc25c"
         ],
-        "x": 135,
+        "x": 155,
         "y": 4060,
         "wires": [
             [
@@ -19604,7 +19589,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 330,
+        "x": 350,
         "y": 3940,
         "wires": [
             [
@@ -19626,7 +19611,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 330,
+        "x": 350,
         "y": 3880,
         "wires": [
             [
@@ -19648,7 +19633,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 330,
+        "x": 350,
         "y": 3820,
         "wires": [
             [
@@ -19670,7 +19655,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 320,
+        "x": 340,
         "y": 3760,
         "wires": [
             [
@@ -19692,7 +19677,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 300,
+        "x": 320,
         "y": 3580,
         "wires": [
             [
@@ -19714,7 +19699,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 300,
+        "x": 320,
         "y": 3700,
         "wires": [
             [
@@ -19736,7 +19721,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 340,
+        "x": 360,
         "y": 3340,
         "wires": [
             [
@@ -19758,7 +19743,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 330,
+        "x": 350,
         "y": 3280,
         "wires": [
             [
@@ -19802,7 +19787,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 340,
+        "x": 360,
         "y": 4000,
         "wires": [
             [
@@ -19824,7 +19809,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 310,
+        "x": 330,
         "y": 3520,
         "wires": [
             [
@@ -19846,7 +19831,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 320,
+        "x": 340,
         "y": 3460,
         "wires": [
             [
@@ -21107,7 +21092,7 @@
         "links": [
             "25041e53f134e3fb"
         ],
-        "x": 1215,
+        "x": 1235,
         "y": 3660,
         "wires": []
     },
@@ -21129,7 +21114,7 @@
         "drop": true,
         "allowrate": false,
         "outputs": 1,
-        "x": 1040,
+        "x": 1060,
         "y": 3660,
         "wires": [
             [
@@ -21374,7 +21359,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 320,
+        "x": 340,
         "y": 3220,
         "wires": [
             [
@@ -21393,7 +21378,7 @@
         "links": [
             "32c4b461266d4a6e"
         ],
-        "x": 975,
+        "x": 995,
         "y": 3180,
         "wires": []
     },
@@ -21410,7 +21395,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
+        "x": 790,
         "y": 3180,
         "wires": [
             [
@@ -22437,71 +22422,6 @@
         ]
     },
     {
-        "id": "8f31aa3aa84f4202",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "0077cf76d14c5757",
-        "name": "debug 85",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 780,
-        "y": 1840,
-        "wires": []
-    },
-    {
-        "id": "3429db7d4232888b",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "name": "debug 88",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2360,
-        "y": 1040,
-        "wires": []
-    },
-    {
-        "id": "825929166da2807d",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "name": "debug 90",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1880,
-        "y": 1560,
-        "wires": []
-    },
-    {
-        "id": "62618b223d5b8e78",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "name": "debug 92",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 840,
-        "y": 1580,
-        "wires": []
-    },
-    {
         "id": "d593fd3f7b87de1c",
         "type": "complete",
         "z": "a938de76db0b71f6",
@@ -22704,7 +22624,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Calculate new SP",
-        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n*/\n//*****************************************************************************\nlet msg1={};        // pin 1 - SP_Final\nlet msg99={};       // pin 2 - To Log\nlet msg2={};        // pin 3 - SHIFT_Final\n// return [msg1,msg99,msg2]\n\nmsg99.topic = \"Function - Calculate new SP\";        // ToLog\n\n\nvar SP_Final            =global.get('SP_DIRECT_virt',\"file\");                   //\n\nvar F_WAR_onoff         =global.get('Correction_0_WAR_on_off',\"file\");          //\n    if (F_WAR_onoff === undefined) {F_WAR_onoff = 0;}\n    \nvar F_WAR_SP            =global.get('F_WAR_SP');                                //\n\nvar F_RTC_state         =global.get('Correction_1_RTC_on_off',\"file\");          //\n        if (F_RTC_state === undefined) {F_RTC_state=0;}\n        \nvar F_RTC_correction    =global.get('F_RTC_correction');                        //\n\nvar F_SS_state          =global.get('Correction_2_softstart_on_off',\"file\");    //\n        if (F_SS_state === undefined) {F_SS_state=0;}\n        \nvar F_SS_correction     =global.get('F_SS_correction');                         //\n\nvar F_NR_state          =global.get('nightreduction_on_off',\"file\");            //\n        if (F_NR_state === undefined) {F_NR_state=0;}\n        \nvar F_NR_correction     =global.get('F_NR_correction');                         //\n\nvar current_sp          =global.get('Main_Target_Temp');                        //\n\nvar Heating_Mode        =global.get('Heating_Mode',\"file\");\n\nvar Operating_Mode      =global.get('Operating_Mode_State',\"file\")              //\n\nvar HEAT_SP_lower_limit =global.get('HEAT_SP_lower_limit',\"file\")               //\n    if (HEAT_SP_lower_limit === undefined)  {HEAT_SP_lower_limit = 20;}\n    \nvar HEAT_SP_upper_limit =global.get('HEAT_SP_upper_limit',\"file\")               //\n    if (HEAT_SP_upper_limit === undefined)  {HEAT_SP_upper_limit = 100;}\n\n\n//*****************************************************************************\nif (SP_Final === undefined || current_sp === undefined || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                         // check if all variables are present befor checking\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    {\n        return null;\n    }\n//*****************************************************************************\n//*****************************************************************************\n\nif (current_sp == 0 || Heating_Mode == 0)\n    {\n\n        var SHIFT_Final_old = global.get('SHIFT_Final',\"file\");\n            if (SHIFT_Final_old === undefined) {SHIFT_Final_old=0;}\n        \n        if (F_RTC_state == 0)   {F_RTC_correction = 0;}\n        if (F_SS_state == 0)    {F_SS_correction = 0;}\n        if (F_NR_state == 0)    {F_NR_correction = 0;}\n        \n        var SHIFT_Final = F_RTC_correction + F_SS_correction + F_NR_correction;\n        \n        msg2.payload = SHIFT_Final;\n        msg2.topic = \"Shift\";\n        \n        if (msg2.payload < -5)  {msg2.payload = -5;}\n        if (msg2.payload > 5)   {msg2.payload = 5;}\n        \n        \n//        if (SHIFT_Final_old != SHIFT_Final)\n//            {\n//                global.set('SHIFT_Final',msg2.payload,\"file\");\n//            }\n        msg99.payload   = \"New final T shift calculated: Current T shift: \" + SHIFT_Final_old + \" °C. New calculated T shift:  \" + msg2.payload + \" °C\";\n        \n        return [null,msg99,msg2]\n        //return [SP,toLog,shift]\n    }\n//*****************************************************************************\n//*****************************************************************************\nif (current_sp >= 20 && Heating_Mode == 1)\n    {\n        if (F_WAR_onoff==1)                 {SP_Final   =F_WAR_SP;}\n        if (F_RTC_state==1)                 {SP_Final   =SP_Final   + F_RTC_correction;}\n        if (F_NR_state==1)                  {SP_Final   =SP_Final   + F_NR_correction;}\n        if (F_SS_state==1)                  {SP_Final   =SP_Final   + F_SS_correction;}\n        if (SP_Final<HEAT_SP_lower_limit)   {SP_Final   =HEAT_SP_lower_limit}\n        if (SP_Final>HEAT_SP_upper_limit)   {SP_Final   =HEAT_SP_upper_limit}\n        if (SP_Final<20)                    {SP_Final   =20;}\n    \n        //*****************************************************************************\n\n        SP_Final = Number(SP_Final).toFixed(0);\n        msg1.payload    = SP_Final;\n        msg1.topic  = \"SP_Final\";\n        \n        global.set('SP_Final',SP_Final,\"file\")\n        \n//        msg99.payload   = \"New final SP calculated: Current setpont: \" + current_sp + \" °C. New calculated setpoint:  \" + SP_Final + \" °C\";\n        \n\n\n        //*****************************************************************************\n\n        if (SP_Final ==  current_sp)                                            // Check only if there is a difference between SP and current value, a signal should be sent.\n            {\n                return [null,null,null];\n                //return [SP,toLog,shift]\n            }\n        else\n            {\n                return [msg1,null,null];\n                //return [SP,toLog,shift]\n            }\n    }\n    \n",
+        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n*/\n//*****************************************************************************\nlet msg1={};        // pin 1 - SP_Final\nlet msg99={};       // pin 2 - To Log\nlet msg2={};        // pin 3 - SHIFT_Final\n// return [msg1,msg99,msg2]\n\nmsg99.topic = \"Function - Calculate new SP\";        // ToLog\n\n\nvar SP_Final            =global.get('SP_DIRECT_virt',\"file\");                   //\n    if (SP_Final===undefined) {node.warn('Calculate new SP - SP_Final');return null;}\n\nvar F_WAR_onoff         =global.get('Correction_0_WAR_on_off',\"file\");          //\n    if (F_WAR_onoff === undefined) {F_WAR_onoff = 0;}\n    \nvar F_WAR_SP            =global.get('F_WAR_SP');                                //\n    if (F_WAR_SP===undefined) {node.warn('Calculate new SP - F_WAR_SP');return null;}\n\nvar F_RTC_state         =global.get('Correction_1_RTC_on_off',\"file\");          //\n        if (F_RTC_state === undefined) {F_RTC_state=0;}\n        \nvar F_RTC_correction    =global.get('F_RTC_correction');                        //\n    if (F_RTC_correction===undefined) {node.warn('Calculate new SP - F_RTC_correction');return null;}\n\nvar F_SS_state          =global.get('Correction_2_softstart_on_off',\"file\");    //\n        if (F_SS_state === undefined) {F_SS_state=0;}\n        \nvar F_SS_correction     =global.get('F_SS_correction');                         //\n    if (F_SS_correction===undefined) {node.warn('Calculate new SP - F_SS_correction');return null;}\n\nvar F_NR_state          =global.get('nightreduction_on_off',\"file\");            //\n        if (F_NR_state === undefined) {F_NR_state=0;}\n        \nvar F_NR_correction     =global.get('F_NR_correction');                         //\n    if (F_NR_correction===undefined) {node.warn('Calculate new SP - F_NR_correction');return null;}\n\nvar current_sp          =global.get('Main_Target_Temp');                        //\n    if (current_sp===undefined) {node.warn('Calculate new SP - current_sp');return null;}\n\nvar Heating_Mode        =global.get('Heating_Mode',\"file\");\n    if (Heating_Mode===undefined) {node.warn('Calculate new SP - Heating_Mode');return null;}\n\nvar Operating_Mode      =global.get('Operating_Mode_State',\"file\")              //\n\nvar HEAT_SP_lower_limit =global.get('HEAT_SP_lower_limit',\"file\")               //\n    if (HEAT_SP_lower_limit === undefined)  {HEAT_SP_lower_limit = 20;}\n    \nvar HEAT_SP_upper_limit =global.get('HEAT_SP_upper_limit',\"file\")               //\n    if (HEAT_SP_upper_limit === undefined)  {HEAT_SP_upper_limit = 100;}\n\n\n//*****************************************************************************\nif (Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                         // check if all variables are present befor checking\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    {\n        return null;\n    }\n//*****************************************************************************\n//*****************************************************************************\n\nif (current_sp == 0 || Heating_Mode == 0)\n    {\n\n        var SHIFT_Final_old = global.get('SHIFT_Final',\"file\");\n            if (SHIFT_Final_old === undefined) {SHIFT_Final_old=0;}\n        \n        if (F_RTC_state == 0)   {F_RTC_correction = 0;}\n        if (F_SS_state == 0)    {F_SS_correction = 0;}\n        if (F_NR_state == 0)    {F_NR_correction = 0;}\n        \n        var SHIFT_Final = F_RTC_correction + F_SS_correction + F_NR_correction;\n        \n        msg2.payload = SHIFT_Final;\n        msg2.topic = \"Shift\";\n        \n        if (msg2.payload < -5)  {msg2.payload = -5;}\n        if (msg2.payload > 5)   {msg2.payload = 5;}\n        \n        \n//        if (SHIFT_Final_old != SHIFT_Final)\n//            {\n//                global.set('SHIFT_Final',msg2.payload,\"file\");\n//            }\n        msg99.payload   = \"New final T shift calculated: Current T shift: \" + SHIFT_Final_old + \" °C. New calculated T shift:  \" + msg2.payload + \" °C\";\n        \n        return [null,msg99,msg2]\n        //return [SP,toLog,shift]\n    }\n//*****************************************************************************\n//*****************************************************************************\nif (current_sp >= 20 && Heating_Mode == 1)\n    {\n        if (F_WAR_onoff==1)                 {SP_Final   =F_WAR_SP;}\n        if (F_RTC_state==1)                 {SP_Final   =SP_Final   + F_RTC_correction;}\n        if (F_NR_state==1)                  {SP_Final   =SP_Final   + F_NR_correction;}\n        if (F_SS_state==1)                  {SP_Final   =SP_Final   + F_SS_correction;}\n        if (SP_Final<HEAT_SP_lower_limit)   {SP_Final   =HEAT_SP_lower_limit}\n        if (SP_Final>HEAT_SP_upper_limit)   {SP_Final   =HEAT_SP_upper_limit}\n        if (SP_Final<20)                    {SP_Final   =20;}\n    \n        //*****************************************************************************\n        SP_Final = Number(SP_Final).toFixed(0);\n        SP_Final = parseFloat(SP_Final);\n        msg1.payload    = SP_Final;\n        msg1.topic  = \"SP_Final\";\n        \n        global.set('SP_Final',SP_Final,\"file\")\n        \n//        msg99.payload   = \"New final SP calculated: Current setpont: \" + current_sp + \" °C. New calculated setpoint:  \" + SP_Final + \" °C\";\n        \n\n\n        //*****************************************************************************\n\n        if (SP_Final ==  current_sp)                                            // Check only if there is a difference between SP and current value, a signal should be sent.\n            {\n                return [null,null,null];\n                //return [SP,toLog,shift]\n            }\n        else\n            {\n                return [msg1,null,null];\n                //return [SP,toLog,shift]\n            }\n    }\n    \n",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
@@ -22716,7 +22636,7 @@
             [
                 "93404b62f7fb0fb2",
                 "b36e73e43970dc7c",
-                "825929166da2807d"
+                "5e9da82d3dfe26da"
             ],
             [
                 "663fd79ce5a1610d"
@@ -22941,7 +22861,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Compare SP",
-        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n*/\nvar Heating_Mode        =global.get('Heating_Mode',\"file\");\nvar SP_Final            =global.get('SP_Final',\"file\");\nvar SHIFT_Final         =global.get('SHIFT_Final',\"file\");\n\nvar current_sp          =global.get('Main_Target_Temp');  \nvar Operating_Mode      =global.get('Operating_Mode_State',\"file\")\n\n\n//*****************************************************************************\nif (SP_Final === undefined || current_sp === undefined || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                         // check if all variables are present befor checking\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    {\n        return [null,null];\n    }\n\nelse\n    {\n        if (current_sp == 0 || Heating_Mode == 0)\n            {\n                // Panasonic native WAR mode used\n                if (SHIFT_Final ==  current_sp)\n                    {\n                        msg.payload = 99;\n                        return [msg,null];\n                    }\n                else\n                    {\n                        return null;\n                    }\n            }        \n        if (current_sp >= 20 && Heating_Mode == 1)\n            {\n                // Panasonic Direct modus used\n                if (SP_Final ==  current_sp)                                            // Check only if there is a difference between SP and current value, a signal should be sent.\n                    {\n                        msg.payload = 99;\n                        return [msg,null];\n                    }\n                else\n                    {\n                        return null;\n                    }\n            }\n    }",
+        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n*/\nvar Heating_Mode        =global.get('Heating_Mode',\"file\");\nvar SP_Final            =global.get('SP_Final',\"file\");\nvar SHIFT_Final         =global.get('SHIFT_Final',\"file\");\n\nvar current_sp          =global.get('Main_Target_Temp');  \nvar Operating_Mode      =global.get('Operating_Mode_State',\"file\")\n\n\n//*****************************************************************************\nif (SP_Final === undefined || current_sp === undefined || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                         // check if all variables are present befor checking\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    {\n        msg.payload = 99;\n        return [msg,null];\n    }\n\nelse\n    {\n        if (current_sp == 0 || Heating_Mode == 0)\n            {\n                // Panasonic native WAR mode used\n                if (SHIFT_Final ==  current_sp)\n                    {\n                        msg.payload = 99;\n                        return [msg,null];\n                    }\n                else\n                    {\n                        return null;\n                    }\n            }        \n        if (current_sp >= 20 && Heating_Mode == 1)\n            {\n                // Panasonic Direct modus used\n                if (SP_Final ==  current_sp)                                            // Check only if there is a difference between SP and current value, a signal should be sent.\n                    {\n                        msg.payload = 99;\n                        return [msg,null];\n                    }\n                else\n                    {\n                        return null;\n                    }\n            }\n    }",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -23496,7 +23416,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Function WAR2DIRECT",
-        "func": "// All these functions ONLY need to be executed when the heatpump is in HEAT mode. \nlet msg1    ={};        //  pin 1 - SP_WAR (function on)\nlet msg99   ={};        //  pin 2 - Log information\nlet msg3    ={};        //  pin 4 - SP_start (function off)\n//\n//                          [msg1, msg99, msg3]\n//******************************************************************************\nvar ThreeWay_Valve_State=global.get('ThreeWay_Valve_State');                    // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)\n    if (ThreeWay_Valve_State === undefined) {return null;}\nvar Operating_Mode      =global.get('Operating_Mode_State',\"file\")\n    if (Operating_Mode === undefined) {return null;}\nvar current_sp          =global.get('Main_Target_Temp');                        // TOP27\n    if (current_sp === undefined)   {return null;}\nvar Heating_Mode        =global.get('Heating_Mode',\"file\");                     // TOP76 - Compensation curve or DIRECT mode\n    if (Heating_Mode === undefined) {return null}\nvar war_state           =global.get('Correction_0_WAR_on_off',\"file\");          // Get the global variable. Used to see if the WAR function is enabled.\n    if (war_state === undefined){war_state=0;}\n\n//******************************************************************************\nvar war_ot1         = global.get('war_ot1',\"file\");                             // Outside temperature high         (warm outside)\nvar war_ot2         = global.get('war_ot2',\"file\");                             // Outside temperature intermediate (intermediate outside temperature)\nvar war_ot3         = global.get('war_ot3',\"file\");                             // Outside temperature low          (cold outside)\nvar war_wt1         = global.get('war_wt1',\"file\");                             // Water temperature low            (cold water)\nvar war_wt2         = global.get('war_wt2',\"file\");                             // Water temperature intermediate   (intermediate water temperature)\nvar war_wt3         = global.get('war_wt3',\"file\");                             // Water temperature high           (warm water)\n\n//******************************************************************************\nvar check = (war_ot1+war_ot2+war_ot3+war_wt1+war_wt2+war_wt3);\nif (isNaN(check) || check === undefined)     // if the variables are added to eachother and the result is Not a Number, produce an error message.\n    {   msg99.payload = \"Profile temperatures are not correctly set in the dashboard. Waiting for Panasonic import or user input\"; \n        msg99.topic = \"Function WAR\";\n        return [null,msg99,null];\n    }\n\n\nvar SP_start       = global.get('SP_DIRECT_virt',\"file\");                  // Get the global variable for SP_DIRECT_virt. Value is set through the dashboard\nif (SP_start === undefined) \n    {\n        SP_start = 20;\n        global.set('SP_DIRECT_virt',20,\"file\");\n    }\n\nvar war_Tb          = global.get('T_outside',\"file\");           // Outdoor temperature.\nif (isNaN(war_Tb) || war_Tb === undefined || war_Tb < -50)                      // if the variable is Not a Number, produce an error message.\n    {\n        msg99.payload = \"T_outside is not valid. Waiting for correct value.\"; \n        msg99.topic = \"Function WAR\";\n        return [null,msg99,null];\n    }\n\nvar F_WAR_old_SP    = global.get('F_WAR_SP');\n    if (F_WAR_old_SP === undefined) \n        {\n            F_WAR_old_SP = SP_start;\n            global.set('F_WAR_SP',SP_start);\n        }\n\n\n\n////////////////////////////////////////////////////////////////////////////////\n//      Calculation of the NR WAR Setpoint\n////////////////////////////////////////////////////////////////////////////////\n\nvar SP_war;                                                     // set empty starting variable\n\nif (war_Tb => war_ot1) \n    {SP_war = war_wt1;}                                         // Range 1\n\nif (war_Tb < war_ot1 && war_Tb > war_ot2)                       // Range 2\n    {SP_war = (((war_wt1-war_wt2)*((war_Tb-war_ot1)/(war_ot1-war_ot2)))+war_wt1);}\n\n\nif (war_Tb <= war_ot2 && war_Tb > war_ot3)                      // Range 3\n    {SP_war = (((war_wt2-war_wt3)*((war_Tb-war_ot2)/(war_ot2-war_ot3)))+war_wt2);}\n\nif (war_Tb <= war_ot3)                                          // Range 4\n    {SP_war = war_wt3;}                                            \n\nSP_war = Number(SP_war).toFixed(0);\nSP_war = parseFloat(SP_war);\n\n\n\n\n////////////////////////////////////////////////////////////////////////////////\n//      SET27 = 0 >>> External Thermostate being used or Compensation curve\n////////////////////////////////////////////////////////////////////////////////\nif (current_sp == 0 || Heating_Mode == 0)\n    {\n        if (war_state==1)\n            {\n                global.set('Correction_0_WAR_on_off',0,\"file\")\n                msg99.payload = \"RoomThermostat found or using Compensation curve. Using internal Panasonic WAR function. NodeRed WAR function is now disabled\"; \n                msg99.topic = \"Function WAR\";\n                return [null,msg99,null];\n            }\n        global.set('F_WAR_SP',SP_war);\n        return [msg1,null,null]\n    }\n    \n////////////////////////////////////////////////////////////////////////////////\n//      SET27 > 0 >>> WAR Function\n////////////////////////////////////////////////////////////////////////////////\nelse\n    {\n        if (ThreeWay_Valve_State==1 || Operating_Mode === undefined || current_sp == 0 || Heating_Mode == 0 || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)\n            {\n                return null;                                                        // If state is 1 (DHW mode), correction 0 is direclty exported to the message and the function ends here.\n            }\n        else\n            {\n                msg1.payload = SP_war;                                                         // required\n                msg1.topic='SP_war';\n                msg1.source = 'WAR';\n                \n                if (war_state==0)                                               // If the state is 1 (enabled), AND outside temperature contains a value.\n                                                                                                // Only if above conditions are met, we will go through the calculation.\n                    {\n                        global.set('F_WAR_SP',SP_start);\n                        \n                        return [msg1,null,null]\n                        \n                    }\n\n                    \n                if (war_state==1)\n                    {\n\n                        if (SP_war == F_WAR_old_SP)\n                            {\n                                return [msg1,null,null]\n                            }\n                        else\n                            {\n                                global.set('F_WAR_SP',SP_war);\n\n                                msg99.payload   = \"Setpoint change: From \" + F_WAR_old_SP + \" to \" + SP_war + \" °C\"; \n                                msg99.topic     = \"Function WAR\";\n                                \n                                return [msg1,msg99,null];\n                            }\n                    }\n                    ////////////////////////////////////////////////////////////////////////////////\n            }\n    }",
+        "func": "// All these functions ONLY need to be executed when the heatpump is in HEAT mode. \nlet msg1    ={};        //  pin 1 - SP_WAR (function on)\nlet msg99   ={};        //  pin 2 - Log information\nlet msg3    ={};        //  pin 4 - SP_start (function off)\n//\n//                          [msg1, msg99, msg3]\n//******************************************************************************\nvar ThreeWay_Valve_State=global.get('ThreeWay_Valve_State');                    // Get the global variable for current possition of the three way valve. ROOM or DHW mode. (0=HEAT / 1=DHW)\n    if (ThreeWay_Valve_State === undefined) {node.warn('WAR_ThreeWay_Valve_State');return null;}\nvar Operating_Mode      =global.get('Operating_Mode_State',\"file\")\n    if (Operating_Mode === undefined) {node.warn('WAR_Operating_Mode');return null;}\nvar current_sp          =global.get('Main_Target_Temp');                        // TOP27\n    if (current_sp === undefined)   {node.warn('WAR_current_sp');return null;}\nvar Heating_Mode        =global.get('Heating_Mode',\"file\");                     // TOP76 - Compensation curve or DIRECT mode\n    if (Heating_Mode === undefined) {node.warn('WAR_Heating_Mode');return null}\nvar war_state           =global.get('Correction_0_WAR_on_off',\"file\");          // Get the global variable. Used to see if the WAR function is enabled.\n    if (war_state === undefined){war_state=0;}\n\n//******************************************************************************\nvar war_ot1         = global.get('war_ot1',\"file\");                             // Outside temperature high         (warm outside)\nvar war_ot2         = global.get('war_ot2',\"file\");                             // Outside temperature intermediate (intermediate outside temperature)\nvar war_ot3         = global.get('war_ot3',\"file\");                             // Outside temperature low          (cold outside)\nvar war_wt1         = global.get('war_wt1',\"file\");                             // Water temperature low            (cold water)\nvar war_wt2         = global.get('war_wt2',\"file\");                             // Water temperature intermediate   (intermediate water temperature)\nvar war_wt3         = global.get('war_wt3',\"file\");                             // Water temperature high           (warm water)\n\n//******************************************************************************\nvar check = (war_ot1+war_ot2+war_ot3+war_wt1+war_wt2+war_wt3);\nif (isNaN(check) || check === undefined)     // if the variables are added to eachother and the result is Not a Number, produce an error message.\n    {   msg99.payload = \"Profile temperatures are not correctly set in the dashboard. Waiting for Panasonic import or user input\"; \n        msg99.topic = \"Function WAR\";\n        return [null,msg99,null];\n    }\n\n\nvar SP_start       = global.get('SP_DIRECT_virt',\"file\");                  // Get the global variable for SP_DIRECT_virt. Value is set through the dashboard\nif (SP_start === undefined) \n    {\n        SP_start = 20;\n        global.set('SP_DIRECT_virt',20,\"file\");\n    }\n\nvar war_Tb          = global.get('T_outside',\"file\");           // Outdoor temperature.\nif (isNaN(war_Tb) === true || war_Tb === undefined || war_Tb < -50)                      // if the variable is Not a Number, produce an error message.\n    {\n        msg99.payload = \"T_outside is not valid. Waiting for correct value.\"; \n        msg99.topic = \"Function WAR\";\n        return [null,msg99,null];\n    }\n\nvar F_WAR_old_SP    = global.get('F_WAR_SP');\n    if (F_WAR_old_SP === undefined) \n        {\n            F_WAR_old_SP = SP_start;\n            global.set('F_WAR_SP',SP_start);\n        }\n\n\n\n////////////////////////////////////////////////////////////////////////////////\n//      Calculation of the NR WAR Setpoint\n////////////////////////////////////////////////////////////////////////////////\n\nvar SP_war;                                                     // set empty starting variable\n\nif (war_Tb => war_ot1) \n    {SP_war = war_wt1;}                                         // Range 1\n\nif (war_Tb < war_ot1 && war_Tb > war_ot2)                       // Range 2\n    {SP_war = (((war_wt1-war_wt2)*((war_Tb-war_ot1)/(war_ot1-war_ot2)))+war_wt1);}\n\n\nif (war_Tb <= war_ot2 && war_Tb > war_ot3)                      // Range 3\n    {SP_war = (((war_wt2-war_wt3)*((war_Tb-war_ot2)/(war_ot2-war_ot3)))+war_wt2);}\n\nif (war_Tb <= war_ot3)                                          // Range 4\n    {SP_war = war_wt3;}                                            \n\nSP_war = Number(SP_war).toFixed(0);\nSP_war = parseFloat(SP_war);\n\n\n\n\n////////////////////////////////////////////////////////////////////////////////\n//      SET27 = 0 >>> External Thermostate being used or Compensation curve\n////////////////////////////////////////////////////////////////////////////////\nif (current_sp == 0 || Heating_Mode == 0)\n    {\n        if (war_state==1)\n            {\n                global.set('Correction_0_WAR_on_off',0,\"file\")\n                msg99.payload = \"RoomThermostat found or using Compensation curve. Using internal Panasonic WAR function. NodeRed WAR function is now disabled\"; \n                msg99.topic = \"Function WAR\";\n                return [null,msg99,null];\n            }\n        global.set('F_WAR_SP',SP_war);\n        return [msg1,null,null]\n    }\n    \n////////////////////////////////////////////////////////////////////////////////\n//      SET27 > 0 >>> WAR Function\n////////////////////////////////////////////////////////////////////////////////\nelse\n    {\n        if (ThreeWay_Valve_State==1 || Operating_Mode === undefined || current_sp == 0 || Heating_Mode == 0 || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)\n            {\n                return null;                                                        // If state is 1 (DHW mode), correction 0 is direclty exported to the message and the function ends here.\n            }\n        else\n            {\n                msg1.payload = SP_war;                                                         // required\n                msg1.topic='SP_war';\n                msg1.source = 'WAR';\n                \n                if (war_state==0)                                               // If the state is 1 (enabled), AND outside temperature contains a value.\n                                                                                                // Only if above conditions are met, we will go through the calculation.\n                    {\n                        global.set('F_WAR_SP',SP_start);\n                        \n                        return [msg1,null,null]\n                        \n                    }\n\n                    \n                if (war_state==1)\n                    {\n\n                        if (SP_war == F_WAR_old_SP)\n                            {\n                                return [msg1,null,null]\n                            }\n                        else\n                            {\n                                global.set('F_WAR_SP',SP_war);\n\n                                msg99.payload   = \"Setpoint change: From \" + F_WAR_old_SP + \" to \" + SP_war + \" °C\"; \n                                msg99.topic     = \"Function WAR\";\n                                \n                                return [msg1,msg99,null];\n                            }\n                    }\n                    ////////////////////////////////////////////////////////////////////////////////\n            }\n    }",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -23506,7 +23426,8 @@
         "y": 740,
         "wires": [
             [
-                "d16f38ef74db786a"
+                "d16f38ef74db786a",
+                "823ef896afa239af"
             ],
             [
                 "663fd79ce5a1610d"
@@ -23524,7 +23445,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Function RTC correction",
-        "func": "var Operating_Mode      =global.get('Operating_Mode_State',\"file\")\n\nif (Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)\n    {   \n        return null;\n    }\n\nelse \n{   \n    let msg1={};    // pin 1 - current correction\n    let msg2={};    // pin 2 - current sp\n    let msg99={};   // pin 3\n    msg99.topic = \"Function RTC\"\n    let msg3={};    //  pin 4 - start sp\n    \n    \n    \n    var rtc_state               =   global.get('Correction_1_RTC_on_off',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n        if (rtc_state===undefined)                  {rtc_state = 0; global.set('Correction_1_RTC_on_off',0,\"file\");}\n        \n    var F_RTC_old_correction    =   global.get('F_RTC_correction');\n        if (F_RTC_old_correction === undefined)     {F_RTC_old_correction=0; global.set('F_RTC_correction',0);}\n    \n    var F_WAR_SP                =   global.get('F_WAR_SP');\n        if (F_WAR_SP === undefined) {return null}\n    \n    if (rtc_state == 0)                         \n        {\n            rtc_correction = 0;               // If RTC is disabled, set correction to 0. end if\n            msg1.payload = rtc_correction; \n            msg1.topic = \"rtc_correction\";\n            \n            msg2.payload = F_WAR_SP + rtc_correction; \n            msg2.topic = \"SP RTC result\";\n            \n            msg3.payload = F_WAR_SP;\n            msg3.topic = \"Start SP\";\n            \n            global.set('F_RTC_correction',rtc_correction);\n            return [msg1,msg2,null,msg3]; \n            \n        }\n    \n    else\n        {\n        \n            // Declaration of variables including their values.    \n            var rtc_correction  = 0;                                                // declare local variable, start with value zero\n            var rtc_PV          = global.get('T_room');                             // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n            var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard. \n            //var rtc_Tb          = global.get('T_outside',\"file\");                   // Outdoor temperature.\n        \n            var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n            \n            //\n            // below are the variables containing the temperature ranges.\n            var rtc_t1          = global.get('rtc_t1',\"file\");                      // Range +3\n            var rtc_t2          = global.get('rtc_t2',\"file\");                      // Range +2\n            var rtc_t3          = global.get('rtc_t3',\"file\");                      // Range +1\n            \n            var rtc_t4          = global.get('rtc_t4',\"file\");                      // Range -1\n            var rtc_t5          = global.get('rtc_t5',\"file\");                      // Range -2\n            var rtc_t6          = global.get('rtc_t6',\"file\");                      // Range -3\n            var rtc_t7          = global.get('rtc_t7', \"file\");                     // Range -custom\n                if (rtc_t7 === undefined) { rtc_t7 = rtc_t6 -0.1;}                  // default just below rtc_t6        \n\n            var rtc_t7_custom_cor = global.get('rtc_t7_custom_cor', \"file\");\n                if (rtc_t7_custom_cor === undefined) {\n                    rtc_t7_custom_cor = 10; // +10 correction default\n                    global.set('rtc_t7_custom_cor', rtc_t7_custom_cor, \"file\");\n                }\n\n            if (isNaN(rtc_t1+rtc_t2+rtc_t3+rtc_t4+rtc_t5+rtc_t6+rtc_t7))               // if the variables are added to eachother and the result is Not a Number, produce an error message.\n                {\n                    msg99.payload = \"RTC function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"\n                    return [null,null,msg99,null]\n                    \n                }\n            \n            // ADJUST THE VALUES BELOW TO YOUR OWN SITUATION\n        \n            if (rtc_dT >= rtc_t1) {rtc_correction = rtc_correction -1;}                 // It is way too hot.\n            if (rtc_dT >= rtc_t2) {rtc_correction = rtc_correction -1;}                 // It is too hot.\n            if (rtc_dT >= rtc_t3) {rtc_correction = rtc_correction -1;}                 // It is a little too hot.\n        \n            if (rtc_dT < rtc_t3 && rtc_dT > rtc_t4) {rtc_correction = 0;}               // It is right in the middle.... Nice\n\n            if (rtc_dT <= rtc_t4) {rtc_correction = rtc_correction +1;}                 // It is a little too cold\n            if (rtc_dT <= rtc_t5) {rtc_correction = rtc_correction +1;}                 // It is a little a fair bit colder\n            if (rtc_dT <= rtc_t6) {rtc_correction = rtc_correction +1;}                 // It is a little way too cold\n            // insert booster here...\n            if (rtc_dT <= rtc_t6 && rtc_dT >= rtc_t7)                                   // in booster range (between +3 and +custom)\n                {\n                    // calculate correction (between +3 and +custom):\n                    rtc_correction = rtc_t7_custom_cor - 3;                             // example 12 degrees\n                    // calculate temp range:\n                    var Booster_range = (rtc_t6 - rtc_t7); // -2.2 - -2.7 = 0.5         //calculate No. steps    0.1 degrees steps?\n                    Booster_range = (Booster_range * 10);                               // 5 steps\n                    // devide rtc_correction through steps:\n                    rtc_correction = (rtc_correction / Booster_range);                  // 12 / 5 = 2.4 degrees-steps\n                    // apply correction for actual room temp:\n                    // op hoeveel stappen beneden +3 level zitten we nu?\n                    var Actual_step = ( rtc_t6 - rtc_dT) * 10;                          // rtc_dT= -2.5 --->     ---> -2.2 - -2.5 = 0.3  --> * 10 = 3 (stap 3 van 5)\n                    // Apply correction at this step:\n                    rtc_correction = (Actual_step * rtc_correction);    \n                    // Show in log what booster correction should be and continue:\n                    msg99.payload = \"Booster correction at \" + rtc_PV + \"°C \" + \"should be \" + rtc_correction + \"°C\";\n                    node.send([null, null, msg99, null]); // only to log and continue code from here\n                }\n            if (rtc_dT <= rtc_t7) {rtc_correction = rtc_t7_custom_cor;}                 // It is way too cold: use custom\n        \n            /////////////////////////////////////////////////////////\n            /////////////////////////////////////////////////////////\n        }\n//****************************************************************************** \n    msg1.payload = rtc_correction; \n    msg1.topic = \"rtc_correction\";\n    \n    msg2.payload = F_WAR_SP + rtc_correction; \n    msg2.topic = \"SP RTC result\";\n\n    msg3.payload = F_WAR_SP;\n    msg3.topic = \"Start SP\";\n\n    var T_room = global.get('T_room'); // memory only\n            \n    if (F_RTC_old_correction == rtc_correction)\n        {\n            return [msg1,msg2,null,msg3]; \n        }\n    \n    else\n        {\n            global.set('F_RTC_correction',msg1.payload)\n        msg99.payload = \"Correction change: From \" + F_RTC_old_correction + \" to \" + rtc_correction + \" °C (Room actual: \" + T_room + \" °C)\";\n            return [msg1,msg2,msg99,msg3]; \n        }\n    \n}",
+        "func": "var Operating_Mode      =global.get('Operating_Mode_State',\"file\")\n\nif (Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)\n    {   \n        return null;\n    }\n\nelse \n{   \n    let msg1={};    // pin 1 - current correction\n    let msg2={};    // pin 2 - current sp\n    let msg99={};   // pin 3\n    msg99.topic = \"Function RTC\"\n    let msg3={};    //  pin 4 - start sp\n    \n    \n    \n    var rtc_state               =   global.get('Correction_1_RTC_on_off',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n        if (rtc_state===undefined)                  {rtc_state = 0; global.set('Correction_1_RTC_on_off',0,\"file\");}\n        \n    var F_RTC_old_correction    =   global.get('F_RTC_correction');\n        if (F_RTC_old_correction === undefined)     {F_RTC_old_correction=0; global.set('F_RTC_correction',0);}\n    \n    var F_WAR_SP                =   global.get('F_WAR_SP');\n        if (F_WAR_SP === undefined) {node.warn('RTC correction F_WAR_SP');return null}\n    \n    if (rtc_state == 0)                         \n        {\n            rtc_correction = 0;               // If RTC is disabled, set correction to 0. end if\n            msg1.payload = rtc_correction; \n            msg1.topic = \"rtc_correction\";\n            \n            msg2.payload = F_WAR_SP + rtc_correction; \n            msg2.topic = \"SP RTC result\";\n            \n            msg3.payload = F_WAR_SP;\n            msg3.topic = \"Start SP\";\n            \n            global.set('F_RTC_correction',rtc_correction);\n            return [msg1,msg2,null,msg3]; \n            \n        }\n    \n    else\n        {\n        \n            // Declaration of variables including their values.    \n            var rtc_correction  = 0;                                                // declare local variable, start with value zero\n            var rtc_PV          = global.get('T_room');                             // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n                if (rtc_PV === undefined) {node.warn('RTC correction rtc_PV');return null;}\n            var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard.\n                if (rtc_SP === undefined) {node.warn('RTC correction rtc_SP');return null;}\n            //var rtc_Tb          = global.get('T_outside',\"file\");                   // Outdoor temperature.\n        \n            var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n            \n            //\n            // below are the variables containing the temperature ranges.\n            var rtc_t1          = global.get('rtc_t1',\"file\");                      // Range +3\n            var rtc_t2          = global.get('rtc_t2',\"file\");                      // Range +2\n            var rtc_t3          = global.get('rtc_t3',\"file\");                      // Range +1\n            \n            var rtc_t4          = global.get('rtc_t4',\"file\");                      // Range -1\n            var rtc_t5          = global.get('rtc_t5',\"file\");                      // Range -2\n            var rtc_t6          = global.get('rtc_t6',\"file\");                      // Range -3\n            var rtc_t7          = global.get('rtc_t7', \"file\");                     // Range -custom\n                if (rtc_t7 === undefined) { rtc_t7 = rtc_t6 -0.1;}                  // default just below rtc_t6        \n\n            var rtc_t7_custom_cor = global.get('rtc_t7_custom_cor', \"file\");\n                if (rtc_t7_custom_cor === undefined) {\n                    rtc_t7_custom_cor = 10; // +10 correction default\n                    global.set('rtc_t7_custom_cor', rtc_t7_custom_cor, \"file\");\n                }\n\n            if (isNaN(rtc_t1+rtc_t2+rtc_t3+rtc_t4+rtc_t5+rtc_t6+rtc_t7) === true)               // if the variables are added to eachother and the result is Not a Number, produce an error message.\n                {\n                    msg99.payload = \"RTC function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"\n                    return [null,null,msg99,null]\n                    \n                }\n            \n            // ADJUST THE VALUES BELOW TO YOUR OWN SITUATION\n        \n            if (rtc_dT >= rtc_t1) {rtc_correction = rtc_correction -1;}                 // It is way too hot.\n            if (rtc_dT >= rtc_t2) {rtc_correction = rtc_correction -1;}                 // It is too hot.\n            if (rtc_dT >= rtc_t3) {rtc_correction = rtc_correction -1;}                 // It is a little too hot.\n        \n            if (rtc_dT < rtc_t3 && rtc_dT > rtc_t4) {rtc_correction = 0;}               // It is right in the middle.... Nice\n\n            if (rtc_dT <= rtc_t4) {rtc_correction = rtc_correction +1;}                 // It is a little too cold\n            if (rtc_dT <= rtc_t5) {rtc_correction = rtc_correction +1;}                 // It is a little a fair bit colder\n            if (rtc_dT <= rtc_t6) {rtc_correction = rtc_correction +1;}                 // It is a little way too cold\n            // insert booster here...\n            if (rtc_dT <= rtc_t6 && rtc_dT >= rtc_t7)                                   // in booster range (between +3 and +custom)\n                {\n                    // calculate correction (between +3 and +custom):\n                    rtc_correction = rtc_t7_custom_cor - 3;                             // example 12 degrees\n                    // calculate temp range:\n                    var Booster_range = (rtc_t6 - rtc_t7); // -2.2 - -2.7 = 0.5         //calculate No. steps    0.1 degrees steps?\n                    Booster_range = (Booster_range * 10);                               // 5 steps\n                    // devide rtc_correction through steps:\n                    rtc_correction = (rtc_correction / Booster_range);                  // 12 / 5 = 2.4 degrees-steps\n                    // apply correction for actual room temp:\n                    // op hoeveel stappen beneden +3 level zitten we nu?\n                    var Actual_step = ( rtc_t6 - rtc_dT) * 10;                          // rtc_dT= -2.5 --->     ---> -2.2 - -2.5 = 0.3  --> * 10 = 3 (stap 3 van 5)\n                    // Apply correction at this step:\n                    rtc_correction = (Actual_step * rtc_correction);    \n                    // Show in log what booster correction should be and continue:\n                    msg99.payload = \"Booster correction at \" + rtc_PV + \"°C \" + \"should be \" + rtc_correction + \"°C\";\n                    node.send([null, null, msg99, null]); // only to log and continue code from here\n                }\n            if (rtc_dT <= rtc_t7) {rtc_correction = rtc_t7_custom_cor;}                 // It is way too cold: use custom\n        \n            /////////////////////////////////////////////////////////\n            /////////////////////////////////////////////////////////\n        }\n//****************************************************************************** \n    msg1.payload = rtc_correction; \n    msg1.topic = \"rtc_correction\";\n    \n    msg2.payload = F_WAR_SP + rtc_correction; \n    msg2.topic = \"SP RTC result\";\n\n    msg3.payload = F_WAR_SP;\n    msg3.topic = \"Start SP\";\n\n    var T_room = global.get('T_room'); // memory only\n            \n    if (F_RTC_old_correction == rtc_correction)\n        {\n            return [msg1,msg2,null,msg3]; \n        }\n    \n    else\n        {\n            global.set('F_RTC_correction',msg1.payload)\n        msg99.payload = \"Correction change: From \" + F_RTC_old_correction + \" to \" + rtc_correction + \" °C (Room actual: \" + T_room + \" °C)\";\n            return [msg1,msg2,msg99,msg3]; \n        }\n    \n}",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
@@ -23535,7 +23456,7 @@
         "wires": [
             [
                 "18fd7ac120089042",
-                "3429db7d4232888b"
+                "e81634fb88703859"
             ],
             [
                 "c54efadb07816cb9"
@@ -23558,7 +23479,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Function RTC on / off",
-        "func": "////////////////////////////////////////////////////////////////////////////\n////////////////////////// RTC - ON/OFF function ///////////////////////////\n//\n//\n//  This function has the goal to act when the temperature in the room is too high.\n//  It can either turn off the heatpump, or take the [heat]-mode out of the current operating mode.\n//  \n\nlet msg1    ={};        //  pin 1 - Output to power pump on/off \nlet msg2    ={};        //  pin 2 - Output to Operating Mode\nlet msg99   ={};        //  pin 3 - Messages to Log\n//\n//  return [msg1,msg2,msg99]\n\nvar Sterilization_active        =global.get('Sterilization_active',\"file\");\n    if (Sterilization_active===undefined)   {Sterilization_active=0}\n\nvar Force_DHW_active            =global.get('Force_DHW_active',\"file\");\n    if (Force_DHW_active===undefined)   {Force_DHW_active=0}   \n\n\nvar Operating_Mode              =global.get('Operating_Mode_State',\"file\");\n    if (Operating_Mode === undefined)   {return null;}\n//  Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n//\nvar rtc_state                   =global.get('Correction_1_RTC_on_off',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n    if (rtc_state===undefined)  {rtc_state=0;}\n//\nvar F_RTC_on_off2               =global.get('F_RTC_on_off2',\"file\");\n    if (F_RTC_on_off2 === undefined)    {F_RTC_on_off2=0;}         // Get the global variable. Used to see if the RTC function is enabled through GUI.\n\nvar SolarFunction_active            = global.get(\"SolarFunction_active\",\"file\");\n    if (SolarFunction_active === undefined) {SolarFunction_active=0;}\n\n////////////////////////////////////////////////////////////////////////\nif (F_RTC_on_off2 == 0 || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8 || Sterilization_active == 1 || Force_DHW_active == 1 || SolarFunction_active == 1)     //  First IF\n    {   \n        global.set('F_rtc_on_off_status',undefined,\"file\");\n        return null;\n    }\n\nelse \n    {   \n        // Declaration of variables including their values.    \n        var rtc_PV          = global.get('T_room');                             // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n            if (rtc_PV===undefined) {return null}\n        var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard. \n            if (rtc_SP===undefined) {return null}\n        var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n        \n        var Heatpump_State  = global.get('Heatpump_State',\"file\");              // get current state of the heatpump. on or off (1 or 0)\n        \n        // below are the variables containing the temperature ranges.\n        var rtc_off         = global.get('rtc_off',\"file\");                     // Range turn heatpump off\n            if (rtc_off === undefined)  \n                {\n                    rtc_off = 10;\n                    global.set('rtc_off',10,\"file\");\n                }\n        var rtc_on          = global.get('rtc_on',\"file\");                      // Range turn heatpump on\n            if (rtc_on === undefined)   \n                {\n                    rtc_on = -10;\n                    global.set('rtc_on',-10,\"file\");\n                }\n        \n//        var F_rtc_on_off_active             = global.get('F_rtc_on_off_active',\"file\");\n//            if (F_rtc_on_off_active===undefined)    {F_rtc_on_off_active=0;global.set('F_rtc_on_off_active',0,\"file\");}\n            \n        var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n\n        msg99.topic     = \"Function RTC\";\n    //node.warn(\"rtc_dT= \" + rtc_dT);\n    //node.warn(\"rtc_on= \" + rtc_on);\n    //node.warn(\"F_rtc_on_off_active= \" + F_rtc_on_off_active);\n    \n        //*****************************************************************************\n        // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n        if (rtc_off <= rtc_on)\n            {\n                //node.warn('RTC function: Current OFF temperature is lower than the ON temperature. You must correct this !! ');\n                msg99.payload   = \"ERROR: Current OFF temperature is lower than the ON temperature. You must correct this !!\"; \n                return [null,null,msg99];\n            }\n\n        \n        if (rtc_dT > rtc_off)                           {global.set('F_rtc_on_off_status',0,\"file\");}\n        if (rtc_dT >= rtc_on && rtc_dT <= rtc_off)      {global.set('F_rtc_on_off_status',1,\"file\");}\n        if (rtc_dT < rtc_on)                            {global.set('F_rtc_on_off_status',2,\"file\");}\n        \n\n        \n        //*****************************************************************************\n        //      Scenario 1: the roomtemperature is high and above the 'off'limit. Function start\n        //*****************************************************************************\n//        if (rtc_dT > rtc_off && Heatpump_State == 1 && F_rtc_on_off_active == 0 && Operating_Mode != 3)               // TEST1 backup 22-11-2022 Ed\n        if (rtc_dT > rtc_off && Heatpump_State == 1 && Operating_Mode != 3)\n            {\n                //  Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (Operating_Mode == 0 || Operating_Mode == 2)\n                                            {\n                                                global.set('F_rtc_on_off_active',1,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                msg1.payload    = 0;\n                                                msg1.topic      = \"new_heatpump_power\";\n                                                msg99.payload   = \"on/off activated - Turn off power (Room temp: \" + rtc_PV + \"°C)\";\n                                                return [msg1,null,msg99]; \n                                            }\n                                            \n                if (Operating_Mode == 4 || Operating_Mode == 6)    \n                                            {\n                                                if (F_stored_next_operating_mode === undefined)\n                                                    {\n                                                        global.set('F_stored_next_operating_mode',Operating_Mode,\"file\");\n                                                    }\n                                                global.set('F_rtc_on_off_active',1,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                msg2.payload    = 3;\n                                                msg2.topic      = \"new_Operating_Mode\";\n                                                msg99.payload   = \"on/off activated - Operating mode from \" + Operating_Mode + \" to 3\";\n                                                return [null,msg2,msg99]; \n                                            }\n                                            \n            }\n        //*****************************************************************************\n        //      Scenario 2: the roomtemperature is low enough again. Function end\n        //*****************************************************************************\n//        if (rtc_dT < rtc_on && F_rtc_on_off_active == 1)                                                              // TEST1 backup 22-11-2022 Ed\n        if (rtc_dT < rtc_on)\n            {\n                if (Heatpump_State == 0)    {\n                                                global.set('F_rtc_on_off_active',0,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                msg1.payload    = 1;\n                                                msg1.topic      = \"new_heatpump_power\";\n                                                msg99.payload   = \"on/off - Turn on power (Room temp: \" + rtc_PV + \"°C)\";\n                                                return [msg1,null,msg99]; \n                                            }\n\n                if (Heatpump_State == 1)    {\n                                                global.set('F_rtc_on_off_active',0,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                if (F_stored_next_operating_mode === undefined) \n                                                    {\n                                                        F_stored_next_operating_mode = 0\n                                                        //msg99.payload   = \"on/off deactivated - Previous OM not found. Restored OM to default 0 (Heat only)\";\n                                                        msg99.payload = \"Operation mode 0 (Heat only)\";\n                                                    }\n                                                else \n                                                    {\n                                                        //msg99.payload   = \"on/off deactivated - Restored to OM \" + F_stored_next_operating_mode;\n                                                        var OM = F_stored_next_operating_mode;\n                                                        if (OM == 0) OM = \"Heat only\"; if (OM == 1) OM = \"Cool only\"; if (OM == 2) OM = \"Auto(Heat)\"; if (OM == 3) OM = \"DHW only\"; if (OM == 4) OM = \"Heat+DHW\"; if (OM == 5) OM = \"Cool+DHW\"; if (OM == 6) OM = \"Auto(Heat)+DHW\"; if (OM == 7) OM = \"Auto(Cool)\"; if (OM == 8) OM = \"Auto(Cool)+DHW)  \";\n                                                        msg99.payload = \"Restored to operation mode \" + F_stored_next_operating_mode + \" (\" + OM + \")\";\n                                                    }\n                                                msg2.payload    = F_stored_next_operating_mode;\n                                                msg2.topic      = \"new_Operating_Mode\";\n                                                \n                                                global.set('F_stored_next_operating_mode',undefined,\"file\");\n                                                return [null,msg2,msg99]; \n                                            }\n                \n            }  \n//******************************************************************************\n    }",
+        "func": "////////////////////////////////////////////////////////////////////////////\n////////////////////////// RTC - ON/OFF function ///////////////////////////\n//\n//\n//  This function has the goal to act when the temperature in the room is too high.\n//  It can either turn off the heatpump, or take the [heat]-mode out of the current operating mode.\n//  \n\nlet msg1    ={};        //  pin 1 - Output to power pump on/off \nlet msg2    ={};        //  pin 2 - Output to Operating Mode\nlet msg99   ={};        //  pin 3 - Messages to Log\n//\n//  return [msg1,msg2,msg99]\n\nvar Sterilization_active        =global.get('Sterilization_active',\"file\");\n    if (Sterilization_active===undefined)   {Sterilization_active=0}\n\nvar Force_DHW_active            =global.get('Force_DHW_active',\"file\");\n    if (Force_DHW_active===undefined)   {Force_DHW_active=0}   \n\n\nvar Operating_Mode              =global.get('Operating_Mode_State',\"file\");\n    if (Operating_Mode === undefined)   {node.warn('RTC on_off Operating_Mode');return null;}\n//  Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n//\nvar rtc_state                   =global.get('Correction_1_RTC_on_off',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n    if (rtc_state===undefined)  {rtc_state=0;}\n//\nvar F_RTC_on_off2               =global.get('F_RTC_on_off2',\"file\");\n    if (F_RTC_on_off2 === undefined)    {F_RTC_on_off2=0;}         // Get the global variable. Used to see if the RTC function is enabled through GUI.\n\nvar SolarFunction_active            = global.get(\"SolarFunction_active\",\"file\");\n    if (SolarFunction_active === undefined) {SolarFunction_active=0;}\n\n////////////////////////////////////////////////////////////////////////\nif (F_RTC_on_off2 == 0 || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8 || Sterilization_active == 1 || Force_DHW_active == 1 || SolarFunction_active == 1)     //  First IF\n    {   \n        global.set('F_rtc_on_off_status',undefined,\"file\");\n        return null;\n    }\n\nelse \n    {   \n        // Declaration of variables including their values.    \n        var rtc_PV          = global.get('T_room');                             // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n            if (rtc_PV===undefined) {node.warn('RTC on_off rtc_PV');return null}\n        var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard. \n            if (rtc_SP===undefined) {node.warn('RTC on_off rtc_SP');return null}\n        var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n        \n        var Heatpump_State  = global.get('Heatpump_State',\"file\");              // get current state of the heatpump. on or off (1 or 0)\n        \n        // below are the variables containing the temperature ranges.\n        var rtc_off         = global.get('rtc_off',\"file\");                     // Range turn heatpump off\n            if (rtc_off === undefined)  \n                {\n                    rtc_off = 10;\n                    global.set('rtc_off',10,\"file\");\n                }\n        var rtc_on          = global.get('rtc_on',\"file\");                      // Range turn heatpump on\n            if (rtc_on === undefined)   \n                {\n                    rtc_on = -10;\n                    global.set('rtc_on',-10,\"file\");\n                }\n        \n//        var F_rtc_on_off_active             = global.get('F_rtc_on_off_active',\"file\");\n//            if (F_rtc_on_off_active===undefined)    {F_rtc_on_off_active=0;global.set('F_rtc_on_off_active',0,\"file\");}\n            \n        var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n\n        msg99.topic     = \"Function RTC\";\n    //node.warn(\"rtc_dT= \" + rtc_dT);\n    //node.warn(\"rtc_on= \" + rtc_on);\n    //node.warn(\"F_rtc_on_off_active= \" + F_rtc_on_off_active);\n    \n        //*****************************************************************************\n        // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n        if (rtc_off <= rtc_on)\n            {\n                //node.warn('RTC function: Current OFF temperature is lower than the ON temperature. You must correct this !! ');\n                msg99.payload   = \"ERROR: Current OFF temperature is lower than the ON temperature. You must correct this !!\"; \n                return [null,null,msg99];\n            }\n\n        \n        if (rtc_dT > rtc_off)                           {global.set('F_rtc_on_off_status',0,\"file\");}\n        if (rtc_dT >= rtc_on && rtc_dT <= rtc_off)      {global.set('F_rtc_on_off_status',1,\"file\");}\n        if (rtc_dT < rtc_on)                            {global.set('F_rtc_on_off_status',2,\"file\");}\n        \n\n        \n        //*****************************************************************************\n        //      Scenario 1: the roomtemperature is high and above the 'off'limit. Function start\n        //*****************************************************************************\n//        if (rtc_dT > rtc_off && Heatpump_State == 1 && F_rtc_on_off_active == 0 && Operating_Mode != 3)               // TEST1 backup 22-11-2022 Ed\n        if (rtc_dT > rtc_off && Heatpump_State == 1 && Operating_Mode != 3)\n            {\n                //  Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (Operating_Mode == 0 || Operating_Mode == 2)\n                                            {\n                                                global.set('F_rtc_on_off_active',1,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                msg1.payload    = 0;\n                                                msg1.topic      = \"new_heatpump_power\";\n                                                msg99.payload   = \"on/off activated - Turn off power (Room temp: \" + rtc_PV + \"°C)\";\n                                                return [msg1,null,msg99]; \n                                            }\n                                            \n                if (Operating_Mode == 4 || Operating_Mode == 6)    \n                                            {\n                                                if (F_stored_next_operating_mode === undefined)\n                                                    {\n                                                        global.set('F_stored_next_operating_mode',Operating_Mode,\"file\");\n                                                    }\n                                                global.set('F_rtc_on_off_active',1,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                msg2.payload    = 3;\n                                                msg2.topic      = \"new_Operating_Mode\";\n                                                msg99.payload   = \"on/off activated - Operating mode from \" + Operating_Mode + \" to 3\";\n                                                return [null,msg2,msg99]; \n                                            }\n                                            \n            }\n        //*****************************************************************************\n        //      Scenario 2: the roomtemperature is low enough again. Function end\n        //*****************************************************************************\n//        if (rtc_dT < rtc_on && F_rtc_on_off_active == 1)                                                              // TEST1 backup 22-11-2022 Ed\n        if (rtc_dT < rtc_on)\n            {\n                if (Heatpump_State == 0)    {\n                                                global.set('F_rtc_on_off_active',0,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                msg1.payload    = 1;\n                                                msg1.topic      = \"new_heatpump_power\";\n                                                msg99.payload   = \"on/off - Turn on power (Room temp: \" + rtc_PV + \"°C)\";\n                                                return [msg1,null,msg99]; \n                                            }\n\n                if (Heatpump_State == 1)    {\n                                                global.set('F_rtc_on_off_active',0,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                if (F_stored_next_operating_mode === undefined) \n                                                    {\n                                                        F_stored_next_operating_mode = 0\n                                                        //msg99.payload   = \"on/off deactivated - Previous OM not found. Restored OM to default 0 (Heat only)\";\n                                                        msg99.payload = \"Operation mode 0 (Heat only)\";\n                                                    }\n                                                else \n                                                    {\n                                                        //msg99.payload   = \"on/off deactivated - Restored to OM \" + F_stored_next_operating_mode;\n                                                        var OM = F_stored_next_operating_mode;\n                                                        if (OM == 0) OM = \"Heat only\"; if (OM == 1) OM = \"Cool only\"; if (OM == 2) OM = \"Auto(Heat)\"; if (OM == 3) OM = \"DHW only\"; if (OM == 4) OM = \"Heat+DHW\"; if (OM == 5) OM = \"Cool+DHW\"; if (OM == 6) OM = \"Auto(Heat)+DHW\"; if (OM == 7) OM = \"Auto(Cool)\"; if (OM == 8) OM = \"Auto(Cool)+DHW)  \";\n                                                        msg99.payload = \"Restored to operation mode \" + F_stored_next_operating_mode + \" (\" + OM + \")\";\n                                                    }\n                                                msg2.payload    = F_stored_next_operating_mode;\n                                                msg2.topic      = \"new_Operating_Mode\";\n                                                \n                                                global.set('F_stored_next_operating_mode',undefined,\"file\");\n                                                return [null,msg2,msg99]; \n                                            }\n                \n            }  \n//******************************************************************************\n    }",
         "outputs": 3,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\n//global.set('F_stored_next_operating_mode',4,\"file\");",
@@ -23568,11 +23489,12 @@
         "y": 900,
         "wires": [
             [
-                "b00981cea5e9bdf1",
-                "a03c7589a8b95ce2"
+                "a03c7589a8b95ce2",
+                "1bf606367c4ff65f"
             ],
             [
-                "0eae7353f71aad0c"
+                "0eae7353f71aad0c",
+                "b228c8f148fd5c57"
             ],
             [
                 "663fd79ce5a1610d"
@@ -23600,7 +23522,8 @@
         "y": 980,
         "wires": [
             [
-                "4223b24f5dc06d8e"
+                "4223b24f5dc06d8e",
+                "dc59e4105ac39717"
             ],
             [
                 "663fd79ce5a1610d"
@@ -23617,7 +23540,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Function SoftStart",
-        "func": "//////////////////////////////// SOFTSTART /////////////////////////////////////\n// Declaration of variables including their values.\nlet msg1={};        // pin 1 - F_SS_correction\nlet msg99={};       // pin 2 - To Log\nmsg99.topic = \"Function SoftStart\";\n//  return [msg1,msg99];\n\n// uitzondering maken tijdens defrost\nif (global.get('ForceDefrost', \"file\") == 1) \n    {\n        msg99.payload = \"temporally disabled during defrost\"; \n        return [null, msg99]; // exit, no SoftStart during defrost\n    }\n\n\nvar ThreeWay_Valve_State= global.get('ThreeWay_Valve_State');\n    if(ThreeWay_Valve_State===undefined){return null;}\n    \nvar F_SS_state          = global.get('Correction_2_softstart_on_off',\"file\");    // Get the global variable. Used to see if the softstart function is enabled.\n    if(F_SS_state===undefined)  {global.set('Correction_2_softstart_on_off',0,\"file\");F_SS_state=0;}\n    \nvar F_SS_correction     = 0;\nvar F_SS_old_correction = global.get('F_SS_correction');\n    if (F_SS_old_correction===undefined)    {F_SS_old_correction='n/a'}\n    \nvar ss_Hz               = global.get('compressor_frequency');                       // Get the global variable for current compressor frequency\n    if (ss_Hz === undefined)    {return null;}\nvar Operating_Mode      = global.get('Operating_Mode_State',\"file\");\nvar SP_start            = global.get('F_WAR_SP');                           //  Setpoint after WAR calculation\n    if (SP_start === undefined)    {return null;}\nvar F_RTC_correction    = global.get('F_RTC_correction');                //  Correction of the RTC function \n        if (F_RTC_correction===undefined) {F_RTC_correction=0}\nvar F_NR_correction     = global.get('F_NR_correction');                 //  Correction of the NightReduction function\n        if (F_NR_correction===undefined) {F_NR_correction=0}\nvar F_SS_SP_start       = SP_start + F_RTC_correction + F_NR_correction;    //  Calculate the starting temperature (SP) for the SoftStart function \n\n//\n\n//***********************************************************************************\nif (F_SS_state == 0 || ss_Hz == 0 || ThreeWay_Valve_State != 0 || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                     //  Check if the function is enabled. Check if the compressor is running. Check if 3wayvalvue is in HEAT mode(0).\n    {\n        F_SS_correction = 0;                                                        //  If the function is off, or the compressor is off, set  correction to zero\n        global.set('F_SS_correction',F_SS_correction);                              //  Set the correctionvalue\n        context.set(\"StartTime\",undefined);\n        \n        msg1.payload = F_SS_correction; \n        msg1.topic = 'Compressor off. F_SS_correction 0';\n        \n        msg99.payload = \"Compressor Inactive - Correction: 0\"\n        \n        return [msg1,msg99];\n    }\n//***********************************************************************************\n//\nelse\n    {\n\n        var F_SS_new_SP;                                                            //  declare an empty variable\n        var ss_PV_Ta            = global.get('Main_Outlet_Temp');                   //  PV (Ta/outlet) Temperature of water.\n        var ss_PV_Tr            = global.get('Main_Inlet_Temp');                    //  PV (Tr/inlet) Temperature of water\n            if (ss_PV_Ta === undefined || ss_PV_Tr === undefined)   {return null;}\n        var T = '';\n        var C = '';\n        \n        //\n        //***********************************************************************************\n        /////// Timer how long the compressoris on. Runtime //////////\n        var CurrentTime = new Date().getTime();\n        var StartTime = context.get(\"StartTime\");\n        if (StartTime === undefined)\n            {\n                StartTime = CurrentTime;\n                context.set(\"StartTime\",StartTime);\n            }\n        var TimeElapsed = ((CurrentTime - StartTime)/1000);\n        TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n        \n        \n        \n        \n        //***********************************************************************************\n        var Stage_1_Duration    =   180;                                        // Phase 1 duration in seconds\n        //***********************************************************************************\n        // Stage 1 - Pump just started\n            \n        if (TimeElapsed < Stage_1_Duration)\n            {\n                global.set('F_SS_correction_active',1);\n                F_SS_correction = -2;                                               //  Set the starting correction to -3\n                F_SS_new_SP = F_SS_SP_start + F_SS_correction;                      //  Calculate the NEW SP.\n                \n                T = ' - (STARTUP)';\n                \n                if (ss_PV_Ta -2 > F_SS_new_SP)                                     //  Check if the NEW SP is not too low (2C below Ta) \n                    {\n                        F_SS_new_SP             = ss_PV_Ta -2;                      //  NEW SP\n                        F_SS_correction         = F_SS_new_SP - F_SS_SP_start;      //  NEW CORRECTION\n                        T = ' - (CATCH)';\n                    }\n                if (F_SS_new_SP > F_SS_SP_start + 7)                                //  Check if the NEW SP is not too high (4C above original SP) \n                    {\n                        F_SS_new_SP             = F_SS_SP_start + 7;                //  NEW SP\n                        F_SS_correction         = 7;                                //  NEW CORRECTION\n                        T = ' - (CATCH)';\n                    }\n                \n            }\n        \n        //***********************************************************************************\n        //      Stage 2 - waiting for pump to relax\n        //***********************************************************************************\n        var F_SS_stage2 = global.get('F_SS_stage2',\"file\");\n        var F_SS_stage2_limit = global.get('F_SS_stage2_limit',\"file\");\n        F_SS_stage2 = F_SS_stage2 * 60;                         // convert minutes to seconds\n        \n        \n        if (TimeElapsed >= Stage_1_Duration && TimeElapsed < (F_SS_stage2))\n            {\n                global.set('F_SS_correction_active',1);\n                \n                F_SS_new_SP                     = ss_PV_Ta -1;                      //  NEW SP\n                    if (F_SS_new_SP < F_SS_SP_start -3)\n                        {\n                            F_SS_new_SP = F_SS_SP_start -3;\n                        }\n                F_SS_correction                 = F_SS_new_SP - F_SS_SP_start;      //  NEW CORRECTION\n                \n                if (F_SS_correction > F_SS_stage2_limit)\n                    {\n                        F_SS_correction = F_SS_stage2_limit;\n                        F_SS_new_SP = F_SS_SP_start + F_SS_stage2_limit;\n                        C = ' (Capped)'\n                    }\n                T = ' - (STABLE)';\n                \n                if (TimeElapsed <= 300 && F_SS_correction > 0)\n                    {\n                        F_SS_correction = 0;\n                    }\n                if (TimeElapsed > 300 && TimeElapsed <= 600 && F_SS_correction > 1)\n                    {\n                        F_SS_correction = 1;\n                    }\n                \n            }\n        //***********************************************************************************\n        //      Stage 3 - Pump has relaxed. Remove correction, back to original setpoint\n        if (TimeElapsed >= F_SS_stage2)\n            {\n            ////////////////////////\n                    global.set('F_SS_correction_active',0);\n                    F_SS_correction             = 0;                                //  NEW CORRECTION\n                    F_SS_new_SP                 = F_SS_SP_start                     //  NEW SP\n                    T = ' - (ENDING)';\n            }\n    }\n//***********************************************************************************\n//\n\nglobal.set('F_SS_correction',F_SS_correction);\nmsg1.payload = F_SS_correction; \nmsg1.topic = 'F_SS_correction ' + T;\n\n//*****************************************************************************\n// calculate temp SP_Final *note* only for log message\nvar F_WAR_onoff = global.get('Correction_0_WAR_on_off', \"file\");                //\nif (F_WAR_onoff === undefined) { F_WAR_onoff = 0; }\n\nvar F_WAR_SP = global.get('F_WAR_SP');                                          //\n\nvar F_RTC_state = global.get('Correction_1_RTC_on_off', \"file\");                //\nif (F_RTC_state === undefined) { F_RTC_state = 0; }\n\nvar F_NR_state = global.get('nightreduction_on_off', \"file\");                   //\nif (F_NR_state === undefined) { F_NR_state = 0; }\nvar SP_Final = global.get('SP_DIRECT_virt', \"file\");  \n    if (F_WAR_onoff == 1) { SP_Final = F_WAR_SP; }\n    if (F_RTC_state == 1) { SP_Final = SP_Final + F_RTC_correction; }\n    if (F_NR_state == 1) { SP_Final = SP_Final + F_NR_correction; }\n\n//*****************************************************************************\n\n\nif (F_SS_old_correction == F_SS_correction) {\n        context.set(\"StartTime_phase2\",undefined);\n        return [msg1,null];\n}\n\nif (F_SS_correction > F_SS_old_correction)                                    //  reduced response scenario (stage 2)\n{\n    var StartTime_phase2 = context.get(\"StartTime_phase2\");\n    if (StartTime_phase2 === undefined) \n            {\n                StartTime_phase2 = CurrentTime;\n                context.set(\"StartTime_phase2\",StartTime_phase2);\n            }\n    \n    var TimeElapsed_phase2 = ((CurrentTime - StartTime_phase2)/1000);\n    TimeElapsed_phase2 = parseFloat(TimeElapsed.toFixed(0));\n    \n    if ( (TimeElapsed > Stage_1_Duration && TimeElapsed_phase2 < 80) || (TimeElapsed < Stage_1_Duration && TimeElapsed_phase2 < 9) )   \n        {\n            global.set('F_SS_correction',F_SS_old_correction);\n            return [msg1,null];\n        }\n    \n    else {\n        SP_Final = SP_Final + F_SS_correction;\n        msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: \" + SP_Final + \"°C\"; \n        var current_sp = global.get('Main_Target_Temp');    \n        context.set(\"StartTime_phase2\", CurrentTime); \n        var Debugging = global.get('Debugging');                                                    //update 9-12-2022 (only send when needed)\n        if (Number(SP_Final).toFixed(0) == current_sp && Debugging == 0) { return [null, null]; }   //update 9-12-2022 (only send when needed)\n        if (Number(SP_Final).toFixed(0) == current_sp && Debugging == 1) { return [null, msg99]; }  //update 9-12-2022 (send when Extend logging is on)\n        return [msg1,msg99];\n        }\n        \n}\n\nelse\n    {\n        SP_Final = SP_Final + F_SS_correction;\n        msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: \" + SP_Final + \"°C\"; \n        context.set(\"StartTime_phase2\", CurrentTime);\n        var current_sp = global.get('Main_Target_Temp');  \n        var Debugging = global.get('Debugging');                                                     //update 9-12-2022 (only send when needed)\n        if (Number(SP_Final).toFixed(0) == current_sp && Debugging == 0) { return [null, null]; }   //update 9-12-2022 (only send when needed)\n        if (Number(SP_Final).toFixed(0) == current_sp && Debugging == 1) { return [null, msg99]; }  //update 9-12-2022 (send when Extend logging is on)\n\n        \n        //***********************************************************************************\n        return [msg1,msg99];\n    }",
+        "func": "//////////////////////////////// SOFTSTART /////////////////////////////////////\n// Declaration of variables including their values.\nlet msg1={};        // pin 1 - F_SS_correction\nlet msg99={};       // pin 2 - To Log\n    msg99.topic = \"Function SoftStart\";\n//  return [msg1,msg99];\n\n// uitzondering maken tijdens defrost\nif (global.get('ForceDefrost', \"file\") == 1) \n    {\n        msg99.payload = \"temporally disabled during defrost\"; \n        return [null, msg99]; // exit, no SoftStart during defrost\n    }\n\n\nvar ThreeWay_Valve_State= global.get('ThreeWay_Valve_State');\n    if(ThreeWay_Valve_State===undefined){return null;}\n    \nvar F_SS_state          = global.get('Correction_2_softstart_on_off',\"file\");    // Get the global variable. Used to see if the softstart function is enabled.\n    if(F_SS_state===undefined)  {global.set('Correction_2_softstart_on_off',0,\"file\");F_SS_state=0;}\n    \nvar F_SS_correction     = 0;\nvar F_SS_old_correction = global.get('F_SS_correction');\n    if (F_SS_old_correction===undefined)    {F_SS_old_correction='n/a'}\n    \nvar ss_Hz               = global.get('compressor_frequency');                       // Get the global variable for current compressor frequency\n    if (ss_Hz === undefined)    {return null;}\nvar Operating_Mode      = global.get('Operating_Mode_State',\"file\");\nvar SP_start            = global.get('F_WAR_SP');                           //  Setpoint after WAR calculation\n    if (SP_start === undefined)    {return null;}\nvar F_RTC_correction    = global.get('F_RTC_correction');                //  Correction of the RTC function \n        if (F_RTC_correction===undefined) {F_RTC_correction=0}\nvar F_NR_correction     = global.get('F_NR_correction');                 //  Correction of the NightReduction function\n        if (F_NR_correction===undefined) {F_NR_correction=0}\nvar F_SS_SP_start       = SP_start + F_RTC_correction + F_NR_correction;    //  Calculate the starting temperature (SP) for the SoftStart function \n\n//\n\n//***********************************************************************************\nif (F_SS_state == 0 || ss_Hz == 0 || ThreeWay_Valve_State != 0 || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                     //  Check if the function is enabled. Check if the compressor is running. Check if 3wayvalvue is in HEAT mode(0).\n    {\n        F_SS_correction = 0;                                                        //  If the function is off, or the compressor is off, set  correction to zero\n        global.set('F_SS_correction',F_SS_correction);                              //  Set the correctionvalue\n        context.set(\"StartTime\",undefined);\n        \n        msg1.payload = F_SS_correction; \n        msg1.topic = 'Compressor off. F_SS_correction 0';\n        \n        msg99.payload = \"Compressor Inactive - Correction: 0\"\n        \n        return [msg1,msg99];\n    }\n//***********************************************************************************\n//\nelse\n    {\n\n        var F_SS_new_SP;                                                            //  declare an empty variable\n        var ss_PV_Ta            = global.get('Main_Outlet_Temp');                   //  PV (Ta/outlet) Temperature of water.\n        var ss_PV_Tr            = global.get('Main_Inlet_Temp');                    //  PV (Tr/inlet) Temperature of water\n            if (ss_PV_Ta === undefined || ss_PV_Tr === undefined)   {return null;}\n        var T = '';\n        var C = '';\n        \n        //\n        //***********************************************************************************\n        /////// Timer how long the compressoris on. Runtime //////////\n        var CurrentTime = new Date().getTime();\n        var StartTime = context.get(\"StartTime\");\n        if (StartTime === undefined)\n            {\n                StartTime = CurrentTime;\n                context.set(\"StartTime\",StartTime);\n            }\n        var TimeElapsed = ((CurrentTime - StartTime)/1000);\n        TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n        \n        \n        \n        \n        //***********************************************************************************\n        var Stage_1_Duration    =   180;                                        // Phase 1 duration in seconds\n        //***********************************************************************************\n        // Stage 1 - Pump just started\n            \n        if (TimeElapsed < Stage_1_Duration)\n            {\n                global.set('F_SS_correction_active',1);\n                F_SS_correction = -2;                                               //  Set the starting correction to -3\n                F_SS_new_SP = F_SS_SP_start + F_SS_correction;                      //  Calculate the NEW SP.\n                \n                T = ' - (STARTUP)';\n                \n                if (ss_PV_Ta -2 > F_SS_new_SP)                                     //  Check if the NEW SP is not too low (2C below Ta) \n                    {\n                        F_SS_new_SP             = ss_PV_Ta -2;                      //  NEW SP\n                        F_SS_correction         = F_SS_new_SP - F_SS_SP_start;      //  NEW CORRECTION\n                        T = ' - (CATCH)';\n                    }\n                if (F_SS_new_SP > F_SS_SP_start + 7)                                //  Check if the NEW SP is not too high (4C above original SP) \n                    {\n                        F_SS_new_SP             = F_SS_SP_start + 7;                //  NEW SP\n                        F_SS_correction         = 7;                                //  NEW CORRECTION\n                        T = ' - (CATCH)';\n                    }\n                \n            }\n        \n        //***********************************************************************************\n        //      Stage 2 - waiting for pump to relax\n        //***********************************************************************************\n        var F_SS_stage2 = global.get('F_SS_stage2',\"file\");\n        var F_SS_stage2_limit = global.get('F_SS_stage2_limit',\"file\");\n        F_SS_stage2 = F_SS_stage2 * 60;                         // convert minutes to seconds\n        \n        \n        if (TimeElapsed >= Stage_1_Duration && TimeElapsed < (F_SS_stage2))\n            {\n                global.set('F_SS_correction_active',1);\n                \n                F_SS_new_SP                     = ss_PV_Ta -1;                      //  NEW SP\n                    if (F_SS_new_SP < F_SS_SP_start -3)\n                        {\n                            F_SS_new_SP = F_SS_SP_start -3;\n                        }\n                F_SS_correction                 = F_SS_new_SP - F_SS_SP_start;      //  NEW CORRECTION\n                \n                if (F_SS_correction > F_SS_stage2_limit)\n                    {\n                        F_SS_correction = F_SS_stage2_limit;\n                        F_SS_new_SP = F_SS_SP_start + F_SS_stage2_limit;\n                        C = ' (Capped)'\n                    }\n                T = ' - (STABLE)';\n                \n                if (TimeElapsed <= 300 && F_SS_correction > 0)\n                    {\n                        F_SS_correction = 0;\n                    }\n                if (TimeElapsed > 300 && TimeElapsed <= 600 && F_SS_correction > 1)\n                    {\n                        F_SS_correction = 1;\n                    }\n                \n            }\n        //***********************************************************************************\n        //      Stage 3 - Pump has relaxed. Remove correction, back to original setpoint\n        if (TimeElapsed >= F_SS_stage2)\n            {\n            ////////////////////////\n                    global.set('F_SS_correction_active',0);\n                    F_SS_correction             = 0;                                //  NEW CORRECTION\n                    F_SS_new_SP                 = F_SS_SP_start                     //  NEW SP\n                    T = ' - (ENDING)';\n            }\n    }\n//***********************************************************************************\n//\n\nglobal.set('F_SS_correction',F_SS_correction);\nmsg1.payload = F_SS_correction; \nmsg1.topic = 'F_SS_correction ' + T;\n\n//*****************************************************************************\n// calculate temp SP_Final *note* only for log message\nvar F_WAR_onoff = global.get('Correction_0_WAR_on_off', \"file\");                //\nif (F_WAR_onoff === undefined) { F_WAR_onoff = 0; }\n\nvar F_WAR_SP = global.get('F_WAR_SP');                                          //\n\nvar F_RTC_state = global.get('Correction_1_RTC_on_off', \"file\");                //\nif (F_RTC_state === undefined) { F_RTC_state = 0; }\n\nvar F_NR_state = global.get('nightreduction_on_off', \"file\");                   //\nif (F_NR_state === undefined) { F_NR_state = 0; }\nvar SP_Final = global.get('SP_DIRECT_virt', \"file\");  \n    if (F_WAR_onoff == 1) { SP_Final = F_WAR_SP; }\n    if (F_RTC_state == 1) { SP_Final = SP_Final + F_RTC_correction; }\n    if (F_NR_state == 1) { SP_Final = SP_Final + F_NR_correction; }\n\n//*****************************************************************************\n\n\nif (F_SS_old_correction == F_SS_correction) {\n        context.set(\"StartTime_phase2\",undefined);\n        return [msg1,null];\n}\n\nif (F_SS_correction > F_SS_old_correction)                                    //  reduced response scenario (stage 2)\n{\n    var StartTime_phase2 = context.get(\"StartTime_phase2\");\n    if (StartTime_phase2 === undefined) \n            {\n                StartTime_phase2 = CurrentTime;\n                context.set(\"StartTime_phase2\",StartTime_phase2);\n            }\n    \n    var TimeElapsed_phase2 = ((CurrentTime - StartTime_phase2)/1000);\n    TimeElapsed_phase2 = parseFloat(TimeElapsed.toFixed(0));\n    \n    if ( (TimeElapsed > Stage_1_Duration && TimeElapsed_phase2 < 80) || (TimeElapsed < Stage_1_Duration && TimeElapsed_phase2 < 9) )   \n        {\n            global.set('F_SS_correction',F_SS_old_correction);\n            return [msg1,null];\n        }\n    \n    else {\n        SP_Final = SP_Final + F_SS_correction;\n        msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: \" + SP_Final + \"°C\"; \n        var current_sp = global.get('Main_Target_Temp');    \n        context.set(\"StartTime_phase2\", CurrentTime); \n        var Debugging = global.get('Debugging');                                                    //update 9-12-2022 (only send when needed)\n        if (Number(SP_Final).toFixed(0) == current_sp && Debugging == 0) { return [null, null]; }   //update 9-12-2022 (only send when needed)\n        if (Number(SP_Final).toFixed(0) == current_sp && Debugging == 1) { return [null, msg99]; }  //update 9-12-2022 (send when Extend logging is on)\n        return [msg1,msg99];\n        }\n        \n}\n\nelse\n    {\n        SP_Final = SP_Final + F_SS_correction;\n        msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: \" + SP_Final + \"°C\"; \n        context.set(\"StartTime_phase2\", CurrentTime);\n        var current_sp = global.get('Main_Target_Temp');  \n        var Debugging = global.get('Debugging');                                                     //update 9-12-2022 (only send when needed)\n        if (Number(SP_Final).toFixed(0) == current_sp && Debugging == 0) { return [null, null]; }   //update 9-12-2022 (only send when needed)\n        if (Number(SP_Final).toFixed(0) == current_sp && Debugging == 1) { return [null, msg99]; }  //update 9-12-2022 (send when Extend logging is on)\n\n        \n        //***********************************************************************************\n        return [msg1,msg99];\n    }",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -23717,8 +23640,7 @@
         "y": 1360,
         "wires": [
             [
-                "add6fa4d403dd143",
-                "62618b223d5b8e78"
+                "add6fa4d403dd143"
             ]
         ]
     },
@@ -23778,11 +23700,16 @@
         "y": 1040,
         "wires": [
             [
-                "d8a6057be4ca32cd"
+                "d8a6057be4ca32cd",
+                "7fafbc0171abf5e3"
             ],
             [
                 "663fd79ce5a1610d"
             ]
+        ],
+        "outputLabels": [
+            "send to Quietmode",
+            "Input LOG"
         ]
     },
     {
@@ -23869,8 +23796,7 @@
         "y": 1120,
         "wires": [
             [
-                "cb987aa12172f46f",
-                "8e66f534027305a9"
+                "cb987aa12172f46f"
             ]
         ]
     },
@@ -23923,8 +23849,7 @@
         "wires": [
             [
                 "2ade66982bca360c",
-                "612499563cacf8a0",
-                "885563a7a0aca258"
+                "612499563cacf8a0"
             ]
         ]
     },
@@ -24026,7 +23951,6 @@
         "y": 900,
         "wires": [
             [
-                "113e5b7fd58b2281",
                 "a03c7589a8b95ce2"
             ]
         ]
@@ -24047,46 +23971,9 @@
         "y": 900,
         "wires": [
             [
-                "346a3528a7770803",
-                "76b66e7888fbeb08"
+                "346a3528a7770803"
             ]
         ]
-    },
-    {
-        "id": "76b66e7888fbeb08",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "debug 74",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 2040,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "b00981cea5e9bdf1",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "debug 77",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1420,
-        "y": 580,
-        "wires": []
     },
     {
         "id": "a03c7589a8b95ce2",
@@ -24110,24 +23997,6 @@
         ]
     },
     {
-        "id": "113e5b7fd58b2281",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "debug 75",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1600,
-        "y": 580,
-        "wires": []
-    },
-    {
         "id": "41510757b9c4f394",
         "type": "debug",
         "z": "a938de76db0b71f6",
@@ -24145,41 +24014,6 @@
         "wires": []
     },
     {
-        "id": "885563a7a0aca258",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "debug 79",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1180,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "8e66f534027305a9",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "debug 89",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1140,
-        "y": 1200,
-        "wires": []
-    },
-    {
         "id": "2f5e3d38d1cdd9b2",
         "type": "debug",
         "z": "a938de76db0b71f6",
@@ -24192,7 +24026,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1720,
+        "x": 2080,
         "y": 1120,
         "wires": []
     },
@@ -24219,6 +24053,139 @@
             "ToLog"
         ],
         "info": "# ALL IN ONE FUNCTION\n\nThis function takes care of WAR, RTC and SoftStart. Comments are within"
+    },
+    {
+        "id": "823ef896afa239af",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "debug 93",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2080,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "7fafbc0171abf5e3",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "debug 94",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2080,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "dc59e4105ac39717",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "debug 95",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2080,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "1bf606367c4ff65f",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "debug 96",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2080,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "e81634fb88703859",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "debug 97",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2080,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "5e9da82d3dfe26da",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "debug 98",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2080,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "b228c8f148fd5c57",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "name": "debug 99",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2340,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "6c685782864f1787",
+        "type": "link out",
+        "z": "a938de76db0b71f6",
+        "g": "cd2050a861736ec5",
+        "name": "TOP26 - panasonic_heat_pump/main/Defrosting_State",
+        "mode": "link",
+        "links": [
+            "ffa2e7745e5aed4c",
+            "afa5bf9f7c3531bc"
+        ],
+        "x": 1235,
+        "y": 3460,
+        "wires": []
     },
     {
         "id": "ed155b604642d354",
@@ -24252,7 +24219,7 @@
         ],
         "x": 54,
         "y": 1119,
-        "w": 1398,
+        "w": 1388,
         "h": 602
     },
     {
@@ -24315,9 +24282,9 @@
             "d44f1a1993a8a44f",
             "e68356272f1f529b"
         ],
-        "x": 44,
+        "x": 54,
         "y": 439,
-        "w": 1398,
+        "w": 1388,
         "h": 622
     },
     {
@@ -24445,7 +24412,7 @@
         ],
         "x": 84,
         "y": 579,
-        "w": 1332,
+        "w": 1322,
         "h": 82
     },
     {
@@ -24467,7 +24434,7 @@
         ],
         "x": 84,
         "y": 1239,
-        "w": 1342,
+        "w": 1332,
         "h": 82
     },
     {
@@ -24487,9 +24454,9 @@
         "nodes": [
             "2ee679408e4ccc6f"
         ],
-        "x": 1124,
+        "x": 1134,
         "y": 919,
-        "w": 292,
+        "w": 272,
         "h": 82
     },
     {
@@ -24509,9 +24476,9 @@
         "nodes": [
             "4eaa2cfa2749c551"
         ],
-        "x": 1124,
+        "x": 1134,
         "y": 1579,
-        "w": 292,
+        "w": 272,
         "h": 82
     },
     {
@@ -25833,9 +25800,9 @@
             "59e73e3a2c2985fa",
             "88ea0371f9cecd37"
         ],
-        "x": 64,
+        "x": 74,
         "y": 19,
-        "w": 1302,
+        "w": 1292,
         "h": 728
     },
     {
@@ -25956,9 +25923,9 @@
             "a9994ef2e592aee1",
             "375bbd780529afe0"
         ],
-        "x": 64,
+        "x": 74,
         "y": 779,
-        "w": 1352,
+        "w": 1332,
         "h": 688
     },
     {
@@ -25982,7 +25949,7 @@
         ],
         "x": 114,
         "y": 551.5,
-        "w": 822,
+        "w": 812,
         "h": 169.5
     },
     {
@@ -26082,7 +26049,7 @@
         ],
         "x": 434,
         "y": 1719,
-        "w": 402,
+        "w": 392,
         "h": 1162
     },
     {
@@ -29847,9 +29814,9 @@
             "9f75b032f8c2eeb5",
             "bcda44f3140d86e9"
         ],
-        "x": 124,
+        "x": 134,
         "y": 139,
-        "w": 642,
+        "w": 632,
         "h": 342
     },
     {
@@ -29869,9 +29836,9 @@
             "43be81558a98b102",
             "c2935eeb2b0919cf"
         ],
-        "x": 204,
+        "x": 214,
         "y": 499,
-        "w": 632,
+        "w": 622,
         "h": 202
     },
     {
@@ -29891,9 +29858,9 @@
             "8982c1e161d9d215",
             "3c3c8472da1fb85a"
         ],
-        "x": 1084,
+        "x": 1094,
         "y": 139,
-        "w": 592,
+        "w": 582,
         "h": 202
     },
     {
@@ -29918,9 +29885,9 @@
             "8090bc95e8512738",
             "7ca958b4b94243f8"
         ],
-        "x": 1104,
+        "x": 1114,
         "y": 379,
-        "w": 592,
+        "w": 582,
         "h": 262
     },
     {
@@ -29945,9 +29912,9 @@
             "1dc467ae4cf20867",
             "8d47d305edaedefa"
         ],
-        "x": 1104,
+        "x": 1114,
         "y": 679,
-        "w": 592,
+        "w": 582,
         "h": 262
     },
     {
@@ -31224,9 +31191,9 @@
             "d0fda364deccc7f0",
             "47fe4c3f4736bcc8"
         ],
-        "x": 2314,
+        "x": 2334,
         "y": 1979,
-        "w": 1372,
+        "w": 1352,
         "h": 242
     },
     {
@@ -42741,7 +42708,9 @@
         "y": 2580,
         "wires": [
             [
-                "0e56417c81c6b1be"
+                "0e56417c81c6b1be",
+                "fdb278d1edd0e5c5",
+                "4be14d43ed11df9e"
             ]
         ]
     },
@@ -43778,6 +43747,94 @@
         "wires": []
     },
     {
+        "id": "45a08e0f92b016b8",
+        "type": "function",
+        "z": "35d210f042827344",
+        "name": "function 11",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2570,
+        "y": 2800,
+        "wires": [
+            [
+                "42b4fb85dba7f0f2"
+            ]
+        ]
+    },
+    {
+        "id": "c0088fc0bcf5ce23",
+        "type": "function",
+        "z": "35d210f042827344",
+        "name": "function 12",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2570,
+        "y": 2840,
+        "wires": [
+            [
+                "42b4fb85dba7f0f2"
+            ]
+        ]
+    },
+    {
+        "id": "42b4fb85dba7f0f2",
+        "type": "rbe",
+        "z": "35d210f042827344",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2790,
+        "y": 2820,
+        "wires": [
+            [
+                "45a08e0f92b016b8",
+                "c0088fc0bcf5ce23"
+            ]
+        ]
+    },
+    {
+        "id": "b9baff17524ab299",
+        "type": "link in",
+        "z": "35d210f042827344",
+        "name": "DASH - Scheduler Room SP to filter IN",
+        "links": [
+            "af715d4c79137c30"
+        ],
+        "x": 2855,
+        "y": 2640,
+        "wires": [
+            [
+                "50a7d35eec5ebb92"
+            ]
+        ]
+    },
+    {
+        "id": "fdb278d1edd0e5c5",
+        "type": "link out",
+        "z": "35d210f042827344",
+        "name": "DASH - Scheduler Room SP to filter OUT",
+        "mode": "link",
+        "links": [
+            "9a106cdefc873348"
+        ],
+        "x": 3005,
+        "y": 2640,
+        "wires": []
+    },
+    {
         "id": "3aa03811830ef29e",
         "type": "tab",
         "label": "WP System",
@@ -43826,9 +43883,9 @@
             "e335ee2f6e1f9957",
             "f4fa02505ab621d5"
         ],
-        "x": 2044,
+        "x": 2054,
         "y": 199,
-        "w": 822,
+        "w": 812,
         "h": 1022
     },
     {
@@ -43910,9 +43967,9 @@
             "3ed3a7f6bfbf803a",
             "c5e1f08f07eb647b"
         ],
-        "x": 2044,
+        "x": 2054,
         "y": 59,
-        "w": 822,
+        "w": 812,
         "h": 122
     },
     {
@@ -46080,7 +46137,6 @@
             "color": "#000000"
         },
         "nodes": [
-            "bbde1323439f343c",
             "57c9f02c576ad71f",
             "c8b48ccb978f3380",
             "b903f8bbf513d6a1",
@@ -46093,7 +46149,8 @@
             "109e99262b1d9b31",
             "3078dedaa0fa9fa6",
             "df9dc017de54372f",
-            "98332e44d65ec671"
+            "98332e44d65ec671",
+            "32c013973096ab65"
         ],
         "x": 74,
         "y": 219,
@@ -46155,18 +46212,18 @@
             "color": "#000000"
         },
         "nodes": [
-            "cbf4f7e12072b973",
             "f9d6e659dbe05a19",
             "991502670f43d03e",
             "116f4e573c2d55e8",
             "65b9128dd9399abf",
             "a9fa37eb6a1a4fc2",
             "842e7cc6853ea3c8",
-            "1063a8e1740e49a4"
+            "1063a8e1740e49a4",
+            "afa5bf9f7c3531bc"
         ],
-        "x": 74,
+        "x": 84,
         "y": 619,
-        "w": 692,
+        "w": 682,
         "h": 162
     },
     {
@@ -46186,9 +46243,9 @@
             "0af4b3b3445b3ce2",
             "6c6d719592dac8d5"
         ],
-        "x": 74,
+        "x": 84,
         "y": 799,
-        "w": 1032,
+        "w": 1022,
         "h": 142
     },
     {
@@ -46320,9 +46377,9 @@
             "0b00b03e3c4e9930",
             "d3a2ef1813673fb5"
         ],
-        "x": 74,
+        "x": 84,
         "y": 1859,
-        "w": 1032,
+        "w": 1022,
         "h": 82
     },
     {
@@ -46335,7 +46392,6 @@
             "color": "#000000"
         },
         "nodes": [
-            "5590b17ce8432ba1",
             "879b071f7e013653",
             "676beb3babed5817",
             "17f55cbc1fe21549",
@@ -46360,11 +46416,12 @@
             "315fddd6f5ad04a4",
             "f45559f5e72abee8",
             "0c45aee68819ba06",
-            "265aa477d413b30c"
+            "265aa477d413b30c",
+            "73a3b137b4661912"
         ],
         "x": 74,
         "y": 1959,
-        "w": 1202,
+        "w": 1192,
         "h": 282
     },
     {
@@ -46376,29 +46433,6 @@
         "x": 480,
         "y": 60,
         "wires": []
-    },
-    {
-        "id": "bbde1323439f343c",
-        "type": "mqtt in",
-        "z": "d5fea67661261002",
-        "g": "3ce1342324a97c52",
-        "name": "TOP8 - panasonic_heat_pump/main/Compressor_Freq",
-        "topic": "panasonic_heat_pump/main/Compressor_Freq",
-        "qos": "0",
-        "datatype": "auto",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 310,
-        "y": 320,
-        "wires": [
-            [
-                "57c9f02c576ad71f",
-                "109e99262b1d9b31"
-            ]
-        ]
     },
     {
         "id": "57c9f02c576ad71f",
@@ -46754,28 +46788,6 @@
         "wires": [
             [
                 "459dcc6cc8cff9da"
-            ]
-        ]
-    },
-    {
-        "id": "cbf4f7e12072b973",
-        "type": "mqtt in",
-        "z": "d5fea67661261002",
-        "g": "5166b23daf2b561d",
-        "name": "TOP26 - Defrost state",
-        "topic": "panasonic_heat_pump/main/Defrosting_State",
-        "qos": "0",
-        "datatype": "auto-detect",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 200,
-        "y": 700,
-        "wires": [
-            [
-                "a9fa37eb6a1a4fc2"
             ]
         ]
     },
@@ -48474,32 +48486,10 @@
         "type": "comment",
         "z": "d5fea67661261002",
         "name": "Todo  (open me)",
-        "info": "[X] Flow can now handle quarter water temperatures from inlet and outlet.\n[ ] Fix logging Quietmode restore in log\n[ ] Heishamon_MQTT_Reconnects\n[ ] last run kWh, averige kWh/run.\n\n[ ] Sensor/devices on central place (flow).\n[ ] Selectable from Dashboard Hardware (if connected in flow).\n\n[ ] fix unneeded punmpspeed mqtt sending\n\nUsers currently using those devices:\n=====================================\nAikon (kWh + 1-wire)\nMikeyMan (kWh + MQTT sensors)\nMaarten69 (kWh + 1-wire)\nEdterbak (kWh)\n\n\n\n\n\n// todo: predict defrost (look at service manual)\n==================================================\nTOP21   Outside_Pipe_Temp   -2  °C\nTOP52   Defrost_Temp    -31 °C\nTOP53   Eva_Outlet_Temp -1  °C\nTOP54   Bypass_Outlet_Temp  -31\n\n// Call defrost manualy: SET12-SetForceDefrost \t(Forces defrost routine) \tvalues 0, 1\n",
+        "info": "[X] Flow can now handle quarter water temperatures from inlet and outlet.\n\n\n[1] Fix logging Quietmode restore in log\n\n[2] Heishamon_MQTT_Reconnects\n    reduce logging\n    \n[3] last run kWh, averige kWh/run. \n    Can be removed by Maarten\n\n[4] Sensor/devices on central place (flow).\n\n[5] Selectable from Dashboard Hardware (if connected in flow).\n\n[6] fix unneeded punmpspeed mqtt sending\n    OK >> First priority. \n\n[7] fix correct function of shutdown + custom scheduler\n    To Do by EdterBak\n\nUsers currently using those devices:\n=====================================\nAikon (kWh + 1-wire)\nMikeyMan (kWh + MQTT sensors)\nMaarten69 (kWh + 1-wire)\nEdterbak (kWh)\n\n\n// todo: predict defrost (look at service manual)\n==================================================\nTOP21   Outside_Pipe_Temp   -2  °C\nTOP52   Defrost_Temp    -31 °C\nTOP53   Eva_Outlet_Temp -1  °C\nTOP54   Bypass_Outlet_Temp  -31\n\n// Call defrost manualy: SET12-SetForceDefrost \t(Forces defrost routine) \tvalues 0, 1\n",
         "x": 1400,
         "y": 300,
         "wires": []
-    },
-    {
-        "id": "5590b17ce8432ba1",
-        "type": "mqtt in",
-        "z": "d5fea67661261002",
-        "g": "86eb49a0b0f702bc",
-        "name": "TOP8 - Compressor_Freq",
-        "topic": "panasonic_heat_pump/main/Compressor_Freq",
-        "qos": "0",
-        "datatype": "auto",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 230,
-        "y": 2040,
-        "wires": [
-            [
-                "879b071f7e013653"
-            ]
-        ]
     },
     {
         "id": "879b071f7e013653",
@@ -48655,7 +48645,7 @@
         "topic": "",
         "payload": "0",
         "payloadType": "num",
-        "x": 280,
+        "x": 260,
         "y": 2080,
         "wires": [
             [
@@ -49093,12 +49083,64 @@
         ]
     },
     {
+        "id": "afa5bf9f7c3531bc",
+        "type": "link in",
+        "z": "d5fea67661261002",
+        "g": "5166b23daf2b561d",
+        "name": "link in 15",
+        "links": [
+            "6c685782864f1787"
+        ],
+        "x": 125,
+        "y": 700,
+        "wires": [
+            [
+                "a9fa37eb6a1a4fc2"
+            ]
+        ]
+    },
+    {
+        "id": "32c013973096ab65",
+        "type": "link in",
+        "z": "d5fea67661261002",
+        "g": "3ce1342324a97c52",
+        "name": "link in 16",
+        "links": [
+            "c57a81d1dee5b8a9"
+        ],
+        "x": 115,
+        "y": 320,
+        "wires": [
+            [
+                "109e99262b1d9b31",
+                "57c9f02c576ad71f"
+            ]
+        ]
+    },
+    {
+        "id": "73a3b137b4661912",
+        "type": "link in",
+        "z": "d5fea67661261002",
+        "g": "86eb49a0b0f702bc",
+        "name": "link in 17",
+        "links": [
+            "c57a81d1dee5b8a9"
+        ],
+        "x": 195,
+        "y": 2040,
+        "wires": [
+            [
+                "879b071f7e013653"
+            ]
+        ]
+    },
+    {
         "id": "92e5b2c.00a8b5",
         "type": "mqtt-broker",
         "name": "MQTT (x.x.x.x)",
-        "broker": "core-mosquitto",
+        "broker": "x.x.x.x",
         "port": "1883",
-        "clientid": "",
+        "clientid": "Node_Red_Client",
         "autoConnect": true,
         "usetls": false,
         "compatmode": false,
