@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.26 beta (experimental) <br/> 
+Current version: 21.27 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -761,21 +761,27 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [Change] Extend logging shows compressor start/stops during defrost cycle.
 - [Change] Increased default max MQTT messages per day to 300 (new users).
 
->> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to <<
+[2022-12-12] v21.27 beta (experimental). Changes:
+- [FIX] - COP 12month chart now working robustly. Does not matter if only DHW, only HEAT or both are installed now. It will produce a graph anyway.
+- [FIX] - Connect toggle Dashboard: [RTC - room temperature PV] to toggle Dashboard: [Scheduler > Setpoint normal]
+- [FIX] - When rebooting NodeRed, sending mqtt commands (enable pump / dhw temperature) now removed.
+- [FIX] - When rebooting NodeRed, sending mqtt weird commands to SET5 SetZ1HeatRequest, like NaN, 0 or negative values.
+
+>> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
 
 
 ********
 
 ## TODO list
 - [x] Stabalize SoftStart routine. Still work in progress. Give user custom stage time setting<br/>
-- [ ] When changing RTC room setpoint, match Night-reduction room temperature (normal) accordingly.<br/>
+- [X] When changing RTC room setpoint, match Night-reduction room temperature (normal) accordingly.<br/>
 - [ ] Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
 - [ ] Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log. (TOP44)<br/>
 - [ ] Force DHW run when the boiler comes below a custom setpoint (via scheduler, reserved-SYSTEM task?)<br/>
-- [ ] New COP sCOP calculation using custom 1-wire and custom kWh-device (connected to Heishamon)<br/>
+- [ ] New COP calculation using custom 1-wire and custom kWh-device (connected to Heishamon)<br/>
 - [ ] Apply WAR calculations to setpoint only before starting next run, not immediately.<br/>
 - [ ] Add 2 setpoints columns to task scheduler; heat/cool setpoint (DHW setpoint use from settings).<br/>
-- [ ] Add 4th value to RTC with free SP increase value (for use as a booster) or disable WAR option (in scheduler?).<br/>
+- [ ] Add 4th value to RTC with free SP increase value (for use as a booster).<br/>
 
 
 ********
