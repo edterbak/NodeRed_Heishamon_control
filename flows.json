@@ -13883,8 +13883,7 @@
         "g": "b1f2db1845798273",
         "name": "Link in from HA - Room Setpoint",
         "links": [
-            "7a27b2c8c4721ed9",
-            "fdb278d1edd0e5c5"
+            "7a27b2c8c4721ed9"
         ],
         "x": 3125,
         "y": 1180,
@@ -13902,8 +13901,7 @@
         "name": "Link out to HA - Room Setpoint",
         "mode": "link",
         "links": [
-            "476043129c88de94",
-            "b9baff17524ab299"
+            "476043129c88de94"
         ],
         "x": 3125,
         "y": 1140,
@@ -16510,7 +16508,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "21.27 beta (experimental)",
+        "payload": "21.28 beta (experimental)",
         "payloadType": "str",
         "x": 1350,
         "y": 1960,
@@ -17425,7 +17423,6 @@
             "bba46d589404d925",
             "893c7ca52013a7c7",
             "a03c7589a8b95ce2",
-            "41510757b9c4f394",
             "2f5e3d38d1cdd9b2",
             "cf39aea60b622a67",
             "823ef896afa239af",
@@ -17436,9 +17433,9 @@
             "5e9da82d3dfe26da"
         ],
         "x": 144,
-        "y": 539,
+        "y": 619,
         "w": 2102,
-        "h": 962
+        "h": 882
     },
     {
         "id": "f2aa79821dfd1110",
@@ -23251,8 +23248,7 @@
         "y": 800,
         "wires": [
             [
-                "bedbded591fa9076",
-                "41510757b9c4f394"
+                "bedbded591fa9076"
             ]
         ]
     },
@@ -23493,8 +23489,7 @@
                 "1bf606367c4ff65f"
             ],
             [
-                "0eae7353f71aad0c",
-                "b228c8f148fd5c57"
+                "0eae7353f71aad0c"
             ],
             [
                 "663fd79ce5a1610d"
@@ -23690,7 +23685,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Function Quietmode Add-on",
-        "func": "let msg2 = {}; //to Input LOG\n\nvar SS_Quietmode_on_off = global.get(\"SS_Quietmode_on_off\", \"file\");                // Status switch SS_Quietmode \nif (SS_Quietmode_on_off === 0 || SS_Quietmode_on_off === undefined) \n    {\n        return [null, null];                                                        //leave function when switch is off\n    } \n\nvar Quiet_Mode_Level            = global.get('Quiet_Mode_Level', \"file\");           //check current Quietmode level\nvar Previous_Quiet_Mode_Level   = global.get('Previous_Quiet_Mode_Level', \"file\");  //check previous Quietmode level\n//check previous mode\nif (Previous_Quiet_Mode_Level === undefined) \n    {\n        node.warn(\"error function Quietmode Addon; Previous_Quiet_Mode_Level doesn't exists!\");\n    }\n\n//get Quietmode_time, error when no time!\nvar Quietmode_time              = global.get('Quietmode_time', \"file\");             //after this time the Quietmode will restore to its previous level\nif (Quietmode_time === undefined) \n    {\n        node.warn(\"Error: No Quietmode_time found!\");\n    }\n\n//test if compressor is off\nvar ss_Hz                           = global.get('compressor_frequency');               // Get the global variable for current compressor frequency\n\n// now the real action:\nif (ss_Hz == 0) \n    { \n        context.set(\"StartTimeQuietmode\", undefined); // reset count time\n        if (Quiet_Mode_Level == Previous_Quiet_Mode_Level)  //allready finsihed Quietmode run and reset to Previous_Quiet_Mode_Level\n            {\n                // set Quietmode again for next run\n                msg2.topic          = \"Function - SoftStart Quietmode\";\n                msg2.payload        = \"Run finished, reset for next run\";\n                msg.payload         = 3;//send to Quietmode edsitbox again\n                return [msg, msg2];\n            }\n        return [null, null]; // xit \n    }                                                                           //reset time \n\nif (ss_Hz > 0) //start counting\n    {\n        /////// Timer how long the compressoris on. Runtime //////////   Thank you for borowing Edterbak! haha\n        var CurrentTime             = new Date().getTime();\n        var StartTimeQuietmode      = context.get(\"StartTimeQuietmode\");\n        if (StartTimeQuietmode === undefined) \n            {\n                StartTimeQuietmode  = CurrentTime;\n                context.set(\"StartTimeQuietmode\", StartTimeQuietmode);\n            }\n        var TimeElapsed             = ((CurrentTime - StartTimeQuietmode) / 1000);\n        TimeElapsed                 = parseFloat(TimeElapsed.toFixed(0));\n        //***********************************************************************************\n        var Stage_1_Duration        = (Quietmode_time * 60);                                        // Phase 1 duration in seconds\n        //***********************************************************************************\n        // Stage 1 - Compressor just started\n        if (TimeElapsed < Stage_1_Duration) \n            {\n                //do nothing, mayby something to log...\n            }\n        // Stage 2 - time to switch Quitemode back to previous state\n        if (TimeElapsed >= Stage_1_Duration) \n        {\n            var Current             = global.get('Quiet_Mode_Level', \"file\"); //check current setting Should be level 3\n            //only send msg when change needed (but send end Quietmode to log anyway)\n            msg2.topic              = \"Function - SoftStart Quietmode\";\n            msg2.payload            = \"finished, now restoring to level \" + Previous_Quiet_Mode_Level;\n            if (Current != Previous_Quiet_Mode_Level) \n                {\n                    msg.payload     = Previous_Quiet_Mode_Level; //restore Quietlevel\n                    return [msg, msg2];\n                } \n            else\n                {\n                    return [null, null];                                                //send nothing\n                }\n        }\n    \n    }\n\nreturn [null, null];\n\n\n",
+        "func": "// Make an exception (bypass) during defrost routine:\nif (global.get('ForceDefrost', \"file\") == 1) {\n    return [null, null]; // Do NOT send to log otherwise the filter node will pass this disabled-msg and SS disabled-msg in turn.\n}\n\nlet msg2 = {}; //to Input LOG\n\nvar SS_Quietmode_on_off = global.get(\"SS_Quietmode_on_off\", \"file\");                // Status switch SS_Quietmode \nif (SS_Quietmode_on_off === 0 || SS_Quietmode_on_off === undefined) \n    {\n        return [null, null];                                                        //leave function when switch is off\n    } \n\nvar Quiet_Mode_Level            = global.get('Quiet_Mode_Level', \"file\");           //check current Quietmode level\nvar Previous_Quiet_Mode_Level   = global.get('Previous_Quiet_Mode_Level', \"file\");  //check previous Quietmode level\n//check previous mode\nif (Previous_Quiet_Mode_Level === undefined) \n    {\n        node.warn(\"error function Quietmode Addon; Previous_Quiet_Mode_Level doesn't exists!\");\n    }\n\n//get Quietmode_time, error when no time!\nvar Quietmode_time              = global.get('Quietmode_time', \"file\");             //after this time the Quietmode will restore to its previous level\nif (Quietmode_time === undefined) \n    {\n        node.warn(\"Error: No Quietmode_time found!\");\n    }\n\n//test if compressor is off\nvar ss_Hz                           = global.get('compressor_frequency');               // Get the global variable for current compressor frequency\n\n// now the real action:\nif (ss_Hz == 0) \n    { \n        context.set(\"StartTimeQuietmode\", undefined); // reset count time\n        if (Quiet_Mode_Level == Previous_Quiet_Mode_Level)  //allready finsihed Quietmode run and reset to Previous_Quiet_Mode_Level\n            {\n                // set Quietmode again for next run\n                msg2.topic          = \"Function - SoftStart Quietmode\";\n                msg2.payload        = \"Run finished, reset for next run\";\n                msg.payload         = 3;//send to Quietmode edsitbox again\n                return [msg, msg2];\n            }\n        return [null, null]; // xit \n    }                                                                           //reset time \n\nif (ss_Hz > 0) //start counting\n    {\n        /////// Timer how long the compressoris on. Runtime //////////   Thank you for borowing Edterbak! haha\n        var CurrentTime             = new Date().getTime();\n        var StartTimeQuietmode      = context.get(\"StartTimeQuietmode\");\n        if (StartTimeQuietmode === undefined) \n            {\n                StartTimeQuietmode  = CurrentTime;\n                context.set(\"StartTimeQuietmode\", StartTimeQuietmode);\n            }\n        var TimeElapsed             = ((CurrentTime - StartTimeQuietmode) / 1000);\n        TimeElapsed                 = parseFloat(TimeElapsed.toFixed(0));\n        //***********************************************************************************\n        var Stage_1_Duration        = (Quietmode_time * 60);                                        // Phase 1 duration in seconds\n        //***********************************************************************************\n        // Stage 1 - Compressor just started\n        if (TimeElapsed < Stage_1_Duration) \n            {\n                //do nothing, mayby something to log...\n            }\n        // Stage 2 - time to switch Quitemode back to previous state\n        if (TimeElapsed >= Stage_1_Duration) \n        {\n            var Current             = global.get('Quiet_Mode_Level', \"file\"); //check current setting Should be level 3\n            //only send msg when change needed (but send end Quietmode to log anyway)\n            msg2.topic              = \"Function - SoftStart Quietmode\";\n            msg2.payload            = \"finished, now restoring to level \" + Previous_Quiet_Mode_Level;\n            if (Current != Previous_Quiet_Mode_Level) \n                {\n                    msg.payload     = Previous_Quiet_Mode_Level; //restore Quietlevel\n                    return [msg, msg2];\n                } \n            else\n                {\n                    return [null, null];                                                //send nothing\n                }\n        }\n    \n    }\n\nreturn [null, null];\n\n\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -23997,23 +23992,6 @@
         ]
     },
     {
-        "id": "41510757b9c4f394",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "debug 78",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 400,
-        "y": 580,
-        "wires": []
-    },
-    {
         "id": "2f5e3d38d1cdd9b2",
         "type": "debug",
         "z": "a938de76db0b71f6",
@@ -24154,22 +24132,6 @@
         "statusType": "auto",
         "x": 2080,
         "y": 1320,
-        "wires": []
-    },
-    {
-        "id": "b228c8f148fd5c57",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "name": "debug 99",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2340,
-        "y": 1080,
         "wires": []
     },
     {
@@ -30599,8 +30561,8 @@
         "group": "a606e01fab1bbd66",
         "name": "Line - Instructions text",
         "order": 4,
-        "width": "15",
-        "height": "32",
+        "width": 15,
+        "height": 32,
         "format": "<h3>Scheduler instructions</h3>\n<br/>\n<h3>What can the scheduler do for you?</h3>\nYou can program certain tasks to be started at the specified time and day.<br/>\n<br/>\n<h3>What is the main difference between this scheduler and the native Panasonic one?</h3>\nThe Panasonic scheduler always swtiches on the heat pump when a task is due. This scheduler offers you control over this\nbehavior.\n\nThe native Panasonic scheduler can be operational simultaneously with this scheduler. This can be convenient for some\nvery specific tasks, but it is strongly recommended to only use one scheduler to avoid conflicting tasks and unexpected\nbehavior. Both schedulers do not communicate.\n\n<br/><br/>\n<u>Enable</u>\nThis simply enables or disables the task.\n\n<br/><br/>\n<u>Name</u>\nGive your personal short name or description to the task.\n<br/><br/>\n<u>Action</u>\nSelect the action you want to perform.\n\n<br/>\n<i>Force DHW</i><br/>\nThis action will do several things:<br/>\n1 - Add DHW to the current operating mode if missing<br/>\n2 - Turn on [Force DHW mode]<br/>\n3 - Execute the DHW run to the target temperature<br/>\n4 - Turn off [Force DHW mode]<br/>\n5 - Remove DHW from Operating mode again if it was missing at step 1<br/>\n<br/>\nAttention: The Force DHW run will not start if the current DHW temperature is above the set temperature in [Force DHW -\nAllow only below] in the 'related settings' section. If you do not want this, set this temperature very high (eg. 100\ndegree C). The Panasonic internal rules (minimum dT) will always be followed.\n<br/><br/>\nThe scheduled Force DHW action is fundamentally different compared to the switch Force DHW under settings or on the controller. They requires certain conditions.\n<br/><br/>\n<i>Force Sterilization</i><br/>\nThis action will do several things:<br/>\n1 - Add DHW to the current operating mode if missing<br/>\n2 - Turn on [Force DHW mode] + Turn on [Force Sterilization]<br/>\n3 - Execute the Sterilization run to the target temperature<br/>\n4 - Turn off [Force Sterilization mode] + Turn off [Force DHW mode]<br/>\n5 - Remove DHW from Operating mode again<br/>\n<br/>\n<i>Quiet Mode</i><br/>\nThis will set the quiet mode to the specified level.\n<br/><br/>\n<i>Operation Mode</i><br/>\nThis will set the operation mode as specified.\n<br/>\n<i>Nightreduction water temperature on/off</i><br/>\nThis wil add a negative correction to the water temperature, which will result in a lower Final water temperature (but\nnever lower then 20 °C).\n<br/><br/>\n<i>Nightreduction room temperature on/off</i><br/>\nWhen on this will reduce the RTC room setpoint to the setpoint-low value set on the right.<br/>\nWhen off this will restore the RTC room setpoint to the setpoint-Normal value set on the right.<br/>\nDefaults: ON = 18 °C , OFF = 21 °C , RANGE 0 °C - 30 °C<br/>\n<br/><br/>\n<u>Override</u><br/>\nBy default a task will only run if the heat pump is powered on. If you want the heat pump to be powerd on when a task is\ntriggered, enable the override toggle.\n<br/><br/>\n<u>Heat water temperature limits</u><br/>\nHere you can program the absolut upper and lower limits you never want HEAT to go over/under. This can be used to\nprevent oscillating behaviour, make compressor runs longer and the HP more efficient.</br>\n<u>Nightreduction Room setpoint</u><br/>\nHere you can set the room setpoint LOW and NORMAL when using task Nightreduction room setpoint.<br/>",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -31189,12 +31151,19 @@
             "8c00f7e622b82f63",
             "ef28d0205d50cb26",
             "d0fda364deccc7f0",
-            "47fe4c3f4736bcc8"
+            "47fe4c3f4736bcc8",
+            "4ca97fe11f8196e4",
+            "7a27b2c8c4721ed9",
+            "55ed50ca78ad2e8e",
+            "9b6adfc4b5fe33d9",
+            "3e6fc746e7597b72",
+            "572ff3b3b8a1d185",
+            "68f4601da2aa107a"
         ],
         "x": 2334,
         "y": 1979,
-        "w": 1352,
-        "h": 242
+        "w": 1432,
+        "h": 482
     },
     {
         "id": "52cd9ca2a87cc237",
@@ -31458,22 +31427,20 @@
         "h": 157
     },
     {
-        "id": "9ab2e5f02ca748fe",
+        "id": "92293ba8ccc5db0f",
         "type": "group",
         "z": "35d210f042827344",
-        "name": "Nightreduction Room setpoint_____________________________________ (some GUI changes are made on tab WP Help / Scheduler HELP)",
         "style": {
-            "label": true
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
         },
         "nodes": [
             "af36a209861f34c9",
-            "4ca97fe11f8196e4",
-            "fb45047395275597",
-            "7a27b2c8c4721ed9",
-            "55ed50ca78ad2e8e",
-            "9b6adfc4b5fe33d9",
-            "3e6fc746e7597b72",
-            "572ff3b3b8a1d185",
             "977bf5eb11dcbcae",
             "4be14d43ed11df9e",
             "66751dfee126dd36",
@@ -31483,12 +31450,45 @@
             "50a7d35eec5ebb92",
             "620d3faff0a26d37",
             "b98e3d3337c01053",
-            "827d25a8ccb91857"
+            "827d25a8ccb91857",
+            "3a71aada556a2950",
+            "0a2fca7dbded32e0",
+            "ddf3715aaea9672b",
+            "3a5460c7aced9598",
+            "6e79eaf44bdd252f",
+            "05344a8f5a84a598",
+            "ce6d6e5627ec1fa2"
         ],
-        "x": 2234,
-        "y": 2359,
-        "w": 1092,
-        "h": 262
+        "x": 2374,
+        "y": 2519,
+        "w": 1332,
+        "h": 282
+    },
+    {
+        "id": "3a5460c7aced9598",
+        "type": "change",
+        "z": "35d210f042827344",
+        "g": "92293ba8ccc5db0f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2660,
+        "y": 2760,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "40f0401e20235a07",
@@ -32758,7 +32758,7 @@
         "g": "b63004182c33d3b9",
         "name": "Exit to Force DHW mode",
         "info": "",
-        "x": 3550,
+        "x": 3590,
         "y": 2140,
         "wires": []
     },
@@ -32769,7 +32769,7 @@
         "g": "b63004182c33d3b9",
         "name": "Exit to Sterilization Mode",
         "info": "",
-        "x": 3550,
+        "x": 3590,
         "y": 2180,
         "wires": []
     },
@@ -32847,7 +32847,7 @@
         "g": "b63004182c33d3b9",
         "name": "Exit to Operation Mode",
         "info": "",
-        "x": 3540,
+        "x": 3580,
         "y": 2100,
         "wires": []
     },
@@ -42106,7 +42106,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3790,
+        "x": 3870,
         "y": 2060,
         "wires": [
             [
@@ -42133,7 +42133,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3790,
+        "x": 3870,
         "y": 2220,
         "wires": [
             [
@@ -42160,7 +42160,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3790,
+        "x": 3870,
         "y": 2260,
         "wires": [
             [
@@ -42187,7 +42187,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3790,
+        "x": 3870,
         "y": 2300,
         "wires": [
             [
@@ -42212,7 +42212,7 @@
             "b08c84a2e3145411",
             "91641c3ebfbec364"
         ],
-        "x": 3985,
+        "x": 4065,
         "y": 2160,
         "wires": []
     },
@@ -42235,7 +42235,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3790,
+        "x": 3870,
         "y": 2140,
         "wires": [
             [
@@ -42262,7 +42262,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3790,
+        "x": 3870,
         "y": 2180,
         "wires": [
             [
@@ -42289,7 +42289,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3790,
+        "x": 3870,
         "y": 2100,
         "wires": [
             [
@@ -42418,7 +42418,7 @@
         "z": "35d210f042827344",
         "name": "To LOGS",
         "info": "",
-        "x": 4000,
+        "x": 4080,
         "y": 2100,
         "wires": []
     },
@@ -42446,30 +42446,31 @@
         "id": "af36a209861f34c9",
         "type": "comment",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "92293ba8ccc5db0f",
         "name": "Dashboard",
         "info": "",
-        "x": 2600,
-        "y": 2460,
+        "x": 2880,
+        "y": 2600,
         "wires": []
     },
     {
         "id": "4ca97fe11f8196e4",
         "type": "function",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "b63004182c33d3b9",
         "name": "Check Nightreduction room status",
-        "func": "let msg99={};   // pin 1 - ToLog\nlet msg2={};    // pin 2 - SP Room\n\n\nvar Nightmode = global.get(\"Nightmode\",\"file\");\nif (Nightmode === undefined) \n    {\n        global.set(\"Nightmode\",0,\"file\");\n        Nightmode = 0;\n        return null;\n    }\n\nmsg99.topic = \"Scheduler - Nightreduction room setpoint\";\nvar RoomSP;\n\nif (Nightmode == 1) \n    {\n        //retrieve value from dashboard\n        RoomSP = global.get(\"RoomSetpointLOW\",\"file\");\n        global.set(\"WoonkamerSP\", RoomSP, \"file\");\n        msg99.payload = \"ON, Room setpoint: \" + RoomSP + \" °C\";\n        msg2.payload = RoomSP;\n        return [msg99, msg2]; //Pin 1 to log. Pin2 to write Room SP\n    }\n\nif (Nightmode == 0) \n    {\n        //retrieve value from dashboard\n        RoomSP = global.get(\"RoomSetpointNORMAL\",\"file\");\n        global.set(\"WoonkamerSP\", RoomSP, \"file\");\n        msg99.payload = \"OFF, Room setpoint: \" + RoomSP + \" °C\";\n        msg2.payload = RoomSP;\n        return [msg99, msg2]; //Pin 1 to log. Pin2 to write Room SP\n    }\n",
+        "func": "let msg99={};   // pin 1 - ToLog\nlet msg2={};    // pin 2 - SP Room\n\n\nvar Nightmode = global.get(\"Nightmode\",\"file\");\nif (Nightmode === undefined) \n    {\n        global.set(\"Nightmode\",0,\"file\");\n        Nightmode = 0;\n        return null;\n    }\n\n//msg99.topic = \"Scheduler - Nightreduction room setpoint\";\nvar RoomSP;\n\nif (Nightmode == 1) \n    {\n        //retrieve value from dashboard\n        RoomSP = global.get(\"RoomSetpointLOW\",\"file\");\n        global.set(\"WoonkamerSP\", RoomSP, \"file\");\n        msg99.payload = \"ON, Room setpoint: \" + RoomSP + \" °C\";\n        msg2.payload = RoomSP;\n        msg2.currentstatus = 'Active';\n        return [msg99, msg2]; //Pin 1 to log. Pin2 to write Room SP\n    }\n\nif (Nightmode == 0) \n    {\n        //retrieve value from dashboard\n        RoomSP = global.get(\"RoomSetpointNORMAL\",\"file\");\n        global.set(\"WoonkamerSP\", RoomSP, \"file\");\n        msg99.payload = \"OFF, Room setpoint: \" + RoomSP + \" °C\";\n        msg2.payload = RoomSP;\n        msg2.currentstatus = 'Inactive';\n        return [msg99, msg2]; //Pin 1 to log. Pin2 to write Room SP\n    }\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2420,
-        "y": 2400,
+        "x": 2500,
+        "y": 2340,
         "wires": [
             [
-                "fb45047395275597"
+                "a0090b3fd8c64e10",
+                "68f4601da2aa107a"
             ],
             [
                 "55ed50ca78ad2e8e",
@@ -42482,114 +42483,72 @@
         ]
     },
     {
-        "id": "fb45047395275597",
-        "type": "link out",
-        "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
-        "name": "Send to log",
-        "mode": "link",
-        "links": [
-            "031e62b0bf3df7d7"
-        ],
-        "x": 3015,
-        "y": 2400,
-        "wires": []
-    },
-    {
         "id": "7a27b2c8c4721ed9",
         "type": "link out",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "b63004182c33d3b9",
         "name": "link out 15",
         "mode": "link",
         "links": [
-            "9a106cdefc873348"
+            "9a106cdefc873348",
+            "ddf3715aaea9672b"
         ],
-        "x": 3015,
-        "y": 2440,
+        "x": 3415,
+        "y": 2380,
         "wires": []
     },
     {
         "id": "55ed50ca78ad2e8e",
         "type": "link out",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "b63004182c33d3b9",
         "name": "link out 16",
         "mode": "link",
         "links": [],
-        "x": 3015,
-        "y": 2480,
+        "x": 3415,
+        "y": 2420,
         "wires": []
     },
     {
         "id": "9b6adfc4b5fe33d9",
         "type": "comment",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
-        "name": "Exit to HA climate (optional)",
+        "g": "b63004182c33d3b9",
+        "name": "Exit SP to HA climate (optional)",
         "info": "",
-        "x": 3180,
-        "y": 2480,
+        "x": 3610,
+        "y": 2420,
         "wires": []
     },
     {
         "id": "3e6fc746e7597b72",
         "type": "comment",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
-        "name": "Exit to Dash",
+        "g": "b63004182c33d3b9",
+        "name": "Exit SP to Dash",
         "info": "",
-        "x": 3230,
-        "y": 2440,
+        "x": 3560,
+        "y": 2380,
         "wires": []
     },
     {
         "id": "572ff3b3b8a1d185",
         "type": "comment",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "b63004182c33d3b9",
         "name": "Exit to write RoomSP",
         "info": "",
-        "x": 3160,
-        "y": 2400,
+        "x": 3580,
+        "y": 2340,
         "wires": []
     },
     {
         "id": "977bf5eb11dcbcae",
         "type": "ui_numeric",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "92293ba8ccc5db0f",
         "name": "Nightreduction room setpoint low",
         "label": "Setpoint low",
-        "tooltip": "",
-        "group": "9aec7afe54746c39",
-        "order": 6,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}} °C",
-        "min": 0,
-        "max": "30",
-        "step": "0.1",
-        "className": "",
-        "x": 2680,
-        "y": 2540,
-        "wires": [
-            [
-                "20267081e902cf8f"
-            ]
-        ]
-    },
-    {
-        "id": "4be14d43ed11df9e",
-        "type": "ui_numeric",
-        "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
-        "name": "Nightreduction room setpoint normal",
-        "label": "Setpoint normal",
         "tooltip": "",
         "group": "9aec7afe54746c39",
         "order": 7,
@@ -42604,8 +42563,37 @@
         "max": "30",
         "step": "0.1",
         "className": "",
-        "x": 2690,
-        "y": 2580,
+        "x": 2960,
+        "y": 2680,
+        "wires": [
+            [
+                "20267081e902cf8f"
+            ]
+        ]
+    },
+    {
+        "id": "4be14d43ed11df9e",
+        "type": "ui_numeric",
+        "z": "35d210f042827344",
+        "g": "92293ba8ccc5db0f",
+        "name": "Nightreduction room setpoint normal",
+        "label": "Setpoint normal",
+        "tooltip": "",
+        "group": "9aec7afe54746c39",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}} °C",
+        "min": 0,
+        "max": "30",
+        "step": "0.1",
+        "className": "",
+        "x": 2970,
+        "y": 2720,
         "wires": [
             [
                 "50a7d35eec5ebb92"
@@ -42616,10 +42604,10 @@
         "id": "66751dfee126dd36",
         "type": "ui_template",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "92293ba8ccc5db0f",
         "group": "9aec7afe54746c39",
         "name": "Line - Setup ",
-        "order": 8,
+        "order": 9,
         "width": 0,
         "height": 0,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n</html>\n",
@@ -42628,8 +42616,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 2610,
-        "y": 2500,
+        "x": 2890,
+        "y": 2640,
         "wires": [
             []
         ]
@@ -42638,7 +42626,7 @@
         "id": "ac07aae6820d664d",
         "type": "function",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "92293ba8ccc5db0f",
         "name": "set RoomSetpointLOW",
         "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"RoomSetpointLOW\",msg.payload,\"file\");\nreturn msg;",
         "outputs": 1,
@@ -42646,8 +42634,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3160,
-        "y": 2540,
+        "x": 3440,
+        "y": 2680,
         "wires": [
             []
         ]
@@ -42656,7 +42644,7 @@
         "id": "20267081e902cf8f",
         "type": "rbe",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "92293ba8ccc5db0f",
         "name": "",
         "func": "rbe",
         "gap": "",
@@ -42665,8 +42653,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 2930,
-        "y": 2540,
+        "x": 3210,
+        "y": 2680,
         "wires": [
             [
                 "ac07aae6820d664d"
@@ -42677,7 +42665,7 @@
         "id": "0e56417c81c6b1be",
         "type": "function",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "92293ba8ccc5db0f",
         "name": "set RoomSetpointNORMAL",
         "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"RoomSetpointNORMAL\",msg.payload,\"file\");\nreturn msg;",
         "outputs": 1,
@@ -42685,8 +42673,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3180,
-        "y": 2580,
+        "x": 3460,
+        "y": 2720,
         "wires": [
             []
         ]
@@ -42695,7 +42683,7 @@
         "id": "50a7d35eec5ebb92",
         "type": "rbe",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "92293ba8ccc5db0f",
         "name": "",
         "func": "rbe",
         "gap": "",
@@ -42704,13 +42692,11 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 2930,
-        "y": 2580,
+        "x": 3210,
+        "y": 2720,
         "wires": [
             [
-                "0e56417c81c6b1be",
-                "fdb278d1edd0e5c5",
-                "4be14d43ed11df9e"
+                "0e56417c81c6b1be"
             ]
         ]
     },
@@ -42718,33 +42704,32 @@
         "id": "620d3faff0a26d37",
         "type": "comment",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "92293ba8ccc5db0f",
         "name": "Default values (first start)",
         "info": "",
-        "x": 2390,
-        "y": 2460,
+        "x": 2530,
+        "y": 2660,
         "wires": []
     },
     {
         "id": "b98e3d3337c01053",
         "type": "inject",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "92293ba8ccc5db0f",
         "name": "Startup",
         "props": [
             {
-                "p": "payload"
+                "p": "topic",
+                "vt": "str"
             }
         ],
         "repeat": "1800",
         "crontab": "",
         "once": true,
-        "onceDelay": "1",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 2340,
-        "y": 2500,
+        "onceDelay": "10",
+        "topic": "trigger",
+        "x": 2480,
+        "y": 2700,
         "wires": [
             [
                 "827d25a8ccb91857"
@@ -42755,26 +42740,30 @@
         "id": "827d25a8ccb91857",
         "type": "function",
         "z": "35d210f042827344",
-        "g": "9ab2e5f02ca748fe",
+        "g": "92293ba8ccc5db0f",
         "name": "Load on boot",
-        "func": "var var1 = global.get('RoomSetpointLOW',\"file\");\nif (var1===undefined)\n    {\n        var1=18;\n        global.set('RoomSetpointLOW',18,\"file\");\n    }\n    \nvar var2 = global.get('RoomSetpointNORMAL',\"file\");\nif (var2===undefined)\n    {\n        var2 = global.get('WoonkamerSP',\"file\");\n        if (var2 === undefined) { var2 = 21;}\n        global.set('RoomSetpointNORMAL',var2,\"file\");\n    }\n\nlet msg1={}, msg2={};\n\nmsg1.payload = var1;\nmsg2.payload = var2;\n\n\nreturn [msg1, msg2];",
-        "outputs": 2,
+        "func": "var RoomSetpointLOW = global.get('RoomSetpointLOW',\"file\");\nif (RoomSetpointLOW === undefined)  {\n    RoomSetpointLOW = 18;\n    global.set('RoomSetpointLOW',18,\"file\");\n}\n    \nvar RoomSetpointNORMAL = global.get('RoomSetpointNORMAL',\"file\");\nif (RoomSetpointNORMAL === undefined) {\n    RoomSetpointNORMAL = global.get('WoonkamerSP',\"file\");\n    if  (RoomSetpointNORMAL !== undefined)   {\n        global.set('RoomSetpointNORMAL',RoomSetpointNORMAL,\"file\");\n    }\n    else {return null;}                                                         // prevent setting a default room SP due to timing issue. This is done elsewhere. Just exit and wait for it to populate with next passes.\n}\n\nvar NightReductionRoomPV_CurrentStatus = global.get('NightReductionRoomPV_CurrentStatus',\"file\");\nif (NightReductionRoomPV_CurrentStatus === undefined)   {\n    global.set('NightReductionRoomPV_CurrentStatus',0,\"file\");\n    NightReductionRoomPV_CurrentStatus = 0;\n}\n\n\nlet msg1={};    //  RoomSetpointLOW\nlet msg2={};    //  RoomSetpointNORMAL\nlet msg3={};    //  NightReductionRoomPV_CurrentStatus\n\nmsg1.payload = RoomSetpointLOW;\nmsg2.payload = RoomSetpointNORMAL;\nmsg3.payload = NightReductionRoomPV_CurrentStatus;\n\nreturn [msg1, msg2, msg3];",
+        "outputs": 3,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2360,
-        "y": 2560,
+        "x": 2650,
+        "y": 2700,
         "wires": [
             [
                 "977bf5eb11dcbcae"
             ],
             [
                 "4be14d43ed11df9e"
+            ],
+            [
+                "0a2fca7dbded32e0"
             ]
         ],
         "outputLabels": [
             "DHW_treshold",
+            "",
             ""
         ]
     },
@@ -43747,47 +43736,142 @@
         "wires": []
     },
     {
-        "id": "45a08e0f92b016b8",
+        "id": "3a71aada556a2950",
+        "type": "comment",
+        "z": "35d210f042827344",
+        "g": "92293ba8ccc5db0f",
+        "name": "Nightreduction Room setpoint_____________________________________ (some GUI changes are made on tab WP Help / Scheduler HELP)",
+        "info": "",
+        "x": 2870,
+        "y": 2560,
+        "wires": []
+    },
+    {
+        "id": "a0090b3fd8c64e10",
+        "type": "change",
+        "z": "35d210f042827344",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Scheduler - Nightreduction room setpoint",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3870,
+        "y": 2340,
+        "wires": [
+            [
+                "9815e18a26e4cd85"
+            ]
+        ]
+    },
+    {
+        "id": "257acc4dad15edc0",
+        "type": "comment",
+        "z": "35d210f042827344",
+        "name": ">>>>>>>>>>>>>>>>>>>>>>",
+        "info": "",
+        "x": 2180,
+        "y": 2340,
+        "wires": []
+    },
+    {
+        "id": "0a2fca7dbded32e0",
+        "type": "ui_switch",
+        "z": "35d210f042827344",
+        "g": "92293ba8ccc5db0f",
+        "name": "",
+        "label": "Current status",
+        "tooltip": "",
+        "group": "9aec7afe54746c39",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 2900,
+        "y": 2760,
+        "wires": [
+            [
+                "05344a8f5a84a598"
+            ]
+        ]
+    },
+    {
+        "id": "ddf3715aaea9672b",
+        "type": "link in",
+        "z": "35d210f042827344",
+        "g": "92293ba8ccc5db0f",
+        "name": "link in 18",
+        "links": [
+            "7a27b2c8c4721ed9"
+        ],
+        "x": 2485,
+        "y": 2760,
+        "wires": [
+            [
+                "6e79eaf44bdd252f"
+            ]
+        ]
+    },
+    {
+        "id": "68f4601da2aa107a",
+        "type": "link out",
+        "z": "35d210f042827344",
+        "g": "b63004182c33d3b9",
+        "name": "link out 30",
+        "mode": "link",
+        "links": [],
+        "x": 3415,
+        "y": 2340,
+        "wires": []
+    },
+    {
+        "id": "6e79eaf44bdd252f",
         "type": "function",
         "z": "35d210f042827344",
-        "name": "function 11",
-        "func": "\nreturn msg;",
+        "g": "92293ba8ccc5db0f",
+        "name": "currentstatus",
+        "func": "let msg1 = {};\n//node.warn(msg.currentstatus);\nif (msg.currentstatus === \"Active\") {\n    msg1.payload = 1;\n    return msg1;\n}\n\nif (msg.currentstatus === \"Inactive\") {\n    msg1.payload = 0;\n    return msg1;\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2570,
-        "y": 2800,
+        "x": 2650,
+        "y": 2760,
         "wires": [
             [
-                "42b4fb85dba7f0f2"
+                "0a2fca7dbded32e0"
             ]
         ]
     },
     {
-        "id": "c0088fc0bcf5ce23",
-        "type": "function",
-        "z": "35d210f042827344",
-        "name": "function 12",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 2570,
-        "y": 2840,
-        "wires": [
-            [
-                "42b4fb85dba7f0f2"
-            ]
-        ]
-    },
-    {
-        "id": "42b4fb85dba7f0f2",
+        "id": "05344a8f5a84a598",
         "type": "rbe",
         "z": "35d210f042827344",
+        "g": "92293ba8ccc5db0f",
         "name": "",
         "func": "rbe",
         "gap": "",
@@ -43796,43 +43880,31 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 2790,
-        "y": 2820,
+        "x": 3210,
+        "y": 2760,
         "wires": [
             [
-                "45a08e0f92b016b8",
-                "c0088fc0bcf5ce23"
+                "ce6d6e5627ec1fa2"
             ]
         ]
     },
     {
-        "id": "b9baff17524ab299",
-        "type": "link in",
+        "id": "ce6d6e5627ec1fa2",
+        "type": "function",
         "z": "35d210f042827344",
-        "name": "DASH - Scheduler Room SP to filter IN",
-        "links": [
-            "af715d4c79137c30"
-        ],
-        "x": 2855,
-        "y": 2640,
+        "g": "92293ba8ccc5db0f",
+        "name": "set NightReductionRoomPV_CurrentStatus",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"NightReductionRoomPV_CurrentStatus\",msg.payload,\"file\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3510,
+        "y": 2760,
         "wires": [
-            [
-                "50a7d35eec5ebb92"
-            ]
+            []
         ]
-    },
-    {
-        "id": "fdb278d1edd0e5c5",
-        "type": "link out",
-        "z": "35d210f042827344",
-        "name": "DASH - Scheduler Room SP to filter OUT",
-        "mode": "link",
-        "links": [
-            "9a106cdefc873348"
-        ],
-        "x": 3005,
-        "y": 2640,
-        "wires": []
     },
     {
         "id": "3aa03811830ef29e",
