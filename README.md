@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.28 beta (experimental) <br/> 
+Current version: 21.29 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -762,13 +762,24 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [Change] Increased default max MQTT messages per day to 300 (new users).
 
 [2022-12-12] v21.27 beta (experimental). Changes:
-- [FIX] - COP 12month chart now working robustly. Does not matter if only DHW, only HEAT or both are installed now. It will produce a graph anyway.
-- [FIX] - Connect toggle Dashboard: [RTC - room temperature PV] to toggle Dashboard: [Scheduler > Setpoint normal]
-- [FIX] - When rebooting NodeRed, sending mqtt commands (enable pump / dhw temperature) now removed.
-- [FIX] - When rebooting NodeRed, sending mqtt weird commands to SET5 SetZ1HeatRequest, like NaN, 0 or negative values.
+- [FIX] COP 12month chart now working robustly. Does not matter if only DHW, only HEAT or both are installed now. It will produce a graph anyway.
+- [FIX] Connect toggle Dashboard: [RTC - room temperature PV] to toggle Dashboard: [Scheduler > Setpoint normal]
+- [FIX] When rebooting NodeRed, sending mqtt commands (enable pump / dhw temperature) now removed.
+- [FIX] When rebooting NodeRed, sending mqtt weird commands to SET5 SetZ1HeatRequest, like NaN, 0 or negative values.
 
 [2022-12-12] v21.28 beta (experimental). Changes:
-- [ENHANCEMENT] - Added toggle for NightReduction RoomSP in Scheduler screen.
+- [ENHANCEMENT] Added toggle for NightReduction RoomSP in Scheduler screen.
+
+[2022-12-12] v21.29 beta (experimental). Changes:
+- [NEW] Bypass Softstart Quietmode during defrost.
+- [Obsolete] Removed 'booster'-code from RTC function. (All rtc levels will get a custom correction in future).
+- [Obsolete] Removed layout from dashboard Hardware configuration (was for testing only)
+- [FIX] Nightreduction room temperature / Current status --> Manual on/off now working again.
+- [FIX] Removed log message (@startup) "Function - SoftStart Quietmode: OFF (restored to level 0)". (the restored part)
+- [FIX] Unneeded pumpspeed MQTT command (When enabled at a restart).
+- [Moved] Moved Function reduce pump speed to Settings page.
+- [Changed] Replaced defrost toggle with button. Color status of button Red --> defrosting.
+- [FIX] RTC Room actual temperature didn't update frequently.
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
 
