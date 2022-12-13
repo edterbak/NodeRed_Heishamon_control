@@ -770,16 +770,19 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 [2022-12-12] v21.28 beta (experimental). Changes:
 - [ENHANCEMENT] Added toggle for NightReduction RoomSP in Scheduler screen.
 
-[2022-12-12] v21.29 beta (experimental). Changes:
+[2022-12-13] v21.29 beta (experimental). Changes:
 - [NEW] Bypass Softstart Quietmode during defrost.
-- [Obsolete] Removed 'booster'-code from RTC function. (All rtc levels will get a custom correction in future).
+- [Obsolete] RTC Booster fixed now. Use the switch on RTC dashboard to enable (default off).
 - [Obsolete] Removed layout from dashboard Hardware configuration (was for testing only)
 - [FIX] Nightreduction room temperature / Current status --> Manual on/off now working again.
 - [FIX] Removed log message (@startup) "Function - SoftStart Quietmode: OFF (restored to level 0)". (the restored part)
 - [FIX] Unneeded pumpspeed MQTT command (When enabled at a restart).
-- [Moved] Moved Function reduce pump speed to Settings page.
+- [Moved] Moved Function reduce pump speed to Settings page. Layout now improved.
 - [Changed] Replaced defrost toggle with button. Color status of button Red --> defrosting.
 - [FIX] RTC Room actual temperature didn't update frequently.
+- [Add] Added to System Check: RTC Booster, Function pump speed, MQTT-block settings and manual on/off settings.
+
+
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
 
