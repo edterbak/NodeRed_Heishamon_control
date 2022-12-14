@@ -3,13 +3,8 @@ Geen idee. Is denk ik iets waar je alles van weet. Kun je beter beschrijven wat 
 
 #### ~~[2] Heishamon_MQTT_Reconnects~~
 Dit is niet oplosbaar door ons. Hebben we niks mee te maken.
-SYSTEM - HEISHAMON Connection: Offline
-SYSTEM - HEISHAMON Connection: Online
-Dit is het topic dat uitgelezen wordt: panasonic_heat_pump/LWT
 
 #### ~~[3] last run kWh, averige kWh/run. @Maarten69 aangepast na je feedback~~
-Ik heb hier geen behoefte aan. Triviaal.
-Als er mensen zijn die hier ECHT behoefte aan hebben, dan moet eerst worden nagedacht over waar het gepresenteerd wordt. Grafiek? Waar. Hoe? Zonder dat dat plan er is heeft het geen zin hier aan te beginnen.
 
 #### [4] Sensor/devices on central place (flow).
 Prima: to do zodra we stabiel 22 hebben. Niet nu nog.
