@@ -18,7 +18,7 @@ update: Je bedoelde ook het aantal mqtt berichten hieromtrend. toch?
 
 #### [6] fix unneeded punmpspeed mqtt sending (Status: fixed?)
 ```
-First priority. Voor mij nieuwe functionaliteit
+Details: First priority. Voor mij nieuwe functionaliteit
 Volgens mij heb je hier al een keer over gevraagd of ik het in een menu wilde zetten.
 Ook hier voor geld, eerst een goede mockup maken. Hoe moet het er uit zien, waar wil je het. Daarna pas bouwen.
 Probeer hier in vogel vlucht naar het dashboard te kijken waar het thuis hoort.
@@ -27,7 +27,7 @@ Is het een function met eigen tab?
 
 #### [7] fix correct function of shutdown + custom scheduler (Status: wip)
 ```
-Probleem is dat de huidige implementatie van shutdown niet robust is.
+Details: Probleem is dat de huidige implementatie van shutdown niet robust is.
 scheduler zorgt namelijk voor een 'allow' op alles wat in scheduler gezet kan worden. 
 Daarmee zijn andere functies dus in eens ook mogelijk. Dit is niet juist. 
 De oplossing hiervoor heb ik al in gedachten, maar vereist een sloop/wederopbouw van deze functie.
@@ -36,19 +36,16 @@ Tijd: Hier heb ik meerdere dagen voor nodig.
 
 #### [8] COP monthly not producing values. (Status: fixed?)
 ```
-Dit ligt aan het gegeven dat sommige geen DHW hebben. Dan komt er nooit een grafiek uit.
+Details: Dit ligt aan het gegeven dat sommige geen DHW hebben. Dan komt er nooit een grafiek uit.
 Kan ook liggen aan een NaN waarde waardoor de verdere opbouw ook niet meer loopt.
 ```
 
-#### [9] Linking RTC roomtemperature setpoint to nightreduction roomsetpoint @sjampeter
-
+#### [9] Linking RTC roomtemperature setpoint to nightreduction roomsetpoint (Status: obsolete?)
 ```
-Discussie
-
-Volgens mij:
-item 6 en 8 gedaan. 
-Item 9 was mijn fiasco, diekan er af. Kun je dat bevestigen?
+Details:
 ```
+
+
 
 -----------------------------------------------------------------------------------------------------------------------
 release 23 (v22.xx) wat gaan we plannen voor de volgende release
