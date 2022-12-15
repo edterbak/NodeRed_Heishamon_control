@@ -783,6 +783,9 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [Add] Added to System Check: RTC Booster, Function pump speed, MQTT-block settings and manual on/off settings.
 
 
+[2022-12-15] v21.30 beta (experimental). Changes:
+- [FIX] RTC on/off function. When no OperatingMode is stored, it would default back to Mode 0 (heat only). Now HEAT is added if not there/possible.
+
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
 
