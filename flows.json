@@ -2687,9 +2687,9 @@
             "b3cbb0e85ba0fb42",
             "1daf8c5944f23d71"
         ],
-        "x": 104,
+        "x": 114,
         "y": 639,
-        "w": 982,
+        "w": 972,
         "h": 562
     },
     {
@@ -2919,7 +2919,7 @@
         ],
         "x": 3034,
         "y": 79,
-        "w": 1782,
+        "w": 1772,
         "h": 602
     },
     {
@@ -3150,7 +3150,7 @@
         ],
         "x": 1154,
         "y": -1,
-        "w": 1702,
+        "w": 1692,
         "h": 1842
     },
     {
@@ -3282,9 +3282,9 @@
             "8da7c93f059466f2",
             "8d9c639aa58c9a3e"
         ],
-        "x": 1178,
+        "x": 1188,
         "y": 1899,
-        "w": 1388,
+        "w": 1378,
         "h": 562
     },
     {
@@ -3352,9 +3352,9 @@
             "aa33ae9640c6a434",
             "db206585adea91d8"
         ],
-        "x": 4064,
+        "x": 4074,
         "y": 439,
-        "w": 472,
+        "w": 462,
         "h": 202
     },
     {
@@ -3458,9 +3458,9 @@
             "5e4c3c30025c30ee",
             "49edcd3fcf15db5c"
         ],
-        "x": 1204,
+        "x": 1214,
         "y": 2079,
-        "w": 1162,
+        "w": 1152,
         "h": 82
     },
     {
@@ -16536,7 +16536,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "21.29 beta (experimental)",
+        "payload": "21.30 beta (experimental)",
         "payloadType": "str",
         "x": 1350,
         "y": 1960,
@@ -16554,7 +16554,7 @@
         "g": "4f352fdae09316c2",
         "group": "b7f740331bca1b3f",
         "order": 1,
-        "width": 21,
+        "width": 25,
         "height": 1,
         "name": "Flow version",
         "label": "Flow version ",
@@ -17600,9 +17600,9 @@
             "10068b1def52810f",
             "241b2a8a8945563f"
         ],
-        "x": 84,
+        "x": 94,
         "y": 1739,
-        "w": 1452,
+        "w": 1442,
         "h": 1342
     },
     {
@@ -17637,9 +17637,9 @@
             "a8d51c8773f8f17f",
             "2caf61fe8673aedb"
         ],
-        "x": 104,
+        "x": 114,
         "y": 59,
-        "w": 1572,
+        "w": 1562,
         "h": 422
     },
     {
@@ -17717,9 +17717,9 @@
             "0b10bc17b24896b7",
             "6c685782864f1787"
         ],
-        "x": 104,
+        "x": 114,
         "y": 3119,
-        "w": 1172,
+        "w": 1162,
         "h": 982
     },
     {
@@ -17825,9 +17825,9 @@
             "6b2644c3a510f50f",
             "b43820fd5a21f4e7"
         ],
-        "x": 2338,
+        "x": 2348,
         "y": 53,
-        "w": 1968,
+        "w": 1958,
         "h": 888
     },
     {
@@ -17857,9 +17857,9 @@
             "c0a54684ef46f711",
             "07bfc2f9f00870d7"
         ],
-        "x": 64,
+        "x": 74,
         "y": 4559,
-        "w": 1132,
+        "w": 1122,
         "h": 302
     },
     {
@@ -17979,9 +17979,9 @@
             "030fbd5026e5a295",
             "7122d217051222ff"
         ],
-        "x": 2364,
+        "x": 2374,
         "y": 79,
-        "w": 1182,
+        "w": 1172,
         "h": 162
     },
     {
@@ -24002,7 +24002,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Function RTC on / off",
-        "func": "////////////////////////////////////////////////////////////////////////////\n////////////////////////// RTC - ON/OFF function ///////////////////////////\n//\n//\n//  This function has the goal to act when the temperature in the room is too high.\n//  It can either turn off the heatpump, or take the [heat]-mode out of the current operating mode.\n//  \n\nlet msg1    ={};        //  pin 1 - Output to power pump on/off \nlet msg2    ={};        //  pin 2 - Output to Operating Mode\nlet msg99   ={};        //  pin 3 - Messages to Log\n//\n//  return [msg1,msg2,msg99]\n\nvar Sterilization_active        =global.get('Sterilization_active',\"file\");\n    if (Sterilization_active===undefined)   {Sterilization_active=0}\n\nvar Force_DHW_active            =global.get('Force_DHW_active',\"file\");\n    if (Force_DHW_active===undefined)   {Force_DHW_active=0}   \n\n\nvar Operating_Mode              =global.get('Operating_Mode_State',\"file\");\n    if (Operating_Mode === undefined)   {node.warn('RTC on_off Operating_Mode');return null;}\n//  Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n//\nvar rtc_state                   =global.get('Correction_1_RTC_on_off',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n    if (rtc_state===undefined)  {rtc_state=0;}\n//\nvar F_RTC_on_off2               =global.get('F_RTC_on_off2',\"file\");\n    if (F_RTC_on_off2 === undefined)    {F_RTC_on_off2=0;}         // Get the global variable. Used to see if the RTC function is enabled through GUI.\n\nvar SolarFunction_active            = global.get(\"SolarFunction_active\",\"file\");\n    if (SolarFunction_active === undefined) {SolarFunction_active=0;}\n\n////////////////////////////////////////////////////////////////////////\nif (F_RTC_on_off2 == 0 || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8 || Sterilization_active == 1 || Force_DHW_active == 1 || SolarFunction_active == 1)     //  First IF\n    {   \n        global.set('F_rtc_on_off_status',undefined,\"file\");\n        return null;\n    }\n\nelse \n    {   \n        // Declaration of variables including their values.    \n        var rtc_PV          = global.get('T_room');                             // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n            if (rtc_PV===undefined) {node.warn('RTC on_off rtc_PV');return null}\n        var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard. \n            if (rtc_SP===undefined) {node.warn('RTC on_off rtc_SP');return null}\n        var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n        \n        var Heatpump_State  = global.get('Heatpump_State',\"file\");              // get current state of the heatpump. on or off (1 or 0)\n        \n        // below are the variables containing the temperature ranges.\n        var rtc_off         = global.get('rtc_off',\"file\");                     // Range turn heatpump off\n            if (rtc_off === undefined)  \n                {\n                    rtc_off = 10;\n                    global.set('rtc_off',10,\"file\");\n                }\n        var rtc_on          = global.get('rtc_on',\"file\");                      // Range turn heatpump on\n            if (rtc_on === undefined)   \n                {\n                    rtc_on = -10;\n                    global.set('rtc_on',-10,\"file\");\n                }\n        \n//        var F_rtc_on_off_active             = global.get('F_rtc_on_off_active',\"file\");\n//            if (F_rtc_on_off_active===undefined)    {F_rtc_on_off_active=0;global.set('F_rtc_on_off_active',0,\"file\");}\n            \n        var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n\n        msg99.topic     = \"Function RTC\";\n    //node.warn(\"rtc_dT= \" + rtc_dT);\n    //node.warn(\"rtc_on= \" + rtc_on);\n    //node.warn(\"F_rtc_on_off_active= \" + F_rtc_on_off_active);\n    \n        //*****************************************************************************\n        // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n        if (rtc_off <= rtc_on)\n            {\n                //node.warn('RTC function: Current OFF temperature is lower than the ON temperature. You must correct this !! ');\n                msg99.payload   = \"ERROR: Current OFF temperature is lower than the ON temperature. You must correct this !!\"; \n                return [null,null,msg99];\n            }\n\n        \n        if (rtc_dT > rtc_off)                           {global.set('F_rtc_on_off_status',0,\"file\");}\n        if (rtc_dT >= rtc_on && rtc_dT <= rtc_off)      {global.set('F_rtc_on_off_status',1,\"file\");}\n        if (rtc_dT < rtc_on)                            {global.set('F_rtc_on_off_status',2,\"file\");}\n        \n\n        \n        //*****************************************************************************\n        //      Scenario 1: the roomtemperature is high and above the 'off'limit. Function start\n        //*****************************************************************************\n//        if (rtc_dT > rtc_off && Heatpump_State == 1 && F_rtc_on_off_active == 0 && Operating_Mode != 3)               // TEST1 backup 22-11-2022 Ed\n        if (rtc_dT > rtc_off && Heatpump_State == 1 && Operating_Mode != 3)\n            {\n                //  Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (Operating_Mode == 0 || Operating_Mode == 2)\n                                            {\n                                                global.set('F_rtc_on_off_active',1,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                msg1.payload    = 0;\n                                                msg1.topic      = \"new_heatpump_power\";\n                                                msg99.payload   = \"on/off activated - Turn off power (Room temp: \" + rtc_PV + \"°C)\";\n                                                return [msg1,null,msg99]; \n                                            }\n                                            \n                if (Operating_Mode == 4 || Operating_Mode == 6)    \n                                            {\n                                                if (F_stored_next_operating_mode === undefined)\n                                                    {\n                                                        global.set('F_stored_next_operating_mode',Operating_Mode,\"file\");\n                                                    }\n                                                global.set('F_rtc_on_off_active',1,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                msg2.payload    = 3;\n                                                msg2.topic      = \"new_Operating_Mode\";\n                                                msg99.payload   = \"on/off activated - Operating mode from \" + Operating_Mode + \" to 3\";\n                                                return [null,msg2,msg99]; \n                                            }\n                                            \n            }\n        //*****************************************************************************\n        //      Scenario 2: the roomtemperature is low enough again. Function end\n        //*****************************************************************************\n//        if (rtc_dT < rtc_on && F_rtc_on_off_active == 1)                                                              // TEST1 backup 22-11-2022 Ed\n        if (rtc_dT < rtc_on)\n            {\n                if (Heatpump_State == 0)    {\n                                                global.set('F_rtc_on_off_active',0,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                msg1.payload    = 1;\n                                                msg1.topic      = \"new_heatpump_power\";\n                                                msg99.payload   = \"on/off - Turn on power (Room temp: \" + rtc_PV + \"°C)\";\n                                                return [msg1,null,msg99]; \n                                            }\n\n                if (Heatpump_State == 1)    {\n                                                global.set('F_rtc_on_off_active',0,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                if (F_stored_next_operating_mode === undefined) \n                                                    {\n                                                        F_stored_next_operating_mode = 0\n                                                        //msg99.payload   = \"on/off deactivated - Previous OM not found. Restored OM to default 0 (Heat only)\";\n                                                        msg99.payload = \"Operation mode 0 (Heat only)\";\n                                                    }\n                                                else \n                                                    {\n                                                        //msg99.payload   = \"on/off deactivated - Restored to OM \" + F_stored_next_operating_mode;\n                                                        var OM = F_stored_next_operating_mode;\n                                                        if (OM == 0) OM = \"Heat only\"; if (OM == 1) OM = \"Cool only\"; if (OM == 2) OM = \"Auto(Heat)\"; if (OM == 3) OM = \"DHW only\"; if (OM == 4) OM = \"Heat+DHW\"; if (OM == 5) OM = \"Cool+DHW\"; if (OM == 6) OM = \"Auto(Heat)+DHW\"; if (OM == 7) OM = \"Auto(Cool)\"; if (OM == 8) OM = \"Auto(Cool)+DHW)  \";\n                                                        msg99.payload = \"Restored to operation mode \" + F_stored_next_operating_mode + \" (\" + OM + \")\";\n                                                    }\n                                                msg2.payload    = F_stored_next_operating_mode;\n                                                msg2.topic      = \"new_Operating_Mode\";\n                                                \n                                                global.set('F_stored_next_operating_mode',undefined,\"file\");\n                                                return [null,msg2,msg99]; \n                                            }\n                \n            }  \n//******************************************************************************\n    }",
+        "func": "////////////////////////////////////////////////////////////////////////////\n////////////////////////// RTC - ON/OFF function ///////////////////////////\n//\n//\n//  This function has the goal to act when the temperature in the room is too high.\n//  It can either turn off the heatpump, or take the [heat]-mode out of the current operating mode.\n//  \n\nlet msg1    ={};        //  pin 1 - Output to power pump on/off \nlet msg2    ={};        //  pin 2 - Output to Operating Mode\nlet msg99   ={};        //  pin 3 - Messages to Log\n//\n//  return [msg1,msg2,msg99]\n\nvar Sterilization_active        =global.get('Sterilization_active',\"file\");\n    if (Sterilization_active===undefined)   {Sterilization_active=0}\n\nvar Force_DHW_active            =global.get('Force_DHW_active',\"file\");\n    if (Force_DHW_active===undefined)   {Force_DHW_active=0}   \n\n\nvar Operating_Mode              =global.get('Operating_Mode_State',\"file\");\n    if (Operating_Mode === undefined)   {node.warn('RTC on_off Operating_Mode');return null;}\n//  Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n//\nvar rtc_state                   =global.get('Correction_1_RTC_on_off',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n    if (rtc_state===undefined)  {rtc_state=0;}\n//\nvar F_RTC_on_off2               =global.get('F_RTC_on_off2',\"file\");\n    if (F_RTC_on_off2 === undefined)    {F_RTC_on_off2=0;}         // Get the global variable. Used to see if the RTC function is enabled through GUI.\n\nvar SolarFunction_active            = global.get(\"SolarFunction_active\",\"file\");\n    if (SolarFunction_active === undefined) {SolarFunction_active=0;}\n\n////////////////////////////////////////////////////////////////////////\nif (F_RTC_on_off2 == 0 || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8 || Sterilization_active == 1 || Force_DHW_active == 1 || SolarFunction_active == 1)     //  First IF\n    {   \n        global.set('F_rtc_on_off_status',undefined,\"file\");\n        return null;\n    }\n\nelse \n    {   \n        // Declaration of variables including their values.    \n        var rtc_PV          = global.get('T_room');                             // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n            if (rtc_PV===undefined) {node.warn('RTC on_off rtc_PV');return null}\n        var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard. \n            if (rtc_SP===undefined) {node.warn('RTC on_off rtc_SP');return null}\n        var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n        \n        var Heatpump_State  = global.get('Heatpump_State',\"file\");              // get current state of the heatpump. on or off (1 or 0)\n        \n        // below are the variables containing the temperature ranges.\n        var rtc_off         = global.get('rtc_off',\"file\");                     // Range turn heatpump off\n            if (rtc_off === undefined)  \n                {\n                    rtc_off = 10;\n                    global.set('rtc_off',10,\"file\");\n                }\n        var rtc_on          = global.get('rtc_on',\"file\");                      // Range turn heatpump on\n            if (rtc_on === undefined)   \n                {\n                    rtc_on = -10;\n                    global.set('rtc_on',-10,\"file\");\n                }\n        \n//        var F_rtc_on_off_active             = global.get('F_rtc_on_off_active',\"file\");\n//            if (F_rtc_on_off_active===undefined)    {F_rtc_on_off_active=0;global.set('F_rtc_on_off_active',0,\"file\");}\n            \n        var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n\n        msg99.topic     = \"Function RTC\";\n    //node.warn(\"rtc_dT= \" + rtc_dT);\n    //node.warn(\"rtc_on= \" + rtc_on);\n    //node.warn(\"F_rtc_on_off_active= \" + F_rtc_on_off_active);\n    \n        //*****************************************************************************\n        // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n        if (rtc_off <= rtc_on)\n            {\n                //node.warn('RTC function: Current OFF temperature is lower than the ON temperature. You must correct this !! ');\n                msg99.payload   = \"ERROR: Current OFF temperature is lower than the ON temperature. You must correct this !!\"; \n                return [null,null,msg99];\n            }\n\n        \n        if (rtc_dT > rtc_off)                           {global.set('F_rtc_on_off_status',0,\"file\");}\n        if (rtc_dT >= rtc_on && rtc_dT <= rtc_off)      {global.set('F_rtc_on_off_status',1,\"file\");}\n        if (rtc_dT < rtc_on)                            {global.set('F_rtc_on_off_status',2,\"file\");}\n        \n\n        \n        //*****************************************************************************\n        //      Scenario 1: the roomtemperature is high and above the 'off'limit. Function start\n        //*****************************************************************************\n//        if (rtc_dT > rtc_off && Heatpump_State == 1 && F_rtc_on_off_active == 0 && Operating_Mode != 3)               // TEST1 backup 22-11-2022 Ed\n        if (rtc_dT > rtc_off && Heatpump_State == 1 && Operating_Mode != 3)\n            {\n                //  Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (Operating_Mode == 0 || Operating_Mode == 2)\n                                            {\n                                                global.set('F_rtc_on_off_active',1,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                msg1.payload    = 0;\n                                                msg1.topic      = \"new_heatpump_power\";\n                                                msg99.payload   = \"on/off activated - Turn off power (Room temp: \" + rtc_PV + \"°C)\";\n                                                return [msg1,null,msg99]; \n                                            }\n                                            \n                if (Operating_Mode == 4 || Operating_Mode == 6)    \n                                            {\n                                                if (F_stored_next_operating_mode === undefined)\n                                                    {\n                                                        global.set('F_stored_next_operating_mode',Operating_Mode,\"file\");\n                                                    }\n                                                global.set('F_rtc_on_off_active',1,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                msg2.payload    = 3;\n                                                msg2.topic      = \"new_Operating_Mode\";\n                                                msg99.payload   = \"on/off activated - Operating mode from \" + Operating_Mode + \" to 3\";\n                                                return [null,msg2,msg99]; \n                                            }\n                                            \n            }\n        //*****************************************************************************\n        //      Scenario 2: the roomtemperature is low enough again. Function end\n        //*****************************************************************************\n//        if (rtc_dT < rtc_on && F_rtc_on_off_active == 1)                                                              // TEST1 backup 22-11-2022 Ed\n        if (rtc_dT < rtc_on)\n            {\n                if (Heatpump_State == 0)    {\n                                                global.set('F_rtc_on_off_active',0,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                msg1.payload    = 1;\n                                                msg1.topic      = \"new_heatpump_power\";\n                                                msg99.payload   = \"on/off - Turn on power (Room temp: \" + rtc_PV + \"°C)\";\n                                                return [msg1,null,msg99]; \n                                            }\n\n                if (Heatpump_State == 1)    {\n                                                global.set('F_rtc_on_off_active',0,\"file\");                           // TEST1 commented out 22-11-2022 Ed\n                                                var OM; // create empty\n                                                if (F_stored_next_operating_mode === undefined) \n                                                    {\n                                                        if (Operating_Mode == 0) {F_stored_next_operating_mode = 0;}\n                                                        if (Operating_Mode == 1) {F_stored_next_operating_mode = 1;}\n                                                        if (Operating_Mode == 2) {F_stored_next_operating_mode = 2;}\n                                                        if (Operating_Mode == 3) {F_stored_next_operating_mode = 4;}\n                                                        if (Operating_Mode == 4) {F_stored_next_operating_mode = 4;}\n                                                        if (Operating_Mode == 5) {F_stored_next_operating_mode = 5;}\n                                                        if (Operating_Mode == 6) {F_stored_next_operating_mode = 6;}\n                                                        if (Operating_Mode == 7) {F_stored_next_operating_mode = 7;}\n                                                        if (Operating_Mode == 8) {F_stored_next_operating_mode = 8;}\n                                                        \n                                                        //msg99.payload   = \"on/off deactivated - Previous OM not found. Restored OM to default 0 (Heat only)\";\n                                                        OM = F_stored_next_operating_mode;\n                                                        if (OM == 0) OM = \"Heat only\"; if (OM == 1) OM = \"Cool only\"; if (OM == 2) OM = \"Auto(Heat)\"; if (OM == 3) OM = \"DHW only\"; if (OM == 4) OM = \"Heat+DHW\"; if (OM == 5) OM = \"Cool+DHW\"; if (OM == 6) OM = \"Auto(Heat)+DHW\"; if (OM == 7) OM = \"Auto(Cool)\"; if (OM == 8) OM = \"Auto(Cool)+DHW)  \";\n                                                        msg99.payload = \"Operation mode to \" + OM;\n                                                    }\n                                                else \n                                                    {\n                                                        //msg99.payload   = \"on/off deactivated - Restored to OM \" + F_stored_next_operating_mode;\n                                                        OM = F_stored_next_operating_mode;\n                                                        if (OM == 0) OM = \"Heat only\"; if (OM == 1) OM = \"Cool only\"; if (OM == 2) OM = \"Auto(Heat)\"; if (OM == 3) OM = \"DHW only\"; if (OM == 4) OM = \"Heat+DHW\"; if (OM == 5) OM = \"Cool+DHW\"; if (OM == 6) OM = \"Auto(Heat)+DHW\"; if (OM == 7) OM = \"Auto(Cool)\"; if (OM == 8) OM = \"Auto(Cool)+DHW)  \";\n                                                        msg99.payload = \"Restored to operation mode \" + F_stored_next_operating_mode + \" (\" + OM + \")\";\n                                                    }\n                                                msg2.payload    = F_stored_next_operating_mode;\n                                                msg2.topic      = \"new_Operating_Mode\";\n                                                \n                                                global.set('F_stored_next_operating_mode',undefined,\"file\");\n                                                return [null,msg2,msg99]; \n                                            }\n                \n            }  \n//******************************************************************************\n    }",
         "outputs": 3,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\n//global.set('F_stored_next_operating_mode',4,\"file\");",
@@ -24730,7 +24730,7 @@
         ],
         "x": 54,
         "y": 1119,
-        "w": 1398,
+        "w": 1388,
         "h": 602
     },
     {
@@ -24793,9 +24793,9 @@
             "d44f1a1993a8a44f",
             "e68356272f1f529b"
         ],
-        "x": 44,
+        "x": 54,
         "y": 439,
-        "w": 1398,
+        "w": 1388,
         "h": 622
     },
     {
@@ -24923,7 +24923,7 @@
         ],
         "x": 84,
         "y": 579,
-        "w": 1332,
+        "w": 1322,
         "h": 82
     },
     {
@@ -24945,7 +24945,7 @@
         ],
         "x": 84,
         "y": 1239,
-        "w": 1342,
+        "w": 1332,
         "h": 82
     },
     {
@@ -24965,9 +24965,9 @@
         "nodes": [
             "2ee679408e4ccc6f"
         ],
-        "x": 1124,
+        "x": 1134,
         "y": 919,
-        "w": 292,
+        "w": 272,
         "h": 82
     },
     {
@@ -24987,9 +24987,9 @@
         "nodes": [
             "4eaa2cfa2749c551"
         ],
-        "x": 1124,
+        "x": 1134,
         "y": 1579,
-        "w": 292,
+        "w": 272,
         "h": 82
     },
     {
@@ -26311,9 +26311,9 @@
             "59e73e3a2c2985fa",
             "88ea0371f9cecd37"
         ],
-        "x": 64,
+        "x": 74,
         "y": 19,
-        "w": 1302,
+        "w": 1292,
         "h": 728
     },
     {
@@ -26434,9 +26434,9 @@
             "a9994ef2e592aee1",
             "375bbd780529afe0"
         ],
-        "x": 64,
+        "x": 74,
         "y": 779,
-        "w": 1352,
+        "w": 1332,
         "h": 688
     },
     {
@@ -26460,7 +26460,7 @@
         ],
         "x": 114,
         "y": 551.5,
-        "w": 822,
+        "w": 812,
         "h": 169.5
     },
     {
@@ -26560,7 +26560,7 @@
         ],
         "x": 434,
         "y": 1719,
-        "w": 402,
+        "w": 392,
         "h": 1162
     },
     {
@@ -30325,9 +30325,9 @@
             "9f75b032f8c2eeb5",
             "bcda44f3140d86e9"
         ],
-        "x": 124,
+        "x": 134,
         "y": 139,
-        "w": 642,
+        "w": 632,
         "h": 342
     },
     {
@@ -30347,9 +30347,9 @@
             "43be81558a98b102",
             "c2935eeb2b0919cf"
         ],
-        "x": 204,
+        "x": 214,
         "y": 499,
-        "w": 632,
+        "w": 622,
         "h": 202
     },
     {
@@ -30369,9 +30369,9 @@
             "8982c1e161d9d215",
             "3c3c8472da1fb85a"
         ],
-        "x": 1084,
+        "x": 1094,
         "y": 139,
-        "w": 592,
+        "w": 582,
         "h": 202
     },
     {
@@ -30396,9 +30396,9 @@
             "8090bc95e8512738",
             "7ca958b4b94243f8"
         ],
-        "x": 1104,
+        "x": 1114,
         "y": 379,
-        "w": 592,
+        "w": 582,
         "h": 262
     },
     {
@@ -30423,9 +30423,9 @@
             "1dc467ae4cf20867",
             "8d47d305edaedefa"
         ],
-        "x": 1104,
+        "x": 1114,
         "y": 679,
-        "w": 592,
+        "w": 582,
         "h": 262
     },
     {
@@ -31709,9 +31709,9 @@
             "572ff3b3b8a1d185",
             "68f4601da2aa107a"
         ],
-        "x": 2314,
+        "x": 2334,
         "y": 1979,
-        "w": 1452,
+        "w": 1432,
         "h": 482
     },
     {
@@ -32008,9 +32008,9 @@
             "05344a8f5a84a598",
             "ce6d6e5627ec1fa2"
         ],
-        "x": 2364,
+        "x": 2374,
         "y": 2519,
-        "w": 1342,
+        "w": 1332,
         "h": 282
     },
     {
@@ -44506,9 +44506,9 @@
             "e335ee2f6e1f9957",
             "f4fa02505ab621d5"
         ],
-        "x": 2044,
+        "x": 2054,
         "y": 199,
-        "w": 822,
+        "w": 812,
         "h": 1022
     },
     {
@@ -44590,9 +44590,9 @@
             "3ed3a7f6bfbf803a",
             "c5e1f08f07eb647b"
         ],
-        "x": 2044,
+        "x": 2054,
         "y": 59,
-        "w": 822,
+        "w": 812,
         "h": 122
     },
     {
@@ -44867,17 +44867,17 @@
         "type": "ui_template",
         "z": "3aa03811830ef29e",
         "group": "b7f740331bca1b3f",
-        "name": "Line - Instructions text",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "format": "<h3>Author(s):</h3></br>\nEd ter bak (alias)</br>\nMaarten69 (alias)</br></br>\n\n<h3>Contributions:</h3>\nEgyras: The original creator of Heishamon. </br>\n------https://github.com/Egyras</br></br>\nEgyras: For the MQTT topic list </br>\n------ https://github.com/Egyras/HeishaMon/blob/master/MQTT-Topics.md</br></br>\nCurlyMo: The original calculation for automagical 'Stooklijn' correction </br>\n------ https://gathering.tweakers.net/forum/list_messages/2039982#Automagische_stooklijncorrectie</br></br>\nAUijtdehaag: The COP calculation </br>\n------ https://github.com/Dylantje/WP-Heishamon-sripts/blob/master/WP%20LUA%20COP%20berekening</br></br>\nlampy25. For unselfishly giving supportive feedback and good idea's. Thanks!</br></br>\ntimovd for his contributions. ! Thanks.</br></br>\nE1cid from Node Red forum, for the help with the bar-chart.</br></br>\nJavaboon for his assistance in the Solar functionality.</br></br>\nMaarten69 for his feature requests and helping with testing. MEGAAA THANKS :).</br></br>\nMaarten69 (yes, again) for contributing to this project and helping with a FAQ !!!!! :).</br></br>\nAikon for contributing to this project and helping with layout/textual improvements.</br></br>\nMaarten69 for contributing to this project. New additions can be expected from him on this project. Mega sweet!!</br></br>\nMikeyMan for contributing with testing and discussing a lot about this. Good testing is very valuable!</br></br>",
+        "name": "Line - Contributions text",
+        "order": 4,
+        "width": 9,
+        "height": 16,
+        "format": "<h3>Author(s):</h3></br>\nEd ter bak (alias)</br>\nMaarten69 (alias)</br></br>\n\n<h3>Thanks and gratitude goes to:</h3>\nEgyras</br>\nCurlyMo</br>\nAUijtdehaag</br>\nlampy25</br>\ntimovd</br>\nE1cid</br>\nJavaboon</br>\nMaarten69</br>\nAikon</br>\nMikeyMan</br>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 1870,
+        "x": 1880,
         "y": 320,
         "wires": [
             []
@@ -46349,6 +46349,27 @@
         "wires": []
     },
     {
+        "id": "cdbfdf626a17263f",
+        "type": "ui_template",
+        "z": "3aa03811830ef29e",
+        "group": "b7f740331bca1b3f",
+        "name": "Line - Changelog",
+        "order": 2,
+        "width": 15,
+        "height": 16,
+        "format": "-------------------------------------------------</br>\n[2022-12-15] v21.30 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] RTC on/off function. When no OperatingMode is stored, it would default back to Mode 0 (heat only)</br>\n</br>\n</br>\n-------------------------------------------------</br>\n[2022-12-13] v21.29 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[NEW] Bypass Softstart Quietmode during defrost.</br>\n[Obsolete] RTC Booster fixed now. Use the switch on RTC dashboard to enable (default off).</br>\n[Obsolete] Removed layout from dashboard Hardware configuration (was for testing only)</br>\n[FIX] Nightreduction room temperature / Current status --> Manual on/off now working again.</br>\n[FIX] Removed log message (@startup) \"Function - SoftStart Quietmode: OFF (restored to level 0)\". (the restored part)</br>\n[FIX] Unneeded pumpspeed MQTT command (When enabled at a restart).</br>\n[Moved] Moved Function reduce pump speed to Settings page. Layout now improved.</br>\n[Changed] Replaced defrost toggle with button. Color status of button Red --> defrosting.</br>\n[FIX] RTC Room actual temperature didn't update frequently.</br>\n[Add] Added to System Check: RTC Booster, Function pump speed, MQTT-block settings and manual on/off settings.</br>\n</br>\n-------------------------------------------------</br>\n[2022-12-12] v21.28 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[ENHANCEMENT] Added toggle for NightReduction RoomSP in Scheduler screen.</br>\n</br>\n</br>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1870,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "d5fea67661261002",
         "type": "tab",
         "label": "WP Debug",
@@ -46472,9 +46493,9 @@
             "0af4b3b3445b3ce2",
             "6c6d719592dac8d5"
         ],
-        "x": 74,
+        "x": 84,
         "y": 799,
-        "w": 1032,
+        "w": 1022,
         "h": 142
     },
     {
@@ -46511,9 +46532,9 @@
             "c3c58f9072c16f58",
             "1270c4b4bfc42de3"
         ],
-        "x": 74,
+        "x": 54,
         "y": 959,
-        "w": 1032,
+        "w": 1052,
         "h": 322
     },
     {
@@ -47247,7 +47268,7 @@
         "g": "0531f7d830ad5e1b",
         "group": "ec94eaa0930738be",
         "name": "",
-        "order": 10,
+        "order": 9,
         "width": 25,
         "height": 17,
         "format": "<div ng-repeat=\"line in msg.payload track by $index\">\n    <div ng-style=\"{'margin-top':'0','margin-bottom':'0'}\">{{line}}</div>\n</div>",
@@ -47433,7 +47454,7 @@
         "label": "Block MQTT commands",
         "tooltip": "Block MQTT commands",
         "group": "ec94eaa0930738be",
-        "order": 6,
+        "order": 5,
         "width": 4,
         "height": 1,
         "passthru": true,
@@ -47518,7 +47539,7 @@
         "topic": "",
         "payload": "0",
         "payloadType": "num",
-        "x": 180,
+        "x": 160,
         "y": 1180,
         "wires": [
             [
@@ -48233,7 +48254,7 @@
         "label": "Max MQTT-commands per day:",
         "tooltip": "",
         "group": "ec94eaa0930738be",
-        "order": 7,
+        "order": 6,
         "width": 8,
         "height": 1,
         "wrap": false,
@@ -48797,9 +48818,9 @@
         "id": "92e5b2c.00a8b5",
         "type": "mqtt-broker",
         "name": "MQTT (x.x.x.x)",
-        "broker": "core-mosquitto",
+        "broker": "x.x.x.x",
         "port": "1883",
-        "clientid": "",
+        "clientid": "Node_Red_Client",
         "autoConnect": true,
         "usetls": false,
         "compatmode": false,
