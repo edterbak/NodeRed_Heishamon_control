@@ -58,6 +58,11 @@ Ik denk dat het plan hier eerst helemaal afgemaakt moet worden. Het ontwerp. hoe
 #### [4] Sensor/devices on central place (flow).
 Prima: to do zodra we stabiel 22 hebben. Niet nu nog.
 
+#### [10] T room custom & T outside custom improvement
+Huidige detectie van custom sensoren gebeurt pas na dat de eerste meetwaarde binnen komt. 
+Verbetering is om T_outside_custom en T_room_custom als object op te slaan met .payload de temperatuur en .time de tijd van de laatste meting.
+Dan kan bij de eerst volgende trigger gelijk de juiste temperatuur worden gepakt. 
+
 -----------------------------------------------------------------------------------------------------------------------
 release 24 (v23.xx) later..
 -----------------------------------------------------------------------------------------------------------------------
