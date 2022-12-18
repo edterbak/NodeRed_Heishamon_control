@@ -6,12 +6,14 @@ Release 22 Stable (v21.xx) waar we nu aan werken
 ```
 Geen idee. Is denk ik iets waar je alles van weet. 
 Kun je beter beschrijven wat de bedoeling is? of het Probleem? Klinkt triviaal zonder impact op functionaliteit. dus gewoon doen :)
+Update: 
 ```
 
 #### ~~[2] Heishamon_MQTT_Reconnects~~
 ```
 Dit is niet oplosbaar door ons. Hebben we niks mee te maken.
 update: Je bedoelde ook het aantal mqtt berichten hieromtrend. toch?
+Antwoord: Nee, alleen het tonen van het aantal reconnects, voor de System Check. (uitlezen van panasonic_heat_pump/stats).
 ```
 
 #### ~~[3] last run kWh, averige kWh/run. @Maarten69 aangepast na je feedback~~
