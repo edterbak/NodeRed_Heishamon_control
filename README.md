@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.30 beta (experimental) <br/> 
+Current version: 21.31 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -782,10 +782,17 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [FIX] RTC Room actual temperature didn't update frequently.
 - [Add] Added to System Check: RTC Booster, Function pump speed, MQTT-block settings and manual on/off settings.
 
-
 [2022-12-15] v21.30 beta (experimental). Changes:
 - [FIX] RTC on/off function. When no OperatingMode is stored, it would default back to Mode 0 (heat only). Now HEAT is added if not there/possible.
 
+[2022-12-25] v21.31 beta (experimental). Changes:
+- [Changed] Rework of block functionality. Rules around custom selection should be obayed now.
+- [Changed] RTC function, help and layout. Select the action you want to allow, on/off or heatmode changing only.
+- [Changed] RTC function, Booster renamed to incremental setpoints
+- [Changed] Scheduler function. Behaviour when other functions are activated.
+- [Changed] SoftStart. Now a toggle is present if you want the function to restart every time after a defrost.
+- [FIX] WAR function. TOP29 and TOP30 were flipped during import/export.
+- [FIX] Heatpump information updated propperly after firmware change. (Thank you xtr3me)
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
 
