@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.32 beta (experimental) <br/> 
+Current version: 21.33 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -796,6 +796,9 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 
 [2022-12-25] v21.32 beta (experimental). Changes:
 - [FIX] mqtt signals being blocked too often. Power on/off, Operating Mode, Quiet Mode etc.
+
+[2022-12-25] v21.33 beta (experimental). Changes:
+- [FIX] Typo in FILTER functions (2x) (Thanks sjampeter)
 
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
