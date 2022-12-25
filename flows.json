@@ -2950,8 +2950,6 @@
             "6d5e44060139d9d1",
             "98757de0a2842b4b",
             "43ad0d01b0c84de9",
-            "1f4d1ff3b733216c",
-            "6fa7661447dd0d86",
             "765b4d77a9fd44cc",
             "98c49c9eca38ccfc",
             "a6faaf6380e6d040",
@@ -3047,7 +3045,6 @@
             "b7a195156eedf201",
             "99fca21d30786e83",
             "7b3d20aa8c9abb1e",
-            "47799574391c942f",
             "6e6c991de9f27149",
             "56131f5116b20fba",
             "550d51c7fe788f9e",
@@ -3153,7 +3150,12 @@
             "f09a0c75d24764b9",
             "2f7ff35f7c2ca99f",
             "298594735f133ef3",
-            "30b65b7d5afd13d0"
+            "30b65b7d5afd13d0",
+            "f6e0cc6687051bf1",
+            "585e4d6a54d44021",
+            "e4b5c256b8c34faa",
+            "e21920a5a6155306",
+            "1041d65c575cae05"
         ],
         "x": 1154,
         "y": -1,
@@ -6615,9 +6617,9 @@
         "y": 200,
         "wires": [
             [
-                "1f4d1ff3b733216c",
                 "cb924439a66154f1",
-                "5be142bd732c8d96"
+                "5be142bd732c8d96",
+                "e4b5c256b8c34faa"
             ]
         ]
     },
@@ -6691,7 +6693,7 @@
         "y": 300,
         "wires": [
             [
-                "6fa7661447dd0d86"
+                "585e4d6a54d44021"
             ]
         ]
     },
@@ -6726,7 +6728,7 @@
         "y": 140,
         "wires": [
             [
-                "47799574391c942f"
+                "f6e0cc6687051bf1"
             ]
         ]
     },
@@ -6859,7 +6861,7 @@
         "wires": [
             [
                 "493be73ce31c8c96",
-                "6fa7661447dd0d86"
+                "585e4d6a54d44021"
             ]
         ]
     },
@@ -6903,48 +6905,6 @@
         "wires": []
     },
     {
-        "id": "1f4d1ff3b733216c",
-        "type": "rbe",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 2090,
-        "y": 240,
-        "wires": [
-            [
-                "eeae40f40c5ecf87"
-            ]
-        ]
-    },
-    {
-        "id": "6fa7661447dd0d86",
-        "type": "rbe",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "name": "",
-        "func": "rbei",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 2090,
-        "y": 320,
-        "wires": [
-            [
-                "2810d417aa5c3457"
-            ]
-        ]
-    },
-    {
         "id": "765b4d77a9fd44cc",
         "type": "link in",
         "z": "8c9d42231fd19d3c",
@@ -6959,8 +6919,8 @@
         "y": 240,
         "wires": [
             [
-                "1f4d1ff3b733216c",
-                "fadad1e2505bf86d"
+                "fadad1e2505bf86d",
+                "e4b5c256b8c34faa"
             ]
         ]
     },
@@ -10863,30 +10823,7 @@
         "y": 100,
         "wires": [
             [
-                "47799574391c942f"
-            ]
-        ]
-    },
-    {
-        "id": "47799574391c942f",
-        "type": "rbe",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "name": "",
-        "func": "rbei",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 1910,
-        "y": 120,
-        "wires": [
-            [
-                "7b3d20aa8c9abb1e",
-                "9281d7ca9b292f9f",
-                "cad33f9112e846c9"
+                "f6e0cc6687051bf1"
             ]
         ]
     },
@@ -16532,7 +16469,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "21.31 beta (experimental)",
+        "payload": "21.32 beta (experimental)",
         "payloadType": "str",
         "x": 1350,
         "y": 1960,
@@ -17726,6 +17663,120 @@
         ]
     },
     {
+        "id": "f6e0cc6687051bf1",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "Filter",
+        "func": "var last_value = context.get('last_value');\nvar current_value = global.get('Heatpump_State',\"file\");\nif (last_value === undefined){\n    context.set('last_value',msg.payload);\n    return null;\n}\n\nif (msg.payload != current_value || msg.payload != last_value){\n    context.set('last_value',msg.payload);\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1930,
+        "y": 120,
+        "wires": [
+            [
+                "cad33f9112e846c9",
+                "7b3d20aa8c9abb1e",
+                "9281d7ca9b292f9f"
+            ]
+        ]
+    },
+    {
+        "id": "585e4d6a54d44021",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "Filter",
+        "func": "var last_value      = context.get('last_value');\nvar current_value   = global.get('Operating_Mode_State',\"file\");\n\n\nif (last_value === undefined){\n    context.set('last_value',msg.payload);\n    return null;\n}\n\nif (msg.payload != current_value || mag.payload != last_value){\n    context.set('last_value',msg.payload);\n    return msg;\n}\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2090,
+        "y": 320,
+        "wires": [
+            [
+                "e21920a5a6155306"
+            ]
+        ]
+    },
+    {
+        "id": "e4b5c256b8c34faa",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "Filter",
+        "func": "var last_value      = context.get('last_value');\nvar current_value   = global.get('Quiet_Mode_Level',\"file\");\n\n\nif (last_value === undefined){\n    context.set('last_value',msg.payload);\n    return null;\n}\n\nif (msg.payload != current_value || mag.payload != last_value){\n    context.set('last_value',msg.payload);\n    return msg;\n}\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2090,
+        "y": 240,
+        "wires": [
+            [
+                "1041d65c575cae05"
+            ]
+        ]
+    },
+    {
+        "id": "e21920a5a6155306",
+        "type": "trigger",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "10",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 2270,
+        "y": 320,
+        "wires": [
+            [
+                "2810d417aa5c3457"
+            ]
+        ]
+    },
+    {
+        "id": "1041d65c575cae05",
+        "type": "trigger",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "10",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 2270,
+        "y": 240,
+        "wires": [
+            [
+                "eeae40f40c5ecf87"
+            ]
+        ]
+    },
+    {
         "id": "a938de76db0b71f6",
         "type": "tab",
         "label": "WP Control",
@@ -18153,7 +18204,6 @@
             "148fdf6802233c77",
             "1b409e1ea72f94dd",
             "7ddd3f5d8f76897e",
-            "0eae7353f71aad0c",
             "bba46d589404d925",
             "893c7ca52013a7c7",
             "2f5e3d38d1cdd9b2",
@@ -18166,7 +18216,8 @@
             "5e9da82d3dfe26da",
             "398d29ed6f37b424",
             "a03c7589a8b95ce2",
-            "2695bccfb69a52d5"
+            "2695bccfb69a52d5",
+            "3eee7dd56b16fc03"
         ],
         "x": 144,
         "y": 619,
@@ -24578,27 +24629,6 @@
         "wires": []
     },
     {
-        "id": "0eae7353f71aad0c",
-        "type": "rbe",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "TEST1",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 1600,
-        "y": 940,
-        "wires": [
-            [
-                "fab44b5501eca10e"
-            ]
-        ]
-    },
-    {
         "id": "bba46d589404d925",
         "type": "link in",
         "z": "a938de76db0b71f6",
@@ -24835,7 +24865,8 @@
                 "1bf606367c4ff65f"
             ],
             [
-                "0eae7353f71aad0c"
+                "3eee7dd56b16fc03",
+                "fab44b5501eca10e"
             ],
             [
                 "398d29ed6f37b424"
@@ -24860,8 +24891,8 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 1600,
-        "y": 900,
+        "x": 1680,
+        "y": 780,
         "wires": [
             [
                 "893c7ca52013a7c7"
@@ -24883,6 +24914,23 @@
         "className": "",
         "x": 680,
         "y": 4920,
+        "wires": []
+    },
+    {
+        "id": "3eee7dd56b16fc03",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "debug 100",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1470,
+        "y": 660,
         "wires": []
     },
     {
@@ -31559,7 +31607,7 @@
         "order": 4,
         "width": 14,
         "height": 8,
-        "format": "<h3>SoftStart</h3>\n<br/>\n<h3>What can the SoftStart function do for you?</h3>\nDefault behaviour of the heatpump when the compressor starts for a HEAT run, is that the frequency (Hz) will go to medium / high level. The frequency stays high until the returning water temperature (See Temp. inlet (PV) at the Home screen) approaches the setpoint. Only then the compressor ramps down.\n</br></br>\nThe primary goal of this function is to quickly lower the compressor frequency after starting a HEAT run. The heatpump will more quickly be in a stable / low power operating windows. As a result of that the length of the run might increase, it consumes less energy and generating less noise. A downside of this could be that heating is slower.\n<br/><br/>\nA secondairy goal of this function is to increase compressor runtime by slowely increasing the water setpoint. The setpoint will contineously be moved just outside the window where it will stop a heating run. By allowing the setpont to slide up along with the returning water (Tinlet), the run length will not be terminated. A possible downside of this could be the room temperature getting too high. \n<br/>\n",
+        "format": "<h3>SoftStart</h3>\n<br/>\n<h3>What can the SoftStart function do for you?</h3>\nDefault behaviour of the heatpump when the compressor starts for a HEAT run, is that the frequency (Hz) will go to medium / high level. The frequency stays high until the returning water temperature (See Temp. inlet (PV) at the Home screen) approaches the setpoint. Only then the compressor ramps down.\n</br></br>\nThe primary goal of this function is to quickly lower the compressor frequency after starting a HEAT run. The heatpump will more quickly be in a stable / low power operating windows. As a result of that the length of the run might increase, it consumes less energy and generating less noise. A downside of this could be that heating is slower.\n<br/><br/>\nA secondairy goal of this function is to increase compressor runtime by slowly increasing the water setpoint. The setpoint will contineously be moved just outside the window where it will stop a heating run. By allowing the setpont to slide up along with the returning water (Tinlet), the run length will not be terminated. A possible downside of this could be the room temperature getting too high. \n<br/>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
@@ -46577,7 +46625,7 @@
         "order": 2,
         "width": 15,
         "height": 16,
-        "format": "-------------------------------------------------</br>\n[2022-12-24] v21.31 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Changed] Rework of block functionality. Rules around custom selection should be obayed now.</br>\n[Changed] RTC function, help and layout. Select the action you want to allow, on/off or heatmode changing only.</br>\n[Changed] RTC function, Booster renamed to incremental setpoints\n[Changed] Scheduler function. Behaviour when other functions are activated.</br>\n[Changed] SoftStart. Now a toggle is present if you want the function to restart every time after a defrost.</br>\n[FIX] WAR function. TOP29 and TOP30 were flipped during import/export. </br>\n[FIX] Heatpump information updated propperly after firmware change. (Thank you xtr3me)</br>\n</br>\n\n\n-------------------------------------------------</br>\n[2022-12-15] v21.30 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] RTC on/off function. When no OperatingMode is stored, it would default back to Mode 0 (heat only)</br>\n</br>\n</br>\n-------------------------------------------------</br>\n[2022-12-13] v21.29 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[NEW] Bypass Softstart Quietmode during defrost.</br>\n[Obsolete] RTC Booster fixed now. Use the switch on RTC dashboard to enable (default off).</br>\n[Obsolete] Removed layout from dashboard Hardware configuration (was for testing only)</br>\n[FIX] Nightreduction room temperature / Current status --> Manual on/off now working again.</br>\n[FIX] Removed log message (@startup) \"Function - SoftStart Quietmode: OFF (restored to level 0)\". (the restored part)</br>\n[FIX] Unneeded pumpspeed MQTT command (When enabled at a restart).</br>\n[Moved] Moved Function reduce pump speed to Settings page. Layout now improved.</br>\n[Changed] Replaced defrost toggle with button. Color status of button Red --> defrosting.</br>\n[FIX] RTC Room actual temperature didn't update frequently.</br>\n[Add] Added to System Check: RTC Booster, Function pump speed, MQTT-block settings and manual on/off settings.</br>\n</br>\n-------------------------------------------------</br>\n[2022-12-12] v21.28 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[ENHANCEMENT] Added toggle for NightReduction RoomSP in Scheduler screen.</br>\n</br>\n</br>",
+        "format": "-------------------------------------------------</br>\n[2022-12-25] v21.32 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] mqtt signals being blocked too often. Power on/off, Operating Mode, Quiet Mode etc.\n\n-------------------------------------------------</br>\n[2022-12-24] v21.31 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Changed] Rework of block functionality. Rules around custom selection should be obayed now.</br>\n[Changed] RTC function, help and layout. Select the action you want to allow, on/off or heatmode changing only.</br>\n[Changed] RTC function, Booster renamed to incremental setpoints\n[Changed] Scheduler function. Behaviour when other functions are activated.</br>\n[Changed] SoftStart. Now a toggle is present if you want the function to restart every time after a defrost.</br>\n[FIX] WAR function. TOP29 and TOP30 were flipped during import/export. </br>\n[FIX] Heatpump information updated propperly after firmware change. (Thank you xtr3me)</br>\n</br>\n\n\n-------------------------------------------------</br>\n[2022-12-15] v21.30 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] RTC on/off function. When no OperatingMode is stored, it would default back to Mode 0 (heat only)</br>\n</br>\n</br>\n-------------------------------------------------</br>\n[2022-12-13] v21.29 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[NEW] Bypass Softstart Quietmode during defrost.</br>\n[Obsolete] RTC Booster fixed now. Use the switch on RTC dashboard to enable (default off).</br>\n[Obsolete] Removed layout from dashboard Hardware configuration (was for testing only)</br>\n[FIX] Nightreduction room temperature / Current status --> Manual on/off now working again.</br>\n[FIX] Removed log message (@startup) \"Function - SoftStart Quietmode: OFF (restored to level 0)\". (the restored part)</br>\n[FIX] Unneeded pumpspeed MQTT command (When enabled at a restart).</br>\n[Moved] Moved Function reduce pump speed to Settings page. Layout now improved.</br>\n[Changed] Replaced defrost toggle with button. Color status of button Red --> defrosting.</br>\n[FIX] RTC Room actual temperature didn't update frequently.</br>\n[Add] Added to System Check: RTC Booster, Function pump speed, MQTT-block settings and manual on/off settings.</br>\n</br>\n-------------------------------------------------</br>\n[2022-12-12] v21.28 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[ENHANCEMENT] Added toggle for NightReduction RoomSP in Scheduler screen.</br>\n</br>\n</br>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
