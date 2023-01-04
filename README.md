@@ -800,6 +800,10 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 [2022-12-25] v21.33 beta (experimental). Changes:
 - [FIX] Typo in FILTER functions (2x) (Thanks sjampeter)
 
+[2023-01-04] v21.34 beta (experimental). Changes:
+- [Fix] Added to System Check: repair wrong settings MQTT_Block caused by older versions.
+- [Add] Added all night recduction variables to the System Check (debugging purposes).
+- [Add] Added more SoftStart logging to main log when switch "extend logging is enabled".
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
 
