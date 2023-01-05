@@ -2,7 +2,7 @@
 Release 22 Stable (v21.xx) waar we nu aan werken
 -----------------------------------------------------------------------------------------------------------------------
 
-#### [1] Fix logging Quietmode restore in log (Status: fixed?)
+#### ~~[1] Fix logging Quietmode restore in log~~ (Status: fixed)
 ```
 Geen idee. Is denk ik iets waar je alles van weet. 
 Kun je beter beschrijven wat de bedoeling is? of het Probleem? Klinkt triviaal zonder impact op functionaliteit. dus gewoon doen :)
