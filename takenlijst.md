@@ -68,6 +68,14 @@ Huidige detectie van custom sensoren gebeurt pas na dat de eerste meetwaarde bin
 Verbetering is om T_outside_custom en T_room_custom als object op te slaan met .payload de temperatuur en .time de tijd van de laatste meting.
 Dan kan bij de eerst volgende trigger gelijk de juiste temperatuur worden gepakt. 
 
+#### [4] Variabelen opslaan onder de juiste naam (naming convention)
+![image](https://user-images.githubusercontent.com/3155621/210887553-2f58c9a3-a5d9-44e1-a343-75019a14db8f.png)
+
+
+![image](https://user-images.githubusercontent.com/3155621/210887657-1b649e7a-603c-485b-bec2-07a828eabd9f.png)
+
+
+
 -----------------------------------------------------------------------------------------------------------------------
 release 24 (v23.xx) later..
 -----------------------------------------------------------------------------------------------------------------------
