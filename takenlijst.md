@@ -36,7 +36,7 @@ De oplossing hiervoor heb ik al in gedachten, maar vereist een sloop/wederopbouw
 Tijd: Hier heb ik meerdere dagen voor nodig.
 ```
 
-#### ~~[6] COP monthly not producing values. (Status: fixed)~~
+#### ~~[6] COP monthly not producing values.~~ (Status: fixed)
 ```
 Details: Dit ligt aan het gegeven dat sommige geen DHW hebben. Dan komt er nooit een grafiek uit.
 Kan ook liggen aan een NaN waarde waardoor de verdere opbouw ook niet meer loopt.
@@ -47,7 +47,7 @@ Kan ook liggen aan een NaN waarde waardoor de verdere opbouw ook niet meer loopt
 Details:
 ```
 
-#### [8] TOP29 en TOP30 verwisseld tijdens export/import. 
+#### ~~[8] TOP29 en TOP30 verwisseld tijdens export/import.~~ (Status: Fixed)
 ```
 Doorgegeven door blb4. Tijdens import is de grafiek in WAR chart onjuist. TOP29 en TOP30 zijn per abuis verkeerd gemaped naar de war_wtx variabelen. Dit door niet goed lezen/begrijpen van de tekst en onvoldoende testen.
 ```
@@ -70,7 +70,6 @@ Dan kan bij de eerst volgende trigger gelijk de juiste temperatuur worden gepakt
 
 #### [4] Variabelen opslaan onder de juiste naam (naming convention)
 ![image](https://user-images.githubusercontent.com/3155621/210887553-2f58c9a3-a5d9-44e1-a343-75019a14db8f.png)
-
 
 ![image](https://user-images.githubusercontent.com/3155621/210887657-1b649e7a-603c-485b-bec2-07a828eabd9f.png)
 
