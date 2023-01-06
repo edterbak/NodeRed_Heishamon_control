@@ -75,50 +75,50 @@ Dan kan bij de eerst volgende trigger gelijk de juiste temperatuur worden gepakt
 
 ```
 MQTT	
-	.active									MQTT block enabled/disabled 1,0
+	.active								MQTT block enabled/disabled 1,0
 	.allow_rtc_onoff			
 	.allow_scheduler			
 	.allow_solar				
-	.block_mode								BLOCK ALL (1) , CUSTOM (2), UNRESTRICTED (3)
-	.select									???
+	.block_mode							BLOCK ALL (1) , CUSTOM (2), UNRESTRICTED (3)
+	.select								???
 	.counter				    			Total MQTT messages counter
-	.messages_today			    			No. MQTT messages today
-	.messages_yesterday		    			No. MQTT messages yesterday
-	.message_limit			    			Maximum allowed messages in 24h allow before block will activate
+	.messages_today			    				No. MQTT messages today
+	.messages_yesterday		    				No. MQTT messages yesterday
+	.message_limit			    				Maximum allowed messages in 24h allow before block will activate
 
 
-NightReductionWaterTempOn 		    		scheduler task to activate night reduction water temp
-NightReductionWaterTempOff		    		scheduler task to deactivate night reduction water temp
+NightReductionWaterTempOn 		    				scheduler task to activate night reduction water temp
+NightReductionWaterTempOff		    				scheduler task to deactivate night reduction water temp
 
 NightReductionWaterTemp
 	.current_value							renamed from NightReduction_current_value
-	.correction								renamed from NightReduction_correction
-	.state									renamed from nightreduction_on_off
+	.correction							renamed from NightReduction_correction
+	.state								renamed from nightreduction_on_off
 
-NightReductionRoomSetpointOn				scheduler task to activate night reduction room setpoint (RTC)
+NightReductionRoomSetpointOn						scheduler task to activate night reduction room setpoint (RTC)
 
 NightReductionRoomSetpoint
-	.state 									Night reduction room setpoint status (1,0)
-	.LOW									renamed from RoomSetpointLOW
-	.NORMAL									renamed from RoomSetpointNORMAL
+	.state 								Night reduction room setpoint status (1,0)
+	.LOW								renamed from RoomSetpointLOW
+	.NORMAL								renamed from RoomSetpointNORMAL
 
 F_ReducePumpSpeed
-	.state									Reduce pump speed active 1,0
+	.state								Reduce pump speed active 1,0
 	.PumpMaxFlowSetting						
 	.SavedPumpspeed							Value to restore to when disabled
-	.LowSpeed								Value used as low pump speed when active
+	.LowSpeed							Value used as low pump speed when active
 
 F_RTC
-	.Correction_1_RTC_on_off				RTC main function on/off (1,0)
-	.incremental_setpoints_state			incremental_setpoints status of switch. (Renamed from Booster), value 1,0
-	.correction_value (Memory Only)			RTC correction (renamed from F_RTC_correction)
+	.state								RTC main function on/off (1,0)
+	.incremental_setpoints_state					incremental_setpoints status of switch. (Renamed from Booster), value 1,0
+	.correction_value (Memory Only)					RTC correction (renamed from F_RTC_correction)
 	.F1_power_state							function turn on/off heatpump (1,0)
 	.F2_OM_state							function change OM heatpump
 	.on_off_active							0= waiting to turn heat on. 1= waiting to turn heat off
 	.on_off_status							value: 0,1,2
 
 Defrost
-	.Counter								Renamed from Defrost_Counter
+	.Counter							Renamed from Defrost_Counter
 	.Counter_Today							Renamed from Defrost_Counter_Today
 	.Counter_Yesterday						Renamed from Defrost_Counter_Yesterday
 
