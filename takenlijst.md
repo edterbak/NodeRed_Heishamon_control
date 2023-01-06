@@ -42,7 +42,7 @@ Details: Dit ligt aan het gegeven dat sommige geen DHW hebben. Dan komt er nooit
 Kan ook liggen aan een NaN waarde waardoor de verdere opbouw ook niet meer loopt.
 ```
 
-#### [7] Linking RTC roomtemperature setpoint to nightreduction roomsetpoint (Status: obsolete?)
+#### ~~[7] Linking RTC roomtemperature setpoint to nightreduction roomsetpoint (Status: obsolete?)~~
 ```
 Details:
 ```
