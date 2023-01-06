@@ -18,7 +18,7 @@ Antwoord: Nee, alleen het tonen van het aantal reconnects, voor de System Check.
 
 #### ~~[3] last run kWh, averige kWh/run. @Maarten69 aangepast na je feedback~~
 
-#### ~~[4] fix unneeded punmpspeed mqtt sending (Status: fixed)
+#### ~~[4] fix unneeded punmpspeed mqtt sending (Status: fixed)~~
 ```
 Details: First priority. Voor mij nieuwe functionaliteit
 Volgens mij heb je hier al een keer over gevraagd of ik het in een menu wilde zetten.
@@ -27,7 +27,7 @@ Probeer hier in vogel vlucht naar het dashboard te kijken waar het thuis hoort.
 Is het een function met eigen tab?
 ```
 
-#### ~~[5] fix correct function of shutdown + custom scheduler (Status: wip)
+#### ~~[5] fix correct function of shutdown + custom scheduler (Status: wip)~~
 ```
 Details: Probleem is dat de huidige implementatie van shutdown niet robust is.
 scheduler zorgt namelijk voor een 'allow' op alles wat in scheduler gezet kan worden. 
