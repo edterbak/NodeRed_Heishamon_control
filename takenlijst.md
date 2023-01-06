@@ -80,7 +80,6 @@ MQTT
 	.allow_scheduler			
 	.allow_solar				
 	.block_mode							BLOCK ALL (1) , CUSTOM (2), UNRESTRICTED (3)
-	.select								???
 	.counter				    			Total MQTT messages counter
 	.messages_today			    				No. MQTT messages today
 	.messages_yesterday		    				No. MQTT messages yesterday
