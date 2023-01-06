@@ -73,6 +73,7 @@ Dan kan bij de eerst volgende trigger gelijk de juiste temperatuur worden gepakt
 
 ![image](https://user-images.githubusercontent.com/3155621/210887657-1b649e7a-603c-485b-bec2-07a828eabd9f.png)
 
+[code]
 MQTT	
 	.active									MQTT block enabled/disabled 1,0
 	.allow_rtc_onoff			
@@ -120,7 +121,7 @@ Defrost
 	.Counter_Today							Renamed from Defrost_Counter_Today
 	.Counter_Yesterday						Renamed from Defrost_Counter_Yesterday
 
-
+[/code]
 
 -----------------------------------------------------------------------------------------------------------------------
 release 24 (v23.xx) later..
