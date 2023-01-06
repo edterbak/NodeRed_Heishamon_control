@@ -109,12 +109,13 @@ F_ReducePumpSpeed
 	.LowSpeed								Value used as low pump speed when active
 
 F_RTC
-	.incremental_setpoints.state			incremental_setpoints status of switch. (Renamed from Booster), value 1,0
-	.correction	(Memory Only)				RTC correction (renamed from F_RTC_correction)
-	.on_off2
-	.on_off3_OM
-	.on_off_active
-	.on_off_status
+	.Correction_1_RTC_on_off				RTC main function on/off (1,0)
+	.incremental_setpoints_state			incremental_setpoints status of switch. (Renamed from Booster), value 1,0
+	.correction_value (Memory Only)			RTC correction (renamed from F_RTC_correction)
+	.F1_power_state							function turn on/off heatpump (1,0)
+	.F2_OM_state							function change OM heatpump
+	.on_off_active							0= waiting to turn heat on. 1= waiting to turn heat off
+	.on_off_status							value: 0,1,2
 
 Defrost
 	.Counter								Renamed from Defrost_Counter
