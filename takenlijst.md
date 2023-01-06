@@ -86,16 +86,10 @@ MQTT
 	.messages_yesterday		    				No. MQTT messages yesterday
 	.message_limit			    				Maximum allowed messages in 24h allow before block will activate
 
-
-NightReductionWaterTempOn 		    				scheduler task to activate night reduction water temp
-NightReductionWaterTempOff		    				scheduler task to deactivate night reduction water temp
-
 NightReductionWaterTemp
 	.current_value							renamed from NightReduction_current_value
 	.correction							renamed from NightReduction_correction
 	.state								renamed from nightreduction_on_off
-
-NightReductionRoomSetpointOn						scheduler task to activate night reduction room setpoint (RTC)
 
 NightReductionRoomSetpoint
 	.state 								Night reduction room setpoint status (1,0)
