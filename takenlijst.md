@@ -73,6 +73,53 @@ Dan kan bij de eerst volgende trigger gelijk de juiste temperatuur worden gepakt
 
 ![image](https://user-images.githubusercontent.com/3155621/210887657-1b649e7a-603c-485b-bec2-07a828eabd9f.png)
 
+MQTT	
+	.active									MQTT block enabled/disabled 1,0
+	.allow_rtc_onoff			
+	.allow_scheduler			
+	.allow_solar				
+	.block_mode								BLOCK ALL (1) , CUSTOM (2), UNRESTRICTED (3)
+	.select									???
+	.counter				    			Total MQTT messages counter
+	.messages_today			    			No. MQTT messages today
+	.messages_yesterday		    			No. MQTT messages yesterday
+	.message_limit			    			Maximum allowed messages in 24h allow before block will activate
+
+
+NightReductionWaterTempOn 		    		scheduler task to activate night reduction water temp
+NightReductionWaterTempOff		    		scheduler task to deactivate night reduction water temp
+
+NightReductionWaterTemp
+	.current_value							renamed from NightReduction_current_value
+	.correction								renamed from NightReduction_correction
+	.state									renamed from nightreduction_on_off
+
+NightReductionRoomSetpointOn				scheduler task to activate night reduction room setpoint (RTC)
+
+NightReductionRoomSetpoint
+	.state 									Night reduction room setpoint status (1,0)
+	.LOW									renamed from RoomSetpointLOW
+	.NORMAL									renamed from RoomSetpointNORMAL
+
+F_ReducePumpSpeed
+	.state									Reduce pump speed active 1,0
+	.PumpMaxFlowSetting						
+	.SavedPumpspeed							Value to restore to when disabled
+	.LowSpeed								Value used as low pump speed when active
+
+F_RTC
+	.incremental_setpoints.state			incremental_setpoints status of switch. (Renamed from Booster), value 1,0
+	.correction	(Memory Only)				RTC correction (renamed from F_RTC_correction)
+	.on_off2
+	.on_off3_OM
+	.on_off_active
+	.on_off_status
+
+Defrost
+	.Counter								Renamed from Defrost_Counter
+	.Counter_Today							Renamed from Defrost_Counter_Today
+	.Counter_Yesterday						Renamed from Defrost_Counter_Yesterday
+
 
 
 -----------------------------------------------------------------------------------------------------------------------
