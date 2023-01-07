@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.37 beta (experimental) <br/> 
+Current version: 21.38 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -819,6 +819,9 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [Other] Continued with var renaming.
 - [Other] Renamed label from graph Today's result (kWh) to Result (instead of  "(+) Import (-) Export")
 - [New] Linking RTC roomtemperature setpoint to nightreduction roomsetpoint (Normal)
+
+[2023-01-07] v21.38 beta (experimental). Changes:
+- [Fix] Crash/Freeze after turning on/off toggle
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
 
