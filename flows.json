@@ -262,9 +262,9 @@
             "b2003add7c0ba5a9",
             "8df6915186a6430a"
         ],
-        "x": 3024,
+        "x": 3034,
         "y": 1699,
-        "w": 1472,
+        "w": 1462,
         "h": 322
     },
     {
@@ -539,8 +539,6 @@
             "4258f95a80c97b59",
             "5d43162c195fea0b",
             "d97d956176d73ba3",
-            "29837f54b5380d5a",
-            "7ee3f2d0d77550c4",
             "127ae065f140e020",
             "89467c0f49c8ec80",
             "4a2670b477ab7f75",
@@ -569,9 +567,9 @@
             "1041d65c575cae05"
         ],
         "x": 1154,
-        "y": -1,
+        "y": 39,
         "w": 1692,
-        "h": 1842
+        "h": 1802
     },
     {
         "id": "f9448182b177e40e",
@@ -650,9 +648,9 @@
             "e1f45532e4338e4a",
             "25a5987e8a1aaf9c"
         ],
-        "x": 84,
+        "x": 94,
         "y": 2519,
-        "w": 1408,
+        "w": 1398,
         "h": 602
     },
     {
@@ -757,7 +755,7 @@
         ],
         "x": 3034,
         "y": 2079,
-        "w": 1402,
+        "w": 1392,
         "h": 222
     },
     {
@@ -13115,8 +13113,7 @@
         "wires": [
             [
                 "1f12871cda6c40b3",
-                "5d43162c195fea0b",
-                "29837f54b5380d5a"
+                "5d43162c195fea0b"
             ]
         ]
     },
@@ -13886,7 +13883,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "21.37 beta (experimental)",
+        "payload": "21.38 beta (experimental)",
         "payloadType": "str",
         "x": 1350,
         "y": 1960,
@@ -13994,42 +13991,6 @@
         ]
     },
     {
-        "id": "29837f54b5380d5a",
-        "type": "debug",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "name": "debug 86",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2340,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "7ee3f2d0d77550c4",
-        "type": "debug",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "name": "debug 87",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1860,
-        "y": 40,
-        "wires": []
-    },
-    {
         "id": "127ae065f140e020",
         "type": "change",
         "z": "8c9d42231fd19d3c",
@@ -14049,12 +14010,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1640,
-        "y": 100,
+        "x": 1620,
+        "y": 80,
         "wires": [
             [
-                "7b3d20aa8c9abb1e",
-                "7ee3f2d0d77550c4"
+                "7b3d20aa8c9abb1e"
             ]
         ]
     },
@@ -15085,13 +15045,13 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Filter",
-        "func": "var last_value = context.get('last_value');\nvar current_value = global.get('Heatpump_State',\"file\");\nif (last_value === undefined){\n    context.set('last_value',msg.payload);\n    return null;\n}\n\nif (msg.payload != current_value || msg.payload != last_value){\n    context.set('last_value',msg.payload);\n    return msg;\n}\n",
+        "func": "var last_value = context.get('last_value');\nvar last_msgid = context.get('last_msgid');\n////////////////////////////////////////////////////////////////////////////////\nif (last_msgid === undefined){\n    context.set('last_msgid',msg._msgid);\n    context.set('last_value',msg.payload);\n    return msg;\n}\n////////////////////////////////////////////////////////////////////////////////\nelse if (last_msgid != msg._msgid)\n{\n    context.set('last_msgid',msg._msgid);\n    context.set('last_value',msg.payload);\n    var current_value = global.get('Heatpump_State',\"file\");                    // << specific\n\n    if (last_value === undefined){\n        return null;\n    }\n    \n    if (msg.payload != current_value || msg.payload != last_value){\n        return msg;\n    }\n}\n////////////////////////////////////////////////////////////////////////////////\nelse {return null;}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1930,
+        "x": 1950,
         "y": 120,
         "wires": [
             [
@@ -15107,7 +15067,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Filter",
-        "func": "var last_value      = context.get('last_value');\nvar current_value   = global.get('Operating_Mode_State',\"file\");\n\n\nif (last_value === undefined){\n    context.set('last_value',msg.payload);\n    return null;\n}\n\nif (msg.payload != current_value || msg.payload != last_value){\n    context.set('last_value',msg.payload);\n    return msg;\n}\n\n",
+        "func": "var last_value      = context.get('last_value');\nvar last_msgid      = context.get('last_msgid');\nvar current_value   = global.get('Operating_Mode_State',\"file\");\n\nif (last_value === undefined || last_msgid === undefined){\n    context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n    return null;\n}\n\nif (last_msgid == msg._msgid){\n    return null;\n}\n\nif (msg.payload != current_value || msg.payload != last_value){\n    context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -15127,7 +15087,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Filter",
-        "func": "var last_value      = context.get('last_value');\nvar current_value   = global.get('Quiet_Mode_Level',\"file\");\n\n\nif (last_value === undefined){\n    context.set('last_value',msg.payload);\n    return null;\n}\n\nif (msg.payload != current_value || msg.payload != last_value){\n    context.set('last_value',msg.payload);\n    return msg;\n}\n\n",
+        "func": "var last_value      = context.get('last_value');\nvar last_msgid      = context.get('last_msgid');\nvar current_value   = global.get('Quiet_Mode_Level',\"file\");\n\nif (last_value === undefined || last_msgid === undefined){\n    context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n    return null;\n}\n\nif (last_msgid == msg._msgid){\n    return null;\n}\n\nif (msg.payload != current_value || msg.payload != last_value){\n    context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -15352,9 +15312,9 @@
             "a8d51c8773f8f17f",
             "2caf61fe8673aedb"
         ],
-        "x": 104,
+        "x": 114,
         "y": 59,
-        "w": 1572,
+        "w": 1562,
         "h": 422
     },
     {
@@ -15571,9 +15531,9 @@
             "c0a54684ef46f711",
             "07bfc2f9f00870d7"
         ],
-        "x": 64,
+        "x": 74,
         "y": 4559,
-        "w": 1132,
+        "w": 1122,
         "h": 302
     },
     {
@@ -22417,7 +22377,7 @@
         ],
         "x": 54,
         "y": 1119,
-        "w": 1398,
+        "w": 1388,
         "h": 602
     },
     {
@@ -22610,7 +22570,7 @@
         ],
         "x": 84,
         "y": 579,
-        "w": 1332,
+        "w": 1322,
         "h": 82
     },
     {
@@ -22632,7 +22592,7 @@
         ],
         "x": 84,
         "y": 1239,
-        "w": 1342,
+        "w": 1332,
         "h": 82
     },
     {
@@ -22652,9 +22612,9 @@
         "nodes": [
             "2ee679408e4ccc6f"
         ],
-        "x": 1124,
+        "x": 1134,
         "y": 919,
-        "w": 292,
+        "w": 272,
         "h": 82
     },
     {
@@ -22674,9 +22634,9 @@
         "nodes": [
             "4eaa2cfa2749c551"
         ],
-        "x": 1124,
+        "x": 1134,
         "y": 1579,
-        "w": 292,
+        "w": 272,
         "h": 82
     },
     {
@@ -24121,9 +24081,9 @@
             "a9994ef2e592aee1",
             "375bbd780529afe0"
         ],
-        "x": 64,
+        "x": 74,
         "y": 779,
-        "w": 1352,
+        "w": 1332,
         "h": 688
     },
     {
@@ -24247,7 +24207,7 @@
         ],
         "x": 434,
         "y": 1719,
-        "w": 402,
+        "w": 392,
         "h": 1162
     },
     {
@@ -29772,9 +29732,9 @@
             "1911fbfbf89866a8",
             "55a0fb67fbe206cf"
         ],
-        "x": 64,
+        "x": 74,
         "y": 2519,
-        "w": 1402,
+        "w": 1392,
         "h": 322
     },
     {
@@ -42316,9 +42276,9 @@
             "319c435620e4980f",
             "867fcdc764bf28f1"
         ],
-        "x": 2004,
+        "x": 2014,
         "y": 199,
-        "w": 962,
+        "w": 952,
         "h": 1022
     },
     {
@@ -42426,7 +42386,7 @@
         ],
         "x": 924,
         "y": 159,
-        "w": 262,
+        "w": 272,
         "h": 242
     },
     {
@@ -43457,7 +43417,7 @@
         "z": "3aa03811830ef29e",
         "g": "d31e83867f2e0227",
         "name": "load on boot MQTT",
-        "func": "var MQTT  = global.get('MQTT',\"file\"); \n\nlet msg1={};\nlet msg2={};\nlet msg3={};\nlet msg4={};\n\n///////////////////////// fix old stored types ///////////////////////////////////////////////////////////////////////////////\nif (MQTT == 0 || MQTT == 1) {\n    global.set('MQTT',undefined,\"file\");\n    MQTT = undefined;\n    \n}\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n\n\nif (MQTT===undefined){\n    MQTT = {};\n}\n\nif (MQTT.block_active===undefined){\n    MQTT = {};\n    global.set('MQTT.block_active',0,\"file\");\n}\n\nif (MQTT.allow_rtc_onoff===undefined){\n    global.set('MQTT.allow_rtc_onoff',0,\"file\");\n    MQTT.allow_rtc_onoff=0;\n}\n\nif (MQTT.allow_scheduler===undefined){\n    global.set('MQTT.allow_scheduler',0,\"file\"); \n    MQTT.allow_scheduler=0;\n}\n\nif (MQTT.allow_solar===undefined){\n    global.set('MQTT.allow_solar',0,\"file\"); \n    MQTT.allow_solar=0;\n}\nif (MQTT.block_mode===undefined){\n    global.set('MQTT.block_mode',3,\"file\");\n    MQTT.block_mode = 3;\n}\n\n\nmsg1.payload = MQTT.allow_rtc_onoff;\nmsg2.payload = MQTT.allow_scheduler;\nmsg3.payload = MQTT.allow_solar;\n\nif (MQTT.block_mode == 1){msg4.payload = 'MQTT_default_1';}\nif (MQTT.block_mode == 2){msg4.payload = 'MQTT_default_2';}\nif (MQTT.block_mode == 3){msg4.payload = 'MQTT_default_3';}\n\n\nreturn [msg1,msg2,msg3,msg4];\n\n",
+        "func": "var MQTT  = global.get('MQTT',\"file\"); \n\nlet msg1={};\nlet msg2={};\nlet msg3={};\nlet msg4={};\n\n\n\n\nif (MQTT===undefined){\n    MQTT = {};\n}\n\nif (MQTT.block_active===undefined){\n    MQTT = {};\n    global.set('MQTT.block_active',0,\"file\");\n}\n\nif (MQTT.allow_rtc_onoff===undefined){\n    global.set('MQTT.allow_rtc_onoff',0,\"file\");\n    MQTT.allow_rtc_onoff=0;\n}\n\nif (MQTT.allow_scheduler===undefined){\n    global.set('MQTT.allow_scheduler',0,\"file\"); \n    MQTT.allow_scheduler=0;\n}\n\nif (MQTT.allow_solar===undefined){\n    global.set('MQTT.allow_solar',0,\"file\"); \n    MQTT.allow_solar=0;\n}\nif (MQTT.block_mode===undefined){\n    global.set('MQTT.block_mode',3,\"file\");\n    MQTT.block_mode = 3;\n}\n\n\nmsg1.payload = MQTT.allow_rtc_onoff;\nmsg2.payload = MQTT.allow_scheduler;\nmsg3.payload = MQTT.allow_solar;\n\nif (MQTT.block_mode == 1){msg4.payload = 'MQTT_default_1';}\nif (MQTT.block_mode == 2){msg4.payload = 'MQTT_default_2';}\nif (MQTT.block_mode == 3){msg4.payload = 'MQTT_default_3';}\n\n\nreturn [msg1,msg2,msg3,msg4];\n\n",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
@@ -43681,7 +43641,7 @@
         "z": "3aa03811830ef29e",
         "g": "5c3df7b5fb0fa130",
         "name": "Shutdown detection",
-        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'Heatpump_State';\n\nvar Heatpump_State = global.get(\"Heatpump_State\",\"file\");\n\nlet msg99={};   //  pin 2 - info to Log\nlet msg1={};    //  pin 3 - trigger for shutdown popup (start)\n\n//  return [msg99,msg1]\n\n/*\nMQTT.\nblock_mode - 1 - BLOCK ALL\nblock_mode - 2 - CUSTOM\nblock_mode - 3 - UNRESTRICTED\n*/\n\n\n    if (msg.payload == 0 && Heatpump_State == 1) {\n        msg99.topic = 'CONTROLLER';\n        msg99.payload = 'Manual OFF detected on wallmounted unit';\n        node.warn('Shutdown detection: Manual off detected');\n        msg1.topic = 'trigger shutdown popup (start)';\n\n        var option = global.get('MQTT.block_mode',\"file\");\n\n        if (option === undefined) {\n            msg99.payload = 'Manual OFF detected on wallmounted unit - No default action set yet. No restrictions applied';\n            global.set('MQTT.block_active',0, \"file\");\n            global.set('MQTT.block_mode',3, \"file\");\n            msg1.payload = 0;                           // MQTT value\n            node.warn('Shutdown detection: option undefined');\n            return [msg99,msg1];\n        }        \n        \n        if (option == 1)  {\n            global.set('MQTT.block_active',1, \"file\");\n            msg99.payload = 'Manual OFF detected on wallmounted unit - Default action used: Block all';\n            msg1.payload = 1;                           // MQTT value\n            node.warn('Shutdown detection: option 1 detected');\n            return [msg99,msg1];               // <<<<< Send MQTT out\n        }\n\n        if (option == 2)  {\n            global.set('MQTT.block_active',1, \"file\");\n            msg99.payload = 'Manual OFF detected on wallmounted unit - Default action used: Block custom';\n            msg1.payload = 1;                           // MQTT value\n            node.warn('Shutdown detection: option 2 detected');\n            return [msg99,msg1];               // <<<<< Send MQTT out\n        }\n\n        if (option == 3)   {\n            global.set('MQTT.block_active',0, \"file\");\n            msg99.payload = 'Manual OFF detected on wallmounted unit - Default action used: Unrestricted';            \n            msg1.payload = 0;                           // MQTT value\n            node.warn('Shutdown detection: option 3 detected');\n            return [msg99,msg1];\n        }\n    }\n\n    \n    else {\n        return [null,null];\n    }\n\n",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'Heatpump_State';\n\nvar Heatpump_State = global.get(\"Heatpump_State\",\"file\");\n\nlet msg99={};   //  pin 2 - info to Log\nlet msg1={};    //  pin 3 - trigger for shutdown popup (start)\n\n//  return [msg99,msg1]\n\n/*\nMQTT.\nblock_mode - 1 - BLOCK ALL\nblock_mode - 2 - CUSTOM\nblock_mode - 3 - UNRESTRICTED\n*/\n\n\n    if (msg.payload == 0 && Heatpump_State == 1) {\n        msg99.topic = 'CONTROLLER';\n        msg99.payload = 'Manual OFF detected on wallmounted unit';\n//        node.warn('Shutdown detection: Manual off detected');\n        msg1.topic = 'trigger shutdown popup (start)';\n\n        var option = global.get('MQTT.block_mode',\"file\");\n\n        if (option === undefined) {\n            msg99.payload = 'Manual OFF detected on wallmounted unit - No default action set yet. No restrictions applied';\n            global.set('MQTT.block_active',0, \"file\");\n            global.set('MQTT.block_mode',3, \"file\");\n            msg1.payload = 0;                           // MQTT value\n//            node.warn('Shutdown detection: option undefined');\n            return [msg99,msg1];\n        }        \n        \n        if (option == 1)  {\n            global.set('MQTT.block_active',1, \"file\");\n            msg99.payload = 'Manual OFF detected on wallmounted unit - Default action used: Block all';\n            msg1.payload = 1;                           // MQTT value\n//            node.warn('Shutdown detection: option 1 detected');\n            return [msg99,msg1];               // <<<<< Send MQTT out\n        }\n\n        if (option == 2)  {\n            global.set('MQTT.block_active',1, \"file\");\n            msg99.payload = 'Manual OFF detected on wallmounted unit - Default action used: Block custom';\n            msg1.payload = 1;                           // MQTT value\n//            node.warn('Shutdown detection: option 2 detected');\n            return [msg99,msg1];               // <<<<< Send MQTT out\n        }\n\n        if (option == 3)   {\n            global.set('MQTT.block_active',0, \"file\");\n            msg99.payload = 'Manual OFF detected on wallmounted unit - Default action used: Unrestricted';            \n            msg1.payload = 0;                           // MQTT value\n//            node.warn('Shutdown detection: option 3 detected');\n            return [msg99,msg1];\n        }\n    }\n\n  \n    else {\n        return [null,null];\n    }\n\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -44089,7 +44049,7 @@
         "order": 2,
         "width": "17",
         "height": "14",
-        "format": "-------------------------------------------------</br>\n[2023-01-06] v21.37 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[-] continued with var renaming.</br>\n[New] Linking RTC roomtemperature setpoint to nightreduction roomsetpoint</br>\n-------------------------------------------------</br>\n[2023-01-05] v21.36 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] fixed a small bug after renaming.</br>\n[Changed] moved check of mqtt stuff of of system check, into load on boot MQTT.</br>\n[Changed] Removed some of the automated node.warn() notifications</br>\n</br>\n\n-------------------------------------------------</br>\n[2023-01-04] v21.35 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] SoftStart was using Night reduction water temp correction when switch was'nt enabled.</br>\n[Other] started with new naming convention and code optimization.</br>\n(old variables will be removed, please check all function switches)</br>\n</br>\n-------------------------------------------------</br>\n[2023-01-04] v21.34 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] Added to System Check: repair wrong settings MQTT caused by older versions.</br>\n[Add] Added all night recduction variables to the System Check (debugging purposes).</br>\n[Add] Added more SoftStart logging to main log when switch \"extend logging is enabled\".</br>\n</br>\n-------------------------------------------------</br>\n[2022-12-25] v21.32 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] Typo in FILTER functions (2x) (Thanks sjampeter)</br>\n</br>\n-------------------------------------------------</br>\n[2022-12-25] v21.32 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] mqtt signals being blocked too often. Power on/off, Operating Mode, Quiet Mode etc.</br>\n</br>\n-------------------------------------------------</br>\n[2022-12-24] v21.31 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Changed] Rework of block functionality. Rules around custom selection should be obayed now.</br>\n[Changed] RTC function, help and layout. Select the action you want to allow, on/off or heatmode changing only.</br>\n[Changed] RTC function, Booster renamed to incremental setpoints\n[Changed] Scheduler function. Behaviour when other functions are activated.</br>\n[Changed] SoftStart. Now a toggle is present if you want the function to restart every time after a defrost.</br>\n[FIX] WAR function. TOP29 and TOP30 were flipped during import/export. </br>\n[FIX] Heatpump information updated propperly after firmware change. (Thank you xtr3me)</br>\n</br>\n-------------------------------------------------</br>\n[2022-12-15] v21.30 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] RTC on/off function. When no OperatingMode is stored, it would default back to Mode 0 (heat only)</br>\n</br>\n-------------------------------------------------</br>\n[2022-12-13] v21.29 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[NEW] Bypass Softstart Quietmode during defrost.</br>\n[Obsolete] RTC Booster fixed now. Use the switch on RTC dashboard to enable (default off).</br>\n[Obsolete] Removed layout from dashboard Hardware configuration (was for testing only)</br>\n[FIX] Nightreduction room temperature / Current status --> Manual on/off now working again.</br>\n[FIX] Removed log message (@startup) \"Function - SoftStart Quietmode: OFF (restored to level 0)\". (the restored part)</br>\n[FIX] Unneeded pumpspeed MQTT command (When enabled at a restart).</br>\n[Moved] Moved Function reduce pump speed to Settings page. Layout now improved.</br>\n[Changed] Replaced defrost toggle with button. Color status of button Red --> defrosting.</br>\n[FIX] RTC Room actual temperature didn't update frequently.</br>\n[Add] Added to System Check: RTC Booster, Function pump speed, MQTT-block settings and manual on/off settings.</br>\n</br>\n-------------------------------------------------</br>\n[2022-12-12] v21.28 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[ENHANCEMENT] Added toggle for NightReduction RoomSP in Scheduler screen.</br>\n</br>",
+        "format": "-------------------------------------------------</br>\n[2023-01-07] v21.38 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] Crash/Freeze after turning on/off toggle .</br>\n</br>\n\n-------------------------------------------------</br>\n[2023-01-06] v21.37 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[-] continued with var renaming.</br>\n[New] Linking RTC roomtemperature setpoint to nightreduction roomsetpoint</br>\n</br>\n-------------------------------------------------</br>\n[2023-01-05] v21.36 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] fixed a small bug after renaming.</br>\n[Changed] moved check of mqtt stuff of of system check, into load on boot MQTT.</br>\n[Changed] Removed some of the automated node.warn() notifications</br>\n</br>\n\n-------------------------------------------------</br>\n[2023-01-04] v21.35 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] SoftStart was using Night reduction water temp correction when switch was'nt enabled.</br>\n[Other] started with new naming convention and code optimization.</br>\n(old variables will be removed, please check all function switches)</br>\n</br>\n\n-------------------------------------------------</br>\n[2023-01-04] v21.34 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] Added to System Check: repair wrong settings MQTT caused by older versions.</br>\n[Add] Added all night recduction variables to the System Check (debugging purposes).</br>\n[Add] Added more SoftStart logging to main log when switch \"extend logging is enabled\".</br>\n</br>\n\n-------------------------------------------------</br>\n[2022-12-25] v21.32 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] Typo in FILTER functions (2x) (Thanks sjampeter)</br>\n</br>\n\n-------------------------------------------------</br>\n[2022-12-25] v21.32 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] mqtt signals being blocked too often. Power on/off, Operating Mode, Quiet Mode etc.</br>\n</br>\n\n-------------------------------------------------</br>\n[2022-12-24] v21.31 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Changed] Rework of block functionality. Rules around custom selection should be obayed now.</br>\n[Changed] RTC function, help and layout. Select the action you want to allow, on/off or heatmode changing only.</br>\n[Changed] RTC function, Booster renamed to incremental setpoints\n[Changed] Scheduler function. Behaviour when other functions are activated.</br>\n[Changed] SoftStart. Now a toggle is present if you want the function to restart every time after a defrost.</br>\n[FIX] WAR function. TOP29 and TOP30 were flipped during import/export. </br>\n[FIX] Heatpump information updated propperly after firmware change. (Thank you xtr3me)</br>\n</br>\n\n-------------------------------------------------</br>\n[2022-12-15] v21.30 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] RTC on/off function. When no OperatingMode is stored, it would default back to Mode 0 (heat only)</br>\n</br>\n\n-------------------------------------------------</br>\n[2022-12-13] v21.29 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[NEW] Bypass Softstart Quietmode during defrost.</br>\n[Obsolete] RTC Booster fixed now. Use the switch on RTC dashboard to enable (default off).</br>\n[Obsolete] Removed layout from dashboard Hardware configuration (was for testing only)</br>\n[FIX] Nightreduction room temperature / Current status --> Manual on/off now working again.</br>\n[FIX] Removed log message (@startup) \"Function - SoftStart Quietmode: OFF (restored to level 0)\". (the restored part)</br>\n[FIX] Unneeded pumpspeed MQTT command (When enabled at a restart).</br>\n[Moved] Moved Function reduce pump speed to Settings page. Layout now improved.</br>\n[Changed] Replaced defrost toggle with button. Color status of button Red --> defrosting.</br>\n[FIX] RTC Room actual temperature didn't update frequently.</br>\n[Add] Added to System Check: RTC Booster, Function pump speed, MQTT-block settings and manual on/off settings.</br>\n</br>\n\n-------------------------------------------------</br>\n[2022-12-12] v21.28 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[ENHANCEMENT] Added toggle for NightReduction RoomSP in Scheduler screen.</br>\n</br>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
@@ -44159,6 +44119,89 @@
                 "776cbfd355ed920f"
             ]
         ]
+    },
+    {
+        "id": "3007a4d35f01a76d",
+        "type": "function",
+        "z": "3aa03811830ef29e",
+        "name": "function 11",
+        "func": "var mqtt = global.get('MQTT',\"file\");\n\nlet msg1 = {};\nlet msg2 = {};\n\nmsg1.payload = mqtt.block_mode;\nmsg2.payload = mqtt.allow_rtc_onoff;\nreturn [msg1,msg2];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3110,
+        "y": 1360,
+        "wires": [
+            [
+                "14cdeeca1cdcbd2a"
+            ],
+            [
+                "019c8e2bb2e07928"
+            ]
+        ]
+    },
+    {
+        "id": "14cdeeca1cdcbd2a",
+        "type": "debug",
+        "z": "3aa03811830ef29e",
+        "name": "debug 104",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3310,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "c5efb445d0c22c1d",
+        "type": "inject",
+        "z": "3aa03811830ef29e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2980,
+        "y": 1280,
+        "wires": [
+            [
+                "3007a4d35f01a76d"
+            ]
+        ]
+    },
+    {
+        "id": "019c8e2bb2e07928",
+        "type": "debug",
+        "z": "3aa03811830ef29e",
+        "name": "debug 105",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3270,
+        "y": 1420,
+        "wires": []
     },
     {
         "id": "d5fea67661261002",
@@ -44284,9 +44327,9 @@
             "0af4b3b3445b3ce2",
             "6c6d719592dac8d5"
         ],
-        "x": 74,
+        "x": 84,
         "y": 799,
-        "w": 1032,
+        "w": 1022,
         "h": 142
     },
     {
@@ -45220,7 +45263,7 @@
         "z": "d5fea67661261002",
         "g": "0531f7d830ad5e1b",
         "name": "Block MQTT",
-        "func": "msg.topic = \"\";\n\n// *****************************************************************************\n//  MQTT.block_mode = BLOCK ALL (1)\n//  MQTT.block_mode = CUSTOM (2)\n//  MQTT.block_mode = UNRESTRICTED (3)\n// *****************************************************************************\n\nif (msg.payload == 1) {\n    msg.payload = \"MQTT-Commands to HP will be blocked!\";\n    global.set('MQTT.block_active', 1, \"file\"); \n    global.set('MQTT.block_mode', 1, \"file\"); \n    }\n\nif (msg.payload == 0) {\n    msg.payload = \"MQTT-Commands to HP will be sent normally.\";\n    global.set('MQTT.block_active', 0, \"file\");\n    global.set('MQTT.block_mode', 0, \"file\");  //0 possible to disable manual block???\n\n    // test if reached max MQTT command limit today:\n\n    // get send commands today\n    var MQTT_messages_today = global.get('MQTT.messages_today', \"file\");\n    if (MQTT_messages_today === undefined) MQTT_messages_today = 0;\n\n    // get user set limit\n    var MQTT_message_limit = global.get('MQTT.message_limit', \"file\");\n    if (MQTT_message_limit === undefined) {\n        MQTT_message_limit = 300; //default 300\n        global.set('MQTT.message_limit', 300, \"file\");\n        }\n\n    // check daily limit \n    //if (MQTT_messages_today >= MQTT_message_limit) {\n    //  msg.payload = \"MQTT limit of \" + MQTT_message_limit + \" reached, change limit!\";\n    //}\n\n    // Request: Auto increase limit when disabling\n    if (MQTT_messages_today >= MQTT_message_limit) {\n        msg.payload = \"MQTT limit of \" + MQTT_message_limit + \" reached, increasing limit to \" + (MQTT_message_limit + 100);\n        global.set('MQTT.message_limit', (MQTT_message_limit + 100), \"file\");\n    }\n\n    \n}\n\nmsg.topic = \"SYSTEM\";\nreturn msg;\n\n\n",
+        "func": "msg.topic = \"\";\n\n// *****************************************************************************\n//  MQTT.block_mode = BLOCK ALL (1)\n//  MQTT.block_mode = CUSTOM (2)\n//  MQTT.block_mode = UNRESTRICTED (3)\n// *****************************************************************************\n\nif (msg.payload == 1) {\n    msg.payload = \"MQTT-Commands to HP will be blocked!\";\n    global.set('MQTT.block_active', 1, \"file\"); \n    global.set('MQTT.block_mode', 1, \"file\"); \n    }\n\nif (msg.payload == 0) {\n    msg.payload = \"MQTT-Commands to HP will be sent normally.\";\n    global.set('MQTT.block_active', 0, \"file\");\n    \n\n    // test if reached max MQTT command limit today:\n\n    // get send commands today\n    var MQTT_messages_today = global.get('MQTT.messages_today', \"file\");\n    if (MQTT_messages_today === undefined) MQTT_messages_today = 0;\n\n    // get user set limit\n    var MQTT_message_limit = global.get('MQTT.message_limit', \"file\");\n    if (MQTT_message_limit === undefined) {\n        MQTT_message_limit = 300; //default 300\n        global.set('MQTT.message_limit', 300, \"file\");\n        }\n\n    // check daily limit \n    //if (MQTT_messages_today >= MQTT_message_limit) {\n    //  msg.payload = \"MQTT limit of \" + MQTT_message_limit + \" reached, change limit!\";\n    //}\n\n    // Request: Auto increase limit when disabling\n    if (MQTT_messages_today >= MQTT_message_limit) {\n        msg.payload = \"MQTT limit of \" + MQTT_message_limit + \" reached, increasing limit to \" + (MQTT_message_limit + 100);\n        global.set('MQTT.message_limit', (MQTT_message_limit + 100), \"file\");\n    }\n\n    \n}\n\nmsg.topic = \"SYSTEM\";\nreturn msg;\n\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -45386,7 +45429,7 @@
         "z": "d5fea67661261002",
         "g": "0531f7d830ad5e1b",
         "name": "Repair & delete old vars",
-        "func": "    //first move old mqtt counters to new vars:\n    var MQTT_Counter = global.get('MQTT_Counter', \"file\");\n    if (MQTT_Counter != undefined) { global.set('MQTT.counter', MQTT_Counter, \"file\"); }\n\n    var MQTT_Counter_Today = global.get('MQTT_Counter_Today', \"file\");\n    if (MQTT_Counter_Today != undefined) { global.set('MQTT.messages_today', MQTT_Counter_Today, \"file\"); }\n\n    var MQTT_Counter_Yesterday = global.get('MQTT_Counter_Yesterday', \"file\");\n    if (MQTT_Counter_Yesterday != undefined) { global.set('MQTT.messages_yesterday', MQTT_Counter_Yesterday, \"file\"); }\n\n    var MQTT_Limit = global.get('MQTT_Limit', \"file\");\n    if (MQTT_Limit != undefined) { global.set('MQTT.message_limit', MQTT_Limit, \"file\"); }\n\n//copy reduce pumpspeed settings:\n    var ReducePumpSpeed = global.get('ReducePumpSpeed', \"file\");\n    if (ReducePumpSpeed != undefined) { global.set('F_ReducePumpSpeed.state', ReducePumpSpeed, \"file\"); }   \n\n    var PumpMaxFlowSetting = global.get('PumpMaxFlowSetting', \"file\");\n    if (PumpMaxFlowSetting != undefined) { global.set('F_ReducePumpSpeed.PumpMaxFlowSetting', PumpMaxFlowSetting, \"file\"); }   \n\n    var SavedPumpspeed = global.get('SavedPumpspeed', \"file\");\n    if (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.SavedPumpspeed', SavedPumpspeed, \"file\"); } \n\n    var LowSpeed = global.get('LowSpeed', \"file\");\n    if (LowSpeed != undefined) { global.set('F_ReducePumpSpeed.LowSpeed', LowSpeed, \"file\"); } \n\n//copy defrost to new var:\n    var Defrost_Counter = global.get('Defrost_Counter', \"file\");\n    if (Defrost_Counter != undefined) { \n        global.set('Defrost.Counter', Defrost_Counter, \"file\"); \n        global.set('Defrost.Counter_Today', 0, \"file\"); \n        global.set('Defrost.Counter_Yesterday', 0, \"file\"); \n        } \n//copy RTC vars to new vars:\n    var F_rtc_on_off_active = global.get('F_rtc_on_off_active', \"file\");\n    if (F_rtc_on_off_active != undefined) { global.set('F_RTC_on_off_active', F_rtc_on_off_active, \"file\"); }\n\n    var F_rtc_on_off_status = global.get('F_rtc_on_off_status', \"file\");\n    if (F_rtc_on_off_status != undefined) { global.set('F_RTC_on_off_status', F_rtc_on_off_status, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n\n    var F_RTC_on_off2 = global.get('F_RTC_on_off2', \"file\");\n    if (F_RTC_on_off2 != undefined) { global.set('F_RTC.F1_power_state', F_RTC_on_off2, \"file\"); }\n\n    var F_RTC_on_off3_OM = global.get('F_RTC_on_off3_OM', \"file\");\n    if (F_RTC_on_off3_OM != undefined) { global.set('F_RTC.F2_OM_state', F_RTC_on_off3_OM, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n    if (F_RTC_on_off_active === undefined) { global.set('F_RTC.on_off_active', 0, \"file\"); }\n\nvar Correction_1_RTC_on_off = global.get('Correction_1_RTC_on_off', \"file\");\nif (Correction_1_RTC_on_off != undefined) { global.set('F_RTC.state', Correction_1_RTC_on_off, \"file\"); }\n\n\n\n\n    //delete old vars:\n    global.set('Nightmode', undefined, \"file\");\n    global.set('MQTT_Block', undefined, \"file\");\n    global.set('MQTT_select', undefined, \"file\");\n    global.set('MQTT_Block_select', undefined, \"file\");\n    global.set('MQTT_Counter', undefined, \"file\");\n    global.set('MQTT_Counter_Today', undefined, \"file\");\n    global.set('MQTT_Counter_Yesterday', undefined, \"file\");\n    global.set('MQTT_Limit', undefined, \"file\");\n    global.set('NightReductionRoomPV_CurrentStatus', undefined, \"file\");\n    global.set('NightReduction_current_value', undefined, \"file\");\n    global.set('NightReduction_correction', undefined, \"file\");\n    global.set('NightReductionWaterTemp_correction', undefined, \"file\");\n    global.set('nightreduction_on_off', undefined, \"file\");\n    global.set('RoomSetpointLOW', undefined, \"file\");\n    global.set('RoomSetpointNORMAL', undefined, \"file\");\n    global.set('ReducePumpSpeed', undefined, \"file\");\n    global.set('PumpMaxFlowSetting', undefined, \"file\");\n    global.set('SavedPumpspeed', undefined, \"file\");\n    global.set('LowSpeed', undefined, \"file\");\n    global.set('Booster', undefined, \"file\");\n    global.set('Defrost_Counter', undefined, \"file\");\n    global.set('Defrost_Counter_Today', undefined, \"file\");\n    global.set('Defrost_Counter_Yesterday', undefined, \"file\");\n    global.set('F_rtc_on_off_active', undefined, \"file\");\n    global.set('F_rtc_on_off_status', undefined, \"file\");\n    global.set('F_RTC_correction', undefined); //Memory Only\n    global.set('F_RTC_on_off2', undefined, \"file\");\n    global.set('F_RTC_on_off3_OM', undefined, \"file\");\n    global.set('F_RTC_on_off_active', undefined, \"file\");\n    global.set('Correction_1_RTC_on_off', undefined, \"file\");\n\n\n    \n    let msg99={};\n    msg99.topic = \"SYSTEM:\";\n    msg99.payload = \"removed old variables\";      \n    \n    return msg99;\n        \n    ",
+        "func": "    //first move old mqtt counters to new vars:\n    var MQTT_Counter = global.get('MQTT_Counter', \"file\");\n    if (MQTT_Counter != undefined) { global.set('MQTT.counter', MQTT_Counter, \"file\"); }\n\n    var MQTT_Counter_Today = global.get('MQTT_Counter_Today', \"file\");\n    if (MQTT_Counter_Today != undefined) { global.set('MQTT.messages_today', MQTT_Counter_Today, \"file\"); }\n\n    var MQTT_Counter_Yesterday = global.get('MQTT_Counter_Yesterday', \"file\");\n    if (MQTT_Counter_Yesterday != undefined) { global.set('MQTT.messages_yesterday', MQTT_Counter_Yesterday, \"file\"); }\n\n    var MQTT_Limit = global.get('MQTT_Limit', \"file\");\n    if (MQTT_Limit != undefined) { global.set('MQTT.message_limit', MQTT_Limit, \"file\"); }\n\n//copy reduce pumpspeed settings:\n    var ReducePumpSpeed = global.get('ReducePumpSpeed', \"file\");\n    if (ReducePumpSpeed != undefined) { global.set('F_ReducePumpSpeed.state', ReducePumpSpeed, \"file\"); }   \n\n    var PumpMaxFlowSetting = global.get('PumpMaxFlowSetting', \"file\");\n    if (PumpMaxFlowSetting != undefined) { global.set('F_ReducePumpSpeed.PumpMaxFlowSetting', PumpMaxFlowSetting, \"file\"); }   \n\n    var SavedPumpspeed = global.get('SavedPumpspeed', \"file\");\n    if (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.SavedPumpspeed', SavedPumpspeed, \"file\"); } \n\n    var LowSpeed = global.get('LowSpeed', \"file\");\n    if (LowSpeed != undefined) { global.set('F_ReducePumpSpeed.LowSpeed', LowSpeed, \"file\"); } \n\n//copy defrost to new var:\n    var Defrost_Counter = global.get('Defrost_Counter', \"file\");\n    if (Defrost_Counter != undefined) { \n        global.set('Defrost.Counter', Defrost_Counter, \"file\"); \n        global.set('Defrost.Counter_Today', 0, \"file\"); \n        global.set('Defrost.Counter_Yesterday', 0, \"file\"); \n        } \n//copy RTC vars to new vars:\n    var F_rtc_on_off_active = global.get('F_rtc_on_off_active', \"file\");\n    if (F_rtc_on_off_active != undefined) { global.set('F_RTC_on_off_active', F_rtc_on_off_active, \"file\"); }\n\n    var F_rtc_on_off_status = global.get('F_rtc_on_off_status', \"file\");\n    if (F_rtc_on_off_status != undefined) { global.set('F_RTC_on_off_status', F_rtc_on_off_status, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n\n    var F_RTC_on_off2 = global.get('F_RTC_on_off2', \"file\");\n    if (F_RTC_on_off2 != undefined) { global.set('F_RTC.F1_power_state', F_RTC_on_off2, \"file\"); }\n\n    var F_RTC_on_off3_OM = global.get('F_RTC_on_off3_OM', \"file\");\n    if (F_RTC_on_off3_OM != undefined) { global.set('F_RTC.F2_OM_state', F_RTC_on_off3_OM, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n    if (F_RTC_on_off_active === undefined) { global.set('F_RTC.on_off_active', 0, \"file\"); }\n\nvar Correction_1_RTC_on_off = global.get('Correction_1_RTC_on_off', \"file\");\nif (Correction_1_RTC_on_off != undefined) { global.set('F_RTC.state', Correction_1_RTC_on_off, \"file\"); }\n\n\n\n\n    //delete old vars:\n    global.set('Nightmode', undefined, \"file\");\n    if (MQTT == 0 || MQTT == 1) {global.set('MQTT',undefined,\"file\");}\n    global.set('MQTT_Block', undefined, \"file\");\n    global.set('MQTT_select', undefined, \"file\");\n    global.set('MQTT_Block_select', undefined, \"file\");\n    global.set('MQTT_Counter', undefined, \"file\");\n    global.set('MQTT_Counter_Today', undefined, \"file\");\n    global.set('MQTT_Counter_Yesterday', undefined, \"file\");\n    global.set('MQTT_Limit', undefined, \"file\");\n    global.set('NightReductionRoomPV_CurrentStatus', undefined, \"file\");\n    global.set('NightReduction_current_value', undefined, \"file\");\n    global.set('NightReduction_correction', undefined, \"file\");\n    global.set('NightReductionWaterTemp_correction', undefined, \"file\");\n    global.set('nightreduction_on_off', undefined, \"file\");\n    global.set('RoomSetpointLOW', undefined, \"file\");\n    global.set('RoomSetpointNORMAL', undefined, \"file\");\n    global.set('ReducePumpSpeed', undefined, \"file\");\n    global.set('PumpMaxFlowSetting', undefined, \"file\");\n    global.set('SavedPumpspeed', undefined, \"file\");\n    global.set('LowSpeed', undefined, \"file\");\n    global.set('Booster', undefined, \"file\");\n    global.set('Defrost_Counter', undefined, \"file\");\n    global.set('Defrost_Counter_Today', undefined, \"file\");\n    global.set('Defrost_Counter_Yesterday', undefined, \"file\");\n    global.set('F_rtc_on_off_active', undefined, \"file\");\n    global.set('F_rtc_on_off_status', undefined, \"file\");\n    global.set('F_RTC_correction', undefined); //Memory Only\n    global.set('F_RTC_on_off2', undefined, \"file\");\n    global.set('F_RTC_on_off3_OM', undefined, \"file\");\n    global.set('F_RTC_on_off_active', undefined, \"file\");\n    global.set('Correction_1_RTC_on_off', undefined, \"file\");\n\n\n    \n    let msg99={};\n    msg99.topic = \"SYSTEM:\";\n    msg99.payload = \"removed old variables\";      \n    \n    return msg99;\n        \n    ",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -46652,9 +46695,9 @@
         "id": "92e5b2c.00a8b5",
         "type": "mqtt-broker",
         "name": "MQTT (x.x.x.x)",
-        "broker": "core-mosquitto",
+        "broker": "x.x.x.x",
         "port": "1883",
-        "clientid": "",
+        "clientid": "Node_Red_Client",
         "autoConnect": true,
         "usetls": false,
         "compatmode": false,
