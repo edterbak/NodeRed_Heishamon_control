@@ -832,7 +832,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 [2023-01-08] v21.41 beta (experimental). Changes:
 - [Fix] small fix for shutdown response improvement.
 - [Changed] Improved the System Check layout.
-- [Add] Label "Max MQTT-commands per day" now shows actual messages from last day.
+- [Add] Label "Max MQTT-commands per day" now shows actual messages from current day.
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
 
