@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.41 beta (experimental) <br/> 
+Current version: 21.42 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -833,6 +833,11 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [Fix] small fix for shutdown response improvement.
 - [Changed] Improved the System Check layout.
 - [Add] Label "Max MQTT-commands per day" now shows actual messages from current day.
+
+[2023-01-09] v21.42 beta (experimental). Changes:
+- [Fix] Shutdown response now working (I think).
+- [NEW] added a button on the shutdown detection section.
+
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
 
