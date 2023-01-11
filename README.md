@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.43 beta (experimental) <br/> 
+Current version: 21.44 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -842,6 +842,19 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [Changed] mqtt.block_mode defaulting to 1 after trigger mqtt.block_active
 - [Changed] when mqtt.block_mode IS defaulting to 1, push this state to GUI.
 
+-------------------------------------------------
+[2023-01-12] v21.44 beta (experimental). Changes:
+-------------------------------------------------
+- [Fix] Shutdown detection and response fixed.
+- [Fix] RTC turn power off/on working again (broken in v21.43)
+- [New] SoftStart timer: Not resetting at flow restart (when compressor was running).
+- [Add] Added SoftStart timers to System Check.
+- [Fix] Remember state of switch "Extend debugging".
+- [Fix] Remember state of switch "Block MQTT commands" at boot.
+- [Fix] Restore previous block_mode when disabling MQTT-Block.
+- [Fix] Fixed status button MQTT block on "Manual OFF button press detected" page.
+- [New] Added Home button op System navigation bar.
+
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
 
@@ -857,7 +870,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [ ] New COP calculation using custom 1-wire and custom kWh-device (connected to Heishamon)<br/>
 - [ ] Apply WAR calculations to setpoint only before starting next run, not immediately.<br/>
 - [ ] Add 2 setpoints columns to task scheduler; heat/cool setpoint (DHW setpoint use from settings).<br/>
-- [ ] Add 4th value to RTC with free SP increase value (for use as a booster).<br/>
+- [X] Add 4th value to RTC with free SP increase value.<br/>
 
 
 ********
