@@ -80,6 +80,7 @@ MQTT
 	.allow_scheduler			
 	.allow_solar				
 	.block_mode							BLOCK ALL (1) , CUSTOM (2), UNRESTRICTED (3)
+	.block_mode_previous						Restore to this block_mode when disabling switch
 	.counter				    			Total MQTT messages counter
 	.messages_today			    				No. MQTT messages today
 	.messages_yesterday		    				No. MQTT messages yesterday
