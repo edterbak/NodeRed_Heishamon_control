@@ -874,13 +874,19 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 ## TODO list
 - [x] Stabalize SoftStart routine. Still work in progress. Give user custom stage time setting<br/>
 - [X] When changing RTC room setpoint, match Night-reduction room temperature (normal) accordingly.<br/>
+- [X] Add 4th value to RTC with free SP increase value.<br/>
+- [X] Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log. (TOP44)<br/>
 - [ ] Create central place on flow for all custom connections (Sensors, thermostat) which connect to corresponding link-in and link-out nodes.<br/>
-- [ ] Add source (reason) when sending MQTT - SetZ1HeatRequestTemperature to log. (TOP44)<br/>
 - [ ] Force DHW run when the boiler comes below a custom setpoint (via scheduler, reserved-SYSTEM task?)<br/>
 - [ ] New COP calculation using custom 1-wire and custom kWh-device (connected to Heishamon)<br/>
 - [ ] Apply WAR calculations to setpoint only before starting next run, not immediately.<br/>
 - [ ] Add 2 setpoints columns to task scheduler; heat/cool setpoint (DHW setpoint use from settings).<br/>
-- [X] Add 4th value to RTC with free SP increase value.<br/>
+- [ ] Current default Block_mode is not updating correctly on Manual OFF button press detected on the controller. (no effect on flow)
+- [ ] Check SoftStart Quietmode; use runtime from SoftStart to fix a restart at a flow restart.
+- [ ] Check RTC Automation why this message shows up in log while not relevant: "Function RTC: Operation mode to Heat only"
+- [ ] Continue with naming convention.
+- [ ] Add possibility to change setpoint through scheduler.
+- [ ] When block mode active and RTC turn power on/off is not happening --> show in log why.
 
 
 ********
