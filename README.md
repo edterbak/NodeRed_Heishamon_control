@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.45 beta (experimental) <br/> 
+Current version: 21.46 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -842,9 +842,8 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [Changed] mqtt.block_mode defaulting to 1 after trigger mqtt.block_active
 - [Changed] when mqtt.block_mode IS defaulting to 1, push this state to GUI.
 
--------------------------------------------------
+
 [2023-01-12] v21.44 beta (experimental). Changes:
--------------------------------------------------
 - [Fix] Shutdown detection and response fixed.
 - [Fix] RTC turn power off/on working again (broken in v21.43)
 - [New] SoftStart timer: Not resetting at flow restart (when compressor was running).
@@ -855,15 +854,23 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [Fix] Fixed status button MQTT block on "Manual OFF button press detected" page.
 - [New] Added Home button op System navigation bar.
 
-[2023-01-..] v21.45 beta (experimental). Changes:</br>
--------------------------------------------------</br>
-- [Other] Removed some typos from changelog.</br>
-- [New] Added source (origin) for most MQTT-commands in log</br>
-- [New] Highlight mqqt-commands in log.</br>
-- [Fix] Fixed Bock mode "custom" changing to "block all" after 1 min.</br>
-- [New] Added actual block mode to label switch "Block MQTT commands".</br>
-- [Fix] Fixed some typos.</br>
-- [Other] Cleaned up code Function WAR2DIRECT (3rd pinout code obsolete).</br>
+[2023-01-..] v21.45 beta (experimental). Changes:
+- [Other] Removed some typos from changelog.
+- [New] Added source (origin) for most MQTT-commands in log
+- [New] Highlight mqqt-commands in log.
+- [Fix] Fixed Bock mode "custom" changing to "block all" after 1 min.
+- [New] Added actual block mode to label switch "Block MQTT commands".
+- [Fix] Fixed some typos.
+- [Other] Cleaned up code Function WAR2DIRECT (3rd pinout code obsolete).
+
+
+[2023-01-15] v21.46 beta (experimental). Changes:
+- [New] Function RTC automation, give name to OM mode when changing Operation mode.
+- [Fix] RTC Turn power on/off & Change Operation mode was only executed after a room temp change.
+- [Fix] SoftStart Quietmode was setting wrong Quietmode even when switch was disabled.
+- [Fix] Status switch "Extend logging" was configured incorrectly.
+- [Change] Changed the way label of "Block MQTT commands" updating.
+- [Change] Better solution to update MQTT state and label by listening to command# topic.
 
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
