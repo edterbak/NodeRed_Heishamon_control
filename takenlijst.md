@@ -1,4 +1,19 @@
-Waiting for bugs to be fixed for v21.45 beta
+Waiting for bugs to be fixed for v21.47 beta
+
+-----------------------------------------------------------------------------------------------------------------------
+Bugs to repair --> v22 stable:
+-----------------------------------------------------------------------------------------------------------------------
+
+- [ ] Oude vars meenemen in node Repair & delete old vars
+global.set('MQTT_Block_Allow_function_rtc_onoff', undefined, "file");</br>
+global.set('MQTT_Block_Allow_function_solar', undefined, "file");</br>
+global.set('MQTT_Block_Allow_function_scheduled_tasks', undefined, "file");</br>
+global.set('MQTT_Block_default_1', undefined, "file");</br>
+global.set('MQTT_Block_default_2', undefined, "file");</br>
+global.set('MQTT_Block_default_3', undefined, "file");</br>
+
+- [ ] bug in Block?-node WP Control, voor SET5 SetZ1HeatRequest
+Regel 1: if (global.get('MQTT.block_active', [b]"file"[/b]) == 1) {</br>
 
 
 -----------------------------------------------------------------------------------------------------------------------
@@ -34,9 +49,8 @@ Dan kan bij de eerst volgende trigger gelijk de juiste temperatuur worden gepakt
 Het log toont alle MQTT-Commando's in log.
 Het doel is om voordat een daadwerkelijk SET commando door de flow verzonden wordt deze bron/source mee te geven.
 Bijvoorbeeld: (werkzaam in een proefopstelling) Dit zal het debugging bij anderen ook zoveel makkelijker maken.
-Misschien iets voor na de stable?
+
 ```
-12/01 13:34:38 - MQTT Command - SetZ1HeatRequestTemperature: 28 (SP Calculation)
 12/01 13:34:37 - MQTT Command - SetMaxPumpDuty: 144 (Function Pump speed)
 12/01 13:34:37 - Function SoftStart: Correction: 0 > -2 °C - (STARTUP) Freq: 20Hz, SP_Final: 28°C
 12/01 13:34:37 - Compressor: running
