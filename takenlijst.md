@@ -15,23 +15,21 @@ global.set('MQTT_Block_default_3', undefined, "file");</br>
 - [ ] bug in Block?-node WP Control, voor SET5 SetZ1HeatRequest
 Regel 1: if (global.get('MQTT.block_active', "file") == 1) {</br>
 
-- [ ] Show message only when "Extend logging" is enabled? (Function RTC: incremental setpoint correction at 19.3°C --> 3.4 °C)</br>
+- [ ] Toon logregel alleen als "Extend logging" is enabled? (Function RTC: incremental setpoint correction at 19.3°C --> 3.4 °C)</br>
 Regel 121 in function node "RTC Correction".</br>
 
 opmerking: Houd even in gedachten dat we de var MQTT_Source Memory-Only houden, dus niet valt onder MQTT (file)
 
 -----------------------------------------------------------------------------------------------------------------------
-Tasks to do for v22.01 beta:
+Taken meenemen naar v22.01 beta:
 -----------------------------------------------------------------------------------------------------------------------
 
-- [ ] Remove node "Repair & delete old vars" Not needed anymore.
+- [ ] Verwijder node "Repair & delete old vars" Vanaf deze versie niet meer nodig.
 
 
 -----------------------------------------------------------------------------------------------------------------------
 release 23 (v22.xx) wat gaan we plannen voor de volgende release
 -----------------------------------------------------------------------------------------------------------------------
-
-#### [ ] Current default Block_mode is not updating correctly on Manual OFF button press detected on the controller. (no effect on flow)
 
 #### [ ] Check SoftStart Quietmode; use runtime from SoftStart to fix a restart at a flow restart.
 
@@ -39,9 +37,7 @@ release 23 (v22.xx) wat gaan we plannen voor de volgende release
 
 #### [ ] Continue with naming convention.
 
-#### [ ] Add possibility to change setpoint through scheduler.
-
-#### [ ] When block mode active and RTC turn power on/off is not happening --> show in log why.
+#### [ ] Add possibility to change setpoint through scheduler. (why?)
 
 #### [1] Selectable from Dashboard Hardware (if connected in flow).
 Graag iets meer uitleg wat je exact bedoeld.
@@ -59,7 +55,7 @@ Dan kan bij de eerst volgende trigger gelijk de juiste temperatuur worden gepakt
 #### [4] Show MQTT-source in log (where does it come from?)
 Het log toont alle MQTT-Commando's in log.
 Het doel is om voordat een daadwerkelijk SET commando door de flow verzonden wordt deze bron/source mee te geven.
-Bijvoorbeeld: (werkzaam in een proefopstelling) Dit zal het debugging bij anderen ook zoveel makkelijker maken.
+Dit zal het debugging bij anderen ook makkelijker maken.
 
 ```
 12/01 13:34:37 - MQTT Command - SetMaxPumpDuty: 144 (Function Pump speed)
