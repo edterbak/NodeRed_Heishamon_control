@@ -16,6 +16,8 @@ Regel 1: if (global.get('MQTT.block_active', "file") == 1) {</br>
 - [ ] Toon logregel alleen als "Extend logging" is enabled? (Function RTC: incremental setpoint correction at 19.3°C --> 3.4 °C)</br>
 Regel 121 in function node "RTC Correction".</br>
 
+- [ ] In de node "set.war_ot_wt" even het de declaratie var vermelden op regel 1 (var varName = msg.topic), geeft een fout bij weglaten. (niet functioneel)</br>
+
 opmerking: Houd even in gedachten dat we de var MQTT_Source Memory-Only houden, dus niet valt onder MQTT (file)
 
 -----------------------------------------------------------------------------------------------------------------------
