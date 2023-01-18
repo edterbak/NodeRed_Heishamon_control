@@ -15,6 +15,8 @@ global.set('MQTT_Block_default_3', undefined, "file");</br>
 - [ ] bug in Block?-node WP Control, voor SET5 SetZ1HeatRequest
 Regel 1: if (global.get('MQTT.block_active', [b]"file"[/b]) == 1) {</br>
 
+opmerking: Houd even in gedachten dat we de var MQTT_Source Memory-Only houden, dus niet valt onder MQTT (file)
+
 -----------------------------------------------------------------------------------------------------------------------
 Tasks to do for v22.01 beta:
 -----------------------------------------------------------------------------------------------------------------------
