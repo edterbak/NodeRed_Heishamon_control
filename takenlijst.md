@@ -72,6 +72,17 @@ Dit zal het debugging bij anderen ook makkelijker maken.
 
 ![image](https://user-images.githubusercontent.com/3155621/210887657-1b649e7a-603c-485b-bec2-07a828eabd9f.png)
 
+#### Voorstellen voor naams verandering:
+```
+Debugging --> Extend_logging
+NightReductionRoomSetpoint --> ??
+.NORMAL --> .normal
+.LOW --> .low
+F_NR_correction --> ? nakijken want er bestaat al een NightReductionWaterTemp.correction
+```
+
+
+#### Reeds aangepast hieronder:
 ```
 MQTT	
 	.active								MQTT block enabled/disabled 1,0
