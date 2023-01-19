@@ -2,21 +2,7 @@
 Bugs to repair --> v22.00 stable:
 -----------------------------------------------------------------------------------------------------------------------
 
-- [ ] Oude vars meenemen in node Repair & delete old vars
-global.set('MQTT_Block_Allow_function_rtc_onoff', undefined, "file");</br>
-global.set('MQTT_Block_Allow_function_solar', undefined, "file");</br>
-global.set('MQTT_Block_Allow_function_scheduled_tasks', undefined, "file");</br>
-global.set('MQTT_Block_default_1', undefined, "file");</br>
-global.set('MQTT_Block_default_2', undefined, "file");</br>
-global.set('MQTT_Block_default_3', undefined, "file");</br>
-
-- [ ] bug in Block?-node WP Control, voor SET5 SetZ1HeatRequest
-Regel 1: if (global.get('MQTT.block_active', "file") == 1) {</br>
-
-- [ ] Toon logregel alleen als "Extend logging" is enabled? (Function RTC: incremental setpoint correction at 19.3°C --> 3.4 °C)</br>
-Regel 121 in function node "RTC Correction".</br>
-
-- [ ] In de node "set.war_ot_wt" even de declaratie var vermelden op regel 1 (var varName = msg.topic), geeft een fout bij weglaten. (niet functioneel)</br>
+...
 
 opmerking: Houd even in gedachten dat we de var MQTT_Source Memory-Only houden, dus niet valt onder MQTT (file)
 
