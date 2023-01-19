@@ -5,6 +5,7 @@
 [Fix] Issue #74 Bug: Block_mode CUSTOM changing to BLOCK_ALL @power off (remote controller).</br>
 [Fix] Issue #68 Bug: show logline only when 'Extend logging' is enabled.</br>
 [Fix] Issue #69 Bug: Correct function node "set.war_ot_wt".</br>
+[New] Added a link to changelog.md on dashboard System/About.
 -------------------------------------------------</br>
 [2023-01-17] v21.47 beta (experimental). Changes:</br>
 -------------------------------------------------</br>
