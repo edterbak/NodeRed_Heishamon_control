@@ -889,7 +889,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [Fix] Issue #74 Bug: Block_mode CUSTOM changing to BLOCK_ALL @power off (remote controller).
 - [Fix] Issue #68 Bug: show logline only when 'Extend logging' is enabled.
 - [Fix] Issue #69 Bug: Correct function node "set.war_ot_wt".
-- [New] Added a link to tchangelog.md op dashboard System/About.
+- [New] Added a link to changelog.md on dashboard System/About.
 
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
