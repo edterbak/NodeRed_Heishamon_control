@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.47 beta (experimental) <br/> 
+Current version: 21.48 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -873,9 +873,7 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [Change] Better solution to update MQTT state and label by listening to command# topic.
 
 
--------------------------------------------------
 [2023-01-17] v21.47 beta (experimental). Changes:
--------------------------------------------------
 - [Fix] Fix SoftStart logging showed F_SS_old_correction with trailing zeros xx.0000000000003
 - [Fix] Reduced SoftStart logging when SP_Final < HEAT_SP_lower_limit.
 - [Fix] Label "Max MQTT-commands per day" Wasn't updating correctly, now fixed.
@@ -885,6 +883,13 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [Optimalisation] Cleaned up code, removed unnecessary inject nodes (1/min).
 - [New] When defrosting show status on Home (@Operation mode, actual).
 - [Change] Increasing the max mqqt-messages/day now in bigger steps (10/2000).
+
+[2023-01-19] v21.48 beta (experimental). Changes:
+- [Fix] Issue #67 Bug: in Node "Block".
+- [Fix] Issue #74 Bug: Block_mode CUSTOM changing to BLOCK_ALL @power off (remote controller).
+- [Fix] Issue #68 Bug: show logline only when 'Extend logging' is enabled.
+- [Fix] Issue #69 Bug: Correct function node "set.war_ot_wt".
+- [New] Added a link to tchangelog.md op dashboard System/About.
 
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
