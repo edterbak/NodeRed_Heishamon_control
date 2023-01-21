@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.48 beta (experimental) <br/> 
+Current version: 21.49 beta (experimental) <br/> 
 Make a backup of your current flow. (free tip)<br/><br/>
 This version is not for the faint hearted... <br/>
 
@@ -890,6 +890,9 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [Fix] Issue #68 Bug: show logline only when 'Extend logging' is enabled.
 - [Fix] Issue #69 Bug: Correct function node "set.war_ot_wt".
 - [New] Added a link to changelog.md on dashboard System/About.
+
+[2023-01-21] v21.49 beta (experimental). Changes:</br>
+- [Fix] Function Reduce Pump Speed fixed</br>
 
 
 >> This version has some changes which are quiet complex and fundamental. Testing is required. But do keep an eye on the performance. (dont want you to get cold) If issues come up, roll back to previous versoin. <<
