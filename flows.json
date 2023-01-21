@@ -741,7 +741,6 @@
             "d5948f3208081ac8",
             "8c214384d36f3cdd",
             "076bc110f2a2e62b",
-            "d7b9f1c7995b49ec",
             "9e1f07f9825bd79d",
             "c9428fcff7af5f3a",
             "24c2db611509adf8",
@@ -14603,7 +14602,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Save",
-        "func": "var LowSpeed = msg.payload;\n\nglobal.set(\"F_ReducePumpSpeed.LowSpeed\", LowSpeed, \"file\");\n\n// check is Reduce pump speed is active\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\");\n\n// actual pump speed:\nvar Actual = global.get(\"F_ReducePumpSpeed.PumpMaxFlowSetting\", \"file\");    //default pumpspeed\n\nif (ReducePumpSpeed == 1 && Actual != LowSpeed) {\n    return msg; // send this pump speed to change it:                 \n}",
+        "func": "var LowSpeed = msg.payload;\n\nglobal.set(\"F_ReducePumpSpeed.LowSpeed\", LowSpeed, \"file\");\n\n// check is Reduce pump speed is active\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\");\n\n// actual pump speed:\nvar Actual = global.get(\"F_ReducePumpSpeed.PumpMaxFlowSetting\", \"file\");    //default pumpspeed\n\n//if (ReducePumpSpeed == 1 && Actual != LowSpeed) {\n//    return msg; // send this pump speed to change it:                 \n//}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -14612,9 +14611,7 @@
         "x": 1950,
         "y": 520,
         "wires": [
-            [
-                "d7b9f1c7995b49ec"
-            ]
+            []
         ]
     },
     {
@@ -14846,7 +14843,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "color",
-        "func": "let msg2 = {};\n\n\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\"); // check if enabled switch reduce pump speed\n\n\nif (ReducePumpSpeed == 0) {\n    if (msg.source != \"boot\") msg2.payload = msg.payload;           // send slider value to button\n    msg2.color = \"white\";\n    msg2.bgcolor = [];\n}\n\n\nif (ReducePumpSpeed == 1) {\n    msg2.payload = \"BLOCKED\";\n    msg2.color = \"white\";\n    msg2.bgcolor = \"red\";\n}\n\n\nreturn msg2;\n\n",
+        "func": "let msg2 = {};\n\n\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\"); // check if enabled switch reduce pump speed\n\n\nif (ReducePumpSpeed == 0) {\n    if (msg.source != \"boot\") msg2.payload = msg.payload;           // send slider value to button\n    msg2.color = \"white\";\n    msg2.bgcolor = [];\n}\n\n\nif (ReducePumpSpeed == 1) {\n    msg2.payload = \"BLOCKED\";\n    msg2.color = \"white\";\n    msg2.bgcolor = \"grey\";\n}\n\n\nreturn msg2;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -14899,32 +14896,6 @@
         "wires": [
             [
                 "5c671bda81284e37"
-            ]
-        ]
-    },
-    {
-        "id": "d7b9f1c7995b49ec",
-        "type": "trigger",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "payl",
-        "duration": "2",
-        "extend": true,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 2160,
-        "y": 520,
-        "wires": [
-            [
-                "8c214384d36f3cdd"
             ]
         ]
     },
@@ -15002,7 +14973,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "color",
-        "func": "let msg2 = {};\n\n\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\");    // check if enabled switch reduce pump speed\n\n\nif (ReducePumpSpeed == 0) {\n    if (msg.source != \"boot\") msg2.payload = msg.payload;               // send slider value to button\n    msg2.color = \"white\";\n    msg2.bgcolor = [];\n}\n\n\n\n\nif (ReducePumpSpeed == 1) {\n    msg2.payload = \"BLOCKED\";\n    msg2.color = \"white\";\n    msg2.bgcolor = \"red\";\n}\n\n\nreturn msg2;\n\n",
+        "func": "let msg2 = {};\n\n\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\");    // check if enabled switch reduce pump speed\n\n\nif (ReducePumpSpeed == 0) {\n    if (msg.source != \"boot\") msg2.payload = msg.payload;               // send slider value to button\n    msg2.color = \"white\";\n    msg2.bgcolor = [];\n}\n\n\n\n\nif (ReducePumpSpeed == 1) {\n    msg2.payload = \"BLOCKED\";\n    msg2.color = \"white\";\n    msg2.bgcolor = \"grey\";\n}\n\n\nreturn msg2;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
