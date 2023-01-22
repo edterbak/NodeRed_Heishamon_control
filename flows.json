@@ -744,7 +744,8 @@
             "9e1f07f9825bd79d",
             "c9428fcff7af5f3a",
             "24c2db611509adf8",
-            "f5cae1cce4374c61"
+            "f5cae1cce4374c61",
+            "c79a2040ca393081"
         ],
         "x": 1154,
         "y": 59,
@@ -13461,7 +13462,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "filter",
-        "func": "if (msg.source == \"boot\") return null; // exit\n\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\");\nif (ReducePumpSpeed == 1) return null; // exit\n\nreturn msg;\n\n",
+        "func": "if (msg.source == \"boot\") return null; // exit\n\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\");\n\n// check if running:\nvar Freq = global.get(\"compressor_frequency\", \"file\");\n\nif (ReducePumpSpeed == 1 && Freq == 0) return null; // exit\n\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -14468,7 +14469,7 @@
                 "d5948f3208081ac8"
             ],
             [
-                "5c671bda81284e37"
+                "076bc110f2a2e62b"
             ]
         ]
     },
@@ -14522,8 +14523,8 @@
         "links": [
             "031e62b0bf3df7d7"
         ],
-        "x": 2105,
-        "y": 660,
+        "x": 2565,
+        "y": 580,
         "wires": []
     },
     {
@@ -14592,7 +14593,7 @@
         "y": 520,
         "wires": [
             [
-                "298594735f133ef3"
+                "c79a2040ca393081"
             ]
         ]
     },
@@ -14602,16 +14603,21 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Save",
-        "func": "var LowSpeed = msg.payload;\n\nglobal.set(\"F_ReducePumpSpeed.LowSpeed\", LowSpeed, \"file\");\n\n// check is Reduce pump speed is active\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\");\n\n// actual pump speed:\nvar Actual = global.get(\"F_ReducePumpSpeed.PumpMaxFlowSetting\", \"file\");    //default pumpspeed\n\n//if (ReducePumpSpeed == 1 && Actual != LowSpeed) {\n//    return msg; // send this pump speed to change it:                 \n//}",
-        "outputs": 1,
+        "func": "var LowSpeed = msg.payload;\nlet msg99 = {};\n    msg99.topic = \"Function reduced pump speed\";\n\nglobal.set(\"F_ReducePumpSpeed.LowSpeed\", LowSpeed, \"file\");\n\n// check is Reduce pump speed is active\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\");\n\n// actual pump speed:\nvar Actual = global.get(\"F_ReducePumpSpeed.PumpMaxFlowSetting\", \"file\");    //default pumpspeed\n\n// check if running:\nvar Freq = global.get(\"compressor_frequency\", \"file\");\n\n\nif (ReducePumpSpeed == 1 && Actual != LowSpeed && Freq == 0) {\n    msg99.payload = \"changed LowSpeed to \" + msg.payload;\n    return [msg,msg99]; // send this pumpspeed to change the actual reduce speed:                 \n}\n\nif (ReducePumpSpeed == 1 && Freq > 1) { \n    msg99.payload = \"changed LowSpeed to \" + msg.payload;\n    return [null,msg99]; // send to log only                \n}",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1950,
+        "x": 2170,
         "y": 520,
         "wires": [
-            []
+            [
+                "8c214384d36f3cdd"
+            ],
+            [
+                "076bc110f2a2e62b"
+            ]
         ]
     },
     {
@@ -14843,7 +14849,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "color",
-        "func": "let msg2 = {};\n\n\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\"); // check if enabled switch reduce pump speed\n\n\nif (ReducePumpSpeed == 0) {\n    if (msg.source != \"boot\") msg2.payload = msg.payload;           // send slider value to button\n    msg2.color = \"white\";\n    msg2.bgcolor = [];\n}\n\n\nif (ReducePumpSpeed == 1) {\n    msg2.payload = \"BLOCKED\";\n    msg2.color = \"white\";\n    msg2.bgcolor = \"grey\";\n}\n\n\nreturn msg2;\n\n",
+        "func": "let msg2 = {};\n\n\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\"); // check if enabled switch reduce pump speed\n// check if running:\nvar Freq = global.get(\"compressor_frequency\", \"file\");\n\nif (ReducePumpSpeed == 0 || Freq > 0) {\n    if (msg.source != \"boot\") msg2.payload = msg.payload;           // send slider value to button\n    msg2.color = \"white\";\n    msg2.bgcolor = [];\n    return msg2;\n}\n\n\nif (ReducePumpSpeed == 1) {\n    msg2.payload = \"BLOCKED\";\n    msg2.color = \"white\";\n    msg2.bgcolor = \"grey\";\n    return msg2;\n}\n\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -14891,7 +14897,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 2010,
+        "x": 2350,
         "y": 580,
         "wires": [
             [
@@ -14973,7 +14979,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "color",
-        "func": "let msg2 = {};\n\n\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\");    // check if enabled switch reduce pump speed\n\n\nif (ReducePumpSpeed == 0) {\n    if (msg.source != \"boot\") msg2.payload = msg.payload;               // send slider value to button\n    msg2.color = \"white\";\n    msg2.bgcolor = [];\n}\n\n\n\n\nif (ReducePumpSpeed == 1) {\n    msg2.payload = \"BLOCKED\";\n    msg2.color = \"white\";\n    msg2.bgcolor = \"grey\";\n}\n\n\nreturn msg2;\n\n",
+        "func": "let msg2 = {};\n\n\nvar ReducePumpSpeed = global.get('F_ReducePumpSpeed.state', \"file\");    // check if enabled switch reduce pump speed\n\n// check if running:\nvar Freq = global.get(\"compressor_frequency\", \"file\");\n\nif (ReducePumpSpeed == 0 || Freq > 0) {\n    if (msg.source != \"boot\") msg2.payload = msg.payload;               // send slider value to button\n    msg2.color = \"white\";\n    msg2.bgcolor = [];\n    return msg2;\n}\n\n\n\n\nif (ReducePumpSpeed == 1) {\n    msg2.payload = \"BLOCKED\";\n    msg2.color = \"white\";\n    msg2.bgcolor = \"grey\";\n    return msg2;\n}\n\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -14984,6 +14990,32 @@
         "wires": [
             [
                 "684cdf95f8172514"
+            ]
+        ]
+    },
+    {
+        "id": "c79a2040ca393081",
+        "type": "trigger",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "5",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1960,
+        "y": 520,
+        "wires": [
+            [
+                "298594735f133ef3"
             ]
         ]
     },
