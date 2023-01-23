@@ -256,6 +256,11 @@ You can find the link to the dashboard like this:<br/>
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/faq.png" width="500">
 
+Q - Can I forward the information coming mqtt messages from the heatpump towards my InfluxDB database? 
+<details>
+    Yes. There is a separate flow available to download. You can find it in the folder "heishamon2influxdb". It requires an additional contrib (node-red-contrib-influxdb). Install the contrib, download the flow, import it, configure the influxdb and your set. You do not need Domoticz or HomeAssistnat fot that now.
+</details>
+
 Q - I use the Node Red Addon in Home Assistant, how to go to the Node Red Gui for editing?
 <details>
     Most users should visit via a browser: 'http://Your_NodeRed_IP:1880/ui'<br/>
