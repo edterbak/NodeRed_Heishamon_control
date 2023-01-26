@@ -1,9 +1,11 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 21.49 beta (experimental) <br/> 
-Make a backup of your current flow. (free tip)<br/><br/>
-This version is not for the faint hearted... <br/>
+Current version: 22.00 Stable release<br/> <br/>
+Please please please... Make a backup of your current flow before updating.<br/>
+<br/>
 
+[RELEASE NOTES v22.00](#release_notes)
+<br/>
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -347,7 +349,7 @@ Q - How should I configure the Remote Controller for use with this Node Red Flow
 ********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/changelog.png" width="500">
-All older changelog items are colapsed below. only the latest changelog will always be shown.
+All changelog items from v21.00 are colapsed below. only the latest changelog will always be shown.
 <details>
 [2022-11-12] (v21.00 - Stable) Things done are:
 Changelog compared to v18 is:... <br/>
@@ -621,11 +623,59 @@ https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
 - [Fix] Function Reduce Pump Speed fixed</br>
 
 </details>
+<a name="release_notes"></a>
+
+# Release notes</br>
+
+Where to start.. </br>
+First off, I would like to welcome Maarten69 to the team. He has joined the project and gave a major boost with new ideas, new energy and new functions. So a big "THANK YOU" from me (Ed ter bak) for all the effort and free time you have invested. I appreciate it a lot, and I am sure a lot of other users do as well.</br>
+</br>
+That said... For a long time, there has not been a stable update. A lot of bigger things were done together making it harder to do this. 
+But, this process is going to be managed better in future. We aim to have shorter release cycles, with less major changes per update to make it manageable.</br>
+</br>
+</br>
+This release has a lot of changes compared to previous stable build, v21.00.</br>
+Here is a brief overview of the most noticeable items.</br>
+</br>
+<ins>Operation mode:</ins></br>
+Previously it was only possible to use this Node Red flow when your heat pump is in Direct mode, and not using the Compensation Curve. This has now been changed. You can operate the heat pump in Compensation Curve mode. This means the heat pump itself is managing the water temperature depending on the outside temperature. The NodeRed WAR function will then automatically be disabled. Current implementation is not yet allowing you to manually shift the curve up/down. (This will be added soon in next builds) But, it IS possible to have this done for you by using the RTC-function. </br>
+</br>
+<ins>SoftStart:</ins></br>
+This function has had a lot of attention. You now have the options to use quietmode during the start-up phase and you can choose to ignore restarts after a defrost cycle. In addition, you can use this function to increase the length of the compressor runs. The HELP text describes more about this. </br>
+</br>
+<ins>WAR function:</ins></br>
+This tab has been improved so it can import the current settings from the heat pump and show it in the graph. Also, you can change the temperatures and upload it again to the heat pump. </br>
+</br>
+<ins>Reduce pump speed:</ins></br>
+In the [Settings] tab, you will now find a bit about "Reduce pump speed". This new function allows you to reduce the pump speed when the compressor is not on.</br>
+</br>
+<ins>Scheduler:</ins>
+In the scheduler there are now a couple of extra options; Night reduction. Remove a schedule by pressing the bin.</br>
+</br>
+
+<ins>Shutdown response:</ins></br>
+We found that the node red flow is not aware of certain situations, like maintenance. When you manually turn the unit off through the wall mount, it can happen that a scheduled task is planned and turns the heat pump back on. To handle this situation, there is now an option to predefine the reaction of the flow when a manual OFF is pressed on the wall mounted controller. You can find this section under Settings > Shutdown response > [setup]</br>
+</br>
+<ins>Safeguard:</ins></br>
+In addition to the shutdown response, the node red flow is keeping track of te amount of mqtt messages sent per day. If this exceeds a limit then the flow will block all future messages. The default limit is 500. Normal operation should result in 20-100 messages per day. If you are unlucky with a lot of defrosts, this can go up to 200. So 500 indicates a problem for sure.</br>
+</br>
+<ins>Debugging:</ins></br>
+It has been made a lot easier by Maarten69 to debug if there are issues. Under the SYSTEM tab, System Health, you can now list a lot of the hidden variables used by the node red flow. When posting issues, it is advised to supply a copy of that text. :) </br>
+</br>
+Finally, a short note. The layout of v22.00 is a bit of a mess. The structure in the dashboard is now a little hard to detect. It is in need of some polishing here and there. This will be on the agenda soon to tidy up to give a better user experience.</br>
+</br>
+Have fun with your heat pump!</br>
+</br>
+/Ed ter bak</br>
+</br>
+</br>
+
+
 
 ********
 
 ## TODO list
-See issue list.
+See issue list in GitHub.
 
 ********
 
