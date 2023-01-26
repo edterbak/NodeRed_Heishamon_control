@@ -97,9 +97,9 @@
             "b3cbb0e85ba0fb42",
             "1daf8c5944f23d71"
         ],
-        "x": 104,
+        "x": 114,
         "y": 639,
-        "w": 982,
+        "w": 972,
         "h": 562
     },
     {
@@ -261,9 +261,9 @@
             "b2003add7c0ba5a9",
             "8df6915186a6430a"
         ],
-        "x": 3024,
+        "x": 3034,
         "y": 1699,
-        "w": 1472,
+        "w": 1462,
         "h": 322
     },
     {
@@ -336,7 +336,7 @@
         ],
         "x": 3034,
         "y": 79,
-        "w": 1782,
+        "w": 1772,
         "h": 602
     },
     {
@@ -524,7 +524,7 @@
         ],
         "x": 3034,
         "y": 2079,
-        "w": 1402,
+        "w": 1392,
         "h": 222
     },
     {
@@ -749,7 +749,7 @@
         ],
         "x": 1154,
         "y": 59,
-        "w": 1702,
+        "w": 1692,
         "h": 1782
     },
     {
@@ -768,9 +768,9 @@
             "aa33ae9640c6a434",
             "db206585adea91d8"
         ],
-        "x": 4064,
+        "x": 4074,
         "y": 439,
-        "w": 472,
+        "w": 462,
         "h": 202
     },
     {
@@ -9751,9 +9751,9 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "21.49 beta (experimental)",
+        "payload": "22.00 Stable release",
         "payloadType": "str",
-        "x": 1350,
+        "x": 1360,
         "y": 1960,
         "wires": [
             [
@@ -13850,7 +13850,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Block?",
-        "func": "var MQTT              = global.get('MQTT', \"file\");\n\n// *****************************************************************************\n//          Default manual or automated BLOCK ALL\n// *****************************************************************************\n\nif (MQTT.block_active == 1 && MQTT.block_mode == 1) {\n    let msg66 = {}; // pin 2 - To Notify msg (and INPUTdebuglog)\n    msg66.topic = \"SYSTEM\";\n    msg66.payload = \"MQTT-Commands are blocked!\";\n    return [null, msg66];                                                       //  Block msg, and log it.\n}\n\n// *****************************************************************************\n//  MQTT.block_mode = BLOCK ALL (1)\n//  MQTT.block_mode = CUSTOM (2)\n//  MQTT.block_mode = UNRESTRICTED (3)\n// *****************************************************************************\n\nif (MQTT.block_active == 1 && MQTT.block_mode == 2) {                                //  If Manual OFF has been detected...\n    \n    ////////////////////////////////////////////////////////////////////////////\n    if (MQTT.block_mode == 1) {                                            //  MQTT_default_1 = BLOCK ALL\n        return [null, null];  \n    }\n\n    ////////////////////////////////////////////////////////////////////////////\n    if (MQTT.block_mode == 2) {                                            //  MQTT_default_2 = CUSTOM\n    //\n    //\n    // ATTENTION: UN-COMMENT 2 lines out so that the function below is aloowed to pass the block.\n    \n        //**********************************************************************\n        //MQTT.allow_rtc_onoff\n        //**********************************************************************\n        //if (MQTT.allow_rtc_onoff == 1)      {return [msg,null];}        //  Pass through msg.\n        //else                                      {return [null,null];}       //  Block\n        \n        //**********************************************************************\n        //MQTT.allow_solar\n        //**********************************************************************\n        //if (MQTT.allow_solar == 1)          {return [msg,null];}        //  Pass through msg.\n        //else                                      {return [null,null];}       //  Block\n        \n        //**********************************************************************\n        //MQTT.allow_scheduler\n        //**********************************************************************\n        if (MQTT.allow_scheduler == 1)      {return [msg,null];}        //  Pass through msg.\n        else                                      {return [null,null];}       //  Block\n        \n        //return [null,null];\n    }\n\n    ////////////////////////////////////////////////////////////////////////////\n    if (MQTT.block_mode == 3) {                                            //  MQTT_default_3 = UNRESTRICTED\n        return [msg, null];                                                     //  Pass through msg.\n    }\n}\n\nif (MQTT.block_active == 0) {\n    return msg;\n}\n\n    \n  ",
+        "func": "var MQTT              = global.get('MQTT', \"file\");\n\n// *****************************************************************************\n//          Default manual or automated BLOCK ALL\n// *****************************************************************************\n\nif (MQTT.block_active == 1 && MQTT.block_mode == 1) {\n    let msg66 = {}; // pin 2 - To Notify msg (and INPUTdebuglog)\n    msg66.topic = \"SYSTEM\";\n    msg66.payload = \"MQTT-Commands are blocked!\";\n    return [null, msg66];                                                       //  Block msg, and log it.\n}\n\n// *****************************************************************************\n//  MQTT.block_mode = BLOCK ALL (1)\n//  MQTT.block_mode = CUSTOM (2)\n//  MQTT.block_mode = UNRESTRICTED (3)\n// *****************************************************************************\n\nif (MQTT.block_active == 1 && MQTT.block_mode == 2) {                                //  If Manual OFF has been detected...\n    \n    ////////////////////////////////////////////////////////////////////////////\n    if (MQTT.block_mode == 1) {                                            //  MQTT_default_1 = BLOCK ALL\n        return [null, null];  \n    }\n\n    ////////////////////////////////////////////////////////////////////////////\n    if (MQTT.block_mode == 2) {                                            //  MQTT_default_2 = CUSTOM\n    //\n    //\n    // ATTENTION: UN-COMMENT 2 lines out so that the function below is aloowed to pass the block.\n    \n        //**********************************************************************\n        //MQTT.allow_rtc_onoff\n        //**********************************************************************\n        //if (MQTT.allow_rtc_onoff == 1)      {return [msg,null];}        //  Pass through msg.\n        //else                                      {return [null,null];}       //  Block\n        \n        //**********************************************************************\n        //MQTT.allow_solar\n        //**********************************************************************\n        //if (MQTT.allow_solar == 1)          {return [msg,null];}        //  Pass through msg.\n        //else                                      {return [null,null];}       //  Block\n        \n        //**********************************************************************\n        //MQTT.allow_scheduler\n        //**********************************************************************\n        //if (MQTT.allow_scheduler == 1)      {return [msg,null];}        //  Pass through msg.\n        //else                                      {return [null,null];}       //  Block\n        \n        return [null,null];\n    }\n\n    ////////////////////////////////////////////////////////////////////////////\n    if (MQTT.block_mode == 3) {                                            //  MQTT_default_3 = UNRESTRICTED\n        return [msg, null];                                                     //  Pass through msg.\n    }\n}\n\nif (MQTT.block_active == 0) {\n    return msg;\n}\n\n    \n  ",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -15149,9 +15149,9 @@
             "a8d51c8773f8f17f",
             "2caf61fe8673aedb"
         ],
-        "x": 154,
+        "x": 164,
         "y": 79,
-        "w": 1572,
+        "w": 1562,
         "h": 422
     },
     {
@@ -15228,9 +15228,9 @@
             "0b10bc17b24896b7",
             "6c685782864f1787"
         ],
-        "x": 144,
+        "x": 154,
         "y": 2939,
-        "w": 1172,
+        "w": 1162,
         "h": 982
     },
     {
@@ -15284,7 +15284,7 @@
         ],
         "x": 134,
         "y": 3959,
-        "w": 1362,
+        "w": 1352,
         "h": 302
     },
     {
@@ -15336,9 +15336,9 @@
             "6b2644c3a510f50f",
             "b43820fd5a21f4e7"
         ],
-        "x": 2338,
+        "x": 2348,
         "y": 53,
-        "w": 1968,
+        "w": 1958,
         "h": 888
     },
     {
@@ -15368,9 +15368,9 @@
             "c0a54684ef46f711",
             "07bfc2f9f00870d7"
         ],
-        "x": 64,
+        "x": 74,
         "y": 4439,
-        "w": 1132,
+        "w": 1122,
         "h": 302
     },
     {
@@ -15488,8 +15488,6 @@
             "5e9da82d3dfe26da",
             "398d29ed6f37b424",
             "2695bccfb69a52d5",
-            "0cde3fce7ebc5dce",
-            "2c5b52fee866e46a",
             "c86e3d7ad005b93a"
         ],
         "x": 144,
@@ -15514,9 +15512,9 @@
             "030fbd5026e5a295",
             "7122d217051222ff"
         ],
-        "x": 2364,
+        "x": 2374,
         "y": 79,
-        "w": 1182,
+        "w": 1172,
         "h": 162
     },
     {
@@ -18349,8 +18347,7 @@
         "y": 460,
         "wires": [
             [
-                "a22898dfdc4ff0ca",
-                "2d8aa1dabf329822"
+                "a22898dfdc4ff0ca"
             ]
         ]
     },
@@ -20589,23 +20586,6 @@
         ]
     },
     {
-        "id": "2d8aa1dabf329822",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "name": "debug 104",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1770,
-        "y": 580,
-        "wires": []
-    },
-    {
         "id": "d593fd3f7b87de1c",
         "type": "complete",
         "z": "a938de76db0b71f6",
@@ -22212,41 +22192,6 @@
         ]
     },
     {
-        "id": "0cde3fce7ebc5dce",
-        "type": "trigger",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "payl",
-        "duration": "30",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 970,
-        "y": 1240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2c5b52fee866e46a",
-        "type": "comment",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "Read me -->",
-        "info": "Wat als we nu de trigger 3ms vervangen door de trigger 30 sec om de softstart te temmen in updates?\n\ndie 30sec trigger node dropt ook alle eerdere berichten behalve de laatste in die 30 seconden.",
-        "x": 970,
-        "y": 1200,
-        "wires": []
-    },
-    {
         "id": "c86e3d7ad005b93a",
         "type": "trigger",
         "z": "a938de76db0b71f6",
@@ -22304,7 +22249,7 @@
         ],
         "x": 54,
         "y": 1119,
-        "w": 1398,
+        "w": 1388,
         "h": 602
     },
     {
@@ -22367,9 +22312,9 @@
             "d44f1a1993a8a44f",
             "e68356272f1f529b"
         ],
-        "x": 44,
+        "x": 54,
         "y": 439,
-        "w": 1398,
+        "w": 1388,
         "h": 622
     },
     {
@@ -22497,7 +22442,7 @@
         ],
         "x": 84,
         "y": 579,
-        "w": 1332,
+        "w": 1322,
         "h": 82
     },
     {
@@ -22519,7 +22464,7 @@
         ],
         "x": 84,
         "y": 1239,
-        "w": 1342,
+        "w": 1332,
         "h": 82
     },
     {
@@ -22539,9 +22484,9 @@
         "nodes": [
             "2ee679408e4ccc6f"
         ],
-        "x": 1124,
+        "x": 1134,
         "y": 919,
-        "w": 292,
+        "w": 272,
         "h": 82
     },
     {
@@ -22561,9 +22506,9 @@
         "nodes": [
             "4eaa2cfa2749c551"
         ],
-        "x": 1124,
+        "x": 1134,
         "y": 1579,
-        "w": 292,
+        "w": 272,
         "h": 82
     },
     {
@@ -23885,9 +23830,9 @@
             "59e73e3a2c2985fa",
             "88ea0371f9cecd37"
         ],
-        "x": 64,
+        "x": 74,
         "y": 19,
-        "w": 1302,
+        "w": 1292,
         "h": 728
     },
     {
@@ -24008,9 +23953,9 @@
             "a9994ef2e592aee1",
             "375bbd780529afe0"
         ],
-        "x": 64,
+        "x": 74,
         "y": 779,
-        "w": 1352,
+        "w": 1332,
         "h": 688
     },
     {
@@ -24034,7 +23979,7 @@
         ],
         "x": 114,
         "y": 551.5,
-        "w": 822,
+        "w": 812,
         "h": 169.5
     },
     {
@@ -24134,7 +24079,7 @@
         ],
         "x": 434,
         "y": 1719,
-        "w": 402,
+        "w": 392,
         "h": 1162
     },
     {
@@ -27929,9 +27874,7 @@
             "bcda44f3140d86e9"
         ],
         "x": 124,
-        "y": 139,
-        "w": 642,
-        "h": 342
+        "y": 139
     },
     {
         "id": "5505432507101e93",
@@ -27951,9 +27894,7 @@
             "c2935eeb2b0919cf"
         ],
         "x": 204,
-        "y": 499,
-        "w": 632,
-        "h": 202
+        "y": 499
     },
     {
         "id": "b5e32619ad0c206e",
@@ -27973,9 +27914,7 @@
             "3c3c8472da1fb85a"
         ],
         "x": 1084,
-        "y": 139,
-        "w": 592,
-        "h": 202
+        "y": 139
     },
     {
         "id": "c77aed9e30c539d5",
@@ -28000,9 +27939,7 @@
             "7ca958b4b94243f8"
         ],
         "x": 1104,
-        "y": 379,
-        "w": 592,
-        "h": 262
+        "y": 379
     },
     {
         "id": "fde5dafe04d72e23",
@@ -28029,9 +27966,7 @@
             "c96821120dd58acc"
         ],
         "x": 1104,
-        "y": 679,
-        "w": 592,
-        "h": 302
+        "y": 679
     },
     {
         "id": "be48f3104249b8a0",
@@ -29358,9 +29293,9 @@
             "572ff3b3b8a1d185",
             "68f4601da2aa107a"
         ],
-        "x": 2314,
+        "x": 2334,
         "y": 1979,
-        "w": 1452,
+        "w": 1432,
         "h": 482
     },
     {
@@ -29659,9 +29594,9 @@
             "1911fbfbf89866a8",
             "55a0fb67fbe206cf"
         ],
-        "x": 64,
+        "x": 74,
         "y": 2519,
-        "w": 1402,
+        "w": 1392,
         "h": 322
     },
     {
@@ -42238,9 +42173,9 @@
             "3ed3a7f6bfbf803a",
             "c5e1f08f07eb647b"
         ],
-        "x": 2004,
+        "x": 2014,
         "y": 19,
-        "w": 822,
+        "w": 812,
         "h": 162
     },
     {
@@ -42397,7 +42332,7 @@
         "z": "3aa03811830ef29e",
         "name": "",
         "group": "70a5fe6af8ed1d29",
-        "order": 3,
+        "order": 2,
         "width": 5,
         "height": 1,
         "passthru": false,
@@ -42474,8 +42409,8 @@
         "z": "3aa03811830ef29e",
         "name": "",
         "group": "70a5fe6af8ed1d29",
-        "order": 2,
-        "width": "5",
+        "order": 1,
+        "width": 5,
         "height": 1,
         "passthru": false,
         "label": "LOG",
@@ -42502,7 +42437,7 @@
         "z": "3aa03811830ef29e",
         "name": "",
         "group": "70a5fe6af8ed1d29",
-        "order": 4,
+        "order": 3,
         "width": 5,
         "height": 1,
         "passthru": false,
@@ -42530,7 +42465,7 @@
         "z": "3aa03811830ef29e",
         "name": "",
         "group": "70a5fe6af8ed1d29",
-        "order": 6,
+        "order": 5,
         "width": 5,
         "height": 1,
         "passthru": false,
@@ -42558,7 +42493,7 @@
         "z": "3aa03811830ef29e",
         "group": "70a5fe6af8ed1d29",
         "name": "Line - Setup ",
-        "order": 7,
+        "order": 6,
         "width": 0,
         "height": 0,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
@@ -42580,9 +42515,9 @@
         "group": "b7f740331bca1b3f",
         "name": "Line - Contributions text",
         "order": 3,
-        "width": 4,
+        "width": 7,
         "height": 14,
-        "format": "<h3>Author(s):</h3></br>\nEd ter bak (alias)</br>\nMaarten69 (alias)</br></br>\n\n<h3>Thanks and gratitude goes to:</h3>\nEgyras</br>\nCurlyMo</br>\nAUijtdehaag</br>\nlampy25</br>\ntimovd</br>\nE1cid</br>\nJavaboon</br>\nAikon</br>\nMikeyMan</br>\nblb4</br>\nsjampeter</br>\nThe-Source</br>\n",
+        "format": "<h3>Heishamon to Node Red</h3>\n<p>Github page: <a href=\"https://github.com/edterbak/NodeRed_Heishamon_control\" target=\"_blank\\\">here</a>.</p>\n</br>\n<h3>Author(s):</h3></br>\nEd ter bak (alias)</br>\nMaarten69 (alias)</br></br>\n\n<h3>Thanks and gratitude goes to:</h3>\nEgyras</br>\nCurlyMo</br>\nAUijtdehaag</br>\nlampy25</br>\ntimovd</br>\nE1cid</br>\nJavaboon</br>\nAikon</br>\nMikeyMan</br>\nblb4</br>\nsjampeter</br>\nThe-Source</br>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
@@ -43309,7 +43244,7 @@
         "g": "c361a153997d2dfd",
         "name": "",
         "group": "70a5fe6af8ed1d29",
-        "order": 5,
+        "order": 4,
         "width": 5,
         "height": 1,
         "passthru": false,
@@ -43367,9 +43302,9 @@
         "group": "b7f740331bca1b3f",
         "name": "Line - Changelog",
         "order": 2,
-        "width": 17,
+        "width": 18,
         "height": 14,
-        "format": "<p>View this changelog on Github <a href=\"https://github.com/edterbak/NodeRed_Heishamon_control/blob/main-22-beta_2/changelog.md\" target=\"_blank\">here</a>.</p>\n\n-------------------------------------------------</br>\n[2023-01-21] v21.49 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] Function Reduce Pump Speed fixed</br>\n-------------------------------------------------</br>\n[2023-01-19] v21.48 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] Issue #67 Bug: in Node \"Block\".</br>\n[Fix] Issue #74 Bug: Block_mode CUSTOM changing to BLOCK_ALL @power off (remote controller).</br>\n[Fix] Issue #68 Bug: show logline only when 'Extend logging' is enabled.</br>\n[Fix] Issue #69 Bug: Correct function node \"set.war_ot_wt\".</br>\n-------------------------------------------------</br>\n[2023-01-17] v21.47 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] Fix SoftStart logging showed F_SS_old_correction with trailing zeros xx.0000000000003</br>\n[Fix] Reduced SoftStart logging when SP_Final < HEAT_SP_lower_limit.</br>\n[Fix] Label \"Max MQTT-commands per day\" Wasn't updating correctly, now fixed.</br>\n[New] Improvements made for extra (more) debugging info. (trailing *** in log) and highlights.</br>\n[Other] Code optimalisation in System Check, SS corr rounding etc.</br>\n[Fix] Fixed a small difference between function Compare new SP and function SoftStart.</br>\n[Optimalisation] Cleaned up code, removed unnecessary inject nodes (1/min).</br>\n[New] When defrosting show status on Home (@Operation mode, actual).</br>\n[Change] Increasing the max mqqt-messages/day now in bigger steps (10/2000).</br>\n-------------------------------------------------</br>\n[2023-01-15] v21.46 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[New] Function RTC automation, give name to OM mode when changing Operation mode.</br>\n[Fix] RTC Turn power on/off & Change Operation mode was only executed after a room temp change.</br>\n[Fix] SoftStart Quietmode was setting wrong Quietmode even when switch was disabled.</br>\n[Fix] Status switch \"Extend logging\" was configured incorrectly.</br>\n[Change] Changed the way label of \"Block MQTT commands\" updating.</br>\n[Change] Better solution to update MQTT state and label by listening to command# topic.</br>\n-------------------------------------------------</br>\n[2023-01-13] v21.45 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Other] Removed some typos from changelog.</br>\n[New] Added source (origin) for most MQTT-commands in log</br>\n[New] Highlight mqqt-commands in log.</br>\n[Fix] Fixed Bock mode \"custom\" changing to \"block all\" after 1 min.</br>\n[New] Added actual block mode to label switch \"Block MQTT commands\".</br>\n[Fix] Fixed some typos.</br>\n[Other] Cleaned up code Function WAR2DIRECT (3rd pinout code obsolete).</br>\n\n-------------------------------------------------</br>\n[2023-01-12] v21.44 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] Shutdown detection and response fixed.</br>\n[Fix] RTC turn power off/on working again (broken in v21.43)</br>\n[New] SoftStart timer: Not resetting at flow restart (when compressor was running).</br>\n[Add] Added SoftStart timers to System Check.</br>\n[Fix] Remember state of switch \"Extend debugging\".</br>\n[Fix] Remember state of switch \"Block MQTT commands\" at boot.</br>\n[Fix] Restore previous block_mode when disabling MQTT-Block.</br>\n[Fix] Fixed status button MQTT block on \"Manual OFF button press detected\" page.</br>\n[New] Added Home button to System navigation bar.</br>\n-------------------------------------------------</br>\n[2023-01-09] v21.43 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Changed] mqtt.block_mode defaulting to 1 after trigger mqtt.block_active.</br>\n[Changed] when mqtt.block_mode IS defaulting to 1, push this state to GUI.</br>\n-------------------------------------------------</br>\n[2023-01-09] v21.42 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] Shutdown response now working (I think)</br>\n[NEW] added a button on the shutdown detection section</br>\n-------------------------------------------------</br>\n[2023-01-08] v21.41 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] small fix for shutdown response improvement.</br>\n[Changed] Improved the System Check layout.</br>\n[Add] Label \"Max MQTT-commands per day\" now shows actual messages from current day.</br>\n-------------------------------------------------</br>\n[2023-01-08] v21.40 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] Shutdown response improvement.</br>\n</br>\n-------------------------------------------------</br>\n[2023-01-07] v21.39 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] Shutdown response and popups now working again.</br>\n</br>\n\n-------------------------------------------------</br>\n[2023-01-07] v21.38 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] Crash/Freeze after turning on/off toggle  .</br>\n</br>\n\n-------------------------------------------------</br>\n[2023-01-06] v21.37 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[-] continued with var renaming.</br>\n[New] Linking RTC roomtemperature setpoint to nightreduction roomsetpoint</br>\n</br>\n-------------------------------------------------</br>\n[2023-01-05] v21.36 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] fixed a small bug after renaming.</br>\n[Changed] moved check of mqtt stuff of of system check, into load on boot MQTT.</br>\n[Changed] Removed some of the automated node.warn() notifications</br>\n</br>\n\n-------------------------------------------------</br>\n[2023-01-04] v21.35 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] SoftStart was using Night reduction water temp correction when switch was'nt enabled.</br>\n[Other] started with new naming convention and code optimization.</br>\n(old variables will be removed, please check all function switches)</br>\n</br>\n\n-------------------------------------------------</br>\n[2023-01-04] v21.34 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Fix] Added to System Check: repair wrong settings MQTT caused by older versions.</br>\n[Add] Added all night recduction variables to the System Check (debugging purposes).</br>\n[Add] Added more SoftStart logging to main log when switch \"extend logging is enabled\".</br>\n</br>\n\n-------------------------------------------------</br>\n[2022-12-25] v21.32 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] Typo in FILTER functions (2x) (Thanks sjampeter)</br>\n</br>\n\n-------------------------------------------------</br>\n[2022-12-25] v21.32 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] mqtt signals being blocked too often. Power on/off, Operating Mode, Quiet Mode etc.</br>\n</br>\n\n-------------------------------------------------</br>\n[2022-12-24] v21.31 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[Changed] Rework of block functionality. Rules around custom selection should be obayed now.</br>\n[Changed] RTC function, help and layout. Select the action you want to allow, on/off or heatmode changing only.</br>\n[Changed] RTC function, Booster renamed to incremental setpoints\n[Changed] Scheduler function. Behaviour when other functions are activated.</br>\n[Changed] SoftStart. Now a toggle is present if you want the function to restart every time after a defrost.</br>\n[FIX] WAR function. TOP29 and TOP30 were flipped during import/export. </br>\n[FIX] Heatpump information updated propperly after firmware change. (Thank you xtr3me)</br>\n</br>\n\n-------------------------------------------------</br>\n[2022-12-15] v21.30 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[FIX] RTC on/off function. When no OperatingMode is stored, it would default back to Mode 0 (heat only)</br>\n</br>\n\n-------------------------------------------------</br>\n[2022-12-13] v21.29 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[NEW] Bypass Softstart Quietmode during defrost.</br>\n[Obsolete] RTC Booster fixed now. Use the switch on RTC dashboard to enable (default off).</br>\n[Obsolete] Removed layout from dashboard Hardware configuration (was for testing only)</br>\n[FIX] Nightreduction room temperature / Current status --> Manual on/off now working again.</br>\n[FIX] Removed log message (@startup) \"Function - SoftStart Quietmode: OFF (restored to level 0)\". (the restored part)</br>\n[FIX] Unneeded pumpspeed MQTT command (When enabled at a restart).</br>\n[Moved] Moved Function reduce pump speed to Settings page. Layout now improved.</br>\n[Changed] Replaced defrost toggle with button. Color status of button Red --> defrosting.</br>\n[FIX] RTC Room actual temperature didn't update frequently.</br>\n[Add] Added to System Check: RTC Booster, Function pump speed, MQTT-block settings and manual on/off settings.</br>\n</br>\n\n-------------------------------------------------</br>\n[2022-12-12] v21.28 beta (experimental). Changes:</br>\n-------------------------------------------------</br>\n[ENHANCEMENT] Added toggle for NightReduction RoomSP in Scheduler screen.</br>\n</br>\n",
+        "format": "</br>\n<u>Release notes</u>\nWhere to start.. </br>\nFirst off, I would like to welcome Maarten69 to the team. He has joined the project and gave a major boost with new ideas, new energy and new functions. So a big \"THANK YOU\" from me (Ed ter bak) for all the effort and free time you have invested. I appreciate it a lot, and I am sure a lot of other users do as well.</br>\n</br>\nThat said... For a long time, there has not been a stable update. A lot of bigger things were done together making it harder to do this. \nBut, this process is going to be managed better in future. We aim to have shorter release cycles, with less major changes per update to make it manageable.</br>\n</br>\n</br>\nThis release has a lot of changes compared to previous stable build, v21.00.</br>\nHere is a brief overview of the most noticeable items.</br>\n</br>\n<u>Operation mode:</u>\nPreviously it was only possible to use this Node Red flow when your heat pump is in Direct mode, and not using the Compensation Curve. This has now been changed. You can operate the heat pump in Compensation Curve mode. This means the heat pump itself is managing the water temperature depending on the outside temperature. The NodeRed WAR function will then automatically be disabled. Current implementation is not yet allowing you to manually shift the curve up/down. (This will be added soon in next builds) But, it IS possible to have this done for you by using the RTC-function. </br>\n</br>\n<u>SoftStart:</u>\nThis function has had a lot of attention. You now have the options to use quietmode during the start-up phase and you can choose to ignore restarts after a defrost cycle. In addition, you can use this function to increase the length of the compressor runs. The HELP text describes more about this. </br>\n</br>\n<u>WAR function:</u>\nThis tab has been improved so it can import the current settings from the heat pump and show it in the graph. Also, you can change the temperatures and upload it again to the heat pump. </br>\n</br>\n<u>Reduce pump speed:</u>\nIn the [Settings] tab, you will now find a bit about \"Reduce pump speed\". This new function allows you to reduce the pump speed when the compressor is not on.</br>\n</br>\n<u>Scheduler:</u>\nIn the scheduler there are now a couple of extra options; Night reduction. Remove a schedule by pressing the bin.</br>\n</br>\n<u>Shutdown response:</u>\nWe found that the node red flow is not aware of certain situations, like maintenance. When you manually turn the unit off through the wall mount, it can happen that a scheduled task is planned and turns the heat pump back on. To handle this situation, there is now an option to predefine the reaction of the flow when a manual OFF is pressed on the wall mounted controller. You can find this section under Settings > Shutdown response > [setup]</br>\n</br>\n<u>Safeguard:</u>\nIn addition to the shutdown response, the node red flow is keeping track of te amount of mqtt messages sent per day. If this exceeds a limit then the flow will block all future messages. The default limit is 500. Normal operation should result in 20-100 messages per day. If you are unlucky with a lot of defrosts, this can go up to 200. So 500 indicates a problem for sure.</br>\n</br>\n<u>Debugging:</u>\nIt has been made a lot easier by Maarten69 to debug if there are issues. Under the SYSTEM tab, System Health, you can now list a lot of the hidden variables used by the node red flow. When posting issues, it is advised to supply a copy of that text. :) </br>\n</br>\nFinally, a short note. The layout of v22.00 is a bit of a mess. The structure in the dashboard is now a little hard to detect. It is in need of some polishing here and there. This will be on the agenda soon to tidy up to give a better user experience.</br>\n</br>\nHave fun with your heat pump!</br>\n</br>\n/Ed ter bak</br>\n</br>\n</br>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
@@ -44423,9 +44358,9 @@
             "0af4b3b3445b3ce2",
             "6c6d719592dac8d5"
         ],
-        "x": 74,
+        "x": 84,
         "y": 799,
-        "w": 1112,
+        "w": 1102,
         "h": 142
     },
     {
@@ -44471,9 +44406,9 @@
             "50965b08724bdd8c",
             "f2d7ea937abca010"
         ],
-        "x": 74,
+        "x": 84,
         "y": 1299,
-        "w": 1112,
+        "w": 1102,
         "h": 262
     },
     {
@@ -45912,7 +45847,7 @@
         "z": "d5fea67661261002",
         "g": "bab76cb8c9631c59",
         "name": "Block?",
-        "func": "var MQTT              = global.get('MQTT', \"file\");\n\n// *****************************************************************************\n//          Default manual or automated BLOCK ALL\n// *****************************************************************************\n\nif (MQTT.block_active == 1 && MQTT.block_mode == 1) {\n    let msg66 = {}; // pin 2 - To Notify msg (and INPUTdebuglog)\n    msg66.topic = \"SYSTEM\";\n    msg66.payload = \"MQTT-Commands are blocked!\";\n    return [null, msg66];                                                       //  Block msg, and log it.\n}\n\n// *****************************************************************************\n//  MQTT.block_mode = BLOCK ALL (1)\n//  MQTT.block_mode = CUSTOM (2)\n//  MQTT.block_mode = UNRESTRICTED (3)\n// *****************************************************************************\n\nif (MQTT.block_active == 1 && MQTT.block_mode == 2) {                                //  If Manual OFF has been detected...\n    \n    ////////////////////////////////////////////////////////////////////////////\n    if (MQTT.block_mode == 1) {                                            //  MQTT_default_1 = BLOCK ALL\n        return [null, null];  \n    }\n\n    ////////////////////////////////////////////////////////////////////////////\n    if (MQTT.block_mode == 2) {                                            //  MQTT_default_2 = CUSTOM\n    //\n    //\n    // ATTENTION: UN-COMMENT 2 lines out so that the function below is aloowed to pass the block.\n    \n        //**********************************************************************\n        //MQTT.allow_rtc_onoff\n        //**********************************************************************\n        if (MQTT.allow_rtc_onoff == 1)      {return [msg,null];}        //  Pass through msg.\n        //else                                      {return [null,null];}       //  Block\n        \n        //**********************************************************************\n        //MQTT.allow_solar\n        //**********************************************************************\n        else if (MQTT.allow_solar == 1)          {return [msg,null];}        //  Pass through msg.\n        //else                                      {return [null,null];}       //  Block\n        \n        //**********************************************************************\n        //MQTT.allow_scheduler\n        //**********************************************************************\n        else if (MQTT.allow_scheduler == 1)      {return [msg,null];}        //  Pass through msg.\n        else                                      {return [null,null];}       //  Block\n        \n        //return [null,null];\n    }\n\n    ////////////////////////////////////////////////////////////////////////////\n    if (MQTT.block_mode == 3) {                                            //  MQTT_default_3 = UNRESTRICTED\n        return [msg, null];                                                     //  Pass through msg.\n    }\n}\n\nif (MQTT.block_active == 0) {\n    return msg;\n}\n\n    \n  ",
+        "func": "var MQTT              = global.get('MQTT', \"file\");\n\n// *****************************************************************************\n//          Default manual or automated BLOCK ALL\n// *****************************************************************************\n\nif (MQTT.block_active == 1 && MQTT.block_mode == 1) {\n    let msg66 = {}; // pin 2 - To Notify msg (and INPUTdebuglog)\n    msg66.topic = \"SYSTEM\";\n    msg66.payload = \"MQTT-Commands are blocked!\";\n    return [null, msg66];                                                       //  Block msg, and log it.\n}\n\n// *****************************************************************************\n//  MQTT.block_mode = BLOCK ALL (1)\n//  MQTT.block_mode = CUSTOM (2)\n//  MQTT.block_mode = UNRESTRICTED (3)\n// *****************************************************************************\n\nif (MQTT.block_active == 1 && MQTT.block_mode == 2) {                                //  If Manual OFF has been detected...\n    \n    ////////////////////////////////////////////////////////////////////////////\n    if (MQTT.block_mode == 1 || MQTT.block_mode == 2) {\n        return [null, null];  \n    }\n\n    ////////////////////////////////////////////////////////////////////////////\n    if (MQTT.block_mode == 3) {                                            //  MQTT_default_3 = UNRESTRICTED\n        return [msg, null];                                                     //  Pass through msg.\n    }\n}\n\nif (MQTT.block_active == 0) {\n    return msg;\n}\n\n    \n  ",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -46298,7 +46233,7 @@
         "z": "d5fea67661261002",
         "g": "0531f7d830ad5e1b",
         "name": "Block MQTT",
-        "func": "let msg1 = {}; // pin2 to combobox update block_mode status\nmsg1.topic = \"Update block_mode\"; //update 19-01-2023 msg --> msg1\nif (msg.source == \"boot\") { return null; } //exit when source is from inject node\n\nlet msg99 = {};\nmsg99.topic = \"SYSTEM\";\nmsg99.payload = \"\";\n\n// *****************************************************************************\n//  MQTT.block_mode 1 = BLOCK ALL\n//  MQTT.block_mode 2 = CUSTOM\n//  MQTT.block_mode 3 = UNRESTRICTED\n// *****************************************************************************\n\nif (msg.payload == 1) {\n    global.set('MQTT.block_active', 1, \"file\"); \n    msg99.payload = 1;\n    var MQTT_block_mode = global.get('MQTT.block_mode', \"file\"); // 11-01-2023\n    global.set('MQTT.block_mode_previous', MQTT_block_mode, \"file\"); // 11-01-20223 for restoring block_mode after disabling switch\n\n    // check if msg source is from shutdown_detection (POWER OFF)\n    if (msg.source == \"shutdown_detection\") {\n        msg1.payload = MQTT_block_mode;\n        return [msg99, msg1]; // log and update combobox\n    }\n\n\n    global.set('MQTT.block_mode', 1, \"file\"); // block all\n    msg1.payload = 1;\n    return [msg99, msg1]; // log and update combobox\n\n}\n\nif (msg.payload == 0) {\n    global.set('MQTT.block_active', 0, \"file\");\n    msg99.payload = 0;\n    var MQTT_block_mode_previous = global.get('MQTT.block_mode_previous', \"file\");  // 11-01-2023\n    if (MQTT_block_mode_previous !== undefined) { global.set('MQTT.block_mode', MQTT_block_mode_previous, \"file\"); } // 11-01-20223 for restoring block_mode after disabling switch\n        \n    // test if reached max MQTT command limit today:\n    var MQTT_messages_today = global.get('MQTT.messages_today', \"file\");\n    if (MQTT_messages_today === undefined) MQTT_messages_today = 0;\n\n    // get user set limit\n    var MQTT_message_limit = global.get('MQTT.message_limit', \"file\");\n    if (MQTT_message_limit === undefined) {\n        MQTT_message_limit = 300; //default 300\n        global.set('MQTT.message_limit', 300, \"file\");\n        }\n\n    // Request: Auto increase limit when disabling\n    if (MQTT_messages_today >= MQTT_message_limit) {\n        msg99.payload = \"MQTT limit of \" + MQTT_message_limit + \" reached, increasing limit to \" + (MQTT_message_limit + 100);\n        global.set('MQTT.message_limit', (MQTT_message_limit + 100), \"file\");\n    }\n\n    msg1.payload = MQTT_block_mode_previous; // now actual block_mode\n    return [msg99, msg1]; // log, and update combobox?\n}\n\n\n\n\n",
+        "func": "let msg1 = {}; // pin2 to combobox update block_mode status\nmsg1.topic = \"Update block_mode\"; //update 19-01-2023 msg --> msg1\nif (msg.source == \"boot\") { return null; } //exit when source is from inject node\n\nlet msg99 = {};\nmsg99.topic = \"SYSTEM\";\nmsg99.payload = \"\";\n\n// *****************************************************************************\n//  MQTT.block_mode 1 = BLOCK ALL\n//  MQTT.block_mode 2 = CUSTOM\n//  MQTT.block_mode 3 = UNRESTRICTED\n// *****************************************************************************\n\nif (msg.payload == 1) {\n    global.set('MQTT.block_active', 1, \"file\"); \n    msg99.payload = 1;\n    var MQTT_block_mode = global.get('MQTT.block_mode', \"file\"); // 11-01-2023\n    global.set('MQTT.block_mode_previous', MQTT_block_mode, \"file\"); // 11-01-20223 for restoring block_mode after disabling switch\n\n    // check if msg source is from shutdown_detection (POWER OFF)\n    if (msg.source == \"shutdown_detection\") {\n        msg1.payload = MQTT_block_mode;\n        return [msg99, msg1]; // log and update combobox\n    }\n\n\n    global.set('MQTT.block_mode', 1, \"file\"); // block all\n    msg1.payload = 1;\n    return [msg99, msg1]; // log and update combobox\n\n}\n\nif (msg.payload == 0) {\n    global.set('MQTT.block_active', 0, \"file\");\n    msg99.payload = 0;\n    var MQTT_block_mode_previous = global.get('MQTT.block_mode_previous', \"file\");  // 11-01-2023\n    if (MQTT_block_mode_previous !== undefined) { global.set('MQTT.block_mode', MQTT_block_mode_previous, \"file\"); } // 11-01-20223 for restoring block_mode after disabling switch\n        \n    // test if reached max MQTT command limit today:\n    var MQTT_messages_today = global.get('MQTT.messages_today', \"file\");\n    if (MQTT_messages_today === undefined) MQTT_messages_today = 0;\n\n    // get user set limit\n    var MQTT_message_limit = global.get('MQTT.message_limit', \"file\");\n    if (MQTT_message_limit === undefined) {\n        MQTT_message_limit = 500; //default 500\n        global.set('MQTT.message_limit', 500, \"file\");\n        }\n\n    // Request: Auto increase limit when disabling\n    if (MQTT_messages_today >= MQTT_message_limit) {\n        msg99.payload = \"MQTT limit of \" + MQTT_message_limit + \" reached, increasing limit to \" + (MQTT_message_limit + 100);\n        global.set('MQTT.message_limit', (MQTT_message_limit + 100), \"file\");\n    }\n\n    msg1.payload = MQTT_block_mode_previous; // now actual block_mode\n    return [msg99, msg1]; // log, and update combobox?\n}\n\n\n\n\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -46733,9 +46668,9 @@
         "id": "92e5b2c.00a8b5",
         "type": "mqtt-broker",
         "name": "MQTT (x.x.x.x)",
-        "broker": "core-mosquitto",
+        "broker": "x.x.x.x",
         "port": "1883",
-        "clientid": "",
+        "clientid": "Node_Red_Client",
         "autoConnect": true,
         "usetls": false,
         "compatmode": false,
