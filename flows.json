@@ -9793,7 +9793,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "22.03 Beta 1",
+        "payload": "22.04 Beta 1",
         "payloadType": "str",
         "x": 1340,
         "y": 1960,
@@ -15452,7 +15452,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "eb372b330f37f033",
         "name": "Load on boot SS",
-        "func": "var F_SS = global.get('F_SS',\"file\");\nif ( F_SS                        === undefined )  {F_SS={}; global.set(\"F_SS\",F_SS,\"file\");}\n\n//******************************************************************************\nif ( F_SS.phase_1_duration       === undefined )  {global.set(\"F_SS.phase_1_duration\",9,\"file\");}\nif ( F_SS.phase_1_delay_time     === undefined )  {global.set(\"F_SS.phase_1_delay_time\",180,\"file\");}\nif ( F_SS.phase_2_delay_time     === undefined )  {global.set(\"F_SS.phase_2_delay_time\",60,\"file\");}\nif ( F_SS.phase_3_delay_time     === undefined )  {global.set(\"F_SS.phase_3_delay_time\",600,\"file\");}\n\n//******************************************************************************\n\nlet msg1={};    //  pin 2 phase_1_duration\nlet msg2={};    //  pin 1 phase_1_delay_time\nlet msg3={};    //  pin 3 phase_2_delay_time\nlet msg4={};    //  pin 4 phase_3_delay_time\n\n//******************************************************************************\n\n\nmsg1.payload = F_SS.phase_1_duration;\nmsg2.payload = F_SS.phase_1_delay_time;\nmsg3.payload = F_SS.phase_2_delay_time;\nmsg4.payload = F_SS.phase_3_delay_time / 60;\n\n\n\nreturn [msg1,msg2,msg3,msg4];",
+        "func": "var F_SS = global.get('F_SS',\"file\");\nif ( F_SS                        === undefined )  {F_SS={}; global.set(\"F_SS\",F_SS,\"file\");}\n\n//******************************************************************************\nif ( F_SS.phase_1_duration       === undefined )  {global.set(\"F_SS.phase_1_duration\",180,\"file\");}\nif ( F_SS.phase_1_delay_time     === undefined )  {global.set(\"F_SS.phase_1_delay_time\",9,\"file\");}\nif ( F_SS.phase_2_delay_time     === undefined )  {global.set(\"F_SS.phase_2_delay_time\",60,\"file\");}\nif ( F_SS.phase_3_delay_time     === undefined )  {global.set(\"F_SS.phase_3_delay_time\",600,\"file\");}\n\n//******************************************************************************\n\nlet msg1={};    //  pin 2 phase_1_duration\nlet msg2={};    //  pin 1 phase_1_delay_time\nlet msg3={};    //  pin 3 phase_2_delay_time\nlet msg4={};    //  pin 4 phase_3_delay_time\n\n//******************************************************************************\n\n\nmsg1.payload = F_SS.phase_1_duration;\nmsg2.payload = F_SS.phase_1_delay_time;\nmsg3.payload = F_SS.phase_2_delay_time;\nmsg4.payload = F_SS.phase_3_delay_time / 60;\n\n\n\nreturn [msg1,msg2,msg3,msg4];",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
@@ -24717,7 +24717,9 @@
             "88ea0371f9cecd37"
         ],
         "x": 74,
-        "y": 19
+        "y": 19,
+        "w": 1292,
+        "h": 728
     },
     {
         "id": "81ff790f84afd46d",
@@ -24779,7 +24781,9 @@
             "74d748cdb9ede767"
         ],
         "x": 44,
-        "y": 1693
+        "y": 1693,
+        "w": 1342,
+        "h": 1228
     },
     {
         "id": "6f4cdc97add442ff",
@@ -24800,7 +24804,9 @@
             "58f4dcb609fc506a"
         ],
         "x": 94,
-        "y": 2979
+        "y": 2979,
+        "w": 902,
+        "h": 202
     },
     {
         "id": "3b5324e3d80d96a1",
@@ -24834,7 +24840,9 @@
             "375bbd780529afe0"
         ],
         "x": 74,
-        "y": 779
+        "y": 779,
+        "w": 1332,
+        "h": 688
     },
     {
         "id": "2efa0af27c69d4d0",
@@ -24856,7 +24864,9 @@
             "39f52a7b4d2f12c9"
         ],
         "x": 114,
-        "y": 551.5
+        "y": 551.5,
+        "w": 812,
+        "h": 169.5
     },
     {
         "id": "9fca714df21ffac0",
@@ -24873,7 +24883,9 @@
             "5256af8b7309c113"
         ],
         "x": 314,
-        "y": 399
+        "y": 399,
+        "w": 232,
+        "h": 82
     },
     {
         "id": "b85d6aca6a841215",
@@ -24890,7 +24902,9 @@
             "3ddc8ec4b5d75af2"
         ],
         "x": 274,
-        "y": 1119
+        "y": 1119,
+        "w": 232,
+        "h": 82
     },
     {
         "id": "233708268636f815",
@@ -24914,7 +24928,9 @@
             "441d5424780d9523"
         ],
         "x": 154,
-        "y": 1279
+        "y": 1279,
+        "w": 612,
+        "h": 162
     },
     {
         "id": "e5578a7ea3257441",
@@ -24948,7 +24964,9 @@
             "941e2e6b17a45171"
         ],
         "x": 434,
-        "y": 1719
+        "y": 1719,
+        "w": 392,
+        "h": 1162
     },
     {
         "id": "ce2634259bc8d6eb",
