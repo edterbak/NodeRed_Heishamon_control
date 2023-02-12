@@ -765,10 +765,45 @@
             "5d9dfad7dc5bce78",
             "052f561f93450dd4"
         ],
-        "x": 3034,
+        "x": 3024,
         "y": 1679,
-        "w": 1812,
+        "w": 1822,
         "h": 742
+    },
+    {
+        "id": "eb372b330f37f033",
+        "type": "group",
+        "z": "8c9d42231fd19d3c",
+        "name": "SS Advanced tab",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b643e9d5e036f4ee",
+            "c3c9902496136a46",
+            "a9eac72958d861ac",
+            "e211a5736784a0fc",
+            "bd802f87a97dcefd",
+            "c1486ebe999c1402",
+            "b54015c2f88f6bae",
+            "c3c59a45d2e39fec",
+            "ecb93ad39d98a1fd",
+            "d0269b3429462492",
+            "7bbad0897f1fcc7f",
+            "d6df210fe010dd33",
+            "f94254ca964c6921",
+            "fc318adaf0d65e13",
+            "72a545f547cbe5a3",
+            "3547352170ac81f9",
+            "029c5c12e6deaf2a",
+            "f17562823b007ac8",
+            "6ec6a3d95c50a2f6",
+            "8c0d3e8e47e5848c"
+        ],
+        "x": 2994,
+        "y": 2579,
+        "w": 1132,
+        "h": 462
     },
     {
         "id": "5c6e3f50e1a2328b",
@@ -920,41 +955,6 @@
         "y": 1099,
         "w": 82,
         "h": 122
-    },
-    {
-        "id": "eb372b330f37f033",
-        "type": "group",
-        "z": "8c9d42231fd19d3c",
-        "name": "SS Advanced tab",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "b643e9d5e036f4ee",
-            "c3c9902496136a46",
-            "a9eac72958d861ac",
-            "e211a5736784a0fc",
-            "bd802f87a97dcefd",
-            "c1486ebe999c1402",
-            "b54015c2f88f6bae",
-            "c3c59a45d2e39fec",
-            "ecb93ad39d98a1fd",
-            "d0269b3429462492",
-            "7bbad0897f1fcc7f",
-            "d6df210fe010dd33",
-            "f94254ca964c6921",
-            "fc318adaf0d65e13",
-            "72a545f547cbe5a3",
-            "3547352170ac81f9",
-            "029c5c12e6deaf2a",
-            "f17562823b007ac8",
-            "6ec6a3d95c50a2f6",
-            "8c0d3e8e47e5848c"
-        ],
-        "x": 2994,
-        "y": 2579,
-        "w": 1132,
-        "h": 462
     },
     {
         "id": "5d54922367195a62",
@@ -22977,7 +22977,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Delay trigger",
-        "func": "function myDelayFunction() {\n    let t = setTimeout(myEndFunction, timer);\n    context.set('tout',t);\n}\n\nfunction myEndFunction() {\n    let msg1={};\n    msg1.payload = 'END';\n    msg1.topic = msg.topic;\n    node.send(msg1);\n    node.status({});\n}\n\nfunction myResetFunction() {\n    let t = context.get('tout');    \n    clearTimeout(t);\n    msg1.payload = 'END';\n    node.send(msg1);\n    node.status({});\n}\n\n//==================================\n\nif (msg.reset){\n    myResetFunction();\n}\nelse{\n    var delay = msg.delay;                                                          //  delay in minutes\n    var timer = (delay * 60000) + 250;                                              //  timer in seconds\n    \n    node.status({fill:\"green\", shape:\"ring\", text:\"Active: \" + delay + \" minutes\"});\n    myDelayFunction();  \n}\nreturn null;",
+        "func": "function myDelayFunction() {\n    let t = setTimeout(myEndFunction, timer);\n    context.set('tout',t);\n}\n\nfunction myEndFunction() {\n    let msg1={};\n    msg1.payload = 'END';\n    msg1.topic = msg.topic;\n    node.send(msg1);\n    node.status({});\n}\n\nfunction myResetFunction() {\n    let t = context.get('tout');    \n    let msg1={};\n    clearTimeout(t);\n    msg1.payload = 'END';\n    node.send(msg1);\n    node.status({});\n}\n\n//==================================\n\nif (msg.reset){\n    myResetFunction();\n}\nelse{\n    var delay = msg.delay;                                                          //  delay in minutes\n    var timer = (delay * 60000) + 250;                                              //  timer in seconds\n    \n    node.status({fill:\"green\", shape:\"ring\", text:\"Active: \" + delay + \" minutes\"});\n    myDelayFunction();  \n}\nreturn null;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -28727,7 +28727,6 @@
         "nodes": [
             "abdc4499891c6871",
             "739eb34ff6d8c742",
-            "7bccbeb28d094a57",
             "6eb23418ea8d86a1",
             "740159707b77305c",
             "3e9a174ab4a78882",
@@ -28738,69 +28737,10 @@
             "dc156fecfc1bc1e8",
             "c4295ed66d438dd7",
             "0bc6f2130b8acb9d",
-            "9f75b032f8c2eeb5",
             "bcda44f3140d86e9"
         ],
         "x": 134,
-        "y": 99,
-        "w": 632,
-        "h": 382
-    },
-    {
-        "id": "7bccbeb28d094a57",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "fca08ea5bf5103fd",
-        "group": "55fef8703465841e",
-        "order": 4,
-        "width": 1,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 680,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "9f75b032f8c2eeb5",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "fca08ea5bf5103fd",
-        "group": "338420d1319e8350",
-        "order": 15,
-        "width": 9,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 680,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "55fef8703465841e",
-        "type": "ui_group",
-        "name": "Help",
-        "tab": "4fb3ce05f81e8c95",
-        "order": 4,
-        "disp": false,
-        "width": "14",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "4fb3ce05f81e8c95",
-        "type": "ui_tab",
-        "name": "Solar",
-        "icon": "wb_sunny",
-        "order": 7,
-        "disabled": false,
-        "hidden": false
+        "y": 99
     },
     {
         "id": "5505432507101e93",
@@ -28813,54 +28753,13 @@
         "nodes": [
             "be48f3104249b8a0",
             "b33b45b8a4e1398b",
-            "1058327295d17e05",
             "184850f4f96ed36c",
             "da5eda62cc98aecc",
             "43be81558a98b102",
             "c2935eeb2b0919cf"
         ],
-        "x": null,
-        "y": null,
-        "w": null,
-        "h": null
-    },
-    {
-        "id": "1058327295d17e05",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "5505432507101e93",
-        "group": "79eed3b289871944",
-        "order": 3,
-        "width": 1,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 580,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "79eed3b289871944",
-        "type": "ui_group",
-        "name": "Help",
-        "tab": "1d038e38da23c646",
-        "order": 3,
-        "disp": false,
-        "width": "12",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "1d038e38da23c646",
-        "type": "ui_tab",
-        "name": "WAR",
-        "icon": "cloud",
-        "order": 3,
-        "disabled": false,
-        "hidden": false
+        "x": 0,
+        "y": 0
     },
     {
         "id": "b5e32619ad0c206e",
@@ -28873,54 +28772,13 @@
         "nodes": [
             "ad4e277358b19235",
             "56f59b7df09abbf3",
-            "3474eb4f4083febc",
             "d00691f660be457b",
             "5f6574f97f240326",
             "8982c1e161d9d215",
             "3c3c8472da1fb85a"
         ],
         "x": 1094,
-        "y": 139,
-        "w": 582,
-        "h": 202
-    },
-    {
-        "id": "3474eb4f4083febc",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "b5e32619ad0c206e",
-        "group": "ae6c2168304beda0",
-        "order": 3,
-        "width": 1,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1460,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "ae6c2168304beda0",
-        "type": "ui_group",
-        "name": "Help",
-        "tab": "d6d4a43045260ac9",
-        "order": 4,
-        "disp": false,
-        "width": "12",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "d6d4a43045260ac9",
-        "type": "ui_tab",
-        "name": "RTC",
-        "icon": "shuffle",
-        "order": 4,
-        "disabled": false,
-        "hidden": false
+        "y": 139
     },
     {
         "id": "c77aed9e30c539d5",
@@ -28933,7 +28791,6 @@
         "nodes": [
             "f9144fc6ad3350af",
             "ecf4984d100b1353",
-            "ded746ab97b49c20",
             "4770fc4ef0f643b3",
             "973d8234e83e6744",
             "c38f069ac9641f6a",
@@ -28945,47 +28802,7 @@
             "7ca958b4b94243f8"
         ],
         "x": 1114,
-        "y": 379,
-        "w": 582,
-        "h": 262
-    },
-    {
-        "id": "ded746ab97b49c20",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "c77aed9e30c539d5",
-        "group": "a606e01fab1bbd66",
-        "order": 3,
-        "width": 1,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1480,
-        "y": 560,
-        "wires": []
-    },
-    {
-        "id": "a606e01fab1bbd66",
-        "type": "ui_group",
-        "name": "Help",
-        "tab": "ac594a9d775ca4fb",
-        "order": 3,
-        "disp": false,
-        "width": "15",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "ac594a9d775ca4fb",
-        "type": "ui_tab",
-        "name": "Scheduler",
-        "icon": "schedule",
-        "order": 8,
-        "disabled": false,
-        "hidden": false
+        "y": 379
     },
     {
         "id": "fde5dafe04d72e23",
@@ -28998,78 +28815,18 @@
         "nodes": [
             "75571074f2ac434c",
             "c652e74baa241047",
-            "3a4234d15cccd2f2",
             "088968fcdf03a215",
             "284c3282438b7e4c",
             "c54eb9703d5f9272",
             "e16790ec4eb50d6c",
             "0c3e58e3b5cd3fd7",
             "e043e3c485777375",
-            "1dc467ae4cf20867",
             "8d47d305edaedefa",
             "8b7c9a76f8ddca81",
             "c96821120dd58acc"
         ],
         "x": 1114,
-        "y": 679,
-        "w": 582,
-        "h": 302
-    },
-    {
-        "id": "3a4234d15cccd2f2",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "fde5dafe04d72e23",
-        "group": "55fef8703465841e",
-        "order": 2,
-        "width": 1,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1480,
-        "y": 860,
-        "wires": []
-    },
-    {
-        "id": "1dc467ae4cf20867",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "fde5dafe04d72e23",
-        "group": "3226b17db86f4510",
-        "order": 4,
-        "width": 1,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1480,
-        "y": 900,
-        "wires": []
-    },
-    {
-        "id": "3226b17db86f4510",
-        "type": "ui_group",
-        "name": "Help",
-        "tab": "992c3064baf54797",
-        "order": 4,
-        "disp": false,
-        "width": 14,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "992c3064baf54797",
-        "type": "ui_tab",
-        "name": "SoftStart",
-        "icon": "power_input",
-        "order": 6,
-        "disabled": false,
-        "hidden": false
+        "y": 679
     },
     {
         "id": "be48f3104249b8a0",
@@ -47896,6 +47653,61 @@
         "className": ""
     },
     {
+        "id": "79eed3b289871944",
+        "type": "ui_group",
+        "name": "Help",
+        "tab": "1d038e38da23c646",
+        "order": 3,
+        "disp": false,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "55fef8703465841e",
+        "type": "ui_group",
+        "name": "Help",
+        "tab": "4fb3ce05f81e8c95",
+        "order": 4,
+        "disp": false,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ae6c2168304beda0",
+        "type": "ui_group",
+        "name": "Help",
+        "tab": "d6d4a43045260ac9",
+        "order": 4,
+        "disp": false,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a606e01fab1bbd66",
+        "type": "ui_group",
+        "name": "Help",
+        "tab": "ac594a9d775ca4fb",
+        "order": 3,
+        "disp": false,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3226b17db86f4510",
+        "type": "ui_group",
+        "name": "Help",
+        "tab": "992c3064baf54797",
+        "order": 4,
+        "disp": false,
+        "width": 14,
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "70a5fe6af8ed1d29",
         "type": "ui_group",
         "name": "NAVIGATION",
@@ -47971,11 +47783,38 @@
         "hidden": false
     },
     {
+        "id": "d6d4a43045260ac9",
+        "type": "ui_tab",
+        "name": "RTC",
+        "icon": "shuffle",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
         "id": "5b5fabb85470bd21",
         "type": "ui_tab",
         "name": "Temperature",
         "icon": "show_chart",
         "order": 9,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1d038e38da23c646",
+        "type": "ui_tab",
+        "name": "WAR",
+        "icon": "cloud",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "992c3064baf54797",
+        "type": "ui_tab",
+        "name": "SoftStart",
+        "icon": "power_input",
+        "order": 6,
         "disabled": false,
         "hidden": false
     },
@@ -48007,6 +47846,15 @@
         "hidden": false
     },
     {
+        "id": "ac594a9d775ca4fb",
+        "type": "ui_tab",
+        "name": "Scheduler",
+        "icon": "schedule",
+        "order": 8,
+        "disabled": false,
+        "hidden": false
+    },
+    {
         "id": "575dc22256fd966c",
         "type": "ui_tab",
         "name": "Cool",
@@ -48021,6 +47869,15 @@
         "name": "Degree days",
         "icon": "show_chart",
         "order": 11,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "4fb3ce05f81e8c95",
+        "type": "ui_tab",
+        "name": "Solar",
+        "icon": "wb_sunny",
+        "order": 7,
         "disabled": false,
         "hidden": false
     },
