@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.01 Beta 1<br/> <br/>
+Current version: 22.02 Beta 1<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -674,6 +674,11 @@ Have fun with your heat pump!</br>
 - [Fix] Softstart. Rewritten the timing logic, and reduced resource footprint at the same time. 
 - [Fix] Softstart. Added gradual reduction of the correction after function end. Now it is going to correction 0 with 1C/5minutes.
 - [Fix] Max MQTT-commands per day not shown correctly.
+
+[2023-02-12] v22.02 beta 1 (experimental). Changes:
+- [Fix] Softstart. Rewritten the complete softstart function (copy parts) but now it works solidly. 
+- [Fix] Quietmode addon (softstart). End signal of quietmode never came. 
+- [changed] Variables of softstart functin are now under 1 main F_SS. variable. More logical names, and better performance.
 
 
 ********
