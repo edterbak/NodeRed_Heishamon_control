@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.02 Beta 1<br/> <br/>
+Current version: 22.03 Beta 1<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -680,6 +680,8 @@ Have fun with your heat pump!</br>
 - [Fix] Quietmode addon (softstart). End signal of quietmode never came. 
 - [changed] Variables of softstart functin are now under 1 main F_SS. variable. More logical names, and better performance.
 
+[2023-02-12] v22.03 beta 1 (experimental). Changes:
+- [Fix] Softstart-Quietmode addon. missing declared msg in the function. 
 
 ********
 
