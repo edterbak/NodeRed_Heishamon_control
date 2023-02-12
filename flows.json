@@ -922,6 +922,41 @@
         "h": 122
     },
     {
+        "id": "eb372b330f37f033",
+        "type": "group",
+        "z": "8c9d42231fd19d3c",
+        "name": "SS Advanced tab",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b643e9d5e036f4ee",
+            "c3c9902496136a46",
+            "a9eac72958d861ac",
+            "e211a5736784a0fc",
+            "bd802f87a97dcefd",
+            "c1486ebe999c1402",
+            "b54015c2f88f6bae",
+            "c3c59a45d2e39fec",
+            "ecb93ad39d98a1fd",
+            "d0269b3429462492",
+            "7bbad0897f1fcc7f",
+            "d6df210fe010dd33",
+            "f94254ca964c6921",
+            "fc318adaf0d65e13",
+            "72a545f547cbe5a3",
+            "3547352170ac81f9",
+            "029c5c12e6deaf2a",
+            "f17562823b007ac8",
+            "6ec6a3d95c50a2f6",
+            "8c0d3e8e47e5848c"
+        ],
+        "x": 2994,
+        "y": 2579,
+        "w": 1132,
+        "h": 462
+    },
+    {
         "id": "5d54922367195a62",
         "type": "link in",
         "z": "8c9d42231fd19d3c",
@@ -1934,8 +1969,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 4190,
-        "y": 3060,
+        "x": 4570,
+        "y": 2660,
         "wires": []
     },
     {
@@ -1946,8 +1981,8 @@
         "links": [
             "93404b62f7fb0fb2"
         ],
-        "x": 3855,
-        "y": 3060,
+        "x": 4235,
+        "y": 2660,
         "wires": [
             [
                 "00dd6c3fd833a5cf"
@@ -2476,8 +2511,8 @@
         "tooltip": "",
         "group": "052caff3b2365345",
         "order": 4,
-        "width": 0,
-        "height": 0,
+        "width": 8,
+        "height": 1,
         "passthru": true,
         "decouple": "false",
         "topic": "Correction_0_WAR_on_off",
@@ -2845,8 +2880,8 @@
         "tooltip": "",
         "group": "e27cfec311892d88",
         "order": 4,
-        "width": 0,
-        "height": 0,
+        "width": 7,
+        "height": 1,
         "passthru": true,
         "decouple": "false",
         "topic": "topic",
@@ -6162,8 +6197,8 @@
         "group": "052caff3b2365345",
         "name": "Line - Temperature profile",
         "order": 5,
-        "width": 0,
-        "height": 0,
+        "width": 8,
+        "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Temperature profile</left> \n</html>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -6220,8 +6255,8 @@
         "group": "052caff3b2365345",
         "name": "Line - Setup ",
         "order": 18,
-        "width": 0,
-        "height": 0,
+        "width": 8,
+        "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Result</left> \n</html>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -6278,8 +6313,8 @@
         "group": "e27cfec311892d88",
         "name": "Line - Setup ",
         "order": 5,
-        "width": 0,
-        "height": 0,
+        "width": 7,
+        "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Setup</left> \n</html>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -6322,8 +6357,8 @@
         "group": "9b8ec8b1b9f66309",
         "name": "Line - Setup ",
         "order": 3,
-        "width": 0,
-        "height": 0,
+        "width": 11,
+        "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -7209,8 +7244,8 @@
         "group": "052caff3b2365345",
         "name": "Line - Setup ",
         "order": 26,
-        "width": 0,
-        "height": 0,
+        "width": 8,
+        "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Advanced</left> \n</html>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -7249,13 +7284,13 @@
         "order": 31,
         "width": 1,
         "height": 1,
-        "name": "spacer 1x1",
+        "name": "----- spacer 1x1",
         "label": "",
         "format": "",
         "layout": "row-right",
         "className": "",
-        "x": 3897.666748046875,
-        "y": 36.66666793823242,
+        "x": 4940,
+        "y": 540,
         "wires": []
     },
     {
@@ -7375,8 +7410,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3990,
-        "y": 3060,
+        "x": 4370,
+        "y": 2660,
         "wires": [
             [
                 "2f6dcfe431b67d95"
@@ -15031,6 +15066,7 @@
         "id": "b643e9d5e036f4ee",
         "type": "ui_button",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "name": "Show SoftStart_Advanced tab",
         "group": "c2a0123d2e2c91f0",
         "order": 3,
@@ -15047,8 +15083,8 @@
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 3450,
-        "y": 2520,
+        "x": 3630,
+        "y": 2620,
         "wires": [
             [
                 "a9eac72958d861ac"
@@ -15059,6 +15095,7 @@
         "id": "c3c9902496136a46",
         "type": "ui_button",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "name": "Hide SoftStart_Advanced tab",
         "group": "e18bf5825c47a08f",
         "order": 2,
@@ -15075,8 +15112,8 @@
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 3540,
-        "y": 2640,
+        "x": 3640,
+        "y": 2660,
         "wires": [
             [
                 "a9eac72958d861ac"
@@ -15087,10 +15124,11 @@
         "id": "a9eac72958d861ac",
         "type": "ui_ui_control",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "name": "",
         "events": "all",
-        "x": 3380,
-        "y": 2560,
+        "x": 3880,
+        "y": 2660,
         "wires": [
             []
         ]
@@ -15099,6 +15137,7 @@
         "id": "e211a5736784a0fc",
         "type": "ui_numeric",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "name": "stage 1 duration",
         "label": "",
         "tooltip": "",
@@ -15115,8 +15154,8 @@
         "max": "200",
         "step": 1,
         "className": "",
-        "x": 3500,
-        "y": 2740,
+        "x": 3600,
+        "y": 2760,
         "wires": [
             [
                 "6ec6a3d95c50a2f6",
@@ -15128,6 +15167,7 @@
         "id": "bd802f87a97dcefd",
         "type": "ui_numeric",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "name": "stage 2 delay",
         "label": "",
         "tooltip": "",
@@ -15144,8 +15184,8 @@
         "max": "180",
         "step": 1,
         "className": "",
-        "x": 3490,
-        "y": 2820,
+        "x": 3590,
+        "y": 2840,
         "wires": [
             [
                 "6ec6a3d95c50a2f6"
@@ -15156,6 +15196,7 @@
         "id": "c1486ebe999c1402",
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "group": "e18bf5825c47a08f",
         "order": 7,
         "width": 4,
@@ -15165,14 +15206,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3040,
-        "y": 2780,
+        "x": 3140,
+        "y": 2800,
         "wires": []
     },
     {
         "id": "b54015c2f88f6bae",
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "group": "e18bf5825c47a08f",
         "order": 10,
         "width": 4,
@@ -15182,14 +15224,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3040,
-        "y": 2820,
+        "x": 3140,
+        "y": 2840,
         "wires": []
     },
     {
         "id": "c3c59a45d2e39fec",
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "group": "e18bf5825c47a08f",
         "order": 13,
         "width": 4,
@@ -15199,14 +15242,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3050,
-        "y": 2860,
+        "x": 3150,
+        "y": 2880,
         "wires": []
     },
     {
         "id": "ecb93ad39d98a1fd",
         "type": "ui_numeric",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "name": "stage 3 delay",
         "label": "",
         "tooltip": "",
@@ -15223,8 +15267,8 @@
         "max": "60",
         "step": 1,
         "className": "",
-        "x": 3490,
-        "y": 2860,
+        "x": 3590,
+        "y": 2880,
         "wires": [
             [
                 "6ec6a3d95c50a2f6"
@@ -15235,6 +15279,7 @@
         "id": "d0269b3429462492",
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "group": "e18bf5825c47a08f",
         "order": 5,
         "width": 4,
@@ -15244,14 +15289,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3040,
-        "y": 2740,
+        "x": 3140,
+        "y": 2760,
         "wires": []
     },
     {
         "id": "7bbad0897f1fcc7f",
         "type": "ui_numeric",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "name": "stage 1 delay",
         "label": "",
         "tooltip": "",
@@ -15268,8 +15314,8 @@
         "max": "30",
         "step": 1,
         "className": "",
-        "x": 3490,
-        "y": 2780,
+        "x": 3590,
+        "y": 2800,
         "wires": [
             [
                 "6ec6a3d95c50a2f6"
@@ -15280,6 +15326,7 @@
         "id": "d6df210fe010dd33",
         "type": "ui_template",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "group": "e18bf5825c47a08f",
         "name": "Line Phase 1",
         "order": 4,
@@ -15291,8 +15338,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 3490,
-        "y": 2900,
+        "x": 3590,
+        "y": 2920,
         "wires": [
             []
         ]
@@ -15301,6 +15348,7 @@
         "id": "f94254ca964c6921",
         "type": "ui_template",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "group": "e18bf5825c47a08f",
         "name": "Line Phase 2",
         "order": 9,
@@ -15312,8 +15360,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 3490,
-        "y": 2940,
+        "x": 3590,
+        "y": 2960,
         "wires": [
             []
         ]
@@ -15322,6 +15370,7 @@
         "id": "fc318adaf0d65e13",
         "type": "ui_template",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "group": "e18bf5825c47a08f",
         "name": "Line Phase 3",
         "order": 12,
@@ -15333,8 +15382,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 3490,
-        "y": 2980,
+        "x": 3590,
+        "y": 3000,
         "wires": [
             []
         ]
@@ -15343,6 +15392,7 @@
         "id": "72a545f547cbe5a3",
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "group": "e18bf5825c47a08f",
         "order": 1,
         "width": 5,
@@ -15352,14 +15402,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3050,
-        "y": 2640,
+        "x": 3150,
+        "y": 2660,
         "wires": []
     },
     {
         "id": "3547352170ac81f9",
         "type": "ui_template",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "group": "e18bf5825c47a08f",
         "name": "Disclaimer",
         "order": 3,
@@ -15371,8 +15422,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 3490,
-        "y": 2700,
+        "x": 3590,
+        "y": 2720,
         "wires": [
             []
         ]
@@ -15381,6 +15432,7 @@
         "id": "029c5c12e6deaf2a",
         "type": "function",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "name": "global.set to variable",
         "func": "if (msg.topic == \"phase_1_delay_time\") {\n    msg.payload = Number(msg.payload).toFixed(0);\n    msg.payload = parseFloat(msg.payload);\n    global.set(\"F_SS.phase_1_delay_time\",msg.payload,\"file\");\n}\n\nif (msg.topic == \"phase_1_duration\") {\n    msg.payload = Number(msg.payload).toFixed(0);\n    msg.payload = parseFloat(msg.payload);\n    global.set(\"F_SS.phase_1_duration\",msg.payload,\"file\");\n}\n\n\nif (msg.topic == \"phase_2_delay_time\") {\n    msg.payload = Number(msg.payload).toFixed(0);\n    msg.payload = parseFloat(msg.payload);\n    global.set(\"F_SS.phase_2_delay_time\",msg.payload,\"file\");\n}\n\n\n\nif (msg.topic == \"phase_3_delay_time\") {\n    msg.payload = msg.payload * 60;                                             // convert to seconds.\n    msg.payload = Number(msg.payload).toFixed(0);\n    msg.payload = parseFloat(msg.payload);\n    global.set(\"F_SS.phase_3_delay_time\",msg.payload,\"file\");\n}\n",
         "outputs": 1,
@@ -15388,8 +15440,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3900,
-        "y": 2800,
+        "x": 4000,
+        "y": 2820,
         "wires": [
             []
         ]
@@ -15398,6 +15450,7 @@
         "id": "f17562823b007ac8",
         "type": "function",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "name": "Load on boot SS",
         "func": "var F_SS = global.get('F_SS',\"file\");\nif ( F_SS                        === undefined )  {F_SS={}; global.set(\"F_SS\",F_SS,\"file\");}\n\n//******************************************************************************\nif ( F_SS.phase_1_duration       === undefined )  {global.set(\"F_SS.phase_1_duration\",9,\"file\");}\nif ( F_SS.phase_1_delay_time     === undefined )  {global.set(\"F_SS.phase_1_delay_time\",180,\"file\");}\nif ( F_SS.phase_2_delay_time     === undefined )  {global.set(\"F_SS.phase_2_delay_time\",60,\"file\");}\nif ( F_SS.phase_3_delay_time     === undefined )  {global.set(\"F_SS.phase_3_delay_time\",600,\"file\");}\n\n//******************************************************************************\n\nlet msg1={};    //  pin 2 phase_1_duration\nlet msg2={};    //  pin 1 phase_1_delay_time\nlet msg3={};    //  pin 3 phase_2_delay_time\nlet msg4={};    //  pin 4 phase_3_delay_time\n\n//******************************************************************************\n\n\nmsg1.payload = F_SS.phase_1_duration;\nmsg2.payload = F_SS.phase_1_delay_time;\nmsg3.payload = F_SS.phase_2_delay_time;\nmsg4.payload = F_SS.phase_3_delay_time / 60;\n\n\n\nreturn [msg1,msg2,msg3,msg4];",
         "outputs": 4,
@@ -15405,8 +15458,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3290,
-        "y": 2800,
+        "x": 3390,
+        "y": 2820,
         "wires": [
             [
                 "e211a5736784a0fc"
@@ -15432,6 +15485,7 @@
         "id": "6ec6a3d95c50a2f6",
         "type": "trigger",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "name": "",
         "op1": "",
         "op2": "",
@@ -15445,8 +15499,8 @@
         "bytopic": "topic",
         "topic": "topic",
         "outputs": 1,
-        "x": 3700,
-        "y": 2800,
+        "x": 3800,
+        "y": 2820,
         "wires": [
             [
                 "029c5c12e6deaf2a"
@@ -15532,6 +15586,7 @@
         "id": "8c0d3e8e47e5848c",
         "type": "inject",
         "z": "8c9d42231fd19d3c",
+        "g": "eb372b330f37f033",
         "name": "1 Trigger / 30 minute",
         "props": [
             {
@@ -15549,8 +15604,8 @@
         "topic": "trigger",
         "payload": "",
         "payloadType": "date",
-        "x": 3040,
-        "y": 2700,
+        "x": 3140,
+        "y": 2720,
         "wires": [
             [
                 "f17562823b007ac8",
@@ -20311,8 +20366,8 @@
         "group": "052caff3b2365345",
         "name": "Line - Setup ",
         "order": 32,
-        "width": 0,
-        "height": 0,
+        "width": 8,
+        "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Internal Panasonic profile (read-only)</left> \n</html>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -27799,7 +27854,7 @@
         "tooltip": "Import correction",
         "place": "Select option",
         "group": "338420d1319e8350",
-        "order": 4,
+        "order": 6,
         "width": 2,
         "height": 1,
         "passthru": true,
@@ -27834,9 +27889,9 @@
         "z": "966985d68ebb4990",
         "g": "3b5324e3d80d96a1",
         "group": "338420d1319e8350",
-        "order": 5,
-        "width": 0,
-        "height": 0,
+        "order": 7,
+        "width": 9,
+        "height": 1,
         "name": "result import",
         "label": "Latest corrected result",
         "format": "{{msg.payload}} W",
@@ -27852,9 +27907,9 @@
         "z": "966985d68ebb4990",
         "g": "3b5324e3d80d96a1",
         "group": "338420d1319e8350",
-        "order": 2,
-        "width": 0,
-        "height": 0,
+        "order": 4,
+        "width": 9,
+        "height": 1,
         "name": "raw value import",
         "label": "P1 raw consumption value",
         "format": "{{msg.payload}}",
@@ -27898,7 +27953,7 @@
         "z": "966985d68ebb4990",
         "g": "3b5324e3d80d96a1",
         "group": "338420d1319e8350",
-        "order": 3,
+        "order": 5,
         "width": 7,
         "height": 1,
         "name": "import correction txt",
@@ -27917,7 +27972,7 @@
         "g": "3b5324e3d80d96a1",
         "group": "338420d1319e8350",
         "name": "Line - Setup  import",
-        "order": 1,
+        "order": 3,
         "width": 9,
         "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Consumption setup</left> \n</html>\n",
@@ -27939,7 +27994,7 @@
         "g": "bf2c1d5a22f56dd8",
         "group": "338420d1319e8350",
         "name": "Line - Setup export",
-        "order": 6,
+        "order": 8,
         "width": 9,
         "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Production setup</left> \n</html>\n",
@@ -27960,9 +28015,9 @@
         "z": "966985d68ebb4990",
         "g": "bf2c1d5a22f56dd8",
         "group": "338420d1319e8350",
-        "order": 10,
-        "width": 0,
-        "height": 0,
+        "order": 12,
+        "width": 9,
+        "height": 1,
         "name": "result export",
         "label": "Latest corrected result",
         "format": "{{msg.payload}} W",
@@ -27978,9 +28033,9 @@
         "z": "966985d68ebb4990",
         "g": "bf2c1d5a22f56dd8",
         "group": "338420d1319e8350",
-        "order": 7,
-        "width": 0,
-        "height": 0,
+        "order": 9,
+        "width": 9,
+        "height": 1,
         "name": "raw value export",
         "label": "P1 raw production value",
         "format": "{{msg.payload}}",
@@ -28028,7 +28083,7 @@
         "tooltip": "Export correction",
         "place": "Select option",
         "group": "338420d1319e8350",
-        "order": 9,
+        "order": 11,
         "width": 2,
         "height": 1,
         "passthru": true,
@@ -28063,7 +28118,7 @@
         "z": "966985d68ebb4990",
         "g": "bf2c1d5a22f56dd8",
         "group": "338420d1319e8350",
-        "order": 8,
+        "order": 10,
         "width": 7,
         "height": 1,
         "name": "export correction txt",
@@ -28188,7 +28243,7 @@
         "g": "bf2c1d5a22f56dd8",
         "group": "338420d1319e8350",
         "name": "Line - Setup export",
-        "order": 11,
+        "order": 13,
         "width": 9,
         "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Note:</left> \n</html>\n",
@@ -28209,7 +28264,7 @@
         "z": "966985d68ebb4990",
         "g": "bf2c1d5a22f56dd8",
         "group": "338420d1319e8350",
-        "order": 12,
+        "order": 14,
         "width": 9,
         "height": 2,
         "name": "",
@@ -28687,7 +28742,65 @@
             "bcda44f3140d86e9"
         ],
         "x": 134,
-        "y": 99
+        "y": 99,
+        "w": 632,
+        "h": 382
+    },
+    {
+        "id": "7bccbeb28d094a57",
+        "type": "ui_text",
+        "z": "72f2748729e53ad1",
+        "g": "fca08ea5bf5103fd",
+        "group": "55fef8703465841e",
+        "order": 4,
+        "width": 1,
+        "height": 1,
+        "name": "spacer 1",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 680,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "9f75b032f8c2eeb5",
+        "type": "ui_text",
+        "z": "72f2748729e53ad1",
+        "g": "fca08ea5bf5103fd",
+        "group": "338420d1319e8350",
+        "order": 15,
+        "width": 9,
+        "height": 1,
+        "name": "spacer 1",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 680,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "55fef8703465841e",
+        "type": "ui_group",
+        "name": "Help",
+        "tab": "4fb3ce05f81e8c95",
+        "order": 4,
+        "disp": false,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4fb3ce05f81e8c95",
+        "type": "ui_tab",
+        "name": "Solar",
+        "icon": "wb_sunny",
+        "order": 7,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "5505432507101e93",
@@ -28706,8 +28819,48 @@
             "43be81558a98b102",
             "c2935eeb2b0919cf"
         ],
-        "x": 214,
-        "y": 499
+        "x": null,
+        "y": null,
+        "w": null,
+        "h": null
+    },
+    {
+        "id": "1058327295d17e05",
+        "type": "ui_text",
+        "z": "72f2748729e53ad1",
+        "g": "5505432507101e93",
+        "group": "79eed3b289871944",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "name": "spacer 1",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 580,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "79eed3b289871944",
+        "type": "ui_group",
+        "name": "Help",
+        "tab": "1d038e38da23c646",
+        "order": 3,
+        "disp": false,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1d038e38da23c646",
+        "type": "ui_tab",
+        "name": "WAR",
+        "icon": "cloud",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "b5e32619ad0c206e",
@@ -28727,7 +28880,47 @@
             "3c3c8472da1fb85a"
         ],
         "x": 1094,
-        "y": 139
+        "y": 139,
+        "w": 582,
+        "h": 202
+    },
+    {
+        "id": "3474eb4f4083febc",
+        "type": "ui_text",
+        "z": "72f2748729e53ad1",
+        "g": "b5e32619ad0c206e",
+        "group": "ae6c2168304beda0",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "name": "spacer 1",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1460,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "ae6c2168304beda0",
+        "type": "ui_group",
+        "name": "Help",
+        "tab": "d6d4a43045260ac9",
+        "order": 4,
+        "disp": false,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d6d4a43045260ac9",
+        "type": "ui_tab",
+        "name": "RTC",
+        "icon": "shuffle",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "c77aed9e30c539d5",
@@ -28752,7 +28945,47 @@
             "7ca958b4b94243f8"
         ],
         "x": 1114,
-        "y": 379
+        "y": 379,
+        "w": 582,
+        "h": 262
+    },
+    {
+        "id": "ded746ab97b49c20",
+        "type": "ui_text",
+        "z": "72f2748729e53ad1",
+        "g": "c77aed9e30c539d5",
+        "group": "a606e01fab1bbd66",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "name": "spacer 1",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1480,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "a606e01fab1bbd66",
+        "type": "ui_group",
+        "name": "Help",
+        "tab": "ac594a9d775ca4fb",
+        "order": 3,
+        "disp": false,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ac594a9d775ca4fb",
+        "type": "ui_tab",
+        "name": "Scheduler",
+        "icon": "schedule",
+        "order": 8,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "fde5dafe04d72e23",
@@ -28778,7 +29011,65 @@
             "c96821120dd58acc"
         ],
         "x": 1114,
-        "y": 679
+        "y": 679,
+        "w": 582,
+        "h": 302
+    },
+    {
+        "id": "3a4234d15cccd2f2",
+        "type": "ui_text",
+        "z": "72f2748729e53ad1",
+        "g": "fde5dafe04d72e23",
+        "group": "55fef8703465841e",
+        "order": 2,
+        "width": 1,
+        "height": 1,
+        "name": "spacer 1",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1480,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "1dc467ae4cf20867",
+        "type": "ui_text",
+        "z": "72f2748729e53ad1",
+        "g": "fde5dafe04d72e23",
+        "group": "3226b17db86f4510",
+        "order": 4,
+        "width": 1,
+        "height": 1,
+        "name": "spacer 1",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1480,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "3226b17db86f4510",
+        "type": "ui_group",
+        "name": "Help",
+        "tab": "992c3064baf54797",
+        "order": 4,
+        "disp": false,
+        "width": 14,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "992c3064baf54797",
+        "type": "ui_tab",
+        "name": "SoftStart",
+        "icon": "power_input",
+        "order": 6,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "be48f3104249b8a0",
@@ -28841,10 +29132,10 @@
         "name": "",
         "group": "79eed3b289871944",
         "order": 2,
-        "width": 2,
+        "width": 1,
         "height": 1,
         "passthru": false,
-        "label": "Close",
+        "label": "",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -28875,31 +29166,13 @@
         ]
     },
     {
-        "id": "1058327295d17e05",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "5505432507101e93",
-        "group": "79eed3b289871944",
-        "order": 3,
-        "width": 1,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 580,
-        "y": 620,
-        "wires": []
-    },
-    {
         "id": "184850f4f96ed36c",
         "type": "ui_text",
         "z": "72f2748729e53ad1",
         "g": "5505432507101e93",
         "group": "79eed3b289871944",
         "order": 1,
-        "width": 9,
+        "width": 11,
         "height": 1,
         "name": "spacer 1",
         "label": "",
@@ -28980,31 +29253,13 @@
         ]
     },
     {
-        "id": "7bccbeb28d094a57",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "fca08ea5bf5103fd",
-        "group": "55fef8703465841e",
-        "order": 4,
-        "width": 1,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 680,
-        "y": 220,
-        "wires": []
-    },
-    {
         "id": "6eb23418ea8d86a1",
         "type": "ui_template",
         "z": "72f2748729e53ad1",
         "g": "fca08ea5bf5103fd",
         "group": "55fef8703465841e",
         "name": "Line - Instructions text",
-        "order": 5,
+        "order": 3,
         "width": 14,
         "height": 22,
         "format": "<h3>Solar</h3></br>\n<h3>What can this function do for you?</h3>\nThe aim of this function is to increase efficiency (and save cost) by utilize your own produced solar energy as much as\npossible. When there is solar energy in abundance, you can use that energy to heat up your DHW. To determine if there is\nenough solar energy, you need any form of power measurement. This can be a P1 power meter in your electric room, or you\ncan use the output from your inverter.\n</br></br><h3>How to setup?</h3>\nFirst go to the Solar page and click P1 SETUP, there you have to set the Correction factor. This can either be 1 or\n1000, depending if your source feeds watts or Kilowatts. Set this for Consumption and Production. You will the corrected\nresult straight away, but of course, it does need to be sunny for the production to show up, as these are realtime\nvalues.</br>\n</br>\nSecondly, you need to set the DHW setpoints.</br>\n</br><u>DHW temperature setpoint - high</u>\nThis is the target temperature for the water in DHW tank. By default, DHW (SP) on the settings page is used at the beginning of each day.\nDHW temperature setpoint - high will be used when solar power reached the threshold.\n</br></br><u>Power detection method</u>\nThere are three options available.</br></br>\n<i>Option 1: Power Live (kW)</br></i>\nLive energy production in watt. See image 1.</br></br>\n<i>Option 2: Today's production (kWh)</i>\nTodays energy production, expressed in kWh. Energy consumption will NOT be subtracted from this value, it will only\nincrease. See image 2.</br></br>\n<i>Option 3: Today's result (kWh)</i>\nTodays result, which is the sum of production and consumption. Energy consumption will be subtracted from this value, so\nit can in- or decrease.</br>\n</br><u>Threshold</u>\nThis is the threshold above which the DHW temperature setpoint - high would be set as the new target value.</br>\n</br><u>Fallback to default DHW (SP) below 0 W?</u>\nBy default, once DHW temperature setpoint - high is used, it will not switch back to DHW (SP) for the rest of the\nday. If you do want to fall back to DHW (SP) when power production drops below zero watt, enable Fallback to DHW (SP) below 0 W?</br> This will only apply for the power detection method Option 1: Power\nLive (kW).</br>\n</br><u>Solar function active when heat pump is off</u>\nWhen enabled the heat pump will be switched on when the Treshold is reached.\n</br></br><h3>Notes:</h3></br>\n- Power option 1 can cause power cycling",
@@ -29026,7 +29281,7 @@
         "g": "fca08ea5bf5103fd",
         "group": "55fef8703465841e",
         "name": "",
-        "order": 6,
+        "order": 4,
         "width": 7,
         "height": 6,
         "format": "<div height=\"300\" style=\"height: 300px;\">\n<img src=\"https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/chart%20powerproduction_1.png?raw=true\" width=325px><br/>\n</div>\nImage 1: kW Production now",
@@ -29048,7 +29303,7 @@
         "g": "fca08ea5bf5103fd",
         "group": "55fef8703465841e",
         "name": "",
-        "order": 7,
+        "order": 5,
         "width": 7,
         "height": 6,
         "format": "<div height=\"300\" style=\"height: 300px;\">\n<img src=\"https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/chart%20powerproduction_2.png?raw=true\" width=325px><br/>\n</div>\nimage 2: kwh Production today\n",
@@ -29070,11 +29325,11 @@
         "g": "fca08ea5bf5103fd",
         "name": "",
         "group": "55fef8703465841e",
-        "order": 3,
-        "width": 2,
+        "order": 2,
+        "width": 1,
         "height": 1,
         "passthru": false,
-        "label": "Close",
+        "label": "",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -29098,7 +29353,7 @@
         "z": "72f2748729e53ad1",
         "g": "fca08ea5bf5103fd",
         "group": "55fef8703465841e",
-        "order": 8,
+        "order": 6,
         "width": 14,
         "height": 1,
         "name": "spacer 14",
@@ -29117,7 +29372,7 @@
         "g": "fca08ea5bf5103fd",
         "group": "55fef8703465841e",
         "order": 1,
-        "width": 10,
+        "width": 13,
         "height": 1,
         "name": "spacer 11",
         "label": "",
@@ -29149,7 +29404,7 @@
         "g": "5505432507101e93",
         "group": "79eed3b289871944",
         "name": "Line - Instructions text",
-        "order": 4,
+        "order": 3,
         "width": 12,
         "height": 18,
         "format": "<h3>WAR - Weather Adaptable Regulation</h3>\n<br/>\n<h3>What can this function do for you?</h3>\nThe aim of this function is to dynamically change the water temperature used for heating, compensating for the outside\nweather. If it is very cold outside, you require more heat compared to when it is warmer outside to end up with a\ncomfortable house. This function will thuss compensate the increasing heat loss the colder it get outside.\n<br/>\nThis will allow the heat pump to run at a lower, more efficient rate saving you energy. This will reduce cycling of the\ncompressor to increase its lifetime.\n<br/><br/>\n<h3>How to setup?</h3>\n<br/><u>Temperature profile</u>\nHere you can program three points, where you give the outside temperature and the corresponding target water\ntemperatures.\n<br/>\nThe first (top) point is the highest outside temperature, by default this one is set to 15 °C. This corresponds to the\nmaximum outside temperature the Panasonic accepts.\nThe last (bottom) point should be the lowest outside temperature you will realistically experience in you situation.\n<br/>\nWith the center point you can adjust the curve more to your liking. This will give you the ability to give you a bit\nmore heat when freezing for example.\nThis will give you the WAR temperature profile graph.\nDefault values: xxx\n<br/><br/><u>Result</u>\nThe actual outside temperature is used to find the corresponding water temperature according to your given settings. The\nresult will be rounded to whole degrees celcius and shown at Calculated temp..\n<br/><br/><u>Advanced</u>\nIf you want to use the WAR functionality of the Panasonic itself instead of this flow, you can export the Temperature\nprofile to your HeishaMon / Panasonic.\n<br/><br/>\n<h3>Notes:</h3>\n- The Panasonic has its own outside thermometer, this is typically located in the little black rubber tube on the back\nof the device. It’s quite inaccurate, especially if the sun is allowed to reach it, it is strongly recommended to use a\nproper outside sensor<br/>\n- Outside temperature range: -20°C - 15°C<br/>\n- Water temperature range: 20°C - 60°C<br/>\n- The Panasonic internally works with 2 points, instead of the 3 in this flow<br/>\n- If you do not require three points, use 2 identical Water temperatures but unique Outside temperatures<br/>",
@@ -29227,10 +29482,10 @@
         "name": "",
         "group": "ae6c2168304beda0",
         "order": 2,
-        "width": 2,
+        "width": 1,
         "height": 1,
         "passthru": false,
-        "label": "Close",
+        "label": "",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -29249,31 +29504,13 @@
         ]
     },
     {
-        "id": "3474eb4f4083febc",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "b5e32619ad0c206e",
-        "group": "ae6c2168304beda0",
-        "order": 3,
-        "width": 1,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1460,
-        "y": 260,
-        "wires": []
-    },
-    {
         "id": "d00691f660be457b",
         "type": "ui_text",
         "z": "72f2748729e53ad1",
         "g": "b5e32619ad0c206e",
         "group": "ae6c2168304beda0",
         "order": 1,
-        "width": 9,
+        "width": 11,
         "height": 1,
         "name": "spacer 1",
         "label": "",
@@ -29305,7 +29542,7 @@
         "g": "b5e32619ad0c206e",
         "group": "ae6c2168304beda0",
         "name": "Line - Instructions text",
-        "order": 4,
+        "order": 3,
         "width": 12,
         "height": 25,
         "format": "<h3>RTC - Room Temperature Correction</h3>\n<br/>\n<h3>What can this function do for you?</h3>\nThis function corrects the water temperature based on the actual room temperature. It is desgined to do small\ncorrections to prevent an under- or overshoot in room temperature. It is also useful in situations where direct sunlight warms up the room.\n<br/><br/>\nThe basis for the setup is the temperature difference between actual (Room actual) and target (Room setpoint).\n<br/>\nWhen the room is too warm, the default water temperature for Heat is decreased by 1, 2 or 3 degrees celcius, and vice versa.\n<br/>\nWhen properly configured this will result in a more stable (comfortable) room temperature. On the other hand, when not correctly\nconfigured it can result in increased cycling of the heat pump. This can causing extra wear and increased energy costs. So please take your\ntime to set it up right for your situation.\n<br/><br/>\n\n<h3>setup</h3>\nFirst enter a desired temperature at Room setpoint.\n<br/>\nSecondly you need to enter at which point the water temperature will be changed by 1, 2 or 3 degrees celcius. This will\ntake a bit of experimenting. For example if you use floor heating smaller deltas (0.1) work better because by its nature it is\nslow to respond. When using radiators you can increase the deltas (0.5). Try to make small changes at a time and observe the result for\nat least 1 or 2 days.\n<br/><br/>\nThe 'custom' option offers you the ability to increase the water temperature by your choice. This can be useful if you require a heating boost e.g. in the morning. This is not adviced for floor heating, but only for radiator type heating.\n<br/><br/>\n\nDefault values:<br/>\n0,5 Degree too warm/cold gives you 1 degree warmer water. 1,0 too warm/cold gives 2, 1,5 too warm/cold gives 3.<br/><br/>\n<h3>Important note:</h3>\nThe Panasonic has its own inside thermometer located in the wall mounted Remote Controller. It is inaccurate and really not\nsuitable to use for this RTC function. Please use a custom indoor sensor with an accuracy of 0,1°C.\nFor example a BMP280 or BME280. Be sure to place it somewhere out of direct sunlight or a cold draft.<br/>\n<br/>\n-----------------------------------\n<br/>\n<u>Incremental setpoints</u>\nWhen enabled, the setpoints (water temperatures) will be incrementally calculated in steps of 1°C. This applies only between the +3 and +custom temperatures.<br/><br/>\n<u>Automations:</u>\nTo make use of this automation, you need to set two temperatures. <br/>\nActivate above dT: When the room temperature is above this line, the action will be triggered.<br/>\nDeactivate below dT: When the room temperature travels below this line, the reverse action will be triggered.<br/>\nBoth the above/below dT temperatures are relative to the setpoint.<br/>\n<br/>\nAction: Change operating mode<br/>\nIf the room temperature is above dT, the current operating mode will have HEAT mode removed from it.<br/>\nIf the room temperature is below dT, the current operating mode will have HEAT mode added to it.<br/>\n<br/>\nAction: Turn off/on power<br/>\nIf the room temperature is above dT, the heatpump will be turned off. (condition: Operating Mode must be Heat-only or Auto(Heat))<br/>\nIf the room temperature is below dT, the heatpump will be turned on again.<br/>\n<br/>\n",
@@ -29383,10 +29620,10 @@
         "name": "",
         "group": "a606e01fab1bbd66",
         "order": 2,
-        "width": 2,
+        "width": 1,
         "height": 1,
         "passthru": false,
-        "label": "Close",
+        "label": "",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -29405,31 +29642,13 @@
         ]
     },
     {
-        "id": "ded746ab97b49c20",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "c77aed9e30c539d5",
-        "group": "a606e01fab1bbd66",
-        "order": 3,
-        "width": 1,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1480,
-        "y": 560,
-        "wires": []
-    },
-    {
         "id": "4770fc4ef0f643b3",
         "type": "ui_text",
         "z": "72f2748729e53ad1",
         "g": "c77aed9e30c539d5",
         "group": "a606e01fab1bbd66",
         "order": 1,
-        "width": 12,
+        "width": 14,
         "height": 1,
         "name": "spacer 1",
         "label": "",
@@ -29461,7 +29680,7 @@
         "g": "c77aed9e30c539d5",
         "group": "a606e01fab1bbd66",
         "name": "Line - Instructions text",
-        "order": 4,
+        "order": 3,
         "width": 15,
         "height": 32,
         "format": "<h3>Scheduler instructions</h3>\n<br/>\n<h3>What can the scheduler do for you?</h3>\nYou can program certain tasks to be started at the specified time and day.<br/>\n<br/>\n<h3>What is the main difference between this scheduler and the native Panasonic one?</h3>\nThe Panasonic scheduler always swtiches on the heat pump when a task is due. This scheduler offers you control over this\nbehavior.\n\nThe native Panasonic scheduler can be operational simultaneously with this scheduler. This can be convenient for some\nvery specific tasks, but it is strongly recommended to only use one scheduler to avoid conflicting tasks and unexpected\nbehavior. Both schedulers do not communicate.\n\n<br/><br/>\n<u>Enable</u>\nThis simply enables or disables the task.\n\n<br/><br/>\n<u>Name</u>\nGive your personal short name or description to the task.\n<br/><br/>\n<u>Action</u>\nSelect the action you want to perform.\n\n<br/>\n<i>Force DHW</i><br/>\nThis action will do several things:<br/>\n1 - Add DHW to the current operating mode if missing<br/>\n2 - Turn on [Force DHW mode]<br/>\n3 - Execute the DHW run to the target temperature<br/>\n4 - Turn off [Force DHW mode]<br/>\n5 - Remove DHW from Operating mode again if it was missing at step 1<br/>\n<br/>\nAttention: The Force DHW run will not start if the current DHW temperature is above the set temperature in [Force DHW -\nAllow only below] in the 'related settings' section. If you do not want this, set this temperature very high (eg. 100\ndegree C). The Panasonic internal rules (minimum dT) will always be followed.\n<br/><br/>\nThe scheduled Force DHW action is fundamentally different compared to the switch Force DHW under settings or on the controller. They requires certain conditions.\n<br/><br/>\n<i>Force Sterilization</i><br/>\nThis action will do several things:<br/>\n1 - Add DHW to the current operating mode if missing<br/>\n2 - Turn on [Force DHW mode] + Turn on [Force Sterilization]<br/>\n3 - Execute the Sterilization run to the target temperature<br/>\n4 - Turn off [Force Sterilization mode] + Turn off [Force DHW mode]<br/>\n5 - Remove DHW from Operating mode again<br/>\n<br/>\n<i>Quiet Mode</i><br/>\nThis will set the quiet mode to the specified level.\n<br/><br/>\n<i>Operation Mode</i><br/>\nThis will set the operation mode as specified.\n<br/>\n<i>Nightreduction water temperature on/off</i><br/>\nThis wil add a negative correction to the water temperature, which will result in a lower Final water temperature (but\nnever lower then 20 °C).\n<br/><br/>\n<i>Nightreduction room temperature on/off</i><br/>\nWhen on this will reduce the RTC room setpoint to the setpoint-low value set on the right.<br/>\nWhen off this will restore the RTC room setpoint to the setpoint-Normal value set on the right.<br/>\nDefaults: ON = 18 °C , OFF = 21 °C , RANGE 0 °C - 30 °C<br/>\n<br/><br/>\n<u>Power on</u><br/>\nBy default a task will not run if the heat pump is powered off. If you want the heat pump to be powered on and execute the task, enable the power on toggle.\n<br/><br/>\n<u>Heat water temperature limits</u><br/>\nHere you can program the absolut upper and lower limits you never want HEAT to go over/under. This can be used to\nprevent oscillating behaviour, make compressor runs longer and the HP more efficient.</br>\n<u>Nightreduction Room setpoint</u><br/>\nHere you can set the room setpoint LOW and NORMAL when using task Nightreduction room setpoint.<br/>",
@@ -29641,10 +29860,10 @@
         "name": "",
         "group": "3226b17db86f4510",
         "order": 2,
-        "width": 2,
+        "width": 1,
         "height": 1,
         "passthru": false,
-        "label": "Close",
+        "label": "",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -29663,31 +29882,13 @@
         ]
     },
     {
-        "id": "3a4234d15cccd2f2",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "fde5dafe04d72e23",
-        "group": "55fef8703465841e",
-        "order": 2,
-        "width": 1,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1480,
-        "y": 860,
-        "wires": []
-    },
-    {
         "id": "088968fcdf03a215",
         "type": "ui_text",
         "z": "72f2748729e53ad1",
         "g": "fde5dafe04d72e23",
         "group": "3226b17db86f4510",
         "order": 1,
-        "width": 11,
+        "width": 13,
         "height": 1,
         "name": "spacer 1",
         "label": "",
@@ -29719,7 +29920,7 @@
         "g": "fde5dafe04d72e23",
         "group": "3226b17db86f4510",
         "name": "Line - Instructions text pt1",
-        "order": 4,
+        "order": 3,
         "width": 14,
         "height": 8,
         "format": "<h3>SoftStart</h3>\n<br/>\n<h3>What can the SoftStart function do for you?</h3>\nDefault behaviour of the heatpump when the compressor starts for a HEAT run, is that the frequency (Hz) will go to medium / high level. The frequency stays high until the returning water temperature (See Temp. inlet (PV) at the Home screen) approaches the setpoint. Only then the compressor ramps down.\n</br></br>\nThe primary goal of this function is to quickly lower the compressor frequency after starting a HEAT run. The heatpump will more quickly be in a stable / low power operating windows. As a result of that the length of the run might increase, it consumes less energy and generating less noise. A downside of this could be that heating is slower.\n<br/><br/>\nA secondairy goal of this function is to increase compressor runtime by slowly increasing the water setpoint. The setpoint will contineously be moved just outside the window where it will stop a heating run. By allowing the setpont to slide up along with the returning water (Tinlet), the run length will not be terminated. A possible downside of this could be the room temperature getting too high. \n<br/>\n",
@@ -29801,24 +30002,6 @@
         "wires": []
     },
     {
-        "id": "1dc467ae4cf20867",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "fde5dafe04d72e23",
-        "group": "3226b17db86f4510",
-        "order": 3,
-        "width": 1,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1480,
-        "y": 900,
-        "wires": []
-    },
-    {
         "id": "8d47d305edaedefa",
         "type": "ui_template",
         "z": "72f2748729e53ad1",
@@ -29876,11 +30059,11 @@
         "g": "fca08ea5bf5103fd",
         "name": "",
         "group": "338420d1319e8350",
-        "order": 14,
-        "width": 2,
+        "order": 2,
+        "width": 1,
         "height": 1,
         "passthru": false,
-        "label": "Close",
+        "label": "",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
@@ -29904,33 +30087,15 @@
         "z": "72f2748729e53ad1",
         "g": "fca08ea5bf5103fd",
         "group": "338420d1319e8350",
-        "order": 13,
-        "width": 6,
+        "order": 1,
+        "width": 8,
         "height": 1,
         "name": "spacer 11",
-        "label": "",
+        "label": "P1 setup",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
         "x": 380,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "9f75b032f8c2eeb5",
-        "type": "ui_text",
-        "z": "72f2748729e53ad1",
-        "g": "fca08ea5bf5103fd",
-        "group": "338420d1319e8350",
-        "order": 15,
-        "width": 1,
-        "height": 1,
-        "name": "spacer 1",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 680,
         "y": 260,
         "wires": []
     },
@@ -29967,7 +30132,7 @@
         "g": "fde5dafe04d72e23",
         "group": "3226b17db86f4510",
         "name": "",
-        "order": 5,
+        "order": 4,
         "width": 14,
         "height": 9,
         "format": "<div height=\"300\" style=\"height: 300px;\">\n\n<img src=\"https://raw.githubusercontent.com/edterbak/NodeRed_Heishamon_control/main/images/SoftStart_graph2.png\" width=700px><br/>\n\n</div>\nImage 1: kW Production now",
@@ -29989,7 +30154,7 @@
         "g": "fde5dafe04d72e23",
         "group": "3226b17db86f4510",
         "name": "Line - Instructions text pt2",
-        "order": 6,
+        "order": 5,
         "width": 14,
         "height": 20,
         "format": "<h3>How it works</h3>\nIn the graph above, shown is the compressor frequency (Hz) vs time (minutes).<br/>\n<br/>\n<h3>Primary goal - Reduce frequency ASAP</h3>\n<u>(1) Runtime</u>\nSet the duration this function to be active from the start. After this time, the correction on the water setpoint will be set to 0 (zero ) again. <i>Default: 15 minutes</i>\n<br/>\n<u>(2) Max. setpoint increase</u>\nThis will set the maximum setpoint increase for the water temperature. This is relative to the normally calculated water temperature. The higher\nincrease allowed, the longer the compressor will run. But of course, the higher the overshoot in room temperature could be. <i>Default: 1 °C</i><br/>\n<h4>Additional settings.</h4>\n<u>(3) Quietmode (Optional)</u>\nQuietmode 1, 2 and 3 have an effect on the maximum allowed compressor frequency and fan speed. quietmode 3 will limit compressor and fan speed the most.</br> \nEnable / disable the use of quietmode by the softstart function. </br>\n<i>Default: Disabled</i></bt></br>\nSet the duration for it to be active from the start of a HEAT run.<br/>\n<br/>\n<u>Reset after defrost</u>\nWhen enabled, the softstart function will be reset during a defrost. This will result in 'catching' the high compressor frequencies each time.\nWhen disabled, the counter will continue after a defrost. As a result of this, the softstart function can reach the 'end'-pont sooner. \n<br/><i>Default: Disabled</i>\n</br><br/>\n\n<h3>Secondary goal - Prevent short HEAT runs</h3>\n<u>(1) Runtime</u>\nUp to the user. Typically in the range of 1 - 24 hour(s).\n<br/><br/>\n<u>(2) Max. setpoint increase</u>\nUp to the user. Typically in the range of 2°C - 3°C degrees.\n<br/><br/>\n<br/>\nNote: When softstart function is enabled, it does not guarantee the compressor won't turn off within this time period. Normal internal logic of the Panasonic still applies, so when the water is warm enough the compressor stops.\n</br></br>\nNote 2: There are multiple types of heatpumps. Split units, monoblock, T-CAP. Not all types respond in the same way during a heat run. Example, the T-CAP can be slow to reduce the compressor frequency after start. ",
@@ -30043,9 +30208,7 @@
             "1372ccca982b4f0a"
         ],
         "x": 714,
-        "y": 99,
-        "w": 2152,
-        "h": 159.5
+        "y": 99
     },
     {
         "id": "b63004182c33d3b9",
@@ -30088,9 +30251,7 @@
             "68f4601da2aa107a"
         ],
         "x": 2334,
-        "y": 1979,
-        "w": 1432,
-        "h": 482
+        "y": 1979
     },
     {
         "id": "52cd9ca2a87cc237",
@@ -30117,9 +30278,7 @@
             "479965c26a5f5d15"
         ],
         "x": 714,
-        "y": 261.5,
-        "w": 2152,
-        "h": 157
+        "y": 261.5
     },
     {
         "id": "77ef78074c745b33",
@@ -30146,9 +30305,7 @@
             "57520972cf8f3282"
         ],
         "x": 714,
-        "y": 421.5,
-        "w": 2152,
-        "h": 157
+        "y": 421.5
     },
     {
         "id": "0f18bd088c4ce661",
@@ -30175,9 +30332,7 @@
             "73e5b776ee37e929"
         ],
         "x": 714,
-        "y": 581.5,
-        "w": 2152,
-        "h": 157
+        "y": 581.5
     },
     {
         "id": "49e35dcf3adf972f",
@@ -30204,9 +30359,7 @@
             "fd75ca33fe4a9589"
         ],
         "x": 714,
-        "y": 741.5,
-        "w": 2152,
-        "h": 157
+        "y": 741.5
     },
     {
         "id": "131bb514acb6c38f",
@@ -30233,9 +30386,7 @@
             "4470d0d9384e5146"
         ],
         "x": 714,
-        "y": 901.5,
-        "w": 2152,
-        "h": 157
+        "y": 901.5
     },
     {
         "id": "13c1334900bc3740",
@@ -30262,9 +30413,7 @@
             "0a155882d5693fda"
         ],
         "x": 714,
-        "y": 1061.5,
-        "w": 2152,
-        "h": 157
+        "y": 1061.5
     },
     {
         "id": "a4db9b20ef5bc75c",
@@ -30291,9 +30440,7 @@
             "fe24caf7cb4e92d3"
         ],
         "x": 714,
-        "y": 1221.5,
-        "w": 2152,
-        "h": 157
+        "y": 1221.5
     },
     {
         "id": "4b0ab44dfd6f65c3",
@@ -30320,9 +30467,7 @@
             "611bf69e3ab85546"
         ],
         "x": 714,
-        "y": 1381.5,
-        "w": 2152,
-        "h": 157
+        "y": 1381.5
     },
     {
         "id": "4f450eb680618622",
@@ -30349,9 +30494,7 @@
             "a477e5b86fe9c792"
         ],
         "x": 714,
-        "y": 1541.5,
-        "w": 2172,
-        "h": 157
+        "y": 1541.5
     },
     {
         "id": "92293ba8ccc5db0f",
@@ -30388,9 +30531,7 @@
             "55a0fb67fbe206cf"
         ],
         "x": 74,
-        "y": 2519,
-        "w": 1392,
-        "h": 322
+        "y": 2519
     },
     {
         "id": "40f0401e20235a07",
@@ -42891,9 +43032,7 @@
             "510f802795714d75"
         ],
         "x": 2114,
-        "y": 539,
-        "w": 692,
-        "h": 222
+        "y": 539
     },
     {
         "id": "5c3df7b5fb0fa130",
@@ -42923,9 +43062,7 @@
             "5837cbf37ef47ea6"
         ],
         "x": 1964,
-        "y": 1359,
-        "w": 872,
-        "h": 302
+        "y": 1359
     },
     {
         "id": "404eed4ef9d90803",
@@ -42946,9 +43083,7 @@
             "c5e1f08f07eb647b"
         ],
         "x": 2014,
-        "y": 19,
-        "w": 812,
-        "h": 162
+        "y": 19
     },
     {
         "id": "c361a153997d2dfd",
@@ -42970,9 +43105,7 @@
             "9c9a39333c2213e6"
         ],
         "x": 924,
-        "y": 159,
-        "w": 272,
-        "h": 242
+        "y": 159
     },
     {
         "id": "8fe25c73d37fe670",
@@ -43032,9 +43165,7 @@
             "646815dd1d600ff2"
         ],
         "x": 1944,
-        "y": 219,
-        "w": 942,
-        "h": 1122
+        "y": 219
     },
     {
         "id": "9ad65d8ac40d3b19",
@@ -47759,63 +47890,8 @@
         "name": "P1 setup",
         "tab": "4fb3ce05f81e8c95",
         "order": 2,
-        "disp": true,
+        "disp": false,
         "width": "9",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "79eed3b289871944",
-        "type": "ui_group",
-        "name": "Help",
-        "tab": "1d038e38da23c646",
-        "order": 3,
-        "disp": false,
-        "width": "12",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "55fef8703465841e",
-        "type": "ui_group",
-        "name": "Help",
-        "tab": "4fb3ce05f81e8c95",
-        "order": 4,
-        "disp": false,
-        "width": "14",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "ae6c2168304beda0",
-        "type": "ui_group",
-        "name": "Help",
-        "tab": "d6d4a43045260ac9",
-        "order": 4,
-        "disp": false,
-        "width": "12",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "a606e01fab1bbd66",
-        "type": "ui_group",
-        "name": "Help",
-        "tab": "ac594a9d775ca4fb",
-        "order": 3,
-        "disp": false,
-        "width": "15",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "3226b17db86f4510",
-        "type": "ui_group",
-        "name": "Help",
-        "tab": "992c3064baf54797",
-        "order": 4,
-        "disp": false,
-        "width": 14,
         "collapse": false,
         "className": ""
     },
@@ -47895,38 +47971,11 @@
         "hidden": false
     },
     {
-        "id": "d6d4a43045260ac9",
-        "type": "ui_tab",
-        "name": "RTC",
-        "icon": "shuffle",
-        "order": 4,
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "5b5fabb85470bd21",
         "type": "ui_tab",
         "name": "Temperature",
         "icon": "show_chart",
         "order": 9,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "1d038e38da23c646",
-        "type": "ui_tab",
-        "name": "WAR",
-        "icon": "cloud",
-        "order": 3,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "992c3064baf54797",
-        "type": "ui_tab",
-        "name": "SoftStart",
-        "icon": "power_input",
-        "order": 6,
         "disabled": false,
         "hidden": false
     },
@@ -47958,15 +48007,6 @@
         "hidden": false
     },
     {
-        "id": "ac594a9d775ca4fb",
-        "type": "ui_tab",
-        "name": "Scheduler",
-        "icon": "schedule",
-        "order": 8,
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "575dc22256fd966c",
         "type": "ui_tab",
         "name": "Cool",
@@ -47981,15 +48021,6 @@
         "name": "Degree days",
         "icon": "show_chart",
         "order": 11,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "4fb3ce05f81e8c95",
-        "type": "ui_tab",
-        "name": "Solar",
-        "icon": "wb_sunny",
-        "order": 7,
         "disabled": false,
         "hidden": false
     },
