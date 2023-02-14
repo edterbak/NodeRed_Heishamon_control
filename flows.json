@@ -765,9 +765,9 @@
             "5d9dfad7dc5bce78",
             "052f561f93450dd4"
         ],
-        "x": 3024,
+        "x": 3034,
         "y": 1679,
-        "w": 1822,
+        "w": 1812,
         "h": 742
     },
     {
@@ -1924,7 +1924,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3476743a7b29da0d",
         "name": "set.SP_Ta_(base)",
-        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"SP_DIRECT_virt\",msg.payload,\"file\");\n//global.set(\"SP_DIRECT_virt\",msg.payload);\nreturn msg;",
+        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nglobal.set('SP_DIRECT_virt',msg.payload,\"file\");\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1944,12 +1944,8 @@
         "z": "8c9d42231fd19d3c",
         "g": "3476743a7b29da0d",
         "name": "SP_DIRECT_virt",
+        "mode": "link",
         "links": [
-            "73ee925b927ed0c6",
-            "6d890380e00e164d",
-            "3ab7a10b46379da2",
-            "126583bf986bb2c7",
-            "4c81e32b9d30b212",
             "3f0803a3a230aca2"
         ],
         "x": 3995,
@@ -9142,7 +9138,7 @@
         "animate": true,
         "className": "",
         "x": 3920,
-        "y": 2040,
+        "y": 2020,
         "wires": [
             [
                 "9445da7cceab14b2"
@@ -9163,7 +9159,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 4130,
-        "y": 2040,
+        "y": 2020,
         "wires": [
             [
                 "66396fc1dbfcc832"
@@ -9793,7 +9789,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "22.04 Beta 1",
+        "payload": "22.05 Beta 1",
         "payloadType": "str",
         "x": 1340,
         "y": 1960,
@@ -12612,7 +12608,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Load on boot",
-        "func": "var var1                    = global.get('HEAT_SP_upper_limit',\"file\");\nlet msg1={};\n\nif(var1 === undefined)      {\n                            return null;    \n                            }\n                            \nelse                        {\n                            msg1.payload = var1;\n                            msg1.topic = 'HEAT_SP_upper_limit'; \n                            return msg1;\n                            }\n",
+        "func": "var var1                    = global.get('HEAT_SP_upper_limit',\"file\");\nlet msg1={};\n\nif(var1 === undefined)      {\n                            global.set(\"HEAT_SP_upper_limit\",100,\"file\");\n                            return null;    \n                            }\n                            \nelse                        {\n                            msg1.payload = var1;\n                            msg1.topic = 'HEAT_SP_upper_limit'; \n                            return msg1;\n                            }\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -12704,7 +12700,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Load on boot",
-        "func": "var var1                    = global.get('HEAT_SP_lower_limit',\"file\");\nlet msg1={};\n\nif(var1 === undefined)      {\n                            return null;    \n                            }\n                            \nelse                        {\n                            msg1.payload = var1;\n                            msg1.topic = 'HEAT_SP_lower_limit'; \n                            return msg1;\n                            }\n",
+        "func": "var var1                    = global.get('HEAT_SP_lower_limit',\"file\");\nlet msg1={};\n\nif(var1 === undefined)      {\n                            global.set(\"HEAT_SP_lower_limit\",20,\"file\");\n                            return null;    \n                            }\n                            \nelse                        {\n                            msg1.payload = var1;\n                            msg1.topic = 'HEAT_SP_lower_limit'; \n                            return msg1;\n                            }\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -14522,7 +14518,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Function Reduce pump speed (check)",
-        "func": "let msg1 = {};      //  Pin 1 - Pumpspeed to set\nlet msg99 = {};     //  pin 2 - To log\n\nvar F_ReducePumpSpeed = global.get('F_ReducePumpSpeed', \"file\");\n\n//check if enabled (switch)\nvar ReducePumpSpeed = F_ReducePumpSpeed.state || 0;\n\nif (ReducePumpSpeed == 0) return null; //do nothing\nif (global.get('ForceDefrost', \"file\") == 1) return null; // exit during defrosting\n\n\nvar Freq= msg.payload; // msg payload is compressor Hz\nvar PumpMaxFlowSetting = F_ReducePumpSpeed.PumpMaxFlowSetting; //default pumpspeed\nif (PumpMaxFlowSetting === undefined) {return null;} //exit;\n\nvar NormalSpeed = F_ReducePumpSpeed.NormalSpeed; \nif (NormalSpeed === undefined) { \n    NormalSpeed = PumpMaxFlowSetting; //Store default pumpspeed\n    global.set(\"F_ReducePumpSpeed.NormalSpeed\", PumpMaxFlowSetting, \"file\"); \n    }\n\nvar LowSpeed = F_ReducePumpSpeed.LowSpeed;\nif (LowSpeed === undefined) {\n    LowSpeed = 100; //Store Low pumpspeed\n    global.set(\"F_ReducePumpSpeed.LowSpeed\", LowSpeed, \"file\");\n}\n\n\nif (Freq > 0 && PumpMaxFlowSetting < NormalSpeed)       //if compressor is running:\n    {\n        PumpMaxFlowSetting = NormalSpeed;               //restore old speed\n        var var1 = PumpMaxFlowSetting;\n        var1 = (var1 - 64) / (254 - 64) * 100;\n        var1 = \" (\" + Number(var1).toFixed(0) + \"%)\";\n        global.set(\"F_ReducePumpSpeed.PumpMaxFlowSetting\", PumpMaxFlowSetting, \"file\"); \n        msg1.payload = PumpMaxFlowSetting;\n        msg99.topic = \"Function Pump speed\";\n        msg99.payload = \"restored to: \" + PumpMaxFlowSetting + var1;\n        return [msg1,msg99];\n    }\n\n\n\nif (Freq == 0 && PumpMaxFlowSetting > LowSpeed)         //if compressor is off:\n    {\n        PumpMaxFlowSetting = LowSpeed;                  //save new pumpspeed \n        var var1 = PumpMaxFlowSetting;\n        var1 = (var1 - 64) / (254 - 64) * 100;          // calculate percentage\n        var1 = \" (\" + Number(var1).toFixed(0) + \"%)\";\n        msg1.payload = PumpMaxFlowSetting;\n        msg99.topic = \"Function Pump speed\";\n        msg99.payload = \"reduced to \" + PumpMaxFlowSetting + var1;\n        return [msg1, msg99];\n    }\n\n\n",
+        "func": "let msg1 = {};      //  Pin 1 - Pumpspeed to set\nlet msg99 = {};     //  pin 2 - To log\n\nvar F_ReducePumpSpeed = global.get('F_ReducePumpSpeed', \"file\");\nif (F_ReducePumpSpeed === undefined){\n    global.set('F_ReducePumpSpeed',{},\"file\");\n}\n\n//check if enabled (switch)\nvar ReducePumpSpeed = F_ReducePumpSpeed.state || 0;\n\nif (ReducePumpSpeed == 0) return null; //do nothing\nif (global.get('ForceDefrost', \"file\") == 1) return null; // exit during defrosting\n\n\nvar Freq= msg.payload; // msg payload is compressor Hz\nvar PumpMaxFlowSetting = F_ReducePumpSpeed.PumpMaxFlowSetting; //default pumpspeed\nif (PumpMaxFlowSetting === undefined) {return null;} //exit;\n\nvar NormalSpeed = F_ReducePumpSpeed.NormalSpeed; \nif (NormalSpeed === undefined) { \n    NormalSpeed = PumpMaxFlowSetting; //Store default pumpspeed\n    global.set(\"F_ReducePumpSpeed.NormalSpeed\", PumpMaxFlowSetting, \"file\"); \n    }\n\nvar LowSpeed = F_ReducePumpSpeed.LowSpeed;\nif (LowSpeed === undefined) {\n    LowSpeed = 100; //Store Low pumpspeed\n    global.set(\"F_ReducePumpSpeed.LowSpeed\", LowSpeed, \"file\");\n}\n\n\nif (Freq > 0 && PumpMaxFlowSetting < NormalSpeed)       //if compressor is running:\n    {\n        PumpMaxFlowSetting = NormalSpeed;               //restore old speed\n        var var1 = PumpMaxFlowSetting;\n        var1 = (var1 - 64) / (254 - 64) * 100;\n        var1 = \" (\" + Number(var1).toFixed(0) + \"%)\";\n        global.set(\"F_ReducePumpSpeed.PumpMaxFlowSetting\", PumpMaxFlowSetting, \"file\"); \n        msg1.payload = PumpMaxFlowSetting;\n        msg99.topic = \"Function Pump speed\";\n        msg99.payload = \"restored to: \" + PumpMaxFlowSetting + var1;\n        return [msg1,msg99];\n    }\n\n\n\nif (Freq == 0 && PumpMaxFlowSetting > LowSpeed)         //if compressor is off:\n    {\n        PumpMaxFlowSetting = LowSpeed;                  //save new pumpspeed \n        var var1 = PumpMaxFlowSetting;\n        var1 = (var1 - 64) / (254 - 64) * 100;          // calculate percentage\n        var1 = \" (\" + Number(var1).toFixed(0) + \"%)\";\n        msg1.payload = PumpMaxFlowSetting;\n        msg99.topic = \"Function Pump speed\";\n        msg99.payload = \"reduced to \" + PumpMaxFlowSetting + var1;\n        return [msg1, msg99];\n    }\n\n\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -15694,7 +15690,6 @@
             "a3180920b08e8108",
             "b9da2620c239be36",
             "aea8ceb9687abadf",
-            "9e366042611cd253",
             "10068b1def52810f",
             "5053e21b4c187e48",
             "2063c96f1ba07327",
@@ -15704,7 +15699,8 @@
             "72ecd08129670f6d",
             "7ae9d386f40efb4d",
             "d613171223cb64d2",
-            "303e9746fe17030f"
+            "303e9746fe17030f",
+            "f41605bb413dc970"
         ],
         "x": 154,
         "y": 1559,
@@ -16086,21 +16082,20 @@
             "dfca926433d18402",
             "3fc220e85feb9ec9",
             "f2d08992a6b90758",
-            "c5a5a17936f94a08",
-            "915b3b7863184b69",
             "61beb903ec0e5a74",
             "8716fd26da93059d",
-            "b133f924d526f2fb",
             "8ef79f56fa8bc2c9",
-            "941c10a0de2b5edd",
             "f27cfc9c262f0b0a",
-            "18b38a4b2452eaa0",
-            "0a4aad30d83a8a60",
             "01e8a6af9b61b05a",
             "f67d5dfc15a9a469",
             "71a546a3b074148f",
             "6c6c36d2fc35901c",
-            "cb987aa12172f46f"
+            "cb987aa12172f46f",
+            "e4932a30dba95577",
+            "925fbf9452bf5b4d",
+            "a2ab2afd444abd99",
+            "1108fd96608554c3",
+            "aa482bdb9f4f7cea"
         ],
         "x": 144,
         "y": 619,
@@ -16257,8 +16252,8 @@
         "y": 1900,
         "wires": [
             [
-                "9e366042611cd253",
-                "4ff74e2b48b1d597"
+                "4ff74e2b48b1d597",
+                "f41605bb413dc970"
             ]
         ]
     },
@@ -20850,7 +20845,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1270,
+        "x": 1260,
         "y": 2020,
         "wires": [
             [
@@ -20890,7 +20885,7 @@
         "z": "a938de76db0b71f6",
         "g": "0077cf76d14c5757",
         "name": "set.Main_Inlet_Temp",
-        "func": "msg.payload = Number(msg.payload).toFixed(2);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = \"Main_Inlet_Temp\"\nglobal.set(\"Main_Inlet_Temp\",msg.payload);\nreturn msg;",
+        "func": "msg.payload = Number(msg.payload).toFixed(2);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = \"Main_Inlet_Temp\";\nglobal.set(\"Main_Inlet_Temp\",msg.payload);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -20901,27 +20896,6 @@
         "wires": [
             [
                 "905527b22aae9dc8"
-            ]
-        ]
-    },
-    {
-        "id": "9e366042611cd253",
-        "type": "rbe",
-        "z": "a938de76db0b71f6",
-        "g": "0077cf76d14c5757",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 970,
-        "y": 1900,
-        "wires": [
-            [
-                "846a789dca74329d"
             ]
         ]
     },
@@ -21212,7 +21186,8 @@
         "y": 1400,
         "wires": [
             [
-                "987d38642eaa3c4c"
+                "987d38642eaa3c4c",
+                "aa482bdb9f4f7cea"
             ]
         ]
     },
@@ -21287,7 +21262,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 750,
-        "y": 1160,
+        "y": 1180,
         "wires": [
             [
                 "d53e66c37991fa8e"
@@ -21334,19 +21309,17 @@
         "type": "link in",
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
-        "name": "Link in SoftStart function",
+        "name": "Link in SoftStart function T",
         "links": [
             "0380b395668eee8e",
             "35ca9241fc9fc7a1",
-            "8dcafc6e30726812",
             "905527b22aae9dc8"
         ],
         "x": 245,
         "y": 1160,
         "wires": [
             [
-                "b133f924d526f2fb",
-                "941c10a0de2b5edd"
+                "e4932a30dba95577"
             ]
         ]
     },
@@ -21401,7 +21374,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Calculate new SP",
-        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n*/\n//*****************************************************************************\nlet msg1={};        // pin 1 - SP_Final\nlet msg99={};       // pin 2 - To Log\nlet msg2={};        // pin 3 - SHIFT_Final\n// return [msg1,msg99,msg2]\n\nmsg99.topic = \"Function - Calculate new SP\";        // ToLog\n\n\nvar SP_Final            =global.get('SP_DIRECT_virt',\"file\");                   //\n    if (SP_Final===undefined) {node.warn('Calculate new SP - SP_Final');return null;}\n\nvar F_WAR_onoff         =global.get('Correction_0_WAR_on_off',\"file\");          //\n    if (F_WAR_onoff === undefined) {F_WAR_onoff = 0;}\n    \nvar F_WAR_SP            =global.get('F_WAR_SP');                                //\n    if (F_WAR_SP===undefined) {node.warn('Calculate new SP - F_WAR_SP');return null;}\n\nvar F_RTC_state         =global.get('F_RTC.state',\"file\");          //\n        if (F_RTC_state === undefined) {F_RTC_state=0;}\n        \nvar F_RTC_correction    =global.get('F_RTC.correction_value');                        // Memory Only!\n    if (F_RTC_correction === undefined) { node.warn('Calculate new SP - F_RTC_correction');return null;}\n\nvar F_SS_state          =global.get('F_SS.state',\"file\");    //\n        if (F_SS_state === undefined) {F_SS_state=0;}\n        \nvar F_SS_correction     =global.get('F_SS.correction_value',\"file\");                         //\n    if (F_SS_correction===undefined) {node.warn('Calculate new SP - F_SS_correction');return null;}\n\nvar F_NR_state          =global.get('NightReductionWaterTemp.state',\"file\");            //\n        if (F_NR_state === undefined) {F_NR_state=0;}\n        \nvar F_NR_correction     =global.get('F_NR_correction');                         //\n    if (F_NR_correction===undefined) {node.warn('Calculate new SP - F_NR_correction');return null;}\n\nvar current_sp          =global.get('Main_Target_Temp');                        //\n    if (current_sp===undefined) {node.warn('Calculate new SP - current_sp');return null;}\n\nvar Heating_Mode        =global.get('Heating_Mode',\"file\");\n    if (Heating_Mode===undefined) {node.warn('Calculate new SP - Heating_Mode');return null;}\n\nvar Operating_Mode      =global.get('Operating_Mode_State',\"file\")              //\n\nvar HEAT_SP_lower_limit =global.get('HEAT_SP_lower_limit',\"file\")               //\n    if (HEAT_SP_lower_limit === undefined)  {HEAT_SP_lower_limit = 20;}\n    \nvar HEAT_SP_upper_limit =global.get('HEAT_SP_upper_limit',\"file\")               //\n    if (HEAT_SP_upper_limit === undefined)  {HEAT_SP_upper_limit = 100;}\n\n\n//*****************************************************************************\nif (Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                         // check if all variables are present befor checking\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    {\n        return null;\n    }\n//*****************************************************************************\n//*****************************************************************************\n\nif (current_sp == 0 || Heating_Mode == 0)\n    {\n\n        var SHIFT_Final_old = global.get('SHIFT_Final',\"file\");\n            if (SHIFT_Final_old === undefined) {SHIFT_Final_old=0;}\n        \n        if (F_RTC_state == 0) { F_RTC_correction = 0;}\n        if (F_SS_state == 0)    {F_SS_correction = 0;}\n        if (F_NR_state == 0)    {F_NR_correction = 0;}\n        \n        var SHIFT_Final = F_RTC_correction + F_SS_correction + F_NR_correction;\n        \n        msg2.payload = SHIFT_Final;\n        msg2.topic = \"Shift\";\n        \n        if (msg2.payload < -5)  {msg2.payload = -5;}\n        if (msg2.payload > 5)   {msg2.payload = 5;}\n        \n        \n//        if (SHIFT_Final_old != SHIFT_Final)\n//            {\n//                global.set('SHIFT_Final',msg2.payload,\"file\");\n//            }\n        msg99.payload   = \"New final T shift calculated: Current T shift: \" + SHIFT_Final_old + \" °C. New calculated T shift:  \" + msg2.payload + \" °C\";\n        \n        return [null,msg99,msg2]\n        //return [SP,toLog,shift]\n    }\n//*****************************************************************************\n//*****************************************************************************\nif (current_sp >= 20 && Heating_Mode == 1)\n    {\n        if (F_WAR_onoff==1)                 {SP_Final   =F_WAR_SP;}\n        if (F_RTC_state == 1)               {SP_Final   = SP_Final  + F_RTC_correction;}\n        if (F_NR_state==1)                  {SP_Final   =SP_Final   + F_NR_correction;}\n        if (F_SS_state==1)                  {SP_Final   =SP_Final   + F_SS_correction;}\n        if (SP_Final<HEAT_SP_lower_limit)   {SP_Final   =HEAT_SP_lower_limit}\n        if (SP_Final>HEAT_SP_upper_limit)   {SP_Final   =HEAT_SP_upper_limit}\n        if (SP_Final<20)                    {SP_Final   =20;}\n    \n        //*****************************************************************************\n        SP_Final = Number(SP_Final).toFixed(0);\n        SP_Final = parseFloat(SP_Final);\n        msg1.payload    = SP_Final;\n        msg1.topic  = \"SP_Final\";\n        \n        global.set('SP_Final',SP_Final,\"file\")\n        \n         if (global.get('Debugging', \"file\") == 1) {\n            msg99.topic = \"*** Function Calculate new SP\";\n            msg99.payload   = \"New final SP calculated: Current setpont: \" + current_sp + \" °C. New calculated setpoint:  <b>\" + SP_Final + \"</b> °C\";//debug\n         }\n\n\n        //*****************************************************************************\n\n        if (SP_Final ==  current_sp)                                            // Check only if there is a difference between SP and current value, a signal should be sent.\n            {\n                return [null,null,null];\n                //return [SP,toLog,shift]\n            }\n        else\n            {\n                if (global.get('Debugging', \"file\") == 1)  return [msg1,msg99,null];  //debug\n                return [msg1, null, null]; \n                //return [SP,toLog,shift]\n            }\n    }\n    \n",
+        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n*/\n//*****************************************************************************\nlet msg1={};        // pin 1 - SP_Final\nlet msg99={};       // pin 2 - To Log\nlet msg2={};        // pin 3 - SHIFT_Final\n// return [msg1,msg99,msg2]\n\nmsg99.topic = \"Function - Calculate new SP\";        // ToLog\n\n\nvar SP_Final            =global.get('SP_DIRECT_virt',\"file\");                   //\n    if (SP_Final===undefined) {node.warn('Calculate new SP - SP_Final');return null;}\n\nvar F_WAR_onoff         =global.get('Correction_0_WAR_on_off',\"file\");          //\n    if (F_WAR_onoff === undefined) {F_WAR_onoff = 0;}\n    \nvar F_WAR_SP            =global.get('F_WAR_SP');                                //\n    if (F_WAR_SP===undefined) {node.warn('Calculate new SP - F_WAR_SP');return null;}\n\nvar F_RTC_state         =global.get('F_RTC.state',\"file\");          //\n        if (F_RTC_state === undefined) {F_RTC_state=0;}\n        \nvar F_RTC_correction    =global.get('F_RTC.correction_value',\"file\");                        // Memory Only!\n    if (F_RTC_correction === undefined) { node.warn('Calculate new SP - F_RTC_correction');return null;}\n\nvar F_SS_state          =global.get('F_SS.state',\"file\");    //\n        if (F_SS_state === undefined) {F_SS_state=0;}\n        \nvar F_SS_correction     =global.get('F_SS.correction_value',\"file\");                         //\n    if (F_SS_correction===undefined) {node.warn('Calculate new SP - F_SS_correction');return null;}\n\nvar F_NR_state          =global.get('NightReductionWaterTemp.state',\"file\");            //\n        if (F_NR_state === undefined) {F_NR_state=0;}\n        \nvar F_NR_correction     =global.get('F_NR_correction');                         //\n    if (F_NR_correction===undefined) {node.warn('Calculate new SP - F_NR_correction');return null;}\n\nvar current_sp          =global.get('Main_Target_Temp');                        //\n    if (current_sp===undefined) {node.warn('Calculate new SP - current_sp');return null;}\n\nvar Heating_Mode        =global.get('Heating_Mode',\"file\");\n    if (Heating_Mode===undefined) {node.warn('Calculate new SP - Heating_Mode');return null;}\n\nvar Operating_Mode      =global.get('Operating_Mode_State',\"file\")              //\n\nvar HEAT_SP_lower_limit =global.get('HEAT_SP_lower_limit',\"file\")               //\n    if (HEAT_SP_lower_limit === undefined)  {HEAT_SP_lower_limit = 20;}\n    \nvar HEAT_SP_upper_limit =global.get('HEAT_SP_upper_limit',\"file\")               //\n    if (HEAT_SP_upper_limit === undefined)  {HEAT_SP_upper_limit = 100;}\n\n\n//*****************************************************************************\nif (Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                         // check if all variables are present befor checking\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    {\n        return null;\n    }\n//*****************************************************************************\n//*****************************************************************************\n\nif (current_sp == 0 || Heating_Mode == 0)\n    {\n\n        var SHIFT_Final_old = global.get('SHIFT_Final',\"file\");\n            if (SHIFT_Final_old === undefined) {SHIFT_Final_old=0;}\n        \n        if (F_RTC_state == 0) { F_RTC_correction = 0;}\n        if (F_SS_state == 0)    {F_SS_correction = 0;}\n        if (F_NR_state == 0)    {F_NR_correction = 0;}\n        \n        var SHIFT_Final = F_RTC_correction + F_SS_correction + F_NR_correction;\n        \n        msg2.payload = SHIFT_Final;\n        msg2.topic = \"Shift\";\n        \n        if (msg2.payload < -5)  {msg2.payload = -5;}\n        if (msg2.payload > 5)   {msg2.payload = 5;}\n        \n        \n//        if (SHIFT_Final_old != SHIFT_Final)\n//            {\n//                global.set('SHIFT_Final',msg2.payload,\"file\");\n//            }\n        msg99.payload   = \"New final T shift calculated: Current T shift: \" + SHIFT_Final_old + \" °C. New calculated T shift:  \" + msg2.payload + \" °C\";\n        \n        return [null,msg99,msg2]\n        //return [SP,toLog,shift]\n    }\n//*****************************************************************************\n//*****************************************************************************\nif (current_sp >= 20 && Heating_Mode == 1)\n    {\n        if (F_WAR_onoff==1)                 {SP_Final   =F_WAR_SP;}\n        if (F_RTC_state == 1)               {SP_Final   = SP_Final  + F_RTC_correction;}\n        if (F_NR_state==1)                  {SP_Final   =SP_Final   + F_NR_correction;}\n        if (F_SS_state==1)                  {SP_Final   =SP_Final   + F_SS_correction;}\n        if (SP_Final<HEAT_SP_lower_limit)   {SP_Final   =HEAT_SP_lower_limit}\n        if (SP_Final>HEAT_SP_upper_limit)   {SP_Final   =HEAT_SP_upper_limit}\n        if (SP_Final<20)                    {SP_Final   =20;}\n    \n        //*****************************************************************************\n        SP_Final = Number(SP_Final).toFixed(0);\n        SP_Final = parseFloat(SP_Final);\n        msg1.payload    = SP_Final;\n        msg1.topic  = \"SP_Final\";\n        \n        global.set('SP_Final',SP_Final,\"file\")\n        \n         if (global.get('Debugging', \"file\") == 1) {\n            msg99.topic = \"*** Function Calculate new SP\";\n            msg99.payload   = \"New final SP calculated: Current setpont: \" + current_sp + \" °C. New calculated setpoint:  <b>\" + SP_Final + \"</b> °C\";//debug\n         }\n\n\n        //*****************************************************************************\n\n        if (SP_Final ==  current_sp)                                            // Check only if there is a difference between SP and current value, a signal should be sent.\n            {\n                return [null,null,null];\n                //return [SP,toLog,shift]\n            }\n        else\n            {\n                if (global.get('Debugging', \"file\") == 1)  return [msg1,msg99,null];  //debug\n                return [msg1, null, null]; \n                //return [SP,toLog,shift]\n            }\n    }\n    \n",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
@@ -21737,7 +21710,8 @@
         "y": 880,
         "wires": [
             [
-                "1a9b736187a463f7"
+                "1a9b736187a463f7",
+                "925fbf9452bf5b4d"
             ]
         ]
     },
@@ -21755,7 +21729,8 @@
         "y": 1020,
         "wires": [
             [
-                "1cbf3f3272baec48"
+                "1cbf3f3272baec48",
+                "a2ab2afd444abd99"
             ]
         ]
     },
@@ -21773,7 +21748,8 @@
         "y": 1200,
         "wires": [
             [
-                "d53e66c37991fa8e"
+                "d53e66c37991fa8e",
+                "1108fd96608554c3"
             ]
         ]
     },
@@ -22056,11 +22032,10 @@
         "type": "link in",
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
-        "name": "Link in SoftStart function",
+        "name": "Link in SoftStart function GUI",
         "links": [
             "32f39bf7fb5e5369",
             "69d5d3a718793320",
-            "8dcafc6e30726812",
             "b1118094796c2de3"
         ],
         "x": 245,
@@ -22127,7 +22102,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Function RTC correction",
-        "func": "var Operating_Mode      =global.get('Operating_Mode_State',\"file\")\n\nif (Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)\n    {   \n        return null;\n    }\n\nelse \n{   \n    let msg1={};    // pin 1 - current correction\n    let msg2={};    // pin 2 - current sp\n    let msg99={};   // pin 3\n    msg99.topic = \"Function RTC\"\n    let msg3={};    //  pin 4 - start sp\n    \n    \n    \n    var F_RTC_state = global.get('F_RTC.state',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n    if (F_RTC_state === undefined) { F_RTC_state = 0; global.set('F_RTC.state',0,\"file\");}\n        \n    var F_RTC_old_correction = global.get('F_RTC.correction_value');\n        if (F_RTC_old_correction === undefined) { F_RTC_old_correction = 0; global.set('F_RTC.correction_value',0);}\n    \n    var F_WAR_SP                =   global.get('F_WAR_SP');\n        if (F_WAR_SP === undefined) {/*node.warn('RTC correction F_WAR_SP');*/return null}\n    \n    if (F_RTC_state == 0)                         \n        {\n            rtc_correction = 0;               // If RTC is disabled, set correction to 0. end if\n            msg1.payload = rtc_correction; \n            msg1.topic = \"rtc_correction\";\n            \n            msg2.payload = F_WAR_SP + rtc_correction; \n            msg2.topic = \"SP RTC result\";\n            \n            msg3.payload = F_WAR_SP;\n            msg3.topic = \"Start SP\";\n            \n            global.set('F_RTC.correction_value',rtc_correction);\n            return [msg1,msg2,null,msg3]; \n            \n        }\n    \n    else\n        {\n        \n            // Declaration of variables including their values.    \n            var rtc_correction  = 0;                                                // declare local variable, start with value zero\n            var rtc_PV          = global.get('T_room');                             // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n                if (rtc_PV === undefined) {/*node.warn('RTC correction rtc_PV');*/return null;}\n            var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard.\n                if (rtc_SP === undefined) {/*node.warn('RTC correction rtc_SP');*/return null;}\n            //var rtc_Tb          = global.get('T_outside',\"file\");                   // Outdoor temperature.\n        \n            var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n            rtc_dT = Number(rtc_dT).toFixed(2);\n            rtc_dT = parseFloat(rtc_dT);\n            //node.warn(rtc_dT);\n            //\n            // below are the variables containing the temperature ranges.\n            var rtc_t1          = global.get('rtc_t1',\"file\");                      // Range +3\n            var rtc_t2          = global.get('rtc_t2',\"file\");                      // Range +2\n            var rtc_t3          = global.get('rtc_t3',\"file\");                      // Range +1\n            \n            var rtc_t4          = global.get('rtc_t4',\"file\");                      // Range -1\n            var rtc_t5          = global.get('rtc_t5',\"file\");                      // Range -2\n            var rtc_t6          = global.get('rtc_t6',\"file\");                      // Range -3\n            var rtc_t7          = global.get('rtc_t7', \"file\");                     // Range -custom\n                if (rtc_t7 === undefined) { rtc_t7 = rtc_t6 -0.1;}                  // default just below rtc_t6        \n\n            var rtc_t7_custom_cor = global.get('rtc_t7_custom_cor', \"file\");\n                if (rtc_t7_custom_cor === undefined) {\n                    rtc_t7_custom_cor = 10; // +10 correction default\n                    global.set('rtc_t7_custom_cor', rtc_t7_custom_cor, \"file\");\n                }\n\n            if (isNaN(rtc_t1+rtc_t2+rtc_t3+rtc_t4+rtc_t5+rtc_t6+rtc_t7) === true)               // if the variables are added to eachother and the result is Not a Number, produce an error message.\n                {\n                    msg99.payload = \"RTC function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"\n                    return [null,null,msg99,null]\n                    \n                }\n            \n            // ADJUST THE VALUES BELOW TO YOUR OWN SITUATION\n        \n            if (rtc_dT >= rtc_t1) {rtc_correction = rtc_correction -1;}                 // It is way too hot.\n            if (rtc_dT >= rtc_t2) {rtc_correction = rtc_correction -1;}                 // It is too hot.\n            if (rtc_dT >= rtc_t3) {rtc_correction = rtc_correction -1;}                 // It is a little too hot.\n        \n            if (rtc_dT < rtc_t3 && rtc_dT > rtc_t4) {rtc_correction = 0;}               // It is right in the middle.... Nice\n\n            if (rtc_dT <= rtc_t4) {rtc_correction = rtc_correction +1;}                 // It is a little too cold\n            if (rtc_dT <= rtc_t5) {rtc_correction = rtc_correction +1;}                 // It is a little a fair bit colder\n            if (rtc_dT <= rtc_t6) {rtc_correction = 3;}                 // It is a little way too cold\n\n            // Use incremental_setpoints if switch enabled\n            var F_RTC_incremental_setpoints_state = global.get('F_RTC.incremental_setpoints_state', \"file\");    //switch on/off\n            if (F_RTC_incremental_setpoints_state === undefined) { F_RTC_incremental_setpoints_state = 0;}\n            if ((rtc_dT < rtc_t6 && rtc_dT > rtc_t7) && F_RTC_incremental_setpoints_state == 1)                // in range (between +3 and +custom)\n            {\n                // calculate correction (between +3 and +custom):\n                rtc_correction = rtc_t7_custom_cor - 3;                                 // example (15-3)=12 degrees\n                // calculate temp range:\n                var Range = (rtc_t6 - rtc_t7); // -2.2 - -4.0 = 1.8                     //calculate No. steps    0.1 degrees steps?\n                Range = (Range * 10);                                                   // 18 steps\n                // devide rtc_correction through steps:\n                rtc_correction = (rtc_correction / Range);                              // 12 / 18 = 0.67 degrees-steps\n                // Calculate actual step:\n                var Actual_step = (rtc_t6 - rtc_dT) * 10;                               // stap 17 van 18\n                Actual_step = Number(Actual_step).toFixed(0);\n                // Apply correction at this step:\n                rtc_correction = (Actual_step * rtc_correction);                        // 18 * 0.67 = 11.32\n                rtc_correction = Number(rtc_correction).toFixed(1);                     // 11,3\n                rtc_correction = parseFloat(rtc_correction);\n                rtc_correction = rtc_correction + 3;                                     // 11.3 + 3 = 14.3\n                rtc_correction = Number(rtc_correction).toFixed(1);\n                rtc_correction = parseFloat(rtc_correction);\n                if (global.get('Debugging', \"file\") == 1) {                             // Show in log what incremental setpoint correction should be and continue:\n                    msg99.payload = \"incremental setpoint correction at \" + rtc_PV +  \"°C \" + \"--> \" + rtc_correction + \" °C\";\n                    node.send([null, null, msg99, null]); // only to log and continue code from here\n                    }\n            }\n            \n            if (rtc_dT <= rtc_t7) { rtc_correction = rtc_t7_custom_cor; }                 // It is way too cold: use custom\n            \n        }\n//****************************************************************************** \n    msg1.payload = rtc_correction; \n    msg1.topic = \"rtc_correction\";\n    \n    msg2.payload = F_WAR_SP + rtc_correction; \n    msg2.topic = \"SP RTC result\";\n\n    msg3.payload = F_WAR_SP;\n    msg3.topic = \"Start SP\";\n\n    var T_room = global.get('T_room'); // memory only\n            \n    if (F_RTC_old_correction == rtc_correction)\n        {\n            return [msg1,msg2,null,msg3]; \n        }\n    \n    else\n        {\n            global.set('F_RTC.correction_value',msg1.payload)\n            msg99.payload = \"Correction change: From \" + F_RTC_old_correction + \" to \" + rtc_correction + \" °C (Room actual: \" + T_room + \" °C)\";\n            if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"function rtc\"); }\n            return [msg1,msg2,msg99,msg3]; \n        }\n    \n}",
+        "func": "var Operating_Mode      =global.get('Operating_Mode_State',\"file\")\n\nif (Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)\n    {   \n        return null;\n    }\n\nelse \n{   \n    let msg1={};    // pin 1 - current correction\n    let msg2={};    // pin 2 - current sp\n    let msg99={};   // pin 3\n    msg99.topic = \"Function RTC\"\n    let msg3={};    //  pin 4 - start sp\n    \n    \n    \n    var F_RTC_state = global.get('F_RTC.state',\"file\");         // Get the global variable. Used to see if the RTC function is enabled.\n    if (F_RTC_state === undefined) { F_RTC_state = 0; global.set('F_RTC.state',0,\"file\");}\n        \n    var F_RTC_old_correction = global.get('F_RTC.correction_value');\n        if (F_RTC_old_correction === undefined) { F_RTC_old_correction = 0; global.set('F_RTC.correction_value',0);}\n    \n    var F_WAR_SP                =   global.get('F_WAR_SP');\n        if (F_WAR_SP === undefined) {/*node.warn('RTC correction F_WAR_SP');*/return null}\n    \n    if (F_RTC_state == 0)                         \n        {\n            rtc_correction = 0;               // If RTC is disabled, set correction to 0. end if\n            msg1.payload = rtc_correction; \n            msg1.topic = \"rtc_correction\";\n            \n            msg2.payload = F_WAR_SP + rtc_correction; \n            msg2.topic = \"SP RTC result\";\n            \n            msg3.payload = F_WAR_SP;\n            msg3.topic = \"Start SP\";\n            \n            global.set('F_RTC.correction_value',rtc_correction);\n            return [msg1,msg2,null,msg3]; \n            \n        }\n    \n    else\n        {\n        \n            // Declaration of variables including their values.    \n            var rtc_correction  = 0;                                                // declare local variable, start with value zero\n            var rtc_PV          = global.get('T_room');                             // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n                if (rtc_PV === undefined) {/*node.warn('RTC correction rtc_PV');*/return null;}\n            var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard.\n                if (rtc_SP === undefined) {/*node.warn('RTC correction rtc_SP');*/return null;}\n            //var rtc_Tb          = global.get('T_outside',\"file\");                   // Outdoor temperature.\n        \n            var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n            rtc_dT = Number(rtc_dT).toFixed(2);\n            rtc_dT = parseFloat(rtc_dT);\n            //node.warn(rtc_dT);\n            //\n            // below are the variables containing the temperature ranges.\n            var rtc_t1          = global.get('rtc_t1',\"file\");                      // Range +3\n            var rtc_t2          = global.get('rtc_t2',\"file\");                      // Range +2\n            var rtc_t3          = global.get('rtc_t3',\"file\");                      // Range +1\n            \n            var rtc_t4          = global.get('rtc_t4',\"file\");                      // Range -1\n            var rtc_t5          = global.get('rtc_t5',\"file\");                      // Range -2\n            var rtc_t6          = global.get('rtc_t6',\"file\");                      // Range -3\n            var rtc_t7          = global.get('rtc_t7', \"file\");                     // Range -custom\n                if (rtc_t7 === undefined) { rtc_t7 = rtc_t6 -0.1;}                  // default just below rtc_t6        \n\n            var rtc_t7_custom_cor = global.get('rtc_t7_custom_cor', \"file\");\n                if (rtc_t7_custom_cor === undefined) {\n                    rtc_t7_custom_cor = 10; // +10 correction default\n                    global.set('rtc_t7_custom_cor', rtc_t7_custom_cor, \"file\");\n                }\n\n            if (isNaN(rtc_t1+rtc_t2+rtc_t3+rtc_t4+rtc_t5+rtc_t6+rtc_t7) === true)               // if the variables are added to eachother and the result is Not a Number, produce an error message.\n                {\n                    msg99.payload = \"RTC function temperatures are not correctly set in the dashboard. Please correct this in the GUI.\"\n                    return [null,null,msg99,null]\n                    \n                }\n            \n            // ADJUST THE VALUES BELOW TO YOUR OWN SITUATION\n        \n            if (rtc_dT >= rtc_t1) {rtc_correction = rtc_correction -1;}                 // It is way too hot.\n            if (rtc_dT >= rtc_t2) {rtc_correction = rtc_correction -1;}                 // It is too hot.\n            if (rtc_dT >= rtc_t3) {rtc_correction = rtc_correction -1;}                 // It is a little too hot.\n        \n            if (rtc_dT < rtc_t3 && rtc_dT > rtc_t4) {rtc_correction = 0;}               // It is right in the middle.... Nice\n\n            if (rtc_dT <= rtc_t4) {rtc_correction = rtc_correction +1;}                 // It is a little too cold\n            if (rtc_dT <= rtc_t5) {rtc_correction = rtc_correction +1;}                 // It is a little a fair bit colder\n            if (rtc_dT <= rtc_t6) {rtc_correction = 3;}                 // It is a little way too cold\n\n            // Use incremental_setpoints if switch enabled\n            var F_RTC_incremental_setpoints_state = global.get('F_RTC.incremental_setpoints_state', \"file\");    //switch on/off\n            if (F_RTC_incremental_setpoints_state === undefined) { F_RTC_incremental_setpoints_state = 0;}\n            if ((rtc_dT < rtc_t6 && rtc_dT > rtc_t7) && F_RTC_incremental_setpoints_state == 1)                // in range (between +3 and +custom)\n            {\n                // calculate correction (between +3 and +custom):\n                rtc_correction = rtc_t7_custom_cor - 3;                                 // example (15-3)=12 degrees\n                // calculate temp range:\n                var Range = (rtc_t6 - rtc_t7); // -2.2 - -4.0 = 1.8                     //calculate No. steps    0.1 degrees steps?\n                Range = (Range * 10);                                                   // 18 steps\n                // devide rtc_correction through steps:\n                rtc_correction = (rtc_correction / Range);                              // 12 / 18 = 0.67 degrees-steps\n                // Calculate actual step:\n                var Actual_step = (rtc_t6 - rtc_dT) * 10;                               // stap 17 van 18\n                Actual_step = Number(Actual_step).toFixed(0);\n                // Apply correction at this step:\n                rtc_correction = (Actual_step * rtc_correction);                        // 18 * 0.67 = 11.32\n                rtc_correction = Number(rtc_correction).toFixed(1);                     // 11,3\n                rtc_correction = parseFloat(rtc_correction);\n                rtc_correction = rtc_correction + 3;                                     // 11.3 + 3 = 14.3\n                rtc_correction = Number(rtc_correction).toFixed(1);\n                rtc_correction = parseFloat(rtc_correction);\n                if (global.get('Debugging', \"file\") == 1) {                             // Show in log what incremental setpoint correction should be and continue:\n                    msg99.payload = \"incremental setpoint correction at \" + rtc_PV +  \"°C \" + \"--> \" + rtc_correction + \" °C\";\n                    node.send([null, null, msg99, null]); // only to log and continue code from here\n                    }\n            }\n            \n            if (rtc_dT <= rtc_t7) { rtc_correction = rtc_t7_custom_cor; }                 // It is way too cold: use custom\n            \n        }\n//****************************************************************************** \n    msg1.payload = rtc_correction; \n    msg1.topic = \"rtc_correction\";\n    \n    msg2.payload = F_WAR_SP + rtc_correction; \n    msg2.topic = \"SP RTC result\";\n\n    msg3.payload = F_WAR_SP;\n    msg3.topic = \"Start SP\";\n\n    var T_room = global.get('T_room'); // memory only\n            \n    if (F_RTC_old_correction == rtc_correction)\n        {\n            return [msg1,msg2,null,msg3]; \n        }\n    \n    else\n        {\n            global.set('F_RTC.correction_value',msg1.payload,\"file\");\n            msg99.payload = \"Correction change: From \" + F_RTC_old_correction + \" to \" + rtc_correction + \" °C (Room actual: \" + T_room + \" °C)\";\n            if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"function rtc\"); }\n            return [msg1,msg2,msg99,msg3]; \n        }\n    \n}",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
@@ -22261,7 +22236,6 @@
         "y": 1400,
         "wires": [
             [
-                "c5a5a17936f94a08",
                 "add6fa4d403dd143"
             ]
         ]
@@ -22357,7 +22331,7 @@
         "topic": "topic",
         "outputs": 1,
         "x": 960,
-        "y": 1160,
+        "y": 1120,
         "wires": [
             [
                 "cb987aa12172f46f"
@@ -22734,65 +22708,6 @@
         "wires": []
     },
     {
-        "id": "c5a5a17936f94a08",
-        "type": "function",
-        "z": "a938de76db0b71f6",
-        "d": true,
-        "g": "d2b7e1d6e85a96cf",
-        "name": "MSG counter",
-        "func": "var count = flow.get('msg_count');\nif (count === undefined){count = 0;}\nlet msg1={};\ncount = count + 1;\nflow.set('msg_count',count);\nmsg1.payload = count;\nmsg1.topic = 'counter1 ' + msg.topic;\nreturn msg1;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 530,
-        "y": 1360,
-        "wires": [
-            [
-                "915b3b7863184b69"
-            ]
-        ]
-    },
-    {
-        "id": "915b3b7863184b69",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "debug 110",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 730,
-        "y": 1360,
-        "wires": []
-    },
-    {
-        "id": "b133f924d526f2fb",
-        "type": "function",
-        "z": "a938de76db0b71f6",
-        "d": true,
-        "g": "d2b7e1d6e85a96cf",
-        "name": "MSG counter2",
-        "func": "var count = flow.get('msg_count2');\nif (count === undefined){count = 0;}\nlet msg1={};\ncount = count + 1;\nflow.set('msg_count2',count);\nmsg1.payload = count;\nmsg1.topic = 'softstart input ' + msg.payload;\nreturn msg1;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 1260,
-        "wires": [
-            [
-                "0a4aad30d83a8a60"
-            ]
-        ]
-    },
-    {
         "id": "47f8da37ddbb8a39",
         "type": "function",
         "z": "a938de76db0b71f6",
@@ -22811,23 +22726,6 @@
                 "1a9b736187a463f7"
             ]
         ]
-    },
-    {
-        "id": "0a4aad30d83a8a60",
-        "type": "debug",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "debug 114",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 470,
-        "y": 1260,
-        "wires": []
     },
     {
         "id": "dfca926433d18402",
@@ -22866,7 +22764,7 @@
         "type": "link in",
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
-        "name": "Hz in",
+        "name": "Link in SoftStart function Hz",
         "links": [
             "c57a81d1dee5b8a9"
         ],
@@ -22890,7 +22788,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
+        "x": 530,
         "y": 1120,
         "wires": [
             [
@@ -22951,27 +22849,6 @@
         ]
     },
     {
-        "id": "941c10a0de2b5edd",
-        "type": "rbe",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 530,
-        "y": 1160,
-        "wires": [
-            [
-                "d53e66c37991fa8e"
-            ]
-        ]
-    },
-    {
         "id": "f27cfc9c262f0b0a",
         "type": "function",
         "z": "a938de76db0b71f6",
@@ -22990,17 +22867,6 @@
                 "dfca926433d18402"
             ]
         ]
-    },
-    {
-        "id": "18b38a4b2452eaa0",
-        "type": "comment",
-        "z": "a938de76db0b71f6",
-        "g": "d2b7e1d6e85a96cf",
-        "name": "start tijd counters 02:08",
-        "info": "5-2-2023\n01:30",
-        "x": 680,
-        "y": 1280,
-        "wires": []
     },
     {
         "id": "01e8a6af9b61b05a",
@@ -23092,7 +22958,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Function SoftStart",
-        "func": "//////////////////////////////// SOFTSTART /////////////////////////////////////\nlet msg1={};            //  pin 1 - F_SS_correction\nlet msg99={};           //  pin 2 - To Log\n    msg99.topic     = \"Function SoftStart\";\nlet msg2={};            //  pin 3 - delay\n    msg2.payload    = 'PING';\n\nvar F_SS = global.get('F_SS',\"file\");\n    if (F_SS === undefined)         {return null;}\n    \n    var total_duration              =   F_SS.total_duration;            // seconds\n    var phase_1_duration            =   F_SS.phase_1_duration;          // seconds\n    var phase_1_delay_time          =   F_SS.phase_1_delay_time;        // seconds\n    var phase_2_delay_time          =   F_SS.phase_2_delay_time;        // seconds\n    var phase_3_delay_time          =   F_SS.phase_3_delay_time;        // seconds\n    var upperlimit_correction       =   F_SS.upperlimit_correction;     // temperature\n    var lowerlimit_correction       =   F_SS.lowerlimit_correction;     // temperature\n    var F_SS_reset_after_defrost    =   F_SS.reset_after_defrost;       // 1 or 0. Should the softstar function restart after a defrost.\n    var F_SS_state                  =   F_SS.state;                     // 1 or 0. Is the SoftStart function enabled or not.\n    var F_SS_old_correction         =   F_SS.correction_value;          // stored correction as a result of the SoftStart function.\n\nif (F_SS_reset_after_defrost == 0 || F_SS_reset_after_defrost === undefined)          \n    {if (global.get('ForceDefrost', \"file\") == 1) // uitzondering maken tijdens defrost                                   \n        {   msg99.payload = \"temporally disabled during defrost\"; \n            return [null, msg99];\n        }\n}\n\nif (F_SS_state === undefined)               \n    {global.set('F_SS.state',0,\"file\"); F_SS_state=0;}\n\nif (F_SS_old_correction === undefined)      \n    {F_SS_old_correction='0'}\n\nvar ThreeWay_Valve_State= global.get('ThreeWay_Valve_State');\n    if(ThreeWay_Valve_State===undefined){return null;}\n    \nvar F_SS_correction     = 0;\n\nvar HEAT_SP_lower_limit = global.get('HEAT_SP_lower_limit', \"file\") || 20; \n\nvar ss_Hz               = global.get('compressor_frequency',\"file\");                       // Get the global variable for current compressor frequency\n    if (ss_Hz === undefined)    {return null;}\n\nvar Operating_Mode      = global.get('Operating_Mode_State',\"file\");\n\nvar SP_start            = global.get('F_WAR_SP');                                   //  Setpoint after WAR calculation\n    if (SP_start === undefined)    {return null;}\n\nvar F_RTC_correction    = global.get('F_RTC.correction_value');                    //  Correction of the RTC function Memory Only!\n    F_RTC_correction    = Number(F_RTC_correction).toFixed(1);                      // round it\n    F_RTC_correction    = parseFloat(F_RTC_correction);\n    if (F_RTC_correction===undefined) {F_RTC_correction=0}\n\nvar F_NR_state = global.get('NightReductionWaterTemp.state', \"file\");                   \n    if (F_NR_state === undefined) { F_NR_state = 0; }\nvar F_NR_correction     = global.get('F_NR_correction');                            //  Correction of the NightReduction function\n    if (F_NR_state == 0 || F_NR_correction === undefined) { F_NR_correction = 0; }\n\nvar F_SS_SP_start       = SP_start + F_RTC_correction + F_NR_correction;            //  Calculate the starting temperature (SP) for the SoftStart function \n\nvar Defrost             = global.get('ForceDefrost',\"file\")\n    if (Defrost === undefined)  {Defrost = 0;}\n\nvar current_sp = global.get('Main_Target_Temp');\n\nvar Debugging = global.get('Debugging', \"file\");\n\n\n    \n    \n//\n\n// ***********************************************************************************\nif (F_SS_state == 0 || ss_Hz == 0 || ThreeWay_Valve_State != 0 || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8 || Defrost==1)                     \n//  Check if the function is enabled. Check if the compressor is running. Check if 3wayvalvue is in HEAT mode(0).\n    {\n        F_SS_correction = 0;                                                        //  If the function is off, or the compressor is off, set  correction to zero\n        global.set('F_SS.correction_value',F_SS_correction,\"file\");                              //  Set the correctionvalue\n        global.set('StartTime', undefined, \"file\");\n        global.set('F_SS_actual_stage', undefined);                                 // 11-01-2023 reset (for debugging/System Check remember the softstart stage)\n        \n        msg1.payload = F_SS_correction; \n        msg1.topic = 'Compressor off. F_SS_correction 0';\n        \n        msg2.topic = 'reset';\n        msg2.payload = 'PANG';\n        \n        msg99.payload = \"SoftStart function end\";\n        \n        if (Defrost == 1) {\n            msg1.topic = 'Function SoftStart';\n            msg99.payload = \"Defrost - Correction: 0\";\n        }\n        \n        return [msg1,msg99,msg2];\n    }\n// ***********************************************************************************\n//\nelse    \n{\n        var F_SS_new_SP;                                                            //  declare an empty variable\n        var ss_PV_Ta            = global.get('Main_Outlet_Temp');                   //  PV (Ta/outlet) Temperature of water.\n        var ss_PV_Tr            = global.get('Main_Inlet_Temp');                    //  PV (Tr/inlet) Temperature of water\n            if (ss_PV_Ta === undefined || ss_PV_Tr === undefined)   {return null;}\n        var T = '';\n        var C = '';\n        \n        //\n        // ***********************************************************************************\n        /////// Timer how long the compressor is on. Runtime //////////\n        // ***********************************************************************************\n        var CurrentTime = new Date().getTime();\n        var StartTime = global.get('StartTime', \"file\");\n        \n        if (StartTime === undefined)\n            {\n                StartTime = CurrentTime;\n                global.set('StartTime', StartTime, \"file\");\n                \n                // send trigger to timer after phase 1\n                msg2.topic = 'delayed_trigger';\n                \n                msg2.delay = phase_1_duration;\n                msg2.force = 1;\n                node.send([null,null,msg2]);                                         // SENDS MSG TO TIMER FUNCTION\n                msg2.force = 0;\n            }\n            \n        var TimeElapsed = ((CurrentTime - StartTime)/1000);\n        TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n        // *********************************************************************\n        var Phase;\n            if (TimeElapsed < phase_1_duration)                                     {Phase = 1;}\n            if (TimeElapsed >= phase_1_duration && TimeElapsed < total_duration)    {Phase = 2;}\n            if (TimeElapsed >= total_duration)                                      {Phase = 3;}\n\n        if (msg.force == 1) {\n                if (Phase == 2) {\n                    msg2.delay = total_duration - TimeElapsed;\n                    msg2.force = 1;\n                    node.send([null,null,msg2]);                                // SENDS MSG TO TIMER FUNCTION    \n                    msg2.force = 0;\n                }\n                if (Phase == 3) {\n                    msg2.topic = 'reset';                                       // reset any ongoing timers. force shutdown at given interval\n                    node.send([null,null,msg2]); \n                    \n                    msg2.topic = 'delayed_trigger';                             // send msg to timer to trigger next reductin step\n                    msg2.force = 1;\n                    msg2.delay = phase_3_delay_time;\n                    node.send([null,null,msg2]);                                \n                    msg2.force = 0;\n                    msg2.topic = '';\n                }\n        }\n\n\n        // ***********************************************************************************\n        //      Stage 1 - Start up\n        // ***********************************************************************************\n        if (Phase == 1){\n            \n                global.set('F_SS_actual_stage', \"Stage 1 - just started\");          // 11-01-2023 remember actual stage for debugging/system check)\n                F_SS_correction = -3;                                               //  Set the starting correction to -3\n                F_SS_new_SP = F_SS_SP_start + F_SS_correction;                      //  Calculate the NEW SP.\n                \n                T = ' - (STARTUP)';\n                \n                if (ss_PV_Ta -2 > F_SS_new_SP)                                      //  Check if the NEW SP is not too low (2C below Ta) \n                    {\n                        F_SS_new_SP             = ss_PV_Ta -2;                      //  NEW SP\n                        F_SS_correction         = F_SS_new_SP - F_SS_SP_start;      //  NEW CORRECTION\n                    }\n                if (F_SS_new_SP > F_SS_SP_start + 7)                                //  Check if the NEW SP is not too high (7C above original SP) coming out of DHW eg.\n                    {\n                        F_SS_new_SP             = F_SS_SP_start + 7;                //  NEW SP\n                        F_SS_correction         = 7;                                //  NEW CORRECTION\n                    }\n            }\n        \n        // ***********************************************************************************\n        //      Stage 2 - waiting for pump to relax\n        // ***********************************************************************************\n        if (Phase == 2){                                                                                                // phase 2\n                global.set('F_SS_actual_stage', \"Stage 2 - waiting for pump to relax\");                                 // 11-01-2023 remember actual stage for debugging/system check)\n\n                F_SS_new_SP                     = ss_PV_Ta -1;                      //  NEW SP\n                    if (F_SS_new_SP < F_SS_SP_start + lowerlimit_correction)\n                        {\n                            F_SS_new_SP = F_SS_SP_start + lowerlimit_correction;\n                        }\n                F_SS_correction                 = F_SS_new_SP - F_SS_SP_start;      //  NEW CORRECTION\n                \n                if (F_SS_correction > upperlimit_correction)   {\n                        F_SS_correction = upperlimit_correction;\n                        F_SS_new_SP = F_SS_SP_start + upperlimit_correction;\n                        C = ' (Capped)'\n                    }\n                if (F_SS_correction < lowerlimit_correction)   {\n                        F_SS_correction = lowerlimit_correction;\n                        F_SS_new_SP = F_SS_SP_start + lowerlimit_correction;\n                        C = ' (Capped)'\n                    }\n                \n                T = ' - (STABLE)';\n        }\n        // ***********************************************************************************\n        //       Stage 3 - Pump has relaxed. Remove correction, back to original setpoint... Slowly\n        //***********************************************************************************\n        if (Phase == 3){                                                                                                // phase 2\n                    global.set('F_SS_actual_stage', \"Stage 3 - Pump has relaxed, back to original setpoint\");           // 11-01-2023 remember actual stage for debugging/system check)\n                    \n                    if (F_SS_old_correction < -1) {\n                        F_SS_correction = F_SS_old_correction + 1;\n                    }\n                    \n                    if (F_SS_old_correction > 1) {\n                        F_SS_correction = F_SS_old_correction - 1;\n                    }\n                    \n                    if (F_SS_old_correction >= -1 && F_SS_old_correction <= 1) {\n                        F_SS_correction = 0;\n                        // No delay triggers needed anymore\n                    }                    \n                    \n                    F_SS_new_SP                 = F_SS_SP_start + F_SS_correction                     //  NEW SP\n                    T = ' - (ENDING)';\n        }\n        // ***********************************************************************************\n}\n\n\n\n// *****************************************************************************\n// calculate temp SP_Final *note* only for log message\nvar F_WAR_onoff = global.get('Correction_0_WAR_on_off', \"file\") || 0;\nvar F_WAR_SP    = global.get('F_WAR_SP');\nvar F_RTC_state = global.get('F_RTC.state', \"file\") || 0;\nvar SP_Final    = global.get('SP_DIRECT_virt', \"file\");\n    if (F_WAR_onoff == 1) { SP_Final = F_WAR_SP; }\n    if (F_RTC_state == 1) { SP_Final = SP_Final + F_RTC_correction; }\n    if (F_NR_state  == 1) { SP_Final = SP_Final + F_NR_correction; }\n\n// *****************************************************************************\n\nvar StartTime_temp_step = context.get('StartTime_temp_step');\nif (StartTime_temp_step === undefined) {\n    StartTime_temp_step = CurrentTime;\n    context.set('StartTime_temp_step',CurrentTime);\n}\n\nvar TimeElapsed_temp_step = (CurrentTime - StartTime_temp_step) / 1000;         // time is in ms. \n    TimeElapsed_temp_step = parseFloat(TimeElapsed_temp_step.toFixed(0));\n\nmsg1.payload = F_SS_correction; \nmsg1.topic = 'F_SS_correction ' + T;\n\n\nif (msg.force == 1) {\n    if (Phase == 1) {msg99.payload = \"Start Phase 1\";}\n    if (Phase == 2) {msg99.payload = \"Start Phase 2\";}\n    if (Phase == 3) {msg99.payload = \"Phase 3 - Phase out step\";}\n    node.send([null,msg99,null]);\n}\n\nif (Phase == 1){\n        if (F_SS_correction <= F_SS_old_correction){\n                global.set('F_SS.correction_value',F_SS_correction,\"file\"); \n                context.set('StartTime_temp_step',undefined);\n                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"SoftStart\"); }\n                SP_Final += F_SS_correction;\n                SP_Final = Math.round(SP_Final * 10) / 10;\n                msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: <b>\" + SP_Final + \"</b>°C\"; \n                if (F_SS_correction != F_SS_old_correction)     {return [msg1,msg99,null];}\n                else                                            {return [msg1,null,null];}\n        }\n        \n        if (F_SS_correction > F_SS_old_correction && TimeElapsed_temp_step > phase_1_delay_time){\n                global.set('F_SS.correction_value',F_SS_correction,\"file\"); \n                context.set('StartTime_temp_step',undefined);\n                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"SoftStart\"); }\n                SP_Final += F_SS_correction;\n                SP_Final = Math.round(SP_Final * 10) / 10;\n                msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: <b>\" + SP_Final + \"</b>°C\"; \n                return [msg1,msg99,null];\n        }\n        \n        if (F_SS_correction > F_SS_old_correction && TimeElapsed_temp_step < phase_1_delay_time){\n                global.set('F_SS.correction_value',F_SS_old_correction,\"file\");\n                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"SoftStart\"); }\n                msg2.delay = phase_1_delay_time;\n                msg2.topic = \"delayed_trigger\";\n                return [msg1,null,msg2];\n        }\n}\n\nif (Phase == 2){\n        if (F_SS_correction <= F_SS_old_correction){\n                global.set('F_SS.correction_value',F_SS_correction,\"file\"); \n                context.set('StartTime_temp_step', undefined);\n                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"SoftStart\"); }\n                SP_Final += F_SS_correction;\n                SP_Final = Math.round(SP_Final * 10) / 10;\n                msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: <b>\" + SP_Final + \"</b>°C\"; \n                if (F_SS_correction != F_SS_old_correction)     {return [msg1,msg99,null];}\n                else                                            {return [msg1,null,null];}\n        }\n        \n        if (F_SS_correction > F_SS_old_correction && TimeElapsed_temp_step > phase_2_delay_time){\n                global.set('F_SS.correction_value',F_SS_correction,\"file\");\n                context.set('StartTime_temp_step', undefined);\n                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"SoftStart\"); }\n                SP_Final += F_SS_correction;\n                SP_Final = Math.round(SP_Final * 10) / 10;\n                msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: <b>\" + SP_Final + \"</b>°C\"; \n                return [msg1,msg99,null];\n        }\n        \n        if (F_SS_correction > F_SS_old_correction && TimeElapsed_temp_step <= phase_2_delay_time){\n                global.set('F_SS.correction_value',F_SS_old_correction,\"file\");\n                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"SoftStart\"); }\n                msg2.delay = phase_2_delay_time;\n                msg2.topic = \"delayed_trigger\";\n                return [msg1,null,msg2];\n        }\n}\n\nif (Phase == 3 && msg.force == 1) {\n        if (F_SS_old_correction != 0)   {global.set('F_SS.correction_value',F_SS_correction,\"file\");}\n        if (F_SS_old_correction == 0)   {global.set('F_SS.correction_value',0,\"file\");}\n        SP_Final += F_SS_correction;\n        SP_Final = Math.round(SP_Final * 10) / 10;\n        msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: <b>\" + SP_Final + \"</b>°C\"; \n        if (F_SS_old_correction != 0)   {   return [msg1,msg99,null];\n        }\n        else                            {   msg2.topic = 'reset';                                       // reset any ongoing timers. force shutdown at given interval\n                                            return [msg1,null,msg2];\n        }\n\n}\n\n if (Phase == 3 && msg.force != 1){\n        global.set('F_SS.correction_value',F_SS_old_correction,\"file\");\n        return [null,null,null];\n        \n}\n\n\n/*\n////////////// Commented out part, copy of code from old function /////////////////\n\nmsg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: <b>\" + SP_Final + \"</b>°C\"; \n\ncontext.set('StartTime_temp_step', CurrentTime); \nif (Number(SP_Final).toFixed(0) == current_sp && Debugging == 0) return [null, null];   //update 9-12-2022 (only send when needed) \nif (Number(SP_Final).toFixed(0) == current_sp && Debugging == 1) { msg99.topic = \"*** \" + msg99.topic;    return [null, msg99];}  //update 9-12-2022 (send when Extend logging is on)\nif (Number(SP_Final).toFixed(0) < HEAT_SP_lower_limit)           return [null, null];   //update 16-01-2023 (only send when sp higher then HEAT_SP_lower_limit) \n\n*/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "func": "//////////////////////////////// SOFTSTART /////////////////////////////////////\nlet msg1={};            //  pin 1 - F_SS_correction\nlet msg99={};           //  pin 2 - To Log\n    msg99.topic     = \"Function SoftStart\";\nlet msg2={};            //  pin 3 - delay\n    msg2.payload    = 'PING';\n\nvar F_SS = global.get('F_SS',\"file\");\n    if (F_SS === undefined)         {global.set('F_SS',{},\"file\"); return null;}\n    \n    var total_duration              =   F_SS.total_duration;            // seconds\n    var phase_1_duration            =   F_SS.phase_1_duration;          // seconds\n    var phase_1_delay_time          =   F_SS.phase_1_delay_time;        // seconds\n    var phase_2_delay_time          =   F_SS.phase_2_delay_time;        // seconds\n    var phase_3_delay_time          =   F_SS.phase_3_delay_time;        // seconds\n    var upperlimit_correction       =   F_SS.upperlimit_correction;     // temperature\n    var lowerlimit_correction       =   F_SS.lowerlimit_correction;     // temperature\n    var F_SS_reset_after_defrost    =   F_SS.reset_after_defrost;       // 1 or 0. Should the softstar function restart after a defrost.\n    var F_SS_state                  =   F_SS.state;                     // 1 or 0. Is the SoftStart function enabled or not.\n    var F_SS_old_correction         =   F_SS.correction_value;          // stored correction as a result of the SoftStart function.\n\nif (F_SS_reset_after_defrost == 0 || F_SS_reset_after_defrost === undefined)          \n    {if (global.get('ForceDefrost', \"file\") == 1) // uitzondering maken tijdens defrost                                   \n        {   msg99.payload = \"temporally disabled during defrost\"; \n            return [null, msg99];\n        }\n}\n\nif (F_SS_state === undefined)               \n    {global.set('F_SS.state',0,\"file\"); F_SS_state=0;}\n\nif (F_SS_old_correction === undefined)      \n    {F_SS_old_correction='0'}\n\nvar ThreeWay_Valve_State= global.get('ThreeWay_Valve_State');\n    if(ThreeWay_Valve_State===undefined){return null;}\n    \nvar F_SS_correction     = 0;\n\nvar HEAT_SP_lower_limit = global.get('HEAT_SP_lower_limit', \"file\") || 20; \n\nvar ss_Hz               = global.get('compressor_frequency',\"file\");                       // Get the global variable for current compressor frequency\n    if (ss_Hz === undefined)    {return null;}\n\nvar Operating_Mode      = global.get('Operating_Mode_State',\"file\");\n\nvar SP_start            = global.get('F_WAR_SP');                                   //  Setpoint after WAR calculation\n    if (SP_start === undefined)    {return null;}\n\nvar F_RTC_correction    = global.get('F_RTC.correction_value',\"file\");                    //  Correction of the RTC function Memory Only!\n    F_RTC_correction    = Number(F_RTC_correction).toFixed(1);                      // round it\n    F_RTC_correction    = parseFloat(F_RTC_correction);\n    if (F_RTC_correction===undefined) {F_RTC_correction=0}\n\nvar F_NR_state = global.get('NightReductionWaterTemp.state', \"file\");                   \n    if (F_NR_state === undefined) { F_NR_state = 0; }\nvar F_NR_correction     = global.get('F_NR_correction');                            //  Correction of the NightReduction function\n    if (F_NR_state == 0 || F_NR_correction === undefined) { F_NR_correction = 0; }\n\nvar F_SS_SP_start       = SP_start + F_RTC_correction + F_NR_correction;            //  Calculate the starting temperature (SP) for the SoftStart function \n\nvar Defrost             = global.get('ForceDefrost',\"file\")\n    if (Defrost === undefined)  {Defrost = 0;}\n\nvar current_sp = global.get('Main_Target_Temp');\n\nvar Debugging = global.get('Debugging', \"file\");\n\n\n    \n    \n//\n\n// ***********************************************************************************\nif (F_SS_state == 0 || ss_Hz == 0 || ThreeWay_Valve_State != 0 || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8 || Defrost==1)                     \n//  Check if the function is enabled. Check if the compressor is running. Check if 3wayvalvue is in HEAT mode(0).\n    {\n        F_SS_correction = 0;                                                        //  If the function is off, or the compressor is off, set  correction to zero\n        global.set('F_SS.correction_value',F_SS_correction,\"file\");                              //  Set the correctionvalue\n        global.set('StartTime', undefined, \"file\");\n        global.set('F_SS_actual_stage', undefined);                                 // 11-01-2023 reset (for debugging/System Check remember the softstart stage)\n        \n        msg1.payload = F_SS_correction; \n        msg1.topic = 'Compressor off. F_SS_correction 0';\n        \n        msg2.topic = 'reset';\n        msg2.payload = 'PANG';\n        \n        msg99.payload = \"SoftStart function end\";\n        \n        if (Defrost == 1) {\n            msg1.topic = 'Function SoftStart';\n            msg99.payload = \"Defrost - Correction: 0\";\n        }\n        \n        return [msg1,msg99,msg2];\n    }\n// ***********************************************************************************\n//\nelse    \n{\n        var F_SS_new_SP;                                                            //  declare an empty variable\n        var ss_PV_Ta            = global.get('Main_Outlet_Temp');                   //  PV (Ta/outlet) Temperature of water.\n        var ss_PV_Tr            = global.get('Main_Inlet_Temp');                    //  PV (Tr/inlet) Temperature of water\n            if (ss_PV_Ta === undefined || ss_PV_Tr === undefined)   {return null;}\n        var T = '';\n        var C = '';\n        \n        //\n        // ***********************************************************************************\n        /////// Timer how long the compressor is on. Runtime //////////\n        // ***********************************************************************************\n        var CurrentTime = new Date().getTime();\n        var StartTime = global.get('StartTime', \"file\");\n        \n        if (StartTime === undefined)\n            {\n                StartTime = CurrentTime;\n                global.set('StartTime', StartTime, \"file\");\n                \n                // send trigger to timer after phase 1\n                msg2.topic = 'delayed_trigger';\n                \n                msg2.delay = phase_1_duration;\n                msg2.force = 1;\n                node.send([null,null,msg2]);                                         // SENDS MSG TO TIMER FUNCTION\n                msg2.force = 0;\n            }\n            \n        var TimeElapsed = ((CurrentTime - StartTime)/1000);\n        TimeElapsed = parseFloat(TimeElapsed.toFixed(0));\n        // *********************************************************************\n        var Phase;\n            if (TimeElapsed < phase_1_duration)                                     {Phase = 1;}\n            if (TimeElapsed >= phase_1_duration && TimeElapsed < total_duration)    {Phase = 2;}\n            if (TimeElapsed >= total_duration)                                      {Phase = 3;}\n\n        if (msg.force == 1) {\n                if (Phase == 2) {\n                    msg2.delay = total_duration - TimeElapsed;\n                    msg2.force = 1;\n                    node.send([null,null,msg2]);                                // SENDS MSG TO TIMER FUNCTION    \n                    msg2.force = 0;\n                }\n                if (Phase == 3) {\n                    msg2.topic = 'reset';                                       // reset any ongoing timers. force shutdown at given interval\n                    node.send([null,null,msg2]); \n                    \n                    msg2.topic = 'delayed_trigger';                             // send msg to timer to trigger next reductin step\n                    msg2.force = 1;\n                    msg2.delay = phase_3_delay_time;\n                    node.send([null,null,msg2]);                                \n                    msg2.force = 0;\n                    msg2.topic = '';\n                }\n        }\n\n\n        // ***********************************************************************************\n        //      Stage 1 - Start up\n        // ***********************************************************************************\n        if (Phase == 1){\n            \n                global.set('F_SS_actual_stage', \"Stage 1 - just started\");          // 11-01-2023 remember actual stage for debugging/system check)\n                F_SS_correction = -3;                                               //  Set the starting correction to -3\n                F_SS_new_SP = F_SS_SP_start + F_SS_correction;                      //  Calculate the NEW SP.\n                \n                T = ' - (STARTUP)';\n                \n                if (ss_PV_Ta -2 > F_SS_new_SP)                                      //  Check if the NEW SP is not too low (2C below Ta) \n                    {\n                        F_SS_new_SP             = ss_PV_Ta -2;                      //  NEW SP\n                        F_SS_correction         = F_SS_new_SP - F_SS_SP_start;      //  NEW CORRECTION\n                    }\n                if (F_SS_new_SP > F_SS_SP_start + 7)                                //  Check if the NEW SP is not too high (7C above original SP) coming out of DHW eg.\n                    {\n                        F_SS_new_SP             = F_SS_SP_start + 7;                //  NEW SP\n                        F_SS_correction         = 7;                                //  NEW CORRECTION\n                    }\n            }\n        \n        // ***********************************************************************************\n        //      Stage 2 - waiting for pump to relax\n        // ***********************************************************************************\n        if (Phase == 2){                                                                                                // phase 2\n                global.set('F_SS_actual_stage', \"Stage 2 - waiting for pump to relax\");                                 // 11-01-2023 remember actual stage for debugging/system check)\n                \n                F_SS_new_SP                     = ss_PV_Ta -1;                      //  NEW SP\n                    if (F_SS_new_SP < F_SS_SP_start + lowerlimit_correction)\n                        {\n                            F_SS_new_SP = F_SS_SP_start + lowerlimit_correction;\n                        }\n                F_SS_correction                 = F_SS_new_SP - F_SS_SP_start;      //  NEW CORRECTION\n                \n                if (F_SS_correction > upperlimit_correction)   {\n                        F_SS_correction = upperlimit_correction;\n                        F_SS_new_SP = F_SS_SP_start + upperlimit_correction;\n                        C = ' (Capped)'\n                    }\n                if (F_SS_correction < lowerlimit_correction)   {\n                        F_SS_correction = lowerlimit_correction;\n                        F_SS_new_SP = F_SS_SP_start + lowerlimit_correction;\n                        C = ' (Capped)'\n                    }\n                \n                T = ' - (STABLE)';\n        }\n        // ***********************************************************************************\n        //       Stage 3 - Pump has relaxed. Remove correction, back to original setpoint... Slowly\n        //***********************************************************************************\n        if (Phase == 3){                                                                                                // phase 2\n                    \n                    global.set('F_SS_actual_stage', \"Stage 3 - Pump has relaxed, back to original setpoint\");           // 11-01-2023 remember actual stage for debugging/system check)\n                    \n                    if (F_SS_old_correction < -1) {\n                        F_SS_correction = F_SS_old_correction + 1;\n                    }\n                    \n                    if (F_SS_old_correction > 1) {\n                        F_SS_correction = F_SS_old_correction - 1;\n                    }\n                    \n                    if (F_SS_old_correction >= -1 && F_SS_old_correction <= 1) {\n                        F_SS_correction = 0;\n                        // No delay triggers needed anymore\n                    }                    \n                    \n                    F_SS_new_SP                 = F_SS_SP_start + F_SS_correction                     //  NEW SP\n                    T = ' - (ENDING)';\n        }\n        // ***********************************************************************************\n}\n\n\n\n// *****************************************************************************\n// calculate temp SP_Final *note* only for log message\nvar F_WAR_onoff = global.get('Correction_0_WAR_on_off', \"file\") || 0;\nvar F_WAR_SP    = global.get('F_WAR_SP');\nvar F_RTC_state = global.get('F_RTC.state', \"file\") || 0;\nvar SP_Final    = global.get('SP_DIRECT_virt',\"file\");\n    if (F_WAR_onoff == 1) { SP_Final = F_WAR_SP; }\n    if (F_RTC_state == 1) { SP_Final = SP_Final + F_RTC_correction; }\n    if (F_NR_state  == 1) { SP_Final = SP_Final + F_NR_correction; }\n\n// *****************************************************************************\n\nvar StartTime_temp_step = context.get('StartTime_temp_step');\nif (StartTime_temp_step === undefined) {\n    StartTime_temp_step = CurrentTime;\n    context.set('StartTime_temp_step',CurrentTime);\n}\n\nvar TimeElapsed_temp_step = (CurrentTime - StartTime_temp_step) / 1000;         // time is in ms. \n    TimeElapsed_temp_step = parseFloat(TimeElapsed_temp_step.toFixed(0));\n\nmsg1.payload = F_SS_correction; \nmsg1.topic = 'F_SS_correction ' + T;\n\n\nif (msg.force == 1) {\n    if (Phase == 1) {msg99.payload = \"Start Phase 1\";}\n    if (Phase == 2) {msg99.payload = \"Start Phase 2\";}\n    if (Phase == 3) {msg99.payload = \"Phase 3 - Phase out step\";}\n    node.send([null,msg99,null]);\n}\n\nif (Phase == 1){\n        if (F_SS_correction <= F_SS_old_correction){\n                global.set('F_SS.correction_value',F_SS_correction,\"file\"); \n                context.set('StartTime_temp_step',undefined);\n                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"SoftStart\"); }\n                SP_Final += F_SS_correction;\n                SP_Final = Math.round(SP_Final * 10) / 10;\n                msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: <b>\" + SP_Final + \"</b>°C\"; \n                if (F_SS_correction != F_SS_old_correction)     {return [msg1,msg99,null];}\n                else                                            {return [msg1,null,null];}\n        }\n        \n        if (F_SS_correction > F_SS_old_correction && TimeElapsed_temp_step > phase_1_delay_time){\n                global.set('F_SS.correction_value',F_SS_correction,\"file\"); \n                context.set('StartTime_temp_step',undefined);\n                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"SoftStart\"); }\n                SP_Final += F_SS_correction;\n                SP_Final = Math.round(SP_Final * 10) / 10;\n                msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: <b>\" + SP_Final + \"</b>°C\"; \n                return [msg1,msg99,null];\n        }\n        \n        if (F_SS_correction > F_SS_old_correction && TimeElapsed_temp_step < phase_1_delay_time){\n                global.set('F_SS.correction_value',F_SS_old_correction,\"file\");\n                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"SoftStart\"); }\n                msg2.delay = phase_1_delay_time;\n                msg2.topic = \"delayed_trigger\";\n                return [msg1,null,msg2];\n        }\n}\n\nif (Phase == 2){\n        if (F_SS_correction <= F_SS_old_correction){\n                global.set('F_SS.correction_value',F_SS_correction,\"file\"); \n                context.set('StartTime_temp_step', undefined);\n                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"SoftStart\"); }\n                SP_Final += F_SS_correction;\n                SP_Final = Math.round(SP_Final * 10) / 10;\n                msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: <b>\" + SP_Final + \"</b>°C\"; \n                if (F_SS_correction != F_SS_old_correction)     {return [msg1,msg99,null];}\n                else                                            {return [msg1,null,null];}\n        }\n        \n        if (F_SS_correction > F_SS_old_correction && TimeElapsed_temp_step > phase_2_delay_time){\n                global.set('F_SS.correction_value',F_SS_correction,\"file\");\n                context.set('StartTime_temp_step', undefined);\n                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"SoftStart\"); }\n                SP_Final += F_SS_correction;\n                SP_Final = Math.round(SP_Final * 10) / 10;\n                msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: <b>\" + SP_Final + \"</b>°C\"; \n                return [msg1,msg99,null];\n        }\n        \n        if (F_SS_correction > F_SS_old_correction && TimeElapsed_temp_step <= phase_2_delay_time){\n                global.set('F_SS.correction_value',F_SS_old_correction,\"file\");\n                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"SoftStart\"); }\n                msg2.delay = phase_2_delay_time;\n                msg2.topic = \"delayed_trigger\";\n                return [msg1,null,msg2];\n        }\n}\n\nif (Phase == 3 && msg.force == 1) {\n        if (F_SS_old_correction != 0)   {global.set('F_SS.correction_value',F_SS_correction,\"file\");}\n        if (F_SS_old_correction == 0)   {global.set('F_SS.correction_value',0,\"file\");}\n        SP_Final += F_SS_correction;\n        SP_Final = Math.round(SP_Final * 10) / 10;\n        msg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: <b>\" + SP_Final + \"</b>°C\"; \n        if (F_SS_old_correction != 0)   {   return [msg1,msg99,null];\n        }\n        else                            {   msg2.topic = 'reset';                                       // reset any ongoing timers. force shutdown at given interval\n                                            return [msg1,null,msg2];\n        }\n\n}\n\n if (Phase == 3 && msg.force != 1){\n        global.set('F_SS.correction_value',F_SS_old_correction,\"file\");\n        return [null,null,null];\n        \n}\n\n\n/*\n////////////// Commented out part, copy of code from old function /////////////////\n\nmsg99.payload = \"Correction: \" + F_SS_old_correction + \" > \" + F_SS_correction + \" °C\" + T + \" Freq: \" + ss_Hz + \"Hz, SP_Final: <b>\" + SP_Final + \"</b>°C\"; \n\ncontext.set('StartTime_temp_step', CurrentTime); \nif (Number(SP_Final).toFixed(0) == current_sp && Debugging == 0) return [null, null];   //update 9-12-2022 (only send when needed) \nif (Number(SP_Final).toFixed(0) == current_sp && Debugging == 1) { msg99.topic = \"*** \" + msg99.topic;    return [null, msg99];}  //update 9-12-2022 (send when Extend logging is on)\nif (Number(SP_Final).toFixed(0) < HEAT_SP_lower_limit)           return [null, null];   //update 16-01-2023 (only send when sp higher then HEAT_SP_lower_limit) \n\n*/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
@@ -23127,6 +22993,115 @@
         "info": "",
         "x": 280,
         "y": 3980,
+        "wires": []
+    },
+    {
+        "id": "e4932a30dba95577",
+        "type": "rbe",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 530,
+        "y": 1160,
+        "wires": [
+            [
+                "d53e66c37991fa8e"
+            ]
+        ]
+    },
+    {
+        "id": "f41605bb413dc970",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "0077cf76d14c5757",
+        "name": "Filter",
+        "func": "var Operating_Mode_State = global.get('Operating_Mode_State',\"file\");  \nif (msg.payload == Operating_Mode_State) return null;   // only send if needed\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 1900,
+        "wires": [
+            [
+                "846a789dca74329d"
+            ]
+        ]
+    },
+    {
+        "id": "925fbf9452bf5b4d",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "debug 125",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "a2ab2afd444abd99",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "debug 126",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "1108fd96608554c3",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "debug 127",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "aa482bdb9f4f7cea",
+        "type": "debug",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "debug 128",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 1440,
         "wires": []
     },
     {
@@ -24717,9 +24692,7 @@
             "88ea0371f9cecd37"
         ],
         "x": 74,
-        "y": 19,
-        "w": 1292,
-        "h": 728
+        "y": 19
     },
     {
         "id": "81ff790f84afd46d",
@@ -24781,9 +24754,7 @@
             "74d748cdb9ede767"
         ],
         "x": 44,
-        "y": 1693,
-        "w": 1342,
-        "h": 1228
+        "y": 1693
     },
     {
         "id": "6f4cdc97add442ff",
@@ -24804,9 +24775,7 @@
             "58f4dcb609fc506a"
         ],
         "x": 94,
-        "y": 2979,
-        "w": 902,
-        "h": 202
+        "y": 2979
     },
     {
         "id": "3b5324e3d80d96a1",
@@ -24840,9 +24809,7 @@
             "375bbd780529afe0"
         ],
         "x": 74,
-        "y": 779,
-        "w": 1332,
-        "h": 688
+        "y": 779
     },
     {
         "id": "2efa0af27c69d4d0",
@@ -24864,9 +24831,7 @@
             "39f52a7b4d2f12c9"
         ],
         "x": 114,
-        "y": 551.5,
-        "w": 812,
-        "h": 169.5
+        "y": 551.5
     },
     {
         "id": "9fca714df21ffac0",
@@ -24883,9 +24848,7 @@
             "5256af8b7309c113"
         ],
         "x": 314,
-        "y": 399,
-        "w": 232,
-        "h": 82
+        "y": 399
     },
     {
         "id": "b85d6aca6a841215",
@@ -24902,9 +24865,7 @@
             "3ddc8ec4b5d75af2"
         ],
         "x": 274,
-        "y": 1119,
-        "w": 232,
-        "h": 82
+        "y": 1119
     },
     {
         "id": "233708268636f815",
@@ -24928,9 +24889,7 @@
             "441d5424780d9523"
         ],
         "x": 154,
-        "y": 1279,
-        "w": 612,
-        "h": 162
+        "y": 1279
     },
     {
         "id": "e5578a7ea3257441",
@@ -24964,9 +24923,7 @@
             "941e2e6b17a45171"
         ],
         "x": 434,
-        "y": 1719,
-        "w": 392,
-        "h": 1162
+        "y": 1719
     },
     {
         "id": "ce2634259bc8d6eb",
@@ -41563,7 +41520,7 @@
         "z": "35d210f042827344",
         "g": "92293ba8ccc5db0f",
         "name": "Load on boot",
-        "func": "var NightReductionRoomSetpoint = global.get('NightReductionRoomSetpoint',\"file\");\n    var SetpointLOW     = NightReductionRoomSetpoint.LOW;\n    var SetpointNORMAL  = NightReductionRoomSetpoint.NORMAL;\n    var NightReductionRoomSetpoint_state = NightReductionRoomSetpoint.state;\n\n    \nif (SetpointLOW === undefined)  {\n    SetpointLOW = 18;\n    global.set('NightReductionRoomSetpoint.LOW',18,\"file\");\n}\n    \n\nif (SetpointNORMAL === undefined) {\n    SetpointNORMAL = global.get('WoonkamerSP',\"file\");\n    if  (SetpointNORMAL !== undefined)   {\n        global.set('NightReductionRoomSetpoint.NORMAL',SetpointNORMAL,\"file\");\n    }\n    else {return null;}     // prevent setting a default room SP due to timing issue. This is done elsewhere. Just exit and wait for it to populate with next passes.\n}\n\n\nif (NightReductionRoomSetpoint_state === undefined)   {\n    global.set('NightReductionRoomSetpoint.state',0,\"file\");\n    NightReductionRoomSetpoint_state = 0;\n}\n\n\nlet msg1 = {};    //  NightReductionRoomSetpoint.LOW\nlet msg2 = {};    //  NightReductionRoomSetpoint.NORMAL\nlet msg3 = {};  //  NightReductionRoomSetpoint_state.state\n\nmsg1.payload = SetpointLOW;\nmsg2.payload = SetpointNORMAL;\nmsg3.payload = NightReductionRoomSetpoint_state;\n\nreturn [msg1, msg2, msg3];",
+        "func": "var NightReductionRoomSetpoint = global.get('NightReductionRoomSetpoint',\"file\");\n\nif (NightReductionRoomSetpoint === undefined){\n    global.set('NightReductionRoomSetpoint',{},\"file\");\n}\n\n    var SetpointLOW     = NightReductionRoomSetpoint.LOW;\n    var SetpointNORMAL  = NightReductionRoomSetpoint.NORMAL;\n    var NightReductionRoomSetpoint_state = NightReductionRoomSetpoint.state;\n\n    \nif (SetpointLOW === undefined)  {\n    SetpointLOW = 18;\n    global.set('NightReductionRoomSetpoint.LOW',18,\"file\");\n}\n    \n\nif (SetpointNORMAL === undefined) {\n    SetpointNORMAL = global.get('WoonkamerSP',\"file\");\n    if  (SetpointNORMAL !== undefined)   {\n        global.set('NightReductionRoomSetpoint.NORMAL',SetpointNORMAL,\"file\");\n    }\n    else {return null;}     // prevent setting a default room SP due to timing issue. This is done elsewhere. Just exit and wait for it to populate with next passes.\n}\n\n\nif (NightReductionRoomSetpoint_state === undefined)   {\n    global.set('NightReductionRoomSetpoint.state',0,\"file\");\n    NightReductionRoomSetpoint_state = 0;\n}\n\n\nlet msg1 = {};    //  NightReductionRoomSetpoint.LOW\nlet msg2 = {};    //  NightReductionRoomSetpoint.NORMAL\nlet msg3 = {};  //  NightReductionRoomSetpoint_state.state\n\nmsg1.payload = SetpointLOW;\nmsg2.payload = SetpointNORMAL;\nmsg3.payload = NightReductionRoomSetpoint_state;\n\nreturn [msg1, msg2, msg3];",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
@@ -47022,7 +46979,7 @@
         "z": "d5fea67661261002",
         "g": "0531f7d830ad5e1b",
         "name": "Repair & delete old vars",
-        "func": "// 2023-02-12 (v22.02)\n\n// remove old\nif(global.get('compressor_frequency') !=undefined)                              {   global.set('compressor_frequency',undefined);}\nif(global.get('F_SS_correction_active') !=undefined)                            {   global.set('F_SS_correction_active',undefined);}\nif(global.get('Pump_Flow') !=undefined)                                         {   global.set('Pump_Flow',undefined);}\n\n// move old to new\nif(global.get('F_SS_stage2','file') !=undefined)                                {   global.set('F_SS.total_duration', global.get('F_SS_stage2','file'),'file'); global.set('F_SS_stage2',undefined,'file');}\nif(global.get('F_SS_stage2_limit','file') !=undefined)                          {   global.set('F_SS.upperlimit_correction', global.get('F_SS_stage2_limit','file'),'file'); global.set('F_SS_stage2_limit',undefined,'file');}\nif(global.get('F_SS_reset_after_defrost','file') !=undefined)                   {   global.set('F_SS.reset_after_defrost', global.get('F_SS_reset_after_defrost','file'),'file'); global.set('F_SS_reset_after_defrost',undefined,'file');}\nif(global.get('Correction_2_softstart_on_off','file') !=undefined)              {   global.set('F_SS.state', global.get('Correction_2_softstart_on_off','file'),'file'); global.set('Correction_2_softstart_on_off',undefined,'file');}\nif(global.get('F_SS_correction') !=undefined)                                   {   global.set('F_SS.correction_value', global.get('F_SS_correction'),'file'); global.set('F_SS_correction',undefined);}\n\n    \n/////////////////\n    \n    //first move old mqtt counters to new vars:\n    var MQTT_Counter = global.get('MQTT_Counter', \"file\");\n    if (MQTT_Counter != undefined) { global.set('MQTT.counter', MQTT_Counter, \"file\"); }\n\n    var MQTT_Counter_Today = global.get('MQTT_Counter_Today', \"file\");\n    if (MQTT_Counter_Today != undefined) { global.set('MQTT.messages_today', MQTT_Counter_Today, \"file\"); }\n\n    var MQTT_Counter_Yesterday = global.get('MQTT_Counter_Yesterday', \"file\");\n    if (MQTT_Counter_Yesterday != undefined) { global.set('MQTT.messages_yesterday', MQTT_Counter_Yesterday, \"file\"); }\n\n    var MQTT_Limit = global.get('MQTT_Limit', \"file\");\n    if (MQTT_Limit != undefined) { global.set('MQTT.message_limit', MQTT_Limit, \"file\"); }\n\n//copy reduce pumpspeed settings:\n    var ReducePumpSpeed = global.get('ReducePumpSpeed', \"file\");\n    if (ReducePumpSpeed != undefined) { global.set('F_ReducePumpSpeed.state', ReducePumpSpeed, \"file\"); }   \n\n    var PumpMaxFlowSetting = global.get('PumpMaxFlowSetting', \"file\");\n    if (PumpMaxFlowSetting != undefined) { global.set('F_ReducePumpSpeed.PumpMaxFlowSetting', PumpMaxFlowSetting, \"file\"); }   \n\n    var SavedPumpspeed = global.get('SavedPumpspeed', \"file\");\n    if (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.SavedPumpspeed', SavedPumpspeed, \"file\"); } \n\n    var LowSpeed = global.get('LowSpeed', \"file\");\n    if (LowSpeed != undefined) { global.set('F_ReducePumpSpeed.LowSpeed', LowSpeed, \"file\"); } \n\n//copy defrost to new var:\n    var Defrost_Counter = global.get('Defrost_Counter', \"file\");\n    if (Defrost_Counter != undefined) { \n        global.set('Defrost.Counter', Defrost_Counter, \"file\"); \n        global.set('Defrost.Counter_Today', 0, \"file\"); \n        global.set('Defrost.Counter_Yesterday', 0, \"file\"); \n        } \n//copy RTC vars to new vars:\n    var F_rtc_on_off_active = global.get('F_rtc_on_off_active', \"file\");\n    if (F_rtc_on_off_active != undefined) { global.set('F_RTC_on_off_active', F_rtc_on_off_active, \"file\"); }\n\n    var F_rtc_on_off_status = global.get('F_rtc_on_off_status', \"file\");\n    if (F_rtc_on_off_status != undefined) { global.set('F_RTC_on_off_status', F_rtc_on_off_status, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n\n    var F_RTC_on_off2 = global.get('F_RTC_on_off2', \"file\");\n    if (F_RTC_on_off2 != undefined) { global.set('F_RTC.F1_power_state', F_RTC_on_off2, \"file\"); }\n\n    var F_RTC_on_off3_OM = global.get('F_RTC_on_off3_OM', \"file\");\n    if (F_RTC_on_off3_OM != undefined) { global.set('F_RTC.F2_OM_state', F_RTC_on_off3_OM, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n    if (F_RTC_on_off_active === undefined) { global.set('F_RTC.on_off_active', 0, \"file\"); }\n\nvar Correction_1_RTC_on_off = global.get('Correction_1_RTC_on_off', \"file\");\nif (Correction_1_RTC_on_off != undefined) { global.set('F_RTC.state', Correction_1_RTC_on_off, \"file\"); }\n\n// use old pumpspeed low:\nvar SavedPumpspeed = global.get('F_ReducePumpSpeed.SavedPumpspeed', \"file\");\nif (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.NormalSpeed', SavedPumpspeed, \"file\"); }\n\n//delete old vars:\n    global.set('Nightmode', undefined, \"file\");\n    var MQTT = global.get('MQTT', \"file\");\n    if (MQTT == 0 || MQTT == 1) {global.set('MQTT',undefined,\"file\");}\n    global.set('MQTT_Block', undefined, \"file\");\n    global.set('MQTT_select', undefined, \"file\");\n    global.set('MQTT_Block_select', undefined, \"file\");\n    global.set('MQTT_Counter', undefined, \"file\");\n    global.set('MQTT_Counter_Today', undefined, \"file\");\n    global.set('MQTT_Counter_Yesterday', undefined, \"file\");\n    global.set('MQTT_Limit', undefined, \"file\");\n    global.set('NightReductionRoomPV_CurrentStatus', undefined, \"file\");\n    global.set('NightReduction_current_value', undefined, \"file\");\n    global.set('NightReduction_correction', undefined, \"file\");\n    global.set('NightReductionWaterTemp_correction', undefined, \"file\");\n    global.set('nightreduction_on_off', undefined, \"file\");\n    global.set('RoomSetpointLOW', undefined, \"file\");\n    global.set('RoomSetpointNORMAL', undefined, \"file\");\n    global.set('ReducePumpSpeed', undefined, \"file\");\n    global.set('PumpMaxFlowSetting', undefined, \"file\");\n    global.set('SavedPumpspeed', undefined, \"file\");\n    global.set('LowSpeed', undefined, \"file\");\n    global.set('Booster', undefined, \"file\");\n    global.set('Defrost_Counter', undefined, \"file\");\n    global.set('Defrost_Counter_Today', undefined, \"file\");\n    global.set('Defrost_Counter_Yesterday', undefined, \"file\");\n    global.set('F_rtc_on_off_active', undefined, \"file\");\n    global.set('F_rtc_on_off_status', undefined, \"file\");\n    global.set('F_RTC_correction', undefined); //Memory Only\n    global.set('F_RTC_on_off2', undefined, \"file\");\n    global.set('F_RTC_on_off3_OM', undefined, \"file\");\n    global.set('F_RTC_on_off_active', undefined, \"file\");\n    global.set('Correction_1_RTC_on_off', undefined, \"file\");\n// remove more old vars 18-01-2023     \n    global.set('MQTT_Block_Allow_function_rtc_onoff', undefined, \"file\");\n    global.set('MQTT_Block_Allow_function_solar', undefined, \"file\");\n    global.set('MQTT_Block_Allow_function_scheduled_tasks', undefined, \"file\");   \n    global.set('MQTT_Block_default_1', undefined, \"file\");\n    global.set('MQTT_Block_default_2', undefined, \"file\");\n    global.set('MQTT_Block_default_3', undefined, \"file\");\n    global.set('F_ReducePumpSpeed.SavedPumpspeed', undefined, \"file\");\n\n\n\n    let msg99={};\n    msg99.topic = \"SYSTEM:\";\n    msg99.payload = \"removed old variables\";      \n    \n    return msg99;\n        \n    ",
+        "func": "// 2023-02-12 (v22.02)\n\n// remove old\nif(global.get('compressor_frequency') !=undefined)                              {   global.set('compressor_frequency',undefined);}\nif(global.get('F_SS_correction_active') !=undefined)                            {   global.set('F_SS_correction_active',undefined);}\n//if(global.get('Pump_Flow') !=undefined)                                         {   global.set('Pump_Flow',undefined);}\n\n// move old to new\nif(global.get('F_SS_stage2','file') !=undefined)                                {   global.set('F_SS.total_duration', global.get('F_SS_stage2','file'),'file'); global.set('F_SS_stage2',undefined,'file');}\nif(global.get('F_SS_stage2_limit','file') !=undefined)                          {   global.set('F_SS.upperlimit_correction', global.get('F_SS_stage2_limit','file'),'file'); global.set('F_SS_stage2_limit',undefined,'file');}\nif(global.get('F_SS_reset_after_defrost','file') !=undefined)                   {   global.set('F_SS.reset_after_defrost', global.get('F_SS_reset_after_defrost','file'),'file'); global.set('F_SS_reset_after_defrost',undefined,'file');}\nif(global.get('Correction_2_softstart_on_off','file') !=undefined)              {   global.set('F_SS.state', global.get('Correction_2_softstart_on_off','file'),'file'); global.set('Correction_2_softstart_on_off',undefined,'file');}\nif(global.get('F_SS_correction') !=undefined)                                   {   global.set('F_SS.correction_value', global.get('F_SS_correction'),'file'); global.set('F_SS_correction',undefined);}\n\n    \n/////////////////\n    \n    //first move old mqtt counters to new vars:\n    var MQTT_Counter = global.get('MQTT_Counter', \"file\");\n    if (MQTT_Counter != undefined) { global.set('MQTT.counter', MQTT_Counter, \"file\"); }\n\n    var MQTT_Counter_Today = global.get('MQTT_Counter_Today', \"file\");\n    if (MQTT_Counter_Today != undefined) { global.set('MQTT.messages_today', MQTT_Counter_Today, \"file\"); }\n\n    var MQTT_Counter_Yesterday = global.get('MQTT_Counter_Yesterday', \"file\");\n    if (MQTT_Counter_Yesterday != undefined) { global.set('MQTT.messages_yesterday', MQTT_Counter_Yesterday, \"file\"); }\n\n    var MQTT_Limit = global.get('MQTT_Limit', \"file\");\n    if (MQTT_Limit != undefined) { global.set('MQTT.message_limit', MQTT_Limit, \"file\"); }\n\n//copy reduce pumpspeed settings:\n    var ReducePumpSpeed = global.get('ReducePumpSpeed', \"file\");\n    if (ReducePumpSpeed != undefined) { global.set('F_ReducePumpSpeed.state', ReducePumpSpeed, \"file\"); }   \n\n    var PumpMaxFlowSetting = global.get('PumpMaxFlowSetting', \"file\");\n    if (PumpMaxFlowSetting != undefined) { global.set('F_ReducePumpSpeed.PumpMaxFlowSetting', PumpMaxFlowSetting, \"file\"); }   \n\n    var SavedPumpspeed = global.get('SavedPumpspeed', \"file\");\n    if (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.SavedPumpspeed', SavedPumpspeed, \"file\"); } \n\n    var LowSpeed = global.get('LowSpeed', \"file\");\n    if (LowSpeed != undefined) { global.set('F_ReducePumpSpeed.LowSpeed', LowSpeed, \"file\"); } \n\n//copy defrost to new var:\n    var Defrost_Counter = global.get('Defrost_Counter', \"file\");\n    if (Defrost_Counter != undefined) { \n        global.set('Defrost.Counter', Defrost_Counter, \"file\"); \n        global.set('Defrost.Counter_Today', 0, \"file\"); \n        global.set('Defrost.Counter_Yesterday', 0, \"file\"); \n        } \n//copy RTC vars to new vars:\n    var F_rtc_on_off_active = global.get('F_rtc_on_off_active', \"file\");\n    if (F_rtc_on_off_active != undefined) { global.set('F_RTC_on_off_active', F_rtc_on_off_active, \"file\"); }\n\n    var F_rtc_on_off_status = global.get('F_rtc_on_off_status', \"file\");\n    if (F_rtc_on_off_status != undefined) { global.set('F_RTC_on_off_status', F_rtc_on_off_status, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n\n    var F_RTC_on_off2 = global.get('F_RTC_on_off2', \"file\");\n    if (F_RTC_on_off2 != undefined) { global.set('F_RTC.F1_power_state', F_RTC_on_off2, \"file\"); }\n\n    var F_RTC_on_off3_OM = global.get('F_RTC_on_off3_OM', \"file\");\n    if (F_RTC_on_off3_OM != undefined) { global.set('F_RTC.F2_OM_state', F_RTC_on_off3_OM, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n    if (F_RTC_on_off_active === undefined) { global.set('F_RTC.on_off_active', 0, \"file\"); }\n\nvar Correction_1_RTC_on_off = global.get('Correction_1_RTC_on_off', \"file\");\nif (Correction_1_RTC_on_off != undefined) { global.set('F_RTC.state', Correction_1_RTC_on_off, \"file\"); }\n\n// use old pumpspeed low:\nvar SavedPumpspeed = global.get('F_ReducePumpSpeed.SavedPumpspeed', \"file\");\nif (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.NormalSpeed', SavedPumpspeed, \"file\"); }\n\n//delete old vars:\n    global.set('Nightmode', undefined, \"file\");\n    var MQTT = global.get('MQTT', \"file\");\n    if (MQTT == 0 || MQTT == 1) {global.set('MQTT',undefined,\"file\");}\n    global.set('MQTT_Block', undefined, \"file\");\n    global.set('MQTT_select', undefined, \"file\");\n    global.set('MQTT_Block_select', undefined, \"file\");\n    global.set('MQTT_Counter', undefined, \"file\");\n    global.set('MQTT_Counter_Today', undefined, \"file\");\n    global.set('MQTT_Counter_Yesterday', undefined, \"file\");\n    global.set('MQTT_Limit', undefined, \"file\");\n    global.set('NightReductionRoomPV_CurrentStatus', undefined, \"file\");\n    global.set('NightReduction_current_value', undefined, \"file\");\n    global.set('NightReduction_correction', undefined, \"file\");\n    global.set('NightReductionWaterTemp_correction', undefined, \"file\");\n    global.set('nightreduction_on_off', undefined, \"file\");\n    global.set('RoomSetpointLOW', undefined, \"file\");\n    global.set('RoomSetpointNORMAL', undefined, \"file\");\n    global.set('ReducePumpSpeed', undefined, \"file\");\n    global.set('PumpMaxFlowSetting', undefined, \"file\");\n    global.set('SavedPumpspeed', undefined, \"file\");\n    global.set('LowSpeed', undefined, \"file\");\n    global.set('Booster', undefined, \"file\");\n    global.set('Defrost_Counter', undefined, \"file\");\n    global.set('Defrost_Counter_Today', undefined, \"file\");\n    global.set('Defrost_Counter_Yesterday', undefined, \"file\");\n    global.set('F_rtc_on_off_active', undefined, \"file\");\n    global.set('F_rtc_on_off_status', undefined, \"file\");\n    global.set('F_RTC_correction', undefined); //Memory Only\n    global.set('F_RTC_on_off2', undefined, \"file\");\n    global.set('F_RTC_on_off3_OM', undefined, \"file\");\n    global.set('F_RTC_on_off_active', undefined, \"file\");\n    global.set('Correction_1_RTC_on_off', undefined, \"file\");\n// remove more old vars 18-01-2023     \n    global.set('MQTT_Block_Allow_function_rtc_onoff', undefined, \"file\");\n    global.set('MQTT_Block_Allow_function_solar', undefined, \"file\");\n    global.set('MQTT_Block_Allow_function_scheduled_tasks', undefined, \"file\");   \n    global.set('MQTT_Block_default_1', undefined, \"file\");\n    global.set('MQTT_Block_default_2', undefined, \"file\");\n    global.set('MQTT_Block_default_3', undefined, \"file\");\n    global.set('F_ReducePumpSpeed.SavedPumpspeed', undefined, \"file\");\n\n\n\n    let msg99={};\n    msg99.topic = \"SYSTEM:\";\n    msg99.payload = \"removed old variables\";      \n    \n    return msg99;\n        \n    ",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
