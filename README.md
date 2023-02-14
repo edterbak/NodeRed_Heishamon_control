@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.04 Beta 1<br/> <br/>
+Current version: 22.05 Beta 1<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -685,6 +685,9 @@ Have fun with your heat pump!</br>
 
 [2023-02-12] v22.04 beta 1 (experimental). Changes:
 - [Fix] Softstart stored variables flipped by default, now correct again. 
+
+[2023-02-14] v22.04 beta 1 (experimental). Changes:
+- [Fix] Some variables, when undeclared, threw errors preventing correct functionality. (will check further)
 
 ********
 
