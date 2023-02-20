@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.07 Beta 1<br/> <br/>
+Current version: 22.08 Beta 1<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -696,6 +696,10 @@ Have fun with your heat pump!</br>
 - [Fix] Softstart function now on a different level. Added more advanced settings. (be carefull). The softstart function seems a lot more effective now.
 - [Enhancement]	#89 setpoint arrows on the dashboard to shift when in compensation curve mode. In case of compensation curve mode, the functions RTC, SoftStart and Night reduction should now work. (requires testing !)
 - [Fix] #81. setting the upper/lower limits for heat should now be set correctly.
+
+[2023-02-20] v22.08 beta 1 (experimental). Changes:
+- [Fix] GUI item not set correctly of the Softstart function.
+- [Fix] upper/lower limit values not being bound to the min/max values. 
 
 ********
 
