@@ -6693,7 +6693,7 @@
         "order": 14,
         "width": 6,
         "height": 1,
-        "wrap": false,
+        "wrap": true,
         "passthru": true,
         "topic": "topic",
         "topicType": "msg",
@@ -9643,7 +9643,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "22.07 Beta 1",
+        "payload": "22.08 Beta 1",
         "payloadType": "str",
         "x": 1340,
         "y": 1960,
@@ -15337,7 +15337,7 @@
         "order": 15,
         "width": 6,
         "height": 1,
-        "wrap": false,
+        "wrap": true,
         "passthru": true,
         "topic": "topic",
         "topicType": "msg",
@@ -15408,9 +15408,6 @@
         "name": "1 Trigger / 30 minute",
         "props": [
             {
-                "p": "payload"
-            },
-            {
                 "p": "topic",
                 "vt": "str"
             }
@@ -15420,8 +15417,6 @@
         "once": true,
         "onceDelay": "2",
         "topic": "trigger",
-        "payload": "",
-        "payloadType": "date",
         "x": 3140,
         "y": 2720,
         "wires": [
@@ -15518,9 +15513,6 @@
         "name": "",
         "props": [
             {
-                "p": "payload"
-            },
-            {
                 "p": "topic",
                 "vt": "str"
             }
@@ -15530,9 +15522,7 @@
         "once": true,
         "onceDelay": "3",
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 3210,
+        "x": 3190,
         "y": 1940,
         "wires": [
             [
@@ -15546,7 +15536,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "eb372b330f37f033",
         "name": "Load on boot",
-        "func": "// Load all variables in one go and write all variables in one go.\n\nvar F_SS = global.get('F_SS',\"file\");\nvar save = false;\n\nif (F_SS === undefined)         {F_SS = {};}\n\n\n\n    if (F_SS.phase_1_duration === undefined)         {F_SS.phase_1_duration = 180; save = true;}            // startup phase. Default 170 seconds\n    if (F_SS.phase_1_delay_time === undefined)       {F_SS.phase_1_delay_time = 3; save = true;}            // Holdingtime for temperature changes (up) during phase 1. Default 0 seconds\n    if (F_SS.phase_2_delay_time === undefined)       {F_SS.phase_2_delay_time = 60; save = true;}           // Holdingtime for temperature changes (up) during phase 2. Default 70 seconds\n    if (F_SS.phase_3_delay_time === undefined)       {F_SS.phase_3_delay_time = 15*60; save = true;}        // End speed of the function. Reduce correction to 0 (zero), in 1 C xx minutes. Default is 1 degree per 15 minutes.\n    if (F_SS.phase_1_max_dT === undefined)               {F_SS.phase_1_max_dT = -1; save = true;}                   // max temperature difference between SP and Toutlet (Ta)\n    \nif (save === true)      {global.set('F_SS',F_SS,\"file\");}\n\nlet msg1={}, msg2={}, msg3={}, msg4={},msg5={};\n\nmsg1.payload    =   F_SS.phase_1_duration;\nmsg2.payload    =   F_SS.phase_1_delay_time;\nmsg3.payload    =   F_SS.phase_2_delay_time;\nmsg4.payload    =   F_SS.phase_3_delay_time / 60;\nmsg5.payload    =   F_SS.phase_1_max_dT;\n\n\nreturn [msg1,msg2,msg3,msg4];\n\n",
+        "func": "// Load all variables in one go and write all variables in one go.\n\nvar F_SS = global.get('F_SS',\"file\");\nvar save = false;\n\nif (F_SS === undefined)         {F_SS = {};}\n\n\n\n    if (F_SS.phase_1_duration === undefined)            {F_SS.phase_1_duration = 180; save = true;}            // startup phase. Default 170 seconds\n    if (F_SS.phase_1_delay_time === undefined)          {F_SS.phase_1_delay_time = 3; save = true;}            // Holdingtime for temperature changes (up) during phase 1. Default 0 seconds\n    if (F_SS.phase_2_delay_time === undefined)          {F_SS.phase_2_delay_time = 60; save = true;}           // Holdingtime for temperature changes (up) during phase 2. Default 70 seconds\n    if (F_SS.phase_3_delay_time === undefined)          {F_SS.phase_3_delay_time = 15*60; save = true;}        // End speed of the function. Reduce correction to 0 (zero), in 1 C xx minutes. Default is 1 degree per 15 minutes.\n    if (F_SS.phase_1_max_dT === undefined)              {F_SS.phase_1_max_dT = -1; save = true;}                   // max temperature difference between SP and Toutlet (Ta)\n    \nif (save === true)      {global.set('F_SS',F_SS,\"file\");}\n\nlet msg1={}, msg2={}, msg3={}, msg4={},msg5={};\n\nmsg1.payload    =   F_SS.phase_1_duration;\nmsg2.payload    =   F_SS.phase_1_delay_time;\nmsg3.payload    =   F_SS.phase_2_delay_time;\nmsg4.payload    =   F_SS.phase_3_delay_time / 60;\nmsg5.payload    =   F_SS.phase_1_max_dT;\n\n\nreturn [msg1,msg2,msg3,msg4,msg5];\n\n",
         "outputs": 5,
         "noerr": 0,
         "initialize": "",
@@ -15803,7 +15793,9 @@
             "af1a0be98dab0e6f"
         ],
         "x": 154,
-        "y": 1559
+        "y": 1559,
+        "w": 1422,
+        "h": 1362
     },
     {
         "id": "5a496e1f1ea93a38",
@@ -15837,7 +15829,9 @@
             "2caf61fe8673aedb"
         ],
         "x": 164,
-        "y": 79
+        "y": 79,
+        "w": 1572,
+        "h": 422
     },
     {
         "id": "cd2050a861736ec5",
@@ -15914,7 +15908,9 @@
             "6c685782864f1787"
         ],
         "x": 154,
-        "y": 2939
+        "y": 2939,
+        "w": 1162,
+        "h": 982
     },
     {
         "id": "94f57429e16c8e82",
@@ -15931,7 +15927,9 @@
             "5787c91b303f2538"
         ],
         "x": 1644,
-        "y": 1819
+        "y": 1819,
+        "w": 502,
+        "h": 122
     },
     {
         "id": "b37318d1b7f66e33",
@@ -15965,7 +15963,9 @@
             "e8b855966cfa18d3"
         ],
         "x": 134,
-        "y": 3939
+        "y": 3939,
+        "w": 1352,
+        "h": 322
     },
     {
         "id": "992121a08b66faa3",
@@ -16017,7 +16017,9 @@
             "b43820fd5a21f4e7"
         ],
         "x": 2348,
-        "y": 53
+        "y": 53,
+        "w": 1958,
+        "h": 888
     },
     {
         "id": "7987a450598985bb",
@@ -16047,7 +16049,9 @@
             "07bfc2f9f00870d7"
         ],
         "x": 74,
-        "y": 4439
+        "y": 4439,
+        "w": 1122,
+        "h": 302
     },
     {
         "id": "1d8b21349d38bc85",
@@ -16072,7 +16076,9 @@
             "ae97f18776a1de28"
         ],
         "x": 1234,
-        "y": 4439
+        "y": 4439,
+        "w": 1132,
+        "h": 162
     },
     {
         "id": "d2b7e1d6e85a96cf",
@@ -16182,7 +16188,9 @@
             "9ece6a95a9a5c846"
         ],
         "x": 144,
-        "y": 619
+        "y": 619,
+        "w": 2102,
+        "h": 922
     },
     {
         "id": "f2aa79821dfd1110",
@@ -16202,7 +16210,9 @@
             "7122d217051222ff"
         ],
         "x": 2374,
-        "y": 79
+        "y": 79,
+        "w": 1172,
+        "h": 162
     },
     {
         "id": "2c893b32851ad2a2",
@@ -42865,9 +42875,7 @@
             "510f802795714d75"
         ],
         "x": 2114,
-        "y": 539,
-        "w": 692,
-        "h": 222
+        "y": 539
     },
     {
         "id": "5c3df7b5fb0fa130",
@@ -42897,9 +42905,7 @@
             "5837cbf37ef47ea6"
         ],
         "x": 1964,
-        "y": 1359,
-        "w": 872,
-        "h": 302
+        "y": 1359
     },
     {
         "id": "404eed4ef9d90803",
@@ -42920,9 +42926,7 @@
             "c5e1f08f07eb647b"
         ],
         "x": 2014,
-        "y": 19,
-        "w": 812,
-        "h": 162
+        "y": 19
     },
     {
         "id": "c361a153997d2dfd",
@@ -42944,9 +42948,7 @@
             "9c9a39333c2213e6"
         ],
         "x": 924,
-        "y": 159,
-        "w": 272,
-        "h": 242
+        "y": 159
     },
     {
         "id": "8fe25c73d37fe670",
@@ -43006,9 +43008,7 @@
             "646815dd1d600ff2"
         ],
         "x": 1944,
-        "y": 219,
-        "w": 942,
-        "h": 1122
+        "y": 219
     },
     {
         "id": "9ad65d8ac40d3b19",
