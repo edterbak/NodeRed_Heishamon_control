@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.08 Beta 1<br/> <br/>
+Current version: 22.09 Beta 1<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -700,6 +700,10 @@ Have fun with your heat pump!</br>
 [2023-02-20] v22.08 beta 1 (experimental). Changes:
 - [Fix] GUI item not set correctly of the Softstart function.
 - [Fix] upper/lower limit values not being bound to the min/max values. 
+
+[2023-03-19] v22.09 beta 1 (experimental). Changes:
+- [Fix] Rewrite quietmode add-on. Now using quiet mode manager. 
+- [Enhancement] Changed GUI around softstart.
 
 ********
 
