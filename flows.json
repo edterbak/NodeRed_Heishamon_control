@@ -9049,12 +9049,12 @@
                 "p": "payload"
             }
         ],
-        "repeat": "2160",
+        "repeat": "3600",
         "crontab": "",
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "22.10 Beta 1",
+        "payload": "22.11 Beta 1",
         "payloadType": "str",
         "x": 1340,
         "y": 1960,
@@ -16069,23 +16069,17 @@
             "d6a9c376dde9c43f",
             "df9c3a6c0a51be9b",
             "219066f9a22a1c23",
-            "b122913e258a4ec3",
-            "e0563a18c1b95632",
-            "9c94c9210206cd04",
             "0564f7a406df196e",
-            "70aff6c79b777590",
             "f0b20c8165a68430",
-            "10470efbce38731d",
-            "9e0ae6aff4c599b2",
-            "ae708cb35f6a5163",
             "ea89c213947bdf26",
             "a8d51c8773f8f17f",
-            "2caf61fe8673aedb"
+            "0fb10778eba34911",
+            "2df41704fe34f586"
         ],
-        "x": 164,
+        "x": 154,
         "y": 79,
-        "w": 1572,
-        "h": 422
+        "w": 1132,
+        "h": 322
     },
     {
         "id": "cd2050a861736ec5",
@@ -17127,17 +17121,16 @@
         "z": "a938de76db0b71f6",
         "g": "5a496e1f1ea93a38",
         "name": "T_woonkamer_BT",
+        "mode": "link",
         "links": [
-            "5eef2d3a1816ae18",
-            "ea8203d2d9d4529b",
             "02f25651d70831c9",
-            "13ef5341a6b8f4e8",
             "899964bbc5334847",
             "ecbb543ba37d9962"
         ],
-        "x": 1695,
-        "y": 460,
-        "wires": []
+        "x": 1070,
+        "y": 320,
+        "wires": [],
+        "l": true
     },
     {
         "id": "609ce750edb0db2b",
@@ -17559,11 +17552,11 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 440,
-        "y": 460,
+        "x": 410,
+        "y": 360,
         "wires": [
             [
-                "2caf61fe8673aedb"
+                "0fb10778eba34911"
             ]
         ]
     },
@@ -17573,13 +17566,14 @@
         "z": "a938de76db0b71f6",
         "g": "5a496e1f1ea93a38",
         "name": "CONNECT >> Custom sensor - livingroom temperature",
-        "links": [],
-        "x": 390,
-        "y": 380,
+        "links": [
+            "5b8382118c6c3e1e"
+        ],
+        "x": 380,
+        "y": 320,
         "wires": [
             [
-                "10470efbce38731d",
-                "ae708cb35f6a5163"
+                "0fb10778eba34911"
             ]
         ],
         "l": true
@@ -17591,7 +17585,7 @@
         "g": "5a496e1f1ea93a38",
         "name": "You can use your own custom external sensors",
         "info": "",
-        "x": 370,
+        "x": 360,
         "y": 120,
         "wires": [],
         "icon": "node-red/alert.svg"
@@ -17607,9 +17601,10 @@
             "02f25651d70831c9",
             "4051d3cb1ad86dbd"
         ],
-        "x": 935,
+        "x": 1040,
         "y": 200,
-        "wires": []
+        "wires": [],
+        "l": true
     },
     {
         "id": "df9c3a6c0a51be9b",
@@ -17625,7 +17620,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 380,
+        "x": 370,
         "y": 200,
         "wires": [
             [
@@ -17642,7 +17637,7 @@
         "links": [
             "3a1c7ae1443e0666"
         ],
-        "x": 380,
+        "x": 370,
         "y": 160,
         "wires": [
             [
@@ -19163,201 +19158,31 @@
         "wires": []
     },
     {
-        "id": "b122913e258a4ec3",
-        "type": "function",
-        "z": "a938de76db0b71f6",
-        "g": "5a496e1f1ea93a38",
-        "name": "set.T_room_custom",
-        "func": "let msg99={};        \n\nif (msg.payload == \"check\") \n        {\n            global.set(\"T_room_custom\",undefined,\"file\");\n            msg99.topic = \"SETUP - Sensors\";\n            msg99.payload = \"Custom room temperature sensor reset.\";\n            return [null,msg99];\n        }\n\n\n\nif (msg.payload == \"too_old\") \n    {\n        global.set(\"T_room_custom\",undefined,\"file\");\n\n        msg99.topic = \"SETUP - Sensors\";\n        msg99.payload = \"Custom room temperature sensor not found. Using TOP33\";\n\n        return [null,msg99];\n    }\n\n\nelse\n    {\n        msg.payload = Number(msg.payload).toFixed(2);\n        msg.payload = parseFloat(msg.payload);\n        \n        if (msg.payload < -1000)                                                // rough sanity check\n            {\n                global.set(\"T_room_custom\",undefined,\"file\");\n                return null;\n            }\n        \n        var stored_value = global.get('T_room_custom',\"file\");\n        if (stored_value != msg.payload)            {global.set(\"T_room_custom\",msg.payload,\"file\");}\n\n        msg99.topic = \"SETUP - Sensors\";\n        msg99.payload = \"Custom room temperature sensor FOUND and used\";// (\" + msg.payload + \"°C)\";\n        \n        return [msg,msg99];\n    }\n",
-        "outputs": 2,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1120,
-        "y": 400,
-        "wires": [
-            [
-                "9c94c9210206cd04"
-            ],
-            [
-                "9e0ae6aff4c599b2"
-            ]
-        ]
-    },
-    {
-        "id": "e0563a18c1b95632",
-        "type": "function",
-        "z": "a938de76db0b71f6",
-        "g": "5a496e1f1ea93a38",
-        "name": "set.TOP33_Room_Thermostat_Temp",
-        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nvar stored_value = global.get('TOP33_Room_Thermostat_Temp');\nif (stored_value != msg.payload)\n{\n    global.set(\"TOP33_Room_Thermostat_Temp\",msg.payload);\n    \n}\n\nreturn msg;\n\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1170,
-        "y": 460,
-        "wires": [
-            [
-                "9c94c9210206cd04"
-            ]
-        ]
-    },
-    {
-        "id": "9c94c9210206cd04",
-        "type": "function",
-        "z": "a938de76db0b71f6",
-        "g": "5a496e1f1ea93a38",
-        "name": "filter T_room",
-        "func": "var TOP33               = global.get('TOP33_Room_Thermostat_Temp');             // The default heatpump outside temperature sensor\nvar T_room_custom       = global.get('T_room_custom',\"file\");                          // Custom outside temperature sensor\nvar T_room;\n\nlet msg1={};\n\nif (T_room_custom === undefined)\n    {\n        T_room = TOP33;\n    }\nelse\n    {\n        T_room = T_room_custom;\n    }\n\n\nmsg1.payload = T_room;\nmsg1.payload = Number(msg1.payload).toFixed(2);\nmsg1.payload = parseFloat(msg1.payload);\nmsg1.topic = 'T_room';\n\nvar stored_value        = global.get('T_room');\n\nif (stored_value != T_room)\n{\n    global.set(\"T_room\",msg1.payload);\n    \n}\n\nreturn msg1;\n\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1430,
-        "y": 460,
-        "wires": [
-            [
-                "a22898dfdc4ff0ca"
-            ]
-        ]
-    },
-    {
         "id": "0564f7a406df196e",
         "type": "comment",
         "z": "a938de76db0b71f6",
         "g": "5a496e1f1ea93a38",
         "name": "You can use your own custom external sensors",
         "info": "",
-        "x": 370,
-        "y": 340,
+        "x": 360,
+        "y": 280,
         "wires": [],
         "icon": "node-red/alert.svg"
-    },
-    {
-        "id": "70aff6c79b777590",
-        "type": "inject",
-        "z": "a938de76db0b71f6",
-        "g": "5a496e1f1ea93a38",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "5",
-        "topic": "",
-        "payload": "check",
-        "payloadType": "str",
-        "x": 660,
-        "y": 320,
-        "wires": [
-            [
-                "10470efbce38731d",
-                "b122913e258a4ec3"
-            ]
-        ]
     },
     {
         "id": "f0b20c8165a68430",
         "type": "link out",
         "z": "a938de76db0b71f6",
         "g": "5a496e1f1ea93a38",
-        "name": "",
+        "name": "To Log",
         "mode": "link",
         "links": [
-            "47e2a8d99d332229",
-            "873ab80499b9156b",
-            "ef1f42fcf697a0b6",
-            "662bb3cfb11c3c63",
-            "031e62b0bf3df7d7",
-            "c3fc3dd0823391e4",
-            "6b34f737dac1d48f",
-            "b08c84a2e3145411",
-            "91641c3ebfbec364"
+            "031e62b0bf3df7d7"
         ],
-        "x": 1685,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "10470efbce38731d",
-        "type": "trigger",
-        "z": "a938de76db0b71f6",
-        "g": "5a496e1f1ea93a38",
-        "name": "",
-        "op1": "",
-        "op2": "too_old",
-        "op1type": "nul",
-        "op2type": "str",
-        "duration": "12",
-        "extend": true,
-        "overrideDelay": false,
-        "units": "hr",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 900,
-        "y": 420,
-        "wires": [
-            [
-                "b122913e258a4ec3"
-            ]
-        ]
-    },
-    {
-        "id": "9e0ae6aff4c599b2",
-        "type": "rbe",
-        "z": "a938de76db0b71f6",
-        "g": "5a496e1f1ea93a38",
-        "name": "",
-        "func": "rbei",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 1410,
-        "y": 400,
-        "wires": [
-            [
-                "f0b20c8165a68430"
-            ]
-        ]
-    },
-    {
-        "id": "ae708cb35f6a5163",
-        "type": "delay",
-        "z": "a938de76db0b71f6",
-        "g": "5a496e1f1ea93a38",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 890,
-        "y": 380,
-        "wires": [
-            [
-                "b122913e258a4ec3"
-            ]
-        ]
+        "x": 1210,
+        "y": 360,
+        "wires": [],
+        "l": true
     },
     {
         "id": "e248409fb553d16c",
@@ -20597,8 +20422,8 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 1140,
-        "y": 180,
+        "x": 1030,
+        "y": 160,
         "wires": [
             [
                 "f0b20c8165a68430"
@@ -21066,7 +20891,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
+        "x": 790,
         "y": 180,
         "wires": [
             [],
@@ -21102,32 +20927,6 @@
         "wires": [
             [
                 "35ca9241fc9fc7a1"
-            ]
-        ]
-    },
-    {
-        "id": "2caf61fe8673aedb",
-        "type": "delay",
-        "z": "a938de76db0b71f6",
-        "g": "5a496e1f1ea93a38",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "10",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 890,
-        "y": 460,
-        "wires": [
-            [
-                "e0563a18c1b95632"
             ]
         ]
     },
@@ -23214,6 +23013,54 @@
         "wires": []
     },
     {
+        "id": "0fb10778eba34911",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "5a496e1f1ea93a38",
+        "name": "T_Room Input Selector",
+        "func": "var TOP33               = global.get('TOP33_Room_Thermostat_Temp');             // The default heatpump outside temperature sensor\nvar T_room_custom       = global.get('T_room_custom',\"file\");                          // Custom outside temperature sensor\nif (T_room_custom === undefined) { T_room_custom = {}}\nvar T_room;\nvar CurrentTime = new Date().getTime();\n\n//  msg={};         // payload\nlet msg99={};       // Info to log\n    msg99.topic = \"SETUP - Sensors\";\n    \n//******************************************************************************\n// Default panasonic thermostat temperature sensor\n//******************************************************************************\nif (msg.topic == 'panasonic_heat_pump/main/Room_Thermostat_Temp') {\n        if (msg.payload != TOP33)   {\n                global.set('TOP33_Room_Thermostat_Temp',msg.payload);\n                TOP33 = msg.payload;\n        }\n        \n        if (T_room_custom.value_time === undefined) {\n                global.set('T_room',TOP33);\n                msg99.payload = \"Custom room temperature sensor not found. Using TOP33\";\n                \n                return [msg,msg99];\n        }\n\n        if ((CurrentTime - T_room_custom.value_time) > 60*1000*60*5) {   // 5 hours\n                global.set('T_room',TOP33)\n                msg99.payload = \"Custom room temperature sensor lost - last value older than 5 hours. Using TOP33\";\n\n                return [msg,msg99];\n        }\n\n}\n//******************************************************************************\n// Custom temperature sensor\n//******************************************************************************\nif (msg.topic != 'panasonic_heat_pump/main/Room_Thermostat_Temp') {\n    \n        if (T_room_custom.value_time === undefined) {\n                T_room_custom.value = msg.payload;\n                T_room_custom.value_time = CurrentTime;\n                global.set('T_room_custom',T_room_custom,\"file\");\n                global.set('T_room',msg.payload);\n                msg99.payload = \"Custom room temperature sensor found\";\n                \n                return [msg,msg99];\n        }\n        \n        if (msg.payload != T_room) {\n                T_room_custom.value = msg.payload;\n                T_room_custom.value_time = CurrentTime;\n                global.set('T_room_custom',T_room_custom,\"file\");\n\n                global.set('T_room',msg.payload);\n                return [msg,null];\n        }\n\n}\n\nreturn msg;\n\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 340,
+        "wires": [
+            [
+                "a22898dfdc4ff0ca"
+            ],
+            [
+                "2df41704fe34f586"
+            ]
+        ],
+        "outputLabels": [
+            "payload",
+            "Info to log"
+        ]
+    },
+    {
+        "id": "2df41704fe34f586",
+        "type": "rbe",
+        "z": "a938de76db0b71f6",
+        "g": "5a496e1f1ea93a38",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1030,
+        "y": 360,
+        "wires": [
+            [
+                "f0b20c8165a68430"
+            ]
+        ]
+    },
+    {
         "id": "43c4ee3ee4757f3c",
         "type": "tab",
         "label": "WP Managers",
@@ -23268,9 +23115,7 @@
             "fcc8ad2c22433dd3"
         ],
         "x": 124,
-        "y": 219,
-        "w": 1292,
-        "h": 322
+        "y": 219
     },
     {
         "id": "c1355934e3f948a0",
@@ -23448,9 +23293,7 @@
             "0ac3bcf9afb0e713"
         ],
         "x": 124,
-        "y": 559,
-        "w": 1292,
-        "h": 162
+        "y": 559
     },
     {
         "id": "cb0fc587b4884ad4",
@@ -23532,9 +23375,7 @@
             "6ade9410c4a9dd70"
         ],
         "x": 134,
-        "y": 19,
-        "w": 292,
-        "h": 162
+        "y": 19
     },
     {
         "id": "2a72a0a50c226d0f",
@@ -24314,9 +24155,7 @@
             "898b02a132291b49"
         ],
         "x": 54,
-        "y": 1119,
-        "w": 1388,
-        "h": 602
+        "y": 1119
     },
     {
         "id": "6a01f1b80ccf3218",
@@ -24334,9 +24173,7 @@
             "2064b5a11ffc43b3"
         ],
         "x": 54,
-        "y": 39,
-        "w": 832,
-        "h": 122
+        "y": 39
     },
     {
         "id": "2b75a55bb8fb12c6",
@@ -24352,9 +24189,7 @@
             "974b24f717fe8560"
         ],
         "x": 64,
-        "y": 199,
-        "w": 872,
-        "h": 82
+        "y": 199
     },
     {
         "id": "5ffcc1056a276bf5",
@@ -24379,9 +24214,7 @@
             "e68356272f1f529b"
         ],
         "x": 54,
-        "y": 439,
-        "w": 1388,
-        "h": 622
+        "y": 439
     },
     {
         "id": "27d590581cd92df1",
@@ -24397,9 +24230,7 @@
             "2cc9fde214b13621"
         ],
         "x": 54,
-        "y": 299,
-        "w": 872,
-        "h": 82
+        "y": 299
     },
     {
         "id": "6472e1e423188a37",
@@ -24419,9 +24250,7 @@
             "3043e3c17ff68920"
         ],
         "x": 84,
-        "y": 1439,
-        "w": 1332,
-        "h": 82
+        "y": 1439
     },
     {
         "id": "3ce36bc606018d50",
@@ -24441,9 +24270,7 @@
             "61e1918ce41f34f7"
         ],
         "x": 84,
-        "y": 1339,
-        "w": 1332,
-        "h": 82
+        "y": 1339
     },
     {
         "id": "6db1485dd36081ec",
@@ -24463,9 +24290,7 @@
             "29a4cb237663e973"
         ],
         "x": 84,
-        "y": 779,
-        "w": 1332,
-        "h": 82
+        "y": 779
     },
     {
         "id": "5b9db86809583efd",
@@ -24485,9 +24310,7 @@
             "0ae4268d42429bac"
         ],
         "x": 84,
-        "y": 679,
-        "w": 1332,
-        "h": 82
+        "y": 679
     },
     {
         "id": "d734c640b789ff1e",
@@ -24507,9 +24330,7 @@
             "935535fc205e470c"
         ],
         "x": 84,
-        "y": 579,
-        "w": 1322,
-        "h": 82
+        "y": 579
     },
     {
         "id": "fc68ffd1a284a6bd",
@@ -24529,9 +24350,7 @@
             "868b4c6128111bb6"
         ],
         "x": 84,
-        "y": 1239,
-        "w": 1332,
-        "h": 82
+        "y": 1239
     },
     {
         "id": "d44f1a1993a8a44f",
@@ -24551,9 +24370,7 @@
             "2ee679408e4ccc6f"
         ],
         "x": 1134,
-        "y": 919,
-        "w": 272,
-        "h": 82
+        "y": 919
     },
     {
         "id": "e598f3cca51f28d1",
@@ -24573,9 +24390,7 @@
             "4eaa2cfa2749c551"
         ],
         "x": 1134,
-        "y": 1579,
-        "w": 272,
-        "h": 82
+        "y": 1579
     },
     {
         "id": "6a7fa8b57f2d9800",
@@ -29606,9 +29421,7 @@
             "bcda44f3140d86e9"
         ],
         "x": 134,
-        "y": 99,
-        "w": 472,
-        "h": 382
+        "y": 99
     },
     {
         "id": "5505432507101e93",
@@ -29627,9 +29440,7 @@
             "c2935eeb2b0919cf"
         ],
         "x": 134,
-        "y": 499,
-        "w": 622,
-        "h": 202
+        "y": 499
     },
     {
         "id": "b5e32619ad0c206e",
@@ -29648,9 +29459,7 @@
             "3c3c8472da1fb85a"
         ],
         "x": 794,
-        "y": 79,
-        "w": 582,
-        "h": 202
+        "y": 79
     },
     {
         "id": "c77aed9e30c539d5",
@@ -29674,9 +29483,7 @@
             "7ca958b4b94243f8"
         ],
         "x": 794,
-        "y": 319,
-        "w": 582,
-        "h": 262
+        "y": 319
     },
     {
         "id": "fde5dafe04d72e23",
@@ -29700,9 +29507,7 @@
             "8849a0faf2ae88ef"
         ],
         "x": 794,
-        "y": 619,
-        "w": 582,
-        "h": 302
+        "y": 619
     },
     {
         "id": "be48f3104249b8a0",
@@ -30893,9 +30698,7 @@
             "1372ccca982b4f0a"
         ],
         "x": 714,
-        "y": 99,
-        "w": 2152,
-        "h": 159.5
+        "y": 99
     },
     {
         "id": "b63004182c33d3b9",
@@ -30941,9 +30744,7 @@
             "4dc5f57b14acd886"
         ],
         "x": 2334,
-        "y": 1979,
-        "w": 1432,
-        "h": 482
+        "y": 1979
     },
     {
         "id": "ca71e284391bbf84",
@@ -31010,9 +30811,7 @@
             "479965c26a5f5d15"
         ],
         "x": 714,
-        "y": 261.5,
-        "w": 2152,
-        "h": 157
+        "y": 261.5
     },
     {
         "id": "77ef78074c745b33",
@@ -31039,9 +30838,7 @@
             "57520972cf8f3282"
         ],
         "x": 714,
-        "y": 421.5,
-        "w": 2152,
-        "h": 157
+        "y": 421.5
     },
     {
         "id": "0f18bd088c4ce661",
@@ -31068,9 +30865,7 @@
             "73e5b776ee37e929"
         ],
         "x": 714,
-        "y": 581.5,
-        "w": 2152,
-        "h": 157
+        "y": 581.5
     },
     {
         "id": "49e35dcf3adf972f",
@@ -31097,9 +30892,7 @@
             "fd75ca33fe4a9589"
         ],
         "x": 714,
-        "y": 741.5,
-        "w": 2152,
-        "h": 157
+        "y": 741.5
     },
     {
         "id": "131bb514acb6c38f",
@@ -31126,9 +30919,7 @@
             "4470d0d9384e5146"
         ],
         "x": 714,
-        "y": 901.5,
-        "w": 2152,
-        "h": 157
+        "y": 901.5
     },
     {
         "id": "13c1334900bc3740",
@@ -31155,9 +30946,7 @@
             "0a155882d5693fda"
         ],
         "x": 714,
-        "y": 1061.5,
-        "w": 2152,
-        "h": 157
+        "y": 1061.5
     },
     {
         "id": "a4db9b20ef5bc75c",
@@ -31184,9 +30973,7 @@
             "fe24caf7cb4e92d3"
         ],
         "x": 714,
-        "y": 1221.5,
-        "w": 2152,
-        "h": 157
+        "y": 1221.5
     },
     {
         "id": "4b0ab44dfd6f65c3",
@@ -31213,9 +31000,7 @@
             "611bf69e3ab85546"
         ],
         "x": 714,
-        "y": 1381.5,
-        "w": 2152,
-        "h": 157
+        "y": 1381.5
     },
     {
         "id": "4f450eb680618622",
@@ -31242,9 +31027,7 @@
             "a477e5b86fe9c792"
         ],
         "x": 714,
-        "y": 1541.5,
-        "w": 2172,
-        "h": 157
+        "y": 1541.5
     },
     {
         "id": "92293ba8ccc5db0f",
@@ -31282,9 +31065,7 @@
             "9c13f29571c31128"
         ],
         "x": 74,
-        "y": 2519,
-        "w": 1392,
-        "h": 322
+        "y": 2519
     },
     {
         "id": "40f0401e20235a07",
@@ -43813,9 +43594,7 @@
             "510f802795714d75"
         ],
         "x": 2114,
-        "y": 539,
-        "w": 692,
-        "h": 222
+        "y": 539
     },
     {
         "id": "5c3df7b5fb0fa130",
@@ -43845,9 +43624,7 @@
             "5837cbf37ef47ea6"
         ],
         "x": 1964,
-        "y": 1359,
-        "w": 872,
-        "h": 302
+        "y": 1359
     },
     {
         "id": "404eed4ef9d90803",
@@ -43868,9 +43645,7 @@
             "c5e1f08f07eb647b"
         ],
         "x": 2014,
-        "y": 19,
-        "w": 812,
-        "h": 162
+        "y": 19
     },
     {
         "id": "c361a153997d2dfd",
@@ -43892,9 +43667,7 @@
             "9c9a39333c2213e6"
         ],
         "x": 924,
-        "y": 159,
-        "w": 272,
-        "h": 242
+        "y": 159
     },
     {
         "id": "8fe25c73d37fe670",
@@ -43954,9 +43727,7 @@
             "646815dd1d600ff2"
         ],
         "x": 1944,
-        "y": 219,
-        "w": 942,
-        "h": 1122
+        "y": 219
     },
     {
         "id": "9ad65d8ac40d3b19",
@@ -48040,7 +47811,7 @@
         "z": "d5fea67661261002",
         "g": "0531f7d830ad5e1b",
         "name": "Repair & delete old vars",
-        "func": "// 2023-03-26 (v22.10)\n// replace\nif(global.get('F_Solar_export_correction','file') !=undefined)                  {   global.set('F_SOLAR.export_correction', global.get('F_Solar_export_correction','file'),'file'); global.set('F_Solar_export_correction',undefined,'file');}\nif(global.get('F_Solar_import_correction','file') !=undefined)                  {   global.set('F_SOLAR.import_correction', global.get('F_Solar_import_correction','file'),'file'); global.set('F_Solar_import_correction',undefined,'file');}\nif(global.get('SolarFunction_active','file') !=undefined)                       {   global.set('F_SOLAR.function_active_state', global.get('SolarFunction_active','file'),'file'); global.set('SolarFunction_active',undefined,'file');}\nif(global.get('solar_threshold','file') !=undefined)                            {   global.set('F_SOLAR.threshold', global.get('solar_threshold','file'),'file'); global.set('solar_threshold',undefined,'file');}\nif(global.get('DHW_SP_HIGH','file') !=undefined)                                {   global.set('F_SOLAR.dhw_sp_high', global.get('DHW_SP_HIGH','file'),'file'); global.set('DHW_SP_HIGH',undefined,'file');}\nif(global.get('DHW_SP_LOW','file') !=undefined)                                 {   global.set('F_SOLAR.dhw_sp_low', global.get('DHW_SP_LOW','file'),'file'); global.set('DHW_SP_LOW',undefined,'file');}\nif(global.get('DHW_Target_Temp','file') !=undefined)                            {   global.set('TOP9_DHW_Target_Temp', global.get('DHW_Target_Temp','file'),'file'); global.set('DHW_Target_Temp',undefined,'file');}\n\n// remove\nif(global.get('solar_fallback','file') !=undefined)                             {   global.set('solar_fallback',undefined,'file');}\nif(global.get('solar_state','file') !=undefined)                                {   global.set('solar_state',undefined,'file');}\nif(global.get('solar_turn_on','file') !=undefined)                              {   global.set('solar_turn_on',undefined,'file');}\n\n// 2023-03-19 (v22.09)\n// replace\nif(global.get('SS_Quietmode_on_off','file') !=undefined)                        {   global.set('F_SS.QM_state', global.get('SS_Quietmode_on_off','file'),'file'); global.set('SS_Quietmode_on_off',undefined,'file');}\nif(global.get('Quietmode_time','file') !=undefined)                             {   global.set('F_SS.QM_duration', global.get('Quietmode_time','file'),'file'); global.set('Quietmode_time',undefined,'file');}\nif(global.get('solar_detection_method','file') !=undefined)                     {   global.set('F_SOLAR.detection_method', global.get('solar_detection_method','file'),'file'); global.set('solar_detection_method',undefined,'file');}\n\n// remove\nif(global.get('SS_Quitmode_levelchange','file') !=undefined)                    {   global.set('SS_Quitmode_levelchange',undefined,'file');}\n\n// 2023-02-12 (v22.02)\n// remove old\nif(global.get('compressor_frequency') !=undefined)                              {   global.set('compressor_frequency',undefined);}\nif(global.get('F_SS_correction_active') !=undefined)                            {   global.set('F_SS_correction_active',undefined);}\n//if(global.get('Pump_Flow') !=undefined)                                         {   global.set('Pump_Flow',undefined);}\n// move old to new\nif(global.get('F_SS_stage2','file') !=undefined)                                {   global.set('F_SS.total_duration', global.get('F_SS_stage2','file'),'file'); global.set('F_SS_stage2',undefined,'file');}\nif(global.get('F_SS_stage2_limit','file') !=undefined)                          {   global.set('F_SS.upperlimit_correction', global.get('F_SS_stage2_limit','file'),'file'); global.set('F_SS_stage2_limit',undefined,'file');}\nif(global.get('F_SS_reset_after_defrost','file') !=undefined)                   {   global.set('F_SS.reset_after_defrost', global.get('F_SS_reset_after_defrost','file'),'file'); global.set('F_SS_reset_after_defrost',undefined,'file');}\nif(global.get('Correction_2_softstart_on_off','file') !=undefined)              {   global.set('F_SS.state', global.get('Correction_2_softstart_on_off','file'),'file'); global.set('Correction_2_softstart_on_off',undefined,'file');}\nif(global.get('F_SS_correction') !=undefined)                                   {   global.set('F_SS.correction_value', global.get('F_SS_correction'),'file'); global.set('F_SS_correction',undefined);}\n\n    \n/////////////////\n    \n    //first move old mqtt counters to new vars:\n    var MQTT_Counter = global.get('MQTT_Counter', \"file\");\n    if (MQTT_Counter != undefined) { global.set('MQTT.counter', MQTT_Counter, \"file\"); }\n\n    var MQTT_Counter_Today = global.get('MQTT_Counter_Today', \"file\");\n    if (MQTT_Counter_Today != undefined) { global.set('MQTT.messages_today', MQTT_Counter_Today, \"file\"); }\n\n    var MQTT_Counter_Yesterday = global.get('MQTT_Counter_Yesterday', \"file\");\n    if (MQTT_Counter_Yesterday != undefined) { global.set('MQTT.messages_yesterday', MQTT_Counter_Yesterday, \"file\"); }\n\n    var MQTT_Limit = global.get('MQTT_Limit', \"file\");\n    if (MQTT_Limit != undefined) { global.set('MQTT.message_limit', MQTT_Limit, \"file\"); }\n\n//copy reduce pumpspeed settings:\n    var ReducePumpSpeed = global.get('ReducePumpSpeed', \"file\");\n    if (ReducePumpSpeed != undefined) { global.set('F_ReducePumpSpeed.state', ReducePumpSpeed, \"file\"); }   \n\n    var PumpMaxFlowSetting = global.get('PumpMaxFlowSetting', \"file\");\n    if (PumpMaxFlowSetting != undefined) { global.set('F_ReducePumpSpeed.PumpMaxFlowSetting', PumpMaxFlowSetting, \"file\"); }   \n\n    var SavedPumpspeed = global.get('SavedPumpspeed', \"file\");\n    if (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.SavedPumpspeed', SavedPumpspeed, \"file\"); } \n\n    var LowSpeed = global.get('LowSpeed', \"file\");\n    if (LowSpeed != undefined) { global.set('F_ReducePumpSpeed.LowSpeed', LowSpeed, \"file\"); } \n\n//copy defrost to new var:\n    var Defrost_Counter = global.get('Defrost_Counter', \"file\");\n    if (Defrost_Counter != undefined) { \n        global.set('Defrost.Counter', Defrost_Counter, \"file\"); \n        global.set('Defrost.Counter_Today', 0, \"file\"); \n        global.set('Defrost.Counter_Yesterday', 0, \"file\"); \n        } \n//copy RTC vars to new vars:\n    var F_rtc_on_off_active = global.get('F_rtc_on_off_active', \"file\");\n    if (F_rtc_on_off_active != undefined) { global.set('F_RTC_on_off_active', F_rtc_on_off_active, \"file\"); }\n\n    var F_rtc_on_off_status = global.get('F_rtc_on_off_status', \"file\");\n    if (F_rtc_on_off_status != undefined) { global.set('F_RTC_on_off_status', F_rtc_on_off_status, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n\n    var F_RTC_on_off2 = global.get('F_RTC_on_off2', \"file\");\n    if (F_RTC_on_off2 != undefined) { global.set('F_RTC.F1_power_state', F_RTC_on_off2, \"file\"); }\n\n    var F_RTC_on_off3_OM = global.get('F_RTC_on_off3_OM', \"file\");\n    if (F_RTC_on_off3_OM != undefined) { global.set('F_RTC.F2_OM_state', F_RTC_on_off3_OM, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n    if (F_RTC_on_off_active === undefined) { global.set('F_RTC.on_off_active', 0, \"file\"); }\n\nvar Correction_1_RTC_on_off = global.get('Correction_1_RTC_on_off', \"file\");\nif (Correction_1_RTC_on_off != undefined) { global.set('F_RTC.state', Correction_1_RTC_on_off, \"file\"); }\n\n// use old pumpspeed low:\nvar SavedPumpspeed = global.get('F_ReducePumpSpeed.SavedPumpspeed', \"file\");\nif (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.NormalSpeed', SavedPumpspeed, \"file\"); }\n\n//delete old vars:\n    global.set('Nightmode', undefined, \"file\");\n    var MQTT = global.get('MQTT', \"file\");\n    if (MQTT == 0 || MQTT == 1) {global.set('MQTT',undefined,\"file\");}\n    global.set('MQTT_Block', undefined, \"file\");\n    global.set('MQTT_select', undefined, \"file\");\n    global.set('MQTT_Block_select', undefined, \"file\");\n    global.set('MQTT_Counter', undefined, \"file\");\n    global.set('MQTT_Counter_Today', undefined, \"file\");\n    global.set('MQTT_Counter_Yesterday', undefined, \"file\");\n    global.set('MQTT_Limit', undefined, \"file\");\n    global.set('NightReductionRoomPV_CurrentStatus', undefined, \"file\");\n    global.set('NightReduction_current_value', undefined, \"file\");\n    global.set('NightReduction_correction', undefined, \"file\");\n    global.set('NightReductionWaterTemp_correction', undefined, \"file\");\n    global.set('nightreduction_on_off', undefined, \"file\");\n    global.set('RoomSetpointLOW', undefined, \"file\");\n    global.set('RoomSetpointNORMAL', undefined, \"file\");\n    global.set('ReducePumpSpeed', undefined, \"file\");\n    global.set('PumpMaxFlowSetting', undefined, \"file\");\n    global.set('SavedPumpspeed', undefined, \"file\");\n    global.set('LowSpeed', undefined, \"file\");\n    global.set('Booster', undefined, \"file\");\n    global.set('Defrost_Counter', undefined, \"file\");\n    global.set('Defrost_Counter_Today', undefined, \"file\");\n    global.set('Defrost_Counter_Yesterday', undefined, \"file\");\n    global.set('F_rtc_on_off_active', undefined, \"file\");\n    global.set('F_rtc_on_off_status', undefined, \"file\");\n    global.set('F_RTC_correction', undefined); //Memory Only\n    global.set('F_RTC_on_off2', undefined, \"file\");\n    global.set('F_RTC_on_off3_OM', undefined, \"file\");\n    global.set('F_RTC_on_off_active', undefined, \"file\");\n    global.set('Correction_1_RTC_on_off', undefined, \"file\");\n// remove more old vars 18-01-2023     \n    global.set('MQTT_Block_Allow_function_rtc_onoff', undefined, \"file\");\n    global.set('MQTT_Block_Allow_function_solar', undefined, \"file\");\n    global.set('MQTT_Block_Allow_function_scheduled_tasks', undefined, \"file\");   \n    global.set('MQTT_Block_default_1', undefined, \"file\");\n    global.set('MQTT_Block_default_2', undefined, \"file\");\n    global.set('MQTT_Block_default_3', undefined, \"file\");\n    global.set('F_ReducePumpSpeed.SavedPumpspeed', undefined, \"file\");\n\n\n\n    let msg99={};\n    msg99.topic = \"SYSTEM:\";\n    msg99.payload = \"removed old variables\";      \n    \n    return msg99;\n        \n    ",
+        "func": "// 2023-03-26 (v22.10)\n// replace\nvar T_room_custom       = global.get('T_room_custom',\"file\");                          // Custom outside temperature sensor\nif (T_room_custom > 0){\n    var old_value = T_room_custom;\n    T_room_custom = {};\n    T_room_custom.value = old_value;\n    global.set('T_room_custom',undefined,\"file\");\n    global.set('T_room_custom',T_room_custom,\"file\")\n}\n\n\n// 2023-03-26 (v22.10)\n// replace\nif(global.get('F_Solar_export_correction','file') !=undefined)                  {   global.set('F_SOLAR.export_correction', global.get('F_Solar_export_correction','file'),'file'); global.set('F_Solar_export_correction',undefined,'file');}\nif(global.get('F_Solar_import_correction','file') !=undefined)                  {   global.set('F_SOLAR.import_correction', global.get('F_Solar_import_correction','file'),'file'); global.set('F_Solar_import_correction',undefined,'file');}\nif(global.get('SolarFunction_active','file') !=undefined)                       {   global.set('F_SOLAR.function_active_state', global.get('SolarFunction_active','file'),'file'); global.set('SolarFunction_active',undefined,'file');}\nif(global.get('solar_threshold','file') !=undefined)                            {   global.set('F_SOLAR.threshold', global.get('solar_threshold','file'),'file'); global.set('solar_threshold',undefined,'file');}\nif(global.get('DHW_SP_HIGH','file') !=undefined)                                {   global.set('F_SOLAR.dhw_sp_high', global.get('DHW_SP_HIGH','file'),'file'); global.set('DHW_SP_HIGH',undefined,'file');}\nif(global.get('DHW_SP_LOW','file') !=undefined)                                 {   global.set('F_SOLAR.dhw_sp_low', global.get('DHW_SP_LOW','file'),'file'); global.set('DHW_SP_LOW',undefined,'file');}\nif(global.get('DHW_Target_Temp','file') !=undefined)                            {   global.set('TOP9_DHW_Target_Temp', global.get('DHW_Target_Temp','file'),'file'); global.set('DHW_Target_Temp',undefined,'file');}\n\n// remove\nif(global.get('solar_fallback','file') !=undefined)                             {   global.set('solar_fallback',undefined,'file');}\nif(global.get('solar_state','file') !=undefined)                                {   global.set('solar_state',undefined,'file');}\nif(global.get('solar_turn_on','file') !=undefined)                              {   global.set('solar_turn_on',undefined,'file');}\n\n// 2023-03-19 (v22.09)\n// replace\nif(global.get('SS_Quietmode_on_off','file') !=undefined)                        {   global.set('F_SS.QM_state', global.get('SS_Quietmode_on_off','file'),'file'); global.set('SS_Quietmode_on_off',undefined,'file');}\nif(global.get('Quietmode_time','file') !=undefined)                             {   global.set('F_SS.QM_duration', global.get('Quietmode_time','file'),'file'); global.set('Quietmode_time',undefined,'file');}\nif(global.get('solar_detection_method','file') !=undefined)                     {   global.set('F_SOLAR.detection_method', global.get('solar_detection_method','file'),'file'); global.set('solar_detection_method',undefined,'file');}\n\n// remove\nif(global.get('SS_Quitmode_levelchange','file') !=undefined)                    {   global.set('SS_Quitmode_levelchange',undefined,'file');}\n\n// 2023-02-12 (v22.02)\n// remove old\nif(global.get('compressor_frequency') !=undefined)                              {   global.set('compressor_frequency',undefined);}\nif(global.get('F_SS_correction_active') !=undefined)                            {   global.set('F_SS_correction_active',undefined);}\n//if(global.get('Pump_Flow') !=undefined)                                         {   global.set('Pump_Flow',undefined);}\n// move old to new\nif(global.get('F_SS_stage2','file') !=undefined)                                {   global.set('F_SS.total_duration', global.get('F_SS_stage2','file'),'file'); global.set('F_SS_stage2',undefined,'file');}\nif(global.get('F_SS_stage2_limit','file') !=undefined)                          {   global.set('F_SS.upperlimit_correction', global.get('F_SS_stage2_limit','file'),'file'); global.set('F_SS_stage2_limit',undefined,'file');}\nif(global.get('F_SS_reset_after_defrost','file') !=undefined)                   {   global.set('F_SS.reset_after_defrost', global.get('F_SS_reset_after_defrost','file'),'file'); global.set('F_SS_reset_after_defrost',undefined,'file');}\nif(global.get('Correction_2_softstart_on_off','file') !=undefined)              {   global.set('F_SS.state', global.get('Correction_2_softstart_on_off','file'),'file'); global.set('Correction_2_softstart_on_off',undefined,'file');}\nif(global.get('F_SS_correction') !=undefined)                                   {   global.set('F_SS.correction_value', global.get('F_SS_correction'),'file'); global.set('F_SS_correction',undefined);}\n\n    \n/////////////////\n    \n    //first move old mqtt counters to new vars:\n    var MQTT_Counter = global.get('MQTT_Counter', \"file\");\n    if (MQTT_Counter != undefined) { global.set('MQTT.counter', MQTT_Counter, \"file\"); }\n\n    var MQTT_Counter_Today = global.get('MQTT_Counter_Today', \"file\");\n    if (MQTT_Counter_Today != undefined) { global.set('MQTT.messages_today', MQTT_Counter_Today, \"file\"); }\n\n    var MQTT_Counter_Yesterday = global.get('MQTT_Counter_Yesterday', \"file\");\n    if (MQTT_Counter_Yesterday != undefined) { global.set('MQTT.messages_yesterday', MQTT_Counter_Yesterday, \"file\"); }\n\n    var MQTT_Limit = global.get('MQTT_Limit', \"file\");\n    if (MQTT_Limit != undefined) { global.set('MQTT.message_limit', MQTT_Limit, \"file\"); }\n\n//copy reduce pumpspeed settings:\n    var ReducePumpSpeed = global.get('ReducePumpSpeed', \"file\");\n    if (ReducePumpSpeed != undefined) { global.set('F_ReducePumpSpeed.state', ReducePumpSpeed, \"file\"); }   \n\n    var PumpMaxFlowSetting = global.get('PumpMaxFlowSetting', \"file\");\n    if (PumpMaxFlowSetting != undefined) { global.set('F_ReducePumpSpeed.PumpMaxFlowSetting', PumpMaxFlowSetting, \"file\"); }   \n\n    var SavedPumpspeed = global.get('SavedPumpspeed', \"file\");\n    if (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.SavedPumpspeed', SavedPumpspeed, \"file\"); } \n\n    var LowSpeed = global.get('LowSpeed', \"file\");\n    if (LowSpeed != undefined) { global.set('F_ReducePumpSpeed.LowSpeed', LowSpeed, \"file\"); } \n\n//copy defrost to new var:\n    var Defrost_Counter = global.get('Defrost_Counter', \"file\");\n    if (Defrost_Counter != undefined) { \n        global.set('Defrost.Counter', Defrost_Counter, \"file\"); \n        global.set('Defrost.Counter_Today', 0, \"file\"); \n        global.set('Defrost.Counter_Yesterday', 0, \"file\"); \n        } \n//copy RTC vars to new vars:\n    var F_rtc_on_off_active = global.get('F_rtc_on_off_active', \"file\");\n    if (F_rtc_on_off_active != undefined) { global.set('F_RTC_on_off_active', F_rtc_on_off_active, \"file\"); }\n\n    var F_rtc_on_off_status = global.get('F_rtc_on_off_status', \"file\");\n    if (F_rtc_on_off_status != undefined) { global.set('F_RTC_on_off_status', F_rtc_on_off_status, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n\n    var F_RTC_on_off2 = global.get('F_RTC_on_off2', \"file\");\n    if (F_RTC_on_off2 != undefined) { global.set('F_RTC.F1_power_state', F_RTC_on_off2, \"file\"); }\n\n    var F_RTC_on_off3_OM = global.get('F_RTC_on_off3_OM', \"file\");\n    if (F_RTC_on_off3_OM != undefined) { global.set('F_RTC.F2_OM_state', F_RTC_on_off3_OM, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n    if (F_RTC_on_off_active === undefined) { global.set('F_RTC.on_off_active', 0, \"file\"); }\n\nvar Correction_1_RTC_on_off = global.get('Correction_1_RTC_on_off', \"file\");\nif (Correction_1_RTC_on_off != undefined) { global.set('F_RTC.state', Correction_1_RTC_on_off, \"file\"); }\n\n// use old pumpspeed low:\nvar SavedPumpspeed = global.get('F_ReducePumpSpeed.SavedPumpspeed', \"file\");\nif (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.NormalSpeed', SavedPumpspeed, \"file\"); }\n\n//delete old vars:\n    global.set('Nightmode', undefined, \"file\");\n    var MQTT = global.get('MQTT', \"file\");\n    if (MQTT == 0 || MQTT == 1) {global.set('MQTT',undefined,\"file\");}\n    global.set('MQTT_Block', undefined, \"file\");\n    global.set('MQTT_select', undefined, \"file\");\n    global.set('MQTT_Block_select', undefined, \"file\");\n    global.set('MQTT_Counter', undefined, \"file\");\n    global.set('MQTT_Counter_Today', undefined, \"file\");\n    global.set('MQTT_Counter_Yesterday', undefined, \"file\");\n    global.set('MQTT_Limit', undefined, \"file\");\n    global.set('NightReductionRoomPV_CurrentStatus', undefined, \"file\");\n    global.set('NightReduction_current_value', undefined, \"file\");\n    global.set('NightReduction_correction', undefined, \"file\");\n    global.set('NightReductionWaterTemp_correction', undefined, \"file\");\n    global.set('nightreduction_on_off', undefined, \"file\");\n    global.set('RoomSetpointLOW', undefined, \"file\");\n    global.set('RoomSetpointNORMAL', undefined, \"file\");\n    global.set('ReducePumpSpeed', undefined, \"file\");\n    global.set('PumpMaxFlowSetting', undefined, \"file\");\n    global.set('SavedPumpspeed', undefined, \"file\");\n    global.set('LowSpeed', undefined, \"file\");\n    global.set('Booster', undefined, \"file\");\n    global.set('Defrost_Counter', undefined, \"file\");\n    global.set('Defrost_Counter_Today', undefined, \"file\");\n    global.set('Defrost_Counter_Yesterday', undefined, \"file\");\n    global.set('F_rtc_on_off_active', undefined, \"file\");\n    global.set('F_rtc_on_off_status', undefined, \"file\");\n    global.set('F_RTC_correction', undefined); //Memory Only\n    global.set('F_RTC_on_off2', undefined, \"file\");\n    global.set('F_RTC_on_off3_OM', undefined, \"file\");\n    global.set('F_RTC_on_off_active', undefined, \"file\");\n    global.set('Correction_1_RTC_on_off', undefined, \"file\");\n// remove more old vars 18-01-2023     \n    global.set('MQTT_Block_Allow_function_rtc_onoff', undefined, \"file\");\n    global.set('MQTT_Block_Allow_function_solar', undefined, \"file\");\n    global.set('MQTT_Block_Allow_function_scheduled_tasks', undefined, \"file\");   \n    global.set('MQTT_Block_default_1', undefined, \"file\");\n    global.set('MQTT_Block_default_2', undefined, \"file\");\n    global.set('MQTT_Block_default_3', undefined, \"file\");\n    global.set('F_ReducePumpSpeed.SavedPumpspeed', undefined, \"file\");\n\n\n\n    let msg99={};\n    msg99.topic = \"SYSTEM:\";\n    msg99.payload = \"removed old variables\";      \n    \n    return msg99;\n        \n    ",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
