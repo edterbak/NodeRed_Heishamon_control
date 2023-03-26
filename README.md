@@ -708,6 +708,7 @@ Have fun with your heat pump!</br>
 [2023-03-26] v22.10 beta 1 (experimental). Changes:
 - [Enhancement] SoftStart Chart now shows quietmode (#104)
 - [Fix] Solar Function. Half rewritten. Added DHW setpoint manager and introduced popups when changing stuff. Need testing.
+- [Enhancement] Added HP models no 29-32 to the list.
 
 ********
 
