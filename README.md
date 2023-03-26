@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.09 Beta 1<br/> <br/>
+Current version: 22.10 Beta 1<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -704,6 +704,10 @@ Have fun with your heat pump!</br>
 [2023-03-19] v22.09 beta 1 (experimental). Changes:
 - [Fix] Rewrite quietmode add-on. Now using quiet mode manager. 
 - [Enhancement] Changed GUI around softstart.
+
+[2023-03-26] v22.10 beta 1 (experimental). Changes:
+- [Enhancement] SoftStart Chart now shows quietmode (#104)
+- [Fix] Solar Function. Half rewritten. Added DHW setpoint manager and introduced popups when changing stuff. Need testing.
 
 ********
 
