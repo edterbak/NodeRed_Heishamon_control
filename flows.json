@@ -127,7 +127,8 @@
             "62bb9a3778a8e0c4",
             "8cea97ace96d4c67",
             "eea147e0b371b347",
-            "f6a75e4b3dd9cf4c"
+            "f6a75e4b3dd9cf4c",
+            "95590d576d789646"
         ],
         "x": 34,
         "y": 2119,
@@ -1636,7 +1637,7 @@
         "type": "ui_chart",
         "z": "8c9d42231fd19d3c",
         "g": "c3b7d9597903239c",
-        "name": "Kamer Temperatuur",
+        "name": "Room Temperature",
         "group": "2a223fd6c0b54acd",
         "order": 1,
         "width": 10,
@@ -1645,10 +1646,10 @@
         "chartType": "line",
         "legend": "true",
         "xformat": "HH:mm",
-        "interpolate": "linear",
+        "interpolate": "step",
         "nodata": "",
         "dot": false,
-        "ymin": "20",
+        "ymin": "",
         "ymax": "",
         "removeOlder": "24",
         "removeOlderPoints": "1000",
@@ -3232,7 +3233,9 @@
         "x": 130,
         "y": 2420,
         "wires": [
-            []
+            [
+                "8cb1aceef81045bd"
+            ]
         ]
     },
     {
@@ -3241,7 +3244,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "c3b7d9597903239c",
         "name": "Chart Roomtemperatures",
-        "func": "var SP                          = global.get('SP_Final',\"file\");                // Current Setpoint of the water (Ta)\nvar T_room                      = global.get('T_room');                         // Current Livingroom sensor 1 (air)\nvar T_woonkamer_BT2             = global.get('T_woonkamer_BT2');                // Current Livingroom sensor 2 (air)\nvar T_woonkamer_BT3_vvw         = global.get('T_woonkamer_BT3_vvw');            // Current Livingroom sensor 3 (floor)\nvar T_woonkamer_BT4_vvw         = global.get('T_woonkamer_BT4_vvw');            // Current Livingroom sensor 4 (floor)\nvar Tado                        = global.get(\"Tado_Thermostaat_Temp\");          // Current Livingroom sensor 5 (floor)\nvar Echo_Temp                   = global.get(\"Echo_Temp\");                      // Current Livingroom sensor 6 (ECHO)\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={}, msg7={}, msg8={}, msg9={}, msg10={}, msg11={}, msg12={};\n\nif (SP !== undefined)\n{\n    msg1.payload = SP;\n    msg1.payload = Number(msg1.payload).toFixed(2);\n    msg1.payload = parseFloat(msg1.payload);\n    msg1.topic='SP Ta';\n}\n\nif (T_room !== undefined)\n{\n    msg2.payload = T_room;\n    msg2.payload = Number(msg2.payload).toFixed(2);\n    msg2.payload = parseFloat(msg2.payload);\n    msg2.topic='Woonkamer PV (bt)';\n}\n\nif (T_woonkamer_BT2 !== undefined)\n{\n    msg3.payload = T_woonkamer_BT2;\n    msg3.payload = Number(msg3.payload).toFixed(2);\n    msg3.payload = parseFloat(msg3.payload);\n    msg3.topic='Woonkamer PV2 (bt)'; \n}\n\nif (T_woonkamer_BT3_vvw !== undefined)\n{\n    msg4.payload = T_woonkamer_BT3_vvw;\n    msg4.payload = Number(msg4.payload).toFixed(2);\n    msg4.payload = parseFloat(msg4.payload);\n    msg4.topic='T_woonkamer_BT3_vvw';\n}\n\nif (T_woonkamer_BT4_vvw !== undefined)\n{\n    msg5.payload = T_woonkamer_BT4_vvw;\n    msg5.payload = Number(msg5.payload).toFixed(1);\n    msg5.payload = parseFloat(msg5.payload);\n    msg5.topic='T_woonkamer_BT4_vvw';\n}\n\nif (Tado !== undefined)\n{\n    msg6.payload = Tado;\n    msg6.payload = Number(msg6.payload).toFixed(1);\n    msg6.payload = parseFloat(msg6.payload);\n    msg6.topic='Tado';  \n}\n\nif (Echo_Temp !== undefined)\n{\n    msg7.payload = Echo_Temp;\n    msg7.payload = Number(msg7.payload).toFixed(1);\n    msg7.payload = parseFloat(msg7.payload);\n    msg7.topic='Echo'; \n}\n\nreturn [[msg1, msg2, msg3, msg4, msg5, msg6, msg7]];\n\n",
+        "func": "var SP                          = global.get('SP_Final',\"file\");                // Current Setpoint of the water (Ta)\nvar T_room                      = global.get('T_room');                         // Current Livingroom sensor 1 (air)\n\nlet msg1={}, msg2={};\n\nif (SP !== undefined)\n{\n    msg1.payload = SP;\n    msg1.payload = Number(msg1.payload).toFixed(2);\n    msg1.payload = parseFloat(msg1.payload);\n    msg1.topic='SP Ta';\n}\n\nif (T_room !== undefined)\n{\n    msg2.payload = T_room;\n    msg2.payload = Number(msg2.payload).toFixed(2);\n    msg2.payload = parseFloat(msg2.payload);\n    msg2.topic='Livingroom PV';\n}\n\nreturn [[msg1, msg2, null, null, null, null, null]];\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -15846,7 +15849,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a930214064f6df4c",
         "name": "Filter",
-        "func": "var last_value      = context.get('last_value');\nvar last_msgid      = context.get('last_msgid');\n\nif (last_value === undefined || last_msgid === undefined){\n    context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n    //return msg;\n}\n\nif (last_msgid == msg._msgid || msg.payload == last_value){\n    return null;\n}\n\ncontext.set('last_value',msg.payload);\ncontext.set('last_msgid',msg._msgid);\nreturn msg;\n",
+        "func": "var last_value      = context.get('last_value');\nvar last_msgid      = context.get('last_msgid');\n\nif (last_value === undefined || last_msgid === undefined){\n    context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n    return null;\n}\n\nif (last_msgid == msg._msgid || msg.payload == last_value){\n    return null;\n}\n\ncontext.set('last_value',msg.payload);\ncontext.set('last_msgid',msg._msgid);\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -15956,6 +15959,23 @@
         "wires": []
     },
     {
+        "id": "95590d576d789646",
+        "type": "link in",
+        "z": "8c9d42231fd19d3c",
+        "g": "c3b7d9597903239c",
+        "name": "link in - personal chart info",
+        "links": [
+            "837706e7772c4061"
+        ],
+        "x": 225,
+        "y": 2200,
+        "wires": [
+            [
+                "8cb1aceef81045bd"
+            ]
+        ]
+    },
+    {
         "id": "a938de76db0b71f6",
         "type": "tab",
         "label": "WP Control",
@@ -16047,9 +16067,7 @@
             "f41605bb413dc970"
         ],
         "x": 154,
-        "y": 1559,
-        "w": 1422,
-        "h": 1362
+        "y": 1559
     },
     {
         "id": "5a496e1f1ea93a38",
@@ -16077,9 +16095,7 @@
             "2df41704fe34f586"
         ],
         "x": 154,
-        "y": 79,
-        "w": 1132,
-        "h": 322
+        "y": 79
     },
     {
         "id": "cd2050a861736ec5",
@@ -16156,9 +16172,7 @@
             "6c685782864f1787"
         ],
         "x": 154,
-        "y": 2939,
-        "w": 1162,
-        "h": 982
+        "y": 2939
     },
     {
         "id": "94f57429e16c8e82",
@@ -16175,9 +16189,7 @@
             "5787c91b303f2538"
         ],
         "x": 1644,
-        "y": 1819,
-        "w": 502,
-        "h": 122
+        "y": 1819
     },
     {
         "id": "b37318d1b7f66e33",
@@ -16211,9 +16223,7 @@
             "e8b855966cfa18d3"
         ],
         "x": 134,
-        "y": 3939,
-        "w": 1352,
-        "h": 322
+        "y": 3939
     },
     {
         "id": "992121a08b66faa3",
@@ -16265,9 +16275,7 @@
             "b43820fd5a21f4e7"
         ],
         "x": 2348,
-        "y": 53,
-        "w": 1958,
-        "h": 888
+        "y": 53
     },
     {
         "id": "7987a450598985bb",
@@ -16296,9 +16304,7 @@
             "07bfc2f9f00870d7"
         ],
         "x": 74,
-        "y": 4439,
-        "w": 1122,
-        "h": 302
+        "y": 4439
     },
     {
         "id": "1d8b21349d38bc85",
@@ -16323,9 +16329,7 @@
             "ae97f18776a1de28"
         ],
         "x": 1234,
-        "y": 4439,
-        "w": 1132,
-        "h": 162
+        "y": 4439
     },
     {
         "id": "d2b7e1d6e85a96cf",
@@ -16428,9 +16432,7 @@
             "ab95f54af069f6b0"
         ],
         "x": 144,
-        "y": 559,
-        "w": 1912,
-        "h": 962
+        "y": 559
     },
     {
         "id": "f2aa79821dfd1110",
@@ -16450,9 +16452,7 @@
             "7122d217051222ff"
         ],
         "x": 2374,
-        "y": 79,
-        "w": 1172,
-        "h": 162
+        "y": 79
     },
     {
         "id": "2c893b32851ad2a2",
@@ -23115,7 +23115,9 @@
             "fcc8ad2c22433dd3"
         ],
         "x": 124,
-        "y": 219
+        "y": 219,
+        "w": 1292,
+        "h": 322
     },
     {
         "id": "c1355934e3f948a0",
@@ -23293,7 +23295,9 @@
             "0ac3bcf9afb0e713"
         ],
         "x": 124,
-        "y": 559
+        "y": 559,
+        "w": 1292,
+        "h": 162
     },
     {
         "id": "cb0fc587b4884ad4",
@@ -23375,7 +23379,9 @@
             "6ade9410c4a9dd70"
         ],
         "x": 134,
-        "y": 19
+        "y": 19,
+        "w": 292,
+        "h": 162
     },
     {
         "id": "2a72a0a50c226d0f",
@@ -25712,9 +25718,7 @@
             "88ea0371f9cecd37"
         ],
         "x": 74,
-        "y": 19,
-        "w": 1292,
-        "h": 728
+        "y": 19
     },
     {
         "id": "81ff790f84afd46d",
@@ -25757,9 +25761,7 @@
             "37844e2456e64427"
         ],
         "x": 14,
-        "y": 1693,
-        "w": 1372,
-        "h": 1048
+        "y": 1693
     },
     {
         "id": "6f4cdc97add442ff",
@@ -25780,9 +25782,7 @@
             "58f4dcb609fc506a"
         ],
         "x": 94,
-        "y": 2979,
-        "w": 902,
-        "h": 202
+        "y": 2979
     },
     {
         "id": "3b5324e3d80d96a1",
@@ -25816,9 +25816,7 @@
             "375bbd780529afe0"
         ],
         "x": 74,
-        "y": 779,
-        "w": 1332,
-        "h": 688
+        "y": 779
     },
     {
         "id": "2efa0af27c69d4d0",
@@ -25840,9 +25838,7 @@
             "39f52a7b4d2f12c9"
         ],
         "x": 114,
-        "y": 551.5,
-        "w": 812,
-        "h": 169.5
+        "y": 551.5
     },
     {
         "id": "9fca714df21ffac0",
@@ -25859,9 +25855,7 @@
             "5256af8b7309c113"
         ],
         "x": 314,
-        "y": 399,
-        "w": 232,
-        "h": 82
+        "y": 399
     },
     {
         "id": "b85d6aca6a841215",
@@ -25878,9 +25872,7 @@
             "3ddc8ec4b5d75af2"
         ],
         "x": 274,
-        "y": 1119,
-        "w": 232,
-        "h": 82
+        "y": 1119
     },
     {
         "id": "233708268636f815",
@@ -25904,9 +25896,7 @@
             "441d5424780d9523"
         ],
         "x": 154,
-        "y": 1279,
-        "w": 612,
-        "h": 162
+        "y": 1279
     },
     {
         "id": "37844e2456e64427",
@@ -25944,9 +25934,7 @@
             "d2d71d4e69ee31d7"
         ],
         "x": 214,
-        "y": 1719,
-        "w": 872,
-        "h": 762
+        "y": 1719
     },
     {
         "id": "ce2634259bc8d6eb",
