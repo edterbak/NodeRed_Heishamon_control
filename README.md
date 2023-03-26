@@ -706,12 +706,12 @@ Have fun with your heat pump!</br>
 - [Enhancement] Changed GUI around softstart.
 
 [2023-03-26] v22.10 beta 1 (experimental). Changes:
-- [Enhancement] SoftStart Chart now shows quietmode (#104)
+- [Enhancement] SoftStart Chart now shows quietmode (https://github.com/edterbak/NodeRed_Heishamon_control/issues/104)
 - [Fix] Solar Function. Half rewritten. Added DHW setpoint manager and introduced popups when changing stuff. Need testing.
 - [Enhancement] Added HP models no 29-32 to the list.
 
 [2023-03-26] v22.11 beta 1 (experimental). Changes:
-- [Fix] Fix room temperature readout during NR Deploy (#104)
+- [Fix] Fix room temperature readout during NR Deploy (https://github.com/edterbak/NodeRed_Heishamon_control/issues/93)
 
 [2023-03-26] v22.12 beta 1 (experimental). Changes:
 - [Fix] On Temperature page the Ta is plotted on the living room graph (https://github.com/edterbak/NodeRed_Heishamon_control/issues/75)
