@@ -9057,9 +9057,9 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "22.12 Beta 1",
+        "payload": "22.13 Beta",
         "payloadType": "str",
-        "x": 1340,
+        "x": 1330,
         "y": 1960,
         "wires": [
             [
@@ -16067,7 +16067,9 @@
             "f41605bb413dc970"
         ],
         "x": 154,
-        "y": 1559
+        "y": 1559,
+        "w": 1422,
+        "h": 1362
     },
     {
         "id": "5a496e1f1ea93a38",
@@ -16095,7 +16097,9 @@
             "2df41704fe34f586"
         ],
         "x": 154,
-        "y": 79
+        "y": 79,
+        "w": 1132,
+        "h": 322
     },
     {
         "id": "cd2050a861736ec5",
@@ -16172,7 +16176,9 @@
             "6c685782864f1787"
         ],
         "x": 154,
-        "y": 2939
+        "y": 2939,
+        "w": 1162,
+        "h": 982
     },
     {
         "id": "94f57429e16c8e82",
@@ -16189,7 +16195,9 @@
             "5787c91b303f2538"
         ],
         "x": 1644,
-        "y": 1819
+        "y": 1819,
+        "w": 502,
+        "h": 122
     },
     {
         "id": "b37318d1b7f66e33",
@@ -16223,7 +16231,9 @@
             "e8b855966cfa18d3"
         ],
         "x": 134,
-        "y": 3939
+        "y": 3939,
+        "w": 1352,
+        "h": 322
     },
     {
         "id": "992121a08b66faa3",
@@ -16275,7 +16285,9 @@
             "b43820fd5a21f4e7"
         ],
         "x": 2348,
-        "y": 53
+        "y": 53,
+        "w": 1958,
+        "h": 888
     },
     {
         "id": "7987a450598985bb",
@@ -16304,7 +16316,9 @@
             "07bfc2f9f00870d7"
         ],
         "x": 74,
-        "y": 4439
+        "y": 4439,
+        "w": 1122,
+        "h": 302
     },
     {
         "id": "1d8b21349d38bc85",
@@ -16329,7 +16343,9 @@
             "ae97f18776a1de28"
         ],
         "x": 1234,
-        "y": 4439
+        "y": 4439,
+        "w": 1132,
+        "h": 162
     },
     {
         "id": "d2b7e1d6e85a96cf",
@@ -16432,7 +16448,9 @@
             "ab95f54af069f6b0"
         ],
         "x": 144,
-        "y": 559
+        "y": 559,
+        "w": 1912,
+        "h": 962
     },
     {
         "id": "f2aa79821dfd1110",
@@ -16452,7 +16470,9 @@
             "7122d217051222ff"
         ],
         "x": 2374,
-        "y": 79
+        "y": 79,
+        "w": 1172,
+        "h": 162
     },
     {
         "id": "2c893b32851ad2a2",
@@ -23018,7 +23038,7 @@
         "z": "a938de76db0b71f6",
         "g": "5a496e1f1ea93a38",
         "name": "T_Room Input Selector",
-        "func": "var TOP33               = global.get('TOP33_Room_Thermostat_Temp');             // The default heatpump outside temperature sensor\nvar T_room_custom       = global.get('T_room_custom',\"file\");                          // Custom outside temperature sensor\nif (T_room_custom === undefined) { T_room_custom = {}}\nvar T_room;\nvar CurrentTime = new Date().getTime();\n\n//  msg={};         // payload\nlet msg99={};       // Info to log\n    msg99.topic = \"SETUP - Sensors\";\n    \n//******************************************************************************\n// Default panasonic thermostat temperature sensor\n//******************************************************************************\nif (msg.topic == 'panasonic_heat_pump/main/Room_Thermostat_Temp') {\n        if (msg.payload != TOP33)   {\n                global.set('TOP33_Room_Thermostat_Temp',msg.payload);\n                TOP33 = msg.payload;\n        }\n        \n        if (T_room_custom.value_time === undefined) {\n                global.set('T_room',TOP33);\n                msg99.payload = \"Custom room temperature sensor not found. Using TOP33\";\n                \n                return [msg,msg99];\n        }\n\n        if ((CurrentTime - T_room_custom.value_time) > 60*1000*60*5) {   // 5 hours\n                global.set('T_room',TOP33)\n                msg99.payload = \"Custom room temperature sensor lost - last value older than 5 hours. Using TOP33\";\n\n                return [msg,msg99];\n        }\n\n}\n//******************************************************************************\n// Custom temperature sensor\n//******************************************************************************\nif (msg.topic != 'panasonic_heat_pump/main/Room_Thermostat_Temp') {\n    \n        if (T_room_custom.value_time === undefined) {\n                T_room_custom.value = msg.payload;\n                T_room_custom.value_time = CurrentTime;\n                global.set('T_room_custom',T_room_custom,\"file\");\n                global.set('T_room',msg.payload);\n                msg99.payload = \"Custom room temperature sensor found\";\n                \n                return [msg,msg99];\n        }\n        \n        if (msg.payload != T_room) {\n                T_room_custom.value = msg.payload;\n                T_room_custom.value_time = CurrentTime;\n                global.set('T_room_custom',T_room_custom,\"file\");\n\n                global.set('T_room',msg.payload);\n                return [msg,null];\n        }\n\n}\n\nreturn msg;\n\n",
+        "func": "var TOP33               = global.get('TOP33_Room_Thermostat_Temp');             // The default heatpump outside temperature sensor\nvar T_room_custom       = global.get('T_room_custom',\"file\");                          // Custom outside temperature sensor\nif (T_room_custom === undefined) { T_room_custom = {}}\nvar T_room;\nvar CurrentTime = new Date().getTime();\n\n//  msg={};         // payload\nmsg.payload = Number(msg.payload).toFixed(2);\nmsg.payload = parseFloat(msg.payload);\n\nlet msg99={};       // Info to log\n    msg99.topic = \"SETUP - Sensors\";\n    \n//******************************************************************************\n// Default panasonic thermostat temperature sensor\n//******************************************************************************\nif (msg.topic == 'panasonic_heat_pump/main/Room_Thermostat_Temp') {\n        if (msg.payload != TOP33)   {\n                global.set('TOP33_Room_Thermostat_Temp',msg.payload);\n                TOP33 = msg.payload;\n        }\n        \n        if (T_room_custom.value_time === undefined) {\n                global.set('T_room',TOP33);\n                msg99.payload = \"Custom room temperature sensor not found. Using TOP33\";\n                \n                return [msg,msg99];\n        }\n\n        if ((CurrentTime - T_room_custom.value_time) > 60*1000*60*5) {   // 5 hours\n                global.set('T_room',TOP33)\n                msg99.payload = \"Custom room temperature sensor lost - last value older than 5 hours. Using TOP33\";\n\n                return [msg,msg99];\n        }\n\n}\n//******************************************************************************\n// Custom temperature sensor\n//******************************************************************************\nif (msg.topic != 'panasonic_heat_pump/main/Room_Thermostat_Temp') {\n    \n        if (T_room_custom.value_time === undefined) {\n                T_room_custom.value = msg.payload;\n                T_room_custom.value_time = CurrentTime;\n                global.set('T_room_custom',T_room_custom,\"file\");\n                global.set('T_room',msg.payload);\n                msg99.payload = \"Custom room temperature sensor found\";\n                \n                return [msg,msg99];\n        }\n        \n        if (msg.payload != T_room) {\n                T_room_custom.value = msg.payload;\n                T_room_custom.value_time = CurrentTime;\n                global.set('T_room_custom',T_room_custom,\"file\");\n\n                global.set('T_room',msg.payload);\n                return [msg,null];\n        }\n\n}\n\nreturn msg;\n\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -23115,7 +23135,9 @@
             "fcc8ad2c22433dd3"
         ],
         "x": 124,
-        "y": 219
+        "y": 219,
+        "w": 1292,
+        "h": 322
     },
     {
         "id": "c1355934e3f948a0",
@@ -23293,7 +23315,9 @@
             "0ac3bcf9afb0e713"
         ],
         "x": 124,
-        "y": 559
+        "y": 559,
+        "w": 1292,
+        "h": 162
     },
     {
         "id": "cb0fc587b4884ad4",
@@ -23375,7 +23399,9 @@
             "6ade9410c4a9dd70"
         ],
         "x": 134,
-        "y": 19
+        "y": 19,
+        "w": 292,
+        "h": 162
     },
     {
         "id": "2a72a0a50c226d0f",
