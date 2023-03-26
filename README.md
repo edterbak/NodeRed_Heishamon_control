@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.13 Beta<br/> <br/>
+Current version: 22.14 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -720,6 +720,8 @@ Have fun with your heat pump!</br>
 [2023-03-26] v22.13 beta (experimental). Changes:
 - [Fix] Room temperature readoud now rounded to 2 decimals.
 
+[2023-03-26] v22.14 beta (experimental). Changes:
+- [Fix] Fixed unneeded sending of temperature from new node [T_Room Input Selector]
 
 
 ********
