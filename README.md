@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.10 Beta 1<br/> <br/>
+Current version: 22.11 Beta 1<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -709,6 +709,9 @@ Have fun with your heat pump!</br>
 - [Enhancement] SoftStart Chart now shows quietmode (#104)
 - [Fix] Solar Function. Half rewritten. Added DHW setpoint manager and introduced popups when changing stuff. Need testing.
 - [Enhancement] Added HP models no 29-32 to the list.
+
+[2023-03-26] v22.11 beta 1 (experimental). Changes:
+- [Fix] Fix room temperature readout during NR Deploy (#104)
 
 ********
 
