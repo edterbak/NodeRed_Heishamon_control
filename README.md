@@ -731,6 +731,7 @@ Have fun with your heat pump!</br>
 [2023-04-01] v22.16 beta (experimental). Changes:
 - [Fix] Fixed two small issues with logs being flooded by SOLAR function messages. 
 - [Enhancement] Renamed a lot of variables. 
+- [Fix] cleaned up some remnant variables
 
 ********
 
