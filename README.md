@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.15 Beta<br/> <br/>
+Current version: 22.16 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -726,6 +726,11 @@ Have fun with your heat pump!</br>
 [2023-03-27] v22.15 beta (experimental). Changes:
 - [Fix] Fixed quietmode switching back within 5 minutes after quietmode time passed.
 - [Enhancement] Renamed some extra variables. 
+
+
+[2023-04-01] v22.16 beta (experimental). Changes:
+- [Fix] Fixed two small issues with logs being flooded by SOLAR function messages. 
+- [Enhancement] Renamed a lot of variables. 
 
 ********
 
