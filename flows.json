@@ -670,13 +670,54 @@
             "0a89bc3104c3ee9b",
             "b41f920bc63ae262",
             "32840bc8d04fbb31",
-            "61def1f2090e360a",
-            "86bc9dd4cbd5307d"
+            "61def1f2090e360a"
         ],
         "x": 1154,
         "y": 59,
         "w": 1692,
         "h": 1782
+    },
+    {
+        "id": "89467c0f49c8ec80",
+        "type": "ui_template",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "group": "fea7672db2f050c9",
+        "name": "Line - Setup 3",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1280,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fea7672db2f050c9",
+        "type": "ui_group",
+        "name": "HEAT PUMP",
+        "tab": "33ece0076bfd7cb7",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "33ece0076bfd7cb7",
+        "type": "ui_tab",
+        "name": "Settings",
+        "icon": "settings",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "ffa1f23278378e79",
@@ -3087,7 +3128,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3360,
+        "x": 3400,
         "y": 2220,
         "wires": [
             [
@@ -5712,7 +5753,7 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 790,
+        "x": 770,
         "y": 540,
         "wires": [
             []
@@ -7612,8 +7653,8 @@
         "g": "4f352fdae09316c2",
         "group": "16ec453c8cb345ac",
         "name": "Log to dashboard",
-        "order": 4,
-        "width": 25,
+        "order": 5,
+        "width": 24,
         "height": 16,
         "format": "<div ng-repeat=\"line in msg.payload track by $index\">\n<div ng-bind-html=\"line\" ></div>\n</div>",
         "storeOutMessages": false,
@@ -7770,8 +7811,8 @@
         "z": "8c9d42231fd19d3c",
         "g": "4f352fdae09316c2",
         "group": "16ec453c8cb345ac",
-        "order": 5,
-        "width": 25,
+        "order": 4,
+        "width": 24,
         "height": 1,
         "name": "spacer 1x1",
         "label": "",
@@ -7851,7 +7892,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 3870,
+        "x": 3860,
         "y": 2200,
         "wires": [
             [
@@ -9058,7 +9099,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "22.16 Beta",
+        "payload": "22.17 Beta",
         "payloadType": "str",
         "x": 1330,
         "y": 1960,
@@ -9076,7 +9117,7 @@
         "g": "4f352fdae09316c2",
         "group": "b7f740331bca1b3f",
         "order": 1,
-        "width": 25,
+        "width": 24,
         "height": 1,
         "name": "Flow version",
         "label": "Flow version ",
@@ -9094,7 +9135,7 @@
         "g": "4f352fdae09316c2",
         "group": "16ec453c8cb345ac",
         "order": 3,
-        "width": 17,
+        "width": 16,
         "height": 1,
         "name": "spacer 1x1",
         "label": "",
@@ -9934,7 +9975,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 2710,
-        "y": 320,
+        "y": 280,
         "wires": []
     },
     {
@@ -13501,28 +13542,6 @@
         "wires": []
     },
     {
-        "id": "89467c0f49c8ec80",
-        "type": "ui_template",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "group": "fea7672db2f050c9",
-        "name": "Line - Setup 3",
-        "order": 12,
-        "width": 0,
-        "height": 0,
-        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n</html>\n",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 1280,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "4a2670b477ab7f75",
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
@@ -15938,27 +15957,9 @@
         "y": 1000,
         "wires": [
             [
-                "bc84f4340c3e5b0a",
-                "86bc9dd4cbd5307d"
+                "bc84f4340c3e5b0a"
             ]
         ]
-    },
-    {
-        "id": "86bc9dd4cbd5307d",
-        "type": "debug",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "name": "debug 140",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2650,
-        "y": 680,
-        "wires": []
     },
     {
         "id": "95590d576d789646",
@@ -16196,7 +16197,7 @@
         ],
         "x": 154,
         "y": 2939,
-        "w": 1172,
+        "w": 1182,
         "h": 982
     },
     {
@@ -16301,12 +16302,14 @@
             "0e8ca4bb561b59ed",
             "497a87221c5618c5",
             "6b2644c3a510f50f",
-            "b43820fd5a21f4e7"
+            "b43820fd5a21f4e7",
+            "af1404724ba9f9f4",
+            "103eefceda366f39"
         ],
         "x": 2348,
         "y": 53,
         "w": 1958,
-        "h": 888
+        "h": 968
     },
     {
         "id": "7987a450598985bb",
@@ -19921,8 +19924,8 @@
         "g": "992121a08b66faa3",
         "group": "830a81a1c54c6ef5",
         "order": 8,
-        "width": 0,
-        "height": 0,
+        "width": 6,
+        "height": 1,
         "name": "",
         "label": "Calculated dew point",
         "format": "{{msg.payload}} °C",
@@ -19979,8 +19982,8 @@
         "g": "992121a08b66faa3",
         "group": "830a81a1c54c6ef5",
         "order": 7,
-        "width": 0,
-        "height": 0,
+        "width": 6,
+        "height": 1,
         "name": "",
         "label": "Room temperature",
         "format": "{{msg.payload}} °C",
@@ -21083,9 +21086,10 @@
             "702993e29cd93413",
             "afa5bf9f7c3531bc",
             "ffa2e7745e5aed4c",
-            "4f37968e1a1ebacc"
+            "4f37968e1a1ebacc",
+            "29daf0bbd602db4f"
         ],
-        "x": 1275,
+        "x": 1295,
         "y": 3280,
         "wires": []
     },
@@ -21453,7 +21457,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Calculate new SP",
-        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n*/\n//*****************************************************************************\nlet msg1={};        // pin 1 - SP_Final\nlet msg99={};       // pin 2 - To Log\nlet msg2={};        // pin 3 - SHIFT_Final\n// return [msg1,msg99,msg2]\n\nmsg99.topic = \"Function - Calculate new SP\";        // ToLog\n\n\nvar SP_Final            =global.get('SP_DIRECT_virt',\"file\");                   //\n    if (SP_Final===undefined) {node.warn('Calculate new SP - SP_Final');return null;}\n\nvar F_WAR_onoff         =global.get('Correction_0_WAR_on_off',\"file\");          //\n    if (F_WAR_onoff === undefined) {F_WAR_onoff = 0;}\n    \nvar F_WAR_SP            =global.get('F_WAR_SP');                                //\n    if (F_WAR_SP===undefined) {node.warn('Calculate new SP - F_WAR_SP');return null;}\n\nvar F_RTC_state         =global.get('F_RTC.state',\"file\");          //\n        if (F_RTC_state === undefined) {F_RTC_state=0;}\n        \nvar F_RTC_correction    =global.get('F_RTC.correction_value',\"file\");                        // Memory Only!\n    if (F_RTC_correction === undefined) { node.warn('Calculate new SP - F_RTC_correction');return null;}\n\nvar F_SS_state          =global.get('F_SS.state',\"file\");    //\n        if (F_SS_state === undefined) {F_SS_state=0;}\n        \nvar F_SS_correction     =global.get('F_SS.correction_value',\"file\");                         //\n    if (F_SS_correction===undefined) {node.warn('Calculate new SP - F_SS_correction');return null;}\n\nvar F_NR_state          =global.get('NightReductionWaterTemp.state',\"file\");            //\n        if (F_NR_state === undefined) {F_NR_state=0;}\n        \nvar F_NR_correction     =global.get('NightReductionWaterTemp.current_value',\"file\");                         //\n    if (F_NR_correction===undefined) {node.warn('Calculate new SP - F_NR_correction');return null;}\n\nvar current_sp          =global.get('TOP27_Z1_Heat_Request_Temp');                        //\n    if (current_sp===undefined) {node.warn('Calculate new SP - current_sp');return null;}\n\nvar TOP76_Heating_Mode        =global.get('TOP76_Heating_Mode',\"file\");\n    if (TOP76_Heating_Mode===undefined) {node.warn('Calculate new SP - TOP76_Heating_Mode');return null;}\n\nvar Operating_Mode      =global.get('TOP4_Operating_Mode_State',\"file\")              //\n\nvar HEAT_SP_lower_limit =global.get('HEAT_SP_lower_limit',\"file\")               //\n    if (HEAT_SP_lower_limit === undefined)  {HEAT_SP_lower_limit = 20;}\n    \nvar HEAT_SP_upper_limit =global.get('HEAT_SP_upper_limit',\"file\")               //\n    if (HEAT_SP_upper_limit === undefined)  {HEAT_SP_upper_limit = 100;}\n\n\n//*****************************************************************************\nif (Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                         // check if all variables are present befor checking\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    {\n        return null;\n    }\n//*****************************************************************************\n//*****************************************************************************\n\nif (current_sp == 0 || TOP76_Heating_Mode == 0)\n    {\n        var SP_start       = global.get('SP_DIRECT_virt',\"file\");                       // Get the global variable for SP_DIRECT_virt. Value is set through the dashboard\n        \n        var SHIFT_Final_old = global.get('SHIFT_Final',\"file\");\n            if (SHIFT_Final_old === undefined) {SHIFT_Final_old=0;}\n        \n        if (F_RTC_state == 0) { F_RTC_correction = 0;}\n        if (F_SS_state == 0)    {F_SS_correction = 0;}\n        if (F_NR_state == 0)    {F_NR_correction = 0;}\n        \n        var SHIFT_Final = SP_start + F_RTC_correction + F_SS_correction + F_NR_correction;\n        \n        msg2.payload = SHIFT_Final;\n        msg2.topic = \"Shift\";\n        \n        if (msg2.payload < -5)  {msg2.payload = -5;}\n        if (msg2.payload > 5)   {msg2.payload = 5;}\n        \n        \n        if (SHIFT_Final_old != SHIFT_Final)\n            {\n                global.set('SHIFT_Final',msg2.payload,\"file\");\n            }\n        msg99.payload   = \"New final T shift calculated: Current T shift: \" + SHIFT_Final_old + \" °C. New calculated T shift:  \" + msg2.payload + \" °C\";\n        \n        return [null,msg99,msg2]\n        //return [SP,toLog,shift]\n    }\n//*****************************************************************************\n//*****************************************************************************\nif (current_sp >= 20 && TOP76_Heating_Mode == 1)\n    {\n        if (F_WAR_onoff==1)                 {SP_Final   =F_WAR_SP;}\n        if (F_RTC_state == 1)               {SP_Final   = SP_Final  + F_RTC_correction;}\n        if (F_NR_state==1)                  {SP_Final   =SP_Final   + F_NR_correction;}\n        if (F_SS_state==1)                  {SP_Final   =SP_Final   + F_SS_correction;}\n        if (SP_Final<HEAT_SP_lower_limit)   {SP_Final   =HEAT_SP_lower_limit}\n        if (SP_Final>HEAT_SP_upper_limit)   {SP_Final   =HEAT_SP_upper_limit}\n        if (SP_Final<20)                    {SP_Final   =20;}\n    \n        //*****************************************************************************\n        SP_Final = Number(SP_Final).toFixed(0);\n        SP_Final = parseFloat(SP_Final);\n        msg1.payload    = SP_Final;\n        msg1.topic  = \"SP_Final\";\n        \n        global.set('SP_Final',SP_Final,\"file\")\n        \n         if (global.get('Debugging', \"file\") == 1) {\n            msg99.topic = \"*** Function Calculate new SP\";\n            msg99.payload   = \"New final SP calculated: Current setpont: \" + current_sp + \" °C. New calculated setpoint:  <b>\" + SP_Final + \"</b> °C\";//debug\n         }\n\n\n        //*****************************************************************************\n\n        if (SP_Final ==  current_sp)                                            // Check only if there is a difference between SP and current value, a signal should be sent.\n            {\n                if (global.get('MQTT_Source') !== undefined) { global.set('MQTT_Source',undefined); }           // only reset when defined\n                return [null,null,null];\n                //return [SP,toLog,shift]\n            }\n        else\n            {\n                if (global.get('Debugging', \"file\") == 1)  {\n                    return [msg1,msg99,null];               //debug\n                }  \n\n                return [msg1, null, null]; \n                //return [SP,toLog,shift]\n            }\n    }\n    \n",
+        "func": "/*\nThis function has the purpose to regularly check the actual SP from the heatpump against the calculated setpoint in from the dashboard/functions. \nOnly when there is a deviation between the two, the new setpoint gets sent through MQTT to SET5.\n*/\n//*****************************************************************************\nlet msg1={};        // pin 1 - SP_Final\nlet msg99={};       // pin 2 - To Log\nlet msg2={};        // pin 3 - SHIFT_Final\n// return [msg1,msg99,msg2]\n\nmsg99.topic = \"Function - Calculate new SP\";        // ToLog\n\n\nvar SP_Final            =global.get('SP_DIRECT_virt',\"file\");                   //\n    if (SP_Final===undefined) {return null;}\n\nvar F_WAR_onoff         =global.get('Correction_0_WAR_on_off',\"file\");          //\n    if (F_WAR_onoff === undefined) {F_WAR_onoff = 0;}\n    \nvar F_WAR_SP            =global.get('F_WAR_SP');                                //\n    if (F_WAR_SP===undefined) {return null;}\n\nvar F_RTC_state         =global.get('F_RTC.state',\"file\");          //\n        if (F_RTC_state === undefined) {F_RTC_state=0;}\n        \nvar F_RTC_correction    =global.get('F_RTC.correction_value',\"file\");                        // Memory Only!\n    if (F_RTC_correction === undefined) {return null;}\n\nvar F_SS_state          =global.get('F_SS.state',\"file\");    //\n        if (F_SS_state === undefined) {F_SS_state=0;}\n        \nvar F_SS_correction     =global.get('F_SS.correction_value',\"file\");                         //\n    if (F_SS_correction===undefined) {return null;}\n\nvar F_NR_state          =global.get('NightReductionWaterTemp.state',\"file\");            //\n        if (F_NR_state === undefined) {F_NR_state=0;}\n        \nvar F_NR_correction     =global.get('NightReductionWaterTemp.current_value',\"file\");                         //\n    if (F_NR_correction===undefined) {return null;}\n\nvar current_sp          =global.get('TOP27_Z1_Heat_Request_Temp');                        //\n    if (current_sp===undefined) {return null;}\n\nvar TOP76_Heating_Mode        =global.get('TOP76_Heating_Mode',\"file\");\n    if (TOP76_Heating_Mode===undefined) {return null;}\n\nvar Operating_Mode      =global.get('TOP4_Operating_Mode_State',\"file\")              //\n\nvar HEAT_SP_lower_limit =global.get('HEAT_SP_lower_limit',\"file\")               //\n    if (HEAT_SP_lower_limit === undefined)  {HEAT_SP_lower_limit = 20;}\n    \nvar HEAT_SP_upper_limit =global.get('HEAT_SP_upper_limit',\"file\")               //\n    if (HEAT_SP_upper_limit === undefined)  {HEAT_SP_upper_limit = 100;}\n\n\n//*****************************************************************************\nif (Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==3 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8)                         // check if all variables are present befor checking\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    {\n        return null;\n    }\n//*****************************************************************************\n//*****************************************************************************\n\nif (current_sp == 0 || TOP76_Heating_Mode == 0)\n    {\n        var SP_start       = global.get('SP_DIRECT_virt',\"file\");                       // Get the global variable for SP_DIRECT_virt. Value is set through the dashboard\n        \n        var SHIFT_Final_old = global.get('SHIFT_Final',\"file\");\n            if (SHIFT_Final_old === undefined) {SHIFT_Final_old=0;}\n        \n        if (F_RTC_state == 0) { F_RTC_correction = 0;}\n        if (F_SS_state == 0)    {F_SS_correction = 0;}\n        if (F_NR_state == 0)    {F_NR_correction = 0;}\n        \n        var SHIFT_Final = SP_start + F_RTC_correction + F_SS_correction + F_NR_correction;\n        \n        msg2.payload = SHIFT_Final;\n        msg2.topic = \"Shift\";\n        \n        if (msg2.payload < -5)  {msg2.payload = -5;}\n        if (msg2.payload > 5)   {msg2.payload = 5;}\n        \n        \n        if (SHIFT_Final_old != SHIFT_Final)\n            {\n                global.set('SHIFT_Final',msg2.payload,\"file\");\n            }\n        msg99.payload   = \"New final T shift calculated: Current T shift: \" + SHIFT_Final_old + \" °C. New calculated T shift:  \" + msg2.payload + \" °C\";\n        \n        return [null,msg99,msg2]\n        //return [SP,toLog,shift]\n    }\n//*****************************************************************************\n//*****************************************************************************\nif (current_sp >= 20 && TOP76_Heating_Mode == 1)\n    {\n        if (F_WAR_onoff==1)                 {SP_Final   =F_WAR_SP;}\n        if (F_RTC_state == 1)               {SP_Final   = SP_Final  + F_RTC_correction;}\n        if (F_NR_state==1)                  {SP_Final   =SP_Final   + F_NR_correction;}\n        if (F_SS_state==1)                  {SP_Final   =SP_Final   + F_SS_correction;}\n        if (SP_Final<HEAT_SP_lower_limit)   {SP_Final   =HEAT_SP_lower_limit}\n        if (SP_Final>HEAT_SP_upper_limit)   {SP_Final   =HEAT_SP_upper_limit}\n        if (SP_Final<20)                    {SP_Final   =20;}\n    \n        //*****************************************************************************\n        SP_Final = Number(SP_Final).toFixed(0);\n        SP_Final = parseFloat(SP_Final);\n        msg1.payload    = SP_Final;\n        msg1.topic  = \"SP_Final\";\n        \n        global.set('SP_Final',SP_Final,\"file\")\n        \n         if (global.get('Debugging', \"file\") == 1) {\n            msg99.topic = \"*** Function Calculate new SP\";\n            msg99.payload   = \"New final SP calculated: Current setpont: \" + current_sp + \" °C. New calculated setpoint:  <b>\" + SP_Final + \"</b> °C\";//debug\n         }\n\n\n        //*****************************************************************************\n\n        if (SP_Final ==  current_sp)                                            // Check only if there is a difference between SP and current value, a signal should be sent.\n            {\n                if (global.get('MQTT_Source') !== undefined) { global.set('MQTT_Source',undefined); }           // only reset when defined\n                return [null,null,null];\n                //return [SP,toLog,shift]\n            }\n        else\n            {\n                if (global.get('Debugging', \"file\") == 1)  {\n                    return [msg1,msg99,null];               //debug\n                }  \n\n                return [msg1, null, null]; \n                //return [SP,toLog,shift]\n            }\n    }\n    \n",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
@@ -23088,6 +23092,46 @@
         ]
     },
     {
+        "id": "af1404724ba9f9f4",
+        "type": "ui_text",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "830a81a1c54c6ef5",
+        "order": 10,
+        "width": 6,
+        "height": 2,
+        "name": "",
+        "label": "This functionality requires an humidity sensor to work",
+        "format": "",
+        "layout": "row-spread",
+        "className": "",
+        "x": 3300,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "103eefceda366f39",
+        "type": "ui_template",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "830a81a1c54c6ef5",
+        "name": "Line - Note",
+        "order": 9,
+        "width": 6,
+        "height": 1,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Note:</left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 3170,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "43c4ee3ee4757f3c",
         "type": "tab",
         "label": "WP Managers",
@@ -23141,8 +23185,8 @@
             "405317f0af84b0d2",
             "fcc8ad2c22433dd3"
         ],
-        "x": 124,
-        "y": 219,
+        "x": 154,
+        "y": 19,
         "w": 1292,
         "h": 322
     },
@@ -23151,8 +23195,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "eae83de4837abd07",
-        "x": 400,
-        "y": 340,
+        "x": 430,
+        "y": 140,
         "wires": [
             [
                 "06d5536b79bbad36"
@@ -23164,8 +23208,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "eae83de4837abd07",
-        "x": 400,
-        "y": 300,
+        "x": 430,
+        "y": 100,
         "wires": [
             [
                 "06d5536b79bbad36"
@@ -23177,8 +23221,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "eae83de4837abd07",
-        "x": 400,
-        "y": 380,
+        "x": 430,
+        "y": 180,
         "wires": [
             [
                 "06d5536b79bbad36"
@@ -23190,8 +23234,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "eae83de4837abd07",
-        "x": 400,
-        "y": 260,
+        "x": 430,
+        "y": 60,
         "wires": [
             [
                 "06d5536b79bbad36"
@@ -23203,8 +23247,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "eae83de4837abd07",
-        "x": 700,
-        "y": 320,
+        "x": 730,
+        "y": 120,
         "wires": [
             [
                 "5a1d6b18490ded1c"
@@ -23216,8 +23260,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "eae83de4837abd07",
-        "x": 700,
-        "y": 360,
+        "x": 730,
+        "y": 160,
         "wires": [
             [
                 "2a72a0a50c226d0f"
@@ -23229,8 +23273,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "eae83de4837abd07",
-        "x": 700,
-        "y": 400,
+        "x": 730,
+        "y": 200,
         "wires": [
             [
                 "0ad5396b01ed9ce0",
@@ -23243,8 +23287,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "eae83de4837abd07",
-        "x": 700,
-        "y": 440,
+        "x": 730,
+        "y": 240,
         "wires": [
             [
                 "a44c9937f2ab3ee0",
@@ -23257,8 +23301,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "eae83de4837abd07",
-        "x": 400,
-        "y": 420,
+        "x": 430,
+        "y": 220,
         "wires": [
             [
                 "06d5536b79bbad36"
@@ -23270,8 +23314,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "eae83de4837abd07",
-        "x": 400,
-        "y": 460,
+        "x": 430,
+        "y": 260,
         "wires": [
             [
                 "06d5536b79bbad36"
@@ -23283,8 +23327,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "eae83de4837abd07",
-        "x": 400,
-        "y": 500,
+        "x": 430,
+        "y": 300,
         "wires": [
             [
                 "06d5536b79bbad36"
@@ -23321,8 +23365,8 @@
             "7e7068eb04e29c69",
             "0ac3bcf9afb0e713"
         ],
-        "x": 124,
-        "y": 559,
+        "x": 164,
+        "y": 419,
         "w": 1292,
         "h": 162
     },
@@ -23331,8 +23375,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "424338733e4798c9",
-        "x": 680,
-        "y": 600,
+        "x": 720,
+        "y": 460,
         "wires": [
             [
                 "c4cb07ae79c0bf65"
@@ -23344,8 +23388,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "424338733e4798c9",
-        "x": 400,
-        "y": 620,
+        "x": 440,
+        "y": 480,
         "wires": [
             [
                 "35a1975644451093"
@@ -23357,8 +23401,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "424338733e4798c9",
-        "x": 400,
-        "y": 660,
+        "x": 440,
+        "y": 520,
         "wires": [
             [
                 "35a1975644451093"
@@ -23370,8 +23414,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "424338733e4798c9",
-        "x": 680,
-        "y": 680,
+        "x": 720,
+        "y": 540,
         "wires": [
             [
                 "b02fa3c8b43f5d62"
@@ -23383,8 +23427,8 @@
         "type": "junction",
         "z": "43c4ee3ee4757f3c",
         "g": "424338733e4798c9",
-        "x": 680,
-        "y": 640,
+        "x": 720,
+        "y": 500,
         "wires": [
             [
                 "609ccd0fd9799230"
@@ -23405,8 +23449,8 @@
             "5478fc658f9e7b24",
             "6ade9410c4a9dd70"
         ],
-        "x": 134,
-        "y": 19,
+        "x": 174,
+        "y": 639,
         "w": 292,
         "h": 162
     },
@@ -23420,8 +23464,8 @@
         "links": [
             "031e62b0bf3df7d7"
         ],
-        "x": 1375,
-        "y": 360,
+        "x": 1405,
+        "y": 160,
         "wires": []
     },
     {
@@ -23431,8 +23475,8 @@
         "g": "eae83de4837abd07",
         "name": "Exit to InputLOGS",
         "info": "",
-        "x": 820,
-        "y": 360,
+        "x": 850,
+        "y": 160,
         "wires": []
     },
     {
@@ -23447,8 +23491,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
-        "y": 380,
+        "x": 590,
+        "y": 180,
         "wires": [
             [
                 "0c600dc7afab6b56"
@@ -23479,8 +23523,8 @@
         "links": [
             "4d6957c0b336a3cb"
         ],
-        "x": 165,
-        "y": 340,
+        "x": 195,
+        "y": 140,
         "wires": [
             [
                 "c1355934e3f948a0"
@@ -23494,8 +23538,8 @@
         "g": "eae83de4837abd07",
         "name": "QM GUI changes",
         "info": "",
-        "x": 280,
-        "y": 340,
+        "x": 310,
+        "y": 140,
         "wires": []
     },
     {
@@ -23507,8 +23551,8 @@
         "links": [
             "14327004637e05c7"
         ],
-        "x": 165,
-        "y": 300,
+        "x": 195,
+        "y": 100,
         "wires": [
             [
                 "d781f7c06323eb1c"
@@ -23522,8 +23566,8 @@
         "g": "eae83de4837abd07",
         "name": "QM Scheduler",
         "info": "",
-        "x": 270,
-        "y": 300,
+        "x": 300,
+        "y": 100,
         "wires": []
     },
     {
@@ -23535,8 +23579,8 @@
         "links": [
             "7c6f02c851467bc0"
         ],
-        "x": 165,
-        "y": 380,
+        "x": 195,
+        "y": 180,
         "wires": [
             [
                 "963a689f2e2f57db"
@@ -23550,8 +23594,8 @@
         "g": "eae83de4837abd07",
         "name": "QM SoftStart results",
         "info": "",
-        "x": 290,
-        "y": 380,
+        "x": 320,
+        "y": 180,
         "wires": []
     },
     {
@@ -23566,8 +23610,8 @@
             "c33b3e865b1bd8b8",
             "4212c42fb72cce77"
         ],
-        "x": 1375,
-        "y": 320,
+        "x": 1405,
+        "y": 120,
         "wires": []
     },
     {
@@ -23577,8 +23621,8 @@
         "g": "eae83de4837abd07",
         "name": "SS QM Add-on state",
         "info": "",
-        "x": 290,
-        "y": 260,
+        "x": 320,
+        "y": 60,
         "wires": []
     },
     {
@@ -23591,8 +23635,8 @@
             "84f7cbc2cc8c135d",
             "e9942046bea0d380"
         ],
-        "x": 165,
-        "y": 260,
+        "x": 195,
+        "y": 60,
         "wires": [
             [
                 "8bfa7151d5cf7618"
@@ -23615,8 +23659,8 @@
         "className": "popup_class",
         "topic": "",
         "name": "OK",
-        "x": 1070,
-        "y": 400,
+        "x": 1100,
+        "y": 200,
         "wires": [
             []
         ]
@@ -23639,8 +23683,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 800,
-        "y": 400,
+        "x": 830,
+        "y": 200,
         "wires": [
             [
                 "2798e84309619975"
@@ -23654,8 +23698,8 @@
         "g": "eae83de4837abd07",
         "name": "Exit to mqtt SET3",
         "info": "",
-        "x": 810,
-        "y": 320,
+        "x": 840,
+        "y": 120,
         "wires": []
     },
     {
@@ -23676,8 +23720,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 800,
-        "y": 440,
+        "x": 830,
+        "y": 240,
         "wires": [
             [
                 "4aeca25016f1790a"
@@ -23700,8 +23744,8 @@
         "className": "popup_class",
         "topic": "",
         "name": "Yes / No",
-        "x": 1080,
-        "y": 440,
+        "x": 1110,
+        "y": 240,
         "wires": [
             [
                 "4e71c5f774dde93c"
@@ -23720,8 +23764,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1230,
-        "y": 440,
+        "x": 1260,
+        "y": 240,
         "wires": [
             [
                 "5a1d6b18490ded1c"
@@ -23737,8 +23781,8 @@
         "links": [
             "aec0cb2b18e02d8b"
         ],
-        "x": 165,
-        "y": 420,
+        "x": 195,
+        "y": 220,
         "wires": [
             [
                 "00927de0f8d921fd"
@@ -23752,8 +23796,8 @@
         "g": "eae83de4837abd07",
         "name": "3-way valvue",
         "info": "",
-        "x": 270,
-        "y": 420,
+        "x": 300,
+        "y": 220,
         "wires": []
     },
     {
@@ -23763,8 +23807,8 @@
         "g": "eae83de4837abd07",
         "name": "Defrost",
         "info": "",
-        "x": 250,
-        "y": 460,
+        "x": 280,
+        "y": 260,
         "wires": []
     },
     {
@@ -23776,8 +23820,8 @@
         "links": [
             "6c685782864f1787"
         ],
-        "x": 165,
-        "y": 460,
+        "x": 195,
+        "y": 260,
         "wires": [
             [
                 "35d741ebb66e8660"
@@ -23793,8 +23837,8 @@
         "links": [
             "7d9dc928c0177c74"
         ],
-        "x": 165,
-        "y": 500,
+        "x": 195,
+        "y": 300,
         "wires": [
             [
                 "fcc8ad2c22433dd3"
@@ -23808,8 +23852,8 @@
         "g": "eae83de4837abd07",
         "name": "Settings tab",
         "info": "",
-        "x": 270,
-        "y": 500,
+        "x": 300,
+        "y": 300,
         "wires": []
     },
     {
@@ -23824,8 +23868,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 550,
-        "y": 640,
+        "x": 590,
+        "y": 500,
         "wires": [
             [
                 "cb0fc587b4884ad4"
@@ -23847,8 +23891,8 @@
         "links": [
             "550d51c7fe788f9e"
         ],
-        "x": 165,
-        "y": 620,
+        "x": 205,
+        "y": 480,
         "wires": [
             [
                 "3362970493353f74"
@@ -23865,8 +23909,8 @@
         "links": [
             "61def1f2090e360a"
         ],
-        "x": 1375,
-        "y": 600,
+        "x": 1415,
+        "y": 460,
         "wires": []
     },
     {
@@ -23887,8 +23931,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 780,
-        "y": 640,
+        "x": 820,
+        "y": 500,
         "wires": [
             [
                 "114053cd7796cbd8",
@@ -23912,8 +23956,8 @@
         "className": "popup_class",
         "topic": "",
         "name": "OK",
-        "x": 1070,
-        "y": 640,
+        "x": 1110,
+        "y": 500,
         "wires": [
             []
         ]
@@ -23936,8 +23980,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 930,
-        "y": 640,
+        "x": 970,
+        "y": 500,
         "wires": [
             [
                 "114053cd7796cbd8"
@@ -23962,8 +24006,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 780,
-        "y": 680,
+        "x": 820,
+        "y": 540,
         "wires": [
             [
                 "fe877578d4a955fa",
@@ -23989,8 +24033,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 930,
-        "y": 680,
+        "x": 970,
+        "y": 540,
         "wires": [
             [
                 "f65899a1446c22c7"
@@ -24013,8 +24057,8 @@
         "className": "popup_class",
         "topic": "",
         "name": "Yes / No",
-        "x": 1080,
-        "y": 680,
+        "x": 1120,
+        "y": 540,
         "wires": [
             [
                 "b62af09024bd5955"
@@ -24033,8 +24077,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1230,
-        "y": 680,
+        "x": 1270,
+        "y": 540,
         "wires": [
             [
                 "c4cb07ae79c0bf65"
@@ -24050,8 +24094,8 @@
         "links": [
             "f6779270108c1106"
         ],
-        "x": 165,
-        "y": 660,
+        "x": 205,
+        "y": 520,
         "wires": [
             [
                 "99c57e03e7c5e7bc"
@@ -24065,8 +24109,8 @@
         "g": "424338733e4798c9",
         "name": "GUI (Home/Settings)",
         "info": "",
-        "x": 290,
-        "y": 620,
+        "x": 330,
+        "y": 480,
         "wires": []
     },
     {
@@ -24076,8 +24120,8 @@
         "g": "424338733e4798c9",
         "name": "GUI (Solar)",
         "info": "",
-        "x": 270,
-        "y": 660,
+        "x": 310,
+        "y": 520,
         "wires": []
     },
     {
@@ -24087,8 +24131,8 @@
         "g": "424338733e4798c9",
         "name": "Exit to mqtt SET11",
         "info": "",
-        "x": 830,
-        "y": 600,
+        "x": 870,
+        "y": 460,
         "wires": []
     },
     {
@@ -24107,8 +24151,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 250,
-        "y": 60,
+        "x": 290,
+        "y": 680,
         "wires": [
             []
         ]
@@ -24129,8 +24173,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 280,
-        "y": 100,
+        "x": 320,
+        "y": 720,
         "wires": [
             []
         ]
@@ -24151,8 +24195,317 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 280,
-        "y": 140,
+        "x": 320,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b629087d36acf89e",
+        "type": "ui_template",
+        "z": "43c4ee3ee4757f3c",
+        "group": "bf4af523ba16d457",
+        "name": "style [Home]",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n\nmd-toolbar#toolbar{\n    background-color: {{msg.payload}} !important;\n}\n\n</style>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 950,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29daf0bbd602db4f",
+        "type": "link in",
+        "z": "43c4ee3ee4757f3c",
+        "name": "Banner color",
+        "links": [
+            "6c685782864f1787",
+            "c3c58f9072c16f58"
+        ],
+        "x": 635,
+        "y": 700,
+        "wires": [
+            [
+                "2589c727fc2ad928"
+            ]
+        ]
+    },
+    {
+        "id": "2589c727fc2ad928",
+        "type": "function",
+        "z": "43c4ee3ee4757f3c",
+        "name": "function 15",
+        "func": "if (msg.topic != 'TOP26_Defrosting_State')  {  // must be MQTT blockmode then....\n        if (msg.payload == 1)   {\n            msg.payload = 'red';\n            return msg;\n        }\n        \n        if (msg.payload == 0)   {\n            msg.payload = '[]';\n            return msg;\n        }\n}\n\n\n// ************** DEFROST ****************\nif (msg.topic == 'TOP26_Defrosting_State')  {\n        \n        if (msg.payload == 1)   {\n            msg.payload = 'blue';\n            return msg;\n        }\n        \n        if (msg.payload == 0)   {\n            msg.payload = '[]';\n            return msg;\n        }    \n}\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 700,
+        "wires": [
+            [
+                "b629087d36acf89e",
+                "c6c17a92f472d3e4",
+                "229a4ee1d7377c5e",
+                "631c09dd9632c92a",
+                "b04505a68eb19642",
+                "a4b7150004829f97",
+                "0e8096a2f8827083",
+                "8bb1e12a22d4dc11",
+                "848fa7aade4f22a3",
+                "11685bca2f768125",
+                "edc08fb519edf993",
+                "05b8832e0e7fda7e"
+            ]
+        ]
+    },
+    {
+        "id": "0c8735d186ca284a",
+        "type": "comment",
+        "z": "43c4ee3ee4757f3c",
+        "name": "All tabs",
+        "info": "",
+        "x": 850,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "c6c17a92f472d3e4",
+        "type": "ui_template",
+        "z": "43c4ee3ee4757f3c",
+        "group": "fea7672db2f050c9",
+        "name": "style [Settings]",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n\nmd-toolbar#toolbar{\n    background-color: {{msg.payload}} !important;\n}\n\n</style>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "229a4ee1d7377c5e",
+        "type": "ui_template",
+        "z": "43c4ee3ee4757f3c",
+        "group": "052caff3b2365345",
+        "name": "style [WAR]",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n\nmd-toolbar#toolbar{\n    background-color: {{msg.payload}} !important;\n}\n\n</style>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 950,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "631c09dd9632c92a",
+        "type": "ui_template",
+        "z": "43c4ee3ee4757f3c",
+        "group": "e27cfec311892d88",
+        "name": "style [RTC]",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n\nmd-toolbar#toolbar{\n    background-color: {{msg.payload}} !important;\n}\n\n</style>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 950,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b04505a68eb19642",
+        "type": "ui_template",
+        "z": "43c4ee3ee4757f3c",
+        "group": "397a51ddac8419aa",
+        "name": "style [Cool]",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n\nmd-toolbar#toolbar{\n    background-color: {{msg.payload}} !important;\n}\n\n</style>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 950,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4b7150004829f97",
+        "type": "ui_template",
+        "z": "43c4ee3ee4757f3c",
+        "group": "c2a0123d2e2c91f0",
+        "name": "style [Softstart]",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n\nmd-toolbar#toolbar{\n    background-color: {{msg.payload}} !important;\n}\n\n</style>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0e8096a2f8827083",
+        "type": "ui_template",
+        "z": "43c4ee3ee4757f3c",
+        "group": "b7f22c282fde0f86",
+        "name": "style [Solar]",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n\nmd-toolbar#toolbar{\n    background-color: {{msg.payload}} !important;\n}\n\n</style>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 950,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8bb1e12a22d4dc11",
+        "type": "ui_template",
+        "z": "43c4ee3ee4757f3c",
+        "group": "2b0c8e162d47abbb",
+        "name": "style [Scheduler]",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n\nmd-toolbar#toolbar{\n    background-color: {{msg.payload}} !important;\n}\n\n</style>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "848fa7aade4f22a3",
+        "type": "ui_template",
+        "z": "43c4ee3ee4757f3c",
+        "group": "e374621a9f5ac0d6",
+        "name": "style [Temp]",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n\nmd-toolbar#toolbar{\n    background-color: {{msg.payload}} !important;\n}\n\n</style>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 950,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "11685bca2f768125",
+        "type": "ui_template",
+        "z": "43c4ee3ee4757f3c",
+        "group": "fb77ab43998a2f18",
+        "name": "style [Energy]",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n\nmd-toolbar#toolbar{\n    background-color: {{msg.payload}} !important;\n}\n\n</style>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "edc08fb519edf993",
+        "type": "ui_template",
+        "z": "43c4ee3ee4757f3c",
+        "group": "70a5fe6af8ed1d29",
+        "name": "style [System]",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n\nmd-toolbar#toolbar{\n    background-color: {{msg.payload}} !important;\n}\n\n</style>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 960,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "05b8832e0e7fda7e",
+        "type": "ui_template",
+        "z": "43c4ee3ee4757f3c",
+        "group": "87be08e6a82ef6a0",
+        "name": "style [Degreedays]",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n\nmd-toolbar#toolbar{\n    background-color: {{msg.payload}} !important;\n}\n\n</style>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 970,
+        "y": 1140,
         "wires": [
             []
         ]
@@ -24188,7 +24541,9 @@
             "898b02a132291b49"
         ],
         "x": 54,
-        "y": 1119
+        "y": 1119,
+        "w": 1388,
+        "h": 602
     },
     {
         "id": "6a01f1b80ccf3218",
@@ -24206,7 +24561,9 @@
             "2064b5a11ffc43b3"
         ],
         "x": 54,
-        "y": 39
+        "y": 39,
+        "w": 832,
+        "h": 122
     },
     {
         "id": "2b75a55bb8fb12c6",
@@ -24222,7 +24579,9 @@
             "974b24f717fe8560"
         ],
         "x": 64,
-        "y": 199
+        "y": 199,
+        "w": 872,
+        "h": 82
     },
     {
         "id": "5ffcc1056a276bf5",
@@ -24247,7 +24606,9 @@
             "e68356272f1f529b"
         ],
         "x": 54,
-        "y": 439
+        "y": 439,
+        "w": 1388,
+        "h": 622
     },
     {
         "id": "27d590581cd92df1",
@@ -24263,7 +24624,9 @@
             "2cc9fde214b13621"
         ],
         "x": 54,
-        "y": 299
+        "y": 299,
+        "w": 872,
+        "h": 82
     },
     {
         "id": "6472e1e423188a37",
@@ -24283,7 +24646,9 @@
             "3043e3c17ff68920"
         ],
         "x": 84,
-        "y": 1439
+        "y": 1439,
+        "w": 1332,
+        "h": 82
     },
     {
         "id": "3ce36bc606018d50",
@@ -24303,7 +24668,9 @@
             "61e1918ce41f34f7"
         ],
         "x": 84,
-        "y": 1339
+        "y": 1339,
+        "w": 1332,
+        "h": 82
     },
     {
         "id": "6db1485dd36081ec",
@@ -24323,7 +24690,9 @@
             "29a4cb237663e973"
         ],
         "x": 84,
-        "y": 779
+        "y": 779,
+        "w": 1332,
+        "h": 82
     },
     {
         "id": "5b9db86809583efd",
@@ -24343,7 +24712,9 @@
             "0ae4268d42429bac"
         ],
         "x": 84,
-        "y": 679
+        "y": 679,
+        "w": 1332,
+        "h": 82
     },
     {
         "id": "d734c640b789ff1e",
@@ -24363,7 +24734,9 @@
             "935535fc205e470c"
         ],
         "x": 84,
-        "y": 579
+        "y": 579,
+        "w": 1322,
+        "h": 82
     },
     {
         "id": "fc68ffd1a284a6bd",
@@ -24383,7 +24756,9 @@
             "868b4c6128111bb6"
         ],
         "x": 84,
-        "y": 1239
+        "y": 1239,
+        "w": 1332,
+        "h": 82
     },
     {
         "id": "d44f1a1993a8a44f",
@@ -24403,7 +24778,9 @@
             "2ee679408e4ccc6f"
         ],
         "x": 1134,
-        "y": 919
+        "y": 919,
+        "w": 272,
+        "h": 82
     },
     {
         "id": "e598f3cca51f28d1",
@@ -24423,7 +24800,9 @@
             "4eaa2cfa2749c551"
         ],
         "x": 1134,
-        "y": 1579
+        "y": 1579,
+        "w": 272,
+        "h": 82
     },
     {
         "id": "6a7fa8b57f2d9800",
@@ -25729,7 +26108,6 @@
             "39f8d3463d10ccfb",
             "2efa0af27c69d4d0",
             "9fca714df21ffac0",
-            "70bacba09eb9f884",
             "edf195c89ff83486",
             "add57b730a3e769f",
             "af24696818983d4c",
@@ -25783,7 +26161,6 @@
             "ac392c197fe09917",
             "092043375da1c8a9",
             "153d971fff0a3ed3",
-            "663fdd592413d066",
             "74d748cdb9ede767",
             "ccb17c1dab2540fd",
             "b866c59ce44f1281",
@@ -25836,7 +26213,6 @@
             "b85d6aca6a841215",
             "233708268636f815",
             "75c312c1494fea2e",
-            "cfd69d5fa56c8a3d",
             "37aa061ab91471ec",
             "890a57ef3afcf284",
             "856711de93142cb9",
@@ -25869,8 +26245,7 @@
             "aad8f63921d33903",
             "794528b156d90283",
             "42734e97a85d5537",
-            "40abfbbe563b32ac",
-            "39f52a7b4d2f12c9"
+            "40abfbbe563b32ac"
         ],
         "x": 114,
         "y": 551.5,
@@ -26252,7 +26627,6 @@
         "y": 2400,
         "wires": [
             [
-                "663fdd592413d066",
                 "5f2ca6fd7cf3d5c5",
                 "329a022ba526c218"
             ]
@@ -26369,7 +26743,7 @@
         "z": "966985d68ebb4990",
         "g": "bf2c1d5a22f56dd8",
         "name": "GRID power production W to kWh",
-        "func": "msg1 = {};\nmsg2 = {};\nmsg3 = {};\nmsg4 = {};\nmsg5 = {};\nmsg6 = {};\n\nvar CurrentTime = new Date().getTime();\nvar PreviousTime = context.get(\"PreviousTime\");\nvar PreviousMessage = context.get(\"PreviousMessage\");\nvar PreviousTopic = context.get(\"PreviousTopic\");\nvar exit = false;\n\n//  First run checks. If some variables are undefined, set current values and exit.\nif (PreviousTime === undefined) {context.set('PreviousTime',CurrentTime);       exit = true;}\nif (PreviousMessage === undefined) {context.set('PreviousMessage',msg.payload); exit = true;}\nif (PreviousTopic === undefined)  {context.set('PreviousTopic',msg.topic);    exit = true;}\n\nif (exit === true)              // IF 1\n    {   \n        return null;            // This output will automatically be skipped, next calculation will be ok.\n        \n    }\n\nelse                        // ELSE 2\n    {\n        var LastMessage = msg.payload;\n        var LastTopic= msg.topic;\n        \n        TimeElapsed = ((CurrentTime - PreviousTime)/1000);\n        context.set('PreviousTime',CurrentTime);\n        context.set('PreviousMessage',msg.payload);\n        context.set('PreviousTopic',msg.topic);\n        msg3.last = {\"lastTime\":CurrentTime,\"LastMessage\":LastMessage,\"LastTopic\":LastTopic};\n        msg3.Previous = {\"PreviousTime\":PreviousTime,\"PreviousMessage\":PreviousMessage,\"PreviousTopic\":PreviousTopic};\n        \n        \n        msg1.payload = (TimeElapsed + \"  Seconds\");\n        temp = parseFloat(TimeElapsed.toFixed(0));\n        msg2.payload = temp;\n        msg3.payload = {\"Count\":temp,\"Units\":\"Seconds\"}; \n        msg5.payload = (PreviousMessage * ( temp / 3600000 ));                  //  Calculation to Wh portion\n        Number(msg5.payload).toFixed(4);\n        msg5.topic = 'GRID power production kWh';                               // msg5 = latest kWh part.\n    \n    \n    ///////////////////////////////////////////////////////////////////////////\n    // Calculation from kWh part > total kWh of today\n        var total_kwh_export = flow.get(\"total_kwh_export\",\"file\");\n        if (total_kwh_export === undefined)        {total_kwh_export = 0;}\n        \n        msg6.payload = msg5.payload + total_kwh_export;                                // msg6 = kWh total from the start of operation\n        msg6.topic = 'GRID power production kWh';\n        msg6.payload = Number(msg6.payload).toFixed(3);\n        msg6.payload = parseFloat(msg6.payload);\n        flow.set('total_kwh_export',msg6.payload,\"file\");\n       \n    ////////////////////////////////////////////////////////////////////////////\n        return [msg6];\n    \n    }",
+        "func": "msg1 = {};\nmsg2 = {};\nmsg3 = {};\nmsg4 = {};\nmsg5 = {};\nmsg6 = {};\n\nvar CurrentTime = new Date().getTime();\nvar PreviousTime = context.get(\"PreviousTime\");\nvar PreviousMessage = context.get(\"PreviousMessage\");\nvar PreviousTopic = context.get(\"PreviousTopic\");\nvar exit = false;\n\n//  First run checks. If some variables are undefined, set current values and exit.\nif (PreviousTime === undefined) {context.set('PreviousTime',CurrentTime);       exit = true;}\nif (PreviousMessage === undefined) {context.set('PreviousMessage',msg.payload); exit = true;}\nif (PreviousTopic === undefined)  {context.set('PreviousTopic',msg.topic);    exit = true;}\n\nif (exit === true)              // IF 1\n    {   \n        return null;            // This output will automatically be skipped, next calculation will be ok.\n        \n    }\n\nelse                        // ELSE 2\n    {\n        var LastMessage = msg.payload;\n        var LastTopic= msg.topic;\n        \n        TimeElapsed = ((CurrentTime - PreviousTime)/1000);\n        context.set('PreviousTime',CurrentTime);\n        context.set('PreviousMessage',msg.payload);\n        context.set('PreviousTopic',msg.topic);\n        msg3.last = {\"lastTime\":CurrentTime,\"LastMessage\":LastMessage,\"LastTopic\":LastTopic};\n        msg3.Previous = {\"PreviousTime\":PreviousTime,\"PreviousMessage\":PreviousMessage,\"PreviousTopic\":PreviousTopic};\n        \n        \n        msg1.payload = (TimeElapsed + \"  Seconds\");\n        temp = parseFloat(TimeElapsed.toFixed(0));\n        msg2.payload = temp;\n        msg3.payload = {\"Count\":temp,\"Units\":\"Seconds\"}; \n        msg5.payload = (PreviousMessage * ( temp / 3600000 ));                  //  Calculation to Wh portion\n        Number(msg5.payload).toFixed(4);\n        msg5.topic = 'GRID power production kWh';                               // msg5 = latest kWh part.\n    \n    \n        ///////////////////////////////////////////////////////////////////////////\n        // Calculation from kWh part > total kWh of today\n        var total_kwh_export = flow.get(\"total_kwh_export\",\"file\");\n        if (total_kwh_export === undefined)        {total_kwh_export = 0;}\n        \n        msg6.payload = msg5.payload + total_kwh_export;                                // msg6 = kWh total from the start of operation\n        msg6.topic = 'GRID power production kWh';\n        msg6.payload = Number(msg6.payload).toFixed(3);\n        msg6.payload = parseFloat(msg6.payload);\n        flow.set('total_kwh_export',msg6.payload,\"file\");\n       \n        ////////////////////////////////////////////////////////////////////////////\n        return [msg6];\n    \n    }",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -26380,8 +26754,7 @@
         "wires": [
             [
                 "794528b156d90283",
-                "edf195c89ff83486",
-                "70bacba09eb9f884"
+                "edf195c89ff83486"
             ]
         ],
         "outputLabels": [
@@ -26792,8 +27165,7 @@
         "wires": [
             [
                 "13a19fc3eda5bac1",
-                "3bd892e72c39999a",
-                "cfd69d5fa56c8a3d"
+                "3bd892e72c39999a"
             ]
         ],
         "outputLabels": [
@@ -27321,50 +27693,6 @@
         ]
     },
     {
-        "id": "70bacba09eb9f884",
-        "type": "function",
-        "z": "966985d68ebb4990",
-        "g": "bf2c1d5a22f56dd8",
-        "name": "set total_kwh_export file",
-        "func": "msg.payload = Number(msg.payload).toFixed(3);\nmsg.payload = parseFloat(msg.payload);\n\nflow.set('total_kwh_export',msg.payload,\"file\");\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1230,
-        "y": 480,
-        "wires": [
-            []
-        ],
-        "outputLabels": [
-            "Production kWh of today"
-        ],
-        "icon": "node-red/timer.png"
-    },
-    {
-        "id": "cfd69d5fa56c8a3d",
-        "type": "function",
-        "z": "966985d68ebb4990",
-        "g": "3b5324e3d80d96a1",
-        "name": "set total_kwh_import file",
-        "func": "msg.payload = Number(msg.payload).toFixed(3);\nmsg.payload = parseFloat(msg.payload);\nflow.set('total_kwh_import',msg.payload,\"file\");\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1270,
-        "y": 1200,
-        "wires": [
-            []
-        ],
-        "outputLabels": [
-            "Production kWh of today"
-        ],
-        "icon": "node-red/timer.png"
-    },
-    {
         "id": "8f12203bf931d988",
         "type": "inject",
         "z": "966985d68ebb4990",
@@ -27658,7 +27986,7 @@
         "type": "function",
         "z": "966985d68ebb4990",
         "name": "",
-        "func": "var F_SOLAR                         = global.get('F_SOLAR',\"file\");\n\n\nvar solar_function_status1          = flow.get('solar_function_status1',\"file\");\nvar solar_function_status2          = flow.get('solar_function_status2',\"file\");\n\nif (msg.payload == \"new_day\")\n    {\n        flow.set('solar_function_status1',undefined,\"file\");\n        flow.set('solar_function_status2',undefined,\"file\");\n        return null;\n    }\nelse\n{\n    let msg1={};\n    if (F_SOLAR.function_active_state == 0 || F_SOLAR.function_active_state === undefined) \n        {\n            msg1.payload = \"Idle\";\n            msg1.topic = 'Solar function status';\n            msg1.color = \"\";\n            return [msg1];\n        }\n    if (F_SOLAR.function_active_state == 1)\n        {\n            if (solar_function_status1 !== undefined)\n                {\n                    msg1.payload = solar_function_status1;\n                }\n            if (solar_function_status1 === undefined)\n                {\n                    msg1.payload = \"ACTIVE (\" + msg.payload + \")\";\n                    flow.set('solar_function_status1',msg1.payload,\"file\");\n                }\n            msg1.topic = 'Solar function status';\n            msg1.color = \"gold\";\n            return [msg1];\n        }\n    if (F_SOLAR.function_active_state == 2)\n        {\n            if (solar_function_status2 !== undefined)\n                {\n                    msg1.payload = solar_function_status2;\n                }\n            if (solar_function_status2 === undefined)\n                {\n                    msg1.payload = \"Completed (\" + msg.payload + \")\";\n                    flow.set('solar_function_status2',msg1.payload,\"file\");\n                }\n            msg1.topic = 'Solar function status';\n            msg1.color = \"green\";\n            return [msg1];\n        }        \n}",
+        "func": "var F_SOLAR                         = global.get('F_SOLAR',\"file\");\n\n\nvar solar_function_status1          = flow.get('solar_function_status1',\"file\");\nvar solar_function_status2          = flow.get('solar_function_status2',\"file\");\n\nif (msg.payload == \"new_day\")\n    {\n        flow.set('solar_function_status1',undefined,\"file\");\n        flow.set('solar_function_status2',undefined,\"file\");\n        global.set ('F_SOLAR.function_active_state',0,\"file\");\n        return null;\n    }\nelse\n{\n    let msg1={};\n    if (F_SOLAR.function_active_state == 0 || F_SOLAR.function_active_state === undefined) \n        {\n            msg1.payload = \"Idle\";\n            msg1.topic = 'Solar function status';\n            msg1.color = \"\";\n            return [msg1];\n        }\n    if (F_SOLAR.function_active_state == 1)\n        {\n            if (solar_function_status1 !== undefined)\n                {\n                    msg1.payload = solar_function_status1;\n                }\n            if (solar_function_status1 === undefined)\n                {\n                    msg1.payload = \"ACTIVE (\" + msg.payload + \")\";\n                    flow.set('solar_function_status1',msg1.payload,\"file\");\n                }\n            msg1.topic = 'Solar function status';\n            msg1.color = \"gold\";\n            return [msg1];\n        }\n    if (F_SOLAR.function_active_state == 2)\n        {\n            if (solar_function_status2 !== undefined)\n                {\n                    msg1.payload = solar_function_status2;\n                }\n            if (solar_function_status2 === undefined)\n                {\n                    msg1.payload = \"Completed (\" + msg.payload + \")\";\n                    flow.set('solar_function_status2',msg1.payload,\"file\");\n                }\n            msg1.topic = 'Solar function status';\n            msg1.color = \"green\";\n            return [msg1];\n        }        \n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -27958,32 +28286,6 @@
         "wires": [
             [
                 "b463820910564b36"
-            ]
-        ]
-    },
-    {
-        "id": "39f52a7b4d2f12c9",
-        "type": "inject",
-        "z": "966985d68ebb4990",
-        "d": true,
-        "g": "2efa0af27c69d4d0",
-        "name": "",
-        "props": [
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "6",
-        "topic": "time",
-        "x": 390,
-        "y": 680,
-        "wires": [
-            [
-                "aad8f63921d33903"
             ]
         ]
     },
@@ -28924,34 +29226,6 @@
         "x": 475,
         "y": 2700,
         "wires": []
-    },
-    {
-        "id": "663fdd592413d066",
-        "type": "delay",
-        "z": "966985d68ebb4990",
-        "d": true,
-        "g": "81ff790f84afd46d",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "6",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 160,
-        "y": 2300,
-        "wires": [
-            [
-                "329a022ba526c218",
-                "5f2ca6fd7cf3d5c5"
-            ]
-        ]
     },
     {
         "id": "b9947e738c3857dd",
@@ -32302,7 +32576,7 @@
         "wires": [
             [
                 "c6801a6c865543b3",
-                "14e1ae3f580db2a7"
+                "229cf43a8adcd71c"
             ]
         ]
     },
@@ -41564,7 +41838,7 @@
         "type": "function",
         "z": "35d210f042827344",
         "name": "Function schedule",
-        "func": "var topic   =   msg.topic;\n\nvar state   =   global.get(topic+'_state',\"file\")||0;                              // Get state of the agenda item. \n\n\nif      (state == 0)                                                            // Is it disabled? \n        {return [null, null, null, null, null, null, null];}                          // output null to all pins and exit. else to continue.\n////////////////////////////////////////////////////////////////////////////////\n////////////////////////////////////////////////////////////////////////////////\n\nelse    {                                                                       // if not, continue...\n        var day_check       =global.get(topic+'_day',\"file\");                   // get schedule variables.\n        var hour_check      =global.get(topic+'_hour',\"file\");                  // get schedule variables.\n        var minutes_check   =global.get(topic+'_minutes',\"file\");               // get schedule variables.\n\n        var solar_block_scheduler           =global.get('solar_block_scheduler',\"file\");\n        var F_SOLAR                         =global.get('F_SOLAR',\"file\");\n        \n        var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n        \n        var F_RTC_on_off_active = global.get('F_RTC.on_off_active',\"file\"); \n        \n        var block_it = false;\n        if (solar_block_scheduler == true && F_SOLAR.function_active_state == 1)\n            {\n                block_it = true;\n                \n            }\n        \n\n                                                                                // Check the programmed day compared current day.\n        if (day_check.includes(msg.payload[0]))         {day_check = { payload: 1, topic: \"DayOfTheWeek\"};}\n        else                                            {day_check = { payload: 0, topic: \"DayOfTheWeek\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed hour compared current hour.        \n        if (msg.payload[1] == hour_check)               {hour_check = { payload: 1, topic: \"Hour\"};}\n        else                                            {hour_check = { payload: 0, topic: \"Hour\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed minutes compared current minutes.\n        if (msg.payload[2] == minutes_check)            {minutes_check = { payload: 1, topic: \"Minutes\"};}\n        else                                            {minutes_check = { payload: 0, topic: \"Minutes\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n        if (day_check.payload == 1 && hour_check.payload == 1 && minutes_check.payload == 1)        // If all of the conditions are met (day + hour + minutes), then....\n            {\n                let msg1 = {}, msg2 = {}, msg3 = {}, msg4 = {}, msg5 = {}, msg6 = {}, msg7 = {};\n                msg1.payload = 99; msg2.payload = 99; msg3.payload = 99; msg4.payload = 99; msg5.payload = 99; msg6.payload = 99; msg7.payload = 99; \n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                //  Override the current powerstate of heat pump? //////////////\n                //\n                var override    = global.get(topic+'_override',\"file\");         // get the current override state.\n                var HP_state    = global.get('TOP0_Heatpump_State',\"file\");     // get the current state of the heatpump. Is it on or off.\n                var NightReductionRoomSetpoint_state   = global.get('NightReductionRoomSetpoint.state',\"file\");\n                ////////////////////////////////////////////////////////////////\n                if  (override == 1 && HP_state == 0)                            // check if the override state is enabled, AND currently heatpump state is off\n                    {\n                        msg1 = { payload: 1, topic: \"override\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                //\n                var action  =   global.get(topic+'_action',\"file\");             // get the action\n                ////////////////////////////////////////////////////////////////\n                \n                if  (action == \"HP_turn_on\" && HP_state == 0)                   // check the action\n                    {\n                        msg1 = { source:  \"flow\", payload: 1, topic: \"Turn ON HeatPump\" };       // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                if  (action == \"HP_turn_off\" && HP_state == 1 && block_it === false)                                   // check the action\n                    {\n                        msg1 = { source: \"flow\", payload: 0, topic: \"Turn OFF HeatPump\" };      // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"DHW\")                                           // check the action if DHW (=Force DHW)\n                    {\n                        msg2 = { payload: 1, topic: \"DHW\" };                     // DHW action? >> to DHW output pin 2\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"Sterilization\" && block_it === false)                                 // check the action\n                    {\n                        msg3 = { payload: 1, topic:  \"Sterilization\" };         // Sterilization action? >> to Sterilization output pin 3\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////                \n                if  (action == \"QM_0\")                                          // check the action\n                    {\n                        msg4 = { payload: 0, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                if  (action == \"QM_1\")                                          // check the action\n                    {\n                        msg4 = { payload: 1, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                if  (action == \"QM_2\")                                          // check the action\n                    {\n                        msg4 = { payload: 2, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                if  (action == \"QM_3\")                                          // check the action\n                    {\n                        msg4 = { payload: 3, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                // Operating mode (0=Heat only, 2=Auto(Heat), 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if  (action == \"OperationMode0\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 0, topic: \"Operation Mode 0\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',0,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 0, topic: \"Operation Mode 0\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); \n                        } \n                    }                \n                if  (action == \"OperationMode1\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 1, topic: \"Operation Mode 1\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',1,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 1, topic: \"Operation Mode 1\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }                \n                if  (action == \"OperationMode2\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 2, topic: \"Operation Mode 2\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',2,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 2, topic: \"Operation Mode 2\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }                \n                if  (action == \"OperationMode3\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 3, topic: \"Operation Mode 3\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',3,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 3, topic: \"Operation Mode 3\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }                \n                if  (action == \"OperationMode4\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 4, topic: \"Operation Mode 4\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',4,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 4, topic: \"Operation Mode 4\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }   \n                if  (action == \"OperationMode5\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 5, topic: \"Operation Mode 5\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',5,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 5, topic: \"Operation Mode 5\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }                   \n                if  (action == \"OperationMode6\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 6, topic: \"Operation Mode 6\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',6,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 6, topic: \"Operation Mode 6\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }   \n                if  (action == \"OperationMode7\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 7, topic: \"Operation Mode 7\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',7,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 7, topic: \"Operation Mode 7\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }   \n                if  (action == \"OperationMode8\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 8, topic: \"Operation Mode 8\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',8,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 8, topic: \"Operation Mode 8\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }   \n\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"NightReductionWaterTempOn\")                              // check the action\n                    {\n                        var correction = global.get(\"NightReductionWaterTemp.correction\",\"file\");           // get the nightreduction correction.\n                        global.set(\"NightReductionWaterTemp.current_value\",correction,\"file\");\n                        global.set(\"NightReductionWaterTemp.state\",1,\"file\");\n                        msg6 = { payload: correction, topic: \"Nightreduction\" };\n                    }\n                if  (action == \"NightReductionWaterTempOff\")                             // check the action\n                    {\n                        global.set(\"NightReductionWaterTemp.current_value\",0,\"file\");\n                        global.set(\"NightReductionWaterTemp.state\",0,\"file\");\n                        msg6 = { payload: 0, topic: \"Nightreduction\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n                if (action == \"NightReductionRoomSetpointOn\")                 // check the action\n                    {\n                        if (NightReductionRoomSetpoint_state === undefined || NightReductionRoomSetpoint_state == 0)          //only when not set\n                            { \n                                global.set(\"NightReductionRoomSetpoint.state\", 1, \"file\");\n                                msg7 = { payload: 1, topic: \"NightReductionRoomSetpoint.state\" };\n                            } \n                    }\n\n                if (action == \"NightReductionRoomSetpointOff\")                 // check the action\n                    {\n                        if (NightReductionRoomSetpoint_state === undefined) { NightReductionRoomSetpoint_state = 0; }\n                        if (NightReductionRoomSetpoint_state == 1) //only change when set\n                            {\n                                global.set(\"NightReductionRoomSetpoint.state\",0,\"file\");\n                                msg7 = { payload: 0, topic: \"NightReductionRoomSetpoint.state\" };\n                            } \n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n            return [msg1, msg2, msg3, msg4, msg5, msg6, msg7];\n\n            }   \n        else\n            {   \n                return [null, null, null, null, null, null, null];\n            }\n        \n\n        }",
+        "func": "var topic   =   msg.topic;\n\nvar state   =   global.get(topic+'_state',\"file\")||0;                              // Get state of the agenda item. \n\n\nif      (state == 0)                                                            // Is it disabled? \n        {return [null, null, null, null, null, null, null];}                          // output null to all pins and exit. else to continue.\n////////////////////////////////////////////////////////////////////////////////\n////////////////////////////////////////////////////////////////////////////////\n\nelse    {                                                                       // if not, continue...\n        var day_check       =global.get(topic+'_day',\"file\");                   // get schedule variables.\n        var hour_check      =global.get(topic+'_hour',\"file\");                  // get schedule variables.\n        var minutes_check   =global.get(topic+'_minutes',\"file\");               // get schedule variables.\n\n        var solar_block_scheduler           =global.get('solar_block_scheduler',\"file\");\n        var F_SOLAR                         =global.get('F_SOLAR',\"file\");\n        \n        var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n        \n        var F_RTC_on_off_active = global.get('F_RTC.on_off_active',\"file\"); \n        \n        var block_it = false;\n        if (solar_block_scheduler == true && F_SOLAR.function_active_state == 1)\n            {\n                block_it = true;\n                \n            }\n        \n\n                                                                                // Check the programmed day compared current day.\n        if (day_check.includes(msg.payload[0]))         {day_check = { payload: 1, topic: \"DayOfTheWeek\"};}\n        else                                            {day_check = { payload: 0, topic: \"DayOfTheWeek\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed hour compared current hour.        \n        if (msg.payload[1] == hour_check)               {hour_check = { payload: 1, topic: \"Hour\"};}\n        else                                            {hour_check = { payload: 0, topic: \"Hour\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed minutes compared current minutes.\n        if (msg.payload[2] == minutes_check)            {minutes_check = { payload: 1, topic: \"Minutes\"};}\n        else                                            {minutes_check = { payload: 0, topic: \"Minutes\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n        if (day_check.payload == 1 && hour_check.payload == 1 && minutes_check.payload == 1)        // If all of the conditions are met (day + hour + minutes), then....\n            {\n                let msg1 = {}, msg2 = {}, msg3 = {}, msg4 = {}, msg5 = {}, msg6 = {}, msg7 = {};\n                msg1.payload = 99; msg2.payload = 99; msg3.payload = 99; msg4.payload = 99; msg5.payload = 99; msg6.payload = 99; msg7.payload = 99; \n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                //  Override the current powerstate of heat pump? //////////////\n                //\n                var override    = global.get(topic+'_override',\"file\");         // get the current override state.\n                var HP_state    = global.get('TOP0_Heatpump_State',\"file\");     // get the current state of the heatpump. Is it on or off.\n                var NightReductionRoomSetpoint_state   = global.get('NightReductionRoomSetpoint.state',\"file\");\n                ////////////////////////////////////////////////////////////////\n                if  (override == 1 && HP_state == 0)                            // check if the override state is enabled, AND currently heatpump state is off\n                    {\n                        msg1 = { payload: 1, topic: \"override\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                var CurrentDHW  = global.get('TOP10_DHW_Temp');\n                var CurrentHEAT = global.get('TOP5_Main_Inlet_Temp');                \n                //\n                //\n                var action  =   global.get(topic+'_action',\"file\");             // get the action\n                ////////////////////////////////////////////////////////////////\n                \n                if  (action == \"HP_turn_on\" && HP_state == 0)                   // check the action\n                    {\n                        msg1 = { source:  \"flow\", payload: 1, topic: \"Turn ON HeatPump\" };       // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                if  (action == \"HP_turn_off\" && HP_state == 1 && block_it === false)                                   // check the action\n                    {\n                        msg1 = { source: \"flow\", payload: 0, topic: \"Turn OFF HeatPump\" };      // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"DHW\")                                           // check the action if DHW (=Force DHW)\n                    {\n                        msg2 = { payload: 1, topic: \"DHW\" };                     // DHW action? >> to DHW output pin 2\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"Sterilization\" && block_it === false)                                 // check the action\n                    {\n                        msg3 = { payload: 1, topic:  \"Sterilization\" };         // Sterilization action? >> to Sterilization output pin 3\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////                \n                if  (action == \"QM_0\")                                          // check the action\n                    {\n                        msg4 = { payload: 0, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                if  (action == \"QM_1\")                                          // check the action\n                    {\n                        msg4 = { payload: 1, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                if  (action == \"QM_2\")                                          // check the action\n                    {\n                        msg4 = { payload: 2, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                if  (action == \"QM_3\")                                          // check the action\n                    {\n                        msg4 = { payload: 3, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                // Scheduler - Operation Mode\n                //\n                ////////////////////////////////////////////////////////////////\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                // Operating mode (0=Heat only, 2=Auto(Heat), 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if  (action == \"OperationMode0\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 0, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',0,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 0, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); \n                        } \n                    }                \n                if  (action == \"OperationMode1\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 1, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\"  };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',1,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 1, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }                \n                if  (action == \"OperationMode2\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 2, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\"  };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',2,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 2, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }                \n                if  (action == \"OperationMode3\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 3, topic: \"Scheduler - Set Operation Mode (DHW temp: \" + CurrentDHW + \"°C)\"  };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',3,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 3, topic: \"Scheduler - Set Operation Mode (DHW temp: \" + CurrentDHW + \"°C)\"}; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }                \n                if  (action == \"OperationMode4\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 4, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',4,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 4, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\"}; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }   \n                if  (action == \"OperationMode5\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 5, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',5,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 5, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\"}; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }                   \n                if  (action == \"OperationMode6\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 6, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',6,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 6, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\"}; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }   \n                if  (action == \"OperationMode7\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 7, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',7,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 7, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\"}; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }   \n                if  (action == \"OperationMode8\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 8, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        else if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',8,\"file\");} \n                        else if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 8, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\"}; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }   \n\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"NightReductionWaterTempOn\")                              // check the action\n                    {\n                        var correction = global.get(\"NightReductionWaterTemp.correction\",\"file\");           // get the nightreduction correction.\n                        global.set(\"NightReductionWaterTemp.current_value\",correction,\"file\");\n                        global.set(\"NightReductionWaterTemp.state\",1,\"file\");\n                        msg6 = { payload: correction, topic: \"Nightreduction\" };\n                    }\n                if  (action == \"NightReductionWaterTempOff\")                             // check the action\n                    {\n                        global.set(\"NightReductionWaterTemp.current_value\",0,\"file\");\n                        global.set(\"NightReductionWaterTemp.state\",0,\"file\");\n                        msg6 = { payload: 0, topic: \"Nightreduction\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n                if (action == \"NightReductionRoomSetpointOn\")                 // check the action\n                    {\n                        if (NightReductionRoomSetpoint_state === undefined || NightReductionRoomSetpoint_state == 0)          //only when not set\n                            { \n                                global.set(\"NightReductionRoomSetpoint.state\", 1, \"file\");\n                                msg7 = { payload: 1, topic: \"NightReductionRoomSetpoint.state\" };\n                            } \n                    }\n\n                if (action == \"NightReductionRoomSetpointOff\")                 // check the action\n                    {\n                        if (NightReductionRoomSetpoint_state === undefined) { NightReductionRoomSetpoint_state = 0; }\n                        if (NightReductionRoomSetpoint_state == 1) //only change when set\n                            {\n                                global.set(\"NightReductionRoomSetpoint.state\",0,\"file\");\n                                msg7 = { payload: 0, topic: \"NightReductionRoomSetpoint.state\" };\n                            } \n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n            return [msg1, msg2, msg3, msg4, msg5, msg6, msg7];\n\n            }   \n        else\n            {   \n                return [null, null, null, null, null, null, null];\n            }\n        \n\n        }",
         "outputs": 7,
         "noerr": 0,
         "initialize": "\n",
@@ -41770,33 +42044,6 @@
         "reg": false,
         "x": 3870,
         "y": 2220,
-        "wires": [
-            [
-                "9815e18a26e4cd85"
-            ]
-        ]
-    },
-    {
-        "id": "14e1ae3f580db2a7",
-        "type": "change",
-        "z": "35d210f042827344",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Scheduler - Operation Mode",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 3870,
-        "y": 2260,
         "wires": [
             [
                 "9815e18a26e4cd85"
@@ -43654,7 +43901,9 @@
             "510f802795714d75"
         ],
         "x": 2114,
-        "y": 539
+        "y": 539,
+        "w": 692,
+        "h": 222
     },
     {
         "id": "5c3df7b5fb0fa130",
@@ -43683,8 +43932,10 @@
             "09edf2907086baf2",
             "5837cbf37ef47ea6"
         ],
-        "x": 1964,
-        "y": 1359
+        "x": 1944,
+        "y": 1399,
+        "w": 872,
+        "h": 302
     },
     {
         "id": "404eed4ef9d90803",
@@ -43695,17 +43946,18 @@
             "label": true
         },
         "nodes": [
-            "64806005b1c94f21",
             "a42f4f922e494524",
             "0b8747d2da0482a3",
             "bc563b90430840aa",
             "63c695317a49ea6b",
             "ec21e518e2ade1eb",
-            "3ed3a7f6bfbf803a",
-            "c5e1f08f07eb647b"
+            "c5e1f08f07eb647b",
+            "0911a9edae380679"
         ],
         "x": 2014,
-        "y": 19
+        "y": 19,
+        "w": 812,
+        "h": 122
     },
     {
         "id": "c361a153997d2dfd",
@@ -43724,10 +43976,13 @@
             "d285cb89e06e89bb",
             "0f0ace5816c4fe0a",
             "77ca9cb2599e736f",
-            "9c9a39333c2213e6"
+            "9c9a39333c2213e6",
+            "ac3bca13eeddd505"
         ],
-        "x": 924,
-        "y": 159
+        "x": 824,
+        "y": 159,
+        "w": 272,
+        "h": 282
     },
     {
         "id": "8fe25c73d37fe670",
@@ -43784,10 +44039,83 @@
             "1f82dc785dc48abf",
             "ce0115cd2e7f2ac7",
             "419fb911b5aa7d3e",
-            "646815dd1d600ff2"
+            "646815dd1d600ff2",
+            "cfcc8b51c90050ac",
+            "1d0bdc24983833d5"
         ],
         "x": 1944,
-        "y": 219
+        "y": 219,
+        "w": 942,
+        "h": 1162
+    },
+    {
+        "id": "0bb11670c285bff1",
+        "type": "group",
+        "z": "3aa03811830ef29e",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "a8d0be4408703f65",
+            "bf4e74cd2b591a26",
+            "cba9af7ca5d830ba",
+            "a6a546d71cb6c3c9",
+            "0eec66bcde81e7bf",
+            "1624dc37720ea0f6",
+            "645258b618c6186b",
+            "fb3f6458755be846",
+            "62f798bf3b269fb8",
+            "4eab814831da1cf7",
+            "6241ed2b12f12331",
+            "37dfca7cd812ec3b",
+            "6bdadcca19574473",
+            "4ebf2601353294cb",
+            "3f207fc52ec0027e",
+            "740a027c146249ae"
+        ],
+        "x": 1494,
+        "y": 259,
+        "w": 412,
+        "h": 722
+    },
+    {
+        "id": "b4e7d28c61065a10",
+        "type": "group",
+        "z": "3aa03811830ef29e",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "f233670d8569fc20",
+            "54bfc60418e56a9b",
+            "fb74e5d35106e2b9",
+            "f9c1a6778b03a810",
+            "67a7a74773ea6560",
+            "716a35b80ac09a85",
+            "c0148bdd1814580f",
+            "c2d0c237af80e591",
+            "5998c26dd710f4f1",
+            "e112c36e957452a3",
+            "42db2c5a1500bee2",
+            "ee674cfd16767755",
+            "f6260e40072e9c45"
+        ],
+        "x": 1474,
+        "y": 999,
+        "w": 432,
+        "h": 602
     },
     {
         "id": "9ad65d8ac40d3b19",
@@ -43805,7 +44133,7 @@
         "z": "3aa03811830ef29e",
         "name": "LOG",
         "info": "",
-        "x": 450,
+        "x": 370,
         "y": 60,
         "wires": []
     },
@@ -43815,7 +44143,7 @@
         "z": "3aa03811830ef29e",
         "name": "HW INFORMATION",
         "info": "",
-        "x": 740,
+        "x": 630,
         "y": 60,
         "wires": []
     },
@@ -43825,7 +44153,7 @@
         "z": "3aa03811830ef29e",
         "name": "HW CONFIGURATION",
         "info": "",
-        "x": 1190,
+        "x": 920,
         "y": 60,
         "wires": []
     },
@@ -43835,7 +44163,7 @@
         "z": "3aa03811830ef29e",
         "name": "ABOUT",
         "info": "",
-        "x": 1380,
+        "x": 1230,
         "y": 60,
         "wires": []
     },
@@ -43858,7 +44186,7 @@
         "name": "",
         "group": "70a5fe6af8ed1d29",
         "order": 2,
-        "width": 5,
+        "width": 4,
         "height": 1,
         "passthru": false,
         "label": "SYSTEM HEALTH",
@@ -43867,7 +44195,7 @@
         "bgcolor": "",
         "className": "",
         "icon": "favorite",
-        "payload": "{\"group\":{\"show\":[\"SYSTEM_SYSTEM_HEALTH\"],\"hide\":[\"SYSTEM_LOG\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_ABOUT\"]}}",
+        "payload": "{\"group\":{\"show\":[\"SYSTEM_SYSTEM_HEALTH\"],\"hide\":[\"SYSTEM_LOG\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_ABOUT\",\"SYSTEM_MQTT\"]}}",
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
@@ -43924,8 +44252,8 @@
         "links": [
             "dbcf60ce513ff3ae"
         ],
-        "x": 245,
-        "y": 240,
+        "x": 285,
+        "y": 260,
         "wires": []
     },
     {
@@ -43935,7 +44263,7 @@
         "name": "",
         "group": "70a5fe6af8ed1d29",
         "order": 1,
-        "width": 5,
+        "width": 4,
         "height": 1,
         "passthru": false,
         "label": "LOG",
@@ -43944,11 +44272,11 @@
         "bgcolor": "",
         "className": "",
         "icon": "history",
-        "payload": "{\"group\":{\"show\":[\"SYSTEM_LOG\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_ABOUT\"]}}",
+        "payload": "{\"group\":{\"show\":[\"SYSTEM_LOG\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_ABOUT\",\"SYSTEM_MQTT\"]}}",
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 470,
+        "x": 390,
         "y": 200,
         "wires": [
             [
@@ -43963,7 +44291,7 @@
         "name": "",
         "group": "70a5fe6af8ed1d29",
         "order": 3,
-        "width": 5,
+        "width": 4,
         "height": 1,
         "passthru": false,
         "label": "HW INFORMATION",
@@ -43972,11 +44300,11 @@
         "bgcolor": "",
         "className": "",
         "icon": "info",
-        "payload": "{\"group\":{\"show\":[\"SYSTEM_HW_INFORMATION\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_ABOUT\",\"SYSTEM_LOG\"]}}",
+        "payload": "{\"group\":{\"show\":[\"SYSTEM_HW_INFORMATION\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_ABOUT\",\"SYSTEM_LOG\",\"SYSTEM_MQTT\"]}}",
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 750,
+        "x": 640,
         "y": 200,
         "wires": [
             [
@@ -43990,8 +44318,8 @@
         "z": "3aa03811830ef29e",
         "name": "",
         "group": "70a5fe6af8ed1d29",
-        "order": 5,
-        "width": 5,
+        "order": 6,
+        "width": 4,
         "height": 1,
         "passthru": false,
         "label": "ABOUT",
@@ -44000,11 +44328,11 @@
         "bgcolor": "",
         "className": "",
         "icon": "help",
-        "payload": "{\"group\":{\"show\":[\"SYSTEM_ABOUT\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_LOG\"]}}",
+        "payload": "{\"group\":{\"show\":[\"SYSTEM_ABOUT\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_LOG\",\"SYSTEM_MQTT\"]}}",
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 1400,
+        "x": 1260,
         "y": 200,
         "wires": [
             [
@@ -44018,7 +44346,7 @@
         "z": "3aa03811830ef29e",
         "group": "70a5fe6af8ed1d29",
         "name": "Line - Setup ",
-        "order": 6,
+        "order": 8,
         "width": 0,
         "height": 0,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
@@ -44048,7 +44376,7 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 1450,
+        "x": 1310,
         "y": 260,
         "wires": [
             []
@@ -44080,23 +44408,6 @@
         ]
     },
     {
-        "id": "ec0e1c483b661c3b",
-        "type": "ui_text",
-        "z": "3aa03811830ef29e",
-        "group": "84a756fa9e9244a8",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "HW INFORMATION",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 750,
-        "y": 320,
-        "wires": []
-    },
-    {
         "id": "3240ca538c2a5df3",
         "type": "ui_text",
         "z": "3aa03811830ef29e",
@@ -44113,37 +44424,6 @@
         "x": 2490,
         "y": 600,
         "wires": []
-    },
-    {
-        "id": "64806005b1c94f21",
-        "type": "ui_button",
-        "z": "3aa03811830ef29e",
-        "g": "404eed4ef9d90803",
-        "name": "",
-        "group": "fea7672db2f050c9",
-        "order": 14,
-        "width": 2,
-        "height": 1,
-        "passthru": true,
-        "label": "Setup",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "{\"tabs\":{\"show\":[\"Power\"]}}",
-        "payloadType": "json",
-        "topic": "",
-        "topicType": "str",
-        "x": 2370,
-        "y": 100,
-        "wires": [
-            [
-                "a42f4f922e494524",
-                "bc563b90430840aa",
-                "41bf12ee0df96cc4"
-            ]
-        ]
     },
     {
         "id": "a42f4f922e494524",
@@ -44386,7 +44666,8 @@
                 "a3a41ed73245a328"
             ],
             [
-                "28fafb00eff46231"
+                "28fafb00eff46231",
+                "1d0bdc24983833d5"
             ]
         ]
     },
@@ -44425,31 +44706,13 @@
         "links": [
             "6f8b37b8a4354baf"
         ],
-        "x": 2285,
-        "y": 140,
+        "x": 2085,
+        "y": 100,
         "wires": [
             [
-                "64806005b1c94f21"
+                "0911a9edae380679"
             ]
         ]
-    },
-    {
-        "id": "3ed3a7f6bfbf803a",
-        "type": "ui_text",
-        "z": "3aa03811830ef29e",
-        "g": "404eed4ef9d90803",
-        "group": "fea7672db2f050c9",
-        "order": 13,
-        "width": 4,
-        "height": 1,
-        "name": "",
-        "label": "Shutdown response",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 2140,
-        "y": 100,
-        "wires": []
     },
     {
         "id": "c5e1f08f07eb647b",
@@ -44481,8 +44744,8 @@
             "a0d8b4706f8d61b1",
             "48998f8d0b0d052a"
         ],
-        "x": 2005,
-        "y": 1400,
+        "x": 1985,
+        "y": 1440,
         "wires": [
             [
                 "258316e7112c15b4",
@@ -44502,8 +44765,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2240,
-        "y": 1400,
+        "x": 2220,
+        "y": 1440,
         "wires": [
             [
                 "71bc363e9bca5fa6"
@@ -44529,8 +44792,8 @@
             "ec21e518e2ade1eb",
             "172fe3f8a616d7b8"
         ],
-        "x": 2795,
-        "y": 1400,
+        "x": 2775,
+        "y": 1440,
         "wires": []
     },
     {
@@ -44544,8 +44807,8 @@
             "5a8c6de632f4dbc8",
             "172fe3f8a616d7b8"
         ],
-        "x": 2795,
-        "y": 1500,
+        "x": 2775,
+        "y": 1540,
         "wires": []
     },
     {
@@ -44561,8 +44824,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 2470,
-        "y": 1620,
+        "x": 2450,
+        "y": 1660,
         "wires": [
             [
                 "9e1b71b301e9e79d"
@@ -44579,8 +44842,8 @@
         "links": [
             "031e62b0bf3df7d7"
         ],
-        "x": 2795,
-        "y": 1620,
+        "x": 2775,
+        "y": 1660,
         "wires": []
     },
     {
@@ -44595,8 +44858,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2240,
-        "y": 1500,
+        "x": 2220,
+        "y": 1540,
         "wires": [
             [
                 "71bc363e9bca5fa6"
@@ -44633,8 +44896,8 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 2500,
-        "y": 1540,
+        "x": 2480,
+        "y": 1580,
         "wires": [
             [
                 "ab0c73c86987caf3"
@@ -44663,8 +44926,8 @@
         "topic": "Power on heatpump detected",
         "payload": "</br>   MQTT commands are being blocked. </br></br> Resume normal operation? </br> </br> _____________________________________________________ ",
         "payloadType": "str",
-        "x": 2270,
-        "y": 1560,
+        "x": 2250,
+        "y": 1600,
         "wires": [
             [
                 "d11ec0cafa6ed09f"
@@ -44683,8 +44946,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2650,
-        "y": 1540,
+        "x": 2630,
+        "y": 1580,
         "wires": [
             [
                 "71bc363e9bca5fa6"
@@ -44714,8 +44977,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2670,
-        "y": 1460,
+        "x": 2650,
+        "y": 1500,
         "wires": [
             [
                 "5837cbf37ef47ea6"
@@ -44732,8 +44995,8 @@
         "links": [
             "dbcf60ce513ff3ae"
         ],
-        "x": 2795,
-        "y": 1460,
+        "x": 2775,
+        "y": 1500,
         "wires": []
     },
     {
@@ -44742,7 +45005,7 @@
         "z": "3aa03811830ef29e",
         "name": "To be added on later",
         "info": "",
-        "x": 450,
+        "x": 410,
         "y": 460,
         "wires": []
     },
@@ -44760,7 +45023,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-right",
         "className": "",
-        "x": 1060,
+        "x": 960,
         "y": 320,
         "wires": []
     },
@@ -44772,7 +45035,7 @@
         "name": "",
         "group": "70a5fe6af8ed1d29",
         "order": 4,
-        "width": 5,
+        "width": 4,
         "height": 1,
         "passthru": false,
         "label": "HW CONFIGURATION",
@@ -44781,11 +45044,11 @@
         "bgcolor": "",
         "className": "",
         "icon": "settings",
-        "payload": "{\"group\":{\"show\":[\"SYSTEM_HW_CONFIGURATION\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_ABOUT\",\"SYSTEM_LOG\"]}}",
+        "payload": "{\"group\":{\"show\":[\"SYSTEM_HW_CONFIGURATION\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_ABOUT\",\"SYSTEM_LOG\",\"SYSTEM_MQTT\"]}}",
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 1060,
+        "x": 960,
         "y": 200,
         "wires": [
             [
@@ -44799,7 +45062,7 @@
         "z": "3aa03811830ef29e",
         "g": "c361a153997d2dfd",
         "group": "4a119e18236415e9",
-        "order": 2,
+        "order": 3,
         "width": 6,
         "height": 1,
         "name": "Temperature sensors",
@@ -44807,7 +45070,7 @@
         "format": "",
         "layout": "row-spread",
         "className": "",
-        "x": 1050,
+        "x": 950,
         "y": 360,
         "wires": []
     },
@@ -44818,7 +45081,7 @@
         "g": "c361a153997d2dfd",
         "name": "Test only",
         "info": "",
-        "x": 1030,
+        "x": 930,
         "y": 260,
         "wires": []
     },
@@ -44829,7 +45092,7 @@
         "group": "b7f740331bca1b3f",
         "name": "Line - Changelog",
         "order": 2,
-        "width": 18,
+        "width": 17,
         "height": 14,
         "format": "</br>\n<u>Release notes</u>\nWhere to start.. </br>\nFirst off, I would like to welcome Maarten69 to the team. He has joined the project and gave a major boost with new ideas, new energy and new functions. So a big \"THANK YOU\" from me (Ed ter bak) for all the effort and free time you have invested. I appreciate it a lot, and I am sure a lot of other users do as well.</br>\n</br>\nThat said... For a long time, there has not been a stable update. A lot of bigger things were done together making it harder to do this. \nBut, this process is going to be managed better in future. We aim to have shorter release cycles, with less major changes per update to make it manageable.</br>\n</br>\n</br>\nThis release has a lot of changes compared to previous stable build, v21.00.</br>\nHere is a brief overview of the most noticeable items.</br>\n</br>\n<u>Operation mode:</u>\nPreviously it was only possible to use this Node Red flow when your heat pump is in Direct mode, and not using the Compensation Curve. This has now been changed. You can operate the heat pump in Compensation Curve mode. This means the heat pump itself is managing the water temperature depending on the outside temperature. The NodeRed WAR function will then automatically be disabled. Current implementation is not yet allowing you to manually shift the curve up/down. (This will be added soon in next builds) But, it IS possible to have this done for you by using the RTC-function. </br>\n</br>\n<u>SoftStart:</u>\nThis function has had a lot of attention. You now have the options to use quietmode during the start-up phase and you can choose to ignore restarts after a defrost cycle. In addition, you can use this function to increase the length of the compressor runs. The HELP text describes more about this. </br>\n</br>\n<u>WAR function:</u>\nThis tab has been improved so it can import the current settings from the heat pump and show it in the graph. Also, you can change the temperatures and upload it again to the heat pump. </br>\n</br>\n<u>Reduce pump speed:</u>\nIn the [Settings] tab, you will now find a bit about \"Reduce pump speed\". This new function allows you to reduce the pump speed when the compressor is not on.</br>\n</br>\n<u>Scheduler:</u>\nIn the scheduler there are now a couple of extra options; Night reduction. Remove a schedule by pressing the bin.</br>\n</br>\n<u>Shutdown response:</u>\nWe found that the node red flow is not aware of certain situations, like maintenance. When you manually turn the unit off through the wall mount, it can happen that a scheduled task is planned and turns the heat pump back on. To handle this situation, there is now an option to predefine the reaction of the flow when a manual OFF is pressed on the wall mounted controller. You can find this section under Settings > Shutdown response > [setup]</br>\n</br>\n<u>Safeguard:</u>\nIn addition to the shutdown response, the node red flow is keeping track of te amount of mqtt messages sent per day. If this exceeds a limit then the flow will block all future messages. The default limit is 500. Normal operation should result in 20-100 messages per day. If you are unlucky with a lot of defrosts, this can go up to 200. So 500 indicates a problem for sure.</br>\n</br>\n<u>Debugging:</u>\nIt has been made a lot easier by Maarten69 to debug if there are issues. Under the SYSTEM tab, System Health, you can now list a lot of the hidden variables used by the node red flow. When posting issues, it is advised to supply a copy of that text. :) </br>\n</br>\nFinally, a short note. The layout of v22.00 is a bit of a mess. The structure in the dashboard is now a little hard to detect. It is in need of some polishing here and there. This will be on the agenda soon to tidy up to give a better user experience.</br>\n</br>\nHave fun with your heat pump!</br>\n</br>\n/Ed ter bak</br>\n</br>\n</br>\n",
         "storeOutMessages": false,
@@ -44837,61 +45100,10 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 1440,
+        "x": 1300,
         "y": 300,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "41bf12ee0df96cc4",
-        "type": "debug",
-        "z": "3aa03811830ef29e",
-        "name": "debug 101",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2970,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "72614d01d60e920e",
-        "type": "inject",
-        "z": "3aa03811830ef29e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "source",
-                "v": "shutdown_detection",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "from shutdown detection",
-        "payload": "1",
-        "payloadType": "num",
-        "x": 2030,
-        "y": 1780,
-        "wires": [
-            [
-                "6f8b37b8a4354baf"
-            ]
         ]
     },
     {
@@ -45007,7 +45219,8 @@
         "y": 860,
         "wires": [
             [
-                "28fafb00eff46231"
+                "28fafb00eff46231",
+                "1d0bdc24983833d5"
             ]
         ]
     },
@@ -45036,7 +45249,8 @@
         "y": 500,
         "wires": [
             [
-                "28fafb00eff46231"
+                "28fafb00eff46231",
+                "1d0bdc24983833d5"
             ]
         ]
     },
@@ -45065,7 +45279,8 @@
         "y": 360,
         "wires": [
             [
-                "28fafb00eff46231"
+                "28fafb00eff46231",
+                "1d0bdc24983833d5"
             ]
         ]
     },
@@ -45276,7 +45491,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 2330,
-        "y": 1180,
+        "y": 1220,
         "wires": []
     },
     {
@@ -45296,7 +45511,7 @@
         "templateScope": "local",
         "className": "",
         "x": 2310,
-        "y": 1140,
+        "y": 1180,
         "wires": [
             []
         ]
@@ -45347,7 +45562,8 @@
         "wires": [
             [
                 "28fafb00eff46231",
-                "319c435620e4980f"
+                "319c435620e4980f",
+                "1d0bdc24983833d5"
             ]
         ]
     },
@@ -45437,7 +45653,7 @@
         "finalize": "",
         "libs": [],
         "x": 2100,
-        "y": 1140,
+        "y": 1180,
         "wires": [
             []
         ]
@@ -45509,7 +45725,7 @@
         "topic": "button_press",
         "topicType": "str",
         "x": 2490,
-        "y": 1260,
+        "y": 1300,
         "wires": [
             [
                 "a3eab03124fb697b"
@@ -45533,7 +45749,7 @@
         "templateScope": "local",
         "className": "",
         "x": 2310,
-        "y": 1220,
+        "y": 1260,
         "wires": [
             []
         ]
@@ -45553,7 +45769,7 @@
         "layout": "row-left",
         "className": "",
         "x": 2280,
-        "y": 1260,
+        "y": 1300,
         "wires": []
     },
     {
@@ -45573,7 +45789,7 @@
         "templateScope": "local",
         "className": "",
         "x": 2310,
-        "y": 1300,
+        "y": 1340,
         "wires": [
             []
         ]
@@ -45588,7 +45804,7 @@
             "c3c58f9072c16f58"
         ],
         "x": 2525,
-        "y": 1220,
+        "y": 1260,
         "wires": [
             [
                 "f9048baa0aa4d07d"
@@ -45606,7 +45822,7 @@
             "172fe3f8a616d7b8"
         ],
         "x": 2845,
-        "y": 1260,
+        "y": 1300,
         "wires": []
     },
     {
@@ -45622,11 +45838,13 @@
         "finalize": "",
         "libs": [],
         "x": 2710,
-        "y": 1220,
+        "y": 1260,
         "wires": [
             [
                 "43bf696dbf416cb0",
-                "cb7b5a6a14926482"
+                "cb7b5a6a14926482",
+                "fb74e5d35106e2b9",
+                "f9c1a6778b03a810"
             ]
         ],
         "outputLabels": [
@@ -45646,12 +45864,14 @@
         "finalize": "",
         "libs": [],
         "x": 2710,
-        "y": 1260,
+        "y": 1300,
         "wires": [
             [
                 "43bf696dbf416cb0",
                 "cb7b5a6a14926482",
-                "00b957e057fd4843"
+                "00b957e057fd4843",
+                "fb74e5d35106e2b9",
+                "f9c1a6778b03a810"
             ]
         ],
         "outputLabels": [
@@ -45671,7 +45891,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 2490,
+        "x": 2550,
         "y": 1120,
         "wires": [
             [
@@ -45760,9 +45980,742 @@
         "y": 1020,
         "wires": [
             [
-                "28fafb00eff46231"
+                "28fafb00eff46231",
+                "1d0bdc24983833d5"
             ]
         ]
+    },
+    {
+        "id": "775b498383c88430",
+        "type": "ui_button",
+        "z": "3aa03811830ef29e",
+        "name": "",
+        "group": "70a5fe6af8ed1d29",
+        "order": 5,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "MQTT",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "wifi",
+        "payload": "{\"group\":{\"show\":[\"SYSTEM_MQTT\"],\"hide\":[\"SYSTEM_ABOUT\",\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_LOG\"]}}",
+        "payloadType": "json",
+        "topic": "",
+        "topicType": "str",
+        "x": 1581,
+        "y": 201,
+        "wires": [
+            [
+                "ad0975065f9323c6"
+            ]
+        ]
+    },
+    {
+        "id": "2d8b1e1ac57fc5ec",
+        "type": "comment",
+        "z": "3aa03811830ef29e",
+        "name": "MQTT",
+        "info": "",
+        "x": 1550,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "a8d0be4408703f65",
+        "type": "mqtt in",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "name": "",
+        "topic": "panasonic_heat_pump/stats",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1640,
+        "y": 360,
+        "wires": [
+            [
+                "bf4e74cd2b591a26"
+            ]
+        ]
+    },
+    {
+        "id": "bf4e74cd2b591a26",
+        "type": "function",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "name": "Processing",
+        "func": "let msg1={};\nlet msg2={};\nlet msg3={};\nlet msg4={};\nlet msg5={};\nlet msg6={};\nlet msg7={};\nlet msg8={};\nlet msg9={};\nlet msg10={};\nlet msg11={};\nlet msg12={};\n\nmsg1.payload = msg.payload.uptime;\nmsg2.payload = msg.payload.voltage\nmsg3.payload = msg.payload[\"free memory\"]\nmsg4.payload = msg.payload.wifi\nmsg5.payload = msg.payload[\"mqtt reconnects\"]\nmsg6.payload = msg.payload[\"total reads\"]\nmsg7.payload = msg.payload[\"good reads\"]\nmsg8.payload = msg.payload[\"bad crc reads\"]\nmsg9.payload = msg.payload[\"bad header reads\"]\nmsg10.payload = msg.payload[\"too short reads\"]\nmsg11.payload = msg.payload[\"too long reads\"]\nmsg12.payload = msg.payload[\"timeout reads\"]\n\nreturn [msg1,msg2,msg3,msg4,msg5,msg6,msg7,msg8,msg9,msg10,msg11,msg12]\n\n",
+        "outputs": 12,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1590,
+        "y": 500,
+        "wires": [
+            [
+                "4ebf2601353294cb"
+            ],
+            [
+                "cba9af7ca5d830ba"
+            ],
+            [
+                "a6a546d71cb6c3c9"
+            ],
+            [
+                "0eec66bcde81e7bf"
+            ],
+            [
+                "1624dc37720ea0f6"
+            ],
+            [
+                "645258b618c6186b"
+            ],
+            [
+                "fb3f6458755be846"
+            ],
+            [
+                "62f798bf3b269fb8"
+            ],
+            [
+                "4eab814831da1cf7"
+            ],
+            [
+                "6241ed2b12f12331"
+            ],
+            [
+                "37dfca7cd812ec3b"
+            ],
+            [
+                "6bdadcca19574473"
+            ]
+        ]
+    },
+    {
+        "id": "cba9af7ca5d830ba",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "group": "d95eca50f9342e76",
+        "order": 25,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Voltage",
+        "format": "{{msg.payload}} V",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1780,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "a6a546d71cb6c3c9",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "group": "d95eca50f9342e76",
+        "order": 21,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Free memory",
+        "format": "{{msg.payload}} %",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1590,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "0eec66bcde81e7bf",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "group": "d95eca50f9342e76",
+        "order": 23,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Wifi signal",
+        "format": "{{msg.payload}} %",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1790,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "1624dc37720ea0f6",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "group": "d95eca50f9342e76",
+        "order": 26,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "MQTT reconnects",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1610,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "645258b618c6186b",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "group": "d95eca50f9342e76",
+        "order": 29,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Total reads",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1790,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "fb3f6458755be846",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "group": "d95eca50f9342e76",
+        "order": 20,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Good reads",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1590,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "62f798bf3b269fb8",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "group": "d95eca50f9342e76",
+        "order": 27,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Bad CRC reads",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1800,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "4eab814831da1cf7",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "group": "d95eca50f9342e76",
+        "order": 24,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Bad header reads",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1610,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "6241ed2b12f12331",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "group": "d95eca50f9342e76",
+        "order": 32,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Too short reads",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1800,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "37dfca7cd812ec3b",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "group": "d95eca50f9342e76",
+        "order": 30,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Too long reads",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1600,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "6bdadcca19574473",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "group": "d95eca50f9342e76",
+        "order": 31,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Timeout reads",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1800,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "32bf55a3478adbca",
+        "type": "switch",
+        "z": "3aa03811830ef29e",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1030,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ebf2601353294cb",
+        "type": "function",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "name": "Uptime translate",
+        "func": "let msg0={};//seconds\nlet msg1={};//minutes\nlet msg2={};//hours\nlet msg3={};//days\nlet msg4={};//years\nlet msg5={};//combo\n\nvar D;\nvar Y;\n\n//*****year\nmsg4.payload = msg.payload / ( 1000*60*60*24*365);\nmsg4.payload = Math.floor(msg4.payload);\nif (msg4.payload > 1) {Y = 'Years/';}\nif (msg4.payload <= 1) {Y = 'Year/';}\n\n//*****days\nmsg3.payload = msg.payload - (msg4.payload * ( 1000*60*60*24*365));\nmsg3.payload = msg3.payload / ( 1000*60*60*24);\nmsg3.payload = Math.floor(msg3.payload);\n\nif (msg3.payload > 1) {D = ' Days, ';}\nif (msg3.payload <= 1) {D = ' Day, ';}\n\n//*****hours\nmsg2.payload = msg.payload - (msg4.payload * ( 1000*60*60*24*365)) - (msg3.payload * ( 1000*60*60*24));\nmsg2.payload = msg2.payload / ( 1000*60*60);\nmsg2.payload = Math.floor(msg2.payload);\n//msg2.payload = msg2.payload.padStart(2)\nmsg2.payload = msg2.payload.toString().padStart(2,\"0\")\n\n\n//*****minutes\nmsg1.payload = msg.payload - (msg4.payload * ( 1000*60*60*24*365)) - (msg3.payload * ( 1000*60*60*24)) - (msg2.payload * ( 1000*60*60));\nmsg1.payload = msg1.payload / ( 1000*60);\nmsg1.payload = Math.floor(msg1.payload);\nmsg1.payload = msg1.payload.toString().padStart(2,\"0\")\n\n//*****seconds\nmsg0.payload = msg.payload - (msg4.payload * ( 1000*60*60*24*365)) - (msg3.payload * ( 1000*60*60*24)) - (msg2.payload * ( 1000*60*60)) -  (msg1.payload * ( 1000*60));\nmsg0.payload = msg0.payload / 1000;\nmsg0.payload = Math.floor(msg0.payload);\nmsg0.payload = msg0.payload.toString().padStart(2,\"0\")\n\n\n//////////////////////////////////////////////\nif (msg4.payload >= 1)  { msg5.payload = msg4.payload + Y +  msg3.payload + D + msg2.payload + \"h\" + msg1.payload + \" \" + msg0.payload + \"s\";    }\nelse                    { msg5.payload =                     msg3.payload + D + msg2.payload + \"h\" + msg1.payload + \" \" + msg0.payload + \"s\";    }\n\n\nreturn [msg5];\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1600,
+        "y": 720,
+        "wires": [
+            [
+                "3f207fc52ec0027e"
+            ]
+        ],
+        "outputLabels": [
+            "Uptime"
+        ]
+    },
+    {
+        "id": "3f207fc52ec0027e",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "group": "d95eca50f9342e76",
+        "order": 19,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Uptime",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1780,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "740a027c146249ae",
+        "type": "ui_template",
+        "z": "3aa03811830ef29e",
+        "g": "0bb11670c285bff1",
+        "group": "d95eca50f9342e76",
+        "name": "Line - Heishamon information",
+        "order": 18,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left><b>Heishamon information</b></left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1640,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f233670d8569fc20",
+        "type": "ui_template",
+        "z": "3aa03811830ef29e",
+        "g": "b4e7d28c61065a10",
+        "group": "d95eca50f9342e76",
+        "name": "Line - MQTT Block",
+        "order": 1,
+        "width": 24,
+        "height": 1,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left><b>MQTT Block</b></left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1590,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54bfc60418e56a9b",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "b4e7d28c61065a10",
+        "group": "d95eca50f9342e76",
+        "order": 3,
+        "width": 7,
+        "height": 5,
+        "name": "spacer 0",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1560,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "fb74e5d35106e2b9",
+        "type": "ui_button",
+        "z": "3aa03811830ef29e",
+        "g": "b4e7d28c61065a10",
+        "name": "",
+        "group": "d95eca50f9342e76",
+        "order": 6,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.label}}",
+        "tooltip": "Actual status only, no button.",
+        "color": "{{msg.color}}",
+        "bgcolor": "{{msg.bgcolor}}",
+        "className": "",
+        "icon": "",
+        "payload": "999",
+        "payloadType": "num",
+        "topic": "button_press",
+        "topicType": "str",
+        "x": 1550,
+        "y": 1120,
+        "wires": [
+            [
+                "a3eab03124fb697b"
+            ]
+        ]
+    },
+    {
+        "id": "f9c1a6778b03a810",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "b4e7d28c61065a10",
+        "group": "d95eca50f9342e76",
+        "order": 8,
+        "width": 5,
+        "height": 1,
+        "name": "MQTT commands are being",
+        "label": "",
+        "format": "{{msg.result}}",
+        "layout": "row-left",
+        "className": "",
+        "x": 1760,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "67a7a74773ea6560",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "b4e7d28c61065a10",
+        "group": "d95eca50f9342e76",
+        "order": 12,
+        "width": 4,
+        "height": 1,
+        "name": "Attention setdefault",
+        "label": "Default blockmode",
+        "format": "",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1590,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "716a35b80ac09a85",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "b4e7d28c61065a10",
+        "group": "d95eca50f9342e76",
+        "order": 2,
+        "width": 9,
+        "height": 1,
+        "name": "",
+        "label": "Current settings",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1580,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "c0148bdd1814580f",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "b4e7d28c61065a10",
+        "group": "d95eca50f9342e76",
+        "order": 5,
+        "width": 1,
+        "height": 1,
+        "name": "spacer 01x1",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1570,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "c2d0c237af80e591",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "b4e7d28c61065a10",
+        "group": "d95eca50f9342e76",
+        "order": 7,
+        "width": 1,
+        "height": 1,
+        "name": "spacer 01x1",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1570,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "0911a9edae380679",
+        "type": "ui_button",
+        "z": "3aa03811830ef29e",
+        "g": "404eed4ef9d90803",
+        "name": "",
+        "group": "d95eca50f9342e76",
+        "order": 10,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "label": "Setup",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"tabs\":{\"show\":[\"Power\"]}}",
+        "payloadType": "json",
+        "topic": "",
+        "topicType": "str",
+        "x": 2270,
+        "y": 100,
+        "wires": [
+            [
+                "bc563b90430840aa",
+                "a42f4f922e494524"
+            ]
+        ]
+    },
+    {
+        "id": "5998c26dd710f4f1",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "b4e7d28c61065a10",
+        "group": "d95eca50f9342e76",
+        "order": 11,
+        "width": 1,
+        "height": 1,
+        "name": "spacer 01x1",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1570,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "e112c36e957452a3",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "b4e7d28c61065a10",
+        "group": "d95eca50f9342e76",
+        "order": 9,
+        "width": 5,
+        "height": 1,
+        "name": "Setup shutdown response",
+        "label": "Setup shutdown response",
+        "format": "",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1610,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "cfcc8b51c90050ac",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "8fe25c73d37fe670",
+        "group": "d95eca50f9342e76",
+        "order": 13,
+        "width": 5,
+        "height": 1,
+        "name": "current blockmode payload",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "x": 2660,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "1d0bdc24983833d5",
+        "type": "function",
+        "z": "3aa03811830ef29e",
+        "g": "8fe25c73d37fe670",
+        "name": "Translate",
+        "func": "if (msg.payload == 'MQTT_default_1'){\n    msg.payload = 'BLOCK ALL';\n}\n\n\nif (msg.payload == 'MQTT_default_2'){\n    msg.payload = 'CUSTOM';\n    \n}\n\nif (msg.payload == 'MQTT_default_3'){\n    msg.payload = 'UNRESTRICTED';\n    \n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2580,
+        "y": 900,
+        "wires": [
+            [
+                "cfcc8b51c90050ac"
+            ]
+        ]
+    },
+    {
+        "id": "42db2c5a1500bee2",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "b4e7d28c61065a10",
+        "group": "d95eca50f9342e76",
+        "order": 15,
+        "width": 9,
+        "height": 2,
+        "name": "spacer 04",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1560,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "ee674cfd16767755",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "b4e7d28c61065a10",
+        "group": "d95eca50f9342e76",
+        "order": 28,
+        "width": 6,
+        "height": 3,
+        "name": "spacer 2x2",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1610,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "f6260e40072e9c45",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "b4e7d28c61065a10",
+        "group": "d95eca50f9342e76",
+        "order": 22,
+        "width": 6,
+        "height": 5,
+        "name": "spacer 2x2",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1610,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "ac3bca13eeddd505",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "g": "c361a153997d2dfd",
+        "group": "4a119e18236415e9",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "name": "Work In Progress",
+        "label": "Work In Progress",
+        "format": "",
+        "layout": "row-spread",
+        "className": "",
+        "x": 950,
+        "y": 400,
+        "wires": []
     },
     {
         "id": "d5fea67661261002",
@@ -45933,8 +46886,8 @@
             "50965b08724bdd8c",
             "f2d7ea937abca010"
         ],
-        "x": 84,
-        "y": 1299,
+        "x": 74,
+        "y": 1379,
         "w": 1102,
         "h": 262
     },
@@ -45958,7 +46911,7 @@
             "f8666050ee0e6830"
         ],
         "x": 74,
-        "y": 1579,
+        "y": 1679,
         "w": 1112,
         "h": 262
     },
@@ -45982,7 +46935,7 @@
             "fd2777fee0c73d23"
         ],
         "x": 74,
-        "y": 1859,
+        "y": 1959,
         "w": 1112,
         "h": 82
     },
@@ -46021,12 +46974,14 @@
             "4c70cc2db4654795",
             "bb8548eb6893bd56",
             "678c2fa5db148f1e",
-            "c40e5d6c866f68df"
+            "c40e5d6c866f68df",
+            "cbec49b57325d8a9",
+            "c4100822f25e71c5"
         ],
-        "x": 74,
+        "x": 54,
         "y": 959,
-        "w": 1112,
-        "h": 302
+        "w": 1132,
+        "h": 382
     },
     {
         "id": "aca3036a5a8e2f25",
@@ -46133,8 +47088,8 @@
         "label": "Extend logging",
         "tooltip": "Show more data in logs",
         "group": "ec94eaa0930738be",
-        "order": 6,
-        "width": 4,
+        "order": 5,
+        "width": 5,
         "height": 1,
         "passthru": true,
         "decouple": "false",
@@ -46314,7 +47269,7 @@
         "z": "d5fea67661261002",
         "g": "1f4cf47dbe4285dc",
         "name": "Count",
-        "func": "var MQTT = global.get('MQTT',\"file\");\nif (MQTT===undefined){\n    MQTT = {};\n    global.set('MQTT',MQTT,\"file\");\n}\n\nvar MQTT_counter = global.get('MQTT.counter', \"file\");\nif (MQTT_counter === undefined) {MQTT_counter = 0;\nMQTT_counter = parseFloat(MQTT_counter.toFixed(0));\n}\n\n// today\nvar MQTT_messages_today = global.get('MQTT.messages_today', \"file\"); \nif (MQTT_messages_today === undefined) MQTT_messages_today = 0;\nMQTT_messages_today = parseFloat(MQTT_messages_today.toFixed(0));\n\n// yesterday\nvar MQTT_messages_yesterday = global.get('MQTT.messages_yesterday', \"file\") || 0;\n\nMQTT_messages_yesterday = parseFloat(MQTT_messages_yesterday.toFixed(0));\n\n// reset_today\nif (msg.payload == \"reset_today\") { // daily midnight reset\n    var MQTT_messages_yesterday = MQTT_messages_today;\n    MQTT_messages_today = 0;\n    global.set('MQTT.messages_yesterday', MQTT_messages_yesterday, \"file\");\n    global.set('MQTT.messages_today', MQTT_messages_today, \"file\");\n    return null; // exit node\n} \n\nMQTT_counter += 1; // increase total\nMQTT_messages_today += 1; //increase today\n\n// reset, clear all vars from flow:\nif (msg.payload == \"reset\") { MQTT_counter = 0; MQTT_messages_today; MQTT_messages_yesterday; }\n\nglobal.set('MQTT.counter', MQTT_counter, \"file\"); // save\nglobal.set('MQTT.messages_yesterday', MQTT_messages_yesterday, \"file\");\nglobal.set('MQTT.messages_today', MQTT_messages_today, \"file\");\n\n//msg.payload = \"Total:\" + MQTT_counter + \", Today:\" + MQTT_messages_today; // for debug node only\n\n//return msg;",
+        "func": "var MQTT = global.get('MQTT',\"file\");\nif (MQTT===undefined){\n    MQTT = {};\n    global.set('MQTT',MQTT,\"file\");\n}\n\nif (MQTT.counter === undefined) {MQTT.counter = 0;\nMQTT.counter = parseFloat(MQTT.counter.toFixed(0));\n}\n\n// today\nif (MQTT.messages_today === undefined) MQTT.messages_today = 0;\nMQTT.messages_today = parseFloat(MQTT.messages_today.toFixed(0));\n\n// yesterday\nif (MQTT.messages_yesterday === undefined) {MQTT.messages_yesterday = 0;}\n\nMQTT.messages_yesterday = parseFloat(MQTT.messages_yesterday.toFixed(0));\n\n// reset_today\nif (msg.payload == \"reset_today\") { // daily midnight reset\n    MQTT.messages_yesterday = MQTT.messages_today;\n    MQTT.messages_today = 0;\n    global.set('MQTT.messages_yesterday', MQTT.messages_yesterday, \"file\");\n    global.set('MQTT.messages_today', MQTT.messages_today, \"file\");\n    return null; // exit node\n} \n\nMQTT.counter += 1; // increase total\nMQTT.messages_today += 1; //increase today\n\n// reset, clear all vars from flow:\nif (msg.payload == \"reset\") { MQTT.counter = 0; MQTT.messages_today; MQTT.messages_yesterday; }\n\nglobal.set('MQTT.counter', MQTT.counter, \"file\"); // save\nglobal.set('MQTT.messages_yesterday', MQTT.messages_yesterday, \"file\");\nglobal.set('MQTT.messages_today', MQTT.messages_today, \"file\");\n\n//msg.payload = \"Total:\" + MQTT.counter + \", Today:\" + MQTT.messages_today; // for debug node only\n\n//return msg;",
         "outputs": 0,
         "noerr": 0,
         "initialize": "",
@@ -46739,8 +47694,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 240,
-        "y": 1340,
+        "x": 230,
+        "y": 1420,
         "wires": [
             [
                 "62b5261340dce177"
@@ -46760,8 +47715,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 510,
-        "y": 1340,
+        "x": 500,
+        "y": 1420,
         "wires": [
             [
                 "e13d89b6bf39c3a3"
@@ -46780,8 +47735,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 1340,
+        "x": 690,
+        "y": 1420,
         "wires": [
             []
         ]
@@ -46800,8 +47755,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 240,
-        "y": 1400,
+        "x": 230,
+        "y": 1480,
         "wires": [
             [
                 "f91a8e87996f7a36"
@@ -46820,8 +47775,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 1400,
+        "x": 690,
+        "y": 1480,
         "wires": [
             []
         ]
@@ -46839,8 +47794,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 510,
-        "y": 1400,
+        "x": 500,
+        "y": 1480,
         "wires": [
             [
                 "10a931a475e12a39"
@@ -46861,8 +47816,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 230,
-        "y": 1460,
+        "x": 220,
+        "y": 1540,
         "wires": [
             [
                 "f22f1960e6c20b9e"
@@ -46883,8 +47838,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1050,
-        "y": 1460,
+        "x": 1040,
+        "y": 1540,
         "wires": []
     },
     {
@@ -46899,8 +47854,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 1460,
+        "x": 690,
+        "y": 1540,
         "wires": [
             [
                 "eb94834e04b534d3"
@@ -46921,8 +47876,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 670,
-        "y": 1520,
+        "x": 660,
+        "y": 1600,
         "wires": []
     },
     {
@@ -46938,8 +47893,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 510,
-        "y": 1460,
+        "x": 500,
+        "y": 1540,
         "wires": [
             [
                 "c34196f747bbf89e",
@@ -46969,8 +47924,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 190,
-        "y": 1520,
+        "x": 180,
+        "y": 1600,
         "wires": [
             [
                 "f2d7ea937abca010"
@@ -46989,8 +47944,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 1520,
+        "x": 370,
+        "y": 1600,
         "wires": [
             []
         ]
@@ -47181,7 +48136,7 @@
         "rh": 0,
         "inputs": 1,
         "x": 770,
-        "y": 1660,
+        "y": 1760,
         "wires": [
             [
                 "16808d5b28081690"
@@ -47211,7 +48166,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 190,
-        "y": 1700,
+        "y": 1800,
         "wires": [
             [
                 "8cab4c14513ce5fa"
@@ -47231,7 +48186,7 @@
         "finalize": "",
         "libs": [],
         "x": 430,
-        "y": 1700,
+        "y": 1800,
         "wires": [
             [
                 "05e22a7bbcfb1aa1"
@@ -47259,7 +48214,7 @@
         "statusVal": "payload",
         "statusType": "auto",
         "x": 1090,
-        "y": 1660,
+        "y": 1760,
         "wires": []
     },
     {
@@ -47277,7 +48232,7 @@
         "rh": 0,
         "inputs": 1,
         "x": 770,
-        "y": 1740,
+        "y": 1840,
         "wires": [
             [
                 "fd1a14b5c123f7aa"
@@ -47299,7 +48254,7 @@
         "statusVal": "payload",
         "statusType": "auto",
         "x": 1090,
-        "y": 1740,
+        "y": 1840,
         "wires": []
     },
     {
@@ -47310,7 +48265,7 @@
         "name": "Test dynamic subcribe",
         "info": "",
         "x": 220,
-        "y": 1620,
+        "y": 1720,
         "wires": []
     },
     {
@@ -47323,7 +48278,7 @@
         "tooltip": "Select which temperature sensor the flow must use",
         "place": "",
         "group": "4a119e18236415e9",
-        "order": 3,
+        "order": 4,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -47334,7 +48289,7 @@
         "topicType": "msg",
         "className": "",
         "x": 770,
-        "y": 1800,
+        "y": 1900,
         "wires": [
             []
         ]
@@ -47361,7 +48316,7 @@
         "topic": "payload",
         "topicType": "msg",
         "x": 380,
-        "y": 1900,
+        "y": 2000,
         "wires": [
             [
                 "d3a2ef1813673fb5"
@@ -47381,7 +48336,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 1900,
+        "y": 2000,
         "wires": [
             [
                 "0b00b03e3c4e9930"
@@ -47403,7 +48358,7 @@
             "fa1495af192e1c1e"
         ],
         "x": 895,
-        "y": 1900,
+        "y": 2000,
         "wires": []
     },
     {
@@ -47419,7 +48374,7 @@
         "finalize": "",
         "libs": [],
         "x": 650,
-        "y": 1900,
+        "y": 2000,
         "wires": [
             [
                 "d6ef6434856148df"
@@ -47442,7 +48397,7 @@
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
         "x": 1050,
-        "y": 1900,
+        "y": 2000,
         "wires": []
     },
     {
@@ -47462,7 +48417,7 @@
         "topic": "Send a defrost now to HP?",
         "name": "Defrost?",
         "x": 520,
-        "y": 1900,
+        "y": 2000,
         "wires": [
             [
                 "1b91aa81aad7c7b5"
@@ -47534,7 +48489,7 @@
             "6c685782864f1787"
         ],
         "x": 115,
-        "y": 1900,
+        "y": 2000,
         "wires": [
             [
                 "fd2777fee0c73d23"
@@ -47554,7 +48509,7 @@
         "finalize": "",
         "libs": [],
         "x": 230,
-        "y": 1900,
+        "y": 2000,
         "wires": [
             [
                 "399e883e6deac7a3"
@@ -47568,8 +48523,8 @@
         "g": "0531f7d830ad5e1b",
         "group": "ec94eaa0930738be",
         "name": "Line",
-        "order": 10,
-        "width": 25,
+        "order": 6,
+        "width": 24,
         "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: 0;\n    margin-right: 0;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n</html>\n",
         "storeOutMessages": false,
@@ -47591,7 +48546,7 @@
         "group": "ec94eaa0930738be",
         "order": 3,
         "width": 6,
-        "height": 2,
+        "height": 1,
         "name": "spacer1",
         "label": "",
         "format": "{{msg.payload}}",
@@ -47607,9 +48562,9 @@
         "z": "d5fea67661261002",
         "g": "0531f7d830ad5e1b",
         "group": "ec94eaa0930738be",
-        "order": 5,
-        "width": 3,
-        "height": 2,
+        "order": 4,
+        "width": 9,
+        "height": 1,
         "name": "spacer2",
         "label": "",
         "format": "{{msg.payload}}",
@@ -47656,8 +48611,8 @@
         "g": "0531f7d830ad5e1b",
         "group": "ec94eaa0930738be",
         "name": "",
-        "order": 11,
-        "width": 25,
+        "order": 7,
+        "width": 24,
         "height": 17,
         "format": "<div ng-repeat=\"line in msg.payload track by $index\">\n<div ng-bind-html=\"line\"></div>\n</div>",
         "storeOutMessages": false,
@@ -47760,7 +48715,7 @@
         "z": "d5fea67661261002",
         "g": "0531f7d830ad5e1b",
         "name": "Block MQTT",
-        "func": "let msg1 = {}; // pin2 to combobox update block_mode status\nmsg1.topic = \"Update block_mode\"; //update 19-01-2023 msg --> msg1\nif (msg.source == \"boot\") { return null; } //exit when source is from inject node\n\nlet msg99 = {};\nmsg99.topic = \"SYSTEM\";\nmsg99.payload = \"\";\n\n// *****************************************************************************\n//  MQTT.block_mode 1 = BLOCK ALL\n//  MQTT.block_mode 2 = CUSTOM\n//  MQTT.block_mode 3 = UNRESTRICTED\n// *****************************************************************************\n\nif (msg.payload == 1) {\n    global.set('MQTT.block_active', 1, \"file\"); \n    msg99.payload = 1;\n    var MQTT_block_mode = global.get('MQTT.block_mode', \"file\"); // 11-01-2023\n    global.set('MQTT.block_mode_previous', MQTT_block_mode, \"file\"); // 11-01-20223 for restoring block_mode after disabling switch\n\n    // check if msg source is from shutdown_detection (POWER OFF)\n    if (msg.source == \"shutdown_detection\") {\n        msg1.payload = MQTT_block_mode;\n        return [msg99, msg1]; // log and update combobox\n    }\n\n\n    global.set('MQTT.block_mode', 1, \"file\"); // block all\n    msg1.payload = 1;\n    return [msg99, msg1]; // log and update combobox\n\n}\n\nif (msg.payload == 0) {\n    global.set('MQTT.block_active', 0, \"file\");\n    msg99.payload = 0;\n    var MQTT_block_mode_previous = global.get('MQTT.block_mode_previous', \"file\");  // 11-01-2023\n    if (MQTT_block_mode_previous !== undefined) { global.set('MQTT.block_mode', MQTT_block_mode_previous, \"file\"); } // 11-01-20223 for restoring block_mode after disabling switch\n        \n    // test if reached max MQTT command limit today:\n    var MQTT_messages_today = global.get('MQTT.messages_today', \"file\");\n    if (MQTT_messages_today === undefined) MQTT_messages_today = 0;\n\n    // get user set limit\n    var MQTT_message_limit = global.get('MQTT.message_limit', \"file\");\n    if (MQTT_message_limit === undefined) {\n        MQTT_message_limit = 500; //default 500\n        global.set('MQTT.message_limit', 500, \"file\");\n        }\n\n    // Request: Auto increase limit when disabling\n    if (MQTT_messages_today >= MQTT_message_limit) {\n        msg99.payload = \"MQTT limit of \" + MQTT_message_limit + \" reached, increasing limit to \" + (MQTT_message_limit + 100);\n        global.set('MQTT.message_limit', (MQTT_message_limit + 100), \"file\");\n    }\n\n    msg1.payload = MQTT_block_mode_previous; // now actual block_mode\n    return [msg99, msg1]; // log, and update combobox?\n}\n\n\n\n\n",
+        "func": "let msg1 = {}; // pin2 to combobox update block_mode status\nmsg1.topic = \"Update block_mode\"; //update 19-01-2023 msg --> msg1\nif (msg.source == \"boot\") { return null; } //exit when source is from inject node\n\nlet msg99 = {};\nmsg99.topic = \"SYSTEM\";\nmsg99.payload = \"\";\n\nvar MQTT = global.get('MQTT',\"file\");\n\n// *****************************************************************************\n//  MQTT.block_mode 1 = BLOCK ALL\n//  MQTT.block_mode 2 = CUSTOM\n//  MQTT.block_mode 3 = UNRESTRICTED\n// *****************************************************************************\n\nif (msg.payload == 1) {\n    global.set('MQTT.block_active', 1, \"file\"); \n    msg99.payload = 1;\n    global.set('MQTT.block_mode_previous', MQTT.block_mode, \"file\"); // 11-01-20223 for restoring block_mode after disabling switch\n\n    // check if msg source is from shutdown_detection (POWER OFF)\n    if (msg.source == \"shutdown_detection\") {\n        msg1.payload = MQTT.block_mode;\n        return [msg99, msg1]; // log and update combobox\n    }\n\n\n    global.set('MQTT.block_mode', 1, \"file\"); // block all\n    msg1.payload = 1;\n    return [msg99, msg1]; // log and update combobox\n\n}\n\nif (msg.payload == 0) {\n    global.set('MQTT.block_active', 0, \"file\");\n    msg99.payload = 0;\n    if (MQTT.block_mode_previous !== undefined) { global.set('MQTT.block_mode', MQTT.block_mode_previous, \"file\"); } // 11-01-20223 for restoring block_mode after disabling switch\n        \n    // test if reached max MQTT command limit today:\n    if (MQTT.messages_today === undefined) MQTT.messages_today = 0;\n\n    // get user set limit\n    if (MQTT.message_limit === undefined) {\n        MQTT.message_limit = 500; //default 500\n        global.set('MQTT.message_limit', 500, \"file\");\n        }\n\n    // Request: Auto increase limit when disabling\n    if (MQTT.messages_today >= MQTT.message_limit) {\n        msg99.payload = \"MQTT limit of \" + MQTT.message_limit + \" reached, increasing limit to \" + (MQTT.message_limit + 100);\n        global.set('MQTT.message_limit', (MQTT.message_limit + 100), \"file\");\n    }\n\n    msg1.payload = MQTT.block_mode_previous; // now actual block_mode\n    return [msg99, msg1]; // log, and update combobox?\n}\n\n\n\n\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -47788,9 +48743,9 @@
         "z": "d5fea67661261002",
         "g": "0531f7d830ad5e1b",
         "name": "Block MQTT commands",
-        "label": "Block MQTT commands({{msg.topic}})",
+        "label": "<b>Block MQTT</b>",
         "tooltip": "Block MQTT commands",
-        "group": "ec94eaa0930738be",
+        "group": "d95eca50f9342e76",
         "order": 4,
         "width": 8,
         "height": 1,
@@ -47824,7 +48779,7 @@
         "z": "d5fea67661261002",
         "g": "0531f7d830ad5e1b",
         "name": "set at boot",
-        "func": "var MQTT = global.get('MQTT', \"file\");\n\nif (MQTT.block_active === undefined){\n    global.set('MQTT.block_active',0,\"file\");\n    return null;\n}\n\nlet msg1 = {};\n\nmsg1.payload = MQTT.block_active;\nmsg1.source = \"boot\";\n\nvar value = MQTT.block_mode;\nvar Blockmode = \"undefined\";\nif (value === 1) Blockmode = \"BLOCK ALL\";\nif (value === 2) Blockmode = \"CUSTOM\";\nif (value === 3) Blockmode = \"UNRESTRICTED\";\n\nmsg1.topic = Blockmode; //text label toggle\n\nreturn msg1;",
+        "func": "var MQTT = global.get('MQTT', \"file\");\nlet msg1 = {};\n\nif (MQTT.block_active === undefined){\n    global.set('MQTT.block_active',0,\"file\");\n    msg1.payload = 0;\n    msg1.source = \"boot\";\n    return msg1;\n    \n}\n\n\nmsg1.payload = MQTT.block_active;\nmsg1.source = \"boot\";\n\nvar value = MQTT.block_mode;\nvar Blockmode = \"undefined\";\nif (value === 1) Blockmode = \"BLOCK ALL\";\nif (value === 2) Blockmode = \"CUSTOM\";\nif (value === 3) Blockmode = \"UNRESTRICTED\";\n\nmsg1.topic = Blockmode; //text label toggle\n\nreturn msg1;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -47846,18 +48801,17 @@
         "name": "at boot",
         "props": [
             {
-                "p": "payload"
+                "p": "topic",
+                "vt": "str"
             }
         ],
         "repeat": "2100",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
-        "topic": "",
-        "payload": "#:(file)::block_active",
-        "payloadType": "global",
-        "x": 180,
-        "y": 1160,
+        "topic": "trigger",
+        "x": 160,
+        "y": 1180,
         "wires": [
             [
                 "dadcc09786666d40",
@@ -47962,10 +48916,10 @@
         "z": "d5fea67661261002",
         "g": "0531f7d830ad5e1b",
         "name": "MQTT-limit",
-        "label": "Max MQTT-commands per day ({{msg.messages_today}}):",
+        "label": "MQTT Limit",
         "tooltip": "",
-        "group": "ec94eaa0930738be",
-        "order": 8,
+        "group": "d95eca50f9342e76",
+        "order": 14,
         "width": 8,
         "height": 1,
         "wrap": true,
@@ -47991,8 +48945,8 @@
         "z": "d5fea67661261002",
         "g": "0531f7d830ad5e1b",
         "name": "set at boot",
-        "func": "var MQTT = global.get('MQTT', \"file\");\n\nif (MQTT.message_limit === undefined) {\n    MQTT.message_limit = 500; // default 500\n    global.set('MQTT.message_limit', 500, \"file\");\n}\n\nlet msg1 = {};\nmsg1.messages_today = MQTT.messages_today;\nmsg1.payload = MQTT.message_limit;\n\nreturn msg1;\n",
-        "outputs": 1,
+        "func": "var MQTT = global.get('MQTT', \"file\");\n\nif (MQTT.message_limit === undefined) {\n    MQTT.message_limit = 500; // default 500\n    global.set('MQTT.message_limit', 500, \"file\");\n}\n\nlet msg1 = {};\nlet msg2 = {};\nmsg1.messages_today = MQTT.messages_today;\nmsg1.payload = MQTT.message_limit;\nmsg2.payload = MQTT.messages_yesterday;\n\nreturn [msg1,msg2]\n",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -48001,11 +48955,16 @@
         "y": 1220,
         "wires": [
             [
-                "bd61942b914a15ce"
+                "bd61942b914a15ce",
+                "cbec49b57325d8a9"
+            ],
+            [
+                "c4100822f25e71c5"
             ]
         ],
         "outputLabels": [
-            "DHW_treshold"
+            "DHW_treshold",
+            null
         ]
     },
     {
@@ -48038,6 +48997,7 @@
         "name": "MQTT_Status",
         "mode": "link",
         "links": [
+            "29daf0bbd602db4f",
             "5945f577b64bd499"
         ],
         "x": 325,
@@ -48156,6 +49116,42 @@
         ],
         "x": 1005,
         "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "cbec49b57325d8a9",
+        "type": "ui_text",
+        "z": "d5fea67661261002",
+        "g": "0531f7d830ad5e1b",
+        "group": "d95eca50f9342e76",
+        "order": 16,
+        "width": 8,
+        "height": 1,
+        "name": "",
+        "label": "MQTT count today",
+        "format": "{{msg.messages_today}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 610,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "c4100822f25e71c5",
+        "type": "ui_text",
+        "z": "d5fea67661261002",
+        "g": "0531f7d830ad5e1b",
+        "group": "d95eca50f9342e76",
+        "order": 17,
+        "width": 8,
+        "height": 1,
+        "name": "",
+        "label": "MQTT count yesterday",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 620,
+        "y": 1300,
         "wires": []
     },
     {
@@ -48361,18 +49357,18 @@
         "tab": "593cfab8493b6bad",
         "order": 2,
         "disp": false,
-        "width": "25",
+        "width": "24",
         "collapse": false,
         "className": ""
     },
     {
         "id": "1eb6d525c86c4977",
         "type": "ui_group",
-        "name": "PANASONIC",
-        "tab": "33ece0076bfd7cb7",
+        "name": "HW INFORMATION",
+        "tab": "593cfab8493b6bad",
         "order": 4,
         "disp": true,
-        "width": "6",
+        "width": "24",
         "collapse": false,
         "className": ""
     },
@@ -48403,20 +49399,9 @@
         "type": "ui_group",
         "name": "ABOUT",
         "tab": "593cfab8493b6bad",
-        "order": 6,
+        "order": 7,
         "disp": true,
-        "width": "25",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "fea7672db2f050c9",
-        "type": "ui_group",
-        "name": "HEAT PUMP",
-        "tab": "33ece0076bfd7cb7",
-        "order": 1,
-        "disp": true,
-        "width": "6",
+        "width": "24",
         "collapse": false,
         "className": ""
     },
@@ -48494,6 +49479,17 @@
         "order": 1,
         "disp": false,
         "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "70a5fe6af8ed1d29",
+        "type": "ui_group",
+        "name": "NAVIGATION",
+        "tab": "593cfab8493b6bad",
+        "order": 1,
+        "disp": false,
+        "width": "24",
         "collapse": false,
         "className": ""
     },
@@ -48586,35 +49582,13 @@
         "className": ""
     },
     {
-        "id": "70a5fe6af8ed1d29",
-        "type": "ui_group",
-        "name": "NAVIGATION",
-        "tab": "593cfab8493b6bad",
-        "order": 1,
-        "disp": false,
-        "width": 25,
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "ec94eaa0930738be",
         "type": "ui_group",
         "name": "SYSTEM HEALTH",
         "tab": "593cfab8493b6bad",
         "order": 3,
         "disp": false,
-        "width": "25",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "84a756fa9e9244a8",
-        "type": "ui_group",
-        "name": "HW INFORMATION",
-        "tab": "593cfab8493b6bad",
-        "order": 4,
-        "disp": true,
-        "width": "25",
+        "width": "24",
         "collapse": false,
         "className": ""
     },
@@ -48636,7 +49610,7 @@
         "tab": "593cfab8493b6bad",
         "order": 5,
         "disp": true,
-        "width": "25",
+        "width": "24",
         "collapse": false,
         "className": ""
     },
@@ -48648,6 +49622,17 @@
         "order": 2,
         "disp": false,
         "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d95eca50f9342e76",
+        "type": "ui_group",
+        "name": "MQTT",
+        "tab": "593cfab8493b6bad",
+        "order": 6,
+        "disp": false,
+        "width": "24",
         "collapse": false,
         "className": ""
     },
@@ -48711,15 +49696,6 @@
         "name": "SYSTEM",
         "icon": "dashboard",
         "order": 14,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "33ece0076bfd7cb7",
-        "type": "ui_tab",
-        "name": "Settings",
-        "icon": "settings",
-        "order": 2,
         "disabled": false,
         "hidden": false
     },
