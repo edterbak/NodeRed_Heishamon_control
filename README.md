@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.16 Beta<br/> <br/>
+Current version: 22.17 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -732,6 +732,18 @@ Have fun with your heat pump!</br>
 - [Fix] Fixed two small issues with logs being flooded by SOLAR function messages. 
 - [Enhancement] Renamed a lot of variables. 
 - [Fix] cleaned up some remnant variables
+
+
+[2023-04-02] v22.17 beta (experimental). Changes:
+- [Enhancement] GUI - [SYSTEM] - MQTT tab made
+- [Enhancement] GUI - [SYSTEM] - moved shutdown response to MQTT tab.
+- [Enhancement] GUI - [SYSTEM] - HW information tab made (moved from [settings] tab
+- [Enhancement] GUI - if mqtt block is enabled, the node red dashboard title turns red.
+- [Enhancement] GUI - if defrost is enabled, the node red dashboard title turns blue.
+- [fix] minor tweaks to solar function. I need to know if there are still issues with this function. please give feedback
+- [fix] minor tweaks to mqtt block function. variable usage.
+
+
 
 ********
 
