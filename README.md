@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.17 Beta<br/> <br/>
+Current version: 22.18 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -743,6 +743,14 @@ Have fun with your heat pump!</br>
 - [fix] minor tweaks to solar function. I need to know if there are still issues with this function. please give feedback
 - [fix] minor tweaks to mqtt block function. variable usage.
 
+[2023-04-04] v22.18 beta (experimental). Changes:
+- [Enhancement] GUI - [SETTINGS] Moved menu items to a more logical place
+- [Enhancement] GUI - [Home] remaned "solar function" to "Solar energie to DHW"
+- [Enhancement] GUI - [SYSTEM] MAJOR changes</br>
+----------------------- Added "MENU CONFIG" section</br>
+----------------------- Here you have the option to enable/disable sidebar tabs</br>
+----------------------- Here you have the option to enable/disable menu sections on [Home] / [Settings] tabs</br>
+----------------------- Combined HW info and HW config</br>
 
 
 ********
