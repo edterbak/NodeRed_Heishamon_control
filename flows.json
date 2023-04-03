@@ -635,7 +635,6 @@
             "400c912774a24583",
             "f94a97e9d42084d7",
             "b8ed3bef56b272a1",
-            "89467c0f49c8ec80",
             "4a2670b477ab7f75",
             "3acac369aa9d0bae",
             "9c06f243d9fa02cd",
@@ -670,54 +669,13 @@
             "0a89bc3104c3ee9b",
             "b41f920bc63ae262",
             "32840bc8d04fbb31",
-            "61def1f2090e360a"
+            "61def1f2090e360a",
+            "17069d9228f8f72d"
         ],
         "x": 1154,
         "y": 59,
-        "w": 1692,
+        "w": 1732,
         "h": 1782
-    },
-    {
-        "id": "89467c0f49c8ec80",
-        "type": "ui_template",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "group": "fea7672db2f050c9",
-        "name": "Line - Setup 3",
-        "order": 12,
-        "width": 0,
-        "height": 0,
-        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n</html>\n",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 1280,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "fea7672db2f050c9",
-        "type": "ui_group",
-        "name": "HEAT PUMP",
-        "tab": "33ece0076bfd7cb7",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "33ece0076bfd7cb7",
-        "type": "ui_tab",
-        "name": "Settings",
-        "icon": "settings",
-        "order": 2,
-        "disabled": false,
-        "hidden": false
     },
     {
         "id": "ffa1f23278378e79",
@@ -8139,9 +8097,9 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "1eb6d525c86c4977",
-        "order": 12,
-        "width": 0,
-        "height": 0,
+        "order": 18,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "Buffer installed",
         "format": "{{msg.payload}}",
@@ -8156,9 +8114,9 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "1eb6d525c86c4977",
-        "order": 13,
-        "width": 0,
-        "height": 0,
+        "order": 19,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "DHW installed",
         "format": "{{msg.payload}}",
@@ -8173,9 +8131,9 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "1eb6d525c86c4977",
-        "order": 14,
-        "width": 0,
-        "height": 0,
+        "order": 20,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "Solar mode",
         "format": "{{msg.payload}}",
@@ -8304,9 +8262,9 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "1eb6d525c86c4977",
-        "order": 17,
-        "width": 0,
-        "height": 0,
+        "order": 23,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "Heating mode",
         "format": "{{msg.payload}}",
@@ -8380,9 +8338,9 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "1eb6d525c86c4977",
-        "order": 18,
-        "width": 0,
-        "height": 0,
+        "order": 24,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "Cooling mode",
         "format": "{{msg.payload}}",
@@ -8437,8 +8395,8 @@
         "group": "1eb6d525c86c4977",
         "name": "Line - Hardware information",
         "order": 1,
-        "width": 0,
-        "height": 0,
+        "width": 12,
+        "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Hardware information</left> \n</html>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -8574,9 +8532,9 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "1eb6d525c86c4977",
-        "order": 15,
-        "width": 0,
-        "height": 0,
+        "order": 21,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "DHW heater state",
         "format": "{{msg.payload}}",
@@ -8591,9 +8549,9 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "1eb6d525c86c4977",
-        "order": 16,
-        "width": 0,
-        "height": 0,
+        "order": 22,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "Room heater state",
         "format": "{{msg.payload}}",
@@ -8671,9 +8629,9 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "1eb6d525c86c4977",
-        "order": 7,
-        "width": 0,
-        "height": 0,
+        "order": 13,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "Operation hours",
         "format": "{{msg.payload}}",
@@ -8688,9 +8646,9 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "1eb6d525c86c4977",
-        "order": 8,
-        "width": 0,
-        "height": 0,
+        "order": 14,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "Operation counter",
         "format": "{{msg.payload}}",
@@ -8747,9 +8705,9 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "1eb6d525c86c4977",
-        "order": 9,
-        "width": 0,
-        "height": 0,
+        "order": 15,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "Backup heater hours (DHW)",
         "format": "{{msg.payload}}",
@@ -8764,9 +8722,9 @@
         "type": "ui_text",
         "z": "8c9d42231fd19d3c",
         "group": "1eb6d525c86c4977",
-        "order": 10,
-        "width": 0,
-        "height": 0,
+        "order": 16,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "Backup heater hours (HEAT)",
         "format": "{{msg.payload}}",
@@ -8782,9 +8740,9 @@
         "z": "8c9d42231fd19d3c",
         "group": "1eb6d525c86c4977",
         "name": "Line - Operation information",
-        "order": 6,
-        "width": 0,
-        "height": 0,
+        "order": 12,
+        "width": 12,
+        "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Operation information</left> \n</html>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -9099,7 +9057,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "22.17 Beta",
+        "payload": "22.18 Beta",
         "payloadType": "str",
         "x": 1330,
         "y": 1960,
@@ -9773,7 +9731,7 @@
         "tooltip": "",
         "place": "Select option",
         "group": "548e51986bce11b0",
-        "order": 9,
+        "order": 4,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -9822,7 +9780,7 @@
         "tooltip": "",
         "place": "Select option",
         "group": "548e51986bce11b0",
-        "order": 5,
+        "order": 3,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -9895,7 +9853,7 @@
         "label": "Service mode (100%)",
         "tooltip": "Set pump flow to maximum",
         "group": "fea7672db2f050c9",
-        "order": 11,
+        "order": 8,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -10383,8 +10341,8 @@
         "name": "Force DHW",
         "label": "Forceful DHW",
         "tooltip": "Forces DHW cycle (operating mode should be set first to include DHW mode (operation mode 3, 4, 5 or 6) to function)",
-        "group": "548e51986bce11b0",
-        "order": 2,
+        "group": "4e9e24cca215ad4d",
+        "order": 3,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -10420,7 +10378,7 @@
         "label": "Holiday Mode",
         "tooltip": "Off / On Holiday mode",
         "group": "548e51986bce11b0",
-        "order": 10,
+        "order": 9,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -10489,8 +10447,8 @@
         "name": "DHW (SP)",
         "label": "DHW setpoint",
         "tooltip": "",
-        "group": "26d9e6cf24507b4f",
-        "order": 9,
+        "group": "4e9e24cca215ad4d",
+        "order": 2,
         "width": 0,
         "height": 0,
         "wrap": true,
@@ -10520,7 +10478,7 @@
         "label": "Force defrost",
         "tooltip": "",
         "group": "548e51986bce11b0",
-        "order": 4,
+        "order": 5,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -10555,8 +10513,8 @@
         "name": "Force sterilization",
         "label": "Force sterilization",
         "tooltip": "Forces sterilization cycle (operating mode should be set first to include DHW mode (operation mode 3, 4, 5 or 6) to function)",
-        "group": "548e51986bce11b0",
-        "order": 3,
+        "group": "4e9e24cca215ad4d",
+        "order": 4,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -10609,8 +10567,8 @@
         "name": "Panasonic Main Scheduler",
         "label": "Panasonic main scheduler",
         "tooltip": "It is possible to use both Panasonic and NodeRed scheduler running at the same time. This is not recommended, make sure the schedules are not conflicting",
-        "group": "fea7672db2f050c9",
-        "order": 3,
+        "group": "548e51986bce11b0",
+        "order": 2,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -10645,8 +10603,8 @@
         "name": "Heater Stop delta",
         "label": "Stop delta",
         "tooltip": "Turn off backup heater again when the temperature is xx °C lower than setpoint (only J-series)",
-        "group": "26d9e6cf24507b4f",
-        "order": 3,
+        "group": "fea7672db2f050c9",
+        "order": 14,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -10675,8 +10633,8 @@
         "name": "Heater Start delta",
         "label": "Start delta",
         "tooltip": "Turn on backup heater when the temperature is xx °C lower than setpoint (only J-series)",
-        "group": "26d9e6cf24507b4f",
-        "order": 2,
+        "group": "fea7672db2f050c9",
+        "order": 13,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -10705,8 +10663,8 @@
         "name": "Heater Delay Time",
         "label": "Delay time",
         "tooltip": "In case the final water temperature is not reached within the specified delay time turn on the backup heater (only J-series)",
-        "group": "26d9e6cf24507b4f",
-        "order": 4,
+        "group": "fea7672db2f050c9",
+        "order": 15,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -10735,8 +10693,8 @@
         "name": "DHW delta",
         "label": "DHW delta",
         "tooltip": "",
-        "group": "26d9e6cf24507b4f",
-        "order": 8,
+        "group": "4e9e24cca215ad4d",
+        "order": 5,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -10766,7 +10724,7 @@
         "label": "Cool delta",
         "tooltip": "",
         "group": "26d9e6cf24507b4f",
-        "order": 7,
+        "order": 5,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -10796,7 +10754,7 @@
         "label": "Heat delta",
         "tooltip": "",
         "group": "26d9e6cf24507b4f",
-        "order": 6,
+        "order": 3,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -10876,7 +10834,7 @@
         "label": "Set active zones",
         "tooltip": "Set the active zones",
         "place": "Select option",
-        "group": "fea7672db2f050c9",
+        "group": "26d9e6cf24507b4f",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -10941,7 +10899,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "group": "fea7672db2f050c9",
-        "order": 4,
+        "order": 2,
         "width": 0,
         "height": 0,
         "name": "Current error",
@@ -11785,7 +11743,7 @@
         "label": "Minimum temp.",
         "tooltip": "",
         "group": "26d9e6cf24507b4f",
-        "order": 11,
+        "order": 7,
         "width": 0,
         "height": 0,
         "wrap": true,
@@ -11814,7 +11772,7 @@
         "label": "Maximum temp.",
         "tooltip": "",
         "group": "26d9e6cf24507b4f",
-        "order": 12,
+        "order": 8,
         "width": 0,
         "height": 0,
         "wrap": true,
@@ -12319,9 +12277,9 @@
         "type": "ui_template",
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
-        "group": "26d9e6cf24507b4f",
+        "group": "fea7672db2f050c9",
         "name": "Line - Setup ",
-        "order": 1,
+        "order": 12,
         "width": 0,
         "height": 0,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Backup heater</left> \n</html>\n",
@@ -12343,7 +12301,7 @@
         "g": "3151681b2157872c",
         "group": "26d9e6cf24507b4f",
         "name": "Line - Setup ",
-        "order": 5,
+        "order": 1,
         "width": 0,
         "height": 0,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
@@ -12367,7 +12325,7 @@
         "label": "",
         "tooltip": "",
         "group": "fea7672db2f050c9",
-        "order": 6,
+        "order": 4,
         "width": 4,
         "height": 1,
         "passthru": true,
@@ -12393,7 +12351,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "group": "fea7672db2f050c9",
-        "order": 8,
+        "order": 7,
         "width": 6,
         "height": 1,
         "name": "",
@@ -12412,7 +12370,7 @@
         "g": "3151681b2157872c",
         "name": "",
         "group": "fea7672db2f050c9",
-        "order": 7,
+        "order": 5,
         "width": 2,
         "height": 1,
         "passthru": false,
@@ -12458,9 +12416,9 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "group": "1eb6d525c86c4977",
-        "order": 2,
-        "width": 0,
-        "height": 0,
+        "order": 3,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "Model",
         "format": "{{msg.payload}}",
@@ -12477,9 +12435,9 @@
         "g": "3151681b2157872c",
         "group": "1eb6d525c86c4977",
         "name": "Line - panasonic",
-        "order": 11,
-        "width": 0,
-        "height": 0,
+        "order": 17,
+        "width": 12,
+        "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Hardware configuration</left> \n</html>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -12566,9 +12524,9 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "group": "1eb6d525c86c4977",
-        "order": 4,
-        "width": 0,
-        "height": 0,
+        "order": 9,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "Heat capacity",
         "format": "{{msg.payload}} kW",
@@ -12607,9 +12565,9 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "group": "1eb6d525c86c4977",
-        "order": 5,
-        "width": 0,
-        "height": 0,
+        "order": 11,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "Power connection",
         "format": "{{msg.payload}} Phase",
@@ -12648,9 +12606,9 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "group": "1eb6d525c86c4977",
-        "order": 3,
-        "width": 0,
-        "height": 0,
+        "order": 6,
+        "width": 12,
+        "height": 1,
         "name": "",
         "label": "Type",
         "format": "{{msg.payload}}",
@@ -12667,7 +12625,7 @@
         "g": "3151681b2157872c",
         "group": "fea7672db2f050c9",
         "name": "Line - Setup 2",
-        "order": 5,
+        "order": 3,
         "width": 0,
         "height": 0,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Water pump</left> \n</html>\n",
@@ -12689,7 +12647,7 @@
         "g": "3151681b2157872c",
         "group": "26d9e6cf24507b4f",
         "name": "Line - heat limits",
-        "order": 10,
+        "order": 6,
         "width": 0,
         "height": 0,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Heat water temperature limits</left> \n</html>\n",
@@ -13568,7 +13526,7 @@
         "label": "Low speed",
         "tooltip": "",
         "group": "fea7672db2f050c9",
-        "order": 10,
+        "order": 11,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -13596,7 +13554,7 @@
         "label": "Reduce pump speed",
         "tooltip": "Reduce pump speed when compressor is off",
         "group": "fea7672db2f050c9",
-        "order": 9,
+        "order": 10,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -15996,6 +15954,49 @@
         "wires": []
     },
     {
+        "id": "9975ddd7c9465aea",
+        "type": "ui_template",
+        "z": "8c9d42231fd19d3c",
+        "group": "4e9e24cca215ad4d",
+        "name": "Line - DHW",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 890,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "17069d9228f8f72d",
+        "type": "ui_template",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "group": "fea7672db2f050c9",
+        "name": "Line - Reduce pumpspeed function",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Reduce pumpspeed function</left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 2720,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "a938de76db0b71f6",
         "type": "tab",
         "label": "WP Control",
@@ -16087,9 +16088,7 @@
             "f41605bb413dc970"
         ],
         "x": 154,
-        "y": 1559,
-        "w": 1422,
-        "h": 1362
+        "y": 1559
     },
     {
         "id": "5a496e1f1ea93a38",
@@ -16117,9 +16116,7 @@
             "2df41704fe34f586"
         ],
         "x": 154,
-        "y": 79,
-        "w": 1132,
-        "h": 322
+        "y": 79
     },
     {
         "id": "cd2050a861736ec5",
@@ -16196,9 +16193,7 @@
             "6c685782864f1787"
         ],
         "x": 154,
-        "y": 2939,
-        "w": 1182,
-        "h": 982
+        "y": 2939
     },
     {
         "id": "94f57429e16c8e82",
@@ -16215,9 +16210,7 @@
             "5787c91b303f2538"
         ],
         "x": 1644,
-        "y": 1819,
-        "w": 502,
-        "h": 122
+        "y": 1819
     },
     {
         "id": "b37318d1b7f66e33",
@@ -16251,9 +16244,7 @@
             "e8b855966cfa18d3"
         ],
         "x": 134,
-        "y": 3939,
-        "w": 1352,
-        "h": 322
+        "y": 3939
     },
     {
         "id": "992121a08b66faa3",
@@ -16307,9 +16298,7 @@
             "103eefceda366f39"
         ],
         "x": 2348,
-        "y": 53,
-        "w": 1958,
-        "h": 968
+        "y": 53
     },
     {
         "id": "7987a450598985bb",
@@ -16338,9 +16327,7 @@
             "07bfc2f9f00870d7"
         ],
         "x": 74,
-        "y": 4439,
-        "w": 1122,
-        "h": 302
+        "y": 4439
     },
     {
         "id": "1d8b21349d38bc85",
@@ -16365,9 +16352,7 @@
             "ae97f18776a1de28"
         ],
         "x": 1234,
-        "y": 4439,
-        "w": 1132,
-        "h": 162
+        "y": 4439
     },
     {
         "id": "d2b7e1d6e85a96cf",
@@ -16470,9 +16455,7 @@
             "ab95f54af069f6b0"
         ],
         "x": 144,
-        "y": 559,
-        "w": 1912,
-        "h": 962
+        "y": 559
     },
     {
         "id": "f2aa79821dfd1110",
@@ -16492,9 +16475,7 @@
             "7122d217051222ff"
         ],
         "x": 2374,
-        "y": 79,
-        "w": 1172,
-        "h": 162
+        "y": 79
     },
     {
         "id": "2c893b32851ad2a2",
@@ -23186,9 +23167,7 @@
             "fcc8ad2c22433dd3"
         ],
         "x": 154,
-        "y": 19,
-        "w": 1292,
-        "h": 322
+        "y": 19
     },
     {
         "id": "c1355934e3f948a0",
@@ -23366,9 +23345,7 @@
             "0ac3bcf9afb0e713"
         ],
         "x": 164,
-        "y": 419,
-        "w": 1292,
-        "h": 162
+        "y": 419
     },
     {
         "id": "cb0fc587b4884ad4",
@@ -23450,9 +23427,7 @@
             "6ade9410c4a9dd70"
         ],
         "x": 174,
-        "y": 639,
-        "w": 292,
-        "h": 162
+        "y": 639
     },
     {
         "id": "2a72a0a50c226d0f",
@@ -24164,7 +24139,7 @@
         "g": "ab02dbcde88f3267",
         "group": "26d9e6cf24507b4f",
         "name": "style [Settings] HEAT | DHW",
-        "order": 6,
+        "order": 4,
         "width": 0,
         "height": 0,
         "format": "<style>\n    .popup_class{\n        padding-left:20px !important;\n        padding-right:20px !important;\n}\n</style>\n\n",
@@ -24474,7 +24449,7 @@
         "z": "43c4ee3ee4757f3c",
         "group": "70a5fe6af8ed1d29",
         "name": "style [System]",
-        "order": 7,
+        "order": 8,
         "width": 0,
         "height": 0,
         "format": "<style>\n\nmd-toolbar#toolbar{\n    background-color: {{msg.payload}} !important;\n}\n\n</style>\n\n",
@@ -24541,9 +24516,7 @@
             "898b02a132291b49"
         ],
         "x": 54,
-        "y": 1119,
-        "w": 1388,
-        "h": 602
+        "y": 1119
     },
     {
         "id": "6a01f1b80ccf3218",
@@ -24561,9 +24534,7 @@
             "2064b5a11ffc43b3"
         ],
         "x": 54,
-        "y": 39,
-        "w": 832,
-        "h": 122
+        "y": 39
     },
     {
         "id": "2b75a55bb8fb12c6",
@@ -24579,9 +24550,7 @@
             "974b24f717fe8560"
         ],
         "x": 64,
-        "y": 199,
-        "w": 872,
-        "h": 82
+        "y": 199
     },
     {
         "id": "5ffcc1056a276bf5",
@@ -24606,9 +24575,7 @@
             "e68356272f1f529b"
         ],
         "x": 54,
-        "y": 439,
-        "w": 1388,
-        "h": 622
+        "y": 439
     },
     {
         "id": "27d590581cd92df1",
@@ -24624,9 +24591,7 @@
             "2cc9fde214b13621"
         ],
         "x": 54,
-        "y": 299,
-        "w": 872,
-        "h": 82
+        "y": 299
     },
     {
         "id": "6472e1e423188a37",
@@ -24646,9 +24611,7 @@
             "3043e3c17ff68920"
         ],
         "x": 84,
-        "y": 1439,
-        "w": 1332,
-        "h": 82
+        "y": 1439
     },
     {
         "id": "3ce36bc606018d50",
@@ -24668,9 +24631,7 @@
             "61e1918ce41f34f7"
         ],
         "x": 84,
-        "y": 1339,
-        "w": 1332,
-        "h": 82
+        "y": 1339
     },
     {
         "id": "6db1485dd36081ec",
@@ -24690,9 +24651,7 @@
             "29a4cb237663e973"
         ],
         "x": 84,
-        "y": 779,
-        "w": 1332,
-        "h": 82
+        "y": 779
     },
     {
         "id": "5b9db86809583efd",
@@ -24712,9 +24671,7 @@
             "0ae4268d42429bac"
         ],
         "x": 84,
-        "y": 679,
-        "w": 1332,
-        "h": 82
+        "y": 679
     },
     {
         "id": "d734c640b789ff1e",
@@ -24734,9 +24691,7 @@
             "935535fc205e470c"
         ],
         "x": 84,
-        "y": 579,
-        "w": 1322,
-        "h": 82
+        "y": 579
     },
     {
         "id": "fc68ffd1a284a6bd",
@@ -24756,9 +24711,7 @@
             "868b4c6128111bb6"
         ],
         "x": 84,
-        "y": 1239,
-        "w": 1332,
-        "h": 82
+        "y": 1239
     },
     {
         "id": "d44f1a1993a8a44f",
@@ -24778,9 +24731,7 @@
             "2ee679408e4ccc6f"
         ],
         "x": 1134,
-        "y": 919,
-        "w": 272,
-        "h": 82
+        "y": 919
     },
     {
         "id": "e598f3cca51f28d1",
@@ -24800,9 +24751,7 @@
             "4eaa2cfa2749c551"
         ],
         "x": 1134,
-        "y": 1579,
-        "w": 272,
-        "h": 82
+        "y": 1579
     },
     {
         "id": "6a7fa8b57f2d9800",
@@ -26123,9 +26072,7 @@
             "88ea0371f9cecd37"
         ],
         "x": 74,
-        "y": 19,
-        "w": 1292,
-        "h": 728
+        "y": 19
     },
     {
         "id": "81ff790f84afd46d",
@@ -26167,9 +26114,7 @@
             "37844e2456e64427"
         ],
         "x": 14,
-        "y": 1693,
-        "w": 1372,
-        "h": 1048
+        "y": 1693
     },
     {
         "id": "6f4cdc97add442ff",
@@ -26190,9 +26135,7 @@
             "58f4dcb609fc506a"
         ],
         "x": 94,
-        "y": 2979,
-        "w": 902,
-        "h": 202
+        "y": 2979
     },
     {
         "id": "3b5324e3d80d96a1",
@@ -26225,9 +26168,7 @@
             "375bbd780529afe0"
         ],
         "x": 74,
-        "y": 779,
-        "w": 1332,
-        "h": 688
+        "y": 779
     },
     {
         "id": "2efa0af27c69d4d0",
@@ -26248,9 +26189,7 @@
             "40abfbbe563b32ac"
         ],
         "x": 114,
-        "y": 551.5,
-        "w": 812,
-        "h": 169.5
+        "y": 551.5
     },
     {
         "id": "9fca714df21ffac0",
@@ -26267,9 +26206,7 @@
             "5256af8b7309c113"
         ],
         "x": 314,
-        "y": 399,
-        "w": 232,
-        "h": 82
+        "y": 399
     },
     {
         "id": "b85d6aca6a841215",
@@ -26286,9 +26223,7 @@
             "3ddc8ec4b5d75af2"
         ],
         "x": 274,
-        "y": 1119,
-        "w": 232,
-        "h": 82
+        "y": 1119
     },
     {
         "id": "233708268636f815",
@@ -26312,9 +26247,7 @@
             "441d5424780d9523"
         ],
         "x": 154,
-        "y": 1279,
-        "w": 612,
-        "h": 162
+        "y": 1279
     },
     {
         "id": "37844e2456e64427",
@@ -26352,9 +26285,7 @@
             "d2d71d4e69ee31d7"
         ],
         "x": 214,
-        "y": 1719,
-        "w": 872,
-        "h": 762
+        "y": 1719
     },
     {
         "id": "ce2634259bc8d6eb",
@@ -26562,7 +26493,7 @@
         "z": "966985d68ebb4990",
         "g": "37844e2456e64427",
         "name": "state",
-        "label": "Solar",
+        "label": "Function: Solar energie to DHW",
         "tooltip": "",
         "group": "b7f22c282fde0f86",
         "order": 5,
@@ -27299,11 +27230,11 @@
         "width": 5,
         "height": 1,
         "name": "",
-        "label": "Solar",
+        "label": "Solar energie to DHW",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 730,
+        "x": 780,
         "y": 1780,
         "wires": []
     },
@@ -31008,9 +30939,7 @@
             "1372ccca982b4f0a"
         ],
         "x": 714,
-        "y": 99,
-        "w": 2152,
-        "h": 159.5
+        "y": 99
     },
     {
         "id": "b63004182c33d3b9",
@@ -31056,9 +30985,7 @@
             "4dc5f57b14acd886"
         ],
         "x": 2334,
-        "y": 1979,
-        "w": 1432,
-        "h": 482
+        "y": 1979
     },
     {
         "id": "ca71e284391bbf84",
@@ -31125,9 +31052,7 @@
             "479965c26a5f5d15"
         ],
         "x": 714,
-        "y": 261.5,
-        "w": 2152,
-        "h": 157
+        "y": 261.5
     },
     {
         "id": "77ef78074c745b33",
@@ -31154,9 +31079,7 @@
             "57520972cf8f3282"
         ],
         "x": 714,
-        "y": 421.5,
-        "w": 2152,
-        "h": 157
+        "y": 421.5
     },
     {
         "id": "0f18bd088c4ce661",
@@ -31183,9 +31106,7 @@
             "73e5b776ee37e929"
         ],
         "x": 714,
-        "y": 581.5,
-        "w": 2152,
-        "h": 157
+        "y": 581.5
     },
     {
         "id": "49e35dcf3adf972f",
@@ -31212,9 +31133,7 @@
             "fd75ca33fe4a9589"
         ],
         "x": 714,
-        "y": 741.5,
-        "w": 2152,
-        "h": 157
+        "y": 741.5
     },
     {
         "id": "131bb514acb6c38f",
@@ -31241,9 +31160,7 @@
             "4470d0d9384e5146"
         ],
         "x": 714,
-        "y": 901.5,
-        "w": 2152,
-        "h": 157
+        "y": 901.5
     },
     {
         "id": "13c1334900bc3740",
@@ -31270,9 +31187,7 @@
             "0a155882d5693fda"
         ],
         "x": 714,
-        "y": 1061.5,
-        "w": 2152,
-        "h": 157
+        "y": 1061.5
     },
     {
         "id": "a4db9b20ef5bc75c",
@@ -31299,9 +31214,7 @@
             "fe24caf7cb4e92d3"
         ],
         "x": 714,
-        "y": 1221.5,
-        "w": 2152,
-        "h": 157
+        "y": 1221.5
     },
     {
         "id": "4b0ab44dfd6f65c3",
@@ -31328,9 +31241,7 @@
             "611bf69e3ab85546"
         ],
         "x": 714,
-        "y": 1381.5,
-        "w": 2152,
-        "h": 157
+        "y": 1381.5
     },
     {
         "id": "4f450eb680618622",
@@ -31357,9 +31268,7 @@
             "a477e5b86fe9c792"
         ],
         "x": 714,
-        "y": 1541.5,
-        "w": 2172,
-        "h": 157
+        "y": 1541.5
     },
     {
         "id": "92293ba8ccc5db0f",
@@ -31397,9 +31306,7 @@
             "9c13f29571c31128"
         ],
         "x": 74,
-        "y": 2519,
-        "w": 1392,
-        "h": 322
+        "y": 2519
     },
     {
         "id": "40f0401e20235a07",
@@ -43976,12 +43883,13 @@
             "d285cb89e06e89bb",
             "0f0ace5816c4fe0a",
             "77ca9cb2599e736f",
-            "9c9a39333c2213e6",
-            "ac3bca13eeddd505"
+            "ac3bca13eeddd505",
+            "c5ae638b1b65bff4",
+            "0a3d6a8e946cfcb2"
         ],
         "x": 824,
         "y": 159,
-        "w": 272,
+        "w": 262,
         "h": 282
     },
     {
@@ -44151,9 +44059,9 @@
         "id": "726819233aa921e5",
         "type": "comment",
         "z": "3aa03811830ef29e",
-        "name": "HW CONFIGURATION",
+        "name": "MENU CONFIG",
         "info": "",
-        "x": 920,
+        "x": 900,
         "y": 60,
         "wires": []
     },
@@ -44185,7 +44093,7 @@
         "z": "3aa03811830ef29e",
         "name": "",
         "group": "70a5fe6af8ed1d29",
-        "order": 2,
+        "order": 5,
         "width": 4,
         "height": 1,
         "passthru": false,
@@ -44195,7 +44103,7 @@
         "bgcolor": "",
         "className": "",
         "icon": "favorite",
-        "payload": "{\"group\":{\"show\":[\"SYSTEM_SYSTEM_HEALTH\"],\"hide\":[\"SYSTEM_LOG\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_ABOUT\",\"SYSTEM_MQTT\"]}}",
+        "payload": "{\"group\":{\"show\":[\"SYSTEM_SYSTEM_HEALTH\"],\"hide\":[\"SYSTEM_LOG\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_MENU\",\"SYSTEM_ABOUT\",\"SYSTEM_MQTT\"]}}",
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
@@ -44216,7 +44124,8 @@
             "ad0975065f9323c6",
             "bc563b90430840aa",
             "5837cbf37ef47ea6",
-            "62a0909d9f5a43c0"
+            "62a0909d9f5a43c0",
+            "ad7996a6a3e6085b"
         ],
         "x": 55,
         "y": 20,
@@ -44272,7 +44181,7 @@
         "bgcolor": "",
         "className": "",
         "icon": "history",
-        "payload": "{\"group\":{\"show\":[\"SYSTEM_LOG\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_ABOUT\",\"SYSTEM_MQTT\"]}}",
+        "payload": "{\"group\":{\"show\":[\"SYSTEM_LOG\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_MENU\",\"SYSTEM_ABOUT\",\"SYSTEM_MQTT\"]}}",
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
@@ -44290,21 +44199,21 @@
         "z": "3aa03811830ef29e",
         "name": "",
         "group": "70a5fe6af8ed1d29",
-        "order": 3,
+        "order": 2,
         "width": 4,
         "height": 1,
         "passthru": false,
-        "label": "HW INFORMATION",
+        "label": "HARDWARE",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
         "className": "",
-        "icon": "info",
-        "payload": "{\"group\":{\"show\":[\"SYSTEM_HW_INFORMATION\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_ABOUT\",\"SYSTEM_LOG\",\"SYSTEM_MQTT\"]}}",
+        "icon": "settings",
+        "payload": "{\"group\":{\"show\":[\"SYSTEM_HW_INFORMATION\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_MENU\",\"SYSTEM_ABOUT\",\"SYSTEM_LOG\",\"SYSTEM_MQTT\"]}}",
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 640,
+        "x": 610,
         "y": 200,
         "wires": [
             [
@@ -44328,7 +44237,7 @@
         "bgcolor": "",
         "className": "",
         "icon": "help",
-        "payload": "{\"group\":{\"show\":[\"SYSTEM_ABOUT\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_LOG\",\"SYSTEM_MQTT\"]}}",
+        "payload": "{\"group\":{\"show\":[\"SYSTEM_ABOUT\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_MENU\",\"SYSTEM_LOG\",\"SYSTEM_MQTT\"]}}",
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
@@ -44346,7 +44255,7 @@
         "z": "3aa03811830ef29e",
         "group": "70a5fe6af8ed1d29",
         "name": "Line - Setup ",
-        "order": 8,
+        "order": 7,
         "width": 0,
         "height": 0,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
@@ -45005,8 +44914,8 @@
         "z": "3aa03811830ef29e",
         "name": "To be added on later",
         "info": "",
-        "x": 410,
-        "y": 460,
+        "x": 630,
+        "y": 280,
         "wires": []
     },
     {
@@ -45014,8 +44923,8 @@
         "type": "ui_text",
         "z": "3aa03811830ef29e",
         "g": "c361a153997d2dfd",
-        "group": "4a119e18236415e9",
-        "order": 1,
+        "group": "1eb6d525c86c4977",
+        "order": 4,
         "width": 6,
         "height": 1,
         "name": "HW CONFIGARATION",
@@ -45038,21 +44947,22 @@
         "width": 4,
         "height": 1,
         "passthru": false,
-        "label": "HW CONFIGURATION",
+        "label": "MENU CONFIG",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
         "className": "",
-        "icon": "settings",
-        "payload": "{\"group\":{\"show\":[\"SYSTEM_HW_CONFIGURATION\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_ABOUT\",\"SYSTEM_LOG\",\"SYSTEM_MQTT\"]}}",
+        "icon": "menu",
+        "payload": "{\"group\":{\"show\":[\"SYSTEM_MENU\"],\"hide\":[\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_ABOUT\",\"SYSTEM_LOG\",\"SYSTEM_MQTT\"]}}",
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 960,
+        "x": 930,
         "y": 200,
         "wires": [
             [
-                "ad0975065f9323c6"
+                "ad0975065f9323c6",
+                "c5ae638b1b65bff4"
             ]
         ]
     },
@@ -45061,8 +44971,8 @@
         "type": "ui_text",
         "z": "3aa03811830ef29e",
         "g": "c361a153997d2dfd",
-        "group": "4a119e18236415e9",
-        "order": 3,
+        "group": "1eb6d525c86c4977",
+        "order": 8,
         "width": 6,
         "height": 1,
         "name": "Temperature sensors",
@@ -45072,17 +44982,6 @@
         "className": "",
         "x": 950,
         "y": 360,
-        "wires": []
-    },
-    {
-        "id": "9c9a39333c2213e6",
-        "type": "comment",
-        "z": "3aa03811830ef29e",
-        "g": "c361a153997d2dfd",
-        "name": "Test only",
-        "info": "",
-        "x": 930,
-        "y": 260,
         "wires": []
     },
     {
@@ -45991,7 +45890,7 @@
         "z": "3aa03811830ef29e",
         "name": "",
         "group": "70a5fe6af8ed1d29",
-        "order": 5,
+        "order": 3,
         "width": 4,
         "height": 1,
         "passthru": false,
@@ -46001,7 +45900,7 @@
         "bgcolor": "",
         "className": "",
         "icon": "wifi",
-        "payload": "{\"group\":{\"show\":[\"SYSTEM_MQTT\"],\"hide\":[\"SYSTEM_ABOUT\",\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_HW_CONFIGURATION\",\"SYSTEM_LOG\"]}}",
+        "payload": "{\"group\":{\"show\":[\"SYSTEM_MQTT\"],\"hide\":[\"SYSTEM_ABOUT\",\"SYSTEM_SYSTEM_HEALTH\",\"SYSTEM_HW_INFORMATION\",\"SYSTEM_MENU\",\"SYSTEM_LOG\"]}}",
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
@@ -46295,29 +46194,6 @@
         "x": 1800,
         "y": 940,
         "wires": []
-    },
-    {
-        "id": "32bf55a3478adbca",
-        "type": "switch",
-        "z": "3aa03811830ef29e",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1030,
-        "y": 520,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "4ebf2601353294cb",
@@ -46704,8 +46580,8 @@
         "type": "ui_text",
         "z": "3aa03811830ef29e",
         "g": "c361a153997d2dfd",
-        "group": "4a119e18236415e9",
-        "order": 2,
+        "group": "1eb6d525c86c4977",
+        "order": 7,
         "width": 6,
         "height": 1,
         "name": "Work In Progress",
@@ -46716,6 +46592,600 @@
         "x": 950,
         "y": 400,
         "wires": []
+    },
+    {
+        "id": "4dfd92d952236e82",
+        "type": "ui_template",
+        "z": "3aa03811830ef29e",
+        "group": "4a119e18236415e9",
+        "name": "Line - DASHBOARD CONFIGURATION",
+        "order": 1,
+        "width": 24,
+        "height": 1,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left><b>DASHBOARD CONFIGURATION</b></left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1000,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e4a4fc20462d5562",
+        "type": "ui_form",
+        "z": "3aa03811830ef29e",
+        "name": "group - Home",
+        "label": "Home",
+        "group": "4a119e18236415e9",
+        "order": 8,
+        "width": 4,
+        "height": 1,
+        "options": [
+            {
+                "label": "HEAT",
+                "value": "Home_HEAT",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "DHW",
+                "value": "Home_DHW",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "COOL",
+                "value": "Home_COOL",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "Home_HEAT": false,
+            "Home_DHW": false,
+            "Home_COOL": false
+        },
+        "payload": "",
+        "submit": "Set",
+        "cancel": "cancel",
+        "topic": "group",
+        "topicType": "str",
+        "splitLayout": false,
+        "className": "",
+        "x": 900,
+        "y": 660,
+        "wires": [
+            [
+                "b7a1e39d48d6b353"
+            ]
+        ]
+    },
+    {
+        "id": "e35b7df78bc6f722",
+        "type": "ui_form",
+        "z": "3aa03811830ef29e",
+        "name": "tabs",
+        "label": "",
+        "group": "4a119e18236415e9",
+        "order": 7,
+        "width": 4,
+        "height": 1,
+        "options": [
+            {
+                "label": "SETTINGS",
+                "value": "SETTINGS",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "WAR",
+                "value": "WAR",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "RTC",
+                "value": "RTC",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "COOL",
+                "value": "COOL",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "SOFTSTART",
+                "value": "SOFTSTART",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "SOLAR",
+                "value": "SOLAR",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "SCHEDULER",
+                "value": "SCHEDULER",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "TEMPERATURE",
+                "value": "TEMPERATURE",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "ENERGY",
+                "value": "ENERGY",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "DEGREE DAYS",
+                "value": "Degree_days",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "SETTINGS": false,
+            "WAR": false,
+            "RTC": false,
+            "COOL": false,
+            "SOFTSTART": false,
+            "SOLAR": false,
+            "SCHEDULER": false,
+            "TEMPERATURE": false,
+            "ENERGY": false,
+            "Degree_days": false
+        },
+        "payload": "",
+        "submit": "Set",
+        "cancel": "cancel",
+        "topic": "tabs",
+        "topicType": "str",
+        "splitLayout": false,
+        "className": "",
+        "x": 870,
+        "y": 620,
+        "wires": [
+            [
+                "b7a1e39d48d6b353"
+            ]
+        ]
+    },
+    {
+        "id": "5a44b5cc5e9f4844",
+        "type": "function",
+        "z": "3aa03811830ef29e",
+        "name": "Store settings",
+        "func": "var GUI = global.get('GUI',\"file\");\n\nif (GUI === undefined) {GUI={};}\n\n//////////////////////\n// SET variable GUI //\n//////////////////////\nif (msg.topic != \"trigger\"){\n    global.set('GUI.' + msg.topic,msg,\"file\");\n}\n\n\n\n\n//////////////////////\n// Trigger command  // \n//////////////////////\nif (msg.topic==\"trigger\")   {\n\n    var object = GUI;\ndelete object._msgid;\n\nfor (var property in object) {\nnode.send([null,object[property]]);\n}\n}\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 980,
+        "wires": [
+            [
+                "76dca09b425ef4cb"
+            ],
+            [
+                "e35b7df78bc6f722",
+                "e4a4fc20462d5562",
+                "7fa1754db79c4869"
+            ]
+        ]
+    },
+    {
+        "id": "d76a9ebe40a0dfbe",
+        "type": "ui_template",
+        "z": "3aa03811830ef29e",
+        "group": "1eb6d525c86c4977",
+        "name": "Line - Hardware configuration",
+        "order": 2,
+        "width": 12,
+        "height": 1,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Hardware configuration</left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 670,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e6dd0cd84e528398",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "group": "1eb6d525c86c4977",
+        "order": 10,
+        "width": 12,
+        "height": 15,
+        "name": "spacer abc",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 610,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "8576379c0665d73d",
+        "type": "ui_template",
+        "z": "3aa03811830ef29e",
+        "group": "4a119e18236415e9",
+        "name": "Line - Main Tabs",
+        "order": 5,
+        "width": 4,
+        "height": 1,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left><b>Main Tabs</b></left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 920,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5d3d8ab2e8e22c40",
+        "type": "ui_template",
+        "z": "3aa03811830ef29e",
+        "group": "4a119e18236415e9",
+        "name": "Line - Tab content",
+        "order": 6,
+        "width": 20,
+        "height": 1,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left><b>Tab content</b></left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 970,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ad7996a6a3e6085b",
+        "type": "link out",
+        "z": "3aa03811830ef29e",
+        "name": "link out 42",
+        "mode": "link",
+        "links": [
+            "dbcf60ce513ff3ae"
+        ],
+        "x": 1175,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "f9a8a11ad37a32a3",
+        "type": "function",
+        "z": "3aa03811830ef29e",
+        "name": "split",
+        "func": "\n\nif (msg.payload===true){\n    msg.state=\"show\";\n}\n\nif (msg.payload===false){\n    msg.state=\"hide\";\n}\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 920,
+        "wires": [
+            [
+                "c7f9b5c422ad6f87"
+            ]
+        ]
+    },
+    {
+        "id": "76dca09b425ef4cb",
+        "type": "split",
+        "z": "3aa03811830ef29e",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": "1",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "topic",
+        "x": 830,
+        "y": 920,
+        "wires": [
+            [
+                "f9a8a11ad37a32a3"
+            ]
+        ]
+    },
+    {
+        "id": "c7f9b5c422ad6f87",
+        "type": "template",
+        "z": "3aa03811830ef29e",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"{{type}}\": {\n        \"{{state}}\": [\n            \"{{topic}}\"\n        ]\n    }\n}\n",
+        "output": "json",
+        "x": 1080,
+        "y": 920,
+        "wires": [
+            [
+                "ad7996a6a3e6085b"
+            ]
+        ]
+    },
+    {
+        "id": "3d5dc66749eac00f",
+        "type": "link in",
+        "z": "3aa03811830ef29e",
+        "name": "GUI_dashboard_trigger",
+        "links": [
+            "c5ae638b1b65bff4"
+        ],
+        "x": 795,
+        "y": 980,
+        "wires": [
+            [
+                "ffd0c1d0d38be2d5"
+            ]
+        ]
+    },
+    {
+        "id": "ffd0c1d0d38be2d5",
+        "type": "function",
+        "z": "3aa03811830ef29e",
+        "name": "function 19",
+        "func": "let msg1={};\nmsg1.topic = \"trigger\";\n\nreturn msg1;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 980,
+        "wires": [
+            [
+                "5a44b5cc5e9f4844"
+            ]
+        ]
+    },
+    {
+        "id": "b7a1e39d48d6b353",
+        "type": "function",
+        "z": "3aa03811830ef29e",
+        "name": "function 20",
+        "func": "msg.type=msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 620,
+        "wires": [
+            [
+                "e35b7df78bc6f722",
+                "e4a4fc20462d5562",
+                "76dca09b425ef4cb",
+                "5a44b5cc5e9f4844",
+                "7fa1754db79c4869"
+            ]
+        ]
+    },
+    {
+        "id": "c5ae638b1b65bff4",
+        "type": "link out",
+        "z": "3aa03811830ef29e",
+        "g": "c361a153997d2dfd",
+        "name": "link out 43",
+        "mode": "link",
+        "links": [
+            "3d5dc66749eac00f"
+        ],
+        "x": 1025,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "0a3d6a8e946cfcb2",
+        "type": "ui_button",
+        "z": "3aa03811830ef29e",
+        "g": "c361a153997d2dfd",
+        "name": "",
+        "group": "4a119e18236415e9",
+        "order": 3,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "trigger",
+        "topicType": "str",
+        "x": 920,
+        "y": 260,
+        "wires": [
+            [
+                "c5ae638b1b65bff4"
+            ]
+        ]
+    },
+    {
+        "id": "4ef6053b1b3d6301",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "group": "4a119e18236415e9",
+        "order": 2,
+        "width": 1,
+        "height": 1,
+        "name": "spacer 11",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 980,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "f94c19d1e7ac24d2",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "group": "4a119e18236415e9",
+        "order": 4,
+        "width": 21,
+        "height": 1,
+        "name": "spacer 12",
+        "label": "Refresh, adjust and SET your preference.",
+        "format": "",
+        "layout": "row-spread",
+        "className": "",
+        "x": 980,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "7fa1754db79c4869",
+        "type": "ui_form",
+        "z": "3aa03811830ef29e",
+        "name": "group - Settings",
+        "label": "Settings",
+        "group": "4a119e18236415e9",
+        "order": 9,
+        "width": 4,
+        "height": 1,
+        "options": [
+            {
+                "label": "HEAT PUMP",
+                "value": "Settings_HEAT_PUMP",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "HEAT",
+                "value": "Settings_HEAT",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "OPERATION",
+                "value": "Settings_OPERATION",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "DHW",
+                "value": "Settings_DHW",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "Settings_HEAT_PUMP": false,
+            "Settings_HEAT": false,
+            "Settings_OPERATION": false,
+            "Settings_DHW": false
+        },
+        "payload": "",
+        "submit": "Set",
+        "cancel": "cancel",
+        "topic": "group2",
+        "topicType": "str",
+        "splitLayout": false,
+        "className": "",
+        "x": 900,
+        "y": 700,
+        "wires": [
+            [
+                "b7a1e39d48d6b353"
+            ]
+        ]
+    },
+    {
+        "id": "4994bd3ae8b59720",
+        "type": "ui_text",
+        "z": "3aa03811830ef29e",
+        "group": "4a119e18236415e9",
+        "order": 10,
+        "width": 12,
+        "height": 1,
+        "name": "spacer 13",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 980,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "07fc27d302581ae5",
+        "type": "inject",
+        "z": "3aa03811830ef29e",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "3",
+        "topic": "trigger",
+        "x": 860,
+        "y": 1020,
+        "wires": [
+            [
+                "5a44b5cc5e9f4844"
+            ]
+        ]
     },
     {
         "id": "d5fea67661261002",
@@ -48277,8 +48747,8 @@
         "label": "Test 1-wire",
         "tooltip": "Select which temperature sensor the flow must use",
         "place": "",
-        "group": "4a119e18236415e9",
-        "order": 4,
+        "group": "1eb6d525c86c4977",
+        "order": 5,
         "width": 6,
         "height": 1,
         "passthru": true,
@@ -49181,7 +49651,7 @@
         "type": "ui_group",
         "name": "HEAT",
         "tab": "a5be8588.b8fbc8",
-        "order": 4,
+        "order": 2,
         "disp": true,
         "width": "6",
         "collapse": false,
@@ -49366,7 +49836,7 @@
         "type": "ui_group",
         "name": "HW INFORMATION",
         "tab": "593cfab8493b6bad",
-        "order": 4,
+        "order": 3,
         "disp": true,
         "width": "24",
         "collapse": false,
@@ -49377,7 +49847,7 @@
         "type": "ui_group",
         "name": "OPERATION",
         "tab": "33ece0076bfd7cb7",
-        "order": 3,
+        "order": 2,
         "disp": true,
         "width": "6",
         "collapse": false,
@@ -49406,11 +49876,33 @@
         "className": ""
     },
     {
+        "id": "fea7672db2f050c9",
+        "type": "ui_group",
+        "name": "HEAT PUMP",
+        "tab": "33ece0076bfd7cb7",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4e9e24cca215ad4d",
+        "type": "ui_group",
+        "name": "DHW",
+        "tab": "33ece0076bfd7cb7",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "26d9e6cf24507b4f",
         "type": "ui_group",
-        "name": "HEAT | DHW",
+        "name": "HEAT",
         "tab": "33ece0076bfd7cb7",
-        "order": 2,
+        "order": 3,
         "disp": true,
         "width": "6",
         "collapse": false,
@@ -49443,7 +49935,7 @@
         "type": "ui_group",
         "name": "COOL",
         "tab": "a5be8588.b8fbc8",
-        "order": 5,
+        "order": 4,
         "disp": true,
         "width": "6",
         "collapse": false,
@@ -49586,7 +50078,7 @@
         "type": "ui_group",
         "name": "SYSTEM HEALTH",
         "tab": "593cfab8493b6bad",
-        "order": 3,
+        "order": 6,
         "disp": false,
         "width": "24",
         "collapse": false,
@@ -49600,17 +50092,6 @@
         "order": 1,
         "disp": false,
         "width": "12",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "4a119e18236415e9",
-        "type": "ui_group",
-        "name": "HW CONFIGURATION",
-        "tab": "593cfab8493b6bad",
-        "order": 5,
-        "disp": true,
-        "width": "24",
         "collapse": false,
         "className": ""
     },
@@ -49630,7 +50111,18 @@
         "type": "ui_group",
         "name": "MQTT",
         "tab": "593cfab8493b6bad",
-        "order": 6,
+        "order": 4,
+        "disp": false,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4a119e18236415e9",
+        "type": "ui_group",
+        "name": "MENU",
+        "tab": "593cfab8493b6bad",
+        "order": 5,
         "disp": false,
         "width": "24",
         "collapse": false,
@@ -49696,6 +50188,15 @@
         "name": "SYSTEM",
         "icon": "dashboard",
         "order": 14,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "33ece0076bfd7cb7",
+        "type": "ui_tab",
+        "name": "Settings",
+        "icon": "settings",
+        "order": 2,
         "disabled": false,
         "hidden": false
     },
