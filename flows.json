@@ -30939,7 +30939,9 @@
             "1372ccca982b4f0a"
         ],
         "x": 714,
-        "y": 99
+        "y": 99,
+        "w": 2152,
+        "h": 159.5
     },
     {
         "id": "b63004182c33d3b9",
@@ -30985,7 +30987,9 @@
             "4dc5f57b14acd886"
         ],
         "x": 2334,
-        "y": 1979
+        "y": 1979,
+        "w": 1432,
+        "h": 482
     },
     {
         "id": "ca71e284391bbf84",
@@ -31052,7 +31056,9 @@
             "479965c26a5f5d15"
         ],
         "x": 714,
-        "y": 261.5
+        "y": 261.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "77ef78074c745b33",
@@ -31079,7 +31085,9 @@
             "57520972cf8f3282"
         ],
         "x": 714,
-        "y": 421.5
+        "y": 421.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "0f18bd088c4ce661",
@@ -31106,7 +31114,9 @@
             "73e5b776ee37e929"
         ],
         "x": 714,
-        "y": 581.5
+        "y": 581.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "49e35dcf3adf972f",
@@ -31133,7 +31143,9 @@
             "fd75ca33fe4a9589"
         ],
         "x": 714,
-        "y": 741.5
+        "y": 741.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "131bb514acb6c38f",
@@ -31160,7 +31172,9 @@
             "4470d0d9384e5146"
         ],
         "x": 714,
-        "y": 901.5
+        "y": 901.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "13c1334900bc3740",
@@ -31187,7 +31201,9 @@
             "0a155882d5693fda"
         ],
         "x": 714,
-        "y": 1061.5
+        "y": 1061.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "a4db9b20ef5bc75c",
@@ -31214,7 +31230,9 @@
             "fe24caf7cb4e92d3"
         ],
         "x": 714,
-        "y": 1221.5
+        "y": 1221.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "4b0ab44dfd6f65c3",
@@ -31241,7 +31259,9 @@
             "611bf69e3ab85546"
         ],
         "x": 714,
-        "y": 1381.5
+        "y": 1381.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "4f450eb680618622",
@@ -31268,7 +31288,9 @@
             "a477e5b86fe9c792"
         ],
         "x": 714,
-        "y": 1541.5
+        "y": 1541.5,
+        "w": 2172,
+        "h": 157
     },
     {
         "id": "92293ba8ccc5db0f",
@@ -31306,7 +31328,9 @@
             "9c13f29571c31128"
         ],
         "x": 74,
-        "y": 2519
+        "y": 2519,
+        "w": 1392,
+        "h": 322
     },
     {
         "id": "40f0401e20235a07",
@@ -46781,7 +46805,7 @@
         "type": "function",
         "z": "3aa03811830ef29e",
         "name": "Store settings",
-        "func": "var GUI = global.get('GUI',\"file\");\n\nif (GUI === undefined) {GUI={};}\n\n//////////////////////\n// SET variable GUI //\n//////////////////////\nif (msg.topic != \"trigger\"){\n    global.set('GUI.' + msg.topic,msg,\"file\");\n}\n\n\n\n\n//////////////////////\n// Trigger command  // \n//////////////////////\nif (msg.topic==\"trigger\")   {\n\n    var object = GUI;\ndelete object._msgid;\n\nfor (var property in object) {\nnode.send([null,object[property]]);\n}\n}\n",
+        "func": "var GUI = global.get('GUI',\"file\");\n\nif (GUI === undefined) {GUI={};}\n\n//////////////////////\n// SET variable GUI //\n//////////////////////\nif (msg.topic != \"trigger\"){\n    global.set('GUI.' + msg.topic,msg,\"file\");\n}\n\n\n\n\n//////////////////////\n// Trigger command  // \n//////////////////////\nif (msg.topic==\"trigger\")   {\n    if (GUI===undefined) {return null;}\n    var object = GUI;\n    delete object._msgid;\n    \n    for (var property in object) {\n    node.send([null,object[property]]);\n    }\n}\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -46796,8 +46820,13 @@
             [
                 "e35b7df78bc6f722",
                 "e4a4fc20462d5562",
-                "7fa1754db79c4869"
+                "7fa1754db79c4869",
+                "76dca09b425ef4cb"
             ]
+        ],
+        "outputLabels": [
+            "set",
+            "trigger"
         ]
     },
     {
@@ -46898,7 +46927,7 @@
         "type": "function",
         "z": "3aa03811830ef29e",
         "name": "split",
-        "func": "\n\nif (msg.payload===true){\n    msg.state=\"show\";\n}\n\nif (msg.payload===false){\n    msg.state=\"hide\";\n}\nreturn msg",
+        "func": "\n\nif (msg.payload===true){\n    msg.state=\"show\";\n}\n\nif (msg.payload===false){\n    msg.state=\"hide\";\n}\n\nif (msg.type.includes(\"group\")) {msg.type=\"group\";}\n\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
