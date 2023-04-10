@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.18 Beta<br/> <br/>
+Current version: 22.19 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -751,6 +751,16 @@ Have fun with your heat pump!</br>
 ----------------------- Here you have the option to enable/disable sidebar tabs</br>
 ----------------------- Here you have the option to enable/disable menu sections on [Home] / [Settings] tabs</br>
 ----------------------- Combined HW info and HW config</br>
+
+[2023-04-10] v22.19 beta (experimental). Changes:
+- [Fix] - Changed Solar function logic. Hopefully less issues. (needs feedback)
+- [New feature] Scheduler now allows you to set setpoint for: 
+----------------------- Water (HEAT + pump Direct mode)
+----------------------- Shift (HEAT + pump Compensation curve mode)
+----------------------- Room temperature (for use in RTC function)
+- [Enhancement] The COOL function has a modified function to calculate dew-point. Thanks to blb4!
+- [rework] - Added manager for Operating mode + Heat SP
+- [Fix] - Lot of changes and work done to allow pump in Compensation Curve operation. Needs testing and feedback from you all.
 
 
 ********
