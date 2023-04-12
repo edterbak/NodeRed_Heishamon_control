@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.19 Beta<br/> <br/>
+Current version: 22.20 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -761,6 +761,9 @@ Have fun with your heat pump!</br>
 - [Enhancement] The COOL function has a modified function to calculate dew-point. Thanks to blb4!
 - [rework] - Added manager for Operating mode + Heat SP
 - [Fix] - Lot of changes and work done to allow pump in Compensation Curve operation. Needs testing and feedback from you all.
+
+[2023-04-10] v22.20 beta (experimental). Changes:
+- [Fix] - Solar function. case power off and allow power on toggie is off added with logging. Improved GUI name of toggle.
 
 
 ********
