@@ -766,7 +766,7 @@ Have fun with your heat pump!</br>
 - [Fix] - Solar function. case power off and allow power on toggie is off added with logging. Improved GUI name of toggle.
 
 [2023-04-19] v22.21 beta (experimental). Changes:
-- [Fix] - Solar function. Improved function. Should work robust now.
+- [Fix] - Solar function. Improved function. Should work robust now. Added cooling down period after completion of a solar-dhw run.
 - [Enhancement] - Moved reduce pumpspeed to a separate tab. 
 - [Enhancement] - Reduce pumpspeed rewritten and added option to set 3 speeds (low, dhw and heat) 
 
