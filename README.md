@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.20 Beta<br/> <br/>
+Current version: 22.21 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -764,6 +764,11 @@ Have fun with your heat pump!</br>
 
 [2023-04-10] v22.20 beta (experimental). Changes:
 - [Fix] - Solar function. case power off and allow power on toggie is off added with logging. Improved GUI name of toggle.
+
+[2023-04-19] v22.21 beta (experimental). Changes:
+- [Fix] - Solar function. Improved function. Should work robust now.
+- [Enhancement] - Moved reduce pumpspeed to a separate tab. 
+- [Enhancement] - Reduce pumpspeed rewritten and added option to set 3 speeds (low, dhw and heat) 
 
 
 ********
