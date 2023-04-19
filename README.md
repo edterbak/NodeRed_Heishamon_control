@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.21 Beta<br/> <br/>
+Current version: 22.22 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -770,6 +770,12 @@ Have fun with your heat pump!</br>
 - [Enhancement] - Moved reduce pumpspeed to a separate tab. 
 - [Enhancement] - Reduce pumpspeed rewritten and added option to set 3 speeds (low, dhw and heat) 
 
+[2023-04-19] v22.22 beta (experimental). Changes:
+- [Fix] - RTC function. When sterelization run active, do not allow rtc function to act. 
+- [Enhancement] - Solar function status better visible on homepage with status behind it when it is running or done.
+- [Enhancement] - Spumpspeed function. Added dynamic y-axis for the chart based on the highest setting.
+- [Fix] - On home screen, the water "Outlet setpoint" was incorrect during dhw run. 
+- [Fix] - empty popup after changing the DHW setpoint in some scenarios.
 
 ********
 
