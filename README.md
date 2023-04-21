@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.22 Beta<br/> <br/>
+Current version: 22.23 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -776,6 +776,14 @@ Have fun with your heat pump!</br>
 - [Enhancement] - Spumpspeed function. Added dynamic y-axis for the chart based on the highest setting.
 - [Fix] - On home screen, the water "Outlet setpoint" was incorrect during dhw run. 
 - [Fix] - empty popup after changing the DHW setpoint in some scenarios.
+
+
+[2023-04-21] v22.23 beta (experimental). Changes:
+- [Changed] - RTC function. Automations section. After installing this update, you need to set the correct activate/deactivate temperatures again. These will be removed intentionally. 
+- [Enhancement] - Solar chart. The Power result graph now has automated Y axis. 
+- [Improvement] - Changed some stored variable names (F_RTC.xxxx)
+- [Enhancement] - System - MQTT settings now also shows IP adress of heishamon.
+
 
 ********
 
