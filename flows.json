@@ -8998,7 +8998,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "22.24 Beta",
+        "payload": "22.25 Beta",
         "payloadType": "str",
         "x": 1330,
         "y": 1920,
@@ -15939,7 +15939,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Filter",
-        "func": "var last_value      = context.get('last_value');\nvar last_msgid      = context.get('last_msgid');\nvar current_value   = global.get('F_ReducePumpSpeed.PumpMaxFlowSetting',\"file\");\n\n\nif (last_value === undefined || last_msgid === undefined){\n    context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n    return null;\n}\n\nif (last_msgid == msg._msgid){\n    return null;\n}\n\nif (msg.payload != current_value || msg.payload != last_value){\n    context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n    return msg;\n}\nreturn msg;",
+        "func": "var last_value      = context.get('last_value');\nvar last_msgid      = context.get('last_msgid');\nvar current_value   = global.get('F_ReducePumpSpeed.PumpMaxFlowSetting',\"file\");\n\n\nif (last_value === undefined || last_msgid === undefined){\n    context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n    return null;\n}\n\nif (last_msgid == msg._msgid){\n    return null;\n}\n\nif (msg.payload != current_value || msg.payload != last_value){\n    context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n    return msg;\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -24189,9 +24189,7 @@
             "fcc8ad2c22433dd3"
         ],
         "x": 154,
-        "y": 19,
-        "w": 1292,
-        "h": 322
+        "y": 19
     },
     {
         "id": "c1355934e3f948a0",
@@ -24372,9 +24370,7 @@
             "6f29a5e5626945ea"
         ],
         "x": 164,
-        "y": 419,
-        "w": 1292,
-        "h": 162
+        "y": 419
     },
     {
         "id": "cb0fc587b4884ad4",
@@ -24469,9 +24465,7 @@
             "6ade9410c4a9dd70"
         ],
         "x": 1894,
-        "y": 59,
-        "w": 292,
-        "h": 162
+        "y": 59
     },
     {
         "id": "d9eb0a2937cbbc7b",
@@ -24504,9 +24498,7 @@
             "f8be68a01d84e361"
         ],
         "x": 164,
-        "y": 679,
-        "w": 1282,
-        "h": 202
+        "y": 679
     },
     {
         "id": "d0bf8193719ce87c",
@@ -24611,9 +24603,7 @@
             "78cd6de319a6d061"
         ],
         "x": 1534,
-        "y": 879,
-        "w": 1252,
-        "h": 182
+        "y": 879
     },
     {
         "id": "8f85827475badab6",
@@ -24657,9 +24647,7 @@
             "4e0983c85e28594c"
         ],
         "x": 174,
-        "y": 1059,
-        "w": 1462,
-        "h": 242
+        "y": 1059
     },
     {
         "id": "e0d26a8145db4f6d",
@@ -28396,9 +28384,7 @@
             "88ea0371f9cecd37"
         ],
         "x": 74,
-        "y": 19,
-        "w": 1292,
-        "h": 728
+        "y": 19
     },
     {
         "id": "81ff790f84afd46d",
@@ -28414,9 +28400,7 @@
             "bd6e0b75ff712b33"
         ],
         "x": 8,
-        "y": 1713,
-        "w": 1398,
-        "h": 1094
+        "y": 1713
     },
     {
         "id": "6f4cdc97add442ff",
@@ -28448,9 +28432,7 @@
             "0edffe2f6a90c7de"
         ],
         "x": 114,
-        "y": 2819,
-        "w": 902,
-        "h": 202
+        "y": 2819
     },
     {
         "id": "b16b9aa8172d25f5",
@@ -28535,9 +28517,7 @@
             "375bbd780529afe0"
         ],
         "x": 74,
-        "y": 779,
-        "w": 1332,
-        "h": 688
+        "y": 779
     },
     {
         "id": "2efa0af27c69d4d0",
@@ -28558,9 +28538,7 @@
             "40abfbbe563b32ac"
         ],
         "x": 114,
-        "y": 551.5,
-        "w": 812,
-        "h": 169.5
+        "y": 551.5
     },
     {
         "id": "9fca714df21ffac0",
@@ -28577,9 +28555,7 @@
             "5256af8b7309c113"
         ],
         "x": 314,
-        "y": 399,
-        "w": 232,
-        "h": 82
+        "y": 399
     },
     {
         "id": "b85d6aca6a841215",
@@ -28596,9 +28572,7 @@
             "3ddc8ec4b5d75af2"
         ],
         "x": 274,
-        "y": 1119,
-        "w": 232,
-        "h": 82
+        "y": 1119
     },
     {
         "id": "233708268636f815",
@@ -28622,9 +28596,7 @@
             "441d5424780d9523"
         ],
         "x": 154,
-        "y": 1279,
-        "w": 612,
-        "h": 162
+        "y": 1279
     },
     {
         "id": "bd6e0b75ff712b33",
@@ -28694,9 +28666,7 @@
             "d8210b71067cf6b6"
         ],
         "x": 34,
-        "y": 1739,
-        "w": 1192,
-        "h": 1042
+        "y": 1739
     },
     {
         "id": "ce2634259bc8d6eb",
