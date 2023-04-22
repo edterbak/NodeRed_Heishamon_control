@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.24 Beta<br/> <br/>
+Current version: 22.25 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -788,6 +788,9 @@ Have fun with your heat pump!</br>
 [2023-04-22] v22.24 beta (experimental). Changes:
 - [Fix] - During sterilization run, the incorrect temperature of the setpoint was shown on dashboard. 
 - [Fix] - small improvement related to pumpspeed function.
+
+[2023-04-22] v22.25 beta (experimental). Changes:
+- [Fix] - If you have installed v22.24, please update as soon as possible. 1 dumb error caused mqtt commands to be sent every 10 seconds.
 
 ********
 
