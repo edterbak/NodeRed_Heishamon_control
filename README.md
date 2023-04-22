@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.23 Beta<br/> <br/>
+Current version: 22.24 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -784,6 +784,10 @@ Have fun with your heat pump!</br>
 - [Improvement] - Changed some stored variable names (F_RTC.xxxx)
 - [Enhancement] - System - MQTT settings now also shows IP adress of heishamon.
 
+
+[2023-04-22] v22.24 beta (experimental). Changes:
+- [Fix] - During sterilization run, the incorrect temperature of the setpoint was shown on dashboard. 
+- [Fix] - small improvement related to pumpspeed function.
 
 ********
 
