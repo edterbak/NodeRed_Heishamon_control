@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.25 Beta<br/> <br/>
+Current version: 22.26 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -792,6 +792,12 @@ Have fun with your heat pump!</br>
 [2023-04-22] v22.25 beta (experimental). Changes:
 - [Fix] - If you have installed v22.24, please update as soon as possible. 1 dumb error caused mqtt commands to be sent every 10 seconds.
 
+[2023-05-02] v22.26 beta (experimental). Changes:
+- [Fix] - Solar chart not being populated.
+- [Enhancement] - Dashboard on multiple devices are now in sync. Menu configuration is instant over all devices. 
+- [Enhancement] - Added a note to the Hardware Information section to clarify stuff when the model says 'unknown'. 
+
+	
 ********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/acknowledgments.png" width="500">
