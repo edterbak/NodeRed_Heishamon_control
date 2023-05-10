@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.27 Beta<br/> <br/>
+Current version: 22.28 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -798,11 +798,16 @@ Have fun with your heat pump!</br>
 - [Enhancement] - Added a note to the Hardware Information section to clarify stuff when the model says 'unknown'. 
 
 [2023-05-08] v22.27 beta (experimental). Changes:
-- [Fix] - 95% fix memory leak 
+- [Fix] - 95% fix memory leak (seems 100% after couple of days)
 - [Fix] - Operating mode change not done in some cases. (incorrect filter usage) Needs to be checked further in other areas.
 - [Enhancement] - Removed the repeated triggers and replaced them with a link in from UI-Control node. Only refresh when needed. 
 
-	
+[2023-05-10] v22.28 beta (experimental). Changes:
+- [Fix] - RTC function, the automation for OperatingMode had a hard time staying active... fixed it.
+- [Enhancement] - Start DHW-run below XX C (SETTINGS tab). This triggers Forcefull DHW run (by scheduler)
+- [Fix] - Solar function did not revert operating mode/SP in some scenarios.  https://github.com/edterbak/NodeRed_Heishamon_control/issues/110
+- [Fix] - Sterilization routine always reverts back to Operating Mode heat only. Now it is reverting the original OM befor the run. https://github.com/edterbak/NodeRed_Heishamon_control/issues/108
+
 	
 ********
 
