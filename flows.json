@@ -2279,7 +2279,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "name": "Load on boot RTC",
-        "func": "var F_RTC       = global.get('F_RTC',\"file\");\nvar save        = false;\nvar WoonkamerSP = global.get('WoonkamerSP',\"file\");\n\n////////////////////////////////////\nif (F_RTC===undefined){\n    global.set('F_RTC',{},\"file\"); \n    F_RTC = {};\n}\n////////////////////////////////////\nif (F_RTC.state === undefined) {\n    F_RTC.state = 0;                    save = true;\n}\nif (F_RTC.rtc_t1_limit === undefined) {                                   // Range +3\n    F_RTC.rtc_t1_limit = 1.5;           save = true;\n}\nif (F_RTC.rtc_t2_limit === undefined) {                                   // Range +2\n    F_RTC.rtc_t2_limit = 1;             save = true;\n}\nif (F_RTC.rtc_t3_limit === undefined) {                                   // Range +1\n    F_RTC.rtc_t3_limit = 0.5;           save = true;\n}\nif (F_RTC.rtc_t4_limit === undefined) {                                   // Range -1\n    F_RTC.rtc_t4_limit = -0.5;          save = true;\n}\nif (F_RTC.rtc_t5_limit === undefined) {                                   // Range -2\n    F_RTC.rtc_t5_limit = -1;            save = true;\n}\nif (F_RTC.rtc_t6_limit === undefined) {                                   // Range -3\n    F_RTC.rtc_t6_limit = -1.5;          save = true;\n}\nif (F_RTC.rtc_t7_correction_value === undefined) {                        // correction 5\n    F_RTC.rtc_t7_correction_value = 4;  save = true;\n}\nif (F_RTC.rtc_t7_limit === undefined) {                                   // Range -x\n    F_RTC.rtc_t7_limit = -2;            save = true;\n}\nif (F_RTC.on_limit === undefined) {\n    F_RTC.on_limit = 3;                 save = true;\n}\nif (F_RTC.off_limit === undefined) {\n    F_RTC.off_limit = 1;                save = true;\n}\nif (F_RTC.F1_F2_active === undefined) {\n    F_RTC.F1_F2_active = 0;             save = true;\n}\nif (F_RTC.F1_power_state === undefined) {\n    F_RTC.F1_power_state = 0;           save = true;\n}\nif (F_RTC.F2_OM_state === undefined) {\n    F_RTC.F2_OM_state = 0;              save = true;\n}\nif (F_RTC.incremental_setpoints_state === undefined) {\n    F_RTC.incremental_setpoints_state = 0;save = true;\n}\n\nif (save === true) {global.set('F_RTC',F_RTC,\"file\");}\n\n////////////////////////////////////////////////////////////////////////////////\n\n\nlet msg1 = {}, msg2 = {}, msg3 = {}, msg4 = {}, msg5 = {}, msg6 = {}, msg7 = {}, msg8 = {}, msg9 = {}, msg10 = {}, msg11 = {}, msg12 = {}, msg13 = {}, msg14 = {}, msg15 = {}; //msg14 = F_RTC.incremental_setpoints_state\n\nmsg1.payload = F_RTC.state;\nmsg2.payload = WoonkamerSP;\nmsg3.payload = F_RTC.rtc_t1_limit;\nmsg4.payload = F_RTC.rtc_t2_limit;\nmsg5.payload = F_RTC.rtc_t3_limit;\nmsg6.payload = F_RTC.rtc_t4_limit;\nmsg7.payload = F_RTC.rtc_t5_limit;\nmsg8.payload = F_RTC.rtc_t6_limit;\nmsg9.payload = F_RTC.rtc_t7_limit; // custom\nmsg10.payload = F_RTC.off_limit;\nmsg11.payload = F_RTC.on_limit;\nmsg12.payload = F_RTC.F1_power_state;\nmsg13.payload = F_RTC.rtc_t7_correction_value;\nmsg14.payload = F_RTC.incremental_setpoints_state; msg14.custom = F_RTC.rtc_t7_correction_value;\nmsg15.payload = F_RTC.F1_F2_active;\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10, msg11, msg12, msg13, msg14, msg15];\n",
+        "func": "var F_RTC       = global.get('F_RTC',\"file\");\nvar save        = false;\nvar WoonkamerSP = global.get('WoonkamerSP',\"file\");\n\n////////////////////////////////////\nif (F_RTC===undefined){\n    global.set('F_RTC',{},\"file\"); \n    F_RTC = {};\n}\n////////////////////////////////////\nif (F_RTC.state === undefined) {\n    F_RTC.state = 0;                    save = true;\n}\nif (F_RTC.rtc_t1_limit === undefined) {                                   // Range +3\n    F_RTC.rtc_t1_limit = 1.5;           save = true;\n}\nif (F_RTC.rtc_t2_limit === undefined) {                                   // Range +2\n    F_RTC.rtc_t2_limit = 1;             save = true;\n}\nif (F_RTC.rtc_t3_limit === undefined) {                                   // Range +1\n    F_RTC.rtc_t3_limit = 0.5;           save = true;\n}\nif (F_RTC.rtc_t4_limit === undefined) {                                   // Range -1\n    F_RTC.rtc_t4_limit = -0.5;          save = true;\n}\nif (F_RTC.rtc_t5_limit === undefined) {                                   // Range -2\n    F_RTC.rtc_t5_limit = -1;            save = true;\n}\nif (F_RTC.rtc_t6_limit === undefined) {                                   // Range -3\n    F_RTC.rtc_t6_limit = -1.5;          save = true;\n}\nif (F_RTC.rtc_t7_correction_value === undefined) {                        // correction 5\n    F_RTC.rtc_t7_correction_value = 4;  save = true;\n}\nif (F_RTC.rtc_t7_limit === undefined) {                                   // Range -x\n    F_RTC.rtc_t7_limit = -2;            save = true;\n}\nif (F_RTC.on_limit === undefined) {\n    F_RTC.on_limit = 3;                 save = true;\n}\nif (F_RTC.off_limit === undefined) {\n    F_RTC.off_limit = 1;                save = true;\n}\nif (F_RTC.F1_power_state === undefined) {\n    F_RTC.F1_power_state = 0;           save = true;\n}\nif (F_RTC.F2_OM_state === undefined) {\n    F_RTC.F2_OM_state = 0;              save = true;\n}\nif (F_RTC.incremental_setpoints_state === undefined) {\n    F_RTC.incremental_setpoints_state = 0;save = true;\n}\n\nif (save === true) {global.set('F_RTC',F_RTC,\"file\");}\n\n////////////////////////////////////////////////////////////////////////////////\n\n\nlet msg1 = {}, msg2 = {}, msg3 = {}, msg4 = {}, msg5 = {}, msg6 = {}, msg7 = {}, msg8 = {}, msg9 = {}, msg10 = {}, msg11 = {}, msg12 = {}, msg13 = {}, msg14 = {}, msg15 = {}; //msg14 = F_RTC.incremental_setpoints_state\n\nmsg1.payload = F_RTC.state;\nmsg2.payload = WoonkamerSP;\nmsg3.payload = F_RTC.rtc_t1_limit;\nmsg4.payload = F_RTC.rtc_t2_limit;\nmsg5.payload = F_RTC.rtc_t3_limit;\nmsg6.payload = F_RTC.rtc_t4_limit;\nmsg7.payload = F_RTC.rtc_t5_limit;\nmsg8.payload = F_RTC.rtc_t6_limit;\nmsg9.payload = F_RTC.rtc_t7_limit; // custom\nmsg10.payload = F_RTC.off_limit;\nmsg11.payload = F_RTC.on_limit;\nmsg12.payload = F_RTC.F1_power_state;\nmsg13.payload = F_RTC.rtc_t7_correction_value;\nmsg14.payload = F_RTC.incremental_setpoints_state; msg14.custom = F_RTC.rtc_t7_correction_value;\nmsg15.payload = F_RTC.F2_OM_state;\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7, msg8, msg9, msg10, msg11, msg12, msg13, msg14, msg15];\n",
         "outputs": 15,
         "noerr": 0,
         "initialize": "",
@@ -6507,8 +6507,8 @@
         "offcolor": "",
         "animate": true,
         "className": "",
-        "x": 3620,
-        "y": 1520,
+        "x": 3220,
+        "y": 1500,
         "wires": [
             [
                 "d407159ae6560fd6"
@@ -7094,7 +7094,8 @@
             "f0b20c8165a68430",
             "4a4a891dece731a1",
             "5d8b7981975b516e",
-            "dc99be6d3a53311d"
+            "dc99be6d3a53311d",
+            "c8b5382d8d981e31"
         ],
         "x": 1370,
         "y": 2020,
@@ -8876,7 +8877,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "22.27 Beta",
+        "payload": "22.28 Beta",
         "payloadType": "str",
         "x": 1330,
         "y": 1920,
@@ -9383,8 +9384,8 @@
         "offcolor": "",
         "animate": true,
         "className": "",
-        "x": 3600,
-        "y": 1480,
+        "x": 3360,
+        "y": 1140,
         "wires": [
             [
                 "64773410c77751fa"
@@ -10283,8 +10284,8 @@
             "4f62466c41bb3667",
             "8ed91c4260d9b758"
         ],
-        "x": 1605,
-        "y": 1080,
+        "x": 1335,
+        "y": 960,
         "wires": [
             [
                 "ccb9e79ff06190fa"
@@ -10336,7 +10337,7 @@
         "label": "Stop delta",
         "tooltip": "Turn off backup heater again when the temperature is xx °C lower than setpoint (only J-series)",
         "group": "fea7672db2f050c9",
-        "order": 14,
+        "order": 11,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -10366,7 +10367,7 @@
         "label": "Start delta",
         "tooltip": "Turn on backup heater when the temperature is xx °C lower than setpoint (only J-series)",
         "group": "fea7672db2f050c9",
-        "order": 13,
+        "order": 10,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -10396,7 +10397,7 @@
         "label": "Delay time",
         "tooltip": "In case the final water temperature is not reached within the specified delay time turn on the backup heater (only J-series)",
         "group": "fea7672db2f050c9",
-        "order": 15,
+        "order": 12,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -11972,7 +11973,7 @@
         "g": "3151681b2157872c",
         "group": "fea7672db2f050c9",
         "name": "Line - Setup ",
-        "order": 12,
+        "order": 9,
         "width": 0,
         "height": 0,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Backup heater</left> \n</html>\n",
@@ -16610,6 +16611,25 @@
         "h": 162
     },
     {
+        "id": "f7bdc92c0ed8e3b9",
+        "type": "group",
+        "z": "a938de76db0b71f6",
+        "name": "DHW Tank temperature logic",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "64021d928c59c5cd",
+            "017e95185010581b",
+            "f651bed25831c6f4",
+            "c8b5382d8d981e31"
+        ],
+        "x": 2534,
+        "y": 1619,
+        "w": 492,
+        "h": 122
+    },
+    {
         "id": "2c893b32851ad2a2",
         "type": "mqtt in",
         "z": "a938de76db0b71f6",
@@ -17392,7 +17412,8 @@
             "4cfdc172228a42bb",
             "5eef2d3a1816ae18",
             "992b1344cc8fd4eb",
-            "c6997c53221fb9a0"
+            "c6997c53221fb9a0",
+            "64021d928c59c5cd"
         ],
         "x": 1495,
         "y": 2360,
@@ -24071,6 +24092,79 @@
         "wires": []
     },
     {
+        "id": "64021d928c59c5cd",
+        "type": "link in",
+        "z": "a938de76db0b71f6",
+        "g": "f7bdc92c0ed8e3b9",
+        "name": "DHW temp",
+        "links": [
+            "d54ac3b979428b64"
+        ],
+        "x": 2620,
+        "y": 1680,
+        "wires": [
+            [
+                "017e95185010581b"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "017e95185010581b",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "f7bdc92c0ed8e3b9",
+        "name": "function 25",
+        "func": "if (msg.payload <= global.get('DHW_threshold_lower',\"file\") && global.get('Force_DHW_active',\"file\") == 0 && global.get('F_SOLAR.function_active_state',\"file\") == 0) {\n    \n    global.set('Force_DHW_active',1,\"file\");\n    \n    let msg1={};\n    let msg99={};\n    \n    msg1.payload = 1;\n    msg1.topic = \"DHW\";                     \n    \n    msg99.topic = 'DHW';\n    msg99.payload = 'DHW temperature: ' + msg.payload + '°C. Lower threshold: ' + global.get('DHW_threshold_lower',\"file\") + '°C. Starting DHW run.'\n    \n    return [msg1,msg99];\n}",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2810,
+        "y": 1680,
+        "wires": [
+            [
+                "f651bed25831c6f4"
+            ],
+            [
+                "c8b5382d8d981e31"
+            ]
+        ],
+        "outputLabels": [
+            "To scheduler",
+            "To log"
+        ]
+    },
+    {
+        "id": "f651bed25831c6f4",
+        "type": "link out",
+        "z": "a938de76db0b71f6",
+        "g": "f7bdc92c0ed8e3b9",
+        "name": "link out 54",
+        "mode": "link",
+        "links": [
+            "8c9808071334d371"
+        ],
+        "x": 2985,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "c8b5382d8d981e31",
+        "type": "link out",
+        "z": "a938de76db0b71f6",
+        "g": "f7bdc92c0ed8e3b9",
+        "name": "link out 55",
+        "mode": "link",
+        "links": [
+            "031e62b0bf3df7d7"
+        ],
+        "x": 2985,
+        "y": 1700,
+        "wires": []
+    },
+    {
         "id": "43c4ee3ee4757f3c",
         "type": "tab",
         "label": "WP Managers",
@@ -26794,7 +26888,9 @@
             "898b02a132291b49"
         ],
         "x": 54,
-        "y": 1119
+        "y": 1119,
+        "w": 1388,
+        "h": 602
     },
     {
         "id": "6a01f1b80ccf3218",
@@ -26812,7 +26908,9 @@
             "2064b5a11ffc43b3"
         ],
         "x": 54,
-        "y": 39
+        "y": 39,
+        "w": 832,
+        "h": 122
     },
     {
         "id": "2b75a55bb8fb12c6",
@@ -26828,7 +26926,9 @@
             "974b24f717fe8560"
         ],
         "x": 64,
-        "y": 199
+        "y": 199,
+        "w": 872,
+        "h": 82
     },
     {
         "id": "5ffcc1056a276bf5",
@@ -26853,7 +26953,9 @@
             "e68356272f1f529b"
         ],
         "x": 54,
-        "y": 439
+        "y": 439,
+        "w": 1388,
+        "h": 622
     },
     {
         "id": "27d590581cd92df1",
@@ -26869,7 +26971,9 @@
             "2cc9fde214b13621"
         ],
         "x": 54,
-        "y": 299
+        "y": 299,
+        "w": 872,
+        "h": 82
     },
     {
         "id": "6472e1e423188a37",
@@ -26889,7 +26993,9 @@
             "3043e3c17ff68920"
         ],
         "x": 84,
-        "y": 1439
+        "y": 1439,
+        "w": 1332,
+        "h": 82
     },
     {
         "id": "3ce36bc606018d50",
@@ -26909,7 +27015,9 @@
             "61e1918ce41f34f7"
         ],
         "x": 84,
-        "y": 1339
+        "y": 1339,
+        "w": 1332,
+        "h": 82
     },
     {
         "id": "6db1485dd36081ec",
@@ -26929,7 +27037,9 @@
             "29a4cb237663e973"
         ],
         "x": 84,
-        "y": 779
+        "y": 779,
+        "w": 1332,
+        "h": 82
     },
     {
         "id": "5b9db86809583efd",
@@ -26949,7 +27059,9 @@
             "0ae4268d42429bac"
         ],
         "x": 84,
-        "y": 679
+        "y": 679,
+        "w": 1332,
+        "h": 82
     },
     {
         "id": "d734c640b789ff1e",
@@ -26969,7 +27081,9 @@
             "935535fc205e470c"
         ],
         "x": 84,
-        "y": 579
+        "y": 579,
+        "w": 1322,
+        "h": 82
     },
     {
         "id": "fc68ffd1a284a6bd",
@@ -26989,7 +27103,9 @@
             "868b4c6128111bb6"
         ],
         "x": 84,
-        "y": 1239
+        "y": 1239,
+        "w": 1332,
+        "h": 82
     },
     {
         "id": "d44f1a1993a8a44f",
@@ -27009,7 +27125,9 @@
             "2ee679408e4ccc6f"
         ],
         "x": 1134,
-        "y": 919
+        "y": 919,
+        "w": 272,
+        "h": 82
     },
     {
         "id": "e598f3cca51f28d1",
@@ -27029,7 +27147,9 @@
             "4eaa2cfa2749c551"
         ],
         "x": 1134,
-        "y": 1579
+        "y": 1579,
+        "w": 272,
+        "h": 82
     },
     {
         "id": "6a7fa8b57f2d9800",
@@ -28369,7 +28489,7 @@
         ],
         "x": 8,
         "y": 1713,
-        "w": 1398,
+        "w": 1308,
         "h": 1094
     },
     {
@@ -28487,8 +28607,7 @@
             "0b2d388baee905a4",
             "63bcc91caacdcf55",
             "a9994ef2e592aee1",
-            "375bbd780529afe0",
-            "55c4dad8b4298407"
+            "375bbd780529afe0"
         ],
         "x": 74,
         "y": 779,
@@ -29499,8 +29618,7 @@
         "y": 860,
         "wires": [
             [
-                "375bbd780529afe0",
-                "55c4dad8b4298407"
+                "375bbd780529afe0"
             ]
         ],
         "l": true
@@ -29664,14 +29782,14 @@
         "id": "b463820910564b36",
         "type": "function",
         "z": "966985d68ebb4990",
-        "name": "global.set(\"F_SOLAR.function_active_state\",msg.payload,\"file\");",
-        "func": "global.set(\"F_SOLAR.function_active_state\",msg.payload,\"file\");\n",
+        "name": "F_stored_next_operating_mode",
+        "func": "global.set(\"F_stored_next_operating_mode\",msg.payload,\"file\");\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1390,
+        "x": 1290,
         "y": 3080,
         "wires": [
             []
@@ -29792,15 +29910,14 @@
         "id": "8e16d1ef3e972c95",
         "type": "link out",
         "z": "966985d68ebb4990",
-        "d": true,
         "g": "81ff790f84afd46d",
         "name": "",
         "mode": "link",
         "links": [
             "031e62b0bf3df7d7"
         ],
-        "x": 1365,
-        "y": 1920,
+        "x": 1275,
+        "y": 1880,
         "wires": []
     },
     {
@@ -31554,7 +31671,7 @@
         "z": "966985d68ebb4990",
         "g": "6f4cdc97add442ff",
         "name": "kWh triggers",
-        "func": "var MQTT = global.get('MQTT',\"file\");\n    if (MQTT.block_active == 0 || (MQTT.block_active == 1 && MQTT.block_mode == 2 && MQTT.allow_solar == 1)){\n    \n    var F_SOLAR = global.get('F_SOLAR',\"file\");\n        if (F_SOLAR === undefined) {return null;}\n        \n    if (F_SOLAR.state == 1)\n    {\n        var TOP4_Operating_Mode_State       = global.get('TOP4_Operating_Mode_State',\"file\");\n        var new_Operating_Mode_State;       // just create a variable, empty.\n        var old_Operating_Mode_State;       // just create a variable, empty.\n        var DHW_Current_SP                  = global.get('TOP9_DHW_Target_Temp',\"file\");\n        var TOP0_Heatpump_State             = global.get('TOP0_Heatpump_State',\"file\");\n        var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n        let msg1={};                                                                // pin 1 - output to DHW setpoint\n            msg1.topic = 'Solar function';                                          // This topic is required to alow the managers.\n        let msg2={};                                                                // pin 2 - output to Operation Mode\n        let msg3={};                                                                // pin 3 - output to turn on power to heatpump.\n        let msg99={};                                                               // pin 4 - output to log\n            msg99.topic = \"Function Solar\";\n        //  return [msg1,msg2,msg3,msg99]\n        \n        // Check if all required states are available.\n        if (F_SOLAR.detection_method === undefined || F_SOLAR.threshold === undefined || F_SOLAR.fallback === undefined || F_SOLAR.dhw_sp_high === undefined || TOP4_Operating_Mode_State === undefined || F_SOLAR.power_override === undefined || TOP0_Heatpump_State === undefined)\n            {\n                msg99.payload = \"ERROR: Not all settings in 'Function Solar' are programmed in GUI yet.\";\n                return [null,null,null,msg99];                                       // log output\n            }\n        else    {\n            //              msg.topic = \"W\";            < > nul\n            //              msg.topic = 'GRID power production kWh';\n            //              msg.topic = 'GRID power consumption kWh';\n            //              msg.topic = '(+) Import (-) Export';\n            \n            //Threshold\n            //  kW\n            //  kWh_prod\n            //  kWh_result\n            //\n            // getting rid of all messages which are not related to the selected detection method.\n            //\n            if (F_SOLAR.detection_method == \"kW\"          && msg.topic != 'W' )         {return null;}\n            if (F_SOLAR.detection_method == \"kWh_prod\"    && msg.topic != 'Export')     {return null;}\n            if (F_SOLAR.detection_method == \"kWh_result\"  && msg.topic != 'Result')     {return null;}\n            if (msg.payload == 0)                                                       {return null;}\n            \n            //  convert the W signal to kW so that the value (threshold) are similar.\n            if (F_SOLAR.detection_method == \"kW\")                                     {msg.payload = msg.payload / 1000;}\n\n\n\n\n                    // ACTIONS WHEN THE SOLAR FUNCTION IS TRIGGERED FOR START-UP.\n                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n                    //  Note: (F_SOLAR.threshold > (msg.payload) >>> msg.payload is negative number if energy production is high.\n                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n                    //\n                    if (F_SOLAR.threshold > (msg.payload) && F_SOLAR.function_active_state == 0)   {\n                            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                            \n                            new_Operating_Mode_State = 3; old_Operating_Mode_State = TOP4_Operating_Mode_State;\n                            /*        \n                            if (TOP4_Operating_Mode_State == 0){new_Operating_Mode_State = 4; old_Operating_Mode_State = TOP4_Operating_Mode_State} // add DHW modus\n                            if (TOP4_Operating_Mode_State == 1){new_Operating_Mode_State = 5; old_Operating_Mode_State = TOP4_Operating_Mode_State} // add DHW modus\n                            if (TOP4_Operating_Mode_State == 2){new_Operating_Mode_State = 6; old_Operating_Mode_State = TOP4_Operating_Mode_State} // add DHW modus\n                            if (TOP4_Operating_Mode_State == 7){new_Operating_Mode_State = 8; old_Operating_Mode_State = TOP4_Operating_Mode_State} // add DHW modus\n                            if (TOP4_Operating_Mode_State == 3){new_Operating_Mode_State = 3;} // prevent undefined new_Operating_Mode_State\n                            if (TOP4_Operating_Mode_State == 4){new_Operating_Mode_State = 4;} // prevent undefined new_Operating_Mode_State\n                            if (TOP4_Operating_Mode_State == 5){new_Operating_Mode_State = 5;} // prevent undefined new_Operating_Mode_State\n                            if (TOP4_Operating_Mode_State == 6){new_Operating_Mode_State = 6;} // prevent undefined new_Operating_Mode_State\n                            if (TOP4_Operating_Mode_State == 8){new_Operating_Mode_State = 8;} // prevent undefined new_Operating_Mode_State\n                            */\n                            var tag;    // declare variable for tag in log line.\n                            if (F_SOLAR.detection_method == \"kW\")         {tag = 'kW';}\n                            if (F_SOLAR.detection_method == \"kWh_prod\")   {tag = \"Today's export (kWh)\";}         \n                            if (F_SOLAR.detection_method == \"kWh_result\") {tag = \"kWh todays result\";}  \n                            \n                            if (TOP0_Heatpump_State == 0 && F_SOLAR.power_override == 0)    {   \n                                msg99.payload = \"Solar threshold reached but no action fired! (Heat pump is off, 'Allow switch on heat pump' is disabled.)\";\n                                return([null,null,null,msg99]);\n                            }\n                            \n                            if (F_stored_next_operating_mode === undefined && old_Operating_Mode_State !== undefined)   {\n                                    global.set('F_stored_next_operating_mode',old_Operating_Mode_State,\"file\");\n                            }\n                            \n                            // msg3///////////////////////////////////////////////////////////////////////////////////////////////////////\n                            // Turn on heatpump in case it is off\n                            if (TOP0_Heatpump_State == 0 && F_SOLAR.power_override == 1)    {   \n                                msg99.payload = \"Turn on Heatpump\";\n                                msg3.payload = 1; msg3.source = \"flow\";                                           // send 1 to turn on the heatpump\n                                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"Solar\"); }\n                                node.send([null,null,msg3,null])\n                            }\n                            \n                            \n                            \n                            // msg1///////////////////////////////////////////////////////////////////////////////////////////////////////\n                            // Set DHW setpoint to high\n                            if (DHW_Current_SP != F_SOLAR.dhw_sp_high){\n                                msg1.payload = F_SOLAR.dhw_sp_high;\n                                msg99.payload = \"triggered threshold (\" + tag + \"). DHW SP to \" + F_SOLAR.dhw_sp_high;\n                                node.send([msg1, null, null, msg99]);\n                            }\n                            \n                            // msg2///////////////////////////////////////////////////////////////////////////////////////////////////////\n                            // Set Operation Mode\n                            if (new_Operating_Mode_State != old_Operating_Mode_State && old_Operating_Mode_State !== undefined)   {\n                                msg2.payload = new_Operating_Mode_State;\n                                msg99.payload = \"Operation mode changed from \" + old_Operating_Mode_State + \" to \" + new_Operating_Mode_State;\n                                node.send([null, msg2, null, msg99]);\n                            }\n                            \n                            if (F_SOLAR.function_active_state != 1){\n                            global.set(\"F_SOLAR.function_active_state\",1,\"file\");\n                            if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"Solar\"); }\n                            return null;}\n                    }\n                    \n                    \n                    \n                    \n                    // ACTIONS WHEN THE SOLAR FUNCTION IS TRIGGERED FOR ENDING.\n                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n                    //\n                    if (msg.payload > 0 && F_SOLAR.detection_method == \"kW\" && DHW_Current_SP == F_SOLAR.dhw_sp_high && F_SOLAR.fallback == 1 && F_SOLAR.function_active_state == 1){\n                            if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"Solar\"); }\n                            msg1.payload = F_SOLAR.dhw_sp_low;\n                            msg99.payload = \"triggered threshold (\" + tag + \"). Above 0kWh threshold. DHW SP to \" + F_SOLAR.dhw_sp_low;\n                            global.set(\"F_SOLAR.function_active_state\",0,\"file\");\n                            node.send([msg1,null,null,msg99]);\n                            return null;\n                    }\n\n                        //TOP9_DHW_Target_Temp\n                        // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                    \n                    var TOP10_DHW_Temp                  = global.get('TOP10_DHW_Temp');\n                    var TOP20_ThreeWay_Valve_State      = global.get('TOP20_ThreeWay_Valve_State');       // threewayvalvue 1 = DHW, 0 = HEAT\n\n                    if (TOP10_DHW_Temp >= F_SOLAR.dhw_sp_high && F_SOLAR.function_active_state == 1)  {\n                        /////////////////////////// \n                        \n                        msg99.payload = \"DHW temperature has reached SP high\";\n                        node.send([null,null,null,msg99])    \n                        \n                        const myTimeout = setTimeout(f_rollbackaction, F_SOLAR.delay_after_completion*60*1000);                 // <<<<<<<<<<<<<<<<  DELAY \n                        node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                        \n                        function f_rollbackaction() {                           // ignore error. it is fine here.\n                            var F_stored_next_operating_mode = global.get('F_stored_next_operating_mode',\"file\");\n                            var F_SOLAR = global.get('F_SOLAR',\"file\");\n                            if (F_SOLAR.function_active_state == 2) {return null;}\n                            global.set(\"F_SOLAR.function_active_state\",2,\"file\");\n                            ///////////////////////////////////////////////////\n                            if (F_stored_next_operating_mode !== undefined) {\n                                TOP4_Operating_Mode_State = global.get('TOP4_Operating_Mode_State',\"file\")\n                                    if (TOP4_Operating_Mode_State != F_stored_next_operating_mode){\n                                            msg1.payload = F_SOLAR.dhw_sp_low;\n                                            msg2.payload = F_stored_next_operating_mode;\n                                            if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"Solar\"); }\n                                            msg99.payload   = \"Restored previous OperatingMode: \" + msg2.payload + \" and restoring DHW setpoint to: \" + F_SOLAR.dhw_sp_low + \"°C\";\n                                            node.send([msg1,msg2,null,msg99]);\n                                        }\n                                    \n                                    global.set('F_stored_next_operating_mode',undefined,\"file\");\n                                    node.status({});\n                                    return null;\n                            }\n                            \n                            else    {\n                                    msg99.payload   = \"DHW temperature reached DHW SP High. Solar function ended for today\";\n                                    node.status({});\n                                    return [null,null,null,msg99];                    \n                            }\n\n                        }        \n\n                    }\n            }\n            \n    }\n    \n}",
+        "func": "var MQTT = global.get('MQTT',\"file\");\n    if (MQTT.block_active == 0 || (MQTT.block_active == 1 && MQTT.block_mode == 2 && MQTT.allow_solar == 1)){\n    \n    var F_SOLAR = global.get('F_SOLAR',\"file\");\n        if (F_SOLAR === undefined) {return null;}\n        \n    if (F_SOLAR.state == 1)\n    {\n        var TOP4_Operating_Mode_State       = global.get('TOP4_Operating_Mode_State',\"file\");\n        var new_Operating_Mode_State;       // just create a variable, empty.\n        var old_Operating_Mode_State;       // just create a variable, empty.\n        var DHW_Current_SP                  = global.get('TOP9_DHW_Target_Temp',\"file\");\n        var TOP0_Heatpump_State             = global.get('TOP0_Heatpump_State',\"file\");\n        var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n        let msg1={};                                                                // pin 1 - output to DHW setpoint\n            msg1.topic = 'Solar function';                                          // This topic is required to alow the managers.\n        let msg2={};                                                                // pin 2 - output to Operation Mode\n        let msg3={};                                                                // pin 3 - output to turn on power to heatpump.\n        let msg99={};                                                               // pin 4 - output to log\n            msg99.topic = \"Function Solar\";\n        //  return [msg1,msg2,msg3,msg99]\n        \n        // Check if all required states are available.\n        if (F_SOLAR.detection_method === undefined || F_SOLAR.threshold === undefined || F_SOLAR.fallback === undefined || F_SOLAR.dhw_sp_high === undefined || TOP4_Operating_Mode_State === undefined || F_SOLAR.power_override === undefined || TOP0_Heatpump_State === undefined)\n            {\n                msg99.payload = \"ERROR: Not all settings in 'Function Solar' are programmed in GUI yet.\";\n                return [null,null,null,msg99];                                       // log output\n            }\n        if (global.get('Sterilization_active',\"file\")==1) {return null;}\n        \n        else    {\n            //              msg.topic = \"W\";            < > nul\n            //              msg.topic = 'GRID power production kWh';\n            //              msg.topic = 'GRID power consumption kWh';\n            //              msg.topic = '(+) Import (-) Export';\n            \n            //Threshold\n            //  kW\n            //  kWh_prod\n            //  kWh_result\n            //\n            // getting rid of all messages which are not related to the selected detection method.\n            //\n            if (F_SOLAR.detection_method == \"kW\"          && msg.topic != 'W' )         {return null;}\n            if (F_SOLAR.detection_method == \"kWh_prod\"    && msg.topic != 'Export')     {return null;}\n            if (F_SOLAR.detection_method == \"kWh_result\"  && msg.topic != 'Result')     {return null;}\n            if (msg.payload == 0)                                                       {return null;}\n            \n            //  convert the W signal to kW so that the value (threshold) are similar.\n            if (F_SOLAR.detection_method == \"kW\")                                     {msg.payload = msg.payload / 1000;}\n\n\n\n\n                    // ACTIONS WHEN THE SOLAR FUNCTION IS TRIGGERED FOR START-UP.\n                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n                    //  Note: (F_SOLAR.threshold > (msg.payload) >>> msg.payload is negative number if energy production is high.\n                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n                    //\n                    if (F_SOLAR.threshold > (msg.payload) && F_SOLAR.function_active_state == 0)   {\n                            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                            \n                            new_Operating_Mode_State = 3; old_Operating_Mode_State = TOP4_Operating_Mode_State;\n                            /*        \n                            if (TOP4_Operating_Mode_State == 0){new_Operating_Mode_State = 4; old_Operating_Mode_State = TOP4_Operating_Mode_State} // add DHW modus\n                            if (TOP4_Operating_Mode_State == 1){new_Operating_Mode_State = 5; old_Operating_Mode_State = TOP4_Operating_Mode_State} // add DHW modus\n                            if (TOP4_Operating_Mode_State == 2){new_Operating_Mode_State = 6; old_Operating_Mode_State = TOP4_Operating_Mode_State} // add DHW modus\n                            if (TOP4_Operating_Mode_State == 7){new_Operating_Mode_State = 8; old_Operating_Mode_State = TOP4_Operating_Mode_State} // add DHW modus\n                            if (TOP4_Operating_Mode_State == 3){new_Operating_Mode_State = 3;} // prevent undefined new_Operating_Mode_State\n                            if (TOP4_Operating_Mode_State == 4){new_Operating_Mode_State = 4;} // prevent undefined new_Operating_Mode_State\n                            if (TOP4_Operating_Mode_State == 5){new_Operating_Mode_State = 5;} // prevent undefined new_Operating_Mode_State\n                            if (TOP4_Operating_Mode_State == 6){new_Operating_Mode_State = 6;} // prevent undefined new_Operating_Mode_State\n                            if (TOP4_Operating_Mode_State == 8){new_Operating_Mode_State = 8;} // prevent undefined new_Operating_Mode_State\n                            */\n                            var tag;    // declare variable for tag in log line.\n                            if (F_SOLAR.detection_method == \"kW\")         {tag = 'kW';}\n                            if (F_SOLAR.detection_method == \"kWh_prod\")   {tag = \"Today's export (kWh)\";}         \n                            if (F_SOLAR.detection_method == \"kWh_result\") {tag = \"kWh todays result\";}  \n                            \n                            if (TOP0_Heatpump_State == 0 && F_SOLAR.power_override == 0)    {   \n                                msg99.payload = \"Solar threshold reached but no action fired! (Heat pump is off, 'Allow switch on heat pump' is disabled.)\";\n                                return([null,null,null,msg99]);\n                            }\n                            \n                            if (F_stored_next_operating_mode === undefined && old_Operating_Mode_State !== undefined)   {\n                                    global.set('F_stored_next_operating_mode',old_Operating_Mode_State,\"file\");\n                            }\n                            \n                            // msg3///////////////////////////////////////////////////////////////////////////////////////////////////////\n                            // Turn on heatpump in case it is off\n                            if (TOP0_Heatpump_State == 0 && F_SOLAR.power_override == 1)    {   \n                                msg99.payload = \"Turn on Heatpump\";\n                                msg3.payload = 1; msg3.source = \"flow\";                                           // send 1 to turn on the heatpump\n                                if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"Solar\"); }\n                                node.send([null,null,msg3,null])\n                            }\n                            \n                            \n                            \n                            // msg1///////////////////////////////////////////////////////////////////////////////////////////////////////\n                            // Set DHW setpoint to high\n                            if (DHW_Current_SP != F_SOLAR.dhw_sp_high){\n                                msg1.payload = F_SOLAR.dhw_sp_high;\n                                msg99.payload = \"triggered threshold (\" + tag + \"). DHW SP to \" + F_SOLAR.dhw_sp_high;\n                                node.send([msg1, null, null, msg99]);\n                            }\n                            \n                            // msg2///////////////////////////////////////////////////////////////////////////////////////////////////////\n                            // Set Operation Mode\n                            if (new_Operating_Mode_State != old_Operating_Mode_State && old_Operating_Mode_State !== undefined)   {\n                                msg2.payload = new_Operating_Mode_State;\n                                msg99.payload = \"Operation mode changed from \" + old_Operating_Mode_State + \" to \" + new_Operating_Mode_State;\n                                node.send([null, msg2, null, msg99]);\n                            }\n                            \n                            if (F_SOLAR.function_active_state != 1){\n                            global.set(\"F_SOLAR.function_active_state\",1,\"file\");\n                            if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"Solar\"); }\n                            return null;}\n                    }\n                    \n                    \n                    \n                    \n                    // ACTIONS WHEN THE SOLAR FUNCTION IS TRIGGERED FOR ENDING.\n                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n                    //\n                    if (msg.payload > 0 && F_SOLAR.detection_method == \"kW\" && DHW_Current_SP == F_SOLAR.dhw_sp_high && F_SOLAR.fallback == 1 && F_SOLAR.function_active_state == 1){\n                            if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"Solar\"); }\n                            msg1.payload = F_SOLAR.dhw_sp_low;\n                            msg99.payload = \"triggered threshold (\" + tag + \"). Above 0kWh threshold. DHW SP to \" + F_SOLAR.dhw_sp_low;\n                            global.set(\"F_SOLAR.function_active_state\",0,\"file\");\n                            node.send([msg1,null,null,msg99]);\n                            return null;\n                    }\n\n                        //TOP9_DHW_Target_Temp\n                        // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                    \n                    var TOP10_DHW_Temp                  = global.get('TOP10_DHW_Temp');\n                    var TOP20_ThreeWay_Valve_State      = global.get('TOP20_ThreeWay_Valve_State');       // threewayvalvue 1 = DHW, 0 = HEAT\n\n                    if (TOP10_DHW_Temp >= F_SOLAR.dhw_sp_high && F_SOLAR.function_active_state == 1)  {\n                        /////////////////////////// \n                        \n                        msg99.payload = \"DHW temperature has reached SP high\";\n                        node.send([null,null,null,msg99])    \n                        \n                        const myTimeout = setTimeout(f_rollbackaction, F_SOLAR.delay_after_completion*60*1000);                 // <<<<<<<<<<<<<<<<  DELAY \n                        node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                        \n                        function f_rollbackaction() {                           // ignore error. it is fine here.\n                            var F_stored_next_operating_mode = global.get('F_stored_next_operating_mode',\"file\");\n                            var F_SOLAR = global.get('F_SOLAR',\"file\");\n                            var DHW_Current_SP                  = global.get('TOP9_DHW_Target_Temp',\"file\");\n                            if (F_SOLAR.function_active_state == 2) {return null;}\n                            \n                            global.set(\"F_SOLAR.function_active_state\",2,\"file\");\n                            \n                            msg99.payload   = \"Cooldown period (\" + F_SOLAR.delay_after_completion + \" minutes) has ended. Solar function done for today\";\n                            node.send ([null,null,null,msg99]); \n                            ///////////////////////////////////////////////////\n                            if (F_stored_next_operating_mode !== undefined) {\n                                    TOP4_Operating_Mode_State = global.get('TOP4_Operating_Mode_State',\"file\")\n                                    if (TOP4_Operating_Mode_State != F_stored_next_operating_mode){\n                                            msg2.payload = F_stored_next_operating_mode;\n                                            if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"Solar\"); }\n                                            msg99.payload   = \"Restoring previous OperatingMode: \" + msg2.payload;\n                                            node.send([null,msg2,null,msg99]);\n                                    }\n                                    global.set('F_stored_next_operating_mode',undefined,\"file\");\n                            }\n                            if (DHW_Current_SP != F_SOLAR.dhw_sp_low){\n                                    msg1.payload = F_SOLAR.dhw_sp_low;\n                                    msg99.payload   = \"Restoring DHW setpoint to: \" + F_SOLAR.dhw_sp_low + \"°C\";\n                                    if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"Solar\"); }\n                                    node.send([msg1,null,null,msg99]);\n                            }\n                            node.status({});\n                        }   ////////////// end of f_rollbackaction\n                    }\n            }\n    }\n}",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
@@ -31577,7 +31694,7 @@
             ]
         ],
         "outputLabels": [
-            "DHW_SP_HIGH",
+            "DHW_SP",
             "new_Operating_Mode_State",
             "solar_turn_on_heatpump",
             "log"
@@ -31909,52 +32026,6 @@
         ]
     },
     {
-        "id": "adbf99d27728b82c",
-        "type": "function",
-        "z": "966985d68ebb4990",
-        "name": "function 23",
-        "func": "global.set('F_stored_next_operating_mode',0,\"file\")\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 750,
-        "y": 3260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4b3f3ec7a1b61ad2",
-        "type": "inject",
-        "z": "966985d68ebb4990",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 540,
-        "y": 3260,
-        "wires": [
-            [
-                "adbf99d27728b82c"
-            ]
-        ]
-    },
-    {
         "id": "91df0ca5227134fa",
         "type": "ui_numeric",
         "z": "966985d68ebb4990",
@@ -32032,23 +32103,6 @@
                 "67fe5d78fed38255"
             ]
         ]
-    },
-    {
-        "id": "55c4dad8b4298407",
-        "type": "debug",
-        "z": "966985d68ebb4990",
-        "g": "3b5324e3d80d96a1",
-        "name": "debug 177",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1190,
-        "y": 980,
-        "wires": []
     },
     {
         "id": "70753620fd42401f",
@@ -32233,7 +32287,9 @@
             "0bc6f2130b8acb9d"
         ],
         "x": 134,
-        "y": 99
+        "y": 99,
+        "w": 472,
+        "h": 382
     },
     {
         "id": "5505432507101e93",
@@ -32252,7 +32308,9 @@
             "c2935eeb2b0919cf"
         ],
         "x": 134,
-        "y": 499
+        "y": 499,
+        "w": 622,
+        "h": 202
     },
     {
         "id": "b5e32619ad0c206e",
@@ -32271,7 +32329,9 @@
             "3c3c8472da1fb85a"
         ],
         "x": 794,
-        "y": 79
+        "y": 79,
+        "w": 582,
+        "h": 202
     },
     {
         "id": "c77aed9e30c539d5",
@@ -32295,7 +32355,31 @@
             "7ca958b4b94243f8"
         ],
         "x": 794,
-        "y": 319
+        "y": 319,
+        "w": 582,
+        "h": 262
+    },
+    {
+        "id": "4435d59eb3f03631",
+        "type": "ui_template",
+        "z": "72f2748729e53ad1",
+        "g": "c77aed9e30c539d5",
+        "group": "9aec7afe54746c39",
+        "name": "Line - Setup ",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>DHW temperature</left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 910,
+        "y": 440,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "fde5dafe04d72e23",
@@ -32319,7 +32403,9 @@
             "8849a0faf2ae88ef"
         ],
         "x": 794,
-        "y": 619
+        "y": 619,
+        "w": 582,
+        "h": 302
     },
     {
         "id": "be48f3104249b8a0",
@@ -32987,28 +33073,6 @@
         "x": 1220,
         "y": 400,
         "wires": []
-    },
-    {
-        "id": "4435d59eb3f03631",
-        "type": "ui_template",
-        "z": "72f2748729e53ad1",
-        "g": "c77aed9e30c539d5",
-        "group": "9aec7afe54746c39",
-        "name": "Line - Setup ",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Force DHW</left> \n</html>\n",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 910,
-        "y": 440,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "8090bc95e8512738",
@@ -35138,7 +35202,7 @@
         "z": "35d210f042827344",
         "g": "b63004182c33d3b9",
         "name": "Schedule execution",
-        "func": "// >> trigger 1\n// DHW / Sterilisation? This is defined in the topic\n// Topic: DHW or topic: Sterilization\n// payload 1 > initiate sequence. \n\n// Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n\n// Declaration of the variables. \nlet msg1={}, msg2={}, msg3={}, msg4={};\n// msg1     Output towards Operation mode\n// msg2     Output towards Force DHW mode on/off\n// msg3     output towards Force Sterilization on/off\n// msg4     empty\n\n\nvar TOP20_ThreeWay_Valve_State  =global.get('TOP20_ThreeWay_Valve_State');      // valvue position\nvar TOP10_DHW_Temp              =global.get('TOP10_DHW_Temp');                  // Current temperature of DHW vessel. \nvar TOP9_DHW_Target_Temp        =global.get('TOP9_DHW_Target_Temp',\"file\");     // Programmed DHW target temperature\nvar TOP2_Force_DHW_State        =global.get('TOP2_Force_DHW_State');            // Current DHW state (on / off). \n\nvar TOP4_Operating_Mode_State=global.get('TOP4_Operating_Mode_State',\"file\");   // get Current OperationMode\nvar new_OM;                                                                     // create empty variable.\n\nvar TOP69_Sterilization_State=global.get('TOP69_Sterilization_State',\"file\");   // Current sterilization state (on / off)\nvar TOP70_Sterilization_Temp=global.get('TOP70_Sterilization_Temp',\"file\");                 // Programmed sterilization target temperature\nvar DHW_treshold=global.get('DHW_treshold',\"file\");                             // Programmed treshold DHW tank temperature set from GUI\n////////////////////////////////////////////////////////////////////////////////\n//                           START OF THE CYCLE                               //\n////////////////////////////////////////////////////////////////////////////////\n\n// START Force DHW cycle\nif (msg.topic == 'DHW' && msg.payload == 1 && TOP10_DHW_Temp < DHW_treshold)          // There is a temperature condition to start DHW heating or not. Change to your own desire.\n    {\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (TOP4_Operating_Mode_State==0){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 3;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 8;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 8;}\n                \n                \n                msg1.payload = new_OM;                                          // set operationmode to add DHW mode\n                msg2.payload = 1;                                               // Turn on Force DHW mode\n                global.set('Force_DHW_active',1,\"file\");\n                if (TOP4_Operating_Mode_State!=new_OM)\n                    {return [msg1, msg2];}\n                else {return [null, msg2];}\n    }\n\n// START Force Sterilization cycle\nif (msg.topic == 'Sterilization' && msg.payload == 1)\n    {\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (TOP4_Operating_Mode_State==0){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 3;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 8;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 8;}\n                \n                \n                msg1.payload = new_OM;                                          // set operationmode to add DHW mode\n                msg3.payload = 1;                                               // Turn on Force Sterilization mode\n                global.set('Sterilization_active',1,\"file\");\n                if (TOP4_Operating_Mode_State!=new_OM)\n                    {return [msg1, null, msg3];}\n                else\n                    {return [null, null, msg3];}\n                \n                \n    }\n\n////////////////////////////////////////////////////////////////////////////////\n//                      END OF THE CYCLE                                      //\n////////////////////////////////////////////////////////////////////////////////\n\n\n// END DHW cycle (Automatic)\nif (TOP2_Force_DHW_State == 1 && TOP69_Sterilization_State == 0 && TOP10_DHW_Temp >= TOP9_DHW_Target_Temp)\n    {\n\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (TOP4_Operating_Mode_State==0){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 1;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 2;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 1;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 2;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 7;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 7;}\n\n                if (TOP4_Operating_Mode_State!=new_OM)\n                global.set('Force_DHW_active',0,\"file\");\n                {setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg1.payload = new_OM;                                      // set operationmode to remove DHW\n                    node.send([msg1,null,null,null]);                           // send msg1 only, other outputs are null\n                }, 5000);}\n                msg2.payload = 0;                                               // Turn off Force DHW mode\n                return [null, msg2];\n    }\n\n\n// END Sterilization cycle (Automatic)\nif (TOP69_Sterilization_State == 1 && TOP10_DHW_Temp >= TOP70_Sterilization_Temp)\n    {\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (TOP4_Operating_Mode_State==0){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 1;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 2;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 1;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 2;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 7;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 7;} \n    \n                if (TOP4_Operating_Mode_State!=new_OM)\n                global.set('Sterilization_active',0,\"file\");\n                {\n                    setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg1.payload = new_OM;                                      // set operationmode to remove DHW\n                    node.send([msg1,null,null,null]);                           // send msg1 only, other outputs are null\n                    }, 5000);\n                }\n\n\n                msg3.payload = 0;                                               // Turn off Force Sterilization mode\n                return [null, null, msg3];\n    }\n\n\n",
+        "func": "// >> trigger 1\n// DHW / Sterilisation? This is defined in the topic\n// Topic: DHW or topic: Sterilization\n// payload 1 > initiate sequence. \n\n// Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n\n// Declaration of the variables. \nlet msg1={}, msg2={}, msg3={}, msg4={};\n// msg1     Output towards Operation mode\n// msg2     Output towards Force DHW mode on/off\n// msg3     output towards Force Sterilization on/off\n// msg4     empty\n\n\nvar TOP20_ThreeWay_Valve_State  =global.get('TOP20_ThreeWay_Valve_State');      // valvue position\nvar TOP10_DHW_Temp              =global.get('TOP10_DHW_Temp');                  // Current temperature of DHW vessel. \nvar TOP9_DHW_Target_Temp        =global.get('TOP9_DHW_Target_Temp',\"file\");     // Programmed DHW target temperature\nvar TOP2_Force_DHW_State        =global.get('TOP2_Force_DHW_State');            // Current DHW state (on / off). \n\nvar TOP4_Operating_Mode_State=global.get('TOP4_Operating_Mode_State',\"file\");   // get Current OperationMode\nvar new_OM;                                                                     // create empty variable.\n\nvar TOP69_Sterilization_State   =global.get('TOP69_Sterilization_State',\"file\");   // Current sterilization state (on / off)\nvar TOP70_Sterilization_Temp    =global.get('TOP70_Sterilization_Temp',\"file\");                 // Programmed sterilization target temperature\nvar DHW_threshold_upper         =global.get('DHW_threshold_upper',\"file\");                             // Programmed treshold DHW tank temperature set from GUI\n\nvar F_stored_next_operating_mode=global.get('F_stored_next_operating_mode',\"file\");\nvar F_SOLAR = global.get('F_SOLAR',\"file\");\n\n////////////////////////////////////////////////////////////////////////////////\n//                           START OF THE CYCLE                               //\n////////////////////////////////////////////////////////////////////////////////\n\n// START Force DHW cycle\nif (msg.topic == 'DHW' && msg.payload == 1 && TOP10_DHW_Temp < DHW_threshold_upper && F_SOLAR.function_active_state == 0)          // There is a temperature condition to start DHW heating or not. Change to your own desire.\n    {\n                \n                if (F_stored_next_operating_mode===undefined) {global.set('F_stored_next_operating_mode',TOP4_Operating_Mode_State,\"file\")}\n                \n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (TOP4_Operating_Mode_State==0){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 3;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 8;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 8;}\n                \n                global.set('F_RTC.on_off_active',0,\"file\");\n                \n                msg1.payload = new_OM;                                          // set operationmode to add DHW mode\n                msg2.payload = 1;                                               // Turn on Force DHW mode\n                global.set('Force_DHW_active',1,\"file\");\n                if (TOP4_Operating_Mode_State!=new_OM)\n                    {return [msg1, msg2];}\n                else {return [null, msg2];}\n    }\n\n// START Force Sterilization cycle\nif (msg.topic == 'Sterilization' && msg.payload == 1  && F_SOLAR.function_active_state == 0)\n    {\n\n                if (F_stored_next_operating_mode===undefined) {global.set('F_stored_next_operating_mode',TOP4_Operating_Mode_State,\"file\")}\n                \n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (TOP4_Operating_Mode_State==0){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 3;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 8;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 8;}\n                \n                global.set('F_RTC.on_off_active',0,\"file\");\n                \n                msg1.payload = new_OM;                                          // set operationmode to add DHW mode\n                msg3.payload = 1;                                               // Turn on Force Sterilization mode\n                global.set('Sterilization_active',1,\"file\");\n                if (TOP4_Operating_Mode_State!=new_OM)\n                    {return [msg1, null, msg3];}\n                else\n                    {return [null, null, msg3];}\n                \n                \n    }\n\n////////////////////////////////////////////////////////////////////////////////\n//                      END OF THE CYCLE                                      //\n////////////////////////////////////////////////////////////////////////////////\n\n\n// END DHW cycle (Automatic)\nif (TOP2_Force_DHW_State == 1 && TOP69_Sterilization_State == 0 && TOP10_DHW_Temp >= TOP9_DHW_Target_Temp)\n    {\n                new_OM = F_stored_next_operating_mode;\n                \n                global.set('F_stored_next_operating_mode',undefined,\"file\");\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                /*\n                if (TOP4_Operating_Mode_State==0){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 1;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 2;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 1;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 2;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 7;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 7;}\n                */\n\n                if (TOP4_Operating_Mode_State!=new_OM)\n                global.set('Force_DHW_active',0,\"file\");\n                {setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg1.payload = new_OM;                                      // set operationmode to remove DHW\n                    node.send([msg1,null,null,null]);                           // send msg1 only, other outputs are null\n                }, 5000);}\n                msg2.payload = 0;                                               // Turn off Force DHW mode\n                return [null, msg2];\n    }\n\n\n// END Sterilization cycle (Automatic)\nif (TOP69_Sterilization_State == 1 && TOP10_DHW_Temp >= TOP70_Sterilization_Temp)\n    {           \n                new_OM = F_stored_next_operating_mode;\n                global.set('F_stored_next_operating_mode',undefined,\"file\");\n                \n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                /*\n                if (TOP4_Operating_Mode_State==0){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 1;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 2;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 1;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 2;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 7;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 7;} \n                */\n    \n                global.set('Sterilization_active',0,\"file\");\n                if (TOP4_Operating_Mode_State!=new_OM)\n                {\n                    setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg1.payload = new_OM;                                      // set operationmode to remove DHW\n                    node.send([msg1,null,null,null]);                           // send msg1 only, other outputs are null\n                    }, 5000);\n                }\n\n\n                msg3.payload = 0;                                               // Turn off Force Sterilization mode\n                return [null, null, msg3];\n    }\n\n\n",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
@@ -35450,11 +35514,11 @@
         "id": "f50b182247afbf12",
         "type": "ui_numeric",
         "z": "35d210f042827344",
-        "name": "Allow DHW-run below",
-        "label": "Do not force if DHW is above",
+        "name": "Block DHW-run above",
+        "label": "Block DHW-run above",
         "tooltip": "",
-        "group": "9aec7afe54746c39",
-        "order": 2,
+        "group": "4e9e24cca215ad4d",
+        "order": 7,
         "width": 0,
         "height": 0,
         "wrap": false,
@@ -35467,7 +35531,7 @@
         "step": 1,
         "className": "",
         "x": 780,
-        "y": 3100,
+        "y": 3040,
         "wires": [
             [
                 "fdc7a953bf5abbc3"
@@ -35478,14 +35542,14 @@
         "id": "513f1edff2205368",
         "type": "function",
         "z": "35d210f042827344",
-        "name": "set.DHW_treshold",
-        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"DHW_treshold\",msg.payload,\"file\");\nreturn msg;",
+        "name": "set.DHW_threshold_upper",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nglobal.set(\"DHW_threshold_upper\",msg.payload,\"file\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1370,
+        "x": 1400,
         "y": 3100,
         "wires": [
             [
@@ -35497,7 +35561,7 @@
         "id": "82de6121db22b74a",
         "type": "inject",
         "z": "35d210f042827344",
-        "name": "1 Trigger / 5 minutes",
+        "name": "",
         "props": [
             {
                 "p": "payload"
@@ -35507,14 +35571,14 @@
                 "vt": "str"
             }
         ],
-        "repeat": "1800",
+        "repeat": "",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
         "topic": "trigger",
         "payload": "",
         "payloadType": "date",
-        "x": 200,
+        "x": 190,
         "y": 3100,
         "wires": [
             [
@@ -35527,8 +35591,8 @@
         "type": "function",
         "z": "35d210f042827344",
         "name": "Load on boot",
-        "func": "var var1 = global.get('DHW_treshold',\"file\");\nif (var1===undefined)\n    {\n        var1=100;\n        global.set('DHW_treshold',100,\"file\");\n    }\nvar var2 = global.get('NightReductionWaterTemp.correction',\"file\");\nif (var2===undefined)\n    {\n    var2=0;\n    global.set('NightReductionWaterTemp.correction',0,\"file\");\n    }\n\nlet msg1={}, msg2={};\n\nmsg1.payload = var1;\nmsg2.payload = var2;\n\n\nreturn [msg1, msg2];",
-        "outputs": 2,
+        "func": "var var1 = global.get('DHW_threshold_upper',\"file\");\nif (var1===undefined)\n    {\n        var1=100;\n        global.set('DHW_threshold_upper',100,\"file\");\n    }\nvar var2 = global.get('NightReductionWaterTemp.correction',\"file\");\nif (var2===undefined)\n    {\n    var2=0;\n    global.set('NightReductionWaterTemp.correction',0,\"file\");\n    }\n\nvar DHW_threshold_lower = global.get('DHW_threshold_lower',\"file\")\nif (DHW_threshold_lower===undefined) { global.set('DHW_threshold_lower',25,\"file\"); DHW_threshold_lower = 25; }\n\nlet msg1={}, msg2={}, msg3={}; \n\nmsg1.payload = var1; // DHW_threshold_upper\nmsg2.payload = var2; // NightReductionWaterTemp.correction\nmsg3.payload = DHW_threshold_lower;\n\n\nreturn [msg1, msg2, msg3];",
+        "outputs": 3,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -35539,18 +35603,22 @@
             [
                 "f50b182247afbf12"
             ],
-            []
+            [],
+            [
+                "d3798ceb0669cafe"
+            ]
         ],
         "outputLabels": [
-            "DHW_treshold",
-            ""
+            "DHW_threshold_upper",
+            "night reduction",
+            "DHW_threshold_lower"
         ]
     },
     {
         "id": "0d915486f4ef0946",
         "type": "link out",
         "z": "35d210f042827344",
-        "name": "DHW_Treshold",
+        "name": "DHW_threshold_upper",
         "mode": "link",
         "links": [],
         "x": 1665,
@@ -46968,7 +47036,8 @@
         "y": 380,
         "wires": [
             [
-                "f5602874161743c8"
+                "f5602874161743c8",
+                "b702f84b62e4b005"
             ]
         ],
         "l": true
@@ -47081,6 +47150,90 @@
         ]
     },
     {
+        "id": "b702f84b62e4b005",
+        "type": "debug",
+        "z": "35d210f042827344",
+        "name": "debug 180",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d3798ceb0669cafe",
+        "type": "ui_numeric",
+        "z": "35d210f042827344",
+        "name": "Start DHW-run below",
+        "label": "Start DHW-run below",
+        "tooltip": "",
+        "group": "4e9e24cca215ad4d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}} °C",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 780,
+        "y": 3120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b9cc5f94e160078d",
+        "type": "link in",
+        "z": "35d210f042827344",
+        "name": "link in from on_change_GUI",
+        "links": [
+            "49ebac0412d87642"
+        ],
+        "x": 115,
+        "y": 3140,
+        "wires": [
+            [
+                "1cf36419e733671a"
+            ]
+        ]
+    },
+    {
+        "id": "8c9808071334d371",
+        "type": "link in",
+        "z": "35d210f042827344",
+        "name": "External trigger for forcefull dhw run",
+        "links": [
+            "f651bed25831c6f4"
+        ],
+        "x": 985,
+        "y": 2400,
+        "wires": [
+            [
+                "e168945122de5aa2"
+            ]
+        ]
+    },
+    {
+        "id": "321cfa7102a57910",
+        "type": "comment",
+        "z": "35d210f042827344",
+        "name": "External trigger for forcefull dhw run",
+        "info": "",
+        "x": 1180,
+        "y": 2400,
+        "wires": []
+    },
+    {
         "id": "3aa03811830ef29e",
         "type": "tab",
         "label": "WP System",
@@ -47111,9 +47264,7 @@
             "510f802795714d75"
         ],
         "x": 2114,
-        "y": 539,
-        "w": 692,
-        "h": 222
+        "y": 539
     },
     {
         "id": "5c3df7b5fb0fa130",
@@ -47143,9 +47294,7 @@
             "5837cbf37ef47ea6"
         ],
         "x": 1944,
-        "y": 1399,
-        "w": 872,
-        "h": 302
+        "y": 1399
     },
     {
         "id": "404eed4ef9d90803",
@@ -47165,9 +47314,7 @@
             "0911a9edae380679"
         ],
         "x": 2014,
-        "y": 19,
-        "w": 812,
-        "h": 122
+        "y": 19
     },
     {
         "id": "c361a153997d2dfd",
@@ -47191,9 +47338,7 @@
             "0a3d6a8e946cfcb2"
         ],
         "x": 824,
-        "y": 159,
-        "w": 262,
-        "h": 282
+        "y": 159
     },
     {
         "id": "8fe25c73d37fe670",
@@ -47255,9 +47400,7 @@
             "1d0bdc24983833d5"
         ],
         "x": 1944,
-        "y": 219,
-        "w": 942,
-        "h": 1162
+        "y": 219
     },
     {
         "id": "0bb11670c285bff1",
@@ -47293,9 +47436,7 @@
             "70016d3833197d68"
         ],
         "x": 1494,
-        "y": 259,
-        "w": 412,
-        "h": 722
+        "y": 259
     },
     {
         "id": "b4e7d28c61065a10",
@@ -47330,9 +47471,7 @@
             "9293ce0fe3ffaed3"
         ],
         "x": 1474,
-        "y": 999,
-        "w": 432,
-        "h": 602
+        "y": 999
     },
     {
         "id": "9ad65d8ac40d3b19",
@@ -50259,7 +50398,8 @@
         "z": "3aa03811830ef29e",
         "name": "GUI_dashboard_trigger",
         "links": [
-            "49ebac0412d87642"
+            "49ebac0412d87642",
+            "47cb7500b0321fc1"
         ],
         "x": 745,
         "y": 860,
@@ -50619,7 +50759,8 @@
             "2c79bd3e2dc678e7",
             "62873fd698209c83",
             "c0d182e336a34912",
-            "200a74bfd3abbb1c"
+            "200a74bfd3abbb1c",
+            "3d5dc66749eac00f"
         ],
         "x": 645,
         "y": 40,
@@ -50641,7 +50782,8 @@
             "e77ae78af76db973",
             "838a27801d1da2db",
             "5c8427c809a8f68f",
-            "e3cf888e2774fce3"
+            "e3cf888e2774fce3",
+            "b9cc5f94e160078d"
         ],
         "x": 865,
         "y": 100,
@@ -50678,20 +50820,6 @@
             [
                 "3a86dae674a0f12f"
             ]
-        ]
-    },
-    {
-        "id": "200a74bfd3abbb1c",
-        "type": "link in",
-        "z": "3aa03811830ef29e",
-        "name": "link in 54",
-        "links": [
-            "47cb7500b0321fc1"
-        ],
-        "x": 745,
-        "y": 900,
-        "wires": [
-            []
         ]
     },
     {
@@ -52879,7 +53007,7 @@
         "z": "d5fea67661261002",
         "g": "0531f7d830ad5e1b",
         "name": "Repair & delete old vars",
-        "func": "\n\nif(global.get('rtc_off','file') !=undefined)                                    {   global.set('rtc_off',undefined,'file');}\nif(global.get('rtc_on','file') !=undefined)                                     {   global.set('rtc_on',undefined,'file');}\nif(global.get('rtc_t1','file') !=undefined)                                     {   global.set('F_RTC.rtc_t1_limit', global.get('rtc_t1','file'),'file'); global.set('rtc_t1',undefined,'file');}\nif(global.get('rtc_t2','file') !=undefined)                                     {   global.set('F_RTC.rtc_t2_limit', global.get('rtc_t2','file'),'file'); global.set('rtc_t2',undefined,'file');}\nif(global.get('rtc_t3','file') !=undefined)                                     {   global.set('F_RTC.rtc_t3_limit', global.get('rtc_t3','file'),'file'); global.set('rtc_t3',undefined,'file');}\nif(global.get('rtc_t4','file') !=undefined)                                     {   global.set('F_RTC.rtc_t4_limit', global.get('rtc_t4','file'),'file'); global.set('rtc_t4',undefined,'file');}\nif(global.get('rtc_t5','file') !=undefined)                                     {   global.set('F_RTC.rtc_t5_limit', global.get('rtc_t5','file'),'file'); global.set('rtc_t5',undefined,'file');}\nif(global.get('rtc_t6','file') !=undefined)                                     {   global.set('F_RTC.rtc_t6_limit', global.get('rtc_t6','file'),'file'); global.set('rtc_t6',undefined,'file');}\nif(global.get('rtc_t7_custom_cor','file') !=undefined)                          {   global.set('F_RTC.rtc_t7_correction_value', global.get('rtc_t7_custom_cor','file'),'file'); global.set('rtc_t7_custom_cor',undefined,'file');}\nif(global.get('rtc_t7','file') !=undefined)                                     {   global.set('F_RTC.rtc_t7_limit', global.get('rtc_t7','file'),'file'); global.set('rtc_t7',undefined,'file');}\nif(global.get('Correction_1_RTC_on_off','file') !=undefined)                    {   global.set('F_RTC.state', global.get('Correction_1_RTC_on_off','file'),'file'); global.set('Correction_1_RTC_on_off',undefined,'file');}\n\n\n\n\n// cleanup\n\nif(global.get('Last_Error') !=undefined)                                        {   global.set('Last_Error',undefined);}\nif(global.get('Previous_Quiet_Mode_Level','file') !=undefined)                  {   global.set('Previous_Quiet_Mode_Level',undefined,'file');}\nif(global.get('solar_block_scheduler','file') !=undefined)                      {   global.set('solar_block_scheduler',undefined,'file');}\nif(global.get('F_ReducePumpSpeed.NormalSpeed','file') !=undefined)              {   global.set('F_ReducePumpSpeed.NormalSpeed',undefined,'file');}\n\n// replace\nif(global.get('HeaterDelayTime','file') !=undefined)                            {   global.set('TOP96_Heater_Delay_Time', global.get('HeaterDelayTime','file'),'file'); global.set('HeaterDelayTime',undefined,'file');}\nif(global.get('HeaterStartDelta','file') !=undefined)                           {   global.set('TOP97_Heater_Start_Delta', global.get('HeaterStartDelta','file'),'file'); global.set('HeaterStartDelta',undefined,'file');}\nif(global.get('HeaterStopDelta','file') !=undefined)                            {   global.set('TOP98_Heater_Stop_Delta', global.get('HeaterStopDelta','file'),'file'); global.set('HeaterStopDelta',undefined,'file');}\nif(global.get('Heatpump_State','file') !=undefined)                             {   global.set('TOP0_Heatpump_State', global.get('Heatpump_State','file'),'file'); global.set('Heatpump_State',undefined,'file');}\nif(global.get('Heating_Mode','file') !=undefined)                               {   global.set('TOP76_Heating_Mode', global.get('Heating_Mode','file'),'file'); global.set('Heating_Mode',undefined,'file');}\nif(global.get('ThreeWay_Valve_State') !=undefined)                              {   global.set('TOP20_ThreeWay_Valve_State', global.get('ThreeWay_Valve_State')); global.set('ThreeWay_Valve_State',undefined);}\nif(global.get('Main_Inlet_Temp') !=undefined)                                   {   global.set('TOP5_Main_Inlet_Temp', global.get('Main_Inlet_Temp')); global.set('Main_Inlet_Temp',undefined);}\nif(global.get('Main_Outlet_Temp') !=undefined)                                  {   global.set('TOP6_Main_Outlet_Temp', global.get('Main_Outlet_Temp')); global.set('Main_Outlet_Temp',undefined);}\nif(global.get('Main_Target_Temp') !=undefined)                                  {   global.set('TOP27_Z1_Heat_Request_Temp', global.get('Main_Target_Temp')); global.set('Main_Target_Temp',undefined);}\nif(global.get('Operating_Mode_State','file') !=undefined)                       {   global.set('TOP4_Operating_Mode_State', global.get('Operating_Mode_State','file'),'file'); global.set('Operating_Mode_State',undefined,'file');}\nif(global.get('PowerfulMode','file') !=undefined)                               {   global.set('TOP17_Powerful_Mode_Time', global.get('PowerfulMode','file'),'file'); global.set('PowerfulMode',undefined,'file');}\nif(global.get('T_outside_panasonic','file') !=undefined)                        {   global.set('TOP14_Outside_Temp', global.get('T_outside_panasonic','file'),'file'); global.set('T_outside_panasonic',undefined,'file');}\nif(global.get('Force_DHW_State') !=undefined)                                   {   global.set('TOP2_Force_DHW_State', global.get('Force_DHW_State')); global.set('Force_DHW_State',undefined);}\nif(global.get('ForceDefrost','file') !=undefined)                               {   global.set('TOP26_Defrosting_State', global.get('ForceDefrost','file'),'file'); global.set('ForceDefrost',undefined,'file');}\nif(global.get('Quiet_Mode_Level','file') !=undefined)                           {   global.set('TOP18_Quiet_Mode_Level', global.get('Quiet_Mode_Level','file'),'file'); global.set('Quiet_Mode_Level',undefined,'file');}\nif(global.get('SetZones','file') !=undefined)                                   {   global.set('TOP94_Zones_State', global.get('SetZones','file'),'file'); global.set('SetZones',undefined,'file');}\nif(global.get('Pump_Flow') !=undefined)                                         {   global.set('TOP1_Pump_Flow', global.get('Pump_Flow')); global.set('Pump_Flow',undefined);}\nif(global.get('OperationCounter') !=undefined)                                  {   global.set('TOP12_Operations_Counter', global.get('OperationCounter')); global.set('OperationCounter',undefined);}\nif(global.get('DHW_Energy_Consumption') !=undefined)                            {   global.set('TOP41_DHW_Energy_Consumption', global.get('DHW_Energy_Consumption')); global.set('DHW_Energy_Consumption',undefined);}\nif(global.get('Heat_Energy_Consumption') !=undefined)                           {   global.set('TOP16_Heat_Energy_Consumption', global.get('Heat_Energy_Consumption')); global.set('Heat_Energy_Consumption',undefined);}\nif(global.get('Fan1_Speed') !=undefined)                                        {   global.set('TOP62_Fan1_Motor_Speed', global.get('Fan1_Speed')); global.set('Fan1_Speed',undefined);}\nif(global.get('Fan2_Speed') !=undefined)                                        {   global.set('TOP63_Fan2_Motor_Speed', global.get('Fan2_Speed')); global.set('Fan2_Speed',undefined);}\nif(global.get('PanasonicMainScheduler','file') !=undefined)                     {   global.set('TOP13_Main_Schedule_State', global.get('PanasonicMainScheduler','file'),'file'); global.set('PanasonicMainScheduler',undefined,'file');}\nif(global.get('OperationHours') !=undefined)                                    {   global.set('TOP11_Operations_Hours', global.get('OperationHours')); global.set('OperationHours',undefined);}\nif(global.get('HolidayMode','file') !=undefined)                                {   global.set('TOP19_Holiday_Mode_State', global.get('HolidayMode','file')); global.set('HolidayMode',undefined,'file');}\n\n\n\n\n// 2023-03-27 (v22.15)\nif(global.get('Sterilization_State') !=undefined)                               {   global.set('TOP69_Sterilization_State', global.get('Sterilization_State'),'file'); global.set('Sterilization_State',undefined);}\nif(global.get('Sterilization_Temp','file') !=undefined)                         {   global.set('TOP70_Sterilization_Temp', global.get('Sterilization_Temp','file'),'file'); global.set('Sterilization_Temp',undefined,'file');}\nif(global.get('DHWHeatDelta','file') !=undefined)                               {   global.set('TOP22_DHW_Heat_Delta', global.get('DHWHeatDelta','file'),'file'); global.set('DHWHeatDelta',undefined,'file');}\nif(global.get('DHW_Temp') !=undefined)                                          {   global.set('TOP10_DHW_Temp', global.get('DHW_Temp')); global.set('DHW_Temp',undefined);}\nif(global.get('FloorCoolDelta','file') !=undefined)                             {   global.set('TOP24_Cool_Delta', global.get('FloorCoolDelta','file'),'file'); global.set('FloorCoolDelta',undefined,'file');}\nif(global.get('FloorHeatDelta','file') !=undefined)                             {   global.set('TOP23_Heat_Delta', global.get('FloorHeatDelta','file'),'file'); global.set('FloorHeatDelta',undefined,'file');}\n\n\n\n\n\n\n// 2023-03-26 (v22.10)\n// replace\nvar T_room_custom       = global.get('T_room_custom',\"file\");                          // Custom outside temperature sensor\nif (T_room_custom > 0){\n    var old_value = T_room_custom;\n    T_room_custom = {};\n    T_room_custom.value = old_value;\n    global.set('T_room_custom',undefined,\"file\");\n    global.set('T_room_custom',T_room_custom,\"file\")\n}\n\n\n// 2023-03-26 (v22.10)\n// replace\nif(global.get('F_Solar_export_correction','file') !=undefined)                  {   global.set('F_SOLAR.export_correction', global.get('F_Solar_export_correction','file'),'file'); global.set('F_Solar_export_correction',undefined,'file');}\nif(global.get('F_Solar_import_correction','file') !=undefined)                  {   global.set('F_SOLAR.import_correction', global.get('F_Solar_import_correction','file'),'file'); global.set('F_Solar_import_correction',undefined,'file');}\nif(global.get('SolarFunction_active','file') !=undefined)                       {   global.set('F_SOLAR.function_active_state', global.get('SolarFunction_active','file'),'file'); global.set('SolarFunction_active',undefined,'file');}\nif(global.get('solar_threshold','file') !=undefined)                            {   global.set('F_SOLAR.threshold', global.get('solar_threshold','file'),'file'); global.set('solar_threshold',undefined,'file');}\nif(global.get('DHW_SP_HIGH','file') !=undefined)                                {   global.set('F_SOLAR.dhw_sp_high', global.get('DHW_SP_HIGH','file'),'file'); global.set('DHW_SP_HIGH',undefined,'file');}\nif(global.get('DHW_SP_LOW','file') !=undefined)                                 {   global.set('F_SOLAR.dhw_sp_low', global.get('DHW_SP_LOW','file'),'file'); global.set('DHW_SP_LOW',undefined,'file');}\nif(global.get('DHW_Target_Temp','file') !=undefined)                            {   global.set('TOP9_DHW_Target_Temp', global.get('DHW_Target_Temp','file'),'file'); global.set('DHW_Target_Temp',undefined,'file');}\n\n// remove\nif(global.get('solar_fallback','file') !=undefined)                             {   global.set('solar_fallback',undefined,'file');}\nif(global.get('solar_state','file') !=undefined)                                {   global.set('solar_state',undefined,'file');}\nif(global.get('solar_turn_on','file') !=undefined)                              {   global.set('solar_turn_on',undefined,'file');}\n\n// 2023-03-19 (v22.09)\n// replace\nif(global.get('SS_Quietmode_on_off','file') !=undefined)                        {   global.set('F_SS.QM_state', global.get('SS_Quietmode_on_off','file'),'file'); global.set('SS_Quietmode_on_off',undefined,'file');}\nif(global.get('Quietmode_time','file') !=undefined)                             {   global.set('F_SS.QM_duration', global.get('Quietmode_time','file'),'file'); global.set('Quietmode_time',undefined,'file');}\nif(global.get('solar_detection_method','file') !=undefined)                     {   global.set('F_SOLAR.detection_method', global.get('solar_detection_method','file'),'file'); global.set('solar_detection_method',undefined,'file');}\n\n// remove\nif(global.get('SS_Quitmode_levelchange','file') !=undefined)                    {   global.set('SS_Quitmode_levelchange',undefined,'file');}\n\n// 2023-02-12 (v22.02)\n// remove old\nif(global.get('compressor_frequency') !=undefined)                              {   global.set('compressor_frequency',undefined);}\nif(global.get('F_SS_correction_active') !=undefined)                            {   global.set('F_SS_correction_active',undefined);}\n// move old to new\nif(global.get('F_SS_stage2','file') !=undefined)                                {   global.set('F_SS.total_duration', global.get('F_SS_stage2','file'),'file'); global.set('F_SS_stage2',undefined,'file');}\nif(global.get('F_SS_stage2_limit','file') !=undefined)                          {   global.set('F_SS.upperlimit_correction', global.get('F_SS_stage2_limit','file'),'file'); global.set('F_SS_stage2_limit',undefined,'file');}\nif(global.get('F_SS_reset_after_defrost','file') !=undefined)                   {   global.set('F_SS.reset_after_defrost', global.get('F_SS_reset_after_defrost','file'),'file'); global.set('F_SS_reset_after_defrost',undefined,'file');}\nif(global.get('Correction_2_softstart_on_off','file') !=undefined)              {   global.set('F_SS.state', global.get('Correction_2_softstart_on_off','file'),'file'); global.set('Correction_2_softstart_on_off',undefined,'file');}\nif(global.get('F_SS_correction') !=undefined)                                   {   global.set('F_SS.correction_value', global.get('F_SS_correction'),'file'); global.set('F_SS_correction',undefined);}\n\n    \n/////////////////\n    \n    //first move old mqtt counters to new vars:\n    var MQTT_Counter = global.get('MQTT_Counter', \"file\");\n    if (MQTT_Counter != undefined) { global.set('MQTT.counter', MQTT_Counter, \"file\"); }\n\n    var MQTT_Counter_Today = global.get('MQTT_Counter_Today', \"file\");\n    if (MQTT_Counter_Today != undefined) { global.set('MQTT.messages_today', MQTT_Counter_Today, \"file\"); }\n\n    var MQTT_Counter_Yesterday = global.get('MQTT_Counter_Yesterday', \"file\");\n    if (MQTT_Counter_Yesterday != undefined) { global.set('MQTT.messages_yesterday', MQTT_Counter_Yesterday, \"file\"); }\n\n    var MQTT_Limit = global.get('MQTT_Limit', \"file\");\n    if (MQTT_Limit != undefined) { global.set('MQTT.message_limit', MQTT_Limit, \"file\"); }\n\n//copy reduce pumpspeed settings:\n    var ReducePumpSpeed = global.get('ReducePumpSpeed', \"file\");\n    if (ReducePumpSpeed != undefined) { global.set('F_ReducePumpSpeed.state', ReducePumpSpeed, \"file\"); }   \n\n    var PumpMaxFlowSetting = global.get('PumpMaxFlowSetting', \"file\");\n    if (PumpMaxFlowSetting != undefined) { global.set('F_ReducePumpSpeed.PumpMaxFlowSetting', PumpMaxFlowSetting, \"file\"); }   \n\n    var SavedPumpspeed = global.get('SavedPumpspeed', \"file\");\n    if (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.SavedPumpspeed', SavedPumpspeed, \"file\"); } \n\n    var LowSpeed = global.get('LowSpeed', \"file\");\n    if (LowSpeed != undefined) { global.set('F_ReducePumpSpeed.LowSpeed', LowSpeed, \"file\"); } \n\n//copy defrost to new var:\n    var Defrost_Counter = global.get('Defrost_Counter', \"file\");\n    if (Defrost_Counter != undefined) { \n        global.set('Defrost.Counter', Defrost_Counter, \"file\"); \n        global.set('Defrost.Counter_Today', 0, \"file\"); \n        global.set('Defrost.Counter_Yesterday', 0, \"file\"); \n        } \n//copy RTC vars to new vars:\n    var F_rtc_on_off_active = global.get('F_rtc_on_off_active', \"file\");\n    if (F_rtc_on_off_active != undefined) { global.set('F_RTC_on_off_active', F_rtc_on_off_active, \"file\"); }\n\n    var F_rtc_on_off_status = global.get('F_rtc_on_off_status', \"file\");\n    if (F_rtc_on_off_status != undefined) { global.set('F_RTC_on_off_status', F_rtc_on_off_status, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n\n    var F_RTC_on_off2 = global.get('F_RTC_on_off2', \"file\");\n    if (F_RTC_on_off2 != undefined) { global.set('F_RTC.F1_power_state', F_RTC_on_off2, \"file\"); }\n\n    var F_RTC_on_off3_OM = global.get('F_RTC_on_off3_OM', \"file\");\n    if (F_RTC_on_off3_OM != undefined) { global.set('F_RTC.F2_OM_state', F_RTC_on_off3_OM, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n    if (F_RTC_on_off_active === undefined) { global.set('F_RTC.on_off_active', 0, \"file\"); }\n\nvar Correction_1_RTC_on_off = global.get('Correction_1_RTC_on_off', \"file\");\nif (Correction_1_RTC_on_off != undefined) { global.set('F_RTC.state', Correction_1_RTC_on_off, \"file\"); }\n\n// use old pumpspeed low:\nvar SavedPumpspeed = global.get('F_ReducePumpSpeed.SavedPumpspeed', \"file\");\nif (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.NormalSpeed', SavedPumpspeed, \"file\"); }\n\n//delete old vars:\n    global.set('Nightmode', undefined, \"file\");\n    var MQTT = global.get('MQTT', \"file\");\n    if (MQTT == 0 || MQTT == 1) {global.set('MQTT',undefined,\"file\");}\n    global.set('MQTT_Block', undefined, \"file\");\n    global.set('MQTT_select', undefined, \"file\");\n    global.set('MQTT_Block_select', undefined, \"file\");\n    global.set('MQTT_Counter', undefined, \"file\");\n    global.set('MQTT_Counter_Today', undefined, \"file\");\n    global.set('MQTT_Counter_Yesterday', undefined, \"file\");\n    global.set('MQTT_Limit', undefined, \"file\");\n    global.set('NightReductionRoomPV_CurrentStatus', undefined, \"file\");\n    global.set('NightReduction_current_value', undefined, \"file\");\n    global.set('NightReduction_correction', undefined, \"file\");\n    global.set('NightReductionWaterTemp_correction', undefined, \"file\");\n    global.set('nightreduction_on_off', undefined, \"file\");\n    global.set('RoomSetpointLOW', undefined, \"file\");\n    global.set('RoomSetpointNORMAL', undefined, \"file\");\n    global.set('ReducePumpSpeed', undefined, \"file\");\n    global.set('PumpMaxFlowSetting', undefined, \"file\");\n    global.set('SavedPumpspeed', undefined, \"file\");\n    global.set('LowSpeed', undefined, \"file\");\n    global.set('Booster', undefined, \"file\");\n    global.set('Defrost_Counter', undefined, \"file\");\n    global.set('Defrost_Counter_Today', undefined, \"file\");\n    global.set('Defrost_Counter_Yesterday', undefined, \"file\");\n    global.set('F_rtc_on_off_active', undefined, \"file\");\n    global.set('F_rtc_on_off_status', undefined, \"file\");\n    global.set('F_RTC_correction', undefined); //Memory Only\n    global.set('F_RTC_on_off2', undefined, \"file\");\n    global.set('F_RTC_on_off3_OM', undefined, \"file\");\n    global.set('F_RTC_on_off_active', undefined, \"file\");\n    global.set('Correction_1_RTC_on_off', undefined, \"file\");\n// remove more old vars 18-01-2023     \n    global.set('MQTT_Block_Allow_function_rtc_onoff', undefined, \"file\");\n    global.set('MQTT_Block_Allow_function_solar', undefined, \"file\");\n    global.set('MQTT_Block_Allow_function_scheduled_tasks', undefined, \"file\");   \n    global.set('MQTT_Block_default_1', undefined, \"file\");\n    global.set('MQTT_Block_default_2', undefined, \"file\");\n    global.set('MQTT_Block_default_3', undefined, \"file\");\n    global.set('F_ReducePumpSpeed.SavedPumpspeed', undefined, \"file\");\n\n\n\n    let msg99={};\n    msg99.topic = \"SYSTEM:\";\n    msg99.payload = \"removed old variables\";      \n    \n    return msg99;\n        \n    ",
+        "func": "\n//9-5-2023\nif(global.get('F_RTC.F1_F2_active','file') !=undefined)                         {   global.set('F_RTC.F1_F2_active',undefined,'file');}\nif(global.get('DHW_treshold','file') !=undefined)                               {   global.set('DHW_threshold_upper', global.get('DHW_treshold','file'),'file'); global.set('DHW_treshold',undefined,'file');}\n\n\n//\nif(global.get('rtc_off','file') !=undefined)                                    {   global.set('rtc_off',undefined,'file');}\nif(global.get('rtc_on','file') !=undefined)                                     {   global.set('rtc_on',undefined,'file');}\nif(global.get('rtc_t1','file') !=undefined)                                     {   global.set('F_RTC.rtc_t1_limit', global.get('rtc_t1','file'),'file'); global.set('rtc_t1',undefined,'file');}\nif(global.get('rtc_t2','file') !=undefined)                                     {   global.set('F_RTC.rtc_t2_limit', global.get('rtc_t2','file'),'file'); global.set('rtc_t2',undefined,'file');}\nif(global.get('rtc_t3','file') !=undefined)                                     {   global.set('F_RTC.rtc_t3_limit', global.get('rtc_t3','file'),'file'); global.set('rtc_t3',undefined,'file');}\nif(global.get('rtc_t4','file') !=undefined)                                     {   global.set('F_RTC.rtc_t4_limit', global.get('rtc_t4','file'),'file'); global.set('rtc_t4',undefined,'file');}\nif(global.get('rtc_t5','file') !=undefined)                                     {   global.set('F_RTC.rtc_t5_limit', global.get('rtc_t5','file'),'file'); global.set('rtc_t5',undefined,'file');}\nif(global.get('rtc_t6','file') !=undefined)                                     {   global.set('F_RTC.rtc_t6_limit', global.get('rtc_t6','file'),'file'); global.set('rtc_t6',undefined,'file');}\nif(global.get('rtc_t7_custom_cor','file') !=undefined)                          {   global.set('F_RTC.rtc_t7_correction_value', global.get('rtc_t7_custom_cor','file'),'file'); global.set('rtc_t7_custom_cor',undefined,'file');}\nif(global.get('rtc_t7','file') !=undefined)                                     {   global.set('F_RTC.rtc_t7_limit', global.get('rtc_t7','file'),'file'); global.set('rtc_t7',undefined,'file');}\nif(global.get('Correction_1_RTC_on_off','file') !=undefined)                    {   global.set('F_RTC.state', global.get('Correction_1_RTC_on_off','file'),'file'); global.set('Correction_1_RTC_on_off',undefined,'file');}\n\n\n\n\n// cleanup\n\nif(global.get('Last_Error') !=undefined)                                        {   global.set('Last_Error',undefined);}\nif(global.get('Previous_Quiet_Mode_Level','file') !=undefined)                  {   global.set('Previous_Quiet_Mode_Level',undefined,'file');}\nif(global.get('solar_block_scheduler','file') !=undefined)                      {   global.set('solar_block_scheduler',undefined,'file');}\nif(global.get('F_ReducePumpSpeed.NormalSpeed','file') !=undefined)              {   global.set('F_ReducePumpSpeed.NormalSpeed',undefined,'file');}\n\n// replace\nif(global.get('HeaterDelayTime','file') !=undefined)                            {   global.set('TOP96_Heater_Delay_Time', global.get('HeaterDelayTime','file'),'file'); global.set('HeaterDelayTime',undefined,'file');}\nif(global.get('HeaterStartDelta','file') !=undefined)                           {   global.set('TOP97_Heater_Start_Delta', global.get('HeaterStartDelta','file'),'file'); global.set('HeaterStartDelta',undefined,'file');}\nif(global.get('HeaterStopDelta','file') !=undefined)                            {   global.set('TOP98_Heater_Stop_Delta', global.get('HeaterStopDelta','file'),'file'); global.set('HeaterStopDelta',undefined,'file');}\nif(global.get('Heatpump_State','file') !=undefined)                             {   global.set('TOP0_Heatpump_State', global.get('Heatpump_State','file'),'file'); global.set('Heatpump_State',undefined,'file');}\nif(global.get('Heating_Mode','file') !=undefined)                               {   global.set('TOP76_Heating_Mode', global.get('Heating_Mode','file'),'file'); global.set('Heating_Mode',undefined,'file');}\nif(global.get('ThreeWay_Valve_State') !=undefined)                              {   global.set('TOP20_ThreeWay_Valve_State', global.get('ThreeWay_Valve_State')); global.set('ThreeWay_Valve_State',undefined);}\nif(global.get('Main_Inlet_Temp') !=undefined)                                   {   global.set('TOP5_Main_Inlet_Temp', global.get('Main_Inlet_Temp')); global.set('Main_Inlet_Temp',undefined);}\nif(global.get('Main_Outlet_Temp') !=undefined)                                  {   global.set('TOP6_Main_Outlet_Temp', global.get('Main_Outlet_Temp')); global.set('Main_Outlet_Temp',undefined);}\nif(global.get('Main_Target_Temp') !=undefined)                                  {   global.set('TOP27_Z1_Heat_Request_Temp', global.get('Main_Target_Temp')); global.set('Main_Target_Temp',undefined);}\nif(global.get('Operating_Mode_State','file') !=undefined)                       {   global.set('TOP4_Operating_Mode_State', global.get('Operating_Mode_State','file'),'file'); global.set('Operating_Mode_State',undefined,'file');}\nif(global.get('PowerfulMode','file') !=undefined)                               {   global.set('TOP17_Powerful_Mode_Time', global.get('PowerfulMode','file'),'file'); global.set('PowerfulMode',undefined,'file');}\nif(global.get('T_outside_panasonic','file') !=undefined)                        {   global.set('TOP14_Outside_Temp', global.get('T_outside_panasonic','file'),'file'); global.set('T_outside_panasonic',undefined,'file');}\nif(global.get('Force_DHW_State') !=undefined)                                   {   global.set('TOP2_Force_DHW_State', global.get('Force_DHW_State')); global.set('Force_DHW_State',undefined);}\nif(global.get('ForceDefrost','file') !=undefined)                               {   global.set('TOP26_Defrosting_State', global.get('ForceDefrost','file'),'file'); global.set('ForceDefrost',undefined,'file');}\nif(global.get('Quiet_Mode_Level','file') !=undefined)                           {   global.set('TOP18_Quiet_Mode_Level', global.get('Quiet_Mode_Level','file'),'file'); global.set('Quiet_Mode_Level',undefined,'file');}\nif(global.get('SetZones','file') !=undefined)                                   {   global.set('TOP94_Zones_State', global.get('SetZones','file'),'file'); global.set('SetZones',undefined,'file');}\nif(global.get('Pump_Flow') !=undefined)                                         {   global.set('TOP1_Pump_Flow', global.get('Pump_Flow')); global.set('Pump_Flow',undefined);}\nif(global.get('OperationCounter') !=undefined)                                  {   global.set('TOP12_Operations_Counter', global.get('OperationCounter')); global.set('OperationCounter',undefined);}\nif(global.get('DHW_Energy_Consumption') !=undefined)                            {   global.set('TOP41_DHW_Energy_Consumption', global.get('DHW_Energy_Consumption')); global.set('DHW_Energy_Consumption',undefined);}\nif(global.get('Heat_Energy_Consumption') !=undefined)                           {   global.set('TOP16_Heat_Energy_Consumption', global.get('Heat_Energy_Consumption')); global.set('Heat_Energy_Consumption',undefined);}\nif(global.get('Fan1_Speed') !=undefined)                                        {   global.set('TOP62_Fan1_Motor_Speed', global.get('Fan1_Speed')); global.set('Fan1_Speed',undefined);}\nif(global.get('Fan2_Speed') !=undefined)                                        {   global.set('TOP63_Fan2_Motor_Speed', global.get('Fan2_Speed')); global.set('Fan2_Speed',undefined);}\nif(global.get('PanasonicMainScheduler','file') !=undefined)                     {   global.set('TOP13_Main_Schedule_State', global.get('PanasonicMainScheduler','file'),'file'); global.set('PanasonicMainScheduler',undefined,'file');}\nif(global.get('OperationHours') !=undefined)                                    {   global.set('TOP11_Operations_Hours', global.get('OperationHours')); global.set('OperationHours',undefined);}\nif(global.get('HolidayMode','file') !=undefined)                                {   global.set('TOP19_Holiday_Mode_State', global.get('HolidayMode','file')); global.set('HolidayMode',undefined,'file');}\n\n\n\n\n// 2023-03-27 (v22.15)\nif(global.get('Sterilization_State') !=undefined)                               {   global.set('TOP69_Sterilization_State', global.get('Sterilization_State'),'file'); global.set('Sterilization_State',undefined);}\nif(global.get('Sterilization_Temp','file') !=undefined)                         {   global.set('TOP70_Sterilization_Temp', global.get('Sterilization_Temp','file'),'file'); global.set('Sterilization_Temp',undefined,'file');}\nif(global.get('DHWHeatDelta','file') !=undefined)                               {   global.set('TOP22_DHW_Heat_Delta', global.get('DHWHeatDelta','file'),'file'); global.set('DHWHeatDelta',undefined,'file');}\nif(global.get('DHW_Temp') !=undefined)                                          {   global.set('TOP10_DHW_Temp', global.get('DHW_Temp')); global.set('DHW_Temp',undefined);}\nif(global.get('FloorCoolDelta','file') !=undefined)                             {   global.set('TOP24_Cool_Delta', global.get('FloorCoolDelta','file'),'file'); global.set('FloorCoolDelta',undefined,'file');}\nif(global.get('FloorHeatDelta','file') !=undefined)                             {   global.set('TOP23_Heat_Delta', global.get('FloorHeatDelta','file'),'file'); global.set('FloorHeatDelta',undefined,'file');}\n\n\n\n\n\n\n// 2023-03-26 (v22.10)\n// replace\nvar T_room_custom       = global.get('T_room_custom',\"file\");                          // Custom outside temperature sensor\nif (T_room_custom > 0){\n    var old_value = T_room_custom;\n    T_room_custom = {};\n    T_room_custom.value = old_value;\n    global.set('T_room_custom',undefined,\"file\");\n    global.set('T_room_custom',T_room_custom,\"file\")\n}\n\n\n// 2023-03-26 (v22.10)\n// replace\nif(global.get('F_Solar_export_correction','file') !=undefined)                  {   global.set('F_SOLAR.export_correction', global.get('F_Solar_export_correction','file'),'file'); global.set('F_Solar_export_correction',undefined,'file');}\nif(global.get('F_Solar_import_correction','file') !=undefined)                  {   global.set('F_SOLAR.import_correction', global.get('F_Solar_import_correction','file'),'file'); global.set('F_Solar_import_correction',undefined,'file');}\nif(global.get('SolarFunction_active','file') !=undefined)                       {   global.set('F_SOLAR.function_active_state', global.get('SolarFunction_active','file'),'file'); global.set('SolarFunction_active',undefined,'file');}\nif(global.get('solar_threshold','file') !=undefined)                            {   global.set('F_SOLAR.threshold', global.get('solar_threshold','file'),'file'); global.set('solar_threshold',undefined,'file');}\nif(global.get('DHW_SP_HIGH','file') !=undefined)                                {   global.set('F_SOLAR.dhw_sp_high', global.get('DHW_SP_HIGH','file'),'file'); global.set('DHW_SP_HIGH',undefined,'file');}\nif(global.get('DHW_SP_LOW','file') !=undefined)                                 {   global.set('F_SOLAR.dhw_sp_low', global.get('DHW_SP_LOW','file'),'file'); global.set('DHW_SP_LOW',undefined,'file');}\nif(global.get('DHW_Target_Temp','file') !=undefined)                            {   global.set('TOP9_DHW_Target_Temp', global.get('DHW_Target_Temp','file'),'file'); global.set('DHW_Target_Temp',undefined,'file');}\n\n// remove\nif(global.get('solar_fallback','file') !=undefined)                             {   global.set('solar_fallback',undefined,'file');}\nif(global.get('solar_state','file') !=undefined)                                {   global.set('solar_state',undefined,'file');}\nif(global.get('solar_turn_on','file') !=undefined)                              {   global.set('solar_turn_on',undefined,'file');}\n\n// 2023-03-19 (v22.09)\n// replace\nif(global.get('SS_Quietmode_on_off','file') !=undefined)                        {   global.set('F_SS.QM_state', global.get('SS_Quietmode_on_off','file'),'file'); global.set('SS_Quietmode_on_off',undefined,'file');}\nif(global.get('Quietmode_time','file') !=undefined)                             {   global.set('F_SS.QM_duration', global.get('Quietmode_time','file'),'file'); global.set('Quietmode_time',undefined,'file');}\nif(global.get('solar_detection_method','file') !=undefined)                     {   global.set('F_SOLAR.detection_method', global.get('solar_detection_method','file'),'file'); global.set('solar_detection_method',undefined,'file');}\n\n// remove\nif(global.get('SS_Quitmode_levelchange','file') !=undefined)                    {   global.set('SS_Quitmode_levelchange',undefined,'file');}\n\n// 2023-02-12 (v22.02)\n// remove old\nif(global.get('compressor_frequency') !=undefined)                              {   global.set('compressor_frequency',undefined);}\nif(global.get('F_SS_correction_active') !=undefined)                            {   global.set('F_SS_correction_active',undefined);}\n// move old to new\nif(global.get('F_SS_stage2','file') !=undefined)                                {   global.set('F_SS.total_duration', global.get('F_SS_stage2','file'),'file'); global.set('F_SS_stage2',undefined,'file');}\nif(global.get('F_SS_stage2_limit','file') !=undefined)                          {   global.set('F_SS.upperlimit_correction', global.get('F_SS_stage2_limit','file'),'file'); global.set('F_SS_stage2_limit',undefined,'file');}\nif(global.get('F_SS_reset_after_defrost','file') !=undefined)                   {   global.set('F_SS.reset_after_defrost', global.get('F_SS_reset_after_defrost','file'),'file'); global.set('F_SS_reset_after_defrost',undefined,'file');}\nif(global.get('Correction_2_softstart_on_off','file') !=undefined)              {   global.set('F_SS.state', global.get('Correction_2_softstart_on_off','file'),'file'); global.set('Correction_2_softstart_on_off',undefined,'file');}\nif(global.get('F_SS_correction') !=undefined)                                   {   global.set('F_SS.correction_value', global.get('F_SS_correction'),'file'); global.set('F_SS_correction',undefined);}\n\n    \n/////////////////\n    \n    //first move old mqtt counters to new vars:\n    var MQTT_Counter = global.get('MQTT_Counter', \"file\");\n    if (MQTT_Counter != undefined) { global.set('MQTT.counter', MQTT_Counter, \"file\"); }\n\n    var MQTT_Counter_Today = global.get('MQTT_Counter_Today', \"file\");\n    if (MQTT_Counter_Today != undefined) { global.set('MQTT.messages_today', MQTT_Counter_Today, \"file\"); }\n\n    var MQTT_Counter_Yesterday = global.get('MQTT_Counter_Yesterday', \"file\");\n    if (MQTT_Counter_Yesterday != undefined) { global.set('MQTT.messages_yesterday', MQTT_Counter_Yesterday, \"file\"); }\n\n    var MQTT_Limit = global.get('MQTT_Limit', \"file\");\n    if (MQTT_Limit != undefined) { global.set('MQTT.message_limit', MQTT_Limit, \"file\"); }\n\n//copy reduce pumpspeed settings:\n    var ReducePumpSpeed = global.get('ReducePumpSpeed', \"file\");\n    if (ReducePumpSpeed != undefined) { global.set('F_ReducePumpSpeed.state', ReducePumpSpeed, \"file\"); }   \n\n    var PumpMaxFlowSetting = global.get('PumpMaxFlowSetting', \"file\");\n    if (PumpMaxFlowSetting != undefined) { global.set('F_ReducePumpSpeed.PumpMaxFlowSetting', PumpMaxFlowSetting, \"file\"); }   \n\n    var SavedPumpspeed = global.get('SavedPumpspeed', \"file\");\n    if (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.SavedPumpspeed', SavedPumpspeed, \"file\"); } \n\n    var LowSpeed = global.get('LowSpeed', \"file\");\n    if (LowSpeed != undefined) { global.set('F_ReducePumpSpeed.LowSpeed', LowSpeed, \"file\"); } \n\n//copy defrost to new var:\n    var Defrost_Counter = global.get('Defrost_Counter', \"file\");\n    if (Defrost_Counter != undefined) { \n        global.set('Defrost.Counter', Defrost_Counter, \"file\"); \n        global.set('Defrost.Counter_Today', 0, \"file\"); \n        global.set('Defrost.Counter_Yesterday', 0, \"file\"); \n        } \n//copy RTC vars to new vars:\n    var F_rtc_on_off_active = global.get('F_rtc_on_off_active', \"file\");\n    if (F_rtc_on_off_active != undefined) { global.set('F_RTC_on_off_active', F_rtc_on_off_active, \"file\"); }\n\n    var F_rtc_on_off_status = global.get('F_rtc_on_off_status', \"file\");\n    if (F_rtc_on_off_status != undefined) { global.set('F_RTC_on_off_status', F_rtc_on_off_status, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n\n    var F_RTC_on_off2 = global.get('F_RTC_on_off2', \"file\");\n    if (F_RTC_on_off2 != undefined) { global.set('F_RTC.F1_power_state', F_RTC_on_off2, \"file\"); }\n\n    var F_RTC_on_off3_OM = global.get('F_RTC_on_off3_OM', \"file\");\n    if (F_RTC_on_off3_OM != undefined) { global.set('F_RTC.F2_OM_state', F_RTC_on_off3_OM, \"file\"); }\n\n    var F_RTC_on_off_active = global.get('F_RTC_on_off_active', \"file\");\n    if (F_RTC_on_off_active != undefined) { global.set('F_RTC.on_off_active', F_RTC_on_off_active, \"file\"); }\n    if (F_RTC_on_off_active === undefined) { global.set('F_RTC.on_off_active', 0, \"file\"); }\n\nvar Correction_1_RTC_on_off = global.get('Correction_1_RTC_on_off', \"file\");\nif (Correction_1_RTC_on_off != undefined) { global.set('F_RTC.state', Correction_1_RTC_on_off, \"file\"); }\n\n// use old pumpspeed low:\nvar SavedPumpspeed = global.get('F_ReducePumpSpeed.SavedPumpspeed', \"file\");\nif (SavedPumpspeed != undefined) { global.set('F_ReducePumpSpeed.NormalSpeed', SavedPumpspeed, \"file\"); }\n\n//delete old vars:\n    global.set('Nightmode', undefined, \"file\");\n    var MQTT = global.get('MQTT', \"file\");\n    if (MQTT == 0 || MQTT == 1) {global.set('MQTT',undefined,\"file\");}\n    global.set('MQTT_Block', undefined, \"file\");\n    global.set('MQTT_select', undefined, \"file\");\n    global.set('MQTT_Block_select', undefined, \"file\");\n    global.set('MQTT_Counter', undefined, \"file\");\n    global.set('MQTT_Counter_Today', undefined, \"file\");\n    global.set('MQTT_Counter_Yesterday', undefined, \"file\");\n    global.set('MQTT_Limit', undefined, \"file\");\n    global.set('NightReductionRoomPV_CurrentStatus', undefined, \"file\");\n    global.set('NightReduction_current_value', undefined, \"file\");\n    global.set('NightReduction_correction', undefined, \"file\");\n    global.set('NightReductionWaterTemp_correction', undefined, \"file\");\n    global.set('nightreduction_on_off', undefined, \"file\");\n    global.set('RoomSetpointLOW', undefined, \"file\");\n    global.set('RoomSetpointNORMAL', undefined, \"file\");\n    global.set('ReducePumpSpeed', undefined, \"file\");\n    global.set('PumpMaxFlowSetting', undefined, \"file\");\n    global.set('SavedPumpspeed', undefined, \"file\");\n    global.set('LowSpeed', undefined, \"file\");\n    global.set('Booster', undefined, \"file\");\n    global.set('Defrost_Counter', undefined, \"file\");\n    global.set('Defrost_Counter_Today', undefined, \"file\");\n    global.set('Defrost_Counter_Yesterday', undefined, \"file\");\n    global.set('F_rtc_on_off_active', undefined, \"file\");\n    global.set('F_rtc_on_off_status', undefined, \"file\");\n    global.set('F_RTC_correction', undefined); //Memory Only\n    global.set('F_RTC_on_off2', undefined, \"file\");\n    global.set('F_RTC_on_off3_OM', undefined, \"file\");\n    global.set('F_RTC_on_off_active', undefined, \"file\");\n    global.set('Correction_1_RTC_on_off', undefined, \"file\");\n// remove more old vars 18-01-2023     \n    global.set('MQTT_Block_Allow_function_rtc_onoff', undefined, \"file\");\n    global.set('MQTT_Block_Allow_function_solar', undefined, \"file\");\n    global.set('MQTT_Block_Allow_function_scheduled_tasks', undefined, \"file\");   \n    global.set('MQTT_Block_default_1', undefined, \"file\");\n    global.set('MQTT_Block_default_2', undefined, \"file\");\n    global.set('MQTT_Block_default_3', undefined, \"file\");\n    global.set('F_ReducePumpSpeed.SavedPumpspeed', undefined, \"file\");\n\n\n\n    let msg99={};\n    msg99.topic = \"SYSTEM:\";\n    msg99.payload = \"removed old variables\";      \n    \n    return msg99;\n        \n    ",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
