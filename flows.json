@@ -556,7 +556,6 @@
             "119d9c04e028ad98",
             "13b0a160e7f2d0a0",
             "8e9f91dd021c2ccd",
-            "53ae8019411d666d",
             "0a683587ca4fc25c",
             "05e2f23adde7a6fc",
             "ede3b3328704cab1",
@@ -673,7 +672,10 @@
             "8406701f07ab7886",
             "6864b73de510f046",
             "64d06b253783964a",
-            "281a5e0dca0e33dc"
+            "281a5e0dca0e33dc",
+            "063fe3316395a6c4",
+            "6591faa63b1b0351",
+            "24b17d7139dc31a7"
         ],
         "x": 1154,
         "y": 19,
@@ -1242,10 +1244,10 @@
         "order": 8,
         "width": 6,
         "height": 1,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
+        "passthru": false,
+        "decouple": "true",
+        "topic": "Toggle",
+        "topicType": "str",
         "style": "",
         "onvalue": "1",
         "onvalueType": "num",
@@ -1532,8 +1534,9 @@
         "g": "7c41aa629fb3859e",
         "name": "Force sterilization",
         "links": [
-            "0a683587ca4fc25c",
-            "4f62466c41bb3667"
+            "4f62466c41bb3667",
+            "6591faa63b1b0351",
+            "24b17d7139dc31a7"
         ],
         "x": 155,
         "y": 180,
@@ -8877,7 +8880,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "22.28 Beta",
+        "payload": "22.29 Beta",
         "payloadType": "str",
         "x": 1330,
         "y": 1920,
@@ -10250,10 +10253,10 @@
         "order": 4,
         "width": 0,
         "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
+        "passthru": false,
+        "decouple": "true",
+        "topic": "Toggle",
+        "topicType": "str",
         "style": "",
         "onvalue": "1",
         "onvalueType": "num",
@@ -10269,7 +10272,7 @@
         "y": 1100,
         "wires": [
             [
-                "53ae8019411d666d"
+                "063fe3316395a6c4"
             ]
         ]
     },
@@ -10281,14 +10284,13 @@
         "name": "Force sterilization1",
         "links": [
             "0609b7d54d31dafb",
-            "4f62466c41bb3667",
-            "8ed91c4260d9b758"
+            "4f62466c41bb3667"
         ],
-        "x": 1335,
-        "y": 960,
+        "x": 1975,
+        "y": 1080,
         "wires": [
             [
-                "ccb9e79ff06190fa"
+                "063fe3316395a6c4"
             ]
         ]
     },
@@ -10719,8 +10721,8 @@
         "links": [
             "01744f1093a2fd51"
         ],
-        "x": 2185,
-        "y": 1080,
+        "x": 2175,
+        "y": 1060,
         "wires": []
     },
     {
@@ -11391,29 +11393,6 @@
         ]
     },
     {
-        "id": "53ae8019411d666d",
-        "type": "rbe",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 2070,
-        "y": 1100,
-        "wires": [
-            [
-                "ccb9e79ff06190fa",
-                "0a683587ca4fc25c",
-                "7cfe771e9583a82d"
-            ]
-        ]
-    },
-    {
         "id": "0a683587ca4fc25c",
         "type": "link out",
         "z": "8c9d42231fd19d3c",
@@ -11421,11 +11400,10 @@
         "name": "ForceSterilization",
         "mode": "link",
         "links": [
-            "a628a3d5d7be0e8b",
-            "4982424c661376ea"
+            "d0fda364deccc7f0"
         ],
-        "x": 2185,
-        "y": 1120,
+        "x": 2225,
+        "y": 1140,
         "wires": []
     },
     {
@@ -11617,7 +11595,8 @@
         "y": 1100,
         "wires": [
             [
-                "ccb9e79ff06190fa"
+                "ccb9e79ff06190fa",
+                "24b17d7139dc31a7"
             ]
         ],
         "outputLabels": [
@@ -15900,6 +15879,66 @@
         ]
     },
     {
+        "id": "063fe3316395a6c4",
+        "type": "function",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "Filter+",
+        "func": "// to SET13 (PIN1)\n// to GUI (PIN2)\n// to trigger Scheduler (PIN3)\n\n\n\n\nif (msg.topic == \"Sterilization\") {       // to set13\n    return [msg,msg,null];\n}\n\n\nif (msg.topic == \"Toggle\") {       // to trigger through scheduler\n    return [null,msg,msg];\n} \n",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2070,
+        "y": 1100,
+        "wires": [
+            [
+                "7cfe771e9583a82d"
+            ],
+            [
+                "ccb9e79ff06190fa",
+                "6591faa63b1b0351"
+            ],
+            [
+                "0a683587ca4fc25c"
+            ]
+        ],
+        "outputLabels": [
+            "to SET13 (PIN1)",
+            "to GUI (PIN2)",
+            "to Scheduler (PIN3)"
+        ]
+    },
+    {
+        "id": "6591faa63b1b0351",
+        "type": "link out",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "link out 56",
+        "mode": "link",
+        "links": [
+            "4982424c661376ea"
+        ],
+        "x": 2225,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "24b17d7139dc31a7",
+        "type": "link out",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "link out 57",
+        "mode": "link",
+        "links": [
+            "4982424c661376ea"
+        ],
+        "x": 1625,
+        "y": 1120,
+        "wires": []
+    },
+    {
         "id": "a938de76db0b71f6",
         "type": "tab",
         "label": "WP Control",
@@ -16078,8 +16117,6 @@
             "ca1f0fdf0dd05c89",
             "c5cba27eac8a70a2",
             "2c34d9f3299bef00",
-            "5d952499e2fba893",
-            "a628a3d5d7be0e8b",
             "fd08994eed1621be",
             "cd3f44853ed1a6cd",
             "a0d48945187b9bf6",
@@ -16589,6 +16626,25 @@
         ]
     },
     {
+        "id": "f7bdc92c0ed8e3b9",
+        "type": "group",
+        "z": "a938de76db0b71f6",
+        "name": "DHW Tank temperature logic",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "64021d928c59c5cd",
+            "017e95185010581b",
+            "f651bed25831c6f4",
+            "c8b5382d8d981e31"
+        ],
+        "x": 2534,
+        "y": 1619,
+        "w": 492,
+        "h": 122
+    },
+    {
         "id": "f2aa79821dfd1110",
         "type": "group",
         "z": "a938de76db0b71f6",
@@ -16609,25 +16665,6 @@
         "y": 59,
         "w": 1292,
         "h": 162
-    },
-    {
-        "id": "f7bdc92c0ed8e3b9",
-        "type": "group",
-        "z": "a938de76db0b71f6",
-        "name": "DHW Tank temperature logic",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "64021d928c59c5cd",
-            "017e95185010581b",
-            "f651bed25831c6f4",
-            "c8b5382d8d981e31"
-        ],
-        "x": 2534,
-        "y": 1619,
-        "w": 492,
-        "h": 122
     },
     {
         "id": "2c893b32851ad2a2",
@@ -17229,9 +17266,7 @@
         "g": "0077cf76d14c5757",
         "name": "Sterilization_State",
         "mode": "link",
-        "links": [
-            "20e2544a8277d8c2"
-        ],
+        "links": [],
         "x": 1495,
         "y": 2120,
         "wires": []
@@ -18515,41 +18550,6 @@
         "x": 410,
         "y": 2840,
         "wires": []
-    },
-    {
-        "id": "5d952499e2fba893",
-        "type": "function",
-        "z": "a938de76db0b71f6",
-        "g": "cd2050a861736ec5",
-        "name": "set.SetForceSterilization",
-        "func": "msg.payload = Number(msg.payload).toFixed(0);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'SetForceSterilization';\nglobal.set(\"SetForceSterilization\",msg.payload,\"file\");\n\nreturn msg;\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1090,
-        "y": 3740,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a628a3d5d7be0e8b",
-        "type": "link in",
-        "z": "a938de76db0b71f6",
-        "g": "cd2050a861736ec5",
-        "name": "",
-        "links": [
-            "0a683587ca4fc25c"
-        ],
-        "x": 155,
-        "y": 3740,
-        "wires": [
-            [
-                "5d952499e2fba893"
-            ]
-        ]
     },
     {
         "id": "8206cc922dc8874d",
@@ -26888,9 +26888,7 @@
             "898b02a132291b49"
         ],
         "x": 54,
-        "y": 1119,
-        "w": 1388,
-        "h": 602
+        "y": 1119
     },
     {
         "id": "6a01f1b80ccf3218",
@@ -26908,9 +26906,7 @@
             "2064b5a11ffc43b3"
         ],
         "x": 54,
-        "y": 39,
-        "w": 832,
-        "h": 122
+        "y": 39
     },
     {
         "id": "2b75a55bb8fb12c6",
@@ -26926,9 +26922,7 @@
             "974b24f717fe8560"
         ],
         "x": 64,
-        "y": 199,
-        "w": 872,
-        "h": 82
+        "y": 199
     },
     {
         "id": "5ffcc1056a276bf5",
@@ -26953,9 +26947,7 @@
             "e68356272f1f529b"
         ],
         "x": 54,
-        "y": 439,
-        "w": 1388,
-        "h": 622
+        "y": 439
     },
     {
         "id": "27d590581cd92df1",
@@ -26971,9 +26963,7 @@
             "2cc9fde214b13621"
         ],
         "x": 54,
-        "y": 299,
-        "w": 872,
-        "h": 82
+        "y": 299
     },
     {
         "id": "6472e1e423188a37",
@@ -26993,9 +26983,7 @@
             "3043e3c17ff68920"
         ],
         "x": 84,
-        "y": 1439,
-        "w": 1332,
-        "h": 82
+        "y": 1439
     },
     {
         "id": "3ce36bc606018d50",
@@ -27015,9 +27003,7 @@
             "61e1918ce41f34f7"
         ],
         "x": 84,
-        "y": 1339,
-        "w": 1332,
-        "h": 82
+        "y": 1339
     },
     {
         "id": "6db1485dd36081ec",
@@ -27037,9 +27023,7 @@
             "29a4cb237663e973"
         ],
         "x": 84,
-        "y": 779,
-        "w": 1332,
-        "h": 82
+        "y": 779
     },
     {
         "id": "5b9db86809583efd",
@@ -27059,9 +27043,7 @@
             "0ae4268d42429bac"
         ],
         "x": 84,
-        "y": 679,
-        "w": 1332,
-        "h": 82
+        "y": 679
     },
     {
         "id": "d734c640b789ff1e",
@@ -27081,9 +27063,7 @@
             "935535fc205e470c"
         ],
         "x": 84,
-        "y": 579,
-        "w": 1322,
-        "h": 82
+        "y": 579
     },
     {
         "id": "fc68ffd1a284a6bd",
@@ -27103,9 +27083,7 @@
             "868b4c6128111bb6"
         ],
         "x": 84,
-        "y": 1239,
-        "w": 1332,
-        "h": 82
+        "y": 1239
     },
     {
         "id": "d44f1a1993a8a44f",
@@ -27125,9 +27103,7 @@
             "2ee679408e4ccc6f"
         ],
         "x": 1134,
-        "y": 919,
-        "w": 272,
-        "h": 82
+        "y": 919
     },
     {
         "id": "e598f3cca51f28d1",
@@ -27147,9 +27123,7 @@
             "4eaa2cfa2749c551"
         ],
         "x": 1134,
-        "y": 1579,
-        "w": 272,
-        "h": 82
+        "y": 1579
     },
     {
         "id": "6a7fa8b57f2d9800",
@@ -28470,9 +28444,7 @@
             "88ea0371f9cecd37"
         ],
         "x": 74,
-        "y": 19,
-        "w": 1292,
-        "h": 728
+        "y": 19
     },
     {
         "id": "81ff790f84afd46d",
@@ -28488,9 +28460,7 @@
             "bd6e0b75ff712b33"
         ],
         "x": 8,
-        "y": 1713,
-        "w": 1308,
-        "h": 1094
+        "y": 1713
     },
     {
         "id": "6f4cdc97add442ff",
@@ -28523,9 +28493,7 @@
             "70753620fd42401f"
         ],
         "x": 114,
-        "y": 2819,
-        "w": 1012,
-        "h": 202
+        "y": 2819
     },
     {
         "id": "b16b9aa8172d25f5",
@@ -28610,9 +28578,7 @@
             "375bbd780529afe0"
         ],
         "x": 74,
-        "y": 779,
-        "w": 1332,
-        "h": 688
+        "y": 779
     },
     {
         "id": "2efa0af27c69d4d0",
@@ -28633,9 +28599,7 @@
             "40abfbbe563b32ac"
         ],
         "x": 114,
-        "y": 551.5,
-        "w": 812,
-        "h": 169.5
+        "y": 551.5
     },
     {
         "id": "9fca714df21ffac0",
@@ -28652,9 +28616,7 @@
             "5256af8b7309c113"
         ],
         "x": 314,
-        "y": 399,
-        "w": 232,
-        "h": 82
+        "y": 399
     },
     {
         "id": "b85d6aca6a841215",
@@ -28671,9 +28633,7 @@
             "3ddc8ec4b5d75af2"
         ],
         "x": 274,
-        "y": 1119,
-        "w": 232,
-        "h": 82
+        "y": 1119
     },
     {
         "id": "233708268636f815",
@@ -28697,9 +28657,7 @@
             "441d5424780d9523"
         ],
         "x": 154,
-        "y": 1279,
-        "w": 612,
-        "h": 162
+        "y": 1279
     },
     {
         "id": "bd6e0b75ff712b33",
@@ -28770,9 +28728,7 @@
             "2717d21023b674ad"
         ],
         "x": 34,
-        "y": 1739,
-        "w": 1192,
-        "h": 1042
+        "y": 1739
     },
     {
         "id": "ce2634259bc8d6eb",
@@ -29783,7 +29739,7 @@
         "type": "function",
         "z": "966985d68ebb4990",
         "name": "F_stored_next_operating_mode",
-        "func": "global.set(\"F_stored_next_operating_mode\",msg.payload,\"file\");\n",
+        "func": "if  (msg.payload == 99) \n    { global.set(\"F_stored_next_operating_mode\",undefined,\"file\"); }\nelse \n    { global.set(\"F_stored_next_operating_mode\",msg.payload,\"file\"); }\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -32258,6 +32214,31 @@
         ]
     },
     {
+        "id": "b71c2a60abf302a0",
+        "type": "inject",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "99",
+        "payloadType": "num",
+        "x": 1210,
+        "y": 3260,
+        "wires": [
+            [
+                "b463820910564b36"
+            ]
+        ]
+    },
+    {
         "id": "72f2748729e53ad1",
         "type": "tab",
         "label": "WP Help",
@@ -32287,9 +32268,7 @@
             "0bc6f2130b8acb9d"
         ],
         "x": 134,
-        "y": 99,
-        "w": 472,
-        "h": 382
+        "y": 99
     },
     {
         "id": "5505432507101e93",
@@ -32308,9 +32287,7 @@
             "c2935eeb2b0919cf"
         ],
         "x": 134,
-        "y": 499,
-        "w": 622,
-        "h": 202
+        "y": 499
     },
     {
         "id": "b5e32619ad0c206e",
@@ -32329,9 +32306,7 @@
             "3c3c8472da1fb85a"
         ],
         "x": 794,
-        "y": 79,
-        "w": 582,
-        "h": 202
+        "y": 79
     },
     {
         "id": "c77aed9e30c539d5",
@@ -32348,38 +32323,13 @@
             "973d8234e83e6744",
             "c38f069ac9641f6a",
             "00752e5f6b14036b",
-            "4435d59eb3f03631",
             "d0bc87893510d46f",
             "347b614526bf4814",
             "8090bc95e8512738",
             "7ca958b4b94243f8"
         ],
         "x": 794,
-        "y": 319,
-        "w": 582,
-        "h": 262
-    },
-    {
-        "id": "4435d59eb3f03631",
-        "type": "ui_template",
-        "z": "72f2748729e53ad1",
-        "g": "c77aed9e30c539d5",
-        "group": "9aec7afe54746c39",
-        "name": "Line - Setup ",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>DHW temperature</left> \n</html>\n",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 910,
-        "y": 440,
-        "wires": [
-            []
-        ]
+        "y": 319
     },
     {
         "id": "fde5dafe04d72e23",
@@ -32403,9 +32353,7 @@
             "8849a0faf2ae88ef"
         ],
         "x": 794,
-        "y": 619,
-        "w": 582,
-        "h": 302
+        "y": 619
     },
     {
         "id": "be48f3104249b8a0",
@@ -35121,8 +35069,8 @@
         "links": [
             "e73d130bb1839444"
         ],
-        "x": 2025,
-        "y": 2640,
+        "x": 2035,
+        "y": 2720,
         "wires": []
     },
     {
@@ -35202,7 +35150,7 @@
         "z": "35d210f042827344",
         "g": "b63004182c33d3b9",
         "name": "Schedule execution",
-        "func": "// >> trigger 1\n// DHW / Sterilisation? This is defined in the topic\n// Topic: DHW or topic: Sterilization\n// payload 1 > initiate sequence. \n\n// Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n\n// Declaration of the variables. \nlet msg1={}, msg2={}, msg3={}, msg4={};\n// msg1     Output towards Operation mode\n// msg2     Output towards Force DHW mode on/off\n// msg3     output towards Force Sterilization on/off\n// msg4     empty\n\n\nvar TOP20_ThreeWay_Valve_State  =global.get('TOP20_ThreeWay_Valve_State');      // valvue position\nvar TOP10_DHW_Temp              =global.get('TOP10_DHW_Temp');                  // Current temperature of DHW vessel. \nvar TOP9_DHW_Target_Temp        =global.get('TOP9_DHW_Target_Temp',\"file\");     // Programmed DHW target temperature\nvar TOP2_Force_DHW_State        =global.get('TOP2_Force_DHW_State');            // Current DHW state (on / off). \n\nvar TOP4_Operating_Mode_State=global.get('TOP4_Operating_Mode_State',\"file\");   // get Current OperationMode\nvar new_OM;                                                                     // create empty variable.\n\nvar TOP69_Sterilization_State   =global.get('TOP69_Sterilization_State',\"file\");   // Current sterilization state (on / off)\nvar TOP70_Sterilization_Temp    =global.get('TOP70_Sterilization_Temp',\"file\");                 // Programmed sterilization target temperature\nvar DHW_threshold_upper         =global.get('DHW_threshold_upper',\"file\");                             // Programmed treshold DHW tank temperature set from GUI\n\nvar F_stored_next_operating_mode=global.get('F_stored_next_operating_mode',\"file\");\nvar F_SOLAR = global.get('F_SOLAR',\"file\");\n\n////////////////////////////////////////////////////////////////////////////////\n//                           START OF THE CYCLE                               //\n////////////////////////////////////////////////////////////////////////////////\n\n// START Force DHW cycle\nif (msg.topic == 'DHW' && msg.payload == 1 && TOP10_DHW_Temp < DHW_threshold_upper && F_SOLAR.function_active_state == 0)          // There is a temperature condition to start DHW heating or not. Change to your own desire.\n    {\n                \n                if (F_stored_next_operating_mode===undefined) {global.set('F_stored_next_operating_mode',TOP4_Operating_Mode_State,\"file\")}\n                \n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (TOP4_Operating_Mode_State==0){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 3;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 8;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 8;}\n                \n                global.set('F_RTC.on_off_active',0,\"file\");\n                \n                msg1.payload = new_OM;                                          // set operationmode to add DHW mode\n                msg2.payload = 1;                                               // Turn on Force DHW mode\n                global.set('Force_DHW_active',1,\"file\");\n                if (TOP4_Operating_Mode_State!=new_OM)\n                    {return [msg1, msg2];}\n                else {return [null, msg2];}\n    }\n\n// START Force Sterilization cycle\nif (msg.topic == 'Sterilization' && msg.payload == 1  && F_SOLAR.function_active_state == 0)\n    {\n\n                if (F_stored_next_operating_mode===undefined) {global.set('F_stored_next_operating_mode',TOP4_Operating_Mode_State,\"file\")}\n                \n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (TOP4_Operating_Mode_State==0){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 3;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 8;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 8;}\n                \n                global.set('F_RTC.on_off_active',0,\"file\");\n                \n                msg1.payload = new_OM;                                          // set operationmode to add DHW mode\n                msg3.payload = 1;                                               // Turn on Force Sterilization mode\n                global.set('Sterilization_active',1,\"file\");\n                if (TOP4_Operating_Mode_State!=new_OM)\n                    {return [msg1, null, msg3];}\n                else\n                    {return [null, null, msg3];}\n                \n                \n    }\n\n////////////////////////////////////////////////////////////////////////////////\n//                      END OF THE CYCLE                                      //\n////////////////////////////////////////////////////////////////////////////////\n\n\n// END DHW cycle (Automatic)\nif (TOP2_Force_DHW_State == 1 && TOP69_Sterilization_State == 0 && TOP10_DHW_Temp >= TOP9_DHW_Target_Temp)\n    {\n                new_OM = F_stored_next_operating_mode;\n                \n                global.set('F_stored_next_operating_mode',undefined,\"file\");\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                /*\n                if (TOP4_Operating_Mode_State==0){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 1;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 2;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 1;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 2;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 7;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 7;}\n                */\n\n                if (TOP4_Operating_Mode_State!=new_OM)\n                global.set('Force_DHW_active',0,\"file\");\n                {setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg1.payload = new_OM;                                      // set operationmode to remove DHW\n                    node.send([msg1,null,null,null]);                           // send msg1 only, other outputs are null\n                }, 5000);}\n                msg2.payload = 0;                                               // Turn off Force DHW mode\n                return [null, msg2];\n    }\n\n\n// END Sterilization cycle (Automatic)\nif (TOP69_Sterilization_State == 1 && TOP10_DHW_Temp >= TOP70_Sterilization_Temp)\n    {           \n                new_OM = F_stored_next_operating_mode;\n                global.set('F_stored_next_operating_mode',undefined,\"file\");\n                \n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                /*\n                if (TOP4_Operating_Mode_State==0){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 1;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 2;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 0;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 1;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 2;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 7;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 7;} \n                */\n    \n                global.set('Sterilization_active',0,\"file\");\n                if (TOP4_Operating_Mode_State!=new_OM)\n                {\n                    setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg1.payload = new_OM;                                      // set operationmode to remove DHW\n                    node.send([msg1,null,null,null]);                           // send msg1 only, other outputs are null\n                    }, 5000);\n                }\n\n\n                msg3.payload = 0;                                               // Turn off Force Sterilization mode\n                return [null, null, msg3];\n    }\n\n\n",
+        "func": "// >> trigger 1\n// DHW / Sterilisation? This is defined in the topic\n// Topic: DHW or topic: Sterilization\n// payload 1 > initiate sequence. \n\n// Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n\n// Declaration of the variables. \nlet msg1={}, msg2={}, msg3={}, msg4={};\n// msg1     Output towards Operation mode\n// msg2     Output towards Force DHW mode on/off\n// msg3     output towards Force Sterilization on/off\n// msg4     empty\n\n\nvar TOP20_ThreeWay_Valve_State  =global.get('TOP20_ThreeWay_Valve_State');      // valvue position\nvar TOP10_DHW_Temp              =global.get('TOP10_DHW_Temp');                  // Current temperature of DHW vessel. \nvar TOP9_DHW_Target_Temp        =global.get('TOP9_DHW_Target_Temp',\"file\");     // Programmed DHW target temperature\nvar TOP2_Force_DHW_State        =global.get('TOP2_Force_DHW_State');            // Current DHW state (on / off). \n\nvar TOP4_Operating_Mode_State   =global.get('TOP4_Operating_Mode_State',\"file\");   // get Current OperationMode\nvar new_OM;                                                                     // create empty variable.\n\nvar TOP69_Sterilization_State   =global.get('TOP69_Sterilization_State',\"file\");   // Current sterilization state (on / off)\nvar TOP70_Sterilization_Temp    =global.get('TOP70_Sterilization_Temp',\"file\");                 // Programmed sterilization target temperature\nvar DHW_threshold_upper         =global.get('DHW_threshold_upper',\"file\");                             // Programmed treshold DHW tank temperature set from GUI\n\nvar F_stored_next_operating_mode=global.get('F_stored_next_operating_mode',\"file\");\nvar F_SOLAR = global.get('F_SOLAR',\"file\");\n\n////////////////////////////////////////////////////////////////////////////////\n//                           START OF THE CYCLE                               //\n////////////////////////////////////////////////////////////////////////////////\n\n// START Force DHW cycle\nif (msg.topic == 'DHW' && msg.payload == 1 && TOP10_DHW_Temp < DHW_threshold_upper && F_SOLAR.function_active_state == 0)          // There is a temperature condition to start DHW heating or not. Change to your own desire.\n    {\n                \n                if (F_stored_next_operating_mode===undefined) {global.set('F_stored_next_operating_mode',TOP4_Operating_Mode_State,\"file\")}\n                \n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (TOP4_Operating_Mode_State==0){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 3;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 8;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 8;}\n                \n                global.set('F_RTC.on_off_active',0,\"file\");\n                \n                msg1.payload = new_OM;                                          // set operationmode to add DHW mode\n                msg2.payload = 1;                                               // Turn on Force DHW mode\n                global.set('Force_DHW_active',1,\"file\");\n                if (TOP4_Operating_Mode_State!=new_OM)\n                    {return [msg1,msg2,null];}\n                else {return [null,msg2,null];}\n    }\n\n// START Force Sterilization cycle\nif (msg.topic == 'Sterilization' && msg.payload == 1  && F_SOLAR.function_active_state == 0)\n    {\n\n                if (F_stored_next_operating_mode===undefined) {global.set('F_stored_next_operating_mode',TOP4_Operating_Mode_State,\"file\")}\n                \n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if (TOP4_Operating_Mode_State==0){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==1){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==2){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==3){new_OM = 3;}\n                if (TOP4_Operating_Mode_State==4){new_OM = 4;}\n                if (TOP4_Operating_Mode_State==5){new_OM = 5;}\n                if (TOP4_Operating_Mode_State==6){new_OM = 6;}\n                if (TOP4_Operating_Mode_State==7){new_OM = 8;}\n                if (TOP4_Operating_Mode_State==8){new_OM = 8;}\n                \n                global.set('F_RTC.on_off_active',0,\"file\");\n                \n                msg1.payload = new_OM;                                          // set operationmode to add DHW mode\n                msg3.payload = 1;                                               // Turn on Force Sterilization mode\n                msg3.topic = 'Sterilization';\n                global.set('Sterilization_active',1,\"file\");\n                if (TOP4_Operating_Mode_State!=new_OM)\n                    {return [msg1, null, msg3];}\n                else\n                    {return [null, null, msg3];}\n                \n                \n    }\n\n////////////////////////////////////////////////////////////////////////////////\n//                      END OF THE CYCLE                                      //\n////////////////////////////////////////////////////////////////////////////////\n\n\n// END DHW cycle (Automatic)\nif (TOP2_Force_DHW_State == 1 && TOP69_Sterilization_State == 0 && TOP10_DHW_Temp >= TOP9_DHW_Target_Temp)\n    {\n                new_OM = F_stored_next_operating_mode;\n                \n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n\n                if (TOP4_Operating_Mode_State!=new_OM && new_OM !== undefined)\n                global.set('Force_DHW_active',0,\"file\");\n                {setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg1.payload = new_OM;                                      // set operationmode to remove DHW\n                    node.send([msg1,null,null,null]);                           // send msg1 only, other outputs are null\n                }, 5000);}\n\n                global.set('F_stored_next_operating_mode',undefined,\"file\");\n                \n                msg2.payload = 0;                                               // Turn off Force DHW mode\n                return [null, msg2,null];\n    }\n\n\n// END Sterilization cycle (Automatic)\nif ((TOP69_Sterilization_State == 1 && TOP10_DHW_Temp >= TOP70_Sterilization_Temp) || msg.payload == 0)\n    {           \n                new_OM = F_stored_next_operating_mode;\n\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n\n                global.set('Sterilization_active',0,\"file\");\n                if (TOP4_Operating_Mode_State!=new_OM && new_OM !== undefined)\n                {\n                    setTimeout(function(){\n                    node.status({fill:\"red\", shape:\"ring\", text:\"\"});\n                    msg1.payload = new_OM;                                      // set operationmode to remove DHW\n                    node.send([msg1,null,null]);                           // send msg1 only, other outputs are null\n                    }, 5000);\n                }\n                global.set('F_stored_next_operating_mode',undefined,\"file\");\n                \n                msg3.payload = 0;                                               // Turn off Force Sterilization mode\n                msg3.topic = 'Sterilization';\n                return [null, null, msg3];\n    }\n\n\n",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
@@ -35235,6 +35183,7 @@
         "z": "35d210f042827344",
         "g": "b63004182c33d3b9",
         "name": "ForceDHW_Scheduler",
+        "mode": "link",
         "links": [
             "14d2ae6b4af7e45e"
         ],
@@ -35248,6 +35197,7 @@
         "z": "35d210f042827344",
         "g": "b63004182c33d3b9",
         "name": "FoceSterilization_Scheduler",
+        "mode": "link",
         "links": [
             "20e2544a8277d8c2",
             "4982424c661376ea"
@@ -35500,7 +35450,8 @@
         "g": "b63004182c33d3b9",
         "name": "Planning_ForceSterilization_topic",
         "links": [
-            "92b636a9597d91b2"
+            "92b636a9597d91b2",
+            "0a683587ca4fc25c"
         ],
         "x": 2375,
         "y": 2560,
@@ -47154,7 +47105,7 @@
         "type": "debug",
         "z": "35d210f042827344",
         "name": "debug 180",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -49354,7 +49305,7 @@
         "g": "0bb11670c285bff1",
         "name": "",
         "topic": "panasonic_heat_pump/stats",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto-detect",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
@@ -50665,7 +50616,7 @@
         "g": "0bb11670c285bff1",
         "name": "IP",
         "topic": "panasonic_heat_pump/ip",
-        "qos": "1",
+        "qos": "0",
         "datatype": "auto-detect",
         "broker": "92e5b2c.00a8b5",
         "nl": false,
