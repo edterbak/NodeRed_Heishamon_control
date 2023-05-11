@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.28 Beta<br/> <br/>
+Current version: 22.29 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -808,6 +808,9 @@ Have fun with your heat pump!</br>
 - [Fix] - Solar function did not revert operating mode/SP in some scenarios.  https://github.com/edterbak/NodeRed_Heishamon_control/issues/110
 - [Fix] - Sterilization routine always reverts back to Operating Mode heat only. Now it is reverting the original OM befor the run. https://github.com/edterbak/NodeRed_Heishamon_control/issues/108
 
+[2023-05-11] v22.29 beta (experimental). Changes:
+- [Fix] - Attempt to fix Sterilization issue. https://github.com/edterbak/NodeRed_Heishamon_control/issues/108 
+	
 	
 ********
 
