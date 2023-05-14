@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.29 Beta<br/> <br/>
+Current version: 22.30 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -810,8 +810,15 @@ Have fun with your heat pump!</br>
 
 [2023-05-11] v22.29 beta (experimental). Changes:
 - [Fix] - Attempt to fix Sterilization issue. https://github.com/edterbak/NodeRed_Heishamon_control/issues/108 
+
+[2023-05-14] v22.30 beta (experimental). Changes:
+- [Fix] - Night reduction not showing correct valuein dashboard https://github.com/edterbak/NodeRed_Heishamon_control/issues/111
+- [New Feature] - Added DHW BOOST function. https://github.com/edterbak/NodeRed_Heishamon_control/issues/95
+- [New Feature] - Added RESET when there is an active error on the device (eg. H62.. ) https://github.com/edterbak/NodeRed_Heishamon_control/issues/113
+- [Rework] - Rewritten the logic a bit behind the force dhw toggles.
 	
-	
+Fairly much has been changed. needs polishing.
+
 ********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/acknowledgments.png" width="500">
