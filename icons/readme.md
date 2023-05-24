@@ -41,5 +41,10 @@ Go all the way to the bottom page and find the commented out "//ui:" part. Direc
     	    }
     	}
         },
+ALT+X 
+Y (yes)
+Enter
 
-Thanks to @t21 (tweakers.net) for the tips on this.
+Restart node red to see the icons
+
+Thanks a lot to @t21 (tweakers.net) for the tips on this.
