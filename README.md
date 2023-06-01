@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.31 Beta<br/> <br/>
+Current version: 22.32 Beta<br/> <br/>
 Please please please... Make a backup of your current flow before updating.<br/>
 <br/>
 
@@ -822,6 +822,10 @@ Fairly much has been changed. needs polishing.
 [2023-05-17] v22.31 beta (experimental). Changes:
 - [Fix] - RTC turn on/off function not working in all cases. (typo) https://github.com/edterbak/NodeRed_Heishamon_control/issues/114
 
+	
+[2023-06-01] v22.32 beta (experimental). Changes:
+- [Enhancement] Added visual in RTC GUI to see the status of the automations
+- Preparations for 23.00 Stable
 	
 ********
 
