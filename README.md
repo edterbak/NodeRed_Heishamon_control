@@ -827,6 +827,9 @@ Fairly much has been changed. needs polishing.
 - [Enhancement] Added visual in RTC GUI to see the status of the automations
 - Preparations for 23.00 Stable
 	
+[2023-06-02] v22.32 beta (experimental). Changes:	
+- [Fix] - improved the scheduler <> RTC on/off function working together. Should work better now.
+	
 ********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/acknowledgments.png" width="500">
