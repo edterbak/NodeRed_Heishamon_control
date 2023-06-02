@@ -687,12 +687,27 @@
             "9164f892e385d90c",
             "e9fc5e9327936cd3",
             "47022621a9be56df",
-            "f21576c60d6cf2ae"
+            "68b3ab2f783444e7"
         ],
-        "x": 1154,
+        "x": 1214,
         "y": 19,
-        "w": 1692,
+        "w": 1632,
         "h": 1822
+    },
+    {
+        "id": "68b3ab2f783444e7",
+        "type": "junction",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "x": 1880,
+        "y": 920,
+        "wires": [
+            [
+                "45f764b22fa2979e",
+                "092a9db0d9b923b3",
+                "7c74eef7b504ee67"
+            ]
+        ]
     },
     {
         "id": "ffa1f23278378e79",
@@ -5013,7 +5028,9 @@
         "g": "7c41aa629fb3859e",
         "name": "ForceDHW out",
         "mode": "link",
-        "links": [],
+        "links": [
+            "3e5558127fc3402a"
+        ],
         "x": 795,
         "y": 240,
         "wires": []
@@ -8891,7 +8908,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "22.32 beta",
+        "payload": "22.33 beta",
         "payloadType": "str",
         "x": 1330,
         "y": 1920,
@@ -10146,7 +10163,7 @@
         "y": 920,
         "wires": [
             [
-                "f21576c60d6cf2ae"
+                "68b3ab2f783444e7"
             ]
         ]
     },
@@ -10691,13 +10708,14 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "ForceDHW",
+        "mode": "link",
         "links": [
             "12e43571a8c16fa2",
-            "67b8e26842cf7615",
-            "14d2ae6b4af7e45e"
+            "14d2ae6b4af7e45e",
+            "6ae86dc05a6a3c4a"
         ],
-        "x": 2175,
-        "y": 940,
+        "x": 1945,
+        "y": 900,
         "wires": []
     },
     {
@@ -11156,7 +11174,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Load on boot",
-        "func": "var var1                    = global.get('ForceDHW',\"file\");\nlet msg1={};\n\nif(var1 === undefined)      {\n                            return null;    \n                            }\n                            \nelse                        {\n                            msg1.payload = var1;\n                            msg1.topic = 'ForceDHW'; \n                            return msg1;\n                            }\n",
+        "func": "var ForceDHW                    = global.get('ForceDHW',\"file\");\nlet msg1={};\n\nif(ForceDHW === undefined)      {\n                            return null;    \n                            }\n                            \nelse                        {\n                            msg1.payload = ForceDHW;\n                            msg1.topic = 'ForceDHW'; \n                            return msg1;\n                            }\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -11617,7 +11635,9 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "ForceDHW IN",
-        "links": [],
+        "links": [
+            "092a9db0d9b923b3"
+        ],
         "x": 1595,
         "y": 900,
         "wires": [
@@ -12295,7 +12315,7 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 1260,
+        "x": 1320,
         "y": 340,
         "wires": [
             []
@@ -13173,7 +13193,7 @@
         "format": "",
         "layout": "row-left",
         "className": "",
-        "x": 1300,
+        "x": 1330,
         "y": 1060,
         "wires": []
     },
@@ -15459,8 +15479,8 @@
         "className": "popup_class",
         "topic": "",
         "name": "",
-        "x": 2510,
-        "y": 880,
+        "x": 2470,
+        "y": 960,
         "wires": [
             []
         ]
@@ -15471,14 +15491,14 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "function 21",
-        "func": "if (msg.topic == 'DHW')   { return null; }\n\n\nif (msg.payload == 1)   {\n    let msg1={};\n        \n    var OM = global.get('TOP4_Operating_Mode_State', \"file\");\n    \n    \n    if          (OM == 0)   {msg1.payload = \"Heat only\";} \n    else if     (OM == 1)   {msg1.payload = \"Cool only\";} \n    else if     (OM == 2)   {msg1.payload = \"Auto(Heat)\";} \n    else if     (OM == 7)   {msg1.payload = \"Auto(Cool)\";} \n    else                    {return null;}\n    \n    msg1.payload = \" Forcefull DHW enabled.\" + \n        \"<br><br> Current Operating mode is: \" + msg1.payload + \"(\" + OM + \")\" +\n        \"</br> Add DHW mode (manually) to perform a DHW run.</br></br>\";\n    return msg1;\n    \n}\n\nif (msg.payload == 0) {\n    return null\n}",
+        "func": "if (msg.topic == 'DHW')   { return null }  // Do nothing. Exit function\n\n\nif (msg.payload == 1)   {\n    let msg1={};\n        \n    var OM = global.get('TOP4_Operating_Mode_State', \"file\");\n    \n    \n    if          (OM == 0)   {msg1.payload = \"Heat only\";} \n    else if     (OM == 1)   {msg1.payload = \"Cool only\";} \n    else if     (OM == 2)   {msg1.payload = \"Auto(Heat)\";} \n    else if     (OM == 7)   {msg1.payload = \"Auto(Cool)\";} \n    else                    {return null;}\n    \n    msg1.payload = \" Forcefull DHW enabled.\" + \n        \"<br><br> Current Operating mode is: \" + msg1.payload + \"(\" + OM + \")\" +\n        \"</br> Add DHW mode (manually) to perform a DHW run.</br></br>\";\n    return msg1;\n    \n}\n\nif (msg.payload == 0) {\n    global.set('Force_DHW_active',0,\"file\");\n    return null\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2190,
-        "y": 880,
+        "x": 2090,
+        "y": 960,
         "wires": [
             [
                 "939b63cd71edad9b",
@@ -15504,8 +15524,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 2350,
-        "y": 880,
+        "x": 2290,
+        "y": 960,
         "wires": [
             [
                 "939b63cd71edad9b"
@@ -15983,14 +16003,14 @@
         "name": "link in 55",
         "links": [
             "3d3b432c844ba87e",
-            "fb5aeb896e8acc76",
-            "56d4bfa341d3eded"
+            "56d4bfa341d3eded",
+            "fb5aeb896e8acc76"
         ],
-        "x": 1965,
-        "y": 940,
+        "x": 1815,
+        "y": 900,
         "wires": [
             [
-                "f21576c60d6cf2ae"
+                "68b3ab2f783444e7"
             ]
         ]
     },
@@ -16089,29 +16109,6 @@
         "x": 2640,
         "y": 1600,
         "wires": []
-    },
-    {
-        "id": "f21576c60d6cf2ae",
-        "type": "function",
-        "z": "8c9d42231fd19d3c",
-        "g": "3151681b2157872c",
-        "name": "Filter",
-        "func": "var last_value      = context.get('last_value');\nvar last_msgid      = context.get('last_msgid');\n\nif (last_value === undefined || last_msgid === undefined){\n    context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n//    return msg;\n}\n\nif (last_msgid == msg._msgid){\n    return null;\n}\n\nif (msg.payload != last_value){\n    context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n    return msg;\n}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 2070,
-        "y": 920,
-        "wires": [
-            [
-                "7c74eef7b504ee67",
-                "092a9db0d9b923b3",
-                "45f764b22fa2979e",
-                "c6559a95bb3c55fb"
-            ]
-        ]
     },
     {
         "id": "30bdc6940be044bf",
@@ -16941,26 +16938,6 @@
         ]
     },
     {
-        "id": "f7bdc92c0ed8e3b9",
-        "type": "group",
-        "z": "a938de76db0b71f6",
-        "g": "116d861b2bd34e3a",
-        "name": "DHW Tank temperature logic",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "64021d928c59c5cd",
-            "017e95185010581b",
-            "f651bed25831c6f4",
-            "c8b5382d8d981e31"
-        ],
-        "x": 2554,
-        "y": 1639,
-        "w": 492,
-        "h": 122
-    },
-    {
         "id": "992121a08b66faa3",
         "type": "group",
         "z": "a938de76db0b71f6",
@@ -16981,7 +16958,6 @@
             "13909c8cd33f26ef",
             "1cf37ff9fa4fc42b",
             "6c93a57f910e03c2",
-            "de3a55570f77aeb2",
             "f0ae9eea42cf90ea",
             "25041e53f134e3fb",
             "158b8983b1dd0aa9",
@@ -17011,25 +16987,6 @@
         "h": 768
     },
     {
-        "id": "de3a55570f77aeb2",
-        "type": "rbe",
-        "z": "a938de76db0b71f6",
-        "g": "992121a08b66faa3",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 3510,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "fcc08a6bfb0d246e",
         "type": "junction",
         "z": "a938de76db0b71f6",
@@ -17042,6 +16999,26 @@
                 "6c93a57f910e03c2"
             ]
         ]
+    },
+    {
+        "id": "f7bdc92c0ed8e3b9",
+        "type": "group",
+        "z": "a938de76db0b71f6",
+        "g": "116d861b2bd34e3a",
+        "name": "DHW Tank temperature logic",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "64021d928c59c5cd",
+            "017e95185010581b",
+            "f651bed25831c6f4",
+            "c8b5382d8d981e31"
+        ],
+        "x": 2554,
+        "y": 1639,
+        "w": 492,
+        "h": 122
     },
     {
         "id": "f2aa79821dfd1110",
@@ -21789,7 +21766,7 @@
         "z": "a938de76db0b71f6",
         "g": "d2b7e1d6e85a96cf",
         "name": "Function RTC automation",
-        "func": "////////////////////////////////////////////////////////////////////////////\n////////////////////////// RTC - ON/OFF function ///////////////////////////\n//\n//\n//  This function has the goal to act when the temperature in the room is too high.\n//  It can either turn off the heatpump, or take the [heat]-mode out of the current operating mode.\n//  \n\nvar MQTT = global.get('MQTT',\"file\");\nif (MQTT.block_active == 0 || (MQTT.block_active == 1 && MQTT.block_mode == 2 && MQTT.allow_rtc_onoff == 1)){\n\n\n    let msg1    ={};        //  pin 1 - Output to power pump on/off \n    msg1.source = \"flow\";\n    \n    let msg2    ={};        //  pin 2 - Output to Operating Mode\n    let msg99   ={};        //  pin 3 - Messages to Log\n    //\n    //  return [msg1,msg2,msg99]\n\n    var TOP69_Sterilization_State   = global.get('TOP69_Sterilization_State',\"file\");\n\n    var Sterilization_active        =global.get('Sterilization_active',\"file\");\n        if (Sterilization_active===undefined)   {Sterilization_active=0}\n    \n    var Force_DHW_active            =global.get('Force_DHW_active',\"file\");\n        if (Force_DHW_active===undefined)   {Force_DHW_active=0}   \n\n    var VirtualState = global.get('VirtualState'); //used to prevent unwanted shutdown detection \n    \n    var Operating_Mode              =global.get('TOP4_Operating_Mode_State',\"file\");\n        if (Operating_Mode === undefined)   {node.warn('RTC on_off Operating_Mode');return null;}\n    //  Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    //\n    \n    var F_RTC = global.get('F_RTC',\"file\");\n\n    //\n    if (F_RTC.F1_power_state === undefined) { F_RTC.F1_power_state=0;}          // Get the global variable. Used to see if the RTC function is enabled through GUI.\n    if (F_RTC.F2_OM_state === undefined) { F_RTC.F2_OM_state=0;}                // Get the global variable. Used to see if the RTC function is enabled through GUI.\n    \n    var F_SOLAR                         = global.get(\"F_SOLAR\",\"file\");\n    if (F_SOLAR.function_active_state === undefined) {F_SOLAR.function_active_state=0;}\n    //////////////////////////////////////////////////////////////////////////////////////////////////////\n    //////////////////////////////////////////////////////////////////////////////////////////////////////\n    \n    // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)    \n    if ((F_RTC.F1_power_state == 0 && F_RTC.F2_OM_state == 0) || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8 || Sterilization_active == 1 || Force_DHW_active == 1 || F_SOLAR.function_active_state == 1 || TOP69_Sterilization_State == 1)     //  First IF\n        {   \n            global.set('F_RTC.on_off_status',undefined,\"file\");\n            return null;\n        }\n    \n    \n    \n    else \n        {   \n            // Declaration of variables including their values.    \n            var rtc_PV          = global.get('T_room');                             // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n                if (rtc_PV===undefined) {node.warn('RTC on_off rtc_PV');return null}\n            var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard. \n                if (rtc_SP===undefined) {node.warn('RTC on_off rtc_SP');return null}\n            var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n            \n            var TOP0_Heatpump_State  = global.get('TOP0_Heatpump_State',\"file\");              // get current state of the heatpump. on or off (1 or 0)\n            // below are the variables containing the temperature ranges.\n            var rtc_off         = F_RTC.off_limit                               // Range turn heatpump off\n                if (rtc_off === undefined)  \n                    { return null; }\n            var rtc_on          = F_RTC.on_limit;                               // Range turn heatpump on\n                if (rtc_on === undefined)   \n                    { return null; }\n            \n            var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n            \n            msg99.topic     = \"Function RTC\";\n            \n            //*****************************************************************************\n            //////////////////////////////////////////////////////////////////////////////////////////////////////\n            //////////////////////////////////////////////////////////////////////////////////////////////////////\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n            if (rtc_off >= rtc_on)\n                {\n                    //node.warn('RTC function: Current OFF temperature is lower than the ON temperature. You must correct this !! ');\n                    msg99.payload   = \"<b>ERROR:</b> Current OFF temperature is lower than the ON temperature. You must correct this !!\"; \n                    return [null,null,msg99];\n                }\n            \n            if (rtc_dT > rtc_off)                           {global.set('F_RTC.on_off_status',0,\"file\");}\n            if (rtc_dT >= rtc_on && rtc_dT <= rtc_off)      {global.set('F_RTC.on_off_status',1,\"file\");}\n            if (rtc_dT < rtc_on)                            {global.set('F_RTC.on_off_status',2,\"file\");}\n\n            \n            //*****************************************************************************\n            //      Scenario 1: the roomtemperature is high and above the 'off'limit. Function start\n            //*****************************************************************************\n        if (rtc_dT > rtc_on && TOP0_Heatpump_State == 1 && Operating_Mode != 3 && VirtualState == 1)\n                {\n                    //  Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                    if (Operating_Mode == 2 && global.get('T_outside',\"file\") <= global.get('TOP79_Heat_To_Cool_Temp',\"file\") && F_RTC.F1_power_state == 1)\n                                                {\n                                                    global.set('F_RTC.on_off_active',1,\"file\");\n                                                    msg1.payload    = 0;\n                                                    msg1.source     = \"flow\";\n                                                    msg1.topic      = \"new_heatpump_power\";\n                                                    msg99.payload   = \"on/off activated - Turn off power (Room temp: \" + rtc_PV + \"°C)\";\n                                                    global.set('MQTT_Source', \"rtc on/off\");\n                                                    return [msg1,null,msg99]; \n                                                }\n                                                \n                    if (Operating_Mode == 0 && F_RTC.F1_power_state == 1)\n                                                {\n                                                    global.set('F_RTC.on_off_active',1,\"file\");\n                                                    msg1.payload    = 0;\n                                                    msg1.source     = \"flow\";\n                                                    msg1.topic      = \"new_heatpump_power\";\n                                                    msg99.payload   = \"on/off activated - Turn off power (Room temp: \" + rtc_PV + \"°C)\";\n                                                    global.set('MQTT_Source', \"rtc on/off\");\n                                                    return [msg1,null,msg99]; \n                                                }\n                                                \n                    if ((Operating_Mode == 4 || Operating_Mode == 6) && F_RTC.F2_OM_state == 1)    \n                                                {\n                                                    if (F_stored_next_operating_mode === undefined) {   global.set('F_stored_next_operating_mode',Operating_Mode,\"file\");\n                                                    }\n                                                    global.set('F_RTC.on_off_active',1,\"file\");\n                                                    msg2.payload    = 3;\n                                                    msg2.topic      = \"new_Operating_Mode\";\n                                                    if (Operating_Mode == 4) { Operating_Mode = \"Heat+DHW\"; }\n                                                    if (Operating_Mode == 6) { Operating_Mode = \"Auto(Heat)+DHW\"; }\n                                                    msg99.payload = \"on/off activated - Operating mode from \" + Operating_Mode + \" to DHW only\";\n                                                    global.set('MQTT_Source', \"rtc on/off\");\n                                                    return [null,msg2,msg99]; \n                                                }\n                }\n            //*****************************************************************************\n            //      Scenario 2: the roomtemperature is low enough again. Function end\n            //*****************************************************************************\n            if (rtc_dT < rtc_off && F_RTC.on_off_active == 1)\n                {\n                if (TOP0_Heatpump_State == 0 && VirtualState == 0)    \n                                                {\n                                                    global.set('F_RTC.on_off_active',0,\"file\"); \n                                                    msg1.payload    = 1;\n                                                    msg1.source     = \"flow\";\n                                                    msg1.topic      = \"new_heatpump_power\";\n                                                    msg99.payload   = \"on/off - Turn on power (Room temp: \" + rtc_PV + \"°C)\";\n                                                    global.set('MQTT_Source', \"rtc on/off\");\n                                                    return [msg1,null,msg99]; \n                                                }\n                if (TOP0_Heatpump_State == 1 && VirtualState == 1)    \n                                                    {\n                                                        global.set('F_RTC.on_off_active',0,\"file\"); \n                                                        var OM; // create empty\n                                                        if (F_stored_next_operating_mode === undefined) \n                                                        {\n                                                            if (Operating_Mode == 0) {F_stored_next_operating_mode = 0;}\n                                                            if (Operating_Mode == 1) {F_stored_next_operating_mode = 1;}\n                                                            if (Operating_Mode == 2) {F_stored_next_operating_mode = 2;}\n                                                            if (Operating_Mode == 3) {F_stored_next_operating_mode = 3;}\n                                                            if (Operating_Mode == 4) {F_stored_next_operating_mode = 4;}\n                                                            if (Operating_Mode == 5) {F_stored_next_operating_mode = 5;}\n                                                            if (Operating_Mode == 6) {F_stored_next_operating_mode = 6;}\n                                                            if (Operating_Mode == 7) {F_stored_next_operating_mode = 7;}\n                                                            if (Operating_Mode == 8) {F_stored_next_operating_mode = 8;}\n                                                            \n                                                            //msg99.payload   = \"on/off deactivated - Previous OM not found. Restored OM to default 0 (Heat only)\";\n                                                            OM = F_stored_next_operating_mode;\n                                                            if (OM == 0) OM = \"Heat only\"; if (OM == 1) OM = \"Cool only\"; if (OM == 2) OM = \"Auto(Heat)\"; if (OM == 3) OM = \"DHW only\"; if (OM == 4) OM = \"Heat+DHW\"; if (OM == 5) OM = \"Cool+DHW\"; if (OM == 6) OM = \"Auto(Heat)+DHW\"; if (OM == 7) OM = \"Auto(Cool)\"; if (OM == 8) OM = \"Auto(Cool)+DHW)  \";\n                                                            msg99.payload = \"Operation mode to \" + OM;\n                                                            \n                                                        }\n                                                    else \n                                                        {\n                                                            //msg99.payload   = \"on/off deactivated - Restored to OM \" + F_stored_next_operating_mode;\n                                                            OM = F_stored_next_operating_mode;\n                                                            if (OM == 0) OM = \"Heat only\"; if (OM == 1) OM = \"Cool only\"; if (OM == 2) OM = \"Auto(Heat)\"; if (OM == 3) OM = \"DHW only\"; if (OM == 4) OM = \"Heat+DHW\"; if (OM == 5) OM = \"Cool+DHW\"; if (OM == 6) OM = \"Auto(Heat)+DHW\"; if (OM == 7) OM = \"Auto(Cool)\"; if (OM == 8) OM = \"Auto(Cool)+DHW)  \";\n                                                            msg99.payload = \"Restored to operation mode \" + F_stored_next_operating_mode + \" (\" + OM + \")\";\n                                                        }\n                                                    msg2.payload    = F_stored_next_operating_mode;\n                                                    msg2.topic      = \"new_Operating_Mode\";\n                                                    \n                                                    global.set('F_stored_next_operating_mode',undefined,\"file\");\n                                                    //if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"rtc on/off\"); }\n                                                    return [null,msg2,msg99]; \n                                                }\n                    \n                }  \n    //******************************************************************************\n        }\n}",
+        "func": "////////////////////////////////////////////////////////////////////////////\n////////////////////////// RTC - ON/OFF function ///////////////////////////\n//\n//\n//  This function has the goal to act when the temperature in the room is too high.\n//  It can either turn off the heatpump, or take the [heat]-mode out of the current operating mode.\n//  \n\nvar MQTT = global.get('MQTT',\"file\");\nif (MQTT.block_active == 0 || (MQTT.block_active == 1 && MQTT.block_mode == 2 && MQTT.allow_rtc_onoff == 1)){\n\n    let msg1    ={};        //  pin 1 - Output to power pump on/off \n    msg1.source = \"flow\";\n    \n    let msg2    ={};        //  pin 2 - Output to Operating Mode\n    let msg99   ={};        //  pin 3 - Messages to Log\n    //\n    //  return [msg1,msg2,msg99]\n\n    var TOP69_Sterilization_State   = global.get('TOP69_Sterilization_State',\"file\");\n\n    var Sterilization_active        =global.get('Sterilization_active',\"file\");\n        if (Sterilization_active===undefined)   {Sterilization_active=0}\n    \n    var Force_DHW_active            =global.get('Force_DHW_active',\"file\");\n        if (Force_DHW_active===undefined)   {Force_DHW_active=0}   \n\n    var VirtualState = global.get('VirtualState'); //used to prevent unwanted shutdown detection \n    \n    var Operating_Mode              =global.get('TOP4_Operating_Mode_State',\"file\");\n        if (Operating_Mode === undefined)   {node.warn('RTC on_off Operating_Mode');return null;}\n    //  Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n    //\n    \n    var F_RTC = global.get('F_RTC',\"file\");\n\n    //\n    if (F_RTC.F1_power_state === undefined) { F_RTC.F1_power_state=0;}          // Get the global variable. Used to see if the RTC function is enabled through GUI.\n    if (F_RTC.F2_OM_state === undefined) { F_RTC.F2_OM_state=0;}                // Get the global variable. Used to see if the RTC function is enabled through GUI.\n    \n    var F_SOLAR                         = global.get(\"F_SOLAR\",\"file\");\n    if (F_SOLAR.function_active_state === undefined) {F_SOLAR.function_active_state=0;}\n    //////////////////////////////////////////////////////////////////////////////////////////////////////\n    //////////////////////////////////////////////////////////////////////////////////////////////////////\n    \n    // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)    \n    if ((F_RTC.F1_power_state == 0 && F_RTC.F2_OM_state == 0) || Operating_Mode === undefined || Operating_Mode==1 || Operating_Mode==5 || Operating_Mode==7 || Operating_Mode==8 || Sterilization_active == 1 || Force_DHW_active == 1 || F_SOLAR.function_active_state == 1 || TOP69_Sterilization_State == 1)     //  First IF\n        {   \n            global.set('F_RTC.on_off_status',undefined,\"file\");\n            return null;\n        }\n    \n    \n    \n    else \n        {   \n            // Declaration of variables including their values.    \n            var rtc_PV          = global.get('T_room');                             // Get the global variable. THe room temperature for RoomTemperatureCompensation you want to control.\n                if (rtc_PV===undefined) {node.warn('RTC on_off rtc_PV');return null}\n            var rtc_SP          = global.get('WoonkamerSP',\"file\");                 // Virtual target temperature setpoint for RTC. Set in Dashboard. \n                if (rtc_SP===undefined) {node.warn('RTC on_off rtc_SP');return null}\n            var rtc_dT          = (rtc_PV-rtc_SP);                                  // local variable for calculated temperature difference. If > 0 it is too warm, If < 0 it is too cold. \n            \n            var TOP0_Heatpump_State  = global.get('TOP0_Heatpump_State',\"file\");              // get current state of the heatpump. on or off (1 or 0)\n            // below are the variables containing the temperature ranges.\n            var rtc_off         = F_RTC.off_limit                               // Range turn heatpump off\n                if (rtc_off === undefined)  \n                    { return null; }\n            var rtc_on          = F_RTC.on_limit;                               // Range turn heatpump on\n                if (rtc_on === undefined)   \n                    { return null; }\n            \n            var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n            \n            msg99.topic     = \"Function RTC\";\n            \n            //*****************************************************************************\n            //////////////////////////////////////////////////////////////////////////////////////////////////////\n            //////////////////////////////////////////////////////////////////////////////////////////////////////\n            // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n            if (rtc_off >= rtc_on)\n                { \n                    //node.warn('RTC function: Current OFF temperature is lower than the ON temperature. You must correct this !! ');\n                    msg99.payload   = \"<b>ERROR:</b> Current OFF temperature is lower than the ON temperature. You must correct this !!\"; \n                    return [null,null,msg99];\n                }\n            \n            if (rtc_dT > rtc_off)                           {global.set('F_RTC.on_off_status',0,\"file\");}\n            if (rtc_dT >= rtc_on && rtc_dT <= rtc_off)      {global.set('F_RTC.on_off_status',1,\"file\");}\n            if (rtc_dT < rtc_on)                            {global.set('F_RTC.on_off_status',2,\"file\");}\n\n            \n            //*****************************************************************************\n            //      Scenario 1: the roomtemperature is high and above the 'off'limit. Function start\n            //*****************************************************************************\n        if (rtc_dT > rtc_on && TOP0_Heatpump_State == 1 && Operating_Mode != 3 && VirtualState == 1)\n                { \n                    //  Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                    if (Operating_Mode == 2 && global.get('T_outside',\"file\") <= global.get('TOP79_Heat_To_Cool_Temp',\"file\") && F_RTC.F1_power_state == 1)\n                                                {\n                                                    \n                                                    msg1.payload    = 0;\n                                                    msg1.source     = \"flow\";\n                                                    msg1.topic      = \"new_heatpump_power\";\n                                                    msg99.payload   = \"on/off activated - Turn off power (Room temp: \" + rtc_PV + \"°C)\";\n                                                    global.set('MQTT_Source', \"rtc on/off\");\n                                                    global.set('F_RTC.on_off_active',1,\"file\");\n                                                    return [msg1,null,msg99]; \n                                                }\n                                                \n                    if (Operating_Mode == 0 && F_RTC.F1_power_state == 1)\n                                                {\n                                                    global.set('F_RTC.on_off_active',1,\"file\");\n                                                    msg1.payload    = 0;\n                                                    msg1.source     = \"flow\";\n                                                    msg1.topic      = \"new_heatpump_power\";\n                                                    msg99.payload   = \"on/off activated - Turn off power (Room temp: \" + rtc_PV + \"°C)\";\n                                                    global.set('MQTT_Source', \"rtc on/off\");\n                                                    return [msg1,null,msg99]; \n                                                }\n                                                \n                    if ((Operating_Mode == 4 || Operating_Mode == 6) && F_RTC.F2_OM_state == 1)    \n                                                {\n                                                    if (F_stored_next_operating_mode === undefined) {   global.set('F_stored_next_operating_mode',Operating_Mode,\"file\");\n                                                    }\n                                                    global.set('F_RTC.on_off_active',1,\"file\");\n                                                    msg2.payload    = 3;\n                                                    msg2.topic      = \"new_Operating_Mode\";\n                                                    if (Operating_Mode == 4) { Operating_Mode = \"Heat+DHW\"; }\n                                                    if (Operating_Mode == 6) { Operating_Mode = \"Auto(Heat)+DHW\"; }\n                                                    msg99.payload = \"on/off activated - Operating mode from \" + Operating_Mode + \" to DHW only\";\n                                                    global.set('MQTT_Source', \"rtc on/off\");\n                                                    return [null,msg2,msg99]; \n                                                }\n                }\n            //*****************************************************************************\n            //      Scenario 2: the roomtemperature is low enough again. Function end\n            //*****************************************************************************\n            if (rtc_dT < rtc_off && F_RTC.on_off_active == 1)\n                {\n                if (TOP0_Heatpump_State == 0 && VirtualState == 0)    \n                                                {\n                                                    global.set('F_RTC.on_off_active',0,\"file\"); \n                                                    msg1.payload    = 1;\n                                                    msg1.source     = \"flow\";\n                                                    msg1.topic      = \"new_heatpump_power\";\n                                                    msg99.payload   = \"on/off - Turn on power (Room temp: \" + rtc_PV + \"°C)\";\n                                                    global.set('MQTT_Source', \"rtc on/off\");\n                                                    return [msg1,null,msg99]; \n                                                }\n                if (TOP0_Heatpump_State == 1 && VirtualState == 1)    \n                                                    {\n                                                        global.set('F_RTC.on_off_active',0,\"file\"); \n                                                        var OM; // create empty\n                                                        if (F_stored_next_operating_mode === undefined) \n                                                        {\n                                                            if (Operating_Mode == 0) {F_stored_next_operating_mode = 0;}\n                                                            if (Operating_Mode == 1) {F_stored_next_operating_mode = 1;}\n                                                            if (Operating_Mode == 2) {F_stored_next_operating_mode = 2;}\n                                                            if (Operating_Mode == 3) {F_stored_next_operating_mode = 3;}\n                                                            if (Operating_Mode == 4) {F_stored_next_operating_mode = 4;}\n                                                            if (Operating_Mode == 5) {F_stored_next_operating_mode = 5;}\n                                                            if (Operating_Mode == 6) {F_stored_next_operating_mode = 6;}\n                                                            if (Operating_Mode == 7) {F_stored_next_operating_mode = 7;}\n                                                            if (Operating_Mode == 8) {F_stored_next_operating_mode = 8;}\n                                                            \n                                                            //msg99.payload   = \"on/off deactivated - Previous OM not found. Restored OM to default 0 (Heat only)\";\n                                                            OM = F_stored_next_operating_mode;\n                                                            if (OM == 0) OM = \"Heat only\"; if (OM == 1) OM = \"Cool only\"; if (OM == 2) OM = \"Auto(Heat)\"; if (OM == 3) OM = \"DHW only\"; if (OM == 4) OM = \"Heat+DHW\"; if (OM == 5) OM = \"Cool+DHW\"; if (OM == 6) OM = \"Auto(Heat)+DHW\"; if (OM == 7) OM = \"Auto(Cool)\"; if (OM == 8) OM = \"Auto(Cool)+DHW)  \";\n                                                            msg99.payload = \"Operation mode to \" + OM;\n                                                            \n                                                        }\n                                                    else \n                                                        { node.warn('In de ELSE regel 174 ');\n                                                            //msg99.payload   = \"on/off deactivated - Restored to OM \" + F_stored_next_operating_mode;\n                                                            OM = F_stored_next_operating_mode;\n                                                            if (OM == 0) OM = \"Heat only\"; if (OM == 1) OM = \"Cool only\"; if (OM == 2) OM = \"Auto(Heat)\"; if (OM == 3) OM = \"DHW only\"; if (OM == 4) OM = \"Heat+DHW\"; if (OM == 5) OM = \"Cool+DHW\"; if (OM == 6) OM = \"Auto(Heat)+DHW\"; if (OM == 7) OM = \"Auto(Cool)\"; if (OM == 8) OM = \"Auto(Cool)+DHW)  \";\n                                                            msg99.payload = \"Restored to operation mode \" + F_stored_next_operating_mode + \" (\" + OM + \")\";\n                                                        }\n                                                    msg2.payload    = F_stored_next_operating_mode;\n                                                    msg2.topic      = \"new_Operating_Mode\";\n                                                    \n                                                    global.set('F_stored_next_operating_mode',undefined,\"file\");\n                                                    //if (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"rtc on/off\"); }\n                                                    return [null,msg2,msg99]; \n                                                }\n                    \n                }  \n    //******************************************************************************\n        }\n}",
         "outputs": 3,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\n//global.set('F_stored_next_operating_mode',4,\"file\");",
@@ -23963,7 +23940,7 @@
         "z": "a938de76db0b71f6",
         "g": "f7bdc92c0ed8e3b9",
         "name": "function 25",
-        "func": "var DHW_automation_state    = global.get('DHW_automation_state',\"file\");\nvar DHW_threshold_upper     = global.get('DHW_threshold_upper',\"file\");\n\nif (DHW_automation_state == 0 || DHW_automation_state === undefined) {return null;}\nif (DHW_threshold_upper === undefined) {return null;}\nif (msg.payload > DHW_threshold_upper) {return null;}\n\n\nif (msg.payload <= global.get('DHW_threshold_lower',\"file\") && global.get('Force_DHW_active',\"file\") == 0 && global.get('F_SOLAR.function_active_state',\"file\") == 0) {\n    \n    global.set('Force_DHW_active',1,\"file\");\n    \n    let msg1={};\n    let msg99={};\n    \n    msg1.payload = 1;\n    msg1.topic = \"DHW\";\n    msg1.force = 1;\n    \n    msg99.topic = 'DHW';\n    msg99.payload = 'DHW temperature: ' + msg.payload + '°C. Lower threshold: ' + global.get('DHW_threshold_lower',\"file\") + '°C. Starting DHW run.'\n    \n    return [msg1,msg99];\n}",
+        "func": "var DHW_automation_state    = global.get('DHW_automation_state',\"file\");\nvar DHW_threshold_upper     = global.get('DHW_threshold_upper',\"file\");\n\nif (DHW_automation_state == 0 || DHW_automation_state === undefined) {return null;}\nif (DHW_threshold_upper === undefined) {return null;}\nif (msg.payload > DHW_threshold_upper) {return null;}\n\n\nif (msg.payload <= global.get('DHW_threshold_lower',\"file\") && global.get('Force_DHW_active',\"file\") == 0 && global.get('F_SOLAR.function_active_state',\"file\") == 0) {\n    \n//    global.set('Force_DHW_active',1,\"file\");\n    \n    let msg1={};\n    let msg99={};\n    \n    msg1.payload = 1;\n    msg1.topic = \"DHW\";\n    msg1.force = 1;\n    \n    msg99.topic = 'DHW';\n    msg99.payload = 'DHW temperature: ' + msg.payload + '°C. Lower threshold: ' + global.get('DHW_threshold_lower',\"file\") + '°C. Starting DHW run.'\n    \n    return [msg1,msg99];\n}",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -29485,7 +29462,9 @@
             "88ea0371f9cecd37"
         ],
         "x": 74,
-        "y": 19
+        "y": 19,
+        "w": 1292,
+        "h": 728
     },
     {
         "id": "81ff790f84afd46d",
@@ -29501,7 +29480,9 @@
             "bd6e0b75ff712b33"
         ],
         "x": 8,
-        "y": 1713
+        "y": 1713,
+        "w": 1308,
+        "h": 1094
     },
     {
         "id": "6f4cdc97add442ff",
@@ -29534,7 +29515,9 @@
             "70753620fd42401f"
         ],
         "x": 114,
-        "y": 2819
+        "y": 2819,
+        "w": 1012,
+        "h": 202
     },
     {
         "id": "b16b9aa8172d25f5",
@@ -29619,7 +29602,9 @@
             "375bbd780529afe0"
         ],
         "x": 74,
-        "y": 779
+        "y": 779,
+        "w": 1332,
+        "h": 688
     },
     {
         "id": "2efa0af27c69d4d0",
@@ -29640,7 +29625,9 @@
             "40abfbbe563b32ac"
         ],
         "x": 114,
-        "y": 551.5
+        "y": 551.5,
+        "w": 812,
+        "h": 169.5
     },
     {
         "id": "9fca714df21ffac0",
@@ -29657,7 +29644,9 @@
             "5256af8b7309c113"
         ],
         "x": 314,
-        "y": 399
+        "y": 399,
+        "w": 232,
+        "h": 82
     },
     {
         "id": "b85d6aca6a841215",
@@ -29674,7 +29663,9 @@
             "3ddc8ec4b5d75af2"
         ],
         "x": 274,
-        "y": 1119
+        "y": 1119,
+        "w": 232,
+        "h": 82
     },
     {
         "id": "233708268636f815",
@@ -29698,7 +29689,9 @@
             "441d5424780d9523"
         ],
         "x": 154,
-        "y": 1279
+        "y": 1279,
+        "w": 612,
+        "h": 162
     },
     {
         "id": "bd6e0b75ff712b33",
@@ -29769,7 +29762,9 @@
             "2717d21023b674ad"
         ],
         "x": 34,
-        "y": 1739
+        "y": 1739,
+        "w": 1192,
+        "h": 1042
     },
     {
         "id": "ce2634259bc8d6eb",
@@ -30895,7 +30890,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 920,
+        "x": 940,
         "y": 1880,
         "wires": [
             [
@@ -34541,7 +34536,9 @@
             "1372ccca982b4f0a"
         ],
         "x": 714,
-        "y": 99
+        "y": 99,
+        "w": 2152,
+        "h": 159.5
     },
     {
         "id": "b63004182c33d3b9",
@@ -34590,7 +34587,9 @@
             "15c8662846db9f41"
         ],
         "x": 2334,
-        "y": 2359
+        "y": 2359,
+        "w": 1432,
+        "h": 482
     },
     {
         "id": "ca71e284391bbf84",
@@ -34670,7 +34669,9 @@
             "479965c26a5f5d15"
         ],
         "x": 714,
-        "y": 261.5
+        "y": 261.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "77ef78074c745b33",
@@ -34697,7 +34698,9 @@
             "57520972cf8f3282"
         ],
         "x": 714,
-        "y": 421.5
+        "y": 421.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "0f18bd088c4ce661",
@@ -34724,7 +34727,9 @@
             "73e5b776ee37e929"
         ],
         "x": 714,
-        "y": 581.5
+        "y": 581.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "49e35dcf3adf972f",
@@ -34751,7 +34756,9 @@
             "fd75ca33fe4a9589"
         ],
         "x": 714,
-        "y": 741.5
+        "y": 741.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "131bb514acb6c38f",
@@ -34778,7 +34785,9 @@
             "4470d0d9384e5146"
         ],
         "x": 714,
-        "y": 901.5
+        "y": 901.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "13c1334900bc3740",
@@ -34805,7 +34814,9 @@
             "0a155882d5693fda"
         ],
         "x": 714,
-        "y": 1061.5
+        "y": 1061.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "a4db9b20ef5bc75c",
@@ -34832,7 +34843,9 @@
             "fe24caf7cb4e92d3"
         ],
         "x": 714,
-        "y": 1221.5
+        "y": 1221.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "4b0ab44dfd6f65c3",
@@ -34859,7 +34872,9 @@
             "611bf69e3ab85546"
         ],
         "x": 714,
-        "y": 1381.5
+        "y": 1381.5,
+        "w": 2152,
+        "h": 157
     },
     {
         "id": "4f450eb680618622",
@@ -34886,7 +34901,9 @@
             "a477e5b86fe9c792"
         ],
         "x": 714,
-        "y": 1541.5
+        "y": 1541.5,
+        "w": 2172,
+        "h": 157
     },
     {
         "id": "92293ba8ccc5db0f",
@@ -34924,7 +34941,9 @@
             "9c13f29571c31128"
         ],
         "x": 74,
-        "y": 3179
+        "y": 3179,
+        "w": 1392,
+        "h": 322
     },
     {
         "id": "8387b4df126e002c",
@@ -34955,7 +34974,9 @@
             "dfd6d3ff02d1dcbd"
         ],
         "x": 2614,
-        "y": 1819
+        "y": 1819,
+        "w": 692,
+        "h": 382
     },
     {
         "id": "40f0401e20235a07",
@@ -45446,7 +45467,7 @@
         "type": "function",
         "z": "35d210f042827344",
         "name": "Function schedule",
-        "func": "var topic   =   msg.topic;\n\nvar state   =   global.get(topic+'_state',\"file\")||0;                              // Get state of the agenda item. \n\nif (msg.force == 1) {\n    var HP_state    = global.get('TOP0_Heatpump_State',\"file\");     // get the current state of the heatpump. Is it on or off.\n    if (HP_state == 0) { msg1 = { payload: 1, topic: \"override\" }; node.send([msg1,null]) }\n    msg2 = { payload: 1, topic: \"DHW\" };    \n    node.send([null,msg2])\n}\n\n\nif      (state == 0)                                                            // Is it disabled? \n        {return [null, null, null, null, null, null, null];}                          // output null to all pins and exit. else to continue.\n////////////////////////////////////////////////////////////////////////////////\n////////////////////////////////////////////////////////////////////////////////\n\nelse    {                                                                       // if not, continue...\n        var day_check       =global.get(topic+'_day',\"file\");                   // get schedule variables.\n        var hour_check      =global.get(topic+'_hour',\"file\");                  // get schedule variables.\n        var minutes_check   =global.get(topic+'_minutes',\"file\");               // get schedule variables.\n\n        var solar_block_scheduler           =global.get('solar_block_scheduler',\"file\");\n        var F_SOLAR                         =global.get('F_SOLAR',\"file\");\n        \n        var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n        \n        var F_RTC_on_off_active = global.get('F_RTC.on_off_active',\"file\"); \n        \n        var block_it = false;\n        if (solar_block_scheduler == true && F_SOLAR.function_active_state == 1)\n            {\n                block_it = true;\n                \n            }\n        \n\n                                                                                // Check the programmed day compared current day.\n        if (day_check.includes(msg.payload[0]))         {day_check = { payload: 1, topic: \"DayOfTheWeek\"};}\n        else                                            {day_check = { payload: 0, topic: \"DayOfTheWeek\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed hour compared current hour.        \n        if (msg.payload[1] == hour_check)               {hour_check = { payload: 1, topic: \"Hour\"};}\n        else                                            {hour_check = { payload: 0, topic: \"Hour\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed minutes compared current minutes.\n        if (msg.payload[2] == minutes_check)            {minutes_check = { payload: 1, topic: \"Minutes\"};}\n        else                                            {minutes_check = { payload: 0, topic: \"Minutes\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n        if (day_check.payload == 1 && hour_check.payload == 1 && minutes_check.payload == 1)        // If all of the conditions are met (day + hour + minutes), then....\n            {\n                let msg1 = {}, msg2 = {}, msg3 = {}, msg4 = {}, msg5 = {}, msg6 = {}, msg7 = {}, msg8={};\n                msg1.payload = 99; msg2.payload = 99; msg3.payload = 99; msg4.payload = 99; msg5.payload = 99; msg6.payload = 99; msg7.payload = 99; \n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                //  Override the current powerstate of heat pump? //////////////\n                //\n                var override    = global.get(topic+'_override',\"file\");         // get the current override state.\n                var HP_state    = global.get('TOP0_Heatpump_State',\"file\");     // get the current state of the heatpump. Is it on or off.\n                var NightReductionRoomSetpoint_state   = global.get('NightReductionRoomSetpoint.state',\"file\");\n                ////////////////////////////////////////////////////////////////\n                if  ((override == 1 && HP_state == 0) || msg.force == 1)                            // check if the override state is enabled, AND currently heatpump state is off \n                    {\n                        msg1 = { payload: 1, topic: \"override\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                var CurrentDHW  = global.get('TOP10_DHW_Temp');\n                var CurrentHEAT = global.get('TOP5_Main_Inlet_Temp');                \n                //\n                //\n                var action  =   global.get(topic+'_action',\"file\");             // get the action\n                ////////////////////////////////////////////////////////////////\n                \n                if  (action == \"HP_turn_on\" && HP_state == 0)                   // check the action\n                    {\n                        msg1 = { source:  \"flow\", payload: 1, topic: \"Turn ON HeatPump\" };       // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                if  (action == \"HP_turn_off\" && HP_state == 1 && block_it === false)                                   // check the action\n                    {\n                        msg1 = { source: \"flow\", payload: 0, topic: \"Turn OFF HeatPump\" };      // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"DHW\")                                           // check the action if DHW (=Force DHW)\n                    {\n                        msg2 = { payload: 1, topic: \"DHW\" };                     // DHW action? >> to DHW output pin 2\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"Sterilization\" && block_it === false)                                 // check the action\n                    {\n                        msg3 = { payload: 1, topic:  \"Sterilization\" };         // Sterilization action? >> to Sterilization output pin 3\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////                \n                if  (action == \"QM_0\")                                          // check the action\n                    {\n                        msg4 = { payload: 0, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                if  (action == \"QM_1\")                                          // check the action\n                    {\n                        msg4 = { payload: 1, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                if  (action == \"QM_2\")                                          // check the action\n                    {\n                        msg4 = { payload: 2, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                if  (action == \"QM_3\")                                          // check the action\n                    {\n                        msg4 = { payload: 3, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                // Scheduler - Operation Mode\n                //\n                ////////////////////////////////////////////////////////////////\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                // Operating mode (0=Heat only, 2=Auto(Heat), 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if  (action == \"OperationMode0\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 0, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',0,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 0, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); \n                        } \n                    }                \n                if  (action == \"OperationMode1\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 1, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\"  };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',1,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 1, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }                \n                if  (action == \"OperationMode2\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 2, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\"  };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',2,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 2, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }                \n                if  (action == \"OperationMode3\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 3, topic: \"Scheduler - Set Operation Mode (DHW temp: \" + CurrentDHW + \"°C)\"  };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',3,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 3, topic: \"Scheduler - Set Operation Mode (DHW temp: \" + CurrentDHW + \"°C)\"}; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }                \n                if  (action == \"OperationMode4\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 4, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',4,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 4, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\"}; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }   \n                if  (action == \"OperationMode5\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 5, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',5,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 5, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\"}; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }                   \n                if  (action == \"OperationMode6\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 6, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',6,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 6, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\"}; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }   \n                if  (action == \"OperationMode7\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 7, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',7,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 7, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\"}; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }   \n                if  (action == \"OperationMode8\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 8, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',8,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 8, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\"}; \n                            global.set('F_RTC.on_off_active',0,\"file\"); }\n                    }   \n\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"NightReductionWaterTempOn\")                              // check the action\n                    {\n                        var correction = global.get(\"NightReductionWaterTemp.correction\",\"file\");           // get the nightreduction correction.\n                        global.set(\"NightReductionWaterTemp.current_value\",correction,\"file\");\n                        global.set(\"NightReductionWaterTemp.state\",1,\"file\");\n                        msg6 = { payload: correction, topic: \"Nightreduction\" };\n                    }\n                if  (action == \"NightReductionWaterTempOff\")                             // check the action\n                    {\n                        global.set(\"NightReductionWaterTemp.current_value\",0,\"file\");\n                        global.set(\"NightReductionWaterTemp.state\",0,\"file\");\n                        msg6 = { payload: 0, topic: \"Nightreduction\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n                if (action == \"NightReductionRoomSetpointOn\")                 // check the action\n                    {\n                        if (NightReductionRoomSetpoint_state === undefined || NightReductionRoomSetpoint_state == 0)          //only when not set\n                            { \n                                global.set(\"NightReductionRoomSetpoint.state\", 1, \"file\");\n                                msg7 = { payload: 1, topic: \"NightReductionRoomSetpoint.state\" };\n                            } \n                    }\n\n                if (action == \"NightReductionRoomSetpointOff\")                 // check the action\n                    {\n                        if (NightReductionRoomSetpoint_state === undefined) { NightReductionRoomSetpoint_state = 0; }\n                        if (NightReductionRoomSetpoint_state == 1) //only change when set\n                            {\n                                global.set(\"NightReductionRoomSetpoint.state\",0,\"file\");\n                                msg7 = { payload: 0, topic: \"NightReductionRoomSetpoint.state\" };\n                            } \n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n            if (action == \"Water setpoint (heat shift)\")                 // check the action\n                    {\n                        msg8.payload = global.get(msg.topic+'_setpoint',\"file\")\n                        msg8.topic = action;\n                        node.send([null,null,null,null,null,null,null,msg8]);\n                    }\n            if (action == \"Water setpoint (direct)\")                 // check the action\n                    {\n                        msg8.payload = global.get(msg.topic+'_setpoint',\"file\")\n                        msg8.topic = action;\n                        node.send([null,null,null,null,null,null,null,msg8]);\n                    }\n            if (action == \"Room setpoint RTC\")                 // check the action\n                    {\n                        msg8.payload = global.get(msg.topic+'_setpoint',\"file\")\n                        msg8.topic = action;\n                        node.send([null,null,null,null,null,null,null,msg8]);\n                    }\n            \n            \n            \n            return [msg1, msg2, msg3, msg4, msg5, msg6, msg7];\n\n            }   \n        else\n            {   \n                return [null, null, null, null, null, null, null];\n            }\n        \n\n        }",
+        "func": "var topic   =   msg.topic;\n\nvar state   =   global.get(topic+'_state',\"file\")||0;                              // Get state of the agenda item. \n\nif (msg.force == 1) {\n    var HP_state    = global.get('TOP0_Heatpump_State',\"file\");     // get the current state of the heatpump. Is it on or off.\n    if (HP_state == 0) { let msg1={}; msg1 = { payload: 1, topic: \"override\" }; node.send([msg1,null]) }\n    let msg2={}; msg2 = { payload: 1, topic: \"DHW\" };    \n    node.send([null,msg2])\n}\n\n\nif      (state == 0)                                                            // Is it disabled? \n        {return [null, null, null, null, null, null, null];}                          // output null to all pins and exit. else to continue.\n////////////////////////////////////////////////////////////////////////////////\n////////////////////////////////////////////////////////////////////////////////\n\nelse    {                                                                       // if not, continue...\n        var day_check       =global.get(topic+'_day',\"file\");                   // get schedule variables.\n        var hour_check      =global.get(topic+'_hour',\"file\");                  // get schedule variables.\n        var minutes_check   =global.get(topic+'_minutes',\"file\");               // get schedule variables.\n\n        var solar_block_scheduler           =global.get('solar_block_scheduler',\"file\");\n        var F_SOLAR                         =global.get('F_SOLAR',\"file\");\n        \n        var F_stored_next_operating_mode    = global.get('F_stored_next_operating_mode',\"file\");\n        \n        var F_RTC_on_off_active = global.get('F_RTC.on_off_active',\"file\"); \n        \n        var block_it = false;\n        if (solar_block_scheduler == true && F_SOLAR.function_active_state == 1)\n            {\n                block_it = true;\n                \n            }\n        \n\n                                                                                // Check the programmed day compared current day.\n        if (day_check.includes(msg.payload[0]))         {day_check = { payload: 1, topic: \"DayOfTheWeek\"};}\n        else                                            {day_check = { payload: 0, topic: \"DayOfTheWeek\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed hour compared current hour.        \n        if (msg.payload[1] == hour_check)               {hour_check = { payload: 1, topic: \"Hour\"};}\n        else                                            {hour_check = { payload: 0, topic: \"Hour\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n                                                                                // Check the programmed minutes compared current minutes.\n        if (msg.payload[2] == minutes_check)            {minutes_check = { payload: 1, topic: \"Minutes\"};}\n        else                                            {minutes_check = { payload: 0, topic: \"Minutes\"};}\n        \n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n        ////////////////////////////////////////////////////////////////////////\n\n        if (day_check.payload == 1 && hour_check.payload == 1 && minutes_check.payload == 1)        // If all of the conditions are met (day + hour + minutes), then....\n            {\n                let msg1 = {}, msg2 = {}, msg3 = {}, msg4 = {}, msg5 = {}, msg6 = {}, msg7 = {}, msg8={};\n                msg1.payload = 99; msg2.payload = 99; msg3.payload = 99; msg4.payload = 99; msg5.payload = 99; msg6.payload = 99; msg7.payload = 99; \n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                //  Override the current powerstate of heat pump? //////////////\n                //\n                var override    = global.get(topic+'_override',\"file\");         // get the current override state.\n                var HP_state    = global.get('TOP0_Heatpump_State',\"file\");     // get the current state of the heatpump. Is it on or off.\n                var NightReductionRoomSetpoint_state   = global.get('NightReductionRoomSetpoint.state',\"file\");\n                ////////////////////////////////////////////////////////////////\n                if  ((override == 1 && HP_state == 0) || msg.force == 1)                            // check if the override state is enabled, AND currently heatpump state is off \n                    {\n                        msg1 = { payload: 1, topic: \"override\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                var CurrentDHW  = global.get('TOP10_DHW_Temp');\n                var CurrentHEAT = global.get('TOP5_Main_Inlet_Temp');                \n                //\n                //\n                var action  =   global.get(topic+'_action',\"file\");             // get the action\n                ////////////////////////////////////////////////////////////////\n                \n                if  (action == \"HP_turn_on\" && HP_state == 0)                   // check the action\n                    {\n                        msg1 = { source:  \"flow\", payload: 1, topic: \"Turn ON HeatPump\" };       // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                if  (action == \"HP_turn_off\" && HP_state == 1 && block_it === false)                                   // check the action\n                    {\n                        msg1 = { source: \"flow\", payload: 0, topic: \"Turn OFF HeatPump\" };      // Operation Mode action? >> to Operation MOde output pin 1\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"DHW\")                                           // check the action if DHW (=Force DHW)\n                    {\n                        msg2 = { payload: 1, topic: \"DHW\" };                     // DHW action? >> to DHW output pin 2\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"Sterilization\" && block_it === false)                                 // check the action\n                    {\n                        msg3 = { payload: 1, topic:  \"Sterilization\" };         // Sterilization action? >> to Sterilization output pin 3\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n                //\n                ////////////////////////////////////////////////////////////////                \n                if  (action == \"QM_0\")                                          // check the action\n                    {\n                        msg4 = { payload: 0, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                if  (action == \"QM_1\")                                          // check the action\n                    {\n                        msg4 = { payload: 1, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                if  (action == \"QM_2\")                                          // check the action\n                    {\n                        msg4 = { payload: 2, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                if  (action == \"QM_3\")                                          // check the action\n                    {\n                        msg4 = { payload: 3, topic: \"Set QuietMode to\" };           // QuietMode action? >> to Quiet MOde output pin 4\n                        msg4.source = \"scheduler\"\n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                // Scheduler - Operation Mode\n                //\n                ////////////////////////////////////////////////////////////////\n                // Operating mode (0=Heat only, 1=Cool only, 2=Auto(Heat), 3=DHW only, 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                // Operating mode (0=Heat only, 2=Auto(Heat), 4=Heat+DHW, 5=Cool+DHW, 6=Auto(Heat)+DHW, 7=Auto(Cool), 8=Auto(Cool)+DHW)\n                if  (action == \"OperationMode0\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 0, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',0,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 0, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" }; \n                            if (override == 1)  {global.set('F_RTC.on_off_active',0,\"file\");}\n                        }\n                        if (global.get('Force_DHW_active',\"file\") == 1) {global.set('Force_DHW_active',0,\"file\");}\n                    }                \n                if  (action == \"OperationMode1\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 1, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\"  };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',1,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 1, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" }; \n                            if (override == 1)  {global.set('F_RTC.on_off_active',0,\"file\");}\n                        }\n                        if (global.get('Force_DHW_active',\"file\") == 1) {global.set('Force_DHW_active',0,\"file\");}\n                    }                \n                if  (action == \"OperationMode2\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 2, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\"  };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',2,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 2, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" }; \n                            global.set('F_RTC.on_off_active',0,\"file\");\n                            if (override == 1)  {global.set('F_RTC.on_off_active',0,\"file\");}\n                        }\n                        if (global.get('Force_DHW_active',\"file\") == 1) {global.set('Force_DHW_active',0,\"file\");}\n                    }                \n                if  (action == \"OperationMode3\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 3, topic: \"Scheduler - Set Operation Mode (DHW temp: \" + CurrentDHW + \"°C)\"  };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',3,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 3, topic: \"Scheduler - Set Operation Mode (DHW temp: \" + CurrentDHW + \"°C)\"}; \n                            if (override == 1)  {global.set('F_RTC.on_off_active',0,\"file\");}\n                        }\n                    }                \n                if  (action == \"OperationMode4\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 4, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',4,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 4, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\"}; \n                            if (override == 1)  {global.set('F_RTC.on_off_active',0,\"file\");}\n                        }\n                    }   \n                if  (action == \"OperationMode5\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 5, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',5,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 5, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\"}; \n                            if (override == 1)  {global.set('F_RTC.on_off_active',0,\"file\");}\n                        }\n                    }                   \n                if  (action == \"OperationMode6\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 6, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',6,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 6, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\"}; \n                            if (override == 1)  {global.set('F_RTC.on_off_active',0,\"file\");}\n                        }\n                    }   \n                if  (action == \"OperationMode7\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 7, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',7,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 7, topic: \"Scheduler - Set Operation Mode (Tinlet: \" + CurrentHEAT + \"°C)\"}; \n                            if (override == 1)  {global.set('F_RTC.on_off_active',0,\"file\");}\n                        }\n                        if (global.get('Force_DHW_active',\"file\") == 1) {global.set('Force_DHW_active',0,\"file\");}\n                    }   \n                if  (action == \"OperationMode8\")                                // check the action\n                    {\n                        if (F_stored_next_operating_mode === undefined) {msg5 = { payload: 8, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\" };}       // Operation Mode action? >> to Operation MOde output pin 5\n                        if (F_SOLAR.function_active_state == 1) {global.set('F_stored_next_operating_mode',8,\"file\");} \n                        if (F_RTC_on_off_active == 1) {\n                            global.set('F_stored_next_operating_mode',undefined,\"file\"); \n                            msg5 = { payload: 8, topic: \"Scheduler - Set Operation Mode (Tinlet/DHW temp: \" + CurrentHEAT + \"/\" + CurrentDHW + \"°C)\"}; \n                            if (override == 1)  {global.set('F_RTC.on_off_active',0,\"file\");}\n                        }\n                    }   \n\n                ////////////////////////////////////////////////////////////////\n                //\n                ////////////////////////////////////////////////////////////////\n                if  (action == \"NightReductionWaterTempOn\")                              // check the action\n                    {\n                        var correction = global.get(\"NightReductionWaterTemp.correction\",\"file\");           // get the nightreduction correction.\n                        global.set(\"NightReductionWaterTemp.current_value\",correction,\"file\");\n                        global.set(\"NightReductionWaterTemp.state\",1,\"file\");\n                        msg6 = { payload: correction, topic: \"Nightreduction\" };\n                    }\n                if  (action == \"NightReductionWaterTempOff\")                             // check the action\n                    {\n                        global.set(\"NightReductionWaterTemp.current_value\",0,\"file\");\n                        global.set(\"NightReductionWaterTemp.state\",0,\"file\");\n                        msg6 = { payload: 0, topic: \"Nightreduction\" };\n                    }\n                ////////////////////////////////////////////////////////////////\n                if (action == \"NightReductionRoomSetpointOn\")                 // check the action\n                    {\n                        if (NightReductionRoomSetpoint_state === undefined || NightReductionRoomSetpoint_state == 0)          //only when not set\n                            { \n                                global.set(\"NightReductionRoomSetpoint.state\", 1, \"file\");\n                                msg7 = { payload: 1, topic: \"NightReductionRoomSetpoint.state\" };\n                            } \n                    }\n\n                if (action == \"NightReductionRoomSetpointOff\")                 // check the action\n                    {\n                        if (NightReductionRoomSetpoint_state === undefined) { NightReductionRoomSetpoint_state = 0; }\n                        if (NightReductionRoomSetpoint_state == 1) //only change when set\n                            {\n                                global.set(\"NightReductionRoomSetpoint.state\",0,\"file\");\n                                msg7 = { payload: 0, topic: \"NightReductionRoomSetpoint.state\" };\n                            } \n                    }\n                ////////////////////////////////////////////////////////////////\n                //\n                //\n                //\n                //\n            if (action == \"Water setpoint (heat shift)\")                 // check the action\n                    {\n                        msg8.payload = global.get(msg.topic+'_setpoint',\"file\")\n                        msg8.topic = action;\n                        node.send([null,null,null,null,null,null,null,msg8]);\n                    }\n            if (action == \"Water setpoint (direct)\")                 // check the action\n                    {\n                        msg8.payload = global.get(msg.topic+'_setpoint',\"file\")\n                        msg8.topic = action;\n                        node.send([null,null,null,null,null,null,null,msg8]);\n                    }\n            if (action == \"Room setpoint RTC\")                 // check the action\n                    {\n                        msg8.payload = global.get(msg.topic+'_setpoint',\"file\")\n                        msg8.topic = action;\n                        node.send([null,null,null,null,null,null,null,msg8]);\n                    }\n            \n            \n            \n            return [msg1, msg2, msg3, msg4, msg5, msg6, msg7];\n\n            }   \n        else\n            {   \n                return [null, null, null, null, null, null, null];\n            }\n        \n\n        }",
         "outputs": 8,
         "noerr": 0,
         "initialize": "\n",
@@ -48068,9 +48089,7 @@
             "510f802795714d75"
         ],
         "x": 2114,
-        "y": 539,
-        "w": 692,
-        "h": 222
+        "y": 539
     },
     {
         "id": "5c3df7b5fb0fa130",
@@ -48100,9 +48119,7 @@
             "5837cbf37ef47ea6"
         ],
         "x": 1944,
-        "y": 1399,
-        "w": 872,
-        "h": 302
+        "y": 1399
     },
     {
         "id": "404eed4ef9d90803",
@@ -48122,9 +48139,7 @@
             "0911a9edae380679"
         ],
         "x": 2014,
-        "y": 19,
-        "w": 812,
-        "h": 122
+        "y": 19
     },
     {
         "id": "c361a153997d2dfd",
@@ -48147,9 +48162,7 @@
             "c5ae638b1b65bff4"
         ],
         "x": 824,
-        "y": 159,
-        "w": 262,
-        "h": 282
+        "y": 159
     },
     {
         "id": "8fe25c73d37fe670",
@@ -48211,9 +48224,7 @@
             "1d0bdc24983833d5"
         ],
         "x": 1944,
-        "y": 219,
-        "w": 942,
-        "h": 1162
+        "y": 219
     },
     {
         "id": "0bb11670c285bff1",
@@ -48249,9 +48260,7 @@
             "70016d3833197d68"
         ],
         "x": 1494,
-        "y": 259,
-        "w": 412,
-        "h": 722
+        "y": 259
     },
     {
         "id": "b4e7d28c61065a10",
@@ -48286,9 +48295,7 @@
             "9293ce0fe3ffaed3"
         ],
         "x": 1474,
-        "y": 999,
-        "w": 432,
-        "h": 602
+        "y": 999
     },
     {
         "id": "9ad65d8ac40d3b19",
