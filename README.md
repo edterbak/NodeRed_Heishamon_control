@@ -249,7 +249,7 @@ When the compressor turns on, the Quietmode will remain active for an amount of 
 You can specify this fallback time in the Setup - Quietmode time (default 5 min).<br/>
 <br/>
 
-## Function 4: Solar
+## Function 4: Solar²DHW
 The aim of this function is to increase efficiency (and save cost) by utilizing solar energy as much as possible.
 When there is solar energy in abundance, you can tell the heatpump to use that energy to heat up your DHW water tank. 
 To determine if there is enough solar energy, you need any form of power measurement. This can be a P1 power meter, or a meter directly behind your panels.<br/>
