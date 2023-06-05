@@ -1,11 +1,28 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 22.00 Stable release<br/> <br/>
-Please please please... Make a backup of your current flow before updating.<br/>
+Current version: 23.00 Stable release<br/> <br/>
 <br/>
+It has been some time since the last release, v22.00 Stable release. Now after 33 beta versions the flow has progressed nicely and I feel it is time for an update.</br>
+Some things have improved a lot in my opinion on the layout and stability. And many new requested functionality has been added as well. I think this is a good result.</br></br>
+These are the most significant improvements compared to v22.</br></br>
+- The design of the menu is more logical now<br>
+- The menu items (tabs) can now be customized. You can hide items which you do not used. (System > Menu config)<br>
+- Solar function has been fixed now and is improved. You can now set a cool-down period after the dhw-run. The function has been renamed to “Solar²DHW” to avoid confusion with native solar function</br>
+- New feature: “Flexible pumpspeed function”. You can change the maximum pumpspeed depending on what the heatpump is doing, heat/dhw/nothing</br>
+- New feature: “Auto start DHW”. You can set a lower limit to temperature of the DHW tank. Once reached, a dhw run will be started</br>
+- New feature: “Boost DHW”. This function enables you to set a second (higher) temperature for the DHW tank. If you want to take a bath for example and require more and warmer water. When you activate this function the DHW run will start with “Forcefull DHW” enabled</br>
+- New feature: Scheduler now offers the ability to change the setpoint temperature of the water, room temperature or the shift temperature</br>
+- A lot of stability issues have been resolved</br>
+- Temperature sensors (readouts) during reboots have been improved. No sensor restart anymore</br>
+<br>
+For the full changelog please visit the bottom part of the github page and unfold the button "changelog".
+</br>
+</br>
+As always: Have fun with your heat pump!</br>
+</br>
+/Ed ter bak</br>
+</br>
 
-[RELEASE NOTES v22.00](#release_notes)
-<br/>
 ## Introduction
 Heishamon hardware is created by Egyras. AWESOME job! <br/>
 https://www.tindie.com/stores/thehognl/ <br/>
@@ -349,333 +366,173 @@ Q - How should I configure the Remote Controller for use with this Node Red Flow
 ********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/changelog.png" width="500">
-All changelog items from v21.00 are colapsed below. only the latest changelog will always be shown.
+All changelog items from v22.00 are colapsed below. only the latest changelog will always be shown.
 <details>
-[2022-11-12] (v21.00 - Stable) Things done are:
-Changelog compared to v18 is:... <br/>
-I would like to give a big thank Aikon for his input on the grammar corrections. Still some bits to improve, but its getting a lot better. Thanks to Aikon!!<br/>
-Also a huge thank you to Maarten69 and MikeyMan. Their help with testing, their improvments and suggestions are golden. There will be more things to come from them after this stable release. So keep hold on tight...<br/>
-- Enhancement: Clean install / first boot optimizations.
-- Enhancement: Softstart function rewritten. Logic is now more stable, but still not 100% flawless. This is still work in progress.
-- Enhancement: Experimental - this version allows "Compensation curve" mode as well as Direct mode.
-- Home all Functions: when function is disabled, the result is grayed out.
-- Enhancement: WAR function. With a fresh install, by default Panasonic WAR temperature profole is automatically imported.
-- Enhancement: WAR function. Added information of the curve in panasonic controller (read only)
-- Enhancement: WAR function. Added Import / Export buttons for the curves
-- Enhancement: Solar function. Corrections for P1 can now be configured though dashboard
-- Enhancement: Log page now shows 300 lines. More logging now shown which helps with possible debugging.
-- Enhancement: Added timezone awareness to node red. (nice to have with the scheduler and logs)
+	
+[2023-02-06] v22.01 beta 1 (experimental). Changes:
+- [Fix] Softstart. Rewritten the timing logic, and reduced resource footprint at the same time. 
+- [Fix] Softstart. Added gradual reduction of the correction after function end. Now it is going to correction 0 with 1C/5minutes.
+- [Fix] Max MQTT-commands per day not shown correctly.
+
+[2023-02-12] v22.02 beta 1 (experimental). Changes:
+- [Fix] Softstart. Rewritten the complete softstart function (copy parts) but now it works solidly. 
+- [Fix] Quietmode addon (softstart). End signal of quietmode never came. 
+- [changed] Variables of softstart functin are now under 1 main F_SS. variable. More logical names, and better performance.
+
+[2023-02-12] v22.03 beta 1 (experimental). Changes:
+- [Fix] Softstart-Quietmode addon. missing declared msg in the function. 
+
+[2023-02-12] v22.04 beta 1 (experimental). Changes:
+- [Fix] Softstart stored variables flipped by default, now correct again. 
+
+[2023-02-14] v22.05 beta 1 (experimental). Changes:
+- [Fix] Some variables, when undeclared, threw errors preventing correct functionality. (will check further)
+
+[2023-02-14] v22.06 beta 1 (experimental). Changes:
+- [Fix] F_RTC memoryOnly <> file storage location error caused incorrect results in GUI and 2 result of 2 functions.
+
+[2023-02-19] v22.07 beta 1 (experimental). Changes:
+- [Fix] Softstart function now on a different level. Added more advanced settings. (be carefull). The softstart function seems a lot more effective now.
+- [Enhancement]	#89 setpoint arrows on the dashboard to shift when in compensation curve mode. In case of compensation curve mode, the functions RTC, SoftStart and Night reduction should now work. (requires testing !)
+- [Fix] #81. setting the upper/lower limits for heat should now be set correctly.
+
+[2023-02-20] v22.08 beta 1 (experimental). Changes:
+- [Fix] GUI item not set correctly of the Softstart function.
+- [Fix] upper/lower limit values not being bound to the min/max values. 
+
+[2023-03-19] v22.09 beta 1 (experimental). Changes:
+- [Fix] Rewrite quietmode add-on. Now using quiet mode manager. 
+- [Enhancement] Changed GUI around softstart.
+
+[2023-03-26] v22.10 beta 1 (experimental). Changes:
+- [Enhancement] SoftStart Chart now shows quietmode (https://github.com/edterbak/NodeRed_Heishamon_control/issues/104)
+- [Fix] Solar Function. Half rewritten. Added DHW setpoint manager and introduced popups when changing stuff. Need testing.
+- [Enhancement] Added HP models no 29-32 to the list.
+
+[2023-03-26] v22.11 beta 1 (experimental). Changes:
+- [Fix] Fix room temperature readout during NR Deploy (https://github.com/edterbak/NodeRed_Heishamon_control/issues/93)
+
+[2023-03-26] v22.12 beta 1 (experimental). Changes:
+- [Fix] On Temperature page the Ta is plotted on the living room graph (https://github.com/edterbak/NodeRed_Heishamon_control/issues/75)
+- [Fix] stopped always MQTT quietmode sending during deploy / reboot 
+
+[2023-03-26] v22.13 beta (experimental). Changes:
+- [Fix] Room temperature readoud now rounded to 2 decimals.
+
+[2023-03-26] v22.14 beta (experimental). Changes:
+- [Fix] Fixed unneeded sending of temperature from new node [T_Room Input Selector]
+
+[2023-03-27] v22.15 beta (experimental). Changes:
+- [Fix] Fixed quietmode switching back within 5 minutes after quietmode time passed.
+- [Enhancement] Renamed some extra variables. 
 
 
-[2022-11-13] v21.1 - Changes compared to Main 21.00:
-- [Optional] HA climate control to adjust the Room setpoint for RTC (Separate flow, now in folder Home Assistant)<br/>
-https://github.com/edterbak/NodeRed_Heishamon_control/tree/main/HomeAssistant
-- BUG: Fixed problem with falling back to built-in temperature sensor from remote controller when using a custom one. (@Restart of flow)
-- Enhancement: [New] Added nightreduction room setpoint to scheduler and update the HELP text.
-- BUG: Fixed temp sensor log messages: SETUP - Sensors: Custom room temperature sensor FOUND.
-- Enhancement: [New] Softstart addon to reduce compressor frequency during startup even more (Using Quiet mode 3) Limits freq to 35 Hz
-- Enhancement: [Request] Moved all settings from scheduler tab --> settings tab
-- Enhancement: [New] Write panasonic_heat_pump last Error to log.
-- Enhancement: [New] Show current status of heater on HOME dashboard.
-- Enhancement: [New] (RTC) Send Changed Room setpoint to log
-- Enhancement: [New] Enable debug temperatures (switch) for more temperature logging.
+[2023-04-01] v22.16 beta (experimental). Changes:
+- [Fix] Fixed two small issues with logs being flooded by SOLAR function messages. 
+- [Enhancement] Renamed a lot of variables. 
+- [Fix] cleaned up some remnant variables
 
 
-[2022-11-13] v21.11 - Changes compared to Main 21.10:
-- BUG: Log - fixed extra debug switch. From start it was auto-enabled.
-- Enhancement: Re-implemented some of Aikons textual corrections.
-- Enhancement: Fixed location of HELP button for settings, improved text overal in help buttons, size of the box etc.
-- Enhancement: Moved 'Scheduler related settings' to Scheduler.
+[2023-04-02] v22.17 beta (experimental). Changes:
+- [Enhancement] GUI - [SYSTEM] - MQTT tab made
+- [Enhancement] GUI - [SYSTEM] - moved shutdown response to MQTT tab.
+- [Enhancement] GUI - [SYSTEM] - HW information tab made (moved from [settings] tab
+- [Enhancement] GUI - if mqtt block is enabled, the node red dashboard title turns red.
+- [Enhancement] GUI - if defrost is enabled, the node red dashboard title turns blue.
+- [fix] minor tweaks to solar function. I need to know if there are still issues with this function. please give feedback
+- [fix] minor tweaks to mqtt block function. variable usage.
 
-[2022-11-15] v21.12 - Changes:
-- BUG: Home sceen operatoin mode actual not updating fixed.
-- Enhancement: Layout Home
-- Enhancement: typos in various places.
+[2023-04-04] v22.18 beta (experimental). Changes:
+- [Enhancement] GUI - [SETTINGS] Moved menu items to a more logical place
+- [Enhancement] GUI - [Home] remaned "solar function" to "Solar energie to DHW"
+- [Enhancement] GUI - [SYSTEM] MAJOR changes</br>
+----------------------- Added "MENU CONFIG" section</br>
+----------------------- Here you have the option to enable/disable sidebar tabs</br>
+----------------------- Here you have the option to enable/disable menu sections on [Home] / [Settings] tabs</br>
+----------------------- Combined HW info and HW config</br>
 
-[2022-11-18] v21.13 beta - Changes:
-- Added 4 new Panasonic models to the list
-- Removed debugging options from LOG dashboard
-- Fix: Store Quietmode to restore if Addon-Quietmode for SoftStart routine is used.
-- Updated SoftStart help for the new function SoftStart-Quietmode.
+[2023-04-10] v22.19 beta (experimental). Changes:
+- [Fix] - Changed Solar function logic. Hopefully less issues. (needs feedback)
+- [New feature] Scheduler now allows you to set setpoint for: 
+----------------------- Water (HEAT + pump Direct mode)
+----------------------- Shift (HEAT + pump Compensation curve mode)
+----------------------- Room temperature (for use in RTC function)
+- [Enhancement] The COOL function has a modified function to calculate dew-point. Thanks to blb4!
+- [rework] - Added manager for Operating mode + Heat SP
+- [Fix] - Lot of changes and work done to allow pump in Compensation Curve operation. Needs testing and feedback from you all.
 
-[2022-11-18] v21.14 beta - Changes:
-- BUG: Energie graph was incorrect. Fixed
-- Added reset Panasonic Heatpump information (in FLOW)
-- Changed some timing and amount of triggers in Control / function nodes. should reduce machine load.
+[2023-04-10] v22.20 beta (experimental). Changes:
+- [Fix] - Solar function. case power off and allow power on toggie is off added with logging. Improved GUI name of toggle.
 
-[2022-11-20] v21.15 beta - Changes:
-- BUG: Fixed RTC function. +1 was the highest it went. now +3 again.
-- Enhancement: CLEAR button in the log tab now automatically refreshes the page. 
-- BUG: Fixed showing wrong Operation Mode on Home dashboard.
-- BUG: Fixed log spamming bug caused by SoftStart Quietmode.
-- Added some extra's to System Check (Defrost counter etc).
+[2023-04-19] v22.21 beta (experimental). Changes:
+- [Fix] - Solar function. Improved function. Should work robust now. Added cooling down period after completion of a solar-dhw run.
+- [Enhancement] - Moved reduce pumpspeed to a separate tab. 
+- [Enhancement] - Reduce pumpspeed rewritten and added option to set 3 speeds (low, dhw and heat) 
 
-[2022-11-21] v21.16 beta - Changes:
-- BUG: Fixed incorrect line (25) in [debug] tab, mqtt counter
-- BUG: first attempt to fix on/off/on/off/on/off issue reported. 
-- Enhancement: Added delete button for scheduled tasks.
-
-[2022-11-23] v21.17 beta - Changes:
-- Layout improvement SYTEM.
-- Use change of Room_Setpoint to trigger RTC heat on/off instead of timer.
-- SYSTEM Health can detect custom devices connected to Heishamon (1-wire, kWh).
-- Added MQTT-Blocker to System incl. warning through Notification.
-- Check F_rtc_on_off_active on all false conditions.
-- Added System "Repair settings" button to fix only this RTC on/off problem.
-- Added: System Check includes Error counter, show last error message.
-- Changed labels on settings page (status TOP90 / 91) Backup heater hours (HEAT), Backup heater hours (DHW).
-
-[2022-11-27] v21.17 beta - Fixes:
-- MQTT-Blocker; user can set the daily limit. (default 200 messages/day)
-- Small fixes regarding saving of today/yesterday counter values.
-
-[2022-11-28] v21.17 beta - Changes:
-- Auto increase MQTT-Blocker limit when disabling after a block. (+100)
-- Write status MQTT-Block active to output-node (request)
-
-[2022-11-30] v21.18 beta (experimental). Changes:
-- NEW: Introduce a popup when the pump is turned OFF on the controller. This is now detected. In the popup you can choose what the pump should be doing and what the default behaviour should be. You can find this popup under: Settings > Heat Pump > Shutdown response SETUP. 
-- NEW: MQTT-Blocker; adjusted so it allows the settings entered in the popup mentioned 1 line up.
-- FIX: Small attempt of a fix to get rid of the incorrect 'RoomThermostat found or using Compensation curve. Using internal Panasonic WAR function. NodeRed WAR function is now disabled' This might do it.
-- CHANGED: RTC on/off function. This will now always trigger, more than once, as long as the rtc_off temp is below the actual temp. 
-- CHANGED: RTC on/off function. When it is active, toggling off the function will result in reverting the taken actions.
-- CHANGED: RTC function does NOT need to be on for the RTC on/off function to be active. Two separate functions they are now actually.
-- CHANGED: Solar function. When it is active, toggling off the function will result in reverting the taken actions.
-
-[2022-12-02] v21.19 beta (experimental). Changes:
-- FIX: Defrost_Counter_Today not reset anymore at restart of flow.
-- NEW: Removed fixed scale for RTC-Chart, now chart will auto-set it's range.
-- CHANGED: Re-Added F_rtc_on_off_active to System Check.
-- NEW: Added frequency gauge to HOME instead of number in Hz
-- CHANGED: messages from RTC on/off (looked like error message) and displays OM in text instead of number.
-- FIX: Update log version at start
-
-[2022-12-03] v21.20 beta (experimental). Changes:
-- CHANGED: Added to Manual OFF button press setup: notification when user selects/click on action.
-- NEW: Added a "force defrost" button to page System Health. (+confirmation dialog)
-- NEW: Added a 4th RTC correction to RTC for use as a booster.
-- NEW: Added Actual room temp to log message RTC result.
-
-[2022-12-05] v21.21 beta (experimental). Changes:
-- FIX: Shutdown pup-up. It was not functioning correctly. Now it works a lot better. 
-- FIX: Shutdown pop-up. You should get only onece a popup with a question to lift block.
-- FIX: Improved layout RTC tab and added new T Custom to the help section.
-- FIX: Heatpump model detection now working as it should. 
-- FIX: attempt at a fix for DHW NaN value. NOt sure if this will work. Need to wait and see.
-
-[2022-12-06] v21.22 beta (experimental). Changes:
-- [FIX] 4th RTC threshold was not calculated correctly after previous update (always +10)
-- [NEW] New function Reduce pump speed added to System Health (temporary location)
-- [NEW] Flow can now handle quarter water temperatures from inlet and outlet.
-
-[2022-12-07] v21.23 beta (experimental). Changes:
-- [FIX] DHW COP graph and HEAT COP graph are now more robust. prevent 'infinite' result. Got rid of incorrect old code.
-
-[2022-12-07] v21.24 beta (experimental). Changes:
-- [FIX] Small round problem in System Check showed 20.200000000000003°C
-- [NEW] Reduce pump speed not reducing pump speed during defrost cycle.
-
-[2022-12-08] v21.25 beta (experimental). Changes:
-- [NEW] Added fan(s) speed and COP to Gather HP data.
-- [Improvement] Polling room setpoint more efficiently to log.
-- [TEST] Test RTC booster temp leveling between +3 and +custom levels (currently showing only in log).
-
-[2022-12-08] v21.26 beta (experimental). Changes:
-- [NEW] Reduced SoftStart messages (skip unnecessary corrections).
-- [NEW] Disabling SoftStart during defrost.<br/>
-- [Fix] Changed compressor status to log (includes defrost state).
-- [Change] Renamed switch Gather HP data to Extend logging. (Function off by default/restart).
-- [Change] Extend logging shows all SoftStart corrections in log (incl. those not affecting setpoint).
-- [Change] Extend logging shows compressor start/stops during defrost cycle.
-- [Change] Increased default max MQTT messages per day to 300 (new users).
-
-[2022-12-12] v21.27 beta (experimental). Changes:
-- [FIX] COP 12month chart now working robustly. Does not matter if only DHW, only HEAT or both are installed now. It will produce a graph anyway.
-- [FIX] Connect toggle Dashboard: [RTC - room temperature PV] to toggle Dashboard: [Scheduler > Setpoint normal]
-- [FIX] When rebooting NodeRed, sending mqtt commands (enable pump / dhw temperature) now removed.
-- [FIX] When rebooting NodeRed, sending mqtt weird commands to SET5 SetZ1HeatRequest, like NaN, 0 or negative values.
-
-[2022-12-12] v21.28 beta (experimental). Changes:
-- [ENHANCEMENT] Added toggle for NightReduction RoomSP in Scheduler screen.
-
-[2022-12-13] v21.29 beta (experimental). Changes:
-- [NEW] Bypass Softstart Quietmode during defrost.
-- [Obsolete] RTC Booster fixed now. Use the switch on RTC dashboard to enable (default off).
-- [Obsolete] Removed layout from dashboard Hardware configuration (was for testing only)
-- [FIX] Nightreduction room temperature / Current status --> Manual on/off now working again.
-- [FIX] Removed log message (@startup) "Function - SoftStart Quietmode: OFF (restored to level 0)". (the restored part)
-- [FIX] Unneeded pumpspeed MQTT command (When enabled at a restart).
-- [Moved] Moved Function reduce pump speed to Settings page. Layout now improved.
-- [Changed] Replaced defrost toggle with button. Color status of button Red --> defrosting.
-- [FIX] RTC Room actual temperature didn't update frequently.
-- [Add] Added to System Check: RTC Booster, Function pump speed, MQTT-block settings and manual on/off settings.
-
-[2022-12-15] v21.30 beta (experimental). Changes:
-- [FIX] RTC on/off function. When no OperatingMode is stored, it would default back to Mode 0 (heat only). Now HEAT is added if not there/possible.
-
-[2022-12-25] v21.31 beta (experimental). Changes:
-- [Changed] Rework of block functionality. Rules around custom selection should be obayed now.
-- [Changed] RTC function, help and layout. Select the action you want to allow, on/off or heatmode changing only.
-- [Changed] RTC function, Booster renamed to incremental setpoints
-- [Changed] Scheduler function. Behaviour when other functions are activated.
-- [Changed] SoftStart. Now a toggle is present if you want the function to restart every time after a defrost.
-- [FIX] WAR function. TOP29 and TOP30 were flipped during import/export.
-- [FIX] Heatpump information updated propperly after firmware change. (Thank you xtr3me)
-
-[2022-12-25] v21.32 beta (experimental). Changes:
-- [FIX] mqtt signals being blocked too often. Power on/off, Operating Mode, Quiet Mode etc.
-
-[2022-12-25] v21.33 beta (experimental). Changes:
-- [FIX] Typo in FILTER functions (2x) (Thanks sjampeter)
-
-[2023-01-04] v21.34 beta (experimental). Changes:
-- [Fix] Added to System Check: repair wrong settings MQTT_Block caused by older versions.
-- [Add] Added all night recduction variables to the System Check (debugging purposes).
-- [Add] Added more SoftStart logging to main log when switch "extend logging is enabled".
-
-[2023-01-04] v21.35 beta (experimental). Changes:
-- [FIX] SoftStart was using Night reduction water temp correction when switch was'nt enabled.
-- [Other] started with new naming convention and code optimization.
->> (old variables will be removed, please check all function switches). <<
-
-[2023-01-05] v21.36 beta (experimental). Changes:
-- [Fix] fixed a small bug after renaming. More fixes still needed.
-- [Changed] moved check of mqtt stuff of of system check, into load on boot MQTT.
-- [Changed] Removed some of the automated node.warn() notifications.
-
-[2023-01-06] v21.37 beta (experimental). Changes:
-- [Other] Continued with var renaming.
-- [Other] Renamed label from graph Today's result (kWh) to Result (instead of  "(+) Import (-) Export")
-- [New] Linking RTC roomtemperature setpoint to nightreduction roomsetpoint (Normal)
-
-[2023-01-07] v21.38 beta (experimental). Changes:
-- [Fix] Crash/Freeze after turning on/off toggle
-
-[2023-01-07] v21.39 beta (experimental). Changes:
-- [Fix] Shutdown response and popups now working again.
-
-[2023-01-08] v21.40 beta (experimental). Changes:
-- [Fix] Shutdown response improvement.
-
-[2023-01-08] v21.41 beta (experimental). Changes:
-- [Fix] small fix for shutdown response improvement.
-- [Changed] Improved the System Check layout.
-- [Add] Label "Max MQTT-commands per day" now shows actual messages from current day.
-
-[2023-01-09] v21.42 beta (experimental). Changes:
-- [Fix] Shutdown response now working (I think).
-- [NEW] added a button on the shutdown detection section.
-
-[2023-01-09] v21.43 beta (experimental). Changes:
-- [Changed] mqtt.block_mode defaulting to 1 after trigger mqtt.block_active
-- [Changed] when mqtt.block_mode IS defaulting to 1, push this state to GUI.
+[2023-04-19] v22.22 beta (experimental). Changes:
+- [Fix] - RTC function. When sterelization run active, do not allow rtc function to act. 
+- [Enhancement] - Solar function status better visible on homepage with status behind it when it is running or done.
+- [Enhancement] - Spumpspeed function. Added dynamic y-axis for the chart based on the highest setting.
+- [Fix] - On home screen, the water "Outlet setpoint" was incorrect during dhw run. 
+- [Fix] - empty popup after changing the DHW setpoint in some scenarios.
 
 
-[2023-01-12] v21.44 beta (experimental). Changes:
-- [Fix] Shutdown detection and response fixed.
-- [Fix] RTC turn power off/on working again (broken in v21.43)
-- [New] SoftStart timer: Not resetting at flow restart (when compressor was running).
-- [Add] Added SoftStart timers to System Check.
-- [Fix] Remember state of switch "Extend debugging".
-- [Fix] Remember state of switch "Block MQTT commands" at boot.
-- [Fix] Restore previous block_mode when disabling MQTT-Block.
-- [Fix] Fixed status button MQTT block on "Manual OFF button press detected" page.
-- [New] Added Home button op System navigation bar.
-
-[2023-01-..] v21.45 beta (experimental). Changes:
-- [Other] Removed some typos from changelog.
-- [New] Added source (origin) for most MQTT-commands in log
-- [New] Highlight mqqt-commands in log.
-- [Fix] Fixed Bock mode "custom" changing to "block all" after 1 min.
-- [New] Added actual block mode to label switch "Block MQTT commands".
-- [Fix] Fixed some typos.
-- [Other] Cleaned up code Function WAR2DIRECT (3rd pinout code obsolete).
+[2023-04-21] v22.23 beta (experimental). Changes:
+- [Changed] - RTC function. Automations section. After installing this update, you need to set the correct activate/deactivate temperatures again. These will be removed intentionally. 
+- [Enhancement] - Solar chart. The Power result graph now has automated Y axis. 
+- [Improvement] - Changed some stored variable names (F_RTC.xxxx)
+- [Enhancement] - System - MQTT settings now also shows IP adress of heishamon.
 
 
-[2023-01-15] v21.46 beta (experimental). Changes:
-- [New] Function RTC automation, give name to OM mode when changing Operation mode.
-- [Fix] RTC Turn power on/off & Change Operation mode was only executed after a room temp change.
-- [Fix] SoftStart Quietmode was setting wrong Quietmode even when switch was disabled.
-- [Fix] Status switch "Extend logging" was configured incorrectly.
-- [Change] Changed the way label of "Block MQTT commands" updating.
-- [Change] Better solution to update MQTT state and label by listening to command# topic.
+[2023-04-22] v22.24 beta (experimental). Changes:
+- [Fix] - During sterilization run, the incorrect temperature of the setpoint was shown on dashboard. 
+- [Fix] - small improvement related to pumpspeed function.
 
+[2023-04-22] v22.25 beta (experimental). Changes:
+- [Fix] - If you have installed v22.24, please update as soon as possible. 1 dumb error caused mqtt commands to be sent every 10 seconds.
 
-[2023-01-17] v21.47 beta (experimental). Changes:
-- [Fix] Fix SoftStart logging showed F_SS_old_correction with trailing zeros xx.0000000000003
-- [Fix] Reduced SoftStart logging when SP_Final < HEAT_SP_lower_limit.
-- [Fix] Label "Max MQTT-commands per day" Wasn't updating correctly, now fixed.
-- [New] Improvements made for extra (more) debugging info. (trailing *** in log) and highlights.
-- [Other] Code optimalisation in System Check, SS corr rounding etc.
-- [Fix] Fixed a small difference between function Compare new SP and function SoftStart.
-- [Optimalisation] Cleaned up code, removed unnecessary inject nodes (1/min).
-- [New] When defrosting show status on Home (@Operation mode, actual).
-- [Change] Increasing the max mqqt-messages/day now in bigger steps (10/2000).
+[2023-05-02] v22.26 beta (experimental). Changes:
+- [Fix] - Solar chart not being populated.
+- [Enhancement] - Dashboard on multiple devices are now in sync. Menu configuration is instant over all devices. 
+- [Enhancement] - Added a note to the Hardware Information section to clarify stuff when the model says 'unknown'. 
 
-[2023-01-19] v21.48 beta (experimental). Changes:
-- [Fix] Issue #67 Bug: in Node "Block".
-- [Fix] Issue #74 Bug: Block_mode CUSTOM changing to BLOCK_ALL @power off (remote controller).
-- [Fix] Issue #68 Bug: show logline only when 'Extend logging' is enabled.
-- [Fix] Issue #69 Bug: Correct function node "set.war_ot_wt".
-- [New] Added a link to changelog.md on dashboard System/About.
+[2023-05-08] v22.27 beta (experimental). Changes:
+- [Fix] - 95% fix memory leak (seems 100% after couple of days)
+- [Fix] - Operating mode change not done in some cases. (incorrect filter usage) Needs to be checked further in other areas.
+- [Enhancement] - Removed the repeated triggers and replaced them with a link in from UI-Control node. Only refresh when needed. 
 
-[2023-01-21] v21.49 beta (experimental). Changes:</br>
-- [Fix] Function Reduce Pump Speed fixed</br>
+[2023-05-10] v22.28 beta (experimental). Changes:
+- [Fix] - RTC function, the automation for OperatingMode had a hard time staying active... fixed it.
+- [Enhancement] - Start DHW-run below XX C (SETTINGS tab). This triggers Forcefull DHW run (by scheduler)
+- [Fix] - Solar function did not revert operating mode/SP in some scenarios.  https://github.com/edterbak/NodeRed_Heishamon_control/issues/110
+- [Fix] - Sterilization routine always reverts back to Operating Mode heat only. Now it is reverting the original OM befor the run. https://github.com/edterbak/NodeRed_Heishamon_control/issues/108
+
+[2023-05-11] v22.29 beta (experimental). Changes:
+- [Fix] - Attempt to fix Sterilization issue. https://github.com/edterbak/NodeRed_Heishamon_control/issues/108 
+
+[2023-05-14] v22.30 beta (experimental). Changes:
+- [Fix] - Night reduction not showing correct valuein dashboard https://github.com/edterbak/NodeRed_Heishamon_control/issues/111
+- [New Feature] - Added DHW BOOST function. https://github.com/edterbak/NodeRed_Heishamon_control/issues/95
+- [New Feature] - Added RESET when there is an active error on the device (eg. H62.. ) https://github.com/edterbak/NodeRed_Heishamon_control/issues/113
+- [Rework] - Rewritten the logic a bit behind the force dhw toggles.
+	
+Fairly much has been changed. needs polishing.
+
+[2023-05-17] v22.31 beta (experimental). Changes:
+- [Fix] - RTC turn on/off function not working in all cases. (typo) https://github.com/edterbak/NodeRed_Heishamon_control/issues/114
+
+	
+[2023-06-01] v22.32 beta (experimental). Changes:
+- [Enhancement] Added visual in RTC GUI to see the status of the automations
+- Preparations for 23.00 Stable
+	
+[2023-06-02] v22.32 beta (experimental). Changes:	
+- [Fix] - improved the scheduler <> RTC on/off function working together. Should work better now.
 
 </details>
-<a name="release_notes"></a>
+	
+[2023-06-05] v23.00 Stable.
 
-# Release notes</br>
-
-Where to start.. </br>
-First off, I would like to welcome Maarten69 to the team. He has joined the project and gave a major boost with new ideas, new energy and new functions. So a big "THANK YOU" from me (Ed ter bak) for all the effort and free time you have invested. I appreciate it a lot, and I am sure a lot of other users do as well.</br>
-</br>
-That said... For a long time, there has not been a stable update. A lot of bigger things were done together making it harder to do this. 
-But, this process is going to be managed better in future. We aim to have shorter release cycles, with less major changes per update to make it manageable.</br>
-</br>
-</br>
-This release has a lot of changes compared to previous stable build, v21.00.</br>
-Here is a brief overview of the most noticeable items.</br>
-</br>
-<ins>Operation mode:</ins></br>
-Previously it was only possible to use this Node Red flow when your heat pump is in Direct mode, and not using the Compensation Curve. This has now been changed. You can operate the heat pump in Compensation Curve mode. This means the heat pump itself is managing the water temperature depending on the outside temperature. The NodeRed WAR function will then automatically be disabled. Current implementation is not yet allowing you to manually shift the curve up/down. (This will be added soon in next builds) But, it IS possible to have this done for you by using the RTC-function. </br>
-</br>
-<ins>SoftStart:</ins></br>
-This function has had a lot of attention. You now have the options to use quietmode during the start-up phase and you can choose to ignore restarts after a defrost cycle. In addition, you can use this function to increase the length of the compressor runs. The HELP text describes more about this. </br>
-</br>
-<ins>WAR function:</ins></br>
-This tab has been improved so it can import the current settings from the heat pump and show it in the graph. Also, you can change the temperatures and upload it again to the heat pump. </br>
-</br>
-<ins>Reduce pump speed:</ins></br>
-In the [Settings] tab, you will now find a bit about "Reduce pump speed". This new function allows you to reduce the pump speed when the compressor is not on.</br>
-</br>
-<ins>Scheduler:</ins>
-In the scheduler there are now a couple of extra options; Night reduction. Remove a schedule by pressing the bin.</br>
-</br>
-
-<ins>Shutdown response:</ins></br>
-We found that the node red flow is not aware of certain situations, like maintenance. When you manually turn the unit off through the wall mount, it can happen that a scheduled task is planned and turns the heat pump back on. To handle this situation, there is now an option to predefine the reaction of the flow when a manual OFF is pressed on the wall mounted controller. You can find this section under Settings > Shutdown response > [setup]</br>
-</br>
-<ins>Safeguard:</ins></br>
-In addition to the shutdown response, the node red flow is keeping track of te amount of mqtt messages sent per day. If this exceeds a limit then the flow will block all future messages. The default limit is 500. Normal operation should result in 20-100 messages per day. If you are unlucky with a lot of defrosts, this can go up to 200. So 500 indicates a problem for sure.</br>
-</br>
-<ins>Debugging:</ins></br>
-It has been made a lot easier by Maarten69 to debug if there are issues. Under the SYSTEM tab, System Health, you can now list a lot of the hidden variables used by the node red flow. When posting issues, it is advised to supply a copy of that text. :) </br>
-</br>
-Finally, a short note. The layout of v22.00 is a bit of a mess. The structure in the dashboard is now a little hard to detect. It is in need of some polishing here and there. This will be on the agenda soon to tidy up to give a better user experience.</br>
-</br>
-Have fun with your heat pump!</br>
-</br>
-/Ed ter bak</br>
-</br>
-</br>
-
-
-
-********
-
-## TODO list
-See issue list in GitHub.
 
 ********
 
