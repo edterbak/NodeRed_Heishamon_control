@@ -5,15 +5,16 @@ Current version: 23.00 Stable release<br/> <br/>
 It has been some time since the last release, v22.00 Stable release. Now after 33 beta versions the flow has progressed nicely and I feel it is time for an update.</br>
 Some things have improved a lot in my opinion on the layout and stability. And many new requested functionality has been added as well. I think this is a good result.</br></br>
 These are the most significant improvements compared to v22.</br></br>
-- The design of the menu is more logical now<br>
-- The menu items (tabs) can now be customized. You can hide items which you do not used. (System > Menu config)<br>
-- Solar function has been fixed now and is improved. You can now set a cool-down period after the dhw-run. The function has been renamed to “Solar²DHW” to avoid confusion with native solar function</br>
-- New feature: “Flexible pumpspeed function”. You can change the maximum pumpspeed depending on what the heatpump is doing, heat/dhw/nothing</br>
-- New feature: “Auto start DHW”. You can set a lower limit to temperature of the DHW tank. Once reached, a dhw run will be started</br>
-- New feature: “Boost DHW”. This function enables you to set a second (higher) temperature for the DHW tank. If you want to take a bath for example and require more and warmer water. When you activate this function the DHW run will start with “Forcefull DHW” enabled</br>
-- New feature: Scheduler now offers the ability to change the setpoint temperature of the water, room temperature or the shift temperature</br>
-- A lot of stability issues have been resolved</br>
-- Temperature sensors (readouts) during reboots have been improved. No sensor restart anymore</br>
+
+* []() The design of the menu is more logical now
+* []() The menu items (tabs) can now be customized. You can hide items which you do not used. (System > Menu config)
+* []() Solar function has been fixed now and is improved. You can now set a cool-down period after the dhw-run. The function has been renamed to “Solar²DHW” to avoid confusion with native solar function
+* []() New feature: “Flexible pumpspeed function”. You can change the maximum pumpspeed depending on what the heatpump is doing, heat/dhw/nothing
+* []() New feature: “Auto start DHW”. You can set a lower limit to temperature of the DHW tank. Once reached, a dhw run will be started
+* []() New feature: “Boost DHW”. This function enables you to set a second (higher) temperature for the DHW tank. If you want to take a bath for example and require more and warmer water. When you activate this function the DHW run will start with “Forcefull DHW” enabled
+* []() New feature: Scheduler now offers the ability to change the setpoint temperature of the water, room temperature or the shift temperature
+* []() A lot of stability issues have been resolved
+* []() Temperature sensors (readouts) during reboots have been improved. No sensor restart anymore
 <br>
 For the full changelog please visit the bottom part of the github page and unfold the button "changelog".
 </br>
