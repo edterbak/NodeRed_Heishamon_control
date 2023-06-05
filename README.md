@@ -257,10 +257,14 @@ To determine if there is enough solar energy, you need any form of power measure
 
 ## Scheduler
 I have added an option to create 10x schedules (in dashboard) for:
-- DHW runs
+- Heatpump power on/off
+- Set water setpoint (heat shift / heat direct)
+- Set room setpoint (RTC function)
+- Force DHW runs
 - Sterilization runs
 - Quiet modes
 - Operation modes
+
 <br/>You can enable/disable a schedule, multiselect a day of the week, specify the time (hour + minute) and give the schedule a name.<br/>
 In addition, the override toggle will allow you to start a planned action, even when the HeatPump is turned off at that time. If this toggle is disabled, a switched off heatpump will not do the scheduled task.<br/>
 
