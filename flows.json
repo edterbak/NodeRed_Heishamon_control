@@ -8908,9 +8908,9 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "22.33 beta",
+        "payload": "23.00 Stable",
         "payloadType": "str",
-        "x": 1330,
+        "x": 1340,
         "y": 1920,
         "wires": [
             [
@@ -9269,7 +9269,7 @@
         "g": "a8ac5b148d851a6b",
         "name": "F_RTC.incremental_setpoints_state on/off",
         "label": "Enable between +3 and +{{msg.custom}}",
-        "tooltip": "",
+        "tooltip": "Incremental setpoints: Enable/Disable the incremental steps between the two ranges.",
         "group": "ef3dbc543ae92bec",
         "order": 2,
         "width": 7,
@@ -16972,14 +16972,14 @@
             "b665e9aa13d44f8e",
             "6a50ef63d9d35647",
             "0e8ca4bb561b59ed",
-            "497a87221c5618c5",
             "6b2644c3a510f50f",
             "b43820fd5a21f4e7",
             "af1404724ba9f9f4",
             "103eefceda366f39",
             "71a59b9661071adc",
             "f2aa79821dfd1110",
-            "fcc08a6bfb0d246e"
+            "fcc08a6bfb0d246e",
+            "21b21c01326b2eb3"
         ],
         "x": 2508,
         "y": 33,
@@ -23490,7 +23490,8 @@
         "links": [
             "836082017500f9a9",
             "b50ab0a4981f9d17",
-            "ed2c73bf6b96d4a0"
+            "ed2c73bf6b96d4a0",
+            "5a1d6b18490ded1c"
         ],
         "x": 225,
         "y": 460,
@@ -23733,9 +23734,9 @@
         "type": "ui_numeric",
         "z": "a938de76db0b71f6",
         "g": "116d861b2bd34e3a",
-        "name": "Start DHW-run below",
+        "name": "Auto start DHW",
         "label": "Auto start DHW",
-        "tooltip": "",
+        "tooltip": "Auto start DHW: If the DHW temperature drops below this temperature, a Force DHW cycle will be started.",
         "group": "e3cc96332cd59f07",
         "order": 13,
         "width": 5,
@@ -23749,7 +23750,7 @@
         "max": "75",
         "step": 1,
         "className": "",
-        "x": 3260,
+        "x": 3240,
         "y": 1920,
         "wires": [
             [
@@ -23832,7 +23833,7 @@
         "g": "116d861b2bd34e3a",
         "name": "Boost DHW now",
         "label": "Boost DHW now",
-        "tooltip": "",
+        "tooltip": "Boost DHW now: Force a DHW run to reach a (higher) secondairy DHW target temperature. When you temprary require more hot water",
         "group": "e3cc96332cd59f07",
         "order": 15,
         "width": 5,
@@ -23994,9 +23995,9 @@
         "type": "ui_switch",
         "z": "a938de76db0b71f6",
         "g": "116d861b2bd34e3a",
-        "name": "Automated start DHW",
+        "name": "Auto start DHW",
         "label": "",
-        "tooltip": "",
+        "tooltip": "Auto start DHW: If the DHW temperature drops below this temperature, a Force DHW cycle will be started.",
         "group": "e3cc96332cd59f07",
         "order": 12,
         "width": 1,
@@ -24016,7 +24017,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 2980,
+        "x": 2960,
         "y": 1920,
         "wires": [
             [
@@ -24081,9 +24082,9 @@
         "type": "ui_switch",
         "z": "a938de76db0b71f6",
         "g": "116d861b2bd34e3a",
-        "name": "GUI_boost_state",
+        "name": "Boost DHW now",
         "label": "",
-        "tooltip": "",
+        "tooltip": "Boost DHW now: Force a DHW run to reach a (higher) secondairy DHW target temperature. When you temprary require more hot water",
         "group": "e3cc96332cd59f07",
         "order": 14,
         "width": 1,
@@ -24103,7 +24104,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 2990,
+        "x": 2980,
         "y": 2060,
         "wires": [
             [
@@ -24639,7 +24640,7 @@
         "y": 140,
         "wires": [
             [
-                "497a87221c5618c5"
+                "71a59b9661071adc"
             ],
             [
                 "6fc958da73fbdf09"
@@ -24716,13 +24717,13 @@
         "chartType": "line",
         "legend": "true",
         "xformat": "HH:mm:ss",
-        "interpolate": "linear",
+        "interpolate": "step",
         "nodata": "",
         "dot": false,
         "ymin": "",
         "ymax": "",
         "removeOlder": "24",
-        "removeOlderPoints": "",
+        "removeOlderPoints": "1000",
         "removeOlderUnit": "3600",
         "cutout": 0,
         "useOneColor": false,
@@ -24904,32 +24905,6 @@
         ]
     },
     {
-        "id": "497a87221c5618c5",
-        "type": "delay",
-        "z": "a938de76db0b71f6",
-        "g": "992121a08b66faa3",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "10",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 3460,
-        "y": 140,
-        "wires": [
-            [
-                "71a59b9661071adc"
-            ]
-        ]
-    },
-    {
         "id": "6b2644c3a510f50f",
         "type": "function",
         "z": "a938de76db0b71f6",
@@ -24975,9 +24950,9 @@
         "group": "830a81a1c54c6ef5",
         "order": 10,
         "width": 6,
-        "height": 3,
+        "height": "5",
         "name": "text below note",
-        "label": "This functionality requires an humidity sensor to work<br><br>Automatically a safety margin of 1°C above dew point is applied for the lowest cooling setpoint temperature.",
+        "label": "The COOL setpoint can always be set.<br>Please make sure you do not cool below the room dew point to prevent condensation. For this, a good room sensor is adviced<br><br>Only with humidity sensor present: <br>Setpoint lower limit = dew point + Cool delta + 1<br>Setpoint >= Setpoint lower limit",
         "format": "",
         "layout": "row-spread",
         "className": "",
@@ -25013,11 +24988,11 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "name": "rate",
-        "pauseType": "rate",
+        "pauseType": "timed",
         "timeout": "5",
         "timeoutUnits": "seconds",
         "rate": "1",
-        "nbRateUnits": "5",
+        "nbRateUnits": "300",
         "rateUnits": "second",
         "randomFirst": "1",
         "randomLast": "5",
@@ -25032,6 +25007,24 @@
                 "cdd89d5c10c71407"
             ]
         ]
+    },
+    {
+        "id": "21b21c01326b2eb3",
+        "type": "ui_text",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "397a51ddac8419aa",
+        "order": 10,
+        "width": "0",
+        "height": "0",
+        "name": "text below chart",
+        "label": "This chart shows 1 datapoint every 5 minutes",
+        "format": "",
+        "layout": "row-spread",
+        "className": "",
+        "x": 3720,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "43c4ee3ee4757f3c",
@@ -25877,9 +25870,10 @@
         "name": "QM output from manager",
         "mode": "link",
         "links": [
+            "4212c42fb72cce77",
             "a3d9dc45c641ff7d",
-            "c33b3e865b1bd8b8",
-            "4212c42fb72cce77"
+            "c24406bef1e6355d",
+            "c33b3e865b1bd8b8"
         ],
         "x": 1405,
         "y": 120,
@@ -29462,9 +29456,7 @@
             "88ea0371f9cecd37"
         ],
         "x": 74,
-        "y": 19,
-        "w": 1292,
-        "h": 728
+        "y": 19
     },
     {
         "id": "81ff790f84afd46d",
@@ -29480,9 +29472,7 @@
             "bd6e0b75ff712b33"
         ],
         "x": 8,
-        "y": 1713,
-        "w": 1308,
-        "h": 1094
+        "y": 1713
     },
     {
         "id": "6f4cdc97add442ff",
@@ -29515,9 +29505,7 @@
             "70753620fd42401f"
         ],
         "x": 114,
-        "y": 2819,
-        "w": 1012,
-        "h": 202
+        "y": 2819
     },
     {
         "id": "b16b9aa8172d25f5",
@@ -29602,9 +29590,7 @@
             "375bbd780529afe0"
         ],
         "x": 74,
-        "y": 779,
-        "w": 1332,
-        "h": 688
+        "y": 779
     },
     {
         "id": "2efa0af27c69d4d0",
@@ -29625,9 +29611,7 @@
             "40abfbbe563b32ac"
         ],
         "x": 114,
-        "y": 551.5,
-        "w": 812,
-        "h": 169.5
+        "y": 551.5
     },
     {
         "id": "9fca714df21ffac0",
@@ -29644,9 +29628,7 @@
             "5256af8b7309c113"
         ],
         "x": 314,
-        "y": 399,
-        "w": 232,
-        "h": 82
+        "y": 399
     },
     {
         "id": "b85d6aca6a841215",
@@ -29663,9 +29645,7 @@
             "3ddc8ec4b5d75af2"
         ],
         "x": 274,
-        "y": 1119,
-        "w": 232,
-        "h": 82
+        "y": 1119
     },
     {
         "id": "233708268636f815",
@@ -29689,9 +29669,7 @@
             "441d5424780d9523"
         ],
         "x": 154,
-        "y": 1279,
-        "w": 612,
-        "h": 162
+        "y": 1279
     },
     {
         "id": "bd6e0b75ff712b33",
@@ -29762,9 +29740,7 @@
             "2717d21023b674ad"
         ],
         "x": 34,
-        "y": 1739,
-        "w": 1192,
-        "h": 1042
+        "y": 1739
     },
     {
         "id": "ce2634259bc8d6eb",
@@ -33305,7 +33281,9 @@
             "0bc6f2130b8acb9d"
         ],
         "x": 134,
-        "y": 99
+        "y": 99,
+        "w": 472,
+        "h": 382
     },
     {
         "id": "5505432507101e93",
@@ -33324,7 +33302,9 @@
             "c2935eeb2b0919cf"
         ],
         "x": 134,
-        "y": 499
+        "y": 499,
+        "w": 622,
+        "h": 202
     },
     {
         "id": "b5e32619ad0c206e",
@@ -33343,7 +33323,9 @@
             "3c3c8472da1fb85a"
         ],
         "x": 794,
-        "y": 79
+        "y": 79,
+        "w": 582,
+        "h": 202
     },
     {
         "id": "c77aed9e30c539d5",
@@ -33366,7 +33348,9 @@
             "7ca958b4b94243f8"
         ],
         "x": 794,
-        "y": 319
+        "y": 319,
+        "w": 582,
+        "h": 262
     },
     {
         "id": "fde5dafe04d72e23",
@@ -33390,7 +33374,9 @@
             "8849a0faf2ae88ef"
         ],
         "x": 794,
-        "y": 619
+        "y": 619,
+        "w": 582,
+        "h": 302
     },
     {
         "id": "be48f3104249b8a0",
@@ -33584,7 +33570,7 @@
         "order": 3,
         "width": 14,
         "height": 23,
-        "format": "<h3>Solar</h3></br>\n<h3>What can this function do for you?</h3>\nThe aim of this function is to increase efficiency (and save cost) by utilize your own produced solar energy as much as\npossible. When there is solar energy in abundance, you can use that energy to heat up your DHW. To determine if there is\nenough solar energy, you need a power measurement. This can be a P1 power meter or you\ncan use the output from your inverter.\n</br></br><h3>How to setup?</h3>\nFirst go to the Solar page and click P1 SETUP, there you have to set the Correction factor. This can either be 1 or\n1000, depending if your source feeds watts or Kilowatts. Set this for Consumption and Production. You will see the corrected\nresult straight away, but of course, it needs to be sunny for the production values to show, as these are realtime\nvalues. Also be aware that in general, power consumption is always a positive value, and power production is a negative value.</br>\n</br>\nSecondly, you need to set the DHW setpoints.</br>\n</br><u>DHW temperature setpoint</u>\nThese are the target temperatures for the water in DHW tank. \nDHW temperature setpoint - high will be used when power measurement dropped below the threshold.\nDHW temperature setpoint - low will be used after the DHW tank has reached its target temperature high.\n</br></br><u>Power detection method</u>\nThere are three options available.</br></br>\n<i>Option 1: Power Live (kW)</br></i>\nLive energy production in watt. See (1) in image below.</br></br>\n<i>Option 2: Today's production (kWh)</i>\nTodays energy production, expressed in kWh. Energy consumption will NOT be added to this value, it will only\ndecrease. See (2) in image below.</br></br>\n<i>Option 3: Today's result (kWh)</i>\nTodays result, which is the sum of production and consumption. See (3) in image below.</br>\n</br><u>Threshold</u>\nThis is the threshold for the power readming. When the measured value drops below threshold, the DHW temperature setpoint - high will be set as the new target value.</br>\n</br><u>Fallback to default DHW (SP) below 0 W?</u>\nApplies only when threshold \"Power live (kW)\" option 1 is used. By default, once DHW temperature setpoint - high is being used, it will NOT switch back to DHW SP low until the temperature is reached. If you do want to fall back to DHW SP low when power production drops below zero watt, enable Fallback to DHW (SP) below 0 W?</br></br>\n</br><u>Allow switch on heat pump</u>\nWhen the pump is off, and the threshold is reached, enabling this will turn on the heat pump. If this toggle is disabled, the pump will remain off.\n</br></br><h3>Notes:</h3></br>\n- Power option 1 can cause power cycling",
+        "format": "<h3>Solar</h3></br>\n<h3>What can this function do for you?</h3>\nThe aim of this function is to increase efficiency (and save cost) by utilize your own produced solar energy as much as\npossible. When there is solar energy in abundance, you can use that energy to heat up your DHW. To determine if there is\nenough solar energy, you need a power measurement. This can be a P1 power meter or you\ncan use the output from your inverter.\n</br></br><h3>How to setup?</h3>\nFirst go to the Solar page and click P1 SETUP, there you have to set the Correction factor. This can either be 1 or\n1000, depending if your source feeds watts or Kilowatts. Set this for Consumption and Production. You will see the corrected\nresult straight away, but of course, it needs to be sunny for the production values to show, as these are realtime\nvalues. Also be aware that in general, power consumption is always a positive value, and power production is a negative value.</br>\n</br>\nSecondly, you need to set the DHW setpoints.</br>\n</br><u>DHW temperature setpoint</u>\nThese are the target temperatures for the water in DHW tank. \nDHW temperature setpoint - high will be used when power measurement dropped below the threshold.\nDHW temperature setpoint - low will be used after the DHW tank has reached its target temperature high.\n</br></br><u>Power detection method</u>\nThere are three options available.</br></br>\n<i>Option 1: Power Live (kW)</br></i>\nLive energy production in watt. See (1) in image below.</br></br>\n<i>Option 2: Today's production (kWh)</i>\nTodays energy production, expressed in kWh. Energy consumption will NOT be added to this value, it will only\ndecrease. See (2) in image below.</br></br>\n<i>Option 3: Today's result (kWh)</i>\nTodays result, which is the sum of production and consumption. See (3) in image below.</br>\n</br><u>Threshold</u>\nThis is the threshold for the power readming. When the measured value drops below threshold, the DHW temperature setpoint - high will be set as the new target value.</br>\n</br><u>Allow switch on heat pump</u>\nWhen the pump is off, and the threshold is reached, enabling this will turn on the heat pump. If this toggle is disabled, the pump will remain off.\n<br></br><u>Fallback to default DHW (SP) below 0 W?</u>\nApplies only when threshold \"Power live (kW)\" option 1 is used. By default, once DHW temperature setpoint - high is being used, it will NOT switch back to DHW SP low until the temperature is reached. If you do want to fall back to DHW SP low when power production drops below zero watt, enable Fallback to DHW (SP) below 0 W?</br></br>\n<u>Cooldown period after DHW run</u>\nWhen the high DHW target temperature has been reached, the heatpump will stay in DHW mode for a set amount of time. This could help to prevent too hot water going through the HEAT system. \n</br></br><h3>Notes:</h3></br>\n- Power option 1 can cause power cycling",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
@@ -33846,7 +33832,7 @@
         "order": 3,
         "width": 12,
         "height": 26,
-        "format": "<h3>RTC - Room Temperature Correction</h3>\n<br/>\n<h3>What can this function do for you?</h3>\nThis function corrects the water temperature based on the actual room temperature. It is desgined to do small\ncorrections to prevent an under- or overshoot in room temperature. It is also useful in situations where direct sunlight warms up the room.\n<br/><br/>\nThe basis for the setup is the temperature difference between actual (Room actual) and target (Room setpoint).\n<br/>\nWhen the room is too warm, the default water temperature for Heat is decreased by 1, 2 or 3 degrees celcius, and vice versa.\n<br/>\nWhen properly configured this will result in a more stable (comfortable) room temperature. On the other hand, when not correctly\nconfigured it can result in increased cycling of the heat pump. This can causing extra wear and increased energy costs. So please take your\ntime to set it up right for your situation.\n<br/><br/>\n\n<h3>setup</h3>\nFirst enter a desired temperature at Room setpoint.\n<br/>\nSecondly you need to enter at which point the water temperature will be changed by 1, 2 or 3 degrees celcius. This will\ntake a bit of experimenting. For example if you use floor heating smaller deltas (0.1) work better because by its nature it is\nslow to respond. When using radiators you can increase the deltas (0.5). Try to make small changes at a time and observe the result for\nat least 1 or 2 days.\n<br/><br/>\nThe 'custom' option offers you the ability to increase the water temperature by your choice. This can be useful if you require a heating boost e.g. in the morning. This is not adviced for floor heating, but only for radiator type heating.\n<br/><br/>\n\nDefault values:<br/>\n0,5 Degree too warm/cold gives you 1 degree warmer water. 1,0 too warm/cold gives 2, 1,5 too warm/cold gives 3.<br/><br/>\n<h3>Important note:</h3>\nThe Panasonic has its own inside thermometer located in the wall mounted Remote Controller. It is inaccurate and really not\nsuitable to use for this RTC function. Please use a custom indoor sensor with an accuracy of 0,1°C.\nFor example a BMP280 or BME280. Be sure to place it somewhere out of direct sunlight or a cold draft.<br/>\n<br/>\n-----------------------------------\n<br/>\n<u>Incremental setpoints</u>\nWhen enabled, the setpoints (water temperatures) will be incrementally calculated in steps of 1°C. This applies only between the +3 and +custom temperatures.<br/><br/>\n<u>Automations:</u>\nTo make use of this automation, you need to set two temperatures. <br/>\nActivate above dT: When the room temperature is above this line, the action will be triggered.<br/>\nDeactivate below dT: When the room temperature travels below this line, the reverse action will be triggered.<br/>\nBoth the above/below dT temperatures are relative to the setpoint.<br/>\n<br/>\nAction: Change operating mode<br/>\nIf the room temperature is above dT, the current operating mode will have HEAT mode removed from it.<br/>\nIf the room temperature is below dT, the current operating mode will have HEAT mode added to it.<br/>\n<br/>\nAction: Turn off/on power<br/>\nIf the room temperature is above dT, the heatpump will be turned off. (condition: Operating Mode must be Heat-only or Auto(Heat))<br/>\nIf the room temperature is below dT, the heatpump will be turned on again.<br/>\n<br/>\n",
+        "format": "<h3>RTC - Room Temperature Correction</h3>\n<br/>\n<h3>What can this function do for you?</h3>\nThis function corrects the water temperature based on the actual room temperature. It is desgined to do small\ncorrections to prevent an under- or overshoot in room temperature. It is also useful in situations where direct sunlight warms up the room.\n<br/><br/>\nThe basis for the setup is the temperature difference between actual (Room actual) and target (Room setpoint).\n<br/>\nWhen the room is too warm, the default water temperature for Heat is decreased by 1, 2 or 3 degrees celcius, and vice versa.\n<br/>\nWhen properly configured this will result in a more stable (comfortable) room temperature. On the other hand, when not correctly\nconfigured it can result in increased cycling of the heat pump. This can causing extra wear and increased energy costs. So please take your\ntime to set it up right for your situation.\n<br/><br/>\n\n<h3>setup</h3>\nFirst enter a desired temperature at Room setpoint.\n<br/>\nSecondly you need to enter at which point the water temperature will be changed by 1, 2 or 3 degrees celcius. This will\ntake a bit of experimenting. For example if you use floor heating smaller deltas (0.1) work better because by its nature it is\nslow to respond. When using radiators you can increase the deltas (0.5). Try to make small changes at a time and observe the result for\nat least 1 or 2 days.\n<br/><br/>\nThe 'custom' option offers you the ability to increase the water temperature by your choice. This can be useful if you require a heating boost e.g. in the morning. This is not adviced for floor heating, but only for radiator type heating.\n<br/><br/>\n\nDefault values:<br/>\n0,5 Degree too warm/cold gives you 1 degree warmer water. 1,0 too warm/cold gives 2, 1,5 too warm/cold gives 3.<br/><br/>\n<h3>Important note:</h3>\nThe Panasonic has its own inside thermometer located in the wall mounted Remote Controller. It is inaccurate and really not\nsuitable to use for this RTC function. Please use a custom indoor sensor with an accuracy of 0,1°C.\nFor example a BMP280 or BME280. Be sure to place it somewhere out of direct sunlight or a cold draft.<br/>\n<br/>\n-----------------------------------\n<br/>\n<u>Incremental setpoints</u>\nWhen enabled, the setpoints (water temperatures) will be incrementally calculated in steps of 1°C. This applies only between the +3 and +custom temperature ranges.<br/><br/>\n<u>Automations:</u>\nTo make use of this automation, you need to set two temperatures (dT's). <br/>\nTrigger action above dT: When the room temperature is above this line, the enabled action(s) will be triggered.<br/>\nRevert action below dT: When the room temperature drops below this line, the reverse action(s) will be triggered.<br/>\nBoth the above/below dT temperatures are relative to the setpoint.<br/>\n<br/>\nAction: Change operating mode<br/>\nIf the room temperature is above dT, the current operating mode will have HEAT mode removed from it.<br/>\nIf the room temperature is below dT, the current operating mode will have HEAT mode added to it.<br/>\n<br/>\nAction: Turn off/on power<br/>\nIf the room temperature is above dT, the heatpump will be turned off. (condition: Operating Mode must be Heat-only or Auto(Heat))<br/>\nIf the room temperature is below dT, the heatpump will be turned on again.<br/>\n<br/>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
@@ -34536,9 +34522,7 @@
             "1372ccca982b4f0a"
         ],
         "x": 714,
-        "y": 99,
-        "w": 2152,
-        "h": 159.5
+        "y": 99
     },
     {
         "id": "b63004182c33d3b9",
@@ -34587,9 +34571,7 @@
             "15c8662846db9f41"
         ],
         "x": 2334,
-        "y": 2359,
-        "w": 1432,
-        "h": 482
+        "y": 2359
     },
     {
         "id": "ca71e284391bbf84",
@@ -34669,9 +34651,7 @@
             "479965c26a5f5d15"
         ],
         "x": 714,
-        "y": 261.5,
-        "w": 2152,
-        "h": 157
+        "y": 261.5
     },
     {
         "id": "77ef78074c745b33",
@@ -34698,9 +34678,7 @@
             "57520972cf8f3282"
         ],
         "x": 714,
-        "y": 421.5,
-        "w": 2152,
-        "h": 157
+        "y": 421.5
     },
     {
         "id": "0f18bd088c4ce661",
@@ -34727,9 +34705,7 @@
             "73e5b776ee37e929"
         ],
         "x": 714,
-        "y": 581.5,
-        "w": 2152,
-        "h": 157
+        "y": 581.5
     },
     {
         "id": "49e35dcf3adf972f",
@@ -34756,9 +34732,7 @@
             "fd75ca33fe4a9589"
         ],
         "x": 714,
-        "y": 741.5,
-        "w": 2152,
-        "h": 157
+        "y": 741.5
     },
     {
         "id": "131bb514acb6c38f",
@@ -34785,9 +34759,7 @@
             "4470d0d9384e5146"
         ],
         "x": 714,
-        "y": 901.5,
-        "w": 2152,
-        "h": 157
+        "y": 901.5
     },
     {
         "id": "13c1334900bc3740",
@@ -34814,9 +34786,7 @@
             "0a155882d5693fda"
         ],
         "x": 714,
-        "y": 1061.5,
-        "w": 2152,
-        "h": 157
+        "y": 1061.5
     },
     {
         "id": "a4db9b20ef5bc75c",
@@ -34843,9 +34813,7 @@
             "fe24caf7cb4e92d3"
         ],
         "x": 714,
-        "y": 1221.5,
-        "w": 2152,
-        "h": 157
+        "y": 1221.5
     },
     {
         "id": "4b0ab44dfd6f65c3",
@@ -34872,9 +34840,7 @@
             "611bf69e3ab85546"
         ],
         "x": 714,
-        "y": 1381.5,
-        "w": 2152,
-        "h": 157
+        "y": 1381.5
     },
     {
         "id": "4f450eb680618622",
@@ -34901,9 +34867,7 @@
             "a477e5b86fe9c792"
         ],
         "x": 714,
-        "y": 1541.5,
-        "w": 2172,
-        "h": 157
+        "y": 1541.5
     },
     {
         "id": "92293ba8ccc5db0f",
@@ -34941,9 +34905,7 @@
             "9c13f29571c31128"
         ],
         "x": 74,
-        "y": 3179,
-        "w": 1392,
-        "h": 322
+        "y": 3179
     },
     {
         "id": "8387b4df126e002c",
@@ -34974,9 +34936,7 @@
             "dfd6d3ff02d1dcbd"
         ],
         "x": 2614,
-        "y": 1819,
-        "w": 692,
-        "h": 382
+        "y": 1819
     },
     {
         "id": "40f0401e20235a07",
@@ -48089,7 +48049,9 @@
             "510f802795714d75"
         ],
         "x": 2114,
-        "y": 539
+        "y": 539,
+        "w": 692,
+        "h": 222
     },
     {
         "id": "5c3df7b5fb0fa130",
@@ -48119,7 +48081,9 @@
             "5837cbf37ef47ea6"
         ],
         "x": 1944,
-        "y": 1399
+        "y": 1399,
+        "w": 872,
+        "h": 302
     },
     {
         "id": "404eed4ef9d90803",
@@ -48139,7 +48103,9 @@
             "0911a9edae380679"
         ],
         "x": 2014,
-        "y": 19
+        "y": 19,
+        "w": 812,
+        "h": 122
     },
     {
         "id": "c361a153997d2dfd",
@@ -48162,7 +48128,9 @@
             "c5ae638b1b65bff4"
         ],
         "x": 824,
-        "y": 159
+        "y": 159,
+        "w": 262,
+        "h": 282
     },
     {
         "id": "8fe25c73d37fe670",
@@ -48224,7 +48192,9 @@
             "1d0bdc24983833d5"
         ],
         "x": 1944,
-        "y": 219
+        "y": 219,
+        "w": 942,
+        "h": 1162
     },
     {
         "id": "0bb11670c285bff1",
@@ -48260,7 +48230,9 @@
             "70016d3833197d68"
         ],
         "x": 1494,
-        "y": 259
+        "y": 259,
+        "w": 412,
+        "h": 722
     },
     {
         "id": "b4e7d28c61065a10",
@@ -48295,7 +48267,9 @@
             "9293ce0fe3ffaed3"
         ],
         "x": 1474,
-        "y": 999
+        "y": 999,
+        "w": 432,
+        "h": 602
     },
     {
         "id": "9ad65d8ac40d3b19",
@@ -49242,7 +49216,7 @@
         "order": 2,
         "width": 17,
         "height": 14,
-        "format": "</br>\n<u>Release notes</u></br>\n\n\nfor the full changelog, go to the github page and unfold the button \"changelog\".\n</br>\n</br>\nAs always: Have fun with your heat pump!</br>\n</br>\n/Ed ter bak</br>\n</br>\n</br>\n",
+        "format": "</br>\n<u>Release notes</u></br>\n\nChangelog v23.00</br></br>\nIt has been some time since the last release, v22.00 Stable release. Now after 31 beta versions the flow has progressed nicely and I feel it is time for an update.</br>\nSome things have improved a lot in my opinion on the layout. And many new requested functionality has been added as well. I think this is a good result.</br></br>\nThese are the most significant improvements compared to v22.</br></br>\n-\tThe design of the menu is more logical now. </br>\n-\tThe menu items (tabs) can be customized. You can hide items which you do not used. (System > Menu config.</br>\n-\tSolar function has been fixed now and is improved. You can now set a cool-down period after the dhw-run. The function has been renamed to “Solar²DHW” to avoid confusion with native solar function.</br>\n-\tNew feature: “Flexible pumpspeed function”. You can change the maximum pumpspeed depending on what the heatpump is doing, heat/dhw/nothing.</br>\n-\tNew feature: “Auto start DHW”. You can set a lower limit to temperature of the DHW tank. Once reached, a dhw run will be started.</br>\n-\tNew feature: “Boost DHW”. This function enables you to set a second (higher) temperature for the DHW tank. If you want to take a bath for example and require more and warmer water. When you activate this function the DHW run will start with “Forcefull DHW” enabled.</br>\n-\tNew feature: Scheduler now offers the ability to change the setpoint temperature of the water, room temperature or the shift temperature. </br>\n-\tA lot of stability issues have been resolved.</br>\n-   Temperature sensors (readouts) during reboots have been improved. No sensor restart anymore.</br>\n\n</br>\nFor the full changelog please visit the github page and unfold the button \"changelog\".\n</br>\n</br>\nAs always: Have fun with your heat pump!</br>\n</br>\n/Ed ter bak</br>\n</br>\n</br>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
@@ -51661,28 +51635,6 @@
             [
                 "f014b20991b88442"
             ]
-        ]
-    },
-    {
-        "id": "95773e9ca72d8703",
-        "type": "ui_template",
-        "z": "3aa03811830ef29e",
-        "d": true,
-        "group": "b7f740331bca1b3f",
-        "name": "Line - Changelog",
-        "order": 2,
-        "width": 17,
-        "height": 14,
-        "format": "</br>\n<u>Release notes</u></br>\n\nChangelog v23.00</br></br>\nIt has been some time since the last release, v22.00 Stable release. Now after 31 beta versions the flow has progressed nicely and I feel it is time for an update.</br>\nSome things have improved a lot in my opinion on the layout. And many new requested functionality has been added as well. I think this is a good result.</br></br>\nThese are the most significant improvements compared to v22.</br></br>\n-\tThe design of the menu is more logical now. </br>\n-\tThe menu items (tabs) can be customized. You can hide items which you do not used. (System > Menu config.</br>\n-\tSolar function has been fixed now and is improved. You can now set a cool-down period after the dhw-run. The function has been renamed to “Solar energie to DHW” to avoid confusion with native solar function.</br>\n-\tNew feature: “Flexible pumpspeed function”. You can change the maximum pumpspeed depending on what the heatpump is doing, heat/dhw/nothing.</br>\n-\tNew feature: “Auto start DHW”. You can set a lower limit to temperature of the DHW tank. Once reached, a dhw run will be started.</br>\n-\tNew feature: “Boost DHW”. This function enables you to set a second (higher) temperature for the DHW tank. If you want to take a bath for example and require more and warmer water. When you activate this function the DHW run will start with “Forcefull DHW” enabled.</br>\n-\tNew feature: Scheduler now offers the ability to change the setpoint temperature of the water, room temperature or the shift temperature. </br>\n-\tSome stability issues have been resolved.</br>\n-   Temperature sensors (readouts) during reboots have been improved.</br>\n\n</br>\nfor the full changelog, go to the github page and unfold the button \"changelog\".\n</br>\n</br>\nAs always: Have fun with your heat pump!</br>\n</br>\n/Ed ter bak</br>\n</br>\n</br>\n",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 1290,
-        "y": 340,
-        "wires": [
-            []
         ]
     },
     {
