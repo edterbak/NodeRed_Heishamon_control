@@ -2,8 +2,8 @@
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
 Current version: 23.00 Stable release<br/> <br/>
 <br/>
-It has been some time since the last release, v22.00 Stable release. Now after 33 beta versions the flow has progressed nicely and I feel it is time for an update.</br>
-Some things have improved a lot in my opinion on the layout and stability. And many new requested functionality has been added as well. I think this is a good result.</br></br>
+It has been some time since the last release, v22.00 Stable release. Now, after 33 beta versions, the flow has progressed nicely and I feel it is time for an update.</br>
+Some things have improved a lot in my opinion. The layout, stability and usability. A lot of requested functionality has been added as well. I think this is a good result.</br></br>
 These are the most significant improvements compared to v22.</br></br>
 
 * []() The design of the menu is more logical now
