@@ -557,6 +557,14 @@ Fairly much has been changed. needs polishing.
 * []() Maarten69 for contributing to this project. New additions can be expected from him on this project. Mega sweet!!
 * []() MikeyMan for contributing with testing and discussing a lot about this. Good testing is very valuable!
 
+### Donation
+By multiple users of the flow, I have been asked to put up a donation on the site. I was never that fond of that idea, because it is just my hobby and I like doing it. In addition, I do not want to change the expectation of users, the open character of the communication here (moving from one enthusiast>enthusiast to a supplier>client relationship). This is just a hobby, and I do not expect I can quit my daytime job anytime soon.. Ghhehehe.. And of course it will stay like this.<br>
+But the constant raising eyebrows of my social circle why I don't have such a button (because so many people do it), and the curiosity about how many users actually want to make a donation have won me over to try such a button. Let's see. <br>
+<br>
+But most important. In no way you are obliged to make any donation!! The flow remains completely free, free to use as you want, as always at your own risk. <br>
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B5LZGCO)
+
 
 ********
 
