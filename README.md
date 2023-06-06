@@ -539,6 +539,9 @@ Fairly much has been changed. needs polishing.
 [2023-06-05] v23.00 Stable.
 
 
+[2023-06-06] v23.01 Stable. Changes:
+- [FIX] Export error. A missing connection in WP Manager tab. For some reason this connection did not want to be exported, no matter what. Remove + new wire solved it. (??? weird...)
+
 ********
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/acknowledgments.png" width="500">
