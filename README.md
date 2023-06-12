@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 23.01 Stable release<br/> <br/>
+Current version: 23.02 Stable release<br/> <br/>
 <br/>
 It has been some time since the last release, v22.00 Stable release. Now, after 33 beta versions, the flow has progressed nicely and I feel it is time for an update.</br>
 Some things have improved a lot in my opinion. The layout, stability and usability. A lot of requested functionality has been added as well. I think this is a good result.</br></br>
@@ -541,6 +541,11 @@ Fairly much has been changed. needs polishing.
 
 [2023-06-06] v23.01 Stable. Changes:
 - [FIX] Export error. A missing connection in WP Manager tab. For some reason this connection did not want to be exported, no matter what. Remove + new wire solved it. (??? weird...)
+
+[2023-06-12] v23.02 Stable. Changes:
+- [FIX] Cool mode in Home Dashboard. Kept showing incorrect HEAT setpoint. Now it is correct.
+- [FIX] Cool menu area. You now see [setpoint lower limit] more clearly
+- [FIX] SoftStart function + cool mode kept showing heat setpoint in the graph. This has now been fixed.
 
 ********
 
