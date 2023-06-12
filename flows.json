@@ -446,7 +446,8 @@
             "8da7c93f059466f2",
             "8d9c639aa58c9a3e",
             "1e0df57eb3e96bf7",
-            "a7d4b11b9c045f95"
+            "a7d4b11b9c045f95",
+            "eac173c81ff318c3"
         ],
         "x": 1168,
         "y": 1859,
@@ -687,7 +688,9 @@
             "9164f892e385d90c",
             "e9fc5e9327936cd3",
             "47022621a9be56df",
-            "68b3ab2f783444e7"
+            "68b3ab2f783444e7",
+            "503964e58bd580ac",
+            "21f59e2cacd38c9e"
         ],
         "x": 1214,
         "y": 19,
@@ -3037,7 +3040,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "ffa1f23278378e79",
         "name": "Chart SS",
-        "func": "var ss_SP           = global.get('SP_Final',\"file\");                // Current compressor frequency.\nvar ss_Tr           = global.get('TOP5_Main_Inlet_Temp');                             // Measurement of room temperature \nvar ss_Ta           = global.get('TOP6_Main_Outlet_Temp');\nvar ss_hz           = global.get('compressor_frequency',\"file\");\nvar ss_corr         = global.get('F_SS.correction_value',\"file\");\nvar QM_level        = global.get('TOP18_Quiet_Mode_Level',\"file\");\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={};\n\n\nmsg1.payload = ss_SP;                                                           //\nmsg1.payload = Number(msg1.payload).toFixed(1);\nmsg1.payload = parseFloat(msg1.payload);\nmsg1.topic='Setpoint';                                                          // \n\nmsg2.payload = ss_Tr;                                                           //\nmsg2.payload = Number(msg2.payload).toFixed(1);\nmsg2.payload = parseFloat(msg2.payload);\nmsg2.topic='Water inlet';                                                       // \n\nmsg3.payload = ss_Ta;                                                           // \nmsg3.payload = Number(msg3.payload).toFixed(1);\nmsg3.payload = parseFloat(msg3.payload);\nmsg3.topic='Water outlet';                                                      // \n\nmsg4.payload = ss_hz;                                                           // \nmsg4.payload = Number(msg4.payload).toFixed(0);\nmsg4.payload = parseFloat(msg4.payload);\nmsg4.topic='Frequency';                                                         // \n\n\nmsg5.payload = ss_corr;                                                           // \nmsg5.payload = Number(msg5.payload).toFixed(0);\nmsg5.payload = parseFloat(msg5.payload);\nmsg5.topic='Correction';                                                     // \n\nmsg6.payload = QM_level;\nmsg6.payload = Number(msg6.payload).toFixed(0);\nmsg6.payload = parseFloat(msg6.payload);\nmsg6.topic   = 'QuietMode level';\n\n\nreturn [[msg1, msg2, msg3, msg4, msg5, msg6]];",
+        "func": "var ss_SP           = global.get('SP_Final',\"file\");                // Current compressor frequency.\nvar ss_Tr           = global.get('TOP5_Main_Inlet_Temp');                             // Measurement of room temperature \nvar ss_Ta           = global.get('TOP6_Main_Outlet_Temp');\nvar ss_hz           = global.get('compressor_frequency',\"file\");\nvar ss_corr         = global.get('F_SS.correction_value',\"file\");\nvar QM_level        = global.get('TOP18_Quiet_Mode_Level',\"file\");\n\nlet msg1={}, msg2={}, msg3={}, msg4={}, msg5={}, msg6={};\n\n\nmsg1.payload = ss_SP;                                                           //\nmsg1.topic   = 'Setpoint';                                                          // \nvar OM = global.get('TOP4_Operating_Mode_State',\"file\")\nif (OM == 1) { \n    msg1.payload = global.get('Z1_Cool_Request_Temp'); \n}\nif (msg1.payload === undefined) { msg1.payload = null}\nmsg1.payload = Number(msg1.payload).toFixed(1);\nmsg1.payload = parseFloat(msg1.payload);\n\n\nmsg2.payload = ss_Tr;                                                           //\nmsg2.payload = Number(msg2.payload).toFixed(1);\nmsg2.payload = parseFloat(msg2.payload);\nmsg2.topic='Water inlet';                                                       // \n\nmsg3.payload = ss_Ta;                                                           // \nmsg3.payload = Number(msg3.payload).toFixed(1);\nmsg3.payload = parseFloat(msg3.payload);\nmsg3.topic='Water outlet';                                                      // \n\nmsg4.payload = ss_hz;                                                           // \nmsg4.payload = Number(msg4.payload).toFixed(0);\nmsg4.payload = parseFloat(msg4.payload);\nmsg4.topic='Frequency';                                                         // \n\n\nmsg5.payload = ss_corr;                                                           // \nmsg5.payload = Number(msg5.payload).toFixed(0);\nmsg5.payload = parseFloat(msg5.payload);\nmsg5.topic='Correction';                                                     // \n\nmsg6.payload = QM_level;\nmsg6.payload = Number(msg6.payload).toFixed(0);\nmsg6.payload = parseFloat(msg6.payload);\nmsg6.topic   = 'QuietMode level';\n\n\nreturn [[msg1, msg2, msg3, msg4, msg5, msg6]];",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -7380,7 +7383,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "4f352fdae09316c2",
         "name": "function 2",
-        "func": "if (msg.payload == \"Start---------------------------------------------------------------\")\n {flow.set(\"persistency_test\",msg,\"file\");}\n\nvar stored_value = flow.get(\"persistency_test\",\"file\")\n\n\n\nif (stored_value !== undefined)\n {return null;}\nelse \n {\n msg.payload = \"Persistent storage is not configured correctly. This flow will not function correctly until you do!\";\n msg.topic = \"SYSTEM WARNING\";\n return msg;\n }\n",
+        "func": "if (msg.payload == \"Start---------------------------------------------------------------\")\n {flow.set(\"persistency_test\",msg,\"file\");}\n\nvar stored_value = flow.get(\"persistency_test\");\n\nif (stored_value !== undefined)\n {return null;}\nelse \n {\n msg.payload = \"Persistent storage is not configured correctly. This flow will not function correctly until you do!\";\n msg.topic = \"SYSTEM WARNING\";\n return msg;\n }\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -7390,7 +7393,8 @@
         "y": 2280,
         "wires": [
             [
-                "9a7dda15052b4034"
+                "9a7dda15052b4034",
+                "eac173c81ff318c3"
             ]
         ]
     },
@@ -7398,6 +7402,7 @@
         "id": "9a7dda15052b4034",
         "type": "link out",
         "z": "8c9d42231fd19d3c",
+        "d": true,
         "g": "4f352fdae09316c2",
         "name": "link out 2",
         "mode": "link",
@@ -7424,7 +7429,7 @@
                 "p": "payload"
             }
         ],
-        "repeat": "300",
+        "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": "1",
@@ -8908,7 +8913,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "23.00 Stable",
+        "payload": "23.02 Stable",
         "payloadType": "str",
         "x": 1340,
         "y": 1920,
@@ -12534,7 +12539,8 @@
         "wires": [
             [
                 "2c3aa272de5edf1f",
-                "aad17e70a817393e"
+                "aad17e70a817393e",
+                "21f59e2cacd38c9e"
             ],
             [
                 "29f1c1eaf91ec977"
@@ -13223,7 +13229,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Filter",
-        "func": "//var last_value      = context.get('last_value');\nvar last_msgid      = context.get('last_msgid');\nvar current_value   = global.get('TOP4_Operating_Mode_State',\"file\");\n\n\nif (last_msgid === undefined){\n    //context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n    return null;\n}\n\nif (last_msgid == msg._msgid){\n    return null;\n}\n\nif (msg.payload != current_value){\n    //context.set('last_value',msg.payload);\n    context.set('last_msgid',msg._msgid);\n    return msg;\n}",
+        "func": "var last_msgid      = context.get('last_msgid');\nvar current_value   = global.get('TOP4_Operating_Mode_State',\"file\");\n\nif (last_msgid == msg._msgid){\n    return null;\n}\n\nif (last_msgid === undefined){\n    context.set('last_msgid',msg._msgid);\n}\n\nif (msg.payload != current_value){\n    context.set('last_msgid',msg._msgid);\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -15280,10 +15286,11 @@
             "836082017500f9a9"
         ],
         "x": 2085,
-        "y": 280,
+        "y": 260,
         "wires": [
             [
-                "585e4d6a54d44021"
+                "585e4d6a54d44021",
+                "503964e58bd580ac"
             ]
         ]
     },
@@ -15360,6 +15367,7 @@
         "g": "3151681b2157872c",
         "name": "link in 37",
         "links": [
+            "4ff74e2b48b1d597",
             "836082017500f9a9"
         ],
         "x": 1565,
@@ -16225,6 +16233,57 @@
         ]
     },
     {
+        "id": "503964e58bd580ac",
+        "type": "debug",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "debug 185",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2350,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "21f59e2cacd38c9e",
+        "type": "debug",
+        "z": "8c9d42231fd19d3c",
+        "g": "3151681b2157872c",
+        "name": "debug 186",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2550,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "eac173c81ff318c3",
+        "type": "debug",
+        "z": "8c9d42231fd19d3c",
+        "g": "4f352fdae09316c2",
+        "name": "debug 187",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1810,
+        "y": 2280,
+        "wires": []
+    },
+    {
         "id": "a938de76db0b71f6",
         "type": "tab",
         "label": "WP Control",
@@ -16316,7 +16375,9 @@
             "ab4c54e8c1061535"
         ],
         "x": 114,
-        "y": 1359
+        "y": 1359,
+        "w": 1422,
+        "h": 1422
     },
     {
         "id": "5a496e1f1ea93a38",
@@ -16344,7 +16405,9 @@
             "2df41704fe34f586"
         ],
         "x": 114,
-        "y": 19
+        "y": 19,
+        "w": 1152,
+        "h": 322
     },
     {
         "id": "cd2050a861736ec5",
@@ -16421,7 +16484,9 @@
             "64955157496ed92f"
         ],
         "x": 114,
-        "y": 2799
+        "y": 2799,
+        "w": 1182,
+        "h": 1042
     },
     {
         "id": "94f57429e16c8e82",
@@ -16438,7 +16503,9 @@
             "5787c91b303f2538"
         ],
         "x": 1604,
-        "y": 1539
+        "y": 1539,
+        "w": 502,
+        "h": 122
     },
     {
         "id": "b37318d1b7f66e33",
@@ -16472,7 +16539,9 @@
             "9fd7064be2551caa"
         ],
         "x": 114,
-        "y": 3879
+        "y": 3879,
+        "w": 1352,
+        "h": 322
     },
     {
         "id": "7987a450598985bb",
@@ -16502,7 +16571,9 @@
             "3adf2738c40e2c50"
         ],
         "x": 94,
-        "y": 4299
+        "y": 4299,
+        "w": 1122,
+        "h": 342
     },
     {
         "id": "1d8b21349d38bc85",
@@ -16527,7 +16598,9 @@
             "ae97f18776a1de28"
         ],
         "x": 1254,
-        "y": 4239
+        "y": 4239,
+        "w": 1132,
+        "h": 162
     },
     {
         "id": "d2b7e1d6e85a96cf",
@@ -16615,10 +16688,13 @@
             "c24406bef1e6355d",
             "d032307330b764e1",
             "4795868efb3c7390",
-            "437a28325613c061"
+            "437a28325613c061",
+            "56ae2f8cd74e99c9"
         ],
         "x": 114,
-        "y": 379
+        "y": 379,
+        "w": 1822,
+        "h": 942
     },
     {
         "id": "d032307330b764e1",
@@ -16676,7 +16752,9 @@
             "9b7a14cd7f7c2870"
         ],
         "x": 2524,
-        "y": 1359
+        "y": 1359,
+        "w": 1182,
+        "h": 202
     },
     {
         "id": "8464ca0ddfa2e5de",
@@ -16734,7 +16812,9 @@
             "94fb2ca53932250b"
         ],
         "x": 2514,
-        "y": 879
+        "y": 879,
+        "w": 1342,
+        "h": 442
     },
     {
         "id": "68aa0ab50a8ad60f",
@@ -16885,7 +16965,9 @@
             "50510191e3d7f7fc"
         ],
         "x": 2528,
-        "y": 1613
+        "y": 1613,
+        "w": 1278,
+        "h": 528
     },
     {
         "id": "4b1bb355679fc526",
@@ -16957,10 +17039,14 @@
             "71a59b9661071adc",
             "f2aa79821dfd1110",
             "fcc08a6bfb0d246e",
-            "21b21c01326b2eb3"
+            "21b21c01326b2eb3",
+            "25691ccde88f5530",
+            "07ba09a16be50433"
         ],
         "x": 2508,
-        "y": 33
+        "y": 33,
+        "w": 1538,
+        "h": 768
     },
     {
         "id": "fcc08a6bfb0d246e",
@@ -16992,7 +17078,9 @@
             "c8b5382d8d981e31"
         ],
         "x": 2554,
-        "y": 1639
+        "y": 1639,
+        "w": 492,
+        "h": 122
     },
     {
         "id": "f2aa79821dfd1110",
@@ -17012,7 +17100,9 @@
             "7122d217051222ff"
         ],
         "x": 2534,
-        "y": 59
+        "y": 59,
+        "w": 1292,
+        "h": 162
     },
     {
         "id": "2c893b32851ad2a2",
@@ -17341,8 +17431,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1260,
-        "y": 1700,
+        "x": 1220,
+        "y": 1720,
         "wires": [
             []
         ]
@@ -17498,8 +17588,9 @@
         "mode": "link",
         "links": [
             "702993e29cd93413",
+            "83481f0a61aed9b2",
             "b51f6522ce8b3103",
-            "83481f0a61aed9b2"
+            "476134da722ea175"
         ],
         "x": 1495,
         "y": 1700,
@@ -23461,7 +23552,6 @@
         "name": "link in - Other triggers functions",
         "links": [
             "836082017500f9a9",
-            "b50ab0a4981f9d17",
             "ed2c73bf6b96d4a0",
             "5a1d6b18490ded1c"
         ],
@@ -23469,7 +23559,7 @@
         "y": 460,
         "wires": [
             [
-                "d032307330b764e1"
+                "56ae2f8cd74e99c9"
             ]
         ]
     },
@@ -24544,7 +24634,7 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "name": "set.Z1_Cool_Request_Temp",
-        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'Z1_Cool_Request_Temp';\nglobal.set(\"Z1_Cool_Request_Temp\",msg.payload);\n//return msg;",
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\nmsg.topic = 'Z1_Cool_Request_Temp';\nglobal.set(\"Z1_Cool_Request_Temp\",msg.payload);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -24553,7 +24643,9 @@
         "x": 2880,
         "y": 480,
         "wires": [
-            []
+            [
+                "25691ccde88f5530"
+            ]
         ]
     },
     {
@@ -24602,8 +24694,8 @@
         "z": "a938de76db0b71f6",
         "g": "f2aa79821dfd1110",
         "name": "",
-        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\n\nvar RH = context.get('RH');\nvar T = context.get('Temperature');\n\nif (msg.topic == \"RH\"){\n    context.set('RH',msg.payload);\n    if (T===undefined)  {return null;}\n}\n\n\nif (msg.topic == \"Temperature\") {\n    context.set('Temperature',msg.payload);\n    if (RH===undefined)\n        {return null;}\n}\n\n\nif (RH !== undefined && T !== undefined){\n    var A = Math.log(RH / 100) / Math.log(2.718282) + 17.62 * T / (243.12 + T);         // BLB 20230405 corrected Td calculation\n    var Td = 243.12 * A / (17.62 - A);\n    var TOP24_Cool_Delta                    = global.get('TOP24_Cool_Delta',\"file\");\n\n    msg.payload = Td;\n    msg.payload = Number(msg.payload).toFixed(1);\n    msg.payload = parseFloat(msg.payload);\n    \n    let msg1={};    // DewPoint\n    let msg2={};    // Temperature\n    let msg3={};    // Lower limit for setpoint\n    \n    msg1.payload = Td;\n    msg1.payload = Number(msg1.payload).toFixed(1);\n    msg1.payload = parseFloat(msg1.payload);\n    msg1.topic = \"Dew Point (°C)\";\n    flow.set(\"dew_point\",msg1);\n    \n    \n    msg2.payload = T;\n    msg2.payload = Number(msg2.payload).toFixed(1);\n    msg2.payload = parseFloat(msg2.payload);\n    msg2.topic = \"Temperature\"\n    \n    msg3.payload = Td + TOP24_Cool_Delta + 1;\n    msg3.payload = Number(msg3.payload).toFixed(1);\n    msg3.payload = parseFloat(msg3.payload);\n    msg3.payload = Math.ceil(msg3.payload);\n    msg3.topic = 'Setpoint lower limit';\n    \n    return [[msg1,msg2,msg3],msg];\n}",
-        "outputs": 2,
+        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\n\nvar RH = context.get('RH');\nvar T = context.get('Temperature');\n\nif (msg.topic == \"RH\"){\n    context.set('RH',msg.payload);\n    if (T===undefined)  {return null;}\n}\n\n\nif (msg.topic == \"Temperature\") {\n    context.set('Temperature',msg.payload);\n    if (RH===undefined)\n        {return null;}\n}\n\n\nif (RH !== undefined && T !== undefined){\n    var A = Math.log(RH / 100) / Math.log(2.718282) + 17.62 * T / (243.12 + T);         // BLB 20230405 corrected Td calculation\n    var Td = 243.12 * A / (17.62 - A);\n    var TOP24_Cool_Delta                    = global.get('TOP24_Cool_Delta',\"file\");\n\n    msg.payload = Td;\n    msg.payload = Number(msg.payload).toFixed(1);\n    msg.payload = parseFloat(msg.payload);\n    \n    let msg1={};    // DewPoint\n    let msg2={};    // Temperature\n    let msg3={};    // Lower limit for setpoint\n    \n    msg1.payload = Td;\n    msg1.payload = Number(msg1.payload).toFixed(1);\n    msg1.payload = parseFloat(msg1.payload);\n    msg1.topic = \"Dew Point (°C)\";\n    flow.set(\"dew_point\",msg1);\n    \n    \n    msg2.payload = T;\n    msg2.payload = Number(msg2.payload).toFixed(1);\n    msg2.payload = parseFloat(msg2.payload);\n    msg2.topic = \"Temperature\"\n    \n    msg3.payload = Td + TOP24_Cool_Delta + 1;\n    msg3.payload = Number(msg3.payload).toFixed(1);\n    msg3.payload = parseFloat(msg3.payload);\n    msg3.payload = Math.ceil(msg3.payload);\n    msg3.topic = 'Setpoint lower limit';\n    \n    return [[msg1,msg2,msg3],msg,msg3];\n}",
+        "outputs": 3,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -24616,7 +24708,15 @@
             ],
             [
                 "6fc958da73fbdf09"
+            ],
+            [
+                "07ba09a16be50433"
             ]
+        ],
+        "outputLabels": [
+            "Dew Point (°C)",
+            "Temperature",
+            "Setpoint lower limit"
         ]
     },
     {
@@ -24928,6 +25028,10 @@
         "format": "",
         "layout": "row-spread",
         "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
         "x": 3340,
         "y": 760,
         "wires": []
@@ -24996,6 +25100,68 @@
         "className": "",
         "x": 3720,
         "y": 200,
+        "wires": []
+    },
+    {
+        "id": "56ae2f8cd74e99c9",
+        "type": "delay",
+        "z": "a938de76db0b71f6",
+        "g": "d2b7e1d6e85a96cf",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "20",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 520,
+        "y": 460,
+        "wires": [
+            [
+                "d032307330b764e1"
+            ]
+        ]
+    },
+    {
+        "id": "25691ccde88f5530",
+        "type": "link out",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "TOP72_Z1_Cool_Request_Temp",
+        "mode": "link",
+        "links": [
+            "ddcff50cd968534a"
+        ],
+        "x": 2875,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "07ba09a16be50433",
+        "type": "ui_text",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "830a81a1c54c6ef5",
+        "order": 8,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Setpoint lower limit",
+        "format": "{{msg.payload}} °C",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "Century Gothic,CenturyGothic,AppleGothic,sans-serif",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 3570,
+        "y": 760,
         "wires": []
     },
     {
@@ -25567,7 +25733,10 @@
             "7bee91b2c307f1b2",
             "bb4f238becd8081d",
             "03e5f9ab34b9382d",
-            "4e0983c85e28594c"
+            "4e0983c85e28594c",
+            "ddcff50cd968534a",
+            "6539fdd5bfc4fa89",
+            "ea22f152face3bf2"
         ],
         "x": 174,
         "y": 1059,
@@ -25701,6 +25870,19 @@
         "wires": [
             [
                 "78cd6de319a6d061"
+            ]
+        ]
+    },
+    {
+        "id": "6539fdd5bfc4fa89",
+        "type": "junction",
+        "z": "43c4ee3ee4757f3c",
+        "g": "8f85827475badab6",
+        "x": 440,
+        "y": 1260,
+        "wires": [
+            [
+                "694768bd9f0a9a39"
             ]
         ]
     },
@@ -27319,7 +27501,7 @@
         "z": "43c4ee3ee4757f3c",
         "g": "8f85827475badab6",
         "name": "HEAT SP Manager",
-        "func": "// pin 1 - Output to SET5\n// pin 2 - to Log\n// pin 3 - Refresh SP to GUI\n// pin 4 - Output to SP functions, as trigger\n// pin 5 - Output to SP_DIRECT_virt \n////////////////////////////////////////////////////////////////////////////////\n\n\n\n////////////////// MQTT read\nif (msg.topic == 'TOP27_Z1_Heat_Request_Temp'){\n    \n    var TOP20_ThreeWay_Valve_State = global.get('TOP20_ThreeWay_Valve_State');\n    var TOP69_Sterilization_State = global.get('TOP69_Sterilization_State',\"file\");\n    \n    if (TOP20_ThreeWay_Valve_State == 0){\n        var TOP27 = global.get(\"TOP27_Z1_Heat_Request_Temp\");\n    }\n    if (TOP20_ThreeWay_Valve_State == 1){\n        msg.payload = global.get('TOP9_DHW_Target_Temp',\"file\")\n        if (msg.payload === undefined) {return null}\n    }\n    if (TOP69_Sterilization_State == 1){\n        msg.payload = global.get('TOP70_Sterilization_Temp',\"file\");\n        if (msg.payload === undefined) {return null}\n    }\n\n    return [null,null,msg,null,null]\n    \n}\n\n////////////// GUI changes. Sent though to trigger function recalculations\nif (msg.payload == 'trigger') {\n    return [null,null,null,msg,null]\n}\nif (msg.topic == 'SP_DIRECT_virt') {\n    return [null,null,null,msg,null]\n}\n\n\n/////////////// Function results (SP Final - direct)\nif (msg.topic == 'SP final') {\n    return [msg,null,null,null]\n}\n\n/////////////// Function results (SP Shift - Compensation curve)\nif (msg.topic == \"Shift\") {\n    return [msg,null,null,null]\n}\n\n\nlet msg1={};\nlet msg2={};\n\n////////////////// SCHEDULER new setpoint\nif (msg.topic == 'Water setpoint (heat shift)') {\n    global.set('SP_DIRECT_virt',msg.payload,\"file\");\n    msg1.payload = msg.payload;\n    msg1.topic = msg.topic;\n    return [null,null,null,msg1,msg1]\n}\n\n////////////////// SCHEDULER new setpoint\nif (msg.topic == 'Water setpoint (direct)') {\n    global.set('SP_DIRECT_virt',msg.payload,\"file\");\n    msg1.payload = msg.payload;\n    msg1.topic = msg.topic;\n    return [null,null,null,msg1,msg1]\n}\n\nreturn null;",
+        "func": "// pin 1 - Output to SET5\n// pin 2 - to Log\n// pin 3 - Refresh SP to GUI\n// pin 4 - Output to SP functions, as trigger\n// pin 5 - Output to SP_DIRECT_virt \n////////////////////////////////////////////////////////////////////////////////\n\n\nvar OM = global.get('TOP4_Operating_Mode_State',\"file\");\n\n////////////////// MQTT read\nif (msg.topic == 'TOP27_Z1_Heat_Request_Temp' && OM != 1){\n    \n    var TOP20_ThreeWay_Valve_State = global.get('TOP20_ThreeWay_Valve_State');\n    var TOP69_Sterilization_State = global.get('TOP69_Sterilization_State',\"file\");\n    \n    if (TOP20_ThreeWay_Valve_State == 0){\n        var TOP27 = global.get(\"TOP27_Z1_Heat_Request_Temp\");\n    }\n    if (TOP20_ThreeWay_Valve_State == 1){\n        msg.payload = global.get('TOP9_DHW_Target_Temp',\"file\")\n        if (msg.payload === undefined) {return null}\n    }\n    if (TOP69_Sterilization_State == 1){\n        msg.payload = global.get('TOP70_Sterilization_Temp',\"file\");\n        if (msg.payload === undefined) {return null}\n    }\n\n    return [null,null,msg,null,null]\n    \n}\nif (msg.topic == 'Z1_Cool_Request_Temp' && OM == 1) {\n    return [null,null,msg,null,null]\n}\n\n\n////////////// GUI changes. Sent though to trigger function recalculations\nif (msg.payload == 'trigger') {\n    return [null,null,null,msg,null]\n}\nif (msg.topic == 'SP_DIRECT_virt') {\n    return [null,null,null,msg,null]\n}\n\n\n/////////////// Function results (SP Final - direct)\nif (msg.topic == 'SP final') {\n    return [msg,null,null,null]\n}\n\n/////////////// Function results (SP Shift - Compensation curve)\nif (msg.topic == \"Shift\") {\n    return [msg,null,null,null]\n}\n\n\nlet msg1={};\nlet msg2={};\n\n////////////////// SCHEDULER new setpoint\nif (msg.topic == 'Water setpoint (heat shift)') {\n    global.set('SP_DIRECT_virt',msg.payload,\"file\");\n    msg1.payload = msg.payload;\n    msg1.topic = msg.topic;\n    return [null,null,null,msg1,msg1]\n}\n\n////////////////// SCHEDULER new setpoint\nif (msg.topic == 'Water setpoint (direct)') {\n    global.set('SP_DIRECT_virt',msg.payload,\"file\");\n    msg1.payload = msg.payload;\n    msg1.topic = msg.topic;\n    return [null,null,null,msg1,msg1]\n}\n\nreturn null;",
         "outputs": 5,
         "noerr": 0,
         "initialize": "",
@@ -27507,8 +27689,7 @@
         "y": 1220,
         "wires": [
             [
-                "bb4f238becd8081d",
-                "bda5a38f4001943e"
+                "bb4f238becd8081d"
             ]
         ]
     },
@@ -27853,6 +28034,35 @@
         "info": "",
         "x": 850,
         "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ddcff50cd968534a",
+        "type": "link in",
+        "z": "43c4ee3ee4757f3c",
+        "g": "8f85827475badab6",
+        "name": "link in 58",
+        "links": [
+            "25691ccde88f5530"
+        ],
+        "x": 215,
+        "y": 1260,
+        "wires": [
+            [
+                "6539fdd5bfc4fa89",
+                "bda5a38f4001943e"
+            ]
+        ]
+    },
+    {
+        "id": "ea22f152face3bf2",
+        "type": "comment",
+        "z": "43c4ee3ee4757f3c",
+        "g": "8f85827475badab6",
+        "name": "Z1_Cool_Request_Temp",
+        "info": "",
+        "x": 350,
+        "y": 1260,
         "wires": []
     },
     {
@@ -30227,8 +30437,7 @@
         "name": "linkout_solar trigger OM",
         "mode": "link",
         "links": [
-            "84bff5c3d4a4cede",
-            "c24406bef1e6355d"
+            "84bff5c3d4a4cede"
         ],
         "x": 1085,
         "y": 2900,
@@ -31888,7 +32097,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "2",
+        "payload": "4",
         "payloadType": "num",
         "x": 1190,
         "y": 3200,
@@ -32976,7 +33185,8 @@
         "y": 2900,
         "wires": [
             [
-                "37178acf2fda2d9d"
+                "37178acf2fda2d9d",
+                "bc966cc007d8b9e7"
             ]
         ]
     },
@@ -33236,6 +33446,107 @@
                 "b463820910564b36"
             ]
         ]
+    },
+    {
+        "id": "cdfda8a3de0b8627",
+        "type": "inject",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "2",
+        "payloadType": "num",
+        "x": 370,
+        "y": 3340,
+        "wires": [
+            [
+                "52793ff25612a2d3"
+            ]
+        ]
+    },
+    {
+        "id": "52793ff25612a2d3",
+        "type": "function",
+        "z": "966985d68ebb4990",
+        "name": "function 28",
+        "func": "global.set('F_SOLAR.function_active_state',msg.payload,\"file\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 3340,
+        "wires": [
+            [
+                "98f9e356d626ae30"
+            ]
+        ]
+    },
+    {
+        "id": "23c8afa8409335b2",
+        "type": "inject",
+        "z": "966985d68ebb4990",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 370,
+        "y": 3400,
+        "wires": [
+            [
+                "52793ff25612a2d3"
+            ]
+        ]
+    },
+    {
+        "id": "bc966cc007d8b9e7",
+        "type": "debug",
+        "z": "966985d68ebb4990",
+        "name": "debug 183",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 3060,
+        "wires": []
+    },
+    {
+        "id": "98f9e356d626ae30",
+        "type": "debug",
+        "z": "966985d68ebb4990",
+        "name": "debug 184",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 3340,
+        "wires": []
     },
     {
         "id": "72f2748729e53ad1",
