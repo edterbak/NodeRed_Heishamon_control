@@ -551,6 +551,7 @@ Fairly much has been changed. needs polishing.
 - [FIX] Cool function. Complete rewrite of the cool function. I expect no more NaN for sending cool setpoints.
 - [Enhancement] Added manual lower limit for the cool function.
 - [Enhancement] Setpoint changes from cool function will not be sent when heatpump is off, or cool is not in operating mode.
+- [Enhancement] Updated HELP in cool section.
 
 ********
 
