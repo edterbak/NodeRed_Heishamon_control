@@ -1464,7 +1464,7 @@
         "label": "Room setpoint",
         "tooltip": "",
         "group": "e27cfec311892d88",
-        "order": 14,
+        "order": 15,
         "width": 5,
         "height": 1,
         "wrap": false,
@@ -8913,7 +8913,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "23.02 Stable",
+        "payload": "23.03 Stable",
         "payloadType": "str",
         "x": 1340,
         "y": 1920,
@@ -9119,7 +9119,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "a8ac5b148d851a6b",
         "group": "e27cfec311892d88",
-        "order": 15,
+        "order": 14,
         "width": 2,
         "height": 2,
         "name": "filler b",
@@ -9563,7 +9563,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "4f352fdae09316c2",
         "name": "MQTT_source",
-        "func": "var MQTT_Source = global.get('MQTT_Source') || \"unknown\"; //Memory Only\n\nmsg.payload = \"<b>\" + msg.payload + \"</b> (\" + MQTT_Source + \")\";\n\nglobal.set('MQTT_Source', undefined); // reset and wait for next command.\n\nreturn msg;\n\n/*\n\nmqtt-source added for:\n======================\n-Function SoftStart (corrections)\n-Function Reduce Pump Peed\n-Power on/off (rtc, scheduler, gui)\n-Quietmode (scheduler, gui)\n-SS_Quietmode\n\n*/",
+        "func": "var MQTT_Source = global.get('MQTT_Source'); //Memory Only\n\nif (MQTT_Source === undefined) {msg.payload = \"<b>\" + msg.payload + \"</b>\";}\nif (MQTT_Source !== undefined) {msg.payload = \"<b>\" + msg.payload + \"</b> (\" + MQTT_Source + \")\";}\n\nglobal.set('MQTT_Source', undefined); // reset and wait for next command.\n\nreturn msg;\n\n/*\n\nmqtt-source added for:\n======================\n-Function SoftStart (corrections)\n-Function Reduce Pump Peed\n-Power on/off (rtc, scheduler, gui)\n-Quietmode (scheduler, gui)\n-SS_Quietmode\n\n*/",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -11949,7 +11949,7 @@
         "links": [
             "158b8983b1dd0aa9"
         ],
-        "x": 1385,
+        "x": 1375,
         "y": 1360,
         "wires": [
             [
@@ -12760,7 +12760,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Block?",
-        "func": "if (global.get('MQTT.block_active', \"file\") == 1) {\n    let msg66 = {}; // pin 2 - To Notify msg (and INPUTdebuglog)\n    msg66.topic = \"SYSTEM\";\n    msg66.payload = \"MQTT-Commands are blocked!\";\n    return [null, msg66];\n    }\nreturn [msg, null];\n",
+        "func": "if (global.get('MQTT.block_active', \"file\") == 1) {\n    let msg66 = {}; // pin 2 - To Notify msg (and INPUTdebuglog)\n    msg66.topic = \"SYSTEM\";\n    msg66.payload = \"MQTT-Commands are blocked!\";\n    return [null, msg66];\n    }\nif (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"GUI\"); }\nreturn [msg, null];\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -12783,7 +12783,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "3151681b2157872c",
         "name": "Block?",
-        "func": "if (global.get('MQTT.block_active', \"file\") == 1) {\n    let msg66 = {}; // pin 2 - To Notify msg (and INPUTdebuglog)\n    msg66.topic = \"SYSTEM\";\n    msg66.payload = \"MQTT-Commands are blocked!\";\n    return [null, msg66];\n    }\nreturn [msg, null];\n",
+        "func": "if (global.get('MQTT.block_active', \"file\") == 1) {\n    let msg66 = {}; // pin 2 - To Notify msg (and INPUTdebuglog)\n    msg66.topic = \"SYSTEM\";\n    msg66.payload = \"MQTT-Commands are blocked!\";\n    return [null, msg66];\n    }\nif (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"GUI\"); }\nreturn [msg, null];\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -16751,8 +16751,8 @@
             "dd1a38c2ccf4f47e",
             "9b7a14cd7f7c2870"
         ],
-        "x": 2524,
-        "y": 1359,
+        "x": 2504,
+        "y": 1399,
         "w": 1182,
         "h": 202
     },
@@ -16811,8 +16811,8 @@
             "3080d204a6999479",
             "94fb2ca53932250b"
         ],
-        "x": 2514,
-        "y": 879,
+        "x": 2494,
+        "y": 919,
         "w": 1342,
         "h": 442
     },
@@ -16821,8 +16821,8 @@
         "type": "junction",
         "z": "a938de76db0b71f6",
         "g": "8464ca0ddfa2e5de",
-        "x": 2900,
-        "y": 1080,
+        "x": 2880,
+        "y": 1120,
         "wires": [
             [
                 "c2c09dbebda13484"
@@ -16834,8 +16834,8 @@
         "type": "junction",
         "z": "a938de76db0b71f6",
         "g": "8464ca0ddfa2e5de",
-        "x": 2900,
-        "y": 1160,
+        "x": 2880,
+        "y": 1200,
         "wires": [
             [
                 "c91855502498f443"
@@ -16847,8 +16847,8 @@
         "type": "junction",
         "z": "a938de76db0b71f6",
         "g": "8464ca0ddfa2e5de",
-        "x": 2900,
-        "y": 1280,
+        "x": 2880,
+        "y": 1320,
         "wires": [
             [
                 "9dfdd1d4ae5594b1"
@@ -16860,8 +16860,8 @@
         "type": "junction",
         "z": "a938de76db0b71f6",
         "g": "8464ca0ddfa2e5de",
-        "x": 2900,
-        "y": 1220,
+        "x": 2880,
+        "y": 1260,
         "wires": [
             [
                 "62f703fc3bef4b9d"
@@ -16873,8 +16873,8 @@
         "type": "junction",
         "z": "a938de76db0b71f6",
         "g": "8464ca0ddfa2e5de",
-        "x": 2900,
-        "y": 960,
+        "x": 2880,
+        "y": 1000,
         "wires": [
             [
                 "879b071f7e013653"
@@ -16886,8 +16886,8 @@
         "type": "junction",
         "z": "a938de76db0b71f6",
         "g": "8464ca0ddfa2e5de",
-        "x": 2900,
-        "y": 1000,
+        "x": 2880,
+        "y": 1040,
         "wires": [
             [
                 "879b071f7e013653"
@@ -16899,8 +16899,8 @@
         "type": "junction",
         "z": "a938de76db0b71f6",
         "g": "8464ca0ddfa2e5de",
-        "x": 2900,
-        "y": 920,
+        "x": 2880,
+        "y": 960,
         "wires": [
             [
                 "879b071f7e013653"
@@ -16912,8 +16912,8 @@
         "type": "junction",
         "z": "a938de76db0b71f6",
         "g": "8464ca0ddfa2e5de",
-        "x": 3340,
-        "y": 920,
+        "x": 3320,
+        "y": 960,
         "wires": [
             [
                 "7708ef15cae3ed59"
@@ -16964,8 +16964,8 @@
             "376d42685ccec772",
             "50510191e3d7f7fc"
         ],
-        "x": 2528,
-        "y": 1613,
+        "x": 2508,
+        "y": 1653,
         "w": 1278,
         "h": 528
     },
@@ -16974,8 +16974,8 @@
         "type": "junction",
         "z": "a938de76db0b71f6",
         "g": "116d861b2bd34e3a",
-        "x": 3120,
-        "y": 1920,
+        "x": 3100,
+        "y": 1960,
         "wires": [
             [
                 "c860a4238803ed02",
@@ -16988,8 +16988,8 @@
         "type": "junction",
         "z": "a938de76db0b71f6",
         "g": "116d861b2bd34e3a",
-        "x": 3120,
-        "y": 2060,
+        "x": 3100,
+        "y": 2100,
         "wires": [
             [
                 "8effd9295d55099f",
@@ -17008,10 +17008,7 @@
         "nodes": [
             "e248409fb553d16c",
             "914dbce5e778229e",
-            "472cd4f84e3e8b1d",
-            "36f8eea1b3a6c839",
             "5b8f3786bc1abbb1",
-            "c5060d82a2dec953",
             "2649d773ad06b50d",
             "7c9af6a20115c38e",
             "dee73ffd96da5786",
@@ -17022,7 +17019,6 @@
             "25041e53f134e3fb",
             "158b8983b1dd0aa9",
             "25323c5d6bbdbebe",
-            "79d819b649cddcfb",
             "f5ccbd22c1c9fe22",
             "6fc958da73fbdf09",
             "4dfb2312d5cb06d5",
@@ -17034,31 +17030,81 @@
             "0e8ca4bb561b59ed",
             "6b2644c3a510f50f",
             "b43820fd5a21f4e7",
-            "af1404724ba9f9f4",
-            "103eefceda366f39",
             "71a59b9661071adc",
-            "f2aa79821dfd1110",
             "fcc08a6bfb0d246e",
             "21b21c01326b2eb3",
             "25691ccde88f5530",
-            "07ba09a16be50433"
+            "07ba09a16be50433",
+            "78e42bcd53ea8133",
+            "b65cc48d66b605f8",
+            "57bd8e997e9659ed",
+            "b6ad3dc97e3bae93",
+            "069a1e1137dff3c5",
+            "de80c0811e237e25",
+            "31e6f728a58af434",
+            "8446efaaa0db1b07",
+            "af6c986b9bd32b5d",
+            "de420200e2112c80",
+            "bc259ef4511cfc49",
+            "4758413b4dd7826c",
+            "a0b2a8ca1de90c30",
+            "967eb9e23a816211",
+            "7fd8e4be18710797",
+            "ab9d088e21062ff8",
+            "2bb5988706fb572a",
+            "37a369fd9ad03085",
+            "0df0e84326dbeec7",
+            "cdd89d5c10c71407",
+            "030fbd5026e5a295",
+            "7122d217051222ff",
+            "b16ab0b5c23a9ca9",
+            "793e8c5bacadc28c",
+            "b08c0859f26b8233",
+            "2cc53aa4981b4a7d",
+            "c49ef874bd1fee9d"
         ],
-        "x": 2508,
-        "y": 33,
-        "w": 1538,
-        "h": 768
+        "x": 2494,
+        "y": 79,
+        "w": 1672,
+        "h": 782
     },
     {
         "id": "fcc08a6bfb0d246e",
         "type": "junction",
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
-        "x": 3140,
+        "x": 3020,
         "y": 480,
         "wires": [
             [
                 "914dbce5e778229e",
                 "6c93a57f910e03c2"
+            ]
+        ]
+    },
+    {
+        "id": "b65cc48d66b605f8",
+        "type": "junction",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "x": 3000,
+        "y": 580,
+        "wires": [
+            [
+                "78e42bcd53ea8133"
+            ]
+        ]
+    },
+    {
+        "id": "4758413b4dd7826c",
+        "type": "junction",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "x": 3000,
+        "y": 660,
+        "wires": [
+            [
+                "bc259ef4511cfc49"
             ]
         ]
     },
@@ -17077,32 +17123,28 @@
             "f651bed25831c6f4",
             "c8b5382d8d981e31"
         ],
-        "x": 2554,
-        "y": 1639,
+        "x": 2534,
+        "y": 1679,
         "w": 492,
         "h": 122
     },
     {
-        "id": "f2aa79821dfd1110",
+        "id": "b08c0859f26b8233",
         "type": "group",
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
-        "name": "Relative humidity > Dewpoint calculation",
+        "name": "",
         "style": {
+            "fill": "#bfdbef",
             "label": true
         },
         "nodes": [
-            "2bb5988706fb572a",
-            "37a369fd9ad03085",
-            "0df0e84326dbeec7",
-            "cdd89d5c10c71407",
-            "030fbd5026e5a295",
-            "7122d217051222ff"
+            "4a7112414493107c"
         ],
-        "x": 2534,
-        "y": 59,
-        "w": 1292,
-        "h": 162
+        "x": 3574,
+        "y": 519,
+        "w": 212,
+        "h": 82
     },
     {
         "id": "2c893b32851ad2a2",
@@ -21904,7 +21946,7 @@
         "z": "a938de76db0b71f6",
         "name": "INFO INSIDE: Panasonic compressor rules",
         "info": "\n**Compressor on:**\nMain inlet 4 degrees lower than setpoint\n\nFormula:    [TOP5] <= [TOP27] - 4;\n            \n                [TOP5]  Main inlet\n                [TOP27] Setpoint (in direct mode)\n\n\n\n\n**Compressor off:**\nMain outlet temperature is 2 degrees higher than setpoint, for 3 minutes\n\nFormula:    [TOP6] + 2 >= [TOP27]\n\n                [TOP6]  Main outlet\n                [TOP27] Setpoint (in direct mode)\n\n",
-        "x": 2180,
+        "x": 2140,
         "y": 500,
         "wires": []
     },
@@ -22376,8 +22418,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 3610,
-        "y": 1400,
+        "x": 3590,
+        "y": 1440,
         "wires": [
             [
                 "dd1a38c2ccf4f47e"
@@ -22396,8 +22438,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3090,
-        "y": 960,
+        "x": 3070,
+        "y": 1000,
         "wires": [
             [
                 "3080d204a6999479"
@@ -22424,8 +22466,8 @@
         "links": [
             "c57a81d1dee5b8a9"
         ],
-        "x": 2715,
-        "y": 1000,
+        "x": 2695,
+        "y": 1040,
         "wires": [
             [
                 "1091a5fba5fd17c2"
@@ -22459,8 +22501,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 3180,
-        "y": 1080,
+        "x": 3160,
+        "y": 1120,
         "wires": [
             [
                 "dbb3202d2fc26245"
@@ -22487,8 +22529,8 @@
         "max": "100",
         "step": 1,
         "className": "",
-        "x": 3130,
-        "y": 1160,
+        "x": 3110,
+        "y": 1200,
         "wires": [
             [
                 "07adfdd98bc7ec6f"
@@ -22515,8 +22557,8 @@
         "max": "100",
         "step": 1,
         "className": "",
-        "x": 3130,
-        "y": 1280,
+        "x": 3110,
+        "y": 1320,
         "wires": [
             [
                 "7d78560a43c952f3"
@@ -22539,8 +22581,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 3080,
-        "y": 1040,
+        "x": 3060,
+        "y": 1080,
         "wires": [
             []
         ]
@@ -22561,8 +22603,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 3020,
-        "y": 1120,
+        "x": 3000,
+        "y": 1160,
         "wires": [
             []
         ]
@@ -22581,8 +22623,8 @@
         "format": "{{msg.payload}} %",
         "layout": "row-spread",
         "className": "",
-        "x": 3130,
-        "y": 1440,
+        "x": 3110,
+        "y": 1480,
         "wires": []
     },
     {
@@ -22599,8 +22641,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3120,
-        "y": 1480,
+        "x": 3100,
+        "y": 1520,
         "wires": []
     },
     {
@@ -22617,8 +22659,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 2990,
-        "y": 1160,
+        "x": 2970,
+        "y": 1200,
         "wires": []
     },
     {
@@ -22635,8 +22677,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 2990,
-        "y": 1280,
+        "x": 2970,
+        "y": 1320,
         "wires": []
     },
     {
@@ -22653,8 +22695,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 2990,
-        "y": 1220,
+        "x": 2970,
+        "y": 1260,
         "wires": []
     },
     {
@@ -22677,8 +22719,8 @@
         "max": "100",
         "step": 1,
         "className": "",
-        "x": 3130,
-        "y": 1220,
+        "x": 3110,
+        "y": 1260,
         "wires": [
             [
                 "c613a0a91992893e"
@@ -22701,8 +22743,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 2890,
-        "y": 1400,
+        "x": 2870,
+        "y": 1440,
         "wires": [
             []
         ]
@@ -22716,8 +22758,8 @@
         "links": [
             "d8c3356483134cf9"
         ],
-        "x": 2565,
-        "y": 1440,
+        "x": 2545,
+        "y": 1480,
         "wires": [
             [
                 "5710a4a40d36cae6"
@@ -22745,8 +22787,8 @@
         "max": "100",
         "step": 1,
         "className": "",
-        "x": 3260,
-        "y": 1160,
+        "x": 3240,
+        "y": 1200,
         "wires": [
             [
                 "dd27a17d3914b050"
@@ -22766,8 +22808,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 3390,
-        "y": 1160,
+        "x": 3370,
+        "y": 1200,
         "wires": [
             [
                 "c91855502498f443",
@@ -22796,8 +22838,8 @@
         "max": "100",
         "step": 1,
         "className": "",
-        "x": 3250,
-        "y": 1280,
+        "x": 3230,
+        "y": 1320,
         "wires": [
             [
                 "b1e622419da850aa"
@@ -22825,8 +22867,8 @@
         "max": "100",
         "step": 1,
         "className": "",
-        "x": 3260,
-        "y": 1220,
+        "x": 3240,
+        "y": 1260,
         "wires": [
             [
                 "3bb1ed005c52a0fa"
@@ -22846,8 +22888,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 3390,
-        "y": 1280,
+        "x": 3370,
+        "y": 1320,
         "wires": [
             [
                 "9dfdd1d4ae5594b1",
@@ -22868,8 +22910,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 3390,
-        "y": 1220,
+        "x": 3370,
+        "y": 1260,
         "wires": [
             [
                 "62f703fc3bef4b9d",
@@ -22922,8 +22964,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 2930,
-        "y": 1440,
+        "x": 2910,
+        "y": 1480,
         "wires": []
     },
     {
@@ -22940,8 +22982,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 2910,
-        "y": 1480,
+        "x": 2890,
+        "y": 1520,
         "wires": []
     },
     {
@@ -22953,8 +22995,8 @@
         "links": [
             "3b23831ccc3641c6"
         ],
-        "x": 2765,
-        "y": 1480,
+        "x": 2745,
+        "y": 1520,
         "wires": [
             [
                 "0b0a84c6b2ac5946"
@@ -22973,8 +23015,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3430,
-        "y": 1400,
+        "x": 3410,
+        "y": 1440,
         "wires": [
             [
                 "3d8e357b01de57ff"
@@ -22993,8 +23035,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3730,
-        "y": 1080,
+        "x": 3710,
+        "y": 1120,
         "wires": [
             [
                 "ea04ae839e1d6b46"
@@ -23013,8 +23055,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2690,
-        "y": 1440,
+        "x": 2670,
+        "y": 1480,
         "wires": [
             [
                 "05d2363eb8b5cbac",
@@ -23040,8 +23082,8 @@
         "bytopic": "topic",
         "topic": "topic",
         "outputs": 1,
-        "x": 3560,
-        "y": 1080,
+        "x": 3540,
+        "y": 1120,
         "wires": [
             [
                 "dee4758644beb652"
@@ -23065,8 +23107,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "trigger",
-        "x": 3260,
-        "y": 1400,
+        "x": 3240,
+        "y": 1440,
         "wires": [
             [
                 "f2ccd5d9f4518044"
@@ -23086,8 +23128,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 3270,
-        "y": 1440,
+        "x": 3250,
+        "y": 1480,
         "wires": [
             [
                 "f2ccd5d9f4518044"
@@ -23107,8 +23149,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 3390,
-        "y": 1080,
+        "x": 3370,
+        "y": 1120,
         "wires": [
             [
                 "ad467c3d58db0284"
@@ -23129,8 +23171,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3120,
-        "y": 1520,
+        "x": 3100,
+        "y": 1560,
         "wires": []
     },
     {
@@ -23145,8 +23187,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2770,
-        "y": 1180,
+        "x": 2750,
+        "y": 1220,
         "wires": [
             [
                 "68aa0ab50a8ad60f"
@@ -23185,8 +23227,8 @@
         "once": true,
         "onceDelay": "5",
         "topic": "trigger",
-        "x": 2620,
-        "y": 1160,
+        "x": 2600,
+        "y": 1200,
         "wires": [
             [
                 "3df02652ea9f1de4"
@@ -23204,8 +23246,8 @@
             "32c4b461266d4a6e",
             "b1a202d9c6da4df3"
         ],
-        "x": 3815,
-        "y": 1080,
+        "x": 3795,
+        "y": 1120,
         "wires": []
     },
     {
@@ -23222,8 +23264,8 @@
         "format": "",
         "layout": "row-spread",
         "className": "",
-        "x": 2890,
-        "y": 1520,
+        "x": 2870,
+        "y": 1560,
         "wires": []
     },
     {
@@ -23236,8 +23278,8 @@
         "links": [
             "031e62b0bf3df7d7"
         ],
-        "x": 3695,
-        "y": 1000,
+        "x": 3675,
+        "y": 1040,
         "wires": []
     },
     {
@@ -23250,8 +23292,8 @@
         "links": [
             "8406701f07ab7886"
         ],
-        "x": 3695,
-        "y": 920,
+        "x": 3675,
+        "y": 960,
         "wires": []
     },
     {
@@ -23267,8 +23309,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 3390,
-        "y": 1000,
+        "x": 3370,
+        "y": 1040,
         "wires": [
             [
                 "dc99be6d3a53311d"
@@ -23285,8 +23327,8 @@
         "links": [
             "dd7484dc5380d24f"
         ],
-        "x": 3695,
-        "y": 960,
+        "x": 3675,
+        "y": 1000,
         "wires": []
     },
     {
@@ -23298,8 +23340,8 @@
         "links": [
             "b23ef1030db7e252"
         ],
-        "x": 2765,
-        "y": 1520,
+        "x": 2745,
+        "y": 1560,
         "wires": [
             [
                 "fab9eab71225fbf7"
@@ -23315,8 +23357,8 @@
         "links": [
             "ea04ae839e1d6b46"
         ],
-        "x": 2715,
-        "y": 960,
+        "x": 2695,
+        "y": 1000,
         "wires": [
             [
                 "f94179aa1253a8ff"
@@ -23330,8 +23372,8 @@
         "g": "8464ca0ddfa2e5de",
         "name": "Hz",
         "info": "",
-        "x": 2790,
-        "y": 1000,
+        "x": 2770,
+        "y": 1040,
         "wires": []
     },
     {
@@ -23341,8 +23383,8 @@
         "g": "8464ca0ddfa2e5de",
         "name": "GUI",
         "info": "",
-        "x": 2790,
-        "y": 960,
+        "x": 2770,
+        "y": 1000,
         "wires": []
     },
     {
@@ -23354,8 +23396,8 @@
         "links": [
             "4ff74e2b48b1d597"
         ],
-        "x": 2715,
-        "y": 920,
+        "x": 2695,
+        "y": 960,
         "wires": [
             [
                 "bf8ce4cf96b236c2"
@@ -23375,8 +23417,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 2790,
-        "y": 920,
+        "x": 2770,
+        "y": 960,
         "wires": [
             [
                 "fafc9525d7e55fd4"
@@ -23390,8 +23432,8 @@
         "g": "8464ca0ddfa2e5de",
         "name": "to SET15",
         "info": "",
-        "x": 3560,
-        "y": 920,
+        "x": 3540,
+        "y": 960,
         "wires": []
     },
     {
@@ -23401,8 +23443,8 @@
         "g": "8464ca0ddfa2e5de",
         "name": "current mode",
         "info": "",
-        "x": 3570,
-        "y": 960,
+        "x": 3550,
+        "y": 1000,
         "wires": []
     },
     {
@@ -23412,8 +23454,8 @@
         "g": "8464ca0ddfa2e5de",
         "name": "to log",
         "info": "",
-        "x": 3550,
-        "y": 1000,
+        "x": 3530,
+        "y": 1040,
         "wires": []
     },
     {
@@ -23428,8 +23470,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3570,
-        "y": 1520,
+        "x": 3550,
+        "y": 1560,
         "wires": [
             [
                 "3d8e357b01de57ff"
@@ -23454,8 +23496,8 @@
         "drop": true,
         "allowrate": false,
         "outputs": 1,
-        "x": 3380,
-        "y": 1520,
+        "x": 3360,
+        "y": 1560,
         "wires": [
             [
                 "6410b5f879c6a3ec"
@@ -23479,8 +23521,8 @@
         "once": true,
         "onceDelay": "1",
         "topic": "trigger",
-        "x": 3400,
-        "y": 1480,
+        "x": 3380,
+        "y": 1520,
         "wires": [
             [
                 "6410b5f879c6a3ec"
@@ -23536,8 +23578,8 @@
         "links": [
             "49ebac0412d87642"
         ],
-        "x": 2565,
-        "y": 1200,
+        "x": 2545,
+        "y": 1240,
         "wires": [
             [
                 "3df02652ea9f1de4"
@@ -23643,8 +23685,8 @@
         "max": "100",
         "step": 1,
         "className": "",
-        "x": 3200,
-        "y": 1820,
+        "x": 3180,
+        "y": 1860,
         "wires": [
             [
                 "fdc7a953bf5abbc3"
@@ -23663,8 +23705,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3600,
-        "y": 1820,
+        "x": 3580,
+        "y": 1860,
         "wires": [
             [
                 "0d915486f4ef0946"
@@ -23693,8 +23735,8 @@
         "topic": "trigger",
         "payload": "",
         "payloadType": "date",
-        "x": 2670,
-        "y": 1840,
+        "x": 2650,
+        "y": 1880,
         "wires": [
             [
                 "1cf36419e733671a"
@@ -23713,8 +23755,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2970,
-        "y": 1840,
+        "x": 2950,
+        "y": 1880,
         "wires": [
             [
                 "f50b182247afbf12"
@@ -23744,8 +23786,8 @@
         "name": "DHW_threshold_upper",
         "mode": "link",
         "links": [],
-        "x": 3765,
-        "y": 1820,
+        "x": 3745,
+        "y": 1860,
         "wires": []
     },
     {
@@ -23755,8 +23797,8 @@
         "g": "116d861b2bd34e3a",
         "name": "DHW_threshold ",
         "info": "",
-        "x": 3560,
-        "y": 1780,
+        "x": 3540,
+        "y": 1820,
         "wires": []
     },
     {
@@ -23766,8 +23808,8 @@
         "g": "116d861b2bd34e3a",
         "name": "Scheduler - Allow DHW below",
         "info": "",
-        "x": 2680,
-        "y": 1800,
+        "x": 2660,
+        "y": 1840,
         "wires": []
     },
     {
@@ -23783,8 +23825,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 3390,
-        "y": 1820,
+        "x": 3370,
+        "y": 1860,
         "wires": [
             [
                 "513f1edff2205368"
@@ -23812,8 +23854,8 @@
         "max": "75",
         "step": 1,
         "className": "",
-        "x": 3240,
-        "y": 1920,
+        "x": 3220,
+        "y": 1960,
         "wires": [
             [
                 "8f0fdd05619b6080"
@@ -23829,8 +23871,8 @@
         "links": [
             "49ebac0412d87642"
         ],
-        "x": 2825,
-        "y": 1880,
+        "x": 2805,
+        "y": 1920,
         "wires": [
             [
                 "1cf36419e733671a"
@@ -23846,8 +23888,8 @@
         "links": [
             "d54ac3b979428b64"
         ],
-        "x": 2825,
-        "y": 1920,
+        "x": 2805,
+        "y": 1960,
         "wires": [
             [
                 "1cf36419e733671a"
@@ -23861,8 +23903,8 @@
         "g": "116d861b2bd34e3a",
         "name": "Link in TOP10_DHW_Temp",
         "info": "",
-        "x": 2680,
-        "y": 1920,
+        "x": 2660,
+        "y": 1960,
         "wires": []
     },
     {
@@ -23872,8 +23914,8 @@
         "g": "116d861b2bd34e3a",
         "name": "Link in GUI update",
         "info": "",
-        "x": 2650,
-        "y": 1880,
+        "x": 2630,
+        "y": 1920,
         "wires": []
     },
     {
@@ -23884,8 +23926,8 @@
         "name": "Link out to Trigger DHW run",
         "mode": "link",
         "links": [],
-        "x": 3175,
-        "y": 1960,
+        "x": 3155,
+        "y": 2000,
         "wires": []
     },
     {
@@ -23909,8 +23951,8 @@
         "max": "75",
         "step": 1,
         "className": "",
-        "x": 3240,
-        "y": 2100,
+        "x": 3220,
+        "y": 2140,
         "wires": [
             [
                 "40ad0556b1f55896"
@@ -23933,8 +23975,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 3170,
-        "y": 1780,
+        "x": 3150,
+        "y": 1820,
         "wires": [
             []
         ]
@@ -23959,8 +24001,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3490,
-        "y": 2100,
+        "x": 3470,
+        "y": 2140,
         "wires": [
             []
         ]
@@ -23975,8 +24017,8 @@
         "links": [
             "327f3ad0eae0d7d5"
         ],
-        "x": 3415,
-        "y": 2060,
+        "x": 3395,
+        "y": 2100,
         "wires": []
     },
     {
@@ -23988,8 +24030,8 @@
         "links": [
             "d54ac3b979428b64"
         ],
-        "x": 2640,
-        "y": 1700,
+        "x": 2620,
+        "y": 1740,
         "wires": [
             [
                 "017e95185010581b"
@@ -24009,8 +24051,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2830,
-        "y": 1700,
+        "x": 2810,
+        "y": 1740,
         "wires": [
             [
                 "f651bed25831c6f4"
@@ -24034,8 +24076,8 @@
         "links": [
             "8c9808071334d371"
         ],
-        "x": 3005,
-        "y": 1680,
+        "x": 2985,
+        "y": 1720,
         "wires": []
     },
     {
@@ -24048,8 +24090,8 @@
         "links": [
             "031e62b0bf3df7d7"
         ],
-        "x": 3005,
-        "y": 1720,
+        "x": 2985,
+        "y": 1760,
         "wires": []
     },
     {
@@ -24079,8 +24121,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 2960,
-        "y": 1920,
+        "x": 2940,
+        "y": 1960,
         "wires": [
             [
                 "4b1bb355679fc526"
@@ -24107,8 +24149,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3300,
-        "y": 1880,
+        "x": 3280,
+        "y": 1920,
         "wires": [
             []
         ]
@@ -24133,8 +24175,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3540,
-        "y": 1920,
+        "x": 3520,
+        "y": 1960,
         "wires": [
             []
         ]
@@ -24166,8 +24208,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 2980,
-        "y": 2060,
+        "x": 2960,
+        "y": 2100,
         "wires": [
             [
                 "e04d0eec3158bffc"
@@ -24183,8 +24225,8 @@
         "links": [
             "56d4bfa341d3eded"
         ],
-        "x": 2675,
-        "y": 2060,
+        "x": 2655,
+        "y": 2100,
         "wires": [
             [
                 "376d42685ccec772"
@@ -24203,8 +24245,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3230,
-        "y": 2060,
+        "x": 3210,
+        "y": 2100,
         "wires": [
             [
                 "c0c20e2e3caa81e0"
@@ -24223,8 +24265,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2790,
-        "y": 2060,
+        "x": 2770,
+        "y": 2100,
         "wires": [
             [
                 "8effd9295d55099f"
@@ -24238,8 +24280,8 @@
         "g": "116d861b2bd34e3a",
         "name": "External trigger BOOST",
         "links": [],
-        "x": 2760,
-        "y": 2020,
+        "x": 2740,
+        "y": 2060,
         "wires": [
             [
                 "8effd9295d55099f"
@@ -24262,8 +24304,8 @@
         "correl": "",
         "expiry": "",
         "broker": "92e5b2c.00a8b5",
-        "x": 3830,
-        "y": 400,
+        "x": 3990,
+        "y": 760,
         "wires": []
     },
     {
@@ -24278,68 +24320,21 @@
         "order": 3,
         "width": 6,
         "height": 1,
-        "wrap": true,
+        "wrap": false,
         "passthru": false,
-        "topic": "topic",
-        "topicType": "msg",
+        "topic": "setpoint_requested",
+        "topicType": "str",
         "format": "{{value}} °C",
         "min": "5",
         "max": "20",
         "step": 1,
         "className": "",
-        "x": 3330,
-        "y": 400,
-        "wires": [
-            [
-                "472cd4f84e3e8b1d",
-                "fcc08a6bfb0d246e"
-            ]
-        ]
-    },
-    {
-        "id": "472cd4f84e3e8b1d",
-        "type": "trigger",
-        "z": "a938de76db0b71f6",
-        "g": "992121a08b66faa3",
-        "name": "",
-        "op1": "",
-        "op2": "",
-        "op1type": "nul",
-        "op2type": "payl",
-        "duration": "3",
-        "extend": true,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 3540,
+        "x": 3130,
         "y": 460,
         "wires": [
             [
-                "36f8eea1b3a6c839"
-            ]
-        ]
-    },
-    {
-        "id": "36f8eea1b3a6c839",
-        "type": "rbe",
-        "z": "a938de76db0b71f6",
-        "g": "992121a08b66faa3",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 3570,
-        "y": 360,
-        "wires": [
-            [
-                "79d819b649cddcfb"
+                "fcc08a6bfb0d246e",
+                "57bd8e997e9659ed"
             ]
         ]
     },
@@ -24357,38 +24352,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 2770,
-        "y": 400,
+        "x": 2750,
+        "y": 740,
         "wires": [
             [
-                "c5060d82a2dec953",
-                "f5ccbd22c1c9fe22"
-            ]
-        ]
-    },
-    {
-        "id": "c5060d82a2dec953",
-        "type": "delay",
-        "z": "a938de76db0b71f6",
-        "g": "992121a08b66faa3",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "15",
-        "rateUnits": "minute",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": true,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 3020,
-        "y": 440,
-        "wires": [
-            [
-                "fcc08a6bfb0d246e"
+                "f5ccbd22c1c9fe22",
+                "b6ad3dc97e3bae93"
             ]
         ]
     },
@@ -24406,8 +24375,12 @@
         "format": "<font color= {{msg.color}} > {{msg.payload}}  </font>",
         "layout": "row-spread",
         "className": "",
-        "x": 3330,
-        "y": 320,
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 3130,
+        "y": 340,
         "wires": []
     },
     {
@@ -24419,11 +24392,12 @@
         "links": [
             "5dfb70935ea409db"
         ],
-        "x": 2785,
-        "y": 320,
+        "x": 2935,
+        "y": 340,
         "wires": [
             [
-                "2649d773ad06b50d"
+                "2649d773ad06b50d",
+                "13909c8cd33f26ef"
             ]
         ]
     },
@@ -24443,8 +24417,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 3330,
-        "y": 360,
+        "x": 2630,
+        "y": 640,
         "wires": [
             []
         ]
@@ -24455,7 +24429,7 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "group": "830a81a1c54c6ef5",
-        "order": 1,
+        "order": 4,
         "width": 6,
         "height": 1,
         "name": "Cool status",
@@ -24463,8 +24437,12 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 3330,
-        "y": 460,
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 3130,
+        "y": 380,
         "wires": []
     },
     {
@@ -24474,7 +24452,7 @@
         "g": "992121a08b66faa3",
         "group": "830a81a1c54c6ef5",
         "name": "Line - Setup ",
-        "order": 2,
+        "order": 5,
         "width": 6,
         "height": 1,
         "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
@@ -24483,8 +24461,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 3330,
-        "y": 500,
+        "x": 3130,
+        "y": 420,
         "wires": [
             []
         ]
@@ -24495,28 +24473,27 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "name": "",
-        "label": "Cool setpoint",
+        "label": "Setpoint requested",
         "tooltip": "",
         "group": "830a81a1c54c6ef5",
-        "order": 3,
+        "order": 6,
         "width": 6,
         "height": 1,
-        "wrap": true,
+        "wrap": false,
         "passthru": false,
-        "topic": "topic",
-        "topicType": "msg",
+        "topic": "setpoint_requested",
+        "topicType": "str",
         "format": "{{value}} °C",
         "min": "5",
         "max": "20",
         "step": 1,
         "className": "",
-        "x": 3330,
-        "y": 540,
+        "x": 3150,
+        "y": 500,
         "wires": [
             [
                 "fcc08a6bfb0d246e",
-                "f13532d971be853e",
-                "472cd4f84e3e8b1d"
+                "57bd8e997e9659ed"
             ]
         ]
     },
@@ -24529,7 +24506,7 @@
         "label": "Cool delta",
         "tooltip": "",
         "group": "830a81a1c54c6ef5",
-        "order": 4,
+        "order": 16,
         "width": 6,
         "height": 1,
         "wrap": false,
@@ -24541,8 +24518,8 @@
         "max": "15",
         "step": 1,
         "className": "",
-        "x": 3320,
-        "y": 600,
+        "x": 3120,
+        "y": 820,
         "wires": [
             [
                 "25323c5d6bbdbebe"
@@ -24559,8 +24536,8 @@
             "7139256ff024b872",
             "ce9434fc05a5b849"
         ],
-        "x": 3195,
-        "y": 580,
+        "x": 3005,
+        "y": 820,
         "wires": [
             [
                 "f0ae9eea42cf90ea"
@@ -24577,8 +24554,8 @@
         "links": [
             "3ed1fd544412f391"
         ],
-        "x": 3645,
-        "y": 580,
+        "x": 3595,
+        "y": 820,
         "wires": []
     },
     {
@@ -24599,32 +24576,11 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 3520,
-        "y": 580,
+        "x": 3360,
+        "y": 820,
         "wires": [
             [
-                "158b8983b1dd0aa9",
-                "f13532d971be853e"
-            ]
-        ]
-    },
-    {
-        "id": "79d819b649cddcfb",
-        "type": "function",
-        "z": "a938de76db0b71f6",
-        "g": "992121a08b66faa3",
-        "name": "",
-        "func": "var TOP24_Cool_Delta                    = global.get('TOP24_Cool_Delta',\"file\");\nvar Z1_Cool_Request_Temp                = global.get(\"Z1_Cool_Request_Temp\");\nvar dew_point                           = flow.get(\"dew_point\");\n\nif (TOP24_Cool_Delta !== undefined && Z1_Cool_Request_Temp !== undefined && dew_point !== undefined)    {\n    dew_point                               = dew_point.payload;\n    if (msg.payload >= (dew_point + TOP24_Cool_Delta + 1))\n        {\n            return msg;\n            \n        }\n    \n    else\n        {\n            msg.payload = (dew_point + TOP24_Cool_Delta + 1);\n            msg.payload = Math.ceil(msg.payload);\n            return msg;\n            \n        }\n\n}\n\nelse \n{\n    return msg;\n}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 3740,
-        "y": 320,
-        "wires": [
-            [
-                "6b2644c3a510f50f"
+                "158b8983b1dd0aa9"
             ]
         ]
     },
@@ -24640,8 +24596,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2880,
-        "y": 480,
+        "x": 3420,
+        "y": 740,
         "wires": [
             [
                 "25691ccde88f5530"
@@ -24654,16 +24610,20 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "group": "830a81a1c54c6ef5",
-        "order": 8,
+        "order": 7,
         "width": 6,
         "height": 1,
         "name": "",
-        "label": "Calculated dew point",
-        "format": "{{msg.payload}} °C",
+        "label": "-- Dew point",
+        "format": "{{msg.payload | number:2}} °C",
         "layout": "row-spread",
         "className": "",
-        "x": 3360,
-        "y": 680,
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 3130,
+        "y": 560,
         "wires": []
     },
     {
@@ -24672,18 +24632,18 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "group": "830a81a1c54c6ef5",
-        "name": "Line - Setup ",
-        "order": 5,
+        "name": "Line - Setup",
+        "order": 12,
         "width": 6,
         "height": 1,
-        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left></left> \n</html>\n",
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Sensor value</left> \n</html>\n",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 3330,
-        "y": 640,
+        "x": 3130,
+        "y": 780,
         "wires": [
             []
         ]
@@ -24692,38 +24652,25 @@
         "id": "2bb5988706fb572a",
         "type": "function",
         "z": "a938de76db0b71f6",
-        "g": "f2aa79821dfd1110",
-        "name": "",
-        "func": "msg.payload = Number(msg.payload).toFixed(1);\nmsg.payload = parseFloat(msg.payload);\n\nvar RH = context.get('RH');\nvar T = context.get('Temperature');\n\nif (msg.topic == \"RH\"){\n    context.set('RH',msg.payload);\n    if (T===undefined)  {return null;}\n}\n\n\nif (msg.topic == \"Temperature\") {\n    context.set('Temperature',msg.payload);\n    if (RH===undefined)\n        {return null;}\n}\n\n\nif (RH !== undefined && T !== undefined){\n    var A = Math.log(RH / 100) / Math.log(2.718282) + 17.62 * T / (243.12 + T);         // BLB 20230405 corrected Td calculation\n    var Td = 243.12 * A / (17.62 - A);\n    var TOP24_Cool_Delta                    = global.get('TOP24_Cool_Delta',\"file\");\n\n    msg.payload = Td;\n    msg.payload = Number(msg.payload).toFixed(1);\n    msg.payload = parseFloat(msg.payload);\n    \n    let msg1={};    // DewPoint\n    let msg2={};    // Temperature\n    let msg3={};    // Lower limit for setpoint\n    \n    msg1.payload = Td;\n    msg1.payload = Number(msg1.payload).toFixed(1);\n    msg1.payload = parseFloat(msg1.payload);\n    msg1.topic = \"Dew Point (°C)\";\n    flow.set(\"dew_point\",msg1);\n    \n    \n    msg2.payload = T;\n    msg2.payload = Number(msg2.payload).toFixed(1);\n    msg2.payload = parseFloat(msg2.payload);\n    msg2.topic = \"Temperature\"\n    \n    msg3.payload = Td + TOP24_Cool_Delta + 1;\n    msg3.payload = Number(msg3.payload).toFixed(1);\n    msg3.payload = parseFloat(msg3.payload);\n    msg3.payload = Math.ceil(msg3.payload);\n    msg3.topic = 'Setpoint lower limit';\n    \n    return [[msg1,msg2,msg3],msg,msg3];\n}",
-        "outputs": 3,
+        "g": "992121a08b66faa3",
+        "name": "Save RH / T",
+        "func": "msg.payload = Number(msg.payload).toFixed(2);\nmsg.payload = parseFloat(msg.payload);\n\nvar CurrentTime = new Date().getTime();\nvar F_COOL = global.get('F_COOL',\"file\");\n    if (F_COOL === undefined) {return null}\n\nif (msg.topic == \"RH\"){\n    global.set('F_COOL.RelativeHumidity',msg.payload,\"file\");\n    global.set('F_COOL.RelativeHumidity_timestamp',CurrentTime,\"file\");\n}\n\nif (msg.topic == \"Temperature\") {\n    global.set('F_COOL.Temperature',msg.payload,\"file\");\n    global.set('F_COOL.Temperature_timestamp',CurrentTime,\"file\");\n}\n\n////////////////////////////////////////////////////////////////////////////////\n// if there are no values present, then exit the function.\nif (F_COOL.Temperature_timestamp === undefined || F_COOL.RelativeHumidity_timestamp === undefined) { \n    return null;\n    }\n\n\n////////////////////////////////////////////////////////////////////////////////\nif ((CurrentTime - F_COOL.Temperature_timestamp) > 60*1000*60*2) {   // 2 hours\n    global.set('F_COOL.Temperature_timestamp',undefined,\"file\");\n    return null;\n    }\nif ((CurrentTime - F_COOL.RelativeHumidity_timestamp) > 60*1000*60*2) {   // 2 hours\n    global.set('F_COOL.RelativeHumidity_timestamp',undefined,\"file\");\n    return null;\n    }\n",
+        "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3300,
-        "y": 140,
+        "x": 3710,
+        "y": 160,
         "wires": [
-            [
-                "71a59b9661071adc"
-            ],
-            [
-                "6fc958da73fbdf09"
-            ],
-            [
-                "07ba09a16be50433"
-            ]
-        ],
-        "outputLabels": [
-            "Dew Point (°C)",
-            "Temperature",
-            "Setpoint lower limit"
+            []
         ]
     },
     {
         "id": "37a369fd9ad03085",
         "type": "change",
         "z": "a938de76db0b71f6",
-        "g": "f2aa79821dfd1110",
+        "g": "992121a08b66faa3",
         "name": "RH",
         "rules": [
             {
@@ -24739,8 +24686,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3150,
-        "y": 100,
+        "x": 3130,
+        "y": 140,
         "wires": [
             [
                 "2bb5988706fb572a"
@@ -24751,7 +24698,7 @@
         "id": "0df0e84326dbeec7",
         "type": "change",
         "z": "a938de76db0b71f6",
-        "g": "f2aa79821dfd1110",
+        "g": "992121a08b66faa3",
         "name": "Temperature",
         "rules": [
             {
@@ -24767,7 +24714,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3150,
+        "x": 3130,
         "y": 180,
         "wires": [
             [
@@ -24779,13 +24726,13 @@
         "id": "cdd89d5c10c71407",
         "type": "ui_chart",
         "z": "a938de76db0b71f6",
-        "g": "f2aa79821dfd1110",
+        "g": "992121a08b66faa3",
         "name": "",
         "group": "397a51ddac8419aa",
         "order": 1,
         "width": 11,
-        "height": 12,
-        "label": "",
+        "height": "13",
+        "label": "Temperatures",
         "chartType": "line",
         "legend": "true",
         "xformat": "HH:mm:ss",
@@ -24801,12 +24748,12 @@
         "useOneColor": false,
         "useUTC": false,
         "colors": [
+            "#de425b",
+            "#dd6e81",
+            "#f59b56",
             "#1f77b4",
-            "#ff7f0e",
             "#7f8389",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
+            "#afb4bb",
             "#ff9896",
             "#9467bd",
             "#c5b0d5"
@@ -24814,8 +24761,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 3750,
-        "y": 140,
+        "x": 3520,
+        "y": 300,
         "wires": [
             [
                 "6a50ef63d9d35647"
@@ -24826,13 +24773,13 @@
         "id": "030fbd5026e5a295",
         "type": "link in",
         "z": "a938de76db0b71f6",
-        "g": "f2aa79821dfd1110",
+        "g": "992121a08b66faa3",
         "name": "CONNECT >> Custom sensor - Humidity (for humidity dewpoint)",
         "links": [
             "b70243b30a7c5db8"
         ],
-        "x": 2810,
-        "y": 100,
+        "x": 2790,
+        "y": 120,
         "wires": [
             [
                 "37a369fd9ad03085",
@@ -24845,13 +24792,13 @@
         "id": "7122d217051222ff",
         "type": "link in",
         "z": "a938de76db0b71f6",
-        "g": "f2aa79821dfd1110",
+        "g": "992121a08b66faa3",
         "name": "CONNECT >> Custom sensor - Temperature  (for humidity dewpoint)",
         "links": [
             "21b7700ac74fcbe8"
         ],
-        "x": 2800,
-        "y": 180,
+        "x": 2780,
+        "y": 200,
         "wires": [
             [
                 "0df0e84326dbeec7",
@@ -24866,7 +24813,7 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "group": "830a81a1c54c6ef5",
-        "order": 6,
+        "order": 14,
         "width": 0,
         "height": 0,
         "name": "",
@@ -24874,8 +24821,12 @@
         "format": "{{msg.payload}} %",
         "layout": "row-spread",
         "className": "",
-        "x": 3900,
-        "y": 100,
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 3700,
+        "y": 120,
         "wires": []
     },
     {
@@ -24884,7 +24835,7 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "group": "830a81a1c54c6ef5",
-        "order": 7,
+        "order": 13,
         "width": 6,
         "height": 1,
         "name": "",
@@ -24892,8 +24843,12 @@
         "format": "{{msg.payload}} °C",
         "layout": "row-spread",
         "className": "",
-        "x": 3930,
-        "y": 180,
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 3730,
+        "y": 200,
         "wires": []
     },
     {
@@ -24903,9 +24858,11 @@
         "g": "992121a08b66faa3",
         "name": "COOL gui changes to function trigger2",
         "mode": "link",
-        "links": [],
-        "x": 3645,
-        "y": 540,
+        "links": [
+            "ab9d088e21062ff8"
+        ],
+        "x": 3595,
+        "y": 680,
         "wires": []
     },
     {
@@ -24916,9 +24873,6 @@
         "name": "",
         "props": [
             {
-                "p": "payload"
-            },
-            {
                 "p": "topic",
                 "vt": "str"
             }
@@ -24927,11 +24881,9 @@
         "crontab": "",
         "once": true,
         "onceDelay": "1",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 2970,
-        "y": 240,
+        "topic": "restore",
+        "x": 2760,
+        "y": 260,
         "wires": [
             [
                 "0e8ca4bb561b59ed"
@@ -24944,14 +24896,14 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "name": "Store chart",
-        "func": "var myArray = msg;\nflow.set(\"chart_cool\", myArray,\"file\");",
+        "func": "var myArray = msg;\nglobal.set(\"F_COOL.chart\", myArray,\"file\");",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3910,
-        "y": 140,
+        "x": 3710,
+        "y": 300,
         "wires": [
             []
         ]
@@ -24962,17 +24914,17 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "name": "Restore chart",
-        "func": "let msg1={};\nmsg1 = flow.get(\"chart_cool\",\"file\");\nif (msg1 === undefined)\n    {return null;}\nreturn msg1;\n",
+        "func": "if (msg.topic == 'restore') {\n    let msg1={};\n    msg1 = global.get(\"F_COOL.chart\",\"file\");\n    if (msg1 === undefined)\n        {return null;}\n    return msg1;\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3440,
-        "y": 240,
+        "x": 3140,
+        "y": 260,
         "wires": [
             [
-                "71a59b9661071adc"
+                "cdd89d5c10c71407"
             ]
         ]
     },
@@ -24982,14 +24934,14 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "name": "Block?",
-        "func": "if (global.get('MQTT.block_active', \"file\") == 1) {\n    let msg66 = {}; // pin 2 - To Notify msg (and INPUTdebuglog)\n    msg66.topic = \"SYSTEM\";\n    msg66.payload = \"MQTT-Commands are blocked!\";\n    return [null, msg66];\n    }\nreturn [msg, null];",
+        "func": "if (global.get('MQTT.block_active', \"file\") == 1) {\n    let msg66 = {}; // pin 2 - To Notify msg (and INPUTdebuglog)\n    msg66.topic = \"SYSTEM\";\n    msg66.payload = \"MQTT-Commands are blocked!\";\n    return [null, msg66];\n    }\nif (global.get('MQTT_Source') === undefined) { global.set('MQTT_Source', \"GUI\"); }\nreturn [msg, null];",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3850,
-        "y": 280,
+        "x": 3870,
+        "y": 720,
         "wires": [
             [
                 "e248409fb553d16c"
@@ -25010,53 +24962,9 @@
             "c764c19340b7b720",
             "fa1495af192e1c1e"
         ],
-        "x": 3965,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "af1404724ba9f9f4",
-        "type": "ui_text",
-        "z": "a938de76db0b71f6",
-        "g": "992121a08b66faa3",
-        "group": "830a81a1c54c6ef5",
-        "order": 10,
-        "width": 6,
-        "height": "5",
-        "name": "text below note",
-        "label": "The COOL setpoint can always be set.<br>Please make sure you do not cool below the room dew point to prevent condensation. For this, a good room sensor is adviced<br><br>Only with humidity sensor present: <br>Setpoint lower limit = dew point + Cool delta + 1<br>Setpoint >= Setpoint lower limit",
-        "format": "",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": "",
-        "color": "#000000",
-        "x": 3340,
-        "y": 760,
-        "wires": []
-    },
-    {
-        "id": "103eefceda366f39",
-        "type": "ui_template",
-        "z": "a938de76db0b71f6",
-        "g": "992121a08b66faa3",
-        "group": "830a81a1c54c6ef5",
-        "name": "Line - Note",
-        "order": 9,
-        "width": 6,
-        "height": 1,
-        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Note:</left> \n</html>\n",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 3330,
+        "x": 3975,
         "y": 720,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "71a59b9661071adc",
@@ -25068,16 +24976,16 @@
         "timeout": "5",
         "timeoutUnits": "seconds",
         "rate": "1",
-        "nbRateUnits": "300",
-        "rateUnits": "second",
+        "nbRateUnits": "5",
+        "rateUnits": "minute",
         "randomFirst": "1",
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": true,
         "allowrate": false,
         "outputs": 1,
-        "x": 3630,
-        "y": 140,
+        "x": 3270,
+        "y": 300,
         "wires": [
             [
                 "cdd89d5c10c71407"
@@ -25090,16 +24998,16 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "group": "397a51ddac8419aa",
-        "order": 10,
-        "width": "0",
-        "height": "0",
+        "order": 3,
+        "width": 0,
+        "height": 0,
         "name": "text below chart",
         "label": "This chart shows 1 datapoint every 5 minutes",
         "format": "",
         "layout": "row-spread",
         "className": "",
-        "x": 3720,
-        "y": 200,
+        "x": 3520,
+        "y": 340,
         "wires": []
     },
     {
@@ -25136,10 +25044,11 @@
         "name": "TOP72_Z1_Cool_Request_Temp",
         "mode": "link",
         "links": [
+            "ab9d088e21062ff8",
             "ddcff50cd968534a"
         ],
-        "x": 2875,
-        "y": 600,
+        "x": 3595,
+        "y": 740,
         "wires": []
     },
     {
@@ -25148,11 +25057,83 @@
         "z": "a938de76db0b71f6",
         "g": "992121a08b66faa3",
         "group": "830a81a1c54c6ef5",
-        "order": 8,
+        "order": 10,
         "width": 6,
         "height": 1,
         "name": "",
-        "label": "Setpoint lower limit",
+        "label": "-- Lower limit (calc)",
+        "format": "{{msg.payload | number:2}} °C",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "Century Gothic,CenturyGothic,AppleGothic,sans-serif",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 3150,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "78e42bcd53ea8133",
+        "type": "ui_numeric",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "Safety margin",
+        "label": "-- Safety margin",
+        "tooltip": "",
+        "group": "830a81a1c54c6ef5",
+        "order": 8,
+        "width": 6,
+        "height": 1,
+        "wrap": false,
+        "passthru": false,
+        "topic": "safety_margin",
+        "topicType": "str",
+        "format": "{{value}} °C",
+        "min": "1.5",
+        "max": "10",
+        "step": "0.5",
+        "className": "",
+        "x": 3140,
+        "y": 600,
+        "wires": [
+            [
+                "b65cc48d66b605f8",
+                "57bd8e997e9659ed"
+            ]
+        ]
+    },
+    {
+        "id": "57bd8e997e9659ed",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "save",
+        "func": "global.set('F_COOL.' + msg.topic,msg.payload,\"file\");\nmsg.flush = true;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3350,
+        "y": 680,
+        "wires": [
+            [
+                "967eb9e23a816211"
+            ]
+        ]
+    },
+    {
+        "id": "b6ad3dc97e3bae93",
+        "type": "ui_text",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "830a81a1c54c6ef5",
+        "order": 11,
+        "width": 6,
+        "height": 1,
+        "name": "Final Setpoint",
+        "label": "Setpoint final",
         "format": "{{msg.payload}} °C",
         "layout": "row-spread",
         "className": "",
@@ -25160,9 +25141,397 @@
         "font": "Century Gothic,CenturyGothic,AppleGothic,sans-serif",
         "fontSize": "",
         "color": "#000000",
-        "x": 3570,
-        "y": 760,
+        "x": 3140,
+        "y": 740,
         "wires": []
+    },
+    {
+        "id": "069a1e1137dff3c5",
+        "type": "ui_template",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "830a81a1c54c6ef5",
+        "name": "Line - Setup 2",
+        "order": 15,
+        "width": 6,
+        "height": 1,
+        "format": "<html>\n <!--box-shadow: (left) -5px (top) -5px (blur) 5px (spread)5px (color)#888;-->\n<head>\n<hr style=\n    \"border-top: 1px solid #a39d99;\n    border-width: 0px 0px 0;\n    width: 100%;\n    margin-left: auto;\n    margin-right: auto;\n    height: 0px;\n    margin-top: 0;\n    border-bottom: 1px solid #a39d99;\n    box-shadow: 0 0 3px #a39d99\";\n\t>\n<left>Cool setting</left> \n</html>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 3720,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "de80c0811e237e25",
+        "type": "rbe",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 3850,
+        "y": 680,
+        "wires": [
+            [
+                "6b2644c3a510f50f"
+            ]
+        ]
+    },
+    {
+        "id": "31e6f728a58af434",
+        "type": "inject",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "RESET",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[ ]",
+        "payloadType": "json",
+        "x": 3360,
+        "y": 400,
+        "wires": [
+            [
+                "c49ef874bd1fee9d"
+            ]
+        ]
+    },
+    {
+        "id": "8446efaaa0db1b07",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "Load on boot",
+        "func": "var F_COOL = global.get('F_COOL',\"file\");\nvar save;\n\nif (F_COOL === undefined)                                   { F_COOL={}; save = 1 }\nif (F_COOL.setpoint_requested === undefined)                { F_COOL.setpoint_requested = 18; save = 1}              // Default value\nif (F_COOL.safety_margin === undefined)                     { F_COOL.safety_margin = 3; save = 1 }                   // Default value\nif (F_COOL.manual_setpoint_lower_limit === undefined)       { F_COOL.manual_setpoint_lower_limit = 12; save = 1 }    // Default value\n\nif (save == 1)                                              { global.set('F_COOL',F_COOL,\"file\"); }\n\nlet msg1={};        // setpoint_requested\nlet msg2={};        // safety_margin\nlet msg3={};        // manual_setpoint_lower_limit\nlet msg4={};        // calculated_dew_point\nlet msg5={};        // calculated_setpoint_lower_limit\n\nmsg1.payload = F_COOL.setpoint_requested;\nmsg2.payload = F_COOL.safety_margin;\nmsg3.payload = F_COOL.manual_setpoint_lower_limit; \nnode.send([msg1, msg2, msg3]);\n\nif (F_COOL.calculated_dew_point !== undefined) {\n    msg4.payload = F_COOL.calculated_dew_point;\n    node.send([null,null,null,msg4]);\n}\n\nif (F_COOL.calculated_setpoint_lower_limit !== undefined) {\n    msg5.payload = F_COOL.calculated_setpoint_lower_limit;\n    node.send([null,null,null,null,msg5]);\n}\n\n\n\n",
+        "outputs": 5,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2790,
+        "y": 500,
+        "wires": [
+            [
+                "fcc08a6bfb0d246e"
+            ],
+            [
+                "b65cc48d66b605f8"
+            ],
+            [
+                "4758413b4dd7826c"
+            ],
+            [
+                "6fc958da73fbdf09"
+            ],
+            [
+                "07ba09a16be50433"
+            ]
+        ],
+        "outputLabels": [
+            "setpoint_requested",
+            "safety_margin",
+            "manual_setpoint_lower_limit",
+            "calculated_dew_point",
+            "calculated_setpoint_lower_limit "
+        ]
+    },
+    {
+        "id": "af6c986b9bd32b5d",
+        "type": "inject",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2610,
+        "y": 480,
+        "wires": [
+            [
+                "8446efaaa0db1b07"
+            ]
+        ]
+    },
+    {
+        "id": "4a7112414493107c",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "b08c0859f26b8233",
+        "name": "COOL function",
+        "func": "var F_COOL                      = global.get('F_COOL',\"file\");\n    if (F_COOL === undefined || F_COOL.setpoint_requested === undefined) {return null}\nvar TOP20_ThreeWay_Valve_State  = global.get('TOP20_ThreeWay_Valve_State');\nvar TOP4_Operating_Mode_State   = global.get('TOP4_Operating_Mode_State',\"file\");\nvar TOP0_Heatpump_State         = global.get('TOP0_Heatpump_State',\"file\");\n//\n//  TOP20_ThreeWay_Valve_State  = 0 (ROOM)\n//  TOP4_Operating_Mode_State  = 1, 5  TOP20=0\n//\n//// Operating mode     0=Heat only,     1=Cool only,       2=Auto(Heat),       3=DHW only,       4=Heat+DHW,      5=Cool+DHW,       6=Auto(Heat)+DHW,       7=Auto(Cool),     8=Auto(Cool)+DHW\n////////////////////////////////////////////////////////////////////////////////\n//                          DEW POINT CALCULATION                             //\n////////////////////////////////////////////////////////////////////////////////\nif (F_COOL.RelativeHumidity !== undefined && F_COOL.Temperature !== undefined && F_COOL.safety_margin !== undefined && F_COOL.manual_setpoint_lower_limit !== undefined) {\n    \n    var A = Math.log(F_COOL.RelativeHumidity / 100) / Math.log(2.718282) + 17.62 * F_COOL.Temperature / (243.12 + F_COOL.Temperature);         // BLB 20230405 corrected Td calculation\n    var Td = 243.12 * A / (17.62 - A);\n    \n    let msg1={};    // calculated_dew_point\n    let msg2={};    // calculated_setpoint_lower_limit\n    let msg3={};    // final setpoint\n\n    msg1.payload = Td;\n    msg1.payload = Number(msg1.payload).toFixed(2);\n    msg1.payload = parseFloat(msg1.payload);\n    msg1.topic = \"Dew Point (°C)\";\n        global.set(\"F_COOL.calculated_dew_point\",msg1.payload,\"file\");\n\n    msg2.payload = Td + F_COOL.safety_margin;\n    msg2.payload = Number(msg2.payload).toFixed(2);\n    msg2.payload = parseFloat(msg2.payload);\n    msg2.topic = 'Setpoint lower limit';\n        global.set(\"F_COOL.calculated_setpoint_lower_limit\",msg2.payload,\"file\");\n\n    msg3.payload = Math.ceil(msg2.payload);\n    if (msg3.payload < F_COOL.manual_setpoint_lower_limit)  { msg3.payload = F_COOL.manual_setpoint_lower_limit; }\n    if (F_COOL.setpoint_requested > msg3.payload)           { msg3.payload = F_COOL.setpoint_requested; }\n\n    // Check if heatpump is on. if not, do nothing / exit\n    if (TOP0_Heatpump_State === undefined || TOP0_Heatpump_State == 0) { return null } \n    \n    // check if COOL is in the current operating mode. if not, do nothing / exit\n    if (TOP4_Operating_Mode_State === undefined || TOP4_Operating_Mode_State == 0 || TOP4_Operating_Mode_State == 2 || TOP4_Operating_Mode_State == 3 || TOP4_Operating_Mode_State == 4) { return null }\n\n    msg3.topic = 'new setpoint';\n    return msg3 \n\n}\n\n\n// If there is no humidity or temperature sensor data, the requested setpoint will be sent.\nif (F_COOL.RelativeHumidity === undefined && F_COOL.Temperature === undefined) {\n    msg3.payload = F_COOL.setpoint_requested\n    msg3.topic = 'new setpoint';\n    return msg3 \n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3680,
+        "y": 560,
+        "wires": [
+            [
+                "de80c0811e237e25",
+                "793e8c5bacadc28c"
+            ]
+        ],
+        "outputLabels": [
+            "Setpoint Requested"
+        ]
+    },
+    {
+        "id": "de420200e2112c80",
+        "type": "inject",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3470,
+        "y": 560,
+        "wires": [
+            [
+                "4a7112414493107c"
+            ]
+        ]
+    },
+    {
+        "id": "bc259ef4511cfc49",
+        "type": "ui_numeric",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "Manual lower limit",
+        "label": "-- Lower limit (man)",
+        "tooltip": "",
+        "group": "830a81a1c54c6ef5",
+        "order": 9,
+        "width": 6,
+        "height": 1,
+        "wrap": false,
+        "passthru": false,
+        "topic": "manual_setpoint_lower_limit",
+        "topicType": "str",
+        "format": "{{value}} °C",
+        "min": "5",
+        "max": "20",
+        "step": "1",
+        "className": "",
+        "x": 3150,
+        "y": 680,
+        "wires": [
+            [
+                "4758413b4dd7826c",
+                "57bd8e997e9659ed"
+            ]
+        ]
+    },
+    {
+        "id": "a0b2a8ca1de90c30",
+        "type": "link in",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "link in 59",
+        "links": [
+            "47cb7500b0321fc1",
+            "49ebac0412d87642",
+            "b16ab0b5c23a9ca9"
+        ],
+        "x": 2665,
+        "y": 520,
+        "wires": [
+            [
+                "8446efaaa0db1b07"
+            ]
+        ]
+    },
+    {
+        "id": "967eb9e23a816211",
+        "type": "trigger",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "3",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 3480,
+        "y": 680,
+        "wires": [
+            [
+                "4a7112414493107c",
+                "f13532d971be853e"
+            ]
+        ]
+    },
+    {
+        "id": "7fd8e4be18710797",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "Chart data",
+        "func": "let msg1={};        // setpoint final\n    msg1.topic = 'Setpoint final';\n    \nlet msg2={};        // setpoint requested\n    msg2.topic = 'Setpoint requested';\n    \nlet msg3={};        // temperature\n    msg3.topic = 'Temperature';\n    \nlet msg4={};        // dewpoint\n    msg4.topic = 'Dew Point';\n    \nlet msg5={};        // calculated lower setpoint\n    msg5.topic = 'Lower limit (calc)';\n    \nlet msg6={};        // manual lower setpoint\n    msg6.topic = 'Lower limit (man)';\n\nif (msg.flush !== undefined) {\n    msg1.flush = msg.flush;\n    msg2.flush = msg.flush;\n    msg3.flush = msg.flush;\n    msg4.flush = msg.flush;\n    msg5.flush = msg.flush;\n    msg6.flush = msg.flush;\n\n}\n\nif (msg.topic == 'Z1_Cool_Request_Temp') {\n    msg1.payload = msg.payload;\n    node.send(msg1);\n}\n\n\nvar F_COOL = global.get('F_COOL',\"file\");\nif (F_COOL === undefined) {return null}\n\n\nif (msg.topic != 'Z1_Cool_Request_Temp') {\n    msg1.payload = global.get('Z1_Cool_Request_Temp');\n    if (msg1.payload === undefined) {return null}\n    node.send(msg1);\n}\n\nif (F_COOL.setpoint_requested === undefined) {return null}\nmsg2.payload = F_COOL.setpoint_requested;\nnode.send(msg2);\n\nif (F_COOL.Temperature === undefined) {return null}\nmsg3.payload = F_COOL.Temperature;\nnode.send(msg3);\n\nif (F_COOL.calculated_dew_point === undefined) {return null}\nmsg4.payload = F_COOL.calculated_dew_point;\nnode.send(msg4);\n\nif (F_COOL.calculated_setpoint_lower_limit === undefined) {return null}\nmsg5.payload = F_COOL.calculated_setpoint_lower_limit;\nnode.send(msg5);\n\nif (F_COOL.manual_setpoint_lower_limit === undefined) {return null}\nmsg6.payload = F_COOL.manual_setpoint_lower_limit;\nnode.send(msg6);\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3130,
+        "y": 300,
+        "wires": [
+            [
+                "71a59b9661071adc"
+            ]
+        ]
+    },
+    {
+        "id": "ab9d088e21062ff8",
+        "type": "link in",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "link in 60",
+        "links": [
+            "f13532d971be853e",
+            "25691ccde88f5530"
+        ],
+        "x": 2685,
+        "y": 300,
+        "wires": [
+            [
+                "7fd8e4be18710797"
+            ]
+        ]
+    },
+    {
+        "id": "b16ab0b5c23a9ca9",
+        "type": "link out",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "link out 61",
+        "mode": "link",
+        "links": [
+            "a0b2a8ca1de90c30"
+        ],
+        "x": 3975,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "793e8c5bacadc28c",
+        "type": "delay",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 3870,
+        "y": 560,
+        "wires": [
+            [
+                "b16ab0b5c23a9ca9"
+            ]
+        ]
+    },
+    {
+        "id": "2cc53aa4981b4a7d",
+        "type": "ui_text",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "group": "830a81a1c54c6ef5",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "name": "spacer 1",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 2840,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "c49ef874bd1fee9d",
+        "type": "function",
+        "z": "a938de76db0b71f6",
+        "g": "992121a08b66faa3",
+        "name": "check",
+        "func": "var check = flow.get(\"chart_cool\",\"file\");\n\nif (check === undefined) { return null }\n\nelse { \n    flow.set(\"chart_cool\", undefined,\"file\");\n    return msg\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3310,
+        "y": 340,
+        "wires": [
+            [
+                "cdd89d5c10c71407"
+            ]
+        ]
     },
     {
         "id": "43c4ee3ee4757f3c",
@@ -25219,9 +25588,7 @@
             "fcc8ad2c22433dd3"
         ],
         "x": 154,
-        "y": 19,
-        "w": 1292,
-        "h": 322
+        "y": 19
     },
     {
         "id": "c1355934e3f948a0",
@@ -25412,9 +25779,7 @@
             "2cfe87f78a5f6c25"
         ],
         "x": 164,
-        "y": 419,
-        "w": 1292,
-        "h": 242
+        "y": 419
     },
     {
         "id": "cb0fc587b4884ad4",
@@ -25548,9 +25913,7 @@
             "6ade9410c4a9dd70"
         ],
         "x": 1894,
-        "y": 59,
-        "w": 292,
-        "h": 162
+        "y": 59
     },
     {
         "id": "d9eb0a2937cbbc7b",
@@ -25583,9 +25946,7 @@
             "f8be68a01d84e361"
         ],
         "x": 164,
-        "y": 679,
-        "w": 1282,
-        "h": 202
+        "y": 679
     },
     {
         "id": "d0bf8193719ce87c",
@@ -25690,9 +26051,7 @@
             "78cd6de319a6d061"
         ],
         "x": 1534,
-        "y": 879,
-        "w": 1252,
-        "h": 182
+        "y": 879
     },
     {
         "id": "8f85827475badab6",
@@ -25739,9 +26098,7 @@
             "ea22f152face3bf2"
         ],
         "x": 174,
-        "y": 1059,
-        "w": 1462,
-        "h": 242
+        "y": 1059
     },
     {
         "id": "e0d26a8145db4f6d",
@@ -30597,7 +30954,7 @@
         "ymin": "",
         "ymax": "",
         "removeOlder": "24",
-        "removeOlderPoints": "2000",
+        "removeOlderPoints": "2500",
         "removeOlderUnit": "3600",
         "cutout": 0,
         "useOneColor": false,
@@ -33666,6 +34023,26 @@
         "y": 619
     },
     {
+        "id": "17c379c76892162f",
+        "type": "group",
+        "z": "72f2748729e53ad1",
+        "name": "COOL HELP",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b445415377a62384",
+            "d8661c018a09abd2",
+            "c63ac699b2d80d96",
+            "a2b3dab1e41c9373",
+            "53c5c87f7c903f13",
+            "d2a7400a8f949e59",
+            "22f7cfa8245c94ae"
+        ],
+        "x": 134,
+        "y": 919
+    },
+    {
         "id": "be48f3104249b8a0",
         "type": "ui_button",
         "z": "72f2748729e53ad1",
@@ -33708,7 +34085,8 @@
             "3b5ab802c150fd86",
             "5f6574f97f240326",
             "973d8234e83e6744",
-            "284c3282438b7e4c"
+            "284c3282438b7e4c",
+            "a2b3dab1e41c9373"
         ],
         "x": 205,
         "y": 60,
@@ -34769,6 +35147,171 @@
                 "c652e74baa241047"
             ]
         ]
+    },
+    {
+        "id": "b445415377a62384",
+        "type": "ui_button",
+        "z": "72f2748729e53ad1",
+        "g": "17c379c76892162f",
+        "name": "",
+        "group": "830a81a1c54c6ef5",
+        "order": 2,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Help",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "info",
+        "payload": "{\"group\":{\"show\":[\"Cool_Help\"],\"hide\":[\"Cool_Settings\"]}}",
+        "payloadType": "json",
+        "topic": "",
+        "topicType": "str",
+        "x": 230,
+        "y": 1000,
+        "wires": [
+            [
+                "a2b3dab1e41c9373"
+            ]
+        ]
+    },
+    {
+        "id": "d8661c018a09abd2",
+        "type": "ui_button",
+        "z": "72f2748729e53ad1",
+        "g": "17c379c76892162f",
+        "name": "",
+        "group": "1110c1df5a310684",
+        "order": 2,
+        "width": 1,
+        "height": 1,
+        "passthru": true,
+        "label": "",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "close",
+        "payload": "{\"group\":{\"hide\":[\"Cool_Help\"],\"show\":[\"Cool_Settings\"]}}",
+        "payloadType": "json",
+        "topic": "",
+        "topicType": "str",
+        "x": 370,
+        "y": 1040,
+        "wires": [
+            [
+                "a2b3dab1e41c9373"
+            ]
+        ]
+    },
+    {
+        "id": "c63ac699b2d80d96",
+        "type": "ui_text",
+        "z": "72f2748729e53ad1",
+        "g": "17c379c76892162f",
+        "group": "1110c1df5a310684",
+        "order": 1,
+        "width": 9,
+        "height": 1,
+        "name": "spacer 1",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 240,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "a2b3dab1e41c9373",
+        "type": "link out",
+        "z": "72f2748729e53ad1",
+        "g": "17c379c76892162f",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "32e18af8aea0be90"
+        ],
+        "x": 715,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "53c5c87f7c903f13",
+        "type": "ui_template",
+        "z": "72f2748729e53ad1",
+        "g": "17c379c76892162f",
+        "group": "1110c1df5a310684",
+        "name": "Line - Instructions text",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<h3>COOL function</h3>\n<br/>\n<h3>Requirements</h3>\nIf you want to use the function, you require a good temperature and humidity sensor in the target area.<br>\nWith this information the dew point is calculated. \nThe requested cool setpoint temperature will be automatically be corrected to be above the dew point.<br><br>\n<h3>What is a dew point?</h3>\nAir in a room contains a certain amount of water / humidity. This water is gaseous / vapour. When the air temperature lowers, the amount of humidity that is able to 'fit' in gaseous form, lowers as well. At a certain temperature it is at its maximum (100% humidity). Below this temperature, water vapour starts to condensate onto cold objects. <br>\nThe temperature where water in the air starts to condensate, is called the dew-point.\n<br/><br/>\n<h3>Why is calculating a dew point important?</h3>\nWhen the temperature of the cooling water is below the dew point, water will condensate on the radiators or your floor heating system. Water ends up on the floor. Combine this with a good ventilation system (read: endless supply of fresh air ... and gaseous water) this could become a big wet problem if you have a wooden floor.<br/><br/>\n<h3>I do not have a humidity sensor. Can I still cool?</h3>\nYes. Of course. <br>\nBut the responsibility of not setting a too low target temperature is your own.<br/><br/>\n<h3>Settings</h3>\n<u>Setpoint requested</u>\nSet the desired setpoint temperature of the cooling water.\n<br><br>\n<U>Safety margin:</U>\nThis value is added to the calculated dew point temperature. The minimum and default is 1.5 °C. \n<br><br>\n<u>Lower limit (man):</u>\nYou can manually set a fixed lower limit of the cooling set point.\n<br><br>\n<u>Lower limit (calc):</u>\nThis is the calculated lower limit of the setpoint. <br>\n[Value] = [dew point temperature] + [Safety margin] <br>\nThis value is not rounded.\n<br><br>\n<u>final setpoint:</u>\nThe final setpoint value is the [Lower limit (calc)] value but always rounded up. So a calculated value of 15.01 will result in a [Setpoint final] temperature of 16°C.\n<br><br>\n<u>Conditions:</u>\nThere are conditions for the function to allow sending a new final setpoint to the heat pump.<br>\nWhen the heatpump is turned OFF, the new setpoint wil NOT be sent. <br>\nWhen current operating mode is (0) Heat Only, (2) Auto(Heat), (3) DHW Only or (4) Heat+DHW, a new setpoint will NOT be sent<br>\n\nIn these cases, the calculated setpoint shown in the graph and settings will be incorrect or not updated.  \n\n\n<br><br><br>\nFor reference:<br>\nT dew point = 243.12 * A / (17.62 - A)<br>\nA = Math.log( RH / 100) / Math.log(2.718282) + 17.62 * Temperature / (243.12 + Temperature)\n<br><br>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 280,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2a7400a8f949e59",
+        "type": "inject",
+        "z": "72f2748729e53ad1",
+        "d": true,
+        "g": "17c379c76892162f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "{\"group\":{\"hide\":[\"COOL_Help\"]}}",
+        "payloadType": "json",
+        "x": 230,
+        "y": 960,
+        "wires": [
+            [
+                "a2b3dab1e41c9373"
+            ]
+        ]
+    },
+    {
+        "id": "22f7cfa8245c94ae",
+        "type": "ui_text",
+        "z": "72f2748729e53ad1",
+        "g": "17c379c76892162f",
+        "group": "830a81a1c54c6ef5",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "name": "spacer 1",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 540,
+        "y": 1060,
+        "wires": []
     },
     {
         "id": "35d210f042827344",
@@ -48212,7 +48755,8 @@
         "name": "External trigger for forcefull dhw run",
         "links": [
             "f651bed25831c6f4",
-            "fb5aeb896e8acc76"
+            "fb5aeb896e8acc76",
+            "71d42304a3bcc09a"
         ],
         "x": 995,
         "y": 2440,
@@ -48336,7 +48880,9 @@
             "510f802795714d75"
         ],
         "x": 2114,
-        "y": 539
+        "y": 539,
+        "w": 692,
+        "h": 222
     },
     {
         "id": "5c3df7b5fb0fa130",
@@ -48366,7 +48912,9 @@
             "5837cbf37ef47ea6"
         ],
         "x": 1944,
-        "y": 1399
+        "y": 1399,
+        "w": 872,
+        "h": 302
     },
     {
         "id": "404eed4ef9d90803",
@@ -48386,7 +48934,9 @@
             "0911a9edae380679"
         ],
         "x": 2014,
-        "y": 19
+        "y": 19,
+        "w": 812,
+        "h": 122
     },
     {
         "id": "c361a153997d2dfd",
@@ -48409,7 +48959,9 @@
             "c5ae638b1b65bff4"
         ],
         "x": 824,
-        "y": 159
+        "y": 159,
+        "w": 262,
+        "h": 282
     },
     {
         "id": "8fe25c73d37fe670",
@@ -48471,7 +49023,9 @@
             "1d0bdc24983833d5"
         ],
         "x": 1944,
-        "y": 219
+        "y": 219,
+        "w": 942,
+        "h": 1162
     },
     {
         "id": "0bb11670c285bff1",
@@ -48507,7 +49061,9 @@
             "70016d3833197d68"
         ],
         "x": 1494,
-        "y": 259
+        "y": 259,
+        "w": 412,
+        "h": 722
     },
     {
         "id": "b4e7d28c61065a10",
@@ -48542,7 +49098,9 @@
             "9293ce0fe3ffaed3"
         ],
         "x": 1474,
-        "y": 999
+        "y": 999,
+        "w": 432,
+        "h": 602
     },
     {
         "id": "9ad65d8ac40d3b19",
@@ -51770,6 +52328,7 @@
             "2c79bd3e2dc678e7",
             "3d5dc66749eac00f",
             "62873fd698209c83",
+            "a0b2a8ca1de90c30",
             "c0d182e336a34912",
             "d9b3ca8bfaa4c10a"
         ],
@@ -51791,6 +52350,7 @@
             "838a27801d1da2db",
             "94fb2ca53932250b",
             "9fd7064be2551caa",
+            "a0b2a8ca1de90c30",
             "a1d3737a5a110aa9",
             "b9cc5f94e160078d",
             "d9b3ca8bfaa4c10a",
@@ -54815,6 +55375,17 @@
         "order": 5,
         "disp": false,
         "width": 14,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1110c1df5a310684",
+        "type": "ui_group",
+        "name": "Help",
+        "tab": "575dc22256fd966c",
+        "order": 3,
+        "disp": false,
+        "width": 10,
         "collapse": false,
         "className": ""
     },
