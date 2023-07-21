@@ -557,7 +557,7 @@ Fairly much has been changed. needs polishing.
 - [New feature] Add conditions to the scheduler. This is a nice addition to the existing scheduler.
 
 [2023-07-22] v23.05 Stable. Changes:
-- [New feature] Add to scheduler the option to set the DHW setpoint temperature. (#120 https://github.com/edterbak/NodeRed_Heishamon_control/issues/120)
+- [New feature] Add to scheduler the option to set the DHW setpoint temperature. (https://github.com/edterbak/NodeRed_Heishamon_control/issues/120)
 
 
 
