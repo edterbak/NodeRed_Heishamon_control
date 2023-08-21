@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 23.05 Stable release<br/> <br/>
+Current version: 23.06 Stable release<br/> <br/>
 <br/>
 It has been some time since the last release, v22.00 Stable release. Now, after 33 beta versions, the flow has progressed nicely and I feel it is time for an update.</br>
 Some things have improved a lot in my opinion. The layout, stability and usability. A lot of requested functionality has been added as well. I think this is a good result.</br></br>
@@ -558,6 +558,11 @@ Fairly much has been changed. needs polishing.
 
 [2023-07-22] v23.05 Stable. Changes:
 - [New feature] Add to scheduler the option to set the DHW setpoint temperature. (https://github.com/edterbak/NodeRed_Heishamon_control/issues/120)
+
+[2023-08-21] v23.06 Stable. Changes:
+- [New feature] Scheduler - Conditions now allow multiselect.
+- [FIX] Scheduler - after reboot the conditions were not shown in dashboard https://github.com/edterbak/NodeRed_Heishamon_control/issues/126
+- [FIX] COOL function -  [error] [function:COOL function] is resolved https://github.com/edterbak/NodeRed_Heishamon_control/issues/127
 
 
 
