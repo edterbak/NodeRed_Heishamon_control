@@ -564,7 +564,10 @@ Fairly much has been changed. needs polishing.
 - [FIX] Scheduler - after reboot the conditions were not shown in dashboard https://github.com/edterbak/NodeRed_Heishamon_control/issues/126
 - [FIX] COOL function -  [error] [function:COOL function] is resolved https://github.com/edterbak/NodeRed_Heishamon_control/issues/127
 
-
+[2023-08-21] v23.07 Stable. Changes:
+- [FIX] Scheduler - Due to grouping the scheduler did not function anymore. This should now be improved a lot. https://github.com/edterbak/NodeRed_Heishamon_control/issues/128
+- [FIX] Home dashboard did not show correct temperature behind 'Water temp'. Related to https://github.com/edterbak/NodeRed_Heishamon_control/issues/123.
+- [FIX] Detection on persistent storage should now work propperly. 
 
 ********
 
