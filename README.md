@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 23.07 Stable release<br/> <br/>
+Current version: 23.08 Stable release<br/> <br/>
 <br/>
 It has been some time since the last release, v22.00 Stable release. Now, after 33 beta versions, the flow has progressed nicely and I feel it is time for an update.</br>
 Some things have improved a lot in my opinion. The layout, stability and usability. A lot of requested functionality has been added as well. I think this is a good result.</br></br>
@@ -568,6 +568,9 @@ Fairly much has been changed. needs polishing.
 - [FIX] Scheduler - Due to grouping the scheduler did not function anymore. This should now be improved a lot. https://github.com/edterbak/NodeRed_Heishamon_control/issues/128
 - [FIX] Home dashboard did not show correct temperature behind 'Water temp'. Related to https://github.com/edterbak/NodeRed_Heishamon_control/issues/123.
 - [FIX] Detection on persistent storage should now work propperly. 
+
+[2023-09-01] v23.08 Stable. Changes:
+- [FIX] Scheduler - There seems to be a NodeRed bug in the JUNCTION functionality during export/import. I have now removed it from the scheduler tab. I will start replacing the junction nodes with other nodes due to this crazy issue. For now, it seems that all is working. Sorry for the possible hassle this might have caused. :( https://github.com/edterbak/NodeRed_Heishamon_control/issues/128
 
 ********
 
