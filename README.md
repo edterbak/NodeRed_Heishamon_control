@@ -571,7 +571,7 @@ Fairly much has been changed. needs polishing.
 
 [2023-09-01] v23.08 Stable. Changes:
 - [FIX] Scheduler - There seems to be a NodeRed bug in the JUNCTION functionality during export/import. I have now removed it from the scheduler tab. I will start replacing the junction nodes with other nodes due to this crazy issue. For now, it seems that all is working. Sorry for the possible hassle this might have caused. :( https://github.com/edterbak/NodeRed_Heishamon_control/issues/128
-  Update: v23.08 seems stable again with everything working as it should... I will keep this line updated.
+  Update 2023-09-02: v23.08 is stable again. Confirmed.
 
 ********
 
