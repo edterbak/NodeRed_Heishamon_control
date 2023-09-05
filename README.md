@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 23.08 Stable release<br/> <br/>
+Current version: 23.09 Stable release<br/> <br/>
 <br/>
 It has been some time since the last release, v22.00 Stable release. Now, after 33 beta versions, the flow has progressed nicely and I feel it is time for an update.</br>
 Some things have improved a lot in my opinion. The layout, stability and usability. A lot of requested functionality has been added as well. I think this is a good result.</br></br>
@@ -572,6 +572,11 @@ Fairly much has been changed. needs polishing.
 [2023-09-01] v23.08 Stable. Changes:
 - [FIX] Scheduler - There seems to be a NodeRed bug in the JUNCTION functionality during export/import. I have now removed it from the scheduler tab. I will start replacing the junction nodes with other nodes due to this crazy issue. For now, it seems that all is working. Sorry for the possible hassle this might have caused. :( https://github.com/edterbak/NodeRed_Heishamon_control/issues/128
   Update 2023-09-02: v23.08 is stable again. Confirmed.
+
+[2023-09-01] v23.09 Stable. Changes:
+[ENHANCEMENT] Scheduler - Item nr https://github.com/edterbak/NodeRed_Heishamon_control/issues/121. Add Scheduler option to turn on/off different functions (WAR/RTC.. )
+[FIX] Pumpspeed function not behaving nicely at times. https://github.com/edterbak/NodeRed_Heishamon_control/issues/118 Now fixed.
+
 
 ********
 
