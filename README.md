@@ -575,6 +575,7 @@ Fairly much has been changed. needs polishing.
 
 [2023-09-01] v23.09 Stable. Changes:
 - [FIX] Pumpspeed function not behaving nicely at times. https://github.com/edterbak/NodeRed_Heishamon_control/issues/118 Now fixed.
+- [FIX] Removed operation mode 7 + 8 as they never have been functional at all. 
 - [ENHANCEMENT] Scheduler - Item nr https://github.com/edterbak/NodeRed_Heishamon_control/issues/121. Add Scheduler option to turn on/off different functions (WAR/RTC.. ) See image below.
 
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/2023-09-03%2001_11_22-Panasonic%20Dashboard.png?raw=true)
