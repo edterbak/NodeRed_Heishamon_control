@@ -1,7 +1,16 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Current version: 23.09 Stable release<br/> <br/>
+Current version: 23.09 Stable release<br/><br/>
 <br/>
+
+__2023-10-26: Info on current beta flow.__ <br>
+Note that there is a newer version than 23.09 available in the list of files above. (23.x beta's).<br/>
+They are newer, fix a lot of issues, but also not tested thoroughly yet. It can be that the beta is already better and more stable than latest v23.09.<br/>
+Be aware that the current beta does require some additional information to use correctly. This will all be updated in the help sections in the dashboard. It will take some time create that, after technically this version is working as expected.
+<br/>
+<br/>
+
+About v23.09 stable<br/>
 It has been some time since the last release, v22.00 Stable release. Now, after 33 beta versions, the flow has progressed nicely and I feel it is time for an update.</br>
 Some things have improved a lot in my opinion. The layout, stability and usability. A lot of requested functionality has been added as well. I think this is a good result.</br></br>
 These are the most significant improvements compared to v22.</br></br>
