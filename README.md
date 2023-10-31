@@ -6,10 +6,17 @@ Current version: 23.09 Stable release<br/><br/>
 __2023-10-26: Info on current beta flow.__ <br>
 Note that there is a newer version than 23.09 available in the list of files above. (23.x beta's).<br/>
 They are newer, fix a lot of issues, but also not tested thoroughly yet. It can be that the beta is already better and more stable than latest v23.09.<br/>
-Be aware that the current beta does require some additional information to use correctly. This will all be updated in the help sections in the dashboard. It will take some time create that, after technically this version is working as expected.
+Be aware that the current beta does require some additional information to use correctly. This will all be updated in the help sections in the dashboard. It will take some time create that, after technically this version is working as expected.  
+<br/><br/>
+**ATTENTION!<br/>**
+for flow 23.10 beta versions you require firmware 3.1+<br/>
+Here is a list of up-to-date firmware's. https://github.com/Egyras/HeishaMon/tree/master/binaries<br/>
 <br/>
-<br/>
+In fw3.1+ there are additional topics available compared to fw2.0. Some (2) are used in the flow.
 
+<br/>
+<br/>
+--------<br/>
 About v23.09 stable<br/>
 It has been some time since the last release, v22.00 Stable release. Now, after 33 beta versions, the flow has progressed nicely and I feel it is time for an update.</br>
 Some things have improved a lot in my opinion. The layout, stability and usability. A lot of requested functionality has been added as well. I think this is a good result.</br></br>
