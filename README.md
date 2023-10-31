@@ -9,7 +9,7 @@ They are newer, fix a lot of issues, but also not tested thoroughly yet. It can 
 Be aware that the current beta does require some additional information to use correctly. This will all be updated in the help sections in the dashboard. It will take some time create that, after technically this version is working as expected.  
 <br/><br/>
 **ATTENTION!<br/>**
-for flow 23.10 beta versions you require firmware 3.1+<br/>
+for flow 23.10 beta versions you require heishamon firmware 3.1+<br/>
 Here is a list of up-to-date firmware's. https://github.com/Egyras/HeishaMon/tree/master/binaries<br/>
 <br/>
 In fw3.1+ there are additional topics available compared to fw2.0. Some (2) are used in the flow.
