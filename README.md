@@ -131,6 +131,8 @@ In a (proxmox) docker install, you can find this settings.js file in:
 ```
 where 'FOLDER' is your own folder name chosen in part A. 
 
+With a Node Red install on a Raspberry Pi, the file is located "/home/pi/.node-red/settings.js".
+
 Search for contextStorage:
 Put in the text as below:
 ```
