@@ -321,6 +321,7 @@ Here are some basic controls of the heat pump. (Not all, because the flow is des
 <a id="functions"></a>
 ## Custom functions
 
+[Back to top](#index)
 
 <!-- headings -------------------------------->
 <a id="pumpspeed"></a>
@@ -330,7 +331,7 @@ This function allows you to set dynamic pump speeds, depending on the current op
 Set a different maximum water flow during DHW operation.  
 Set a different maximum water flow during HEAT operation.  
 You can set a default (low) maximum water flow. This is active when both operations are inactive (with active compressor).
-
+[Back to top](#index)
 
 <!-- headings -------------------------------->
 <a id="war"></a>
@@ -343,6 +344,7 @@ weather dependent temperature control.
 **Answer**: The native Panasonic implementation is limited to the in-built thermocouple or connected external temperature sensor. Both are affected by direct sunlight and show incorrect values then. The custom function is able to use **any** sensor which is able to produce values into Node Red. Personally I use "OpenWeatherMap" as a source. But any local sensor can be used. 
 
 You can import / export settings to the panasonic heat pump.
+[Back to top](#index)
 
 <!-- headings -------------------------------->
 <a id="rtc"></a>
@@ -355,6 +357,7 @@ When the temperature in a room gets too high, it will add "-1" to the current se
 You can set the room target temperature, the temperature limits and you can set the correction to be performed.    
 
 Additionally it is possibility to use automation's. To have the pump shut down when above a trigger temperature and turn back ON again below a revert temperature. 
+[Back to top](#index)
 
 <!-- headings -------------------------------->
 <a id="softstart"></a>
@@ -373,7 +376,7 @@ Some heat pump models will start a run and always go up to 45 Hz in de first min
 This Quietmode (when switched on) will put the heat pump in the Quietmode (level 3) at rest and waits till the run starts.<br/>
 When the compressor turns on, the Quietmode will remain active for an amount of time and after this time switches back to the previous Quietmode (if set).<br/>
 You can specify this fallback time in the Setup - Quietmode time (default 5 min).<br/>
-<br/>
+[Back to top](#index)
 
 <!-- headings -------------------------------->
 <a id="solar2dhw"></a>
@@ -412,6 +415,7 @@ Note: Make sure the native panasonic scheduler (in the controller) is disabled t
 #### Conditions
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_scheduler_conditions.png?raw=true)  
 Each line in the condition section is a blocking condition. If the condition is met, the scheduled task will be blocked.  
+
 [Back to top](#index)
 
 <!-- headings -------------------------------->
@@ -423,23 +427,25 @@ Each line in the condition section is a blocking condition. If the condition is 
 ### Temperature
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_chart_temperature.png?raw=true)
 
+[Back to top](#index)
 <!-- headings -------------------------------->
 <a id="energy"></a>
 ### Energy
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_chart_energy.png?raw=true)
 
+[Back to top](#index)
 <!-- headings -------------------------------->
 <a id="degreedays"></a>
 ### Degree Days
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_chart_degreedays.png?raw=true)  
-[Back to top](#index)
 
+[Back to top](#index)
 <!-- headings -------------------------------->
 <a id="system"></a>
 ### System
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_system.png?raw=true)  
-[Back to top](#index)
 
+[Back to top](#index)
 
 ********
 
