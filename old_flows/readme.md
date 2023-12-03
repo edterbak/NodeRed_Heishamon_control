@@ -25,6 +25,22 @@ Note: There is a manual override available for the two new topics.
   - [How to create a backup of your current flow](#howto_backup)  
   - [How to update to a newer version](#howto_update)  
 - [The Dashboard](#dashboard)  
+  - [Home](#home)
+  - [Settings](#settings)
+  - [Custom functions](#functions)
+    - [Pumpspeed](#pumpspeed)
+    - [WAR](#war)
+    - [RTC](#rtc)
+    - [Cool](#cool)
+    - [SoftStart](#softstart)
+    - [Solar²DHW](#solar2dhw)
+  - [Scheduler](#scheduler)
+    - [Conditions](#conditions)
+  - [Chart's](#charts)
+    - [Temperature](#temperature)
+    - [Energy](#energy)
+    - [Degree Days](#degreedays)
+  - [System](#system)
 - [Donations](#donations)  
 
 
@@ -263,40 +279,76 @@ If there are better ideas about this, please inform me. <br/> <br/>
 
 ********
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/dashboard.png" width="500">
-
+<!-- headings -------------------------------->
 <a id="dashboard"></a>
 ## The Dashboard
 
-<details>
-This is currently the first page of the dashboard. From here, you can enable each function separate but you can ALSO use WAR + RTC or WAR + SS together. It does not matter. they add on top of each other. You can use multiple combinations. Virtual SP + RTC function. Or WAR + RTC functions or only set a Virtual SP. 
+<!-- headings -------------------------------->
+<a id="home"></a>
+### Home
+This is the home page of the dashboard.  
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_home.png?raw=true)
 
-Set the 'Default water temp'. This is the starting temperature for T outlet setpoint.<br/>
-If you do not enable any other function, the 'Default water temp' will be the actual target temperature.<br/>
-But, if you enable the Node-Red WAR function, this will override the setpoint. <br/>
-If you enable the RTC function, the 'Default water temp' setpoint or WAR setpoint will be corrected by the RTC function.<br/>
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/home.png?raw=true)
+Visible is a short overview of the current status of the heat pump.  
+You can enable / disable, see the status and the result of each custom function.  
+
+In the column "HEAT" there are a number of custom functions. These functions build on top of each other and you should read them from top to bottom.  
+1. Starting point is "Shift curve" or "Water temp." value. The [setpoint] for Compensation curve or Direct mode.
+2. When the WAR function is enabled, it replaces the [setpoint] from 1.
+3. When the RTC function is enabled, it corrects the [setpoint] from 2.
+4. When the SoftStart function is enabled, it corrects the [setpoint] from 3.
+5. When the Nightreduction function is enabled, it corrects the [setpoint] from 4. (Note: night reduction will be deprecated soon!)
 <br/>
-## Function 1: WAR (weather dependent temperature control)
-The target water temperature is influenced by the outside temperature. When it gets colder, the temperature of the water should increase. I have built a GUI including a graph to create a temperature profile.
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/WAR.png?raw=true)
 
-## Function 2: RTC (RoomTemperatureCorection)
-This function adjusts the SP of the water depending on the room temperature. <br/>
-When the temperature in a room gets too high, it will add a "-1" to the setpoint of the water temperature. <br/>
-Through the GUI, you can set the room target temperature. And you can set the limits when you want to increase or decrease the SP by 1, 2 or 3 degrees.<br/>
-A recent addition is the possibility to have the pump shut down when above the fourth limit. If you do not set a value, it will not turn off. If you have and don't want this function anymore. set the on/off values to extremes so they are never reached.<br/>
-Note that when you let the HP shut down above a threshold, you need to look at your Scheduled actions. If you do want the scheduler to operate, use the override toggle here. <br/>
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/RTC.png?raw=true" width=60%>
+More details and screenshots of each of the dashboard tabs are present in the collapsed section below.  
+[Back to top](#index)
+<details>
 
-## Function 3: SoftStart
+<!-- headings -------------------------------->
+<a id="settings"></a>
+### Settings
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_settings.png?raw=true)  
+Here are some basic controls of the heat pump. (Not all, because the flow is designed for 1 zone config. )
+
+<!-- headings -------------------------------->
+<a id="functions"></a>
+## Custom functions
+
+<!-- headings -------------------------------->
+<a id="war"></a>
+### WAR: (weather dependent temperature control)
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_war.png?raw=true)  
+! This function is only available when the heat pump is set to "Direct" mode. When the heat pump is set to "Compensation Curve" mode, the WAR function is automatically greyed out and disabled.  
+
+**Question**: Why have you created the same custom function while Panasonic provided the same function as "Compensation Curve"?   
+**Answer**: The native Panasonic implementation is limited to the in-built thermocouple or connected external temperature sensor. Both are affected by direct sunlight and show incorrect values then. The custom function is able to use **any** sensor which is able to produce values into Node Red. Personally I use "OpenWeatherMap" as a source. But any local sensor can be used. 
+
+You can import / export settings to the panasonic heat pump.
+
+<!-- headings -------------------------------->
+<a id="rtc"></a>
+### RTC: (Room Temperature Correction)
+
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_rtc.png?raw=true")
+
+This function adjusts the setpoint of the water depending on the room temperature.  
+When the temperature in a room gets too high, it will add "-1" to the current setpoint of the water temperature or shift.  
+You can set the room target temperature, the temperature limits and you can set the correction to be performed.    
+
+Additionally it is possibility to use automation's. To have the pump shut down when above a trigger temperature and turn back ON again below a revert temperature. 
+
+<!-- headings -------------------------------->
+<a id="softstart"></a>
+### SoftStart:
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_softstart.png?raw=true)
+
 Default behavior of the heat pump is when it starts up the compressor will go to high Hz for a period. Only when the returning water temperature approaches the setpoint, it ramps down the Hz and get more economic.<br/><br/>
 
-If the SoftStart function is enabled and the compressor starts, the water setpoint will be lowered. This should cause the compressor to ramp the compressor down within minutes. When ramp down has occurred, the HEAT SP restrictions will be lifted.<br/>
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/SoftStart.png?raw=true)
+If the SoftStart function is enabled and the compressor starts, the water setpoint will be lowered. This should cause the compressor to ramp the compressor down quicker, within minutes. When ramp down of the compressor frequency has occurred, the HEAT setpoint restrictions will gradually be lifted.<br/>
 
 There's an add-on to the SoftStart called SoftStart-Quietmode
 
-### SoftStart Quietmode
+#### SoftStart Quietmode
 This is an extra (add-on) function to reduce the compressor frequency at startup even more.<br/>
 Some heat pump models will start a run and always go up to 45 Hz in de first minute(s) regardless of the target temperature.<br/>
 This Quietmode (when switched on) will put the heat pump in the Quietmode (level 3) at rest and waits till the run starts.<br/>
@@ -304,35 +356,79 @@ When the compressor turns on, the Quietmode will remain active for an amount of 
 You can specify this fallback time in the Setup - Quietmode time (default 5 min).<br/>
 <br/>
 
-## Function 4: Solar²DHW
+<!-- headings -------------------------------->
+<a id="solar2dhw"></a>
+### Solar²DHW:
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_solar2dhw.png?raw=true)
+
 The aim of this function is to increase efficiency (and save cost) by utilizing solar energy as much as possible.
 When there is solar energy in abundance, you can tell the heat pump to use that energy to heat up your DHW water tank. 
-To determine if there is enough solar energy, you need any form of power measurement. This can be a P1 power meter, or a meter directly behind your panels.<br/>
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Solar.png?raw=true" width=80%>
+To determine if there is enough solar energy, you need any form of power measurement. This can be a P1 power meter, or a meter directly behind your panels.  
+[Back to top](#index)
 
-## Scheduler
-I have added an option to create 10x schedules (in dashboard) for:
-- Heat pump power on/off
+<!-- headings -------------------------------->
+<a id="scheduler"></a>
+### Scheduler
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_scheduler_main.png?raw=true)
+
+You can enable/disable a schedule, multiselect a day of the week, specify the time (hour + minute) and give the schedule a name.  
+
+I have added an option to create 10x schedules for the following actions:
+- Toggle heat pump power on / off
 - Set water setpoint (heat shift / heat direct)
 - Set room setpoint (RTC function)
-- Force DHW runs
-- Sterilization runs
-- Quiet modes
-- Operation modes
+- Start Force DHW runs
+- Start Sterilization runs
+- Set Quiet modes
+- Set operating modes
+- Toggle a custom function on / off
 
-<br/>You can enable/disable a schedule, multiselect a day of the week, specify the time (hour + minute) and give the schedule a name.<br/>
-In addition, the override toggle will allow you to start a planned action, even when the HeatPump is turned off at that time. If this toggle is disabled, a switched off heat pump will not do the scheduled task.<br/>
+On each line of the scheduler, you can indicate if the heat pump should be powered on for the task or not. 
 
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/scheduler5.png?raw=true" width=70%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Scheduler3_multiselect_day.png?raw=true" width=15%><img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/scheduler3_actions.png?raw=true" width=14%>
-Image: [Scheduler] [Multiselect the day] [possible actions to select]
-<a id="dashboard_fine"></a>
+A recent addition to the scheduler is the possibility to add conditions for each of the scheduled tasks.  
+Note: Make sure the native panasonic scheduler (in the controller) is disabled to prevent unexpected behavior of the flow.
+
+<!-- headings -------------------------------->
+<a id="conditions"></a>
+#### Conditions
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_scheduler_conditions.png?raw=true)  
+Each line in the condition section is a blocking condition. If the condition is met, the scheduled task will be blocked.  
+[Back to top](#index)
+
+<!-- headings -------------------------------->
+<a id="charts"></a>
+## Charts
+
+<!-- headings -------------------------------->
+<a id="temperature"></a>
+### Temperature
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_chart_temperature.png?raw=true)
+
+<!-- headings -------------------------------->
+<a id="energy"></a>
+### Energy
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_chart_energy.png?raw=true)
+
+<!-- headings -------------------------------->
+<a id="degreedays"></a>
+### Degree Days
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_chart_degreedays.png?raw=true)  
+[Back to top](#index)
+
+<!-- headings -------------------------------->
+<a id="system"></a>
+### System
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_system.png?raw=true)  
+[Back to top](#index)
+
+</details>
 
 ### Dashboard
 You can find the link to the dashboard like this:<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard2.png?raw=true) ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard1.png?raw=true)
 
 [Back to top](#index)
-</details>
+
 
 ********
 
