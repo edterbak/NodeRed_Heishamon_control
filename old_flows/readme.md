@@ -331,6 +331,7 @@ This function allows you to set dynamic pump speeds, depending on the current op
 Set a different maximum water flow during DHW operation.  
 Set a different maximum water flow during HEAT operation.  
 You can set a default (low) maximum water flow. This is active when both operations are inactive (with active compressor).
+
 [Back to top](#index)
 
 <!-- headings -------------------------------->
@@ -344,6 +345,7 @@ weather dependent temperature control.
 **Answer**: The native Panasonic implementation is limited to the in-built thermocouple or connected external temperature sensor. Both are affected by direct sunlight and show incorrect values then. The custom function is able to use **any** sensor which is able to produce values into Node Red. Personally I use "OpenWeatherMap" as a source. But any local sensor can be used. 
 
 You can import / export settings to the panasonic heat pump.
+
 [Back to top](#index)
 
 <!-- headings -------------------------------->
@@ -357,6 +359,7 @@ When the temperature in a room gets too high, it will add "-1" to the current se
 You can set the room target temperature, the temperature limits and you can set the correction to be performed.    
 
 Additionally it is possibility to use automation's. To have the pump shut down when above a trigger temperature and turn back ON again below a revert temperature. 
+
 [Back to top](#index)
 
 <!-- headings -------------------------------->
@@ -376,6 +379,7 @@ Some heat pump models will start a run and always go up to 45 Hz in de first min
 This Quietmode (when switched on) will put the heat pump in the Quietmode (level 3) at rest and waits till the run starts.<br/>
 When the compressor turns on, the Quietmode will remain active for an amount of time and after this time switches back to the previous Quietmode (if set).<br/>
 You can specify this fallback time in the Setup - Quietmode time (default 5 min).<br/>
+
 [Back to top](#index)
 
 <!-- headings -------------------------------->
@@ -386,6 +390,7 @@ You can specify this fallback time in the Setup - Quietmode time (default 5 min)
 The aim of this function is to increase efficiency (and save cost) by utilizing solar energy as much as possible.
 When there is solar energy in abundance, you can tell the heat pump to use that energy to heat up your DHW water tank. 
 To determine if there is enough solar energy, you need any form of power measurement. This can be a P1 power meter, or a meter directly behind your panels.  
+
 [Back to top](#index)
 
 <!-- headings -------------------------------->
