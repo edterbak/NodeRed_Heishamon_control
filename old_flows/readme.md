@@ -314,9 +314,21 @@ Here are some basic controls of the heat pump. (Not all, because the flow is des
 <a id="functions"></a>
 ## Custom functions
 
+
+<!-- headings -------------------------------->
+<a id="pumpspeed"></a>
+### Pumpspeed
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_pumpspeed.png?raw=true)  
+This function allows you to set dynamic pump speeds, depending on the current operation.  
+Set a different maximum water flow during DHW operation.  
+Set a different maximum water flow during HEAT operation.  
+You can set a default (low) maximum water flow. This is active when both operations are inactive (with active compressor).
+
+
 <!-- headings -------------------------------->
 <a id="war"></a>
-### WAR: (weather dependent temperature control)
+### WAR
+weather dependent temperature control.  
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_war.png?raw=true)  
 ! This function is only available when the heat pump is set to "Direct" mode. When the heat pump is set to "Compensation Curve" mode, the WAR function is automatically greyed out and disabled.  
 
