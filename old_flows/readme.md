@@ -281,6 +281,7 @@ If there are better ideas about this, please inform me. <br/> <br/>
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/dashboard.png" width="500">
 <!-- headings -------------------------------->
 <a id="dashboard"></a>
+
 ## The Dashboard
 
 <!-- headings -------------------------------->
