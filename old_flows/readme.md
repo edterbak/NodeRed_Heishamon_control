@@ -208,6 +208,7 @@ https://flows.nodered.org/node/node-red-node-smooth<br/>
 
 <!-- headings -------------------------------->
 <a id="howtoinstallnr"></a>
+
 ## Flow installation:<br/>
 <details>
 Dashboard: http://IP:1880/ui	(For HomeAssistant: http://IP:1880/endpoint/ui)
@@ -229,6 +230,12 @@ As explained by the image below, you CAN use the Panasonic sensors for this. To 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/External%20sources2.png?raw=true" width=75%> <br/>
 ** Note 1: The Panasonic Room Thermostat is not very accurate which might cause bad temperature control. <br/>
 ** Note 2: The Outside temperature sensor on the Panasonic might be subject to heating up due to direct sunlight. This can also have a negative impact on the functions. Personally I use DarkSky sensor for outside temperature, but anything is possible.<br/>
+
+[Back to top](#index)
+
+### Opening the dashboard
+You can find the link to the dashboard like this:<br/>
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard2.png?raw=true) ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard1.png?raw=true)
 
 [Back to top](#index)
 </details>
@@ -303,7 +310,6 @@ In the column "HEAT" there are a number of custom functions. These functions bui
 
 More details and screenshots of each of the dashboard tabs are present in the collapsed section below.  
 [Back to top](#index)
-<details>
 
 <!-- headings -------------------------------->
 <a id="settings"></a>
@@ -432,14 +438,6 @@ Each line in the condition section is a blocking condition. If the condition is 
 <a id="system"></a>
 ### System
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_system.png?raw=true)  
-[Back to top](#index)
-
-</details>
-
-### Dashboard
-You can find the link to the dashboard like this:<br/>
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard2.png?raw=true) ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard1.png?raw=true)
-
 [Back to top](#index)
 
 
