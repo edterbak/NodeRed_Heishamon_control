@@ -5,13 +5,15 @@ Latest version: 24.00 Stable release<br/><br/>
 
 ********
 
-About v24.x Stable<br/>
+**About v24.x Stable**  
 This flow version works best with heishamon firmware 3.1 (or higher).  
 In fw3.1+ there are new additional topics available of which two are used in the flow. I have been using fw3.1 for a month now without any issues.  
 
 Here is a list of up-to-date firmware's for heishamon. https://github.com/Egyras/HeishaMon/tree/master/binaries  
 Note: There is a manual override available for the two new topics.  
 <br/>
+
+********
 
 <a id="index"></a>
 ## Table of Content
@@ -43,6 +45,7 @@ Note: There is a manual override available for the two new topics.
   - [System](#system)
 - [Donations](#donations)  
 
+********
 
 <!-- headings -------------------------------->
 <a id="introduction"></a>
