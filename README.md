@@ -337,7 +337,9 @@ Here are some basic controls of the heat pump. (Not all, because the flow is des
 This function allows you to set dynamic pump speeds, depending on the current operation.  
 Set a different maximum water flow during DHW operation.  
 Set a different maximum water flow during HEAT operation.  
-You can set a default (low) maximum water flow. This is active when both operations are inactive (with active compressor).
+You can set a default (low) maximum water flow. This is active when both operations are inactive (with active compressor).  
+<br>
+Note: Do not set the maximum flow too low. It causes irratic behavior and a LOT of stop/starts. 
 
 [Back to top](#index)
 
