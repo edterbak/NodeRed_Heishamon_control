@@ -230,9 +230,10 @@ Once imported, you need to adjust the settings of the MQTT server. <br/>
 Click on the hamburger icon and then configuration nodes. Find the MQTT broker part, double click it and change to your settings.<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard3.png?raw=true)<br/>
 
-Important >> After import and correcting the MQTT settings, and you might want to connect custom sensors.<br/>
-By default the native Panasonic sensors will be used. But you can connect your custom sensor.  
+Important >> After import and correcting the MQTT settings, and you might want to connect custom external sensors.<br/>
+By default the native Panasonic sensors will be used. But you can connect your custom sensor.  For this go to the flow page to the tab [WP Input], the section indicated below in purple section.
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/v24.00_flow_external_sensors.png?raw=true)  
+You can also connect external signals to the flow in this tab. 
 
 ** Note 1: The Panasonic Room Thermostat is not very accurate which might cause bad temperature control. <br/>
 ** Note 2: The Outside temperature sensor on the Panasonic might be subject to heating up due to direct sunlight. This can also have a negative impact on the functions. Personally I use OpenWeatherMap source for outside temperature, but anything is possible.<br/>
