@@ -223,17 +223,19 @@ Flows: http://IP:1880/#flow
 * []() Copy/past the content of the .JSON file from this GIT. (or select a file to upload and select the flow.json file offered here)
 * []() Click on Import
 
-Once imported, you probably need to adjust the settings of the MQTT server. <br/>
+Once imported, you need to adjust the settings of the MQTT server. <br/>
+1. Add the correct information of your broker
+2. Use QOS: 0 or 1 (maximum for heishamon).
+3. Use MQTT v3.1.1 (maximum for heishamon).
 Click on the hamburger icon and then configuration nodes. Find the MQTT broker part, double click it and change to your settings.<br/>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard3.png?raw=true)<br/>
 
-Important >> After import and correcting the MQTT settings, you could want to connect two custom sensors for the functions to work as designed.<br/>
-1: a good room temperature sensor<br/>
-2: a custom outside temperature sensor<br/>
-As explained by the image below, you CAN use the Panasonic sensors for this. To do this, in tab (1), WP Control, you only need to connect your custom sensor to the [CONNECT >> ..... ] nodes. The flows now automatically use the custom sensor when supplied. <br/>
-<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/External%20sources2.png?raw=true" width=75%> <br/>
+Important >> After import and correcting the MQTT settings, and you might want to connect custom sensors.<br/>
+By default the native Panasonic sensors will be used. But you can connect your custom sensor.  
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/v24.00_flow_external_sensors.png?raw=true)  
+
 ** Note 1: The Panasonic Room Thermostat is not very accurate which might cause bad temperature control. <br/>
-** Note 2: The Outside temperature sensor on the Panasonic might be subject to heating up due to direct sunlight. This can also have a negative impact on the functions. Personally I use DarkSky sensor for outside temperature, but anything is possible.<br/>
+** Note 2: The Outside temperature sensor on the Panasonic might be subject to heating up due to direct sunlight. This can also have a negative impact on the functions. Personally I use OpenWeatherMap source for outside temperature, but anything is possible.<br/>
 
 [Back to top](#index)
 
