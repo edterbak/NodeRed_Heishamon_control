@@ -12,6 +12,7 @@ In fw3.1+ there are new additional topics available of which two are used in the
 Here is a list of up-to-date firmware's for heishamon. https://github.com/Egyras/HeishaMon/tree/master/binaries  
 Note: There is a manual override available for the two new topics.  
 <br/>
+There are also some breaking changes with external sensors. They need to be reconnected to the right [WP Input] tab AND configured in the dashboard (SYSTEM > SENSORS).
 
 ********
 
@@ -78,8 +79,8 @@ I have chosen option 4 in the list above. In this GIT-page you can read about th
 
 ## Changes compared to v23.00 stable
 
-* New flow-tab "WP Input". All external sensors and triggers are now managed from this tab. 
-* External sensors used with functions are now handled partly though the dashboard. (DASHBOARD > SYSTEM > SENSORS)
+* Breaking change: New flow-tab "WP Input". All external sensors and triggers are now managed from this tab. 
+* Breaking change: External sensors used with functions are now handled partly though the dashboard. (DASHBOARD > SYSTEM > SENSORS)
 * A lot of stability issues and bugs have been resolved. Thanks to all issue reporters and the Dutch www.tweakers.net users
 * First boot of new installations has been improved a lot.
 * The flow works correct using "Compensation Curve" or "Direct" mode.
