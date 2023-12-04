@@ -8,9 +8,10 @@ Latest version: 24.00 Stable release<br/><br/>
 **About v24.x Stable**  
 This flow version works best with heishamon firmware 3.1 (or higher).  
 In fw3.1+ there are new additional topics available of which two are used in the flow. I have been using fw3.1 for a month now without any issues.  
+Note: There is a manual override available for the two new topics. *But This flow will work with fw2.0, fw3.0 as well after these two topics have been set.*
 
 Here is a list of up-to-date firmware's for heishamon. https://github.com/Egyras/HeishaMon/tree/master/binaries  
-Note: There is a manual override available for the two new topics.  
+
 <br/>
 There are also some breaking changes with external sensors. They need to be reconnected to the right [WP Input] tab AND configured in the dashboard (SYSTEM > SENSORS).
 
