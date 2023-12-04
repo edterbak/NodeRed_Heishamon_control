@@ -453,6 +453,14 @@ Each line in the condition section is a blocking condition. If the condition is 
 ### System
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/dashboard/v24.00_system.png?raw=true)  
 
+In this tab you have multiple sub-sections.  
+1. LOG: See 1000 lines back of all logged events.
+2. HARDWARE: Basic readings of the hardware configuration.
+3. SENSOR: Select the external or 1wire sensors for custom functions. 
+4. MQTT: Enable / disable general MQTT block. Basic reading of MQTT messages.
+5. MENU CONFIG: Enable / disable parts of the dashboard menu.
+6. SYSTEM HEALTH: Extended logging and system information.
+
 [Back to top](#index)
 
 ********
