@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Latest version: 24.00 Stable release<br/><br/>
+Latest version: 24.01 Stable release<br/><br/>
 
 
 ********
@@ -45,6 +45,9 @@ There are also some breaking changes with external sensors. They need to be reco
     - [Energy](#energy)
     - [Degree Days](#degreedays)
   - [System](#system)
+- [FAQ](#faq)
+- [Changelog](#changelog)
+- [Acknowledgments](#acknowledgments)
 - [Donations](#donations)  
 
 ********
@@ -471,7 +474,8 @@ In this tab you have multiple sub-sections.
 [Back to top](#index)
 
 ********
-
+<a id="faq"></a>
+## FAQ
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/faq.png" width="500">
 
 Q - Can I forward the information coming mqtt messages from the heat pump towards my InfluxDB database? 
@@ -539,10 +543,13 @@ Q - How to update flow to latest version and keep my inputs, MQTT and Home Assis
     Follow the update procedure from the Readme as described here: https://github.com/edterbak/NodeRed_Heishamon_control#how-to-update-to-a-newer-version
 </details>
 
-********
+[Back to top](#index)
 
+********
+<a id="changelog"></a>
+## Changelog
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/changelog.png" width="500">
-All changelog items from v23.00 are collapsed below. only the latest changelog will always be shown.
+All changelog items from v23.00 - v24.00 are collapsed below. only the latest changes (v24.00+) will always be shown.
 <details>
 
 [2023-06-06] v23.01 Stable. Changes:
@@ -587,10 +594,16 @@ All changelog items from v23.00 are collapsed below. only the latest changelog w
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/2023-09-03%2001_11_22-Panasonic%20Dashboard.png?raw=true)  
 [Back to top](#index)
 </details>
-	
 
+[06-12-2023] v24.01 Stable.
+- [FIX] SCHEDULER - In some situations the task "Change Operating mode" did not get executed. This is now fixed.
+- [FIX] Corrected [SYSTEM] > [about] text. It was still showing changelo of v23.xx
+
+[Back to top](#index)
 ********
-
+<!-- headings -------------------------------->
+<a id="acknowledgments"></a>
+## Acknowledgments
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/acknowledgments.png" width="500">
 
 * []() Egyras: The original creator of Heishamon. https://github.com/Egyras
