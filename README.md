@@ -1,11 +1,11 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Latest version: 24.01 Stable release<br/><br/>
+Latest version: 24.02 Stable release<br/><br/>
 
 
 ********
 
-**About v24.x Stable**  
+**About v24 Stable**  
 This flow version works best with heishamon firmware 3.1 (or higher).  
 In fw3.1+ there are new additional topics available of which two are used in the flow. I have been using fw3.1 for a month now without any issues.  
 Note: There is a manual override available for the two new topics. *But This flow will work with fw2.0, fw3.0 as well after these two topics have been set.*
@@ -46,7 +46,7 @@ There are also some breaking changes with external sensors. They need to be reco
     - [Degree Days](#degreedays)
   - [System](#system)
 - [FAQ](#faq)
-- [Changelog](#changelog)
+- [Release changelog](#changelog)
 - [Acknowledgments](#acknowledgments)
 - [Donations](#donations)  
 
@@ -81,7 +81,7 @@ I have chosen option 4 in the list above. In this GIT-page you can read about th
 <!-- headings -------------------------------->
 <a id="changes-compared-to-v23-stable"></a>
 
-## Changes compared to v23.00 stable
+## Changes in v24.00 compared to v23.00 stable
 
 * Breaking change: New flow-tab "WP Input". All external sensors and triggers are now managed from this tab. 
 * Breaking change: External sensors used with functions are now handled partly though the dashboard. (DASHBOARD > SYSTEM > SENSORS)
@@ -547,7 +547,7 @@ Q - How to update flow to latest version and keep my inputs, MQTT and Home Assis
 
 ********
 <a id="changelog"></a>
-## Changelog
+## Release changelog
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/changelog.png" width="500">
 All changelog items from v23.00 - v24.00 are collapsed below. only the latest changes (v24.00+) will always be shown.
 <details>
@@ -598,6 +598,15 @@ All changelog items from v23.00 - v24.00 are collapsed below. only the latest ch
 [06-12-2023] v24.01 Stable.
 - [FIX] SCHEDULER - In some situations the task "Change Operating mode" did not get executed. This is now fixed.
 - [FIX] Corrected [SYSTEM] > [about] text. It was still showing changelo of v23.xx
+
+[06-12-2023] v24.02 Stable.
+- [Enhancement] SoftStart function. It was doing a generic round vs round-UP to calculate the corrected setpoint. This resulted in frequent compressor stops. Now this has been significantly been improved.
+- [Enhancement] Boost DHW now function. It did not revert operating mode, and did not revert the DHW setpoint. Now it does both.
+- [FIX] Increased the compatibility with new K/L Panasonic heat pump series. 6 new topics added to the flow to read.
+- [NEW] Add connection check with the broker. You will find this under [SYSTEM] > [MQTT] </br>
+Pressing [TEST] will send a message to the broker. The flow also listens to this topic. If the message is NOT received withing 10 seconds, an error line will be added to the [SYSTEM] > [LOG] section </br>
+![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Node-RED%20Dashboard%20-%20Connection%20check.png?raw=true)  
+
 
 [Back to top](#index)
 ********
