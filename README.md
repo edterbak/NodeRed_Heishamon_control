@@ -1,6 +1,6 @@
 
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Latest version: 24.02 Stable release<br/><br/>
+Latest version: 24.03 Stable release<br/><br/>
 
 
 ********
@@ -606,6 +606,14 @@ All changelog items from v23.00 - v24.00 are collapsed below. only the latest ch
 - [NEW] Add connection check with the broker. You will find this under [SYSTEM] > [MQTT] </br>
 Pressing [TEST] will send a message to the broker. The flow also listens to this topic. If the message is NOT received withing 10 seconds, an error line will be added to the [SYSTEM] > [LOG] section </br>
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Node-RED%20Dashboard%20-%20Connection%20check.png?raw=true)  
+
+[14-01-2024] v24.03 Stable.
+Happy new year everyone!
+- [New] Added SMOOTH function to the input signals TOP14 (Outside_Temp) and TOP33 (Room_Thermostat_Temp). Average is taken over 4 measurements. On top of THAT result, there is now a rate limiter of 1 measurement per 5 minutes. For this purpose more than enough.
+- [New] Added new input signal for start-DHW. This version is without 'forceful mode'
+- [FIX] The efficiency graph now shows COP (HEAT) over a longer period.
+- [FIX] The new heatpump series K and L should now be supported. There was an error in the topic.
+- [FIX] The WAR function showed incorrect temperatures (20c). This is now fixed.
 
 
 [Back to top](#index)
