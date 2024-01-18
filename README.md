@@ -1,8 +1,7 @@
-
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
 Latest version: 24.03 Stable release<br/><br/>
 
-
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B5LZGCO)
 ********
 
 **About v24 Stable**  
