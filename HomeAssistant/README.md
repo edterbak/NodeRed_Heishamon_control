@@ -25,13 +25,20 @@ npm_packages:
   - node-red-contrib-moment
   - node-red-contrib-noop
   - node-red-contrib-dashboard-bar-chart-data
+  - node-red-node-smooth
 ```
 
 Then SSH into your homeassistant instance through Putty or the the SSH Add-on.
-Type:
+
+The settings file is in addons_config/xxxxx_nodered. 
+You can find 'xxxxx' by using the 'ls' command in the terminal:
+
 ```
 cd ..
-cd config/node-red
+cd addons_config
+ls
+cd xxxxx_nodered
+
 nano settings.js
 ```
 
@@ -47,3 +54,6 @@ Make sure the spacing is correct.
 
 After save>exit and reboot Node-Red addon, you should see the following which confirms the values stick after reboot.
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/HomeAssistant/ha2.png?raw=true)
+
+
+Thanks to sjengfred for the HA update
