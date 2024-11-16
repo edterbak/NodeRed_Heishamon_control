@@ -7,10 +7,6 @@ example code for creating a virtual climate entity for use in NodeRED </br>
 Carefull: Do NOT replace existing configuration.yaml with this one!</br>
 </br>
 </br>
-</br>
-</br>
-
-
 
 If you are running the HomeAssistant Node-Red add-on, you have the install details written here. They differ a little bit compared to a bare Linux install of Node-Red. 
 1: A persistent folder is automatically present for HomeAssistant.
@@ -18,15 +14,19 @@ If you are running the HomeAssistant Node-Red add-on, you have the install detai
 
 ## Node-Red Addon
 
-in HomeAssistant, the configuration section, state the required npm modules.
+in HomeAssistant, the Node Red Add-on > configuration section, under 'npm-packagess' enter the names of the required npm modules. See image below.
+
 ```
-npm_packages:
-  - node-red-dashboard
-  - node-red-contrib-moment
-  - node-red-contrib-noop
-  - node-red-contrib-dashboard-bar-chart-data
-  - node-red-node-smooth
+node-red-dashboard
+node-red-contrib-moment
+node-red-contrib-noop
+node-red-contrib-dashboard-bar-chart-data
+node-red-node-smooth
 ```
+
+<img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/HomeAssistant/2024-11-16%2023_52_34-Home%20Assistant%20-%20Brave.png?raw=true">
+
+You must enter them one-by-one. After all of them have been entered, press [Save].
 
 Then SSH into your homeassistant instance through Putty or the the SSH Add-on.
 
