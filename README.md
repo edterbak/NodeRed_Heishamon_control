@@ -5,7 +5,8 @@ Latest version: 25.00 Stable release<br/><br/>
 ********
 
 **About v25 Stable**
-Personal note: 
+
+Personal note: <br>
 There is a lot of time in between version 24 and 25 now. This does not mean my enthusiasme has decreased. Only my available time has decreased a lot. I still enjoy and support this project and will continue to do so here on Gitub and via the (Dutch) tweakers.net forum. I even have ambitions to add a (KIS) WAF friendly HA dashboard, but this has still yet to solidify and take off... 
 </br></br>
 Anyway, this flow version works best with heishamon firmwares from 3.1 or higher. It is tested and working with fw3.9.
