@@ -1,25 +1,28 @@
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Latest version: 24.03 Stable release<br/><br/>
+Latest version: 25.00 Stable release<br/><br/>
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B5LZGCO)
 ********
 
-**About v24 Stable**  
-This flow version works best with heishamon firmware 3.1 (or higher).  
-In fw3.1+ there are new additional topics available of which two are used in the flow. I have been using fw3.1 for a month now without any issues.  
-Note: There is a manual override available for the two new topics. *But This flow will work with fw2.0, fw3.0 as well after these two topics have been set.*
+**About v25 Stable**
+Personal note: 
+There is a lot of time in between version 24 and 25 now. This does not mean my enthusiasme has decreased. Only my available time has decreased a lot. I still enjoy and support this project and will continue to do so here on Gitub and via the (Dutch) tweakers.net forum. I even have ambitions to add a (KIS) WAF friendly HA dashboard, but this has still yet to solidify and take off... 
+</br></br>
+Anyway, this flow version works best with heishamon firmwares from 3.1 or higher. It is tested and working with fw3.9.
+From fw3.1+ there are new additional topics available of which two are used in the flow. I have been using fw3.9 for months now without any issues.  
+For fw 2.0 there is a manual override available for the new topics [SYSTEM] > [HARDWARE] > Zone 1. But This flow will work with fw2.0, fw3.0 as well after these two topics have been set. However; It is adviced to update the firmware though.<br>
 
 Here is a list of up-to-date firmware's for heishamon. https://github.com/Egyras/HeishaMon/tree/master/binaries  
 
 <br/>
-There are also some breaking changes with external sensors. They need to be reconnected to the right [WP Input] tab AND configured in the dashboard (SYSTEM > SENSORS).
+There are also some breaking changes in the SoftStart function. Please read the tooltips from the menu items to set it correctly.
 
 ********
 
 <a id="index"></a>
 ## Table of Content
 - [Introduction](#introduction)  
-- [Changes compared to v23 stable](#changes-compared-to-v23-stable)  
+- [Changes compared to v24 stable](#changes-compared-to-v24-stable)  
 - [What can this Node Red flow do for you](#whatcanthisnoderedflowdoforyou)  
 - Installation
   - [Requirements](#requirements)  
@@ -80,15 +83,46 @@ I have chosen option 4 in the list above. In this GIT-page you can read about th
 <!-- headings -------------------------------->
 <a id="changes-compared-to-v23-stable"></a>
 
-## Changes in v24.00 compared to v23.00 stable
+## Changes in v25.00 compared to v24.03 stable
 
-* Breaking change: New flow-tab "WP Input". All external sensors and triggers are now managed from this tab. 
-* Breaking change: External sensors used with functions are now handled partly though the dashboard. (DASHBOARD > SYSTEM > SENSORS)
-* A lot of stability issues and bugs have been resolved. Thanks to all issue reporters and the Dutch www.tweakers.net users
-* First boot of new installations has been improved a lot.
-* The flow works correct using "Compensation Curve" or "Direct" mode.
-* The flow works correct using zone control "Water Temperature", "Thermostat (External)", "Thermostat (Internal)" or "Room sensor".
-* Resource improvement; CPU usage has been decreased by ~30%.  
+<u>Major changes:</u></br>
+- Firmware Support: Added compatibility with Heishamon Firmware 3.9</br>
+- SoftStart function rewrite: now with improved relax frequency and TCAP recognition</br>
+- Scheduler Enhancements: Added more actions</br>
+- Scheduler Enhancements: Added more advanced conditions (room/outside temperature thresholds)</br>
+- Sensors: Added extra 1-wire sensor support to show in graphs of DHW, HEAT, and ROOM temps</br>
+</br>
+
+SoftStart function:</br>
+- SoftStart Fixes: Resolved bugs related to defrost phase and startup loops</br>
+</br>
+
+<u>RTC function:</u></br>
+- Multiple improvements to prevent premature triggering</br>
+- Multiple improvements for the reverting actions</br>
+- MQTT Fixes: Eliminated repeating commands like SetZ1CoolRequestTemperature</br>
+</br>
+
+<u>Charts & UI Improvements:</u></br>
+- Home screen: If Fan2 is present, it will show up (and stay) after first value enters.</br>
+- Home screen: Added Heater, it will show up (and stay) after first value enters. And when active, it will light up.</br>
+- Translated some chart labels from Dutch to English</br>
+</br>
+
+<u>Solar²DHW:</u></br>
+- Forced DHW-only mode during a run for better compatibility with HEAT+DHW</br>
+- Improved kWh calculations and graph visuals</br>
+- More robust energy tracking in Solar²DHW (fixed NaNs, graph is now more robust, but could increase loading a bit)</br>
+- Moved P1 setup to [SYSTEM] > [SENSORS] tab. Much better.</br>
+</br>
+
+Miscellaneous Fixes:</br>
+- Reading Panasonic details logic rewritten for fw3.9</br>
+- Powerful mode toggle fix</br>
+- Pressure readout (TOP115) added</br>
+
+
+
 
 As always, enjoy your heat pump!  
 </br>
@@ -548,72 +582,9 @@ Q - How to update flow to latest version and keep my inputs, MQTT and Home Assis
 <a id="changelog"></a>
 ## Release changelog
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/changelog.png" width="500">
-All changelog items from v23.00 - v24.00 are collapsed below. only the latest changes (v24.00+) will always be shown.
-<details>
 
-[2023-06-06] v23.01 Stable. Changes:
-- [FIX] Export error. A missing connection in WP Manager tab. For some reason this connection did not want to be exported, no matter what. Remove + new wire solved it. (= NR Bug)
-
-[2023-06-12] v23.02 Stable. Changes:
-- [FIX] Cool mode in Home Dashboard. Kept showing incorrect HEAT setpoint. Now it is correct.
-- [FIX] Cool menu area. You now see [setpoint lower limit] more clearly
-- [FIX] SoftStart function + cool mode kept showing heat setpoint in the graph. This has now been fixed.
-
-[2023-07-09] v23.03 Stable. Changes:
-- [FIX] Cool function. Complete rewrite of the cool function. I expect no more NaN for sending cool setpoints.
-- [Enhancement] Added manual lower limit for the cool function.
-- [Enhancement] Setpoint changes from cool function will not be sent when heat pump is off, or cool is not in operating mode.
-- [Enhancement] Updated HELP in cool section.
-
-[2023-07-20] v23.04 Stable. Changes:
-- [New feature] Add conditions to the scheduler. This is a nice addition to the existing scheduler.
-
-[2023-07-22] v23.05 Stable. Changes:
-- [New feature] Add to scheduler the option to set the DHW setpoint temperature. (https://github.com/edterbak/NodeRed_Heishamon_control/issues/120)
-
-[2023-08-21] v23.06 Stable. Changes:
-- [New feature] Scheduler - Conditions now allow multiselect.
-- [FIX] Scheduler - after reboot the conditions were not shown in dashboard https://github.com/edterbak/NodeRed_Heishamon_control/issues/126
-- [FIX] COOL function -  [error] [function:COOL function] is resolved https://github.com/edterbak/NodeRed_Heishamon_control/issues/127
-
-[2023-08-21] v23.07 Stable. Changes:
-- [FIX] Scheduler - Due to grouping the scheduler did not function anymore. This should now be improved a lot. https://github.com/edterbak/NodeRed_Heishamon_control/issues/128
-- [FIX] Home dashboard did not show correct temperature behind 'Water temp'. Related to https://github.com/edterbak/NodeRed_Heishamon_control/issues/123.
-- [FIX] Detection on persistent storage should now work properly. 
-
-[2023-09-01] v23.08 Stable. Changes:
-- [FIX] Scheduler - There seems to be a NodeRed bug in the JUNCTION functionality during export/import. I have now removed it from the scheduler tab. I will start replacing the junction nodes with other nodes due to this crazy issue. For now, it seems that all is working. Sorry for the possible hassle this might have caused. :( https://github.com/edterbak/NodeRed_Heishamon_control/issues/128
-  Update 2023-09-02: v23.08 is stable again. Confirmed.
-
-[2023-09-01] v23.09 Stable. Changes:
-- [FIX] Pumpspeed function not behaving nicely at times. https://github.com/edterbak/NodeRed_Heishamon_control/issues/118 Now fixed.
-- [FIX] Removed operation mode 7 + 8 as they never have been functional at all. 
-- [ENHANCEMENT] Scheduler - Item nr https://github.com/edterbak/NodeRed_Heishamon_control/issues/121. Add Scheduler option to turn on/off different functions (WAR/RTC.. ) See image below.
-
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/2023-09-03%2001_11_22-Panasonic%20Dashboard.png?raw=true)  
-[Back to top](#index)
-</details>
-
-[06-12-2023] v24.01 Stable.
-- [FIX] SCHEDULER - In some situations the task "Change Operating mode" did not get executed. This is now fixed.
-- [FIX] Corrected [SYSTEM] > [about] text. It was still showing changelo of v23.xx
-
-[06-12-2023] v24.02 Stable.
-- [Enhancement] SoftStart function. It was doing a generic round vs round-UP to calculate the corrected setpoint. This resulted in frequent compressor stops. Now this has been significantly been improved.
-- [Enhancement] Boost DHW now function. It did not revert operating mode, and did not revert the DHW setpoint. Now it does both.
-- [FIX] Increased the compatibility with new K/L Panasonic heat pump series. 6 new topics added to the flow to read.
-- [NEW] Add connection check with the broker. You will find this under [SYSTEM] > [MQTT] </br>
-Pressing [TEST] will send a message to the broker. The flow also listens to this topic. If the message is NOT received withing 10 seconds, an error line will be added to the [SYSTEM] > [LOG] section </br>
-![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/Node-RED%20Dashboard%20-%20Connection%20check.png?raw=true)  
-
-[14-01-2024] v24.03 Stable.
-Happy new year everyone!
-- [New] Added SMOOTH function to the input signals TOP14 (Outside_Temp) and TOP33 (Room_Thermostat_Temp). Average is taken over 4 measurements. On top of THAT result, there is now a rate limiter of 1 measurement per 5 minutes. For this purpose more than enough.
-- [New] Added new input signal for start-DHW. This version is without 'forceful mode'
-- [FIX] The efficiency graph now shows COP (HEAT) over a longer period.
-- [FIX] The new heatpump series K and L should now be supported. There was an error in the topic.
-- [FIX] The WAR function showed incorrect temperatures (20c). This is now fixed.
-
+[2025-04-24] v25.00 Stable.
+changes compared to 25.00 will be listed here over time.
 
 [Back to top](#index)
 ********
@@ -635,6 +606,9 @@ Happy new year everyone!
 * []() Aikon for contributing to this project and helping with layout/textual improvements.
 * []() Maarten69 for contributing to this project. New additions can be expected from him on this project. Mega sweet!!
 * []() MikeyMan for contributing with testing and discussing a lot about this. Good testing is very valuable!
+* []() Blb4, Aziona, ConQuestador and BazemanKM for their continued time and involvement.
+* []() Hemmertje voor zijn tomeloze energie en toevoegingen! 😃
+
 
 [Back to top](#index)
 
