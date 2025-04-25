@@ -608,7 +608,7 @@ changes compared to 25.00 will be listed here over time.
 * []() Maarten69 for contributing to this project. New additions can be expected from him on this project. Mega sweet!!
 * []() MikeyMan for contributing with testing and discussing a lot about this. Good testing is very valuable!
 * []() Blb4, Aziona, ConQuestador and BazemanKM for their continued time and involvement.
-* []() Hemmertje voor zijn tomeloze energie en toevoegingen! 😃
+* []() Hemertje voor zijn tomeloze energie en toevoegingen! 😃
 
 
 [Back to top](#index)
