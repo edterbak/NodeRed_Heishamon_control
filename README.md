@@ -23,7 +23,7 @@ There are also some breaking changes in the SoftStart function. Please read the 
 <a id="index"></a>
 ## Table of Content
 - [Introduction](#introduction)  
-- [Changes compared to v24 stable](#changes-compared-to-v24-stable)  
+- [Changes in v25.00 compared to v24.03 stable](#changes-in-v25.00-compared-to-v24.03-stable)
 - [What can this Node Red flow do for you](#whatcanthisnoderedflowdoforyou)  
 - Installation
   - [Requirements](#requirements)  
@@ -82,7 +82,7 @@ I have chosen option 4 in the list above. In this GIT-page you can read about th
 [Back to top](#index)
 
 <!-- headings -------------------------------->
-<a id="changes-compared-to-v23-stable"></a>
+<a id="changes-in-v25.00-compared-to-v24.03-stable"></a>
 
 ## Changes in v25.00 compared to v24.03 stable
 
@@ -583,6 +583,42 @@ Q - How to update flow to latest version and keep my inputs, MQTT and Home Assis
 <a id="changelog"></a>
 ## Release changelog
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/changelog.png" width="500">
+<u>Major changes:</u></br>
+- Firmware Support: Added compatibility with Heishamon Firmware 3.9</br>
+- SoftStart function rewrite: now with improved relax frequency and TCAP recognition</br>
+- Scheduler Enhancements: Added more actions</br>
+- Scheduler Enhancements: Added more advanced conditions (room/outside temperature thresholds)</br>
+- Sensors: Added extra 1-wire sensor support to show in graphs of DHW, HEAT, and ROOM temps</br>
+</br>
+
+SoftStart function:</br>
+- SoftStart Fixes: Resolved bugs related to defrost phase and startup loops</br>
+</br>
+
+<u>RTC function:</u></br>
+- Multiple improvements to prevent premature triggering</br>
+- Multiple improvements for the reverting actions</br>
+- MQTT Fixes: Eliminated repeating commands like SetZ1CoolRequestTemperature</br>
+</br>
+
+<u>Charts & UI Improvements:</u></br>
+- Home screen: If Fan2 is present, it will show up (and stay) after first value enters.</br>
+- Home screen: Added Heater, it will show up (and stay) after first value enters. And when active, it will light up.</br>
+- Translated some chart labels from Dutch to English</br>
+</br>
+
+<u>Solar²DHW:</u></br>
+- Forced DHW-only mode during a run for better compatibility with HEAT+DHW</br>
+- Improved kWh calculations and graph visuals</br>
+- More robust energy tracking in Solar²DHW (fixed NaNs, graph is now more robust, but could increase loading a bit)</br>
+- Moved P1 setup to [SYSTEM] > [SENSORS] tab. Much better.</br>
+</br>
+
+Miscellaneous Fixes:</br>
+- Reading Panasonic details logic rewritten for fw3.9</br>
+- Powerful mode toggle fix</br>
+- Pressure readout (TOP115) added</br>
+
 
 [2025-04-24] v25.00 Stable.
 changes compared to 25.00 will be listed here over time.
