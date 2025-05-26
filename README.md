@@ -1,10 +1,10 @@
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Latest version: 25.00 Stable release<br/><br/>
+Latest version: 25.01 Stable<br/><br/>
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B5LZGCO)
 ********
 
-**About v25 Stable**
+**About v25.01 Stable**
 
 Personal note: <br>
 There is a lot of time in between version 24 and 25 now. This does not mean my enthusiasme has decreased. Only my available time has decreased a lot. I still enjoy and support this project and will continue to do so here on Gitub and via the (Dutch) tweakers.net forum. I even have ambitions to add a (KIS) WAF friendly HA dashboard, but this has still yet to solidify and take off... 
@@ -583,7 +583,15 @@ Q - How to update flow to latest version and keep my inputs, MQTT and Home Assis
 <a id="changelog"></a>
 ## Release changelog
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/changelog.png" width="500">
-<u>Major changes:</u></br>
+
+Version 25.01</br>
+</br>
+Changes:</br>
+- Added "Use Force DHW" toggle on Solar²DHW tab. This can be enabled to solve DHW runs which never end.<br>
+- Attempt to fix possible blanc MQTT commands to OperatingMode after BOOST DHW now function.<br>
+- Attempt to fix Boost DHW now toggle 'sticking'
+
+<u>Major changes v25.00:</u></br>
 - Firmware Support: Added compatibility with Heishamon Firmware 3.9</br>
 - SoftStart function rewrite: now with improved relax frequency and TCAP recognition</br>
 - Scheduler Enhancements: Added more actions</br>
