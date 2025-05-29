@@ -44,13 +44,15 @@ nano settings.js
 
 scroll down to the bottom somewhere and add the following lines. 
 ```
-contextStorage: {
+	contextStorage: {
 	default: "memoryOnly",
-	memoryOnly: { module: 'memory' },
-	file: { module: 'localfilesystem', config: {flushInterval: '300'}, }
-},
+        memoryOnly: { module: 'memory' },
+        file: { module: 'localfilesystem', config: { flushInterval: '300' }}
+	}
+};
 ```
 Make sure the spacing is correct.
+If there are more items like "contextStore:" underneath it, make sure you add a "," to indicate it there is a continiuation. 
 
 After save>exit and reboot Node-Red addon, you should see the following which confirms the values stick after reboot.
 ![](https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/HomeAssistant/ha2.png?raw=true)
