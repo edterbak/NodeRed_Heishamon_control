@@ -1,10 +1,10 @@
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Latest version: 25.01 Stable<br/><br/>
+Latest version: 25.02 Stable<br/><br/>
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B5LZGCO)
 ********
 
-**About v25.01 Stable**
+**About v25.02 Stable**
 
 Personal note: <br>
 There is a lot of time in between version 24 and 25 now. This does not mean my enthusiasme has decreased. Only my available time has decreased a lot. I still enjoy and support this project and will continue to do so here on Gitub and via the (Dutch) tweakers.net forum. I even have ambitions to add a (KIS) WAF friendly HA dashboard, but this has still yet to solidify and take off... 
@@ -583,6 +583,16 @@ Q - How to update flow to latest version and keep my inputs, MQTT and Home Assis
 <a id="changelog"></a>
 ## Release changelog
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/changelog.png" width="500">
+
+
+Version 25.02</br>
+</br>
+Changes:</br>
+- Fix "Boost DHW now" funciton. Switching to COOL mode when DHW mode is already active.<br>
+- Added Energy production for HEAT and DHW bar-chart. Thanks to WP-Rue !!!<br>
+- Added BufferTankDelta to the settings page<br>
+- Added BufferTank info in SYSTEM > Hardware page<br>
+- Improved WP Input tab a lot on connections from external sources. Much clearer<br>
 
 Version 25.01</br>
 </br>
