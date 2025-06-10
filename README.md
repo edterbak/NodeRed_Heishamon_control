@@ -7,7 +7,7 @@ Latest version: 25.02 Stable<br/><br/>
 **About v25.02 Stable**
 
 Personal note: <br>
-There is a lot of time in between version 24 and 25 now. This does not mean my enthusiasme has decreased. Only my available time has decreased a lot. I still enjoy and support this project and will continue to do so here on Gitub and via the (Dutch) tweakers.net forum. I even have ambitions to add a (KIS) WAF friendly HA dashboard, but this has still yet to solidify and take off... 
+There is a lot of time in between version 24 and 25 now. This does not mean my enthusiasme has decreased. Only my available time has decreased a lot. I still enjoy and support this project and will continue to do so here on Github and via the (Dutch) tweakers.net forum. I even have ambitions to add a (KIS) WAF friendly HA dashboard, but this has still yet to solidify and take off... 
 </br></br>
 Anyway, this flow version works best with heishamon firmwares from 3.1 or higher. It is tested and working with fw3.9.
 From fw3.1+ there are new additional topics available of which two are used in the flow. I have been using fw3.9 for months now without any issues.  
