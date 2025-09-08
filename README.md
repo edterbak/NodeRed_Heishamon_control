@@ -30,7 +30,7 @@ Well, short conclusion: it was a MAJOR journey to go through it step by step. Ea
 
 <br> 
 <br> 
-So, this is an Alpha !<br>
+So, this is an Alpha !<br><br>
 
 **What have I tested:**
 - Direct operation mode<br>
@@ -46,12 +46,28 @@ So, this is an Alpha !<br>
 - Buffer tank usage. I am a bit uncertian here. I feel it should alreayd work now with zone 1+2 operational. This needs to be dived into at a later stage.<br>
 <br>
 
-It should work as expected for people with just 1 zone. But because there is such a major amount of work done, this needs to be tested and verified. But I expect that with more people testing will deliver me bugs and issues to solve. <br>
-<br>
-The test plan:<br>
+It should work as expected for people with just 1 zone. But because there is such a major amount of work done, this needs to be tested and verified. But I expect that with more people testing will deliver me bugs and issues to solve. <br><br>
+
+**The test plan:**
+
 Step 1: Test regular 1 zone operation.<br>
 Step 2: Test zone 2 operation (after step 1 completed) <br>
 Step 3: Test Buffer tank operation<br>
+But for now, we are still at step 1.<br>
+
+
+**I nead your help for step 2**
+
+I need help from you all for step 2. I need a volunteer for this. I require access to the system of a person with 2 zones. <br>
+To be able to do the work, I need to be able to see the dashboard + flow editor + heishamon web.<br>
+This can be realised via TeamViewer, Remote Desktop, etc, and optionally in combination with voice call like discord. <br>
+If you would like to help me as a volunteer, please send an e-mail to [ed_terbak@hotmail.com] with:
+- your name
+- Panasonic setup zones/buffer/...
+- your availability
+- what your preference or suggestion would be to give me the oppertunity to test/debug on your system
+- if your able to make propper backups (and how).<br>
+
 
 **IMHO, who is suited for testing this alpha:**
 - People who are able to take a full backup of current running system and be able to restore it.<br>
