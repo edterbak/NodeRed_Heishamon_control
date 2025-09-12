@@ -1,13 +1,12 @@
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B5LZGCO)
 
 ---
 
 ## About v25.1 ALPHA 1  
 <h1>⚠️ This is a **highly experimental version** ⚠️</h1>
 
-**>>> Upload of `flow.json` planned this week <<<**
+**>>> I really need your help for testing !!!  Read below <<<**
 
 ---
 
