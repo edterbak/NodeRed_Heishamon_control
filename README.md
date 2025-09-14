@@ -10,12 +10,31 @@
 
 ---
 
+## I Need Your Help for Step 2  
+
+To move forward, I need **a volunteer with a 2-zone/buffertank**.  
+
+What’s required:  
+- Access to your **dashboard + flow editor + Heishamon web**  
+- Remote access (TeamViewer, Remote Desktop, etc.)  
+- Optionally, voice call support (Discord, etc.)  
+
+📧 If you’re interested, please email me at **ed_terbak@hotmail.com** with:  
+- Your name  
+- Your Panasonic setup (zones, buffer, etc.)  
+- Your availability  
+- Preferred method for testing/debugging access  
+- Info on how you can make proper backups
+  
+---
+
 ### Background  
 When I started this project, it was purely for my own use. I was still learning Node-RED, JavaScript, object-based programming—everything was new to me.  
 
 Later, I decided to share the project. To my surprise, there was a lot of interest and it was very well received.  
 
 One of the most frequent requests has been better compatibility with different hardware setups—for example, **2-zone operation** or **using a buffer tank**.  
+Building this is not that easy because I myself do not own the hardware to be able to test and build it around. 
 
 ---
 
@@ -67,24 +86,6 @@ However, because so much has changed, I need wider testing to uncover bugs and i
 3. Test buffer tank operation  
 
 Currently, we’re still at **Step 1**.  
-
----
-
-## I Need Your Help for Step 2  
-
-To move forward, I need **a volunteer with a 2-zone setup**.  
-
-What’s required:  
-- Access to your **dashboard + flow editor + Heishamon web**  
-- Remote access (TeamViewer, Remote Desktop, etc.)  
-- Optionally, voice call support (Discord, etc.)  
-
-📧 If you’re interested, please email me at **ed_terbak@hotmail.com** with:  
-- Your name  
-- Your Panasonic setup (zones, buffer, etc.)  
-- Your availability  
-- Preferred method for testing/debugging access  
-- Info on how you can make proper backups  
 
 ---
 
