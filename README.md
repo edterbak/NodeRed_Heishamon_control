@@ -3,7 +3,7 @@
 
 ---
 
-## About v25.1 ALPHA 1  
+## About v25.1 ALPHA 2  
 <h1>⚠️ This is a **highly experimental version** ⚠️</h1>
 
 **>>> I really need your help for testing !!!  Read below <<<**
