@@ -1,5 +1,18 @@
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
 
+Changelog of the Alpha's:
+<details>
+<h3>Version 25.04 (!ALPHA 2!)</h3>
+Changes:</br>
+- Fixed Scheduler which did not work at all. Disabled trigger > Enable.</br>
+- Changed the button actions for zone 1 and 2 to not remove a chart</br>
+- Changed the storege of RTC chart to make it more robust</br>
+- Added Zone 1 and Zone 2 above the RTC charts to make it more clear what is selected.</br>
+- Removed some entries for Zone 2 in Settings tab.</br>
+- Moved Zone 2 Cool from Settings tab to Home tab. </br>
+</br>
+</details>
+
 
 ---
 
