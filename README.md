@@ -2,6 +2,14 @@
 
 Changelog of the Alpha's:
 <details>
+
+<h3>Version 25.05 (!ALPHA 4!)</h3>
+Changes:</br>
+- Added logic about the selected p1 meter-type so it does not forget the selected value in the dashboard.</br>
+- Added delay funtionality to "Auto start DHW" option. Popup and all. </br>
+- Improved on Solar²DHW dashboard. Tried to reduce too large datasets to prevent loading issues.</br>
+</br>
+
 <h3>Version 25.04 (!ALPHA 2!)</h3>
 Changes:</br>
 - Fixed Scheduler which did not work at all. Disabled trigger > Enable.</br>
@@ -16,10 +24,10 @@ Changes:</br>
 
 ---
 
-## About v25.1 ALPHA 2  
-<h1>⚠️ This is a **highly experimental version** ⚠️</h1>
+## About v25.05 ALPHA 4  
+<h1>⚠️ This is a **not so experimental version anymore** ⚠️</h1>
 
-**>>> I really need your help for testing !!!  Read below <<<**
+**>>> But, I still really need your help for testing !!!  Read below <<<**
 
 ---
 
