@@ -3,6 +3,13 @@
 Changelog of the Alpha's:
 <details>
 
+<h3>Version 25.05 (!ALPHA 5!)</h3>
+Changes:</br>
+- Fixed SetCurve NULL.</br>
+- Added boot note to inform users</br>
+- Improved cold boot startup logic in general. Not perfect yet, but way better.</br>
+</br>
+
 <h3>Version 25.05 (!ALPHA 4!)</h3>
 Changes:</br>
 - Added logic about the selected p1 meter-type so it does not forget the selected value in the dashboard.</br>
@@ -24,8 +31,8 @@ Changes:</br>
 
 ---
 
-## About v25.05 ALPHA 4  
-<h1>⚠️ This is a **not so experimental version anymore** ⚠️</h1>
+## About v25.05 ALPHA 5  
+<h1>⚠️ This is a **getting better yet again ** ⚠️</h1>
 
 **>>> But, I still really need your help for testing !!!  Read below <<<**
 
