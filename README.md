@@ -3,6 +3,12 @@
 Changelog of the Alpha's:
 <details>
 
+Version 25.05 (!ALPHA 6!)</br>
+Changes:</br>
+- Fixed CCC zone 1 toggle refucing to play nice with us</br>
+- Fixed Final water temperature for zone 2 (not updating)</br>
+</br>
+
 <h3>Version 25.05 (!ALPHA 5!)</h3>
 Changes:</br>
 - Fixed SetCurve NULL.</br>
