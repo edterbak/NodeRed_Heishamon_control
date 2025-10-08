@@ -3,7 +3,7 @@
 Changelog of the Alpha's:
 <details>
 
-Version 25.05 (! ALPHA 7!)</br>
+<h3>Version 25.05 (! ALPHA 7!)</h3>
 Changes:</br>
 - Fixed zone 1 being set instead of zone 2</br>
 - Fixed SoftStart graph not showing actual calculated setpoint</br>
@@ -12,7 +12,10 @@ Changes:</br>
 - Modified additional T outside, T sensor Z1+Z2 logic again. </br>
 </br>
 
-Version 25.05 (!ALPHA 6!)</br>
+**If you experience issues with this version and you have a buffer, please try disabling SoftStart function !**
+
+
+<h3>Version 25.05 (!ALPHA 6!)</h3>
 Changes:</br>
 - Fixed CCC zone 1 toggle refucing to play nice with us</br>
 - Fixed Final water temperature for zone 2 (not updating)</br>
