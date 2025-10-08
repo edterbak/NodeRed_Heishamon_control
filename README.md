@@ -3,6 +3,15 @@
 Changelog of the Alpha's:
 <details>
 
+Version 25.05 (! ALPHA 7!)</br>
+Changes:</br>
+- Fixed zone 1 being set instead of zone 2</br>
+- Fixed SoftStart graph not showing actual calculated setpoint</br>
+- Modified SoftStart function to compensate for buffertank usage</br>
+- Improved Temperature graph</br>
+- Modified additional T outside, T sensor Z1+Z2 logic again. </br>
+</br>
+
 Version 25.05 (!ALPHA 6!)</br>
 Changes:</br>
 - Fixed CCC zone 1 toggle refucing to play nice with us</br>
@@ -37,7 +46,7 @@ Changes:</br>
 
 ---
 
-## About v25.05 ALPHA 5  
+## About v25.05 ALPHA 7  
 <h1>⚠️ This is a **getting better yet again ** ⚠️</h1>
 
 **>>> But, I still really need your help for testing !!!  Read below <<<**
