@@ -3,7 +3,7 @@
 Changelog of the Alpha's:
 <details>
 
-<h3>Version 25.05 (! ALPHA 7!)</h3>
+<h3>Version 25.05 (! ALPHA 8!)</h3>
 Changes:</br>
 - Fixed zone 1 being set instead of zone 2</br>
 - Fixed SoftStart graph not showing actual calculated setpoint</br>
@@ -14,6 +14,11 @@ Changes:</br>
 
 **If you experience issues with this version and you have a buffer, please try disabling SoftStart function !**
 
+<h3>Version 25.05 (! ALPHA 8!)</h3>
+Changes:</br>
+- Fixed SoftStart function. It was dead...</br>
+- Changed a little bit on logging for 2 zones. Should be quieter now in the log</br>
+<br>
 
 <h3>Version 25.05 (!ALPHA 6!)</h3>
 Changes:</br>
