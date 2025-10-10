@@ -54,7 +54,7 @@ Changes:</br>
 
 ---
 
-## About v25.05 ALPHA 7  
+## About v25.05 ALPHA 8  
 <h1>⚠️ This is a **getting better yet again ** ⚠️</h1>
 
 **>>> But, I still really need your help for testing !!!  Read below <<<**
