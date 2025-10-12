@@ -55,7 +55,7 @@ Changes:</br>
 ---
 
 ## About v25.05 ALPHA 8  
-<h1>⚠️ This is a **getting better yet again ** ⚠️</h1>
+<h1>⚠️ Getting close to a stable version. ** ⚠️</h1>
 
 **>>> But, I still really need your help for testing !!!  Read below <<<**
 
