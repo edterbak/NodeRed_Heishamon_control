@@ -7,7 +7,7 @@ Changelog of the Alpha's:
 Changes:</br>
 - Fixed zone 1 being set instead of zone 2</br>
 - Fixed SoftStart graph not showing actual calculated setpoint</br>
-- Modified SoftStart function to compensate for buffertank usage</br>
+- Improved SoftStart function: **Now it works with buffertank and Zone 1/2 usage**</br>
 - Improved Temperature graph</br>
 - Modified additional T outside, T sensor Z1+Z2 logic again. </br>
 </br>
