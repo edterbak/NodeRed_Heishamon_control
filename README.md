@@ -1,7 +1,15 @@
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
 
-Changelog of the Alpha's:
+Unfold to see the FULL changelog of the released alpha and Beta versions:
 <details>
+  
+<h3>Version 25.06 (! BETA 1!)</h3>
+Changes:</br>
+- Fix SoftStart: Aligned the function to operate better with 2 zones</br>
+- Fix SoftStart: Fixed an error in fetching RTC z2 result. It was fetching RTC z1 result</br>
+- Fix CCC: Zone 2 logic was different from Zone 1 logic</br>
+- Enhancement: Added a LOT of new external input options in the tab [WP Input] (WIP)</br>
+</br>
 
 <h3>Version 25.05 (! ALPHA 8!)</h3>
 Changes:</br>
@@ -14,7 +22,7 @@ Changes:</br>
 
 **If you experience issues with this version and you have a buffer, please try disabling SoftStart function !**
 
-<h3>Version 25.05 (! ALPHA 8!)</h3>
+<h3>Version 25.05 (! ALPHA 7!)</h3>
 Changes:</br>
 - Fixed SoftStart function. It was dead...</br>
 - Changed a little bit on logging for 2 zones. Should be quieter now in the log</br>
@@ -54,42 +62,29 @@ Changes:</br>
 
 ---
 
-## About v25.05 ALPHA 8  
-<h1>⚠️ Getting close to a stable version. ** ⚠️</h1>
+## About v25.06 BETA 1  
+<h1>⚠️ Getting close to a stable version with the beta's. ** ⚠️</h1>
 
-**>>> But, I still really need your help for testing !!!  Read below <<<**
+**>>> But, I still really need your help for testing !!!**
 
 ---
 
-## I Need Your Help for Step 2  
-
-To move forward, I need **a volunteer with a 2-zone/buffertank**.  
-
-What’s required:  
-- Access to your **dashboard + flow editor + Heishamon web**  
-- Remote access (TeamViewer, Remote Desktop, etc.)  
-- Optionally, voice call support (Discord, etc.)  
-
-📧 If you’re interested, please email me at **ed_terbak@hotmail.com** with:  
-- Your name  
-- Your Panasonic setup (zones, buffer, etc.)  
-- Your availability  
-- Preferred method for testing/debugging access  
-- Info on how you can make proper backups
-  
----
-
-### Background  
-When I started this project, it was purely for my own use. I was still learning Node-RED, JavaScript, object-based programming—everything was new to me.  
+### Background 
+Question: Why do I need your help so much?
+Answer: Well, when I started this project, it was purely for my own use. I was still learning Node-RED, JavaScript, object-based programming—everything was new to me.  
 
 Later, I decided to share the project. To my surprise, there was a lot of interest and it was very well received.  
-
-One of the most frequent requests has been better compatibility with different hardware setups—for example, **2-zone operation** or **using a buffer tank**.  
-Building this is not that easy because I myself do not own the hardware to be able to test and build it around. 
+And even more later, I became aware of the incompatibility with other hardware setups, like people with 2 zones active, or with a buffertank, etc. 
+There were frequent requests were to improve compatibility with the different hardware setups.   
+Building this is not that easy as it sounds, because 
+- I myself do not own the hardware to be able to test and build it.
+- I needed to restructure and rewrite the already existing functions
+- I needed to restructure the already existing variables to handle multizone
+- I lack the knowledge on how those other hardware setups behave and react
 
 ---
 
-### What’s New in This Alpha  
+### What’s New in This Beta  
 In this release, I’ve reworked the dashboard to support **two operational zones**. This required a lot of changes under the hood.  
 
 Here’s a short overview of the main impacts:  
@@ -101,7 +96,8 @@ Here’s a short overview of the main impacts:
 - **NightReduction function**: separated from zone logic (not zone-dependent)  
 - **Sensors**: added support for a second room sensor  
 - **Scheduler**: updated to allow 2-zone specification  
-- **Setpoint logic**: rewritten for handling 2 separate zones  
+- **Setpoint logic**: rewritten for handling 2 separate zones
+- **Extra Input's**: Added a lot of new external input connections to the dashboard (See tab: WP Input)
 
 **In short:** this was a **major effort**—every step uncovered more complexity.  
 
