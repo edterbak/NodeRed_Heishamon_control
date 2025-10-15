@@ -111,13 +111,15 @@ Here’s a short overview of the main impacts:
 - Zone control (Water)  
 - Zone control (Internal Thermostat)  
 - 1-zone setups  
+- 2-zone setups
+- Buffer tank setups. I *think* it should work.
 
 🔧 **Still to do:**  
 - **RTC Automation**:  
   - Add toggle “Enable between X and Y” for zones 1/2  
   - Ensure automation is bound to a specific zone (independent modes could conflict)  
 - **Cooling function**: currently only works for 1 zone → needs expansion to 2 zones  
-- **Buffer tank**: uncertain. I *think* it should already work with 2-zone operation, but needs deeper testing later  
+
 
 ---
 
