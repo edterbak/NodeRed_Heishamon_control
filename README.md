@@ -1,5 +1,10 @@
 <img src="https://github.com/edterbak/NodeRed_Heishamon_control/blob/main/images/banners/top_banner.png" width="1000">
-Latest version: 25.02 Stable<br/><br/>
+
+Main branch: https://github.com/edterbak/NodeRed_Heishamon_control  ( = latest STABLE version (25.02))<br/><br/>
+
+Other branches:
+- Alpha's: https://github.com/edterbak/NodeRed_Heishamon_control/tree/25.05-ALPHA
+- Beta's: https://github.com/edterbak/NodeRed_Heishamon_control/tree/25.06-BETA  ( = latest active development)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B5LZGCO)
 ********
