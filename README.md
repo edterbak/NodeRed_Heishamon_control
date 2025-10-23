@@ -2,7 +2,15 @@
 
 Unfold to see the FULL changelog of the released alpha and Beta versions:
 <details>
-  
+
+</br>
+<h3>Version 25.06 (! BETA 2 !)</h3>
+Changes:</br>
+- Fix CCC: In Direct mode, disabling CCC function set the target temperature to 20 instead of the given setpoint.</br>
+- Fix SoftStart: When using buffertank and softstart together, the setpoint could be set too low, triggering the compressor-stop.</br>
+- Enhancement: PumpSpeed function added the active mode in the graph (Mode 0=Function off / 1=Low / 2=HEAT / 3=DHW)</br>
+- Enhancement: Added a LOT of additional external link-in nodes in WP Input tab. </br>
+
 <h3>Version 25.06 (! BETA 1!)</h3>
 Changes:</br>
 - Fix SoftStart: Aligned the function to operate better with 2 zones</br>
@@ -62,7 +70,7 @@ Changes:</br>
 
 ---
 
-## About v25.06 BETA 1  
+## About v25.06 BETA 2  
 <h1>⚠️ Getting close to a stable version with the beta's. ** ⚠️</h1>
 
 **>>> But, I still really need your help for testing !!!**
