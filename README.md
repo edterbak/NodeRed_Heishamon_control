@@ -2,6 +2,16 @@
 
 Unfold to see the FULL changelog of the released alpha and Beta versions:
 <details>
+<h3>Version 25.06 (! Beta 3 !)</h3>
+Changes:</br>
+- Fix CCC: Incorrectly used TOP27 instead of TOP42/TOP43 for zone 1/2. Corrected this.</br>
+- Improvement: HEAT commands are being sent in more situations now. Even when DHW-only is active.<br>
+- Improvement: SoftStart function. Logic revised to have less limitations.<br>
+- Improvement: SoftStart function. More information in the softstart tab <br>
+- Improvement: The resending of Set Heat commands is abandoned. I now assume a sent message will be received. No active checking every 28seconds anymore.<br>
+- Improvement: Dashboard generic. Layout changes, making it more uniform (half way through the process now)<br>
+- Improvement: Scheduler conditions - Modified the lowerlimit of the outside temperature condition from 0 to -20</br>
+</br>
 
 </br>
 <h3>Version 25.06 (! BETA 2 !)</h3>
@@ -70,7 +80,7 @@ Changes:</br>
 
 ---
 
-## About v25.06 BETA 2  
+## About v25.06 BETA 3  
 <h1>⚠️ Getting close to a stable version with the beta's. ** ⚠️</h1>
 
 **>>> But, I still really need your help for testing !!!**
