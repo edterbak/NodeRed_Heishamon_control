@@ -2,7 +2,7 @@
 
 Unfold to see the FULL changelog of the released alpha and Beta versions:
 <details>
-<h3>Version 25.06 (! Beta 3 !)</h3>
+<h3>Version 25.06 (! BETA 3 !)</h3>
 Changes:</br>
 - Fix CCC: Incorrectly used TOP27 instead of TOP42/TOP43 for zone 1/2. Corrected this.</br>
 - Improvement: HEAT commands are being sent in more situations now. Even when DHW-only is active.<br>
@@ -12,7 +12,7 @@ Changes:</br>
 - Improvement: Dashboard generic. Layout changes, making it more uniform (half way through the process now)<br>
 - Improvement: Scheduler conditions - Modified the lowerlimit of the outside temperature condition from 0 to -20</br>
 <br>
-**Important notice:**<br>
+**Important notice:** <br>
 This version does NOT check if a command for HEAT has been received and set. It assumes after sending, it is set. This prevents the issue of needles resending commands fully. However, the QOS level of the MQTT command has been increased to level 2 to make sure the heishamon did receive it. <br>
 </br>
 
