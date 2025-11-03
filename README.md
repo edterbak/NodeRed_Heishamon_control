@@ -11,6 +11,9 @@ Changes:</br>
 - Improvement: The resending of Set Heat commands is abandoned. I now assume a sent message will be received. No active checking every 28seconds anymore.<br>
 - Improvement: Dashboard generic. Layout changes, making it more uniform (half way through the process now)<br>
 - Improvement: Scheduler conditions - Modified the lowerlimit of the outside temperature condition from 0 to -20</br>
+<br>
+**Important notice:**<br>
+This version does NOT check if a command for HEAT has been received and set. It assumes after sending, it is set. This prevents the issue of needles resending commands fully. However, the QOS level of the MQTT command has been increased to level 2 to make sure the heishamon did receive it. <br>
 </br>
 
 </br>
