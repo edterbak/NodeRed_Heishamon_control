@@ -2,6 +2,13 @@
 
 Unfold to see the FULL changelog of the released alpha and Beta versions:
 <details>
+
+</br>
+<h3>Version 25.06 (! BETA 4 !)</h3>
+Changes:</br>
+- Fix SP_Final: Initial calculation did not resolve. Resulting in no mqtt commands being sent to set heat. If you do not experience issues with Beta 3, you do not need to update. </br>
+
+  </br>
 <h3>Version 25.06 (! BETA 3 !)</h3>
 Changes:</br>
 - Fix CCC: Incorrectly used TOP27 instead of TOP42/TOP43 for zone 1/2. Corrected this.</br>
@@ -83,7 +90,7 @@ Changes:</br>
 
 ---
 
-## About v25.06 BETA 3  
+## About v25.06 BETA 4  
 <h1>⚠️ Getting close to a stable version with the beta's. ** ⚠️</h1>
 
 **>>> But, I still really need your help for testing !!!**
