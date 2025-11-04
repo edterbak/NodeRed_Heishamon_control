@@ -6,7 +6,7 @@ Unfold to see the FULL changelog of the released alpha and Beta versions:
 </br>
 <h3>Version 25.06 (! BETA 4 !)</h3>
 Changes:</br>
-- Fix SP_Final: Initial calculation did not resolve. Resulting in no mqtt commands being sent to set heat. If you do not experience issues with Beta 3, you do not need to update. </br>
+- Fix SP_Final: Initial calculation did not resolve. Resulting in no mqtt commands being sent to set heat. If you do not experience issues with Beta 3, you do not need to update. Thanks to Breadrun @ Tweakers.net for the good suggestion.</br>
 
   </br>
 <h3>Version 25.06 (! BETA 3 !)</h3>
