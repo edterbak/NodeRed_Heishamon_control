@@ -4,6 +4,18 @@ Unfold to see the FULL changelog of the released alpha and Beta versions:
 <details>
 
 </br>
+Version 25.06 (! Beta 5 !)</br>
+Changes:</br>
+- Fix Softstart: Buffertank enabled would have bad performance. Variable was not initialized propperly.</br>
+- Fix Zone2: No change in setpoint being sent other than 0 or 1. There was a math error.</br>
+- Fix Zone2: MQTT Comand spamming resolved.</br>
+- New Feature: Created a generic control mechanism to verify sent commands have been processed. If not, a retry is initiated with a maximum retrycount of 3 for each topic. This is done for a couple of the most important commands.</br>
+- Added an auto-tuning noice filter to the input sensors by default.</br>
+- Fix Scheduler: Toggle functions to accomadate zone 1 and zone 2 were not adjusted yet. Now they should be working</br>
+- Fix Scheduler: Removing line 2 did not work. Now it does. 
+</br>
+
+</br>
 <h3>Version 25.06 (! BETA 4 !)</h3>
 Changes:</br>
 - Fix SP_Final: Initial calculation did not resolve. Resulting in no mqtt commands being sent to set heat. If you do not experience issues with Beta 3, you do not need to update. Thanks to Breadrun @ Tweakers.net for the good suggestion.</br>
@@ -90,7 +102,7 @@ Changes:</br>
 
 ---
 
-## About v25.06 BETA 4  
+## About v25.06 BETA 5  
 <h1>⚠️ Getting close to a stable version with the beta's. ** ⚠️</h1>
 
 **>>> But, I still really need your help for testing !!!**
