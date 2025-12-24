@@ -4,6 +4,15 @@ Unfold to see the FULL changelog of the released alpha and Beta versions:
 <details>
 
 </br>
+Version 25.06 (! Beta 6 !)</br>
+Changes:</br>
+- Enhancement: Merged both Compare SP (z1) and (z2) functions into a single function. This reduces simultaneous sending of the same setcurve mqtt command.</br>
+- Enhancement: Modified the function to check all sent MQTT commands. Now command prefix independant.</br>
+- Enhancement: Added a small function to throttle the amount of MQTT commands being sent ad a time. Rate limit is set  to 1 per 7 seconds. All commands are queued. </br>
+- Fix Scheduler: some conditions did not pass with '==='. fixed.</br>
+</br>
+
+</br>
 Version 25.06 (! Beta 5 !)</br>
 Changes:</br>
 - Fix Softstart: Buffertank enabled would have bad performance. Variable was not initialized propperly.</br>
@@ -102,8 +111,8 @@ Changes:</br>
 
 ---
 
-## About v25.06 BETA 5  
-<h1>⚠️ Getting close to a stable version with the beta's. ** ⚠️</h1>
+## About v25.06 BETA 6  
+<h1>⚠️ Getting really close to a stable version now... ** ⚠️</h1>
 
 **>>> But, I still really need your help for testing !!!**
 
