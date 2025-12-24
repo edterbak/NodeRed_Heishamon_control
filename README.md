@@ -4,7 +4,7 @@ Unfold to see the FULL changelog of the released alpha and Beta versions:
 <details>
 
 </br>
-Version 25.06 (! Beta 6 !)</br>
+<h3>Version 25.06 (! Beta 6 !)</h3>
 Changes:</br>
 - Enhancement: Merged both Compare SP (z1) and (z2) functions into a single function. This reduces simultaneous sending of the same setcurve mqtt command.</br>
 - Enhancement: Modified the function to check all sent MQTT commands. Now command prefix independant.</br>
@@ -13,7 +13,7 @@ Changes:</br>
 </br>
 
 </br>
-Version 25.06 (! Beta 5 !)</br>
+<h3>Version 25.06 (! Beta 5 !)</h3>
 Changes:</br>
 - Fix Softstart: Buffertank enabled would have bad performance. Variable was not initialized propperly.</br>
 - Fix Zone2: No change in setpoint being sent other than 0 or 1. There was a math error.</br>
