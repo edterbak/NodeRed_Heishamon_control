@@ -2,9 +2,9 @@
 
 Main branch: https://github.com/edterbak/NodeRed_Heishamon_control  ( = latest STABLE version (25.02))<br/><br/>
 
-Other branches:
-- Alpha's: https://github.com/edterbak/NodeRed_Heishamon_control/tree/25.05-ALPHA
-- Beta's: https://github.com/edterbak/NodeRed_Heishamon_control/tree/25.06-BETA  ( = latest active development)
+<b>Please look at the beta branch:</b>
+- https://github.com/edterbak/NodeRed_Heishamon_control/tree/25.06-BETA
+  This is the latest active development, which is currently pretty stable already...
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B5LZGCO)
 ********
