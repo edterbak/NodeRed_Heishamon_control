@@ -4,6 +4,17 @@ Unfold to see the FULL changelog of the released alpha and Beta versions:
 <details>
 
 </br>
+Version 26.1.1 Beta</br>
+Changes:</br>
+- Fix Chart storage: SoftStart chart. Chart survives restarts now.</br>
+- Fix Chart storage: Efficiency - Energy. Chart survives restarts now.</br>
+- Fix Chart storage: Efficiency - Efficiency. Chart survives restarts now.</br>
+- Fix Boot behavior: Heat Delta, Cool Delta and SetHeaterDelayTime during startup.</br>
+- Fix MQTT: Do not start command checking when not all current values are known.</br>
+- Fix MQTT: Command checking functionality now first looks if the actual value is already the same as the new command value. If so, it does not perform the checking loop.</br>
+</br>
+
+</br>
 <h3>Version 25.06 (! Beta 6 !)</h3>
 Changes:</br>
 - Enhancement: Merged both Compare SP (z1) and (z2) functions into a single function. This reduces simultaneous sending of the same setcurve mqtt command.</br>
@@ -111,8 +122,8 @@ Changes:</br>
 
 ---
 
-## About v25.06 BETA 6  
-<h1>⚠️ Getting really close to a stable version now... ** ⚠️</h1>
+## About v26.1.1 BETA
+<h1>⚠️ Getting really close to a stable release version now... ** ⚠️</h1>
 
 **>>> But, I still really need your help for testing !!!**
 
