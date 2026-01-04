@@ -13,8 +13,6 @@
             "color": "#a4a4a4"
         },
         "nodes": [
-            "07a2e0f96fdc94bb",
-            "2407702ea84aae48",
             "c5f283f5da078c9b",
             "f9df3e3a4b49f254",
             "d349df58176e318e",
@@ -22,8 +20,10 @@
             "38d4d5c2336679a3",
             "52e06ab9f666c998",
             "9786192242c57073",
-            "fd57e866827cb156",
-            "c2dd2bee14312b55"
+            "2407702ea84aae48",
+            "c2dd2bee14312b55",
+            "07a2e0f96fdc94bb",
+            "fd57e866827cb156"
         ],
         "x": 34,
         "y": 819,
@@ -31,54 +31,12 @@
         "h": 282
     },
     {
-        "id": "07a2e0f96fdc94bb",
-        "type": "mqtt in",
-        "z": "c56b19a8521cdd83",
-        "g": "87dbb02b241dbf2f",
-        "name": "Heishamon",
-        "topic": "panasonic_heat_pump/opentherm/#",
-        "qos": "0",
-        "datatype": "auto-detect",
-        "broker": "92e5b2c.00a8b5",
-        "nl": false,
-        "rap": false,
-        "inputs": 0,
-        "x": 190,
-        "y": 1060,
-        "wires": [
-            [
-                "2407702ea84aae48"
-            ]
-        ]
-    },
-    {
-        "id": "2407702ea84aae48",
-        "type": "function",
-        "z": "c56b19a8521cdd83",
-        "g": "87dbb02b241dbf2f",
-        "name": "Map sensor to ID (opentherm/#)",
-        "func": "// if there's an entry in the global defined variable then \n// the value needs to be saved (send) to next function \nvar sensorsplit = msg.topic.split(\"opentherm/\");\nvar sensor = sensorsplit[sensorsplit.length-1];\n \nvar sensorvalue = msg.payload;\nfor (let i = 0; i < context.global.heishamon.SensorMapping.length; i++) {\n    // when sensor is in the global settings \n    msg.sensor = sensor;\n    if(sensor == context.global.heishamon.SensorMapping[i][0]){\n\n        return msg;\n    }\n}\nreturn;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 490,
-        "y": 1060,
-        "wires": [
-            [
-                "38d4d5c2336679a3"
-            ]
-        ]
-    },
-    {
         "id": "c5f283f5da078c9b",
         "type": "mqtt in",
         "z": "c56b19a8521cdd83",
         "g": "87dbb02b241dbf2f",
         "name": "Heishamon",
-        "topic": "panasonic_heat_pump/main/#",
+        "topic": "panasonic_heat_pump/#",
         "qos": "0",
         "datatype": "auto-detect",
         "broker": "92e5b2c.00a8b5",
@@ -99,7 +57,7 @@
         "z": "c56b19a8521cdd83",
         "g": "87dbb02b241dbf2f",
         "name": "Map sensor to ID (main/#)",
-        "func": "// if there's an entry in the global defined variable then \n// the value needs to be saved (send) to next function \nvar sensorsplit = msg.topic.split(\"/\");\nvar sensor = sensorsplit[sensorsplit.length-1];\n \nvar sensorvalue = msg.payload;\nfor (let i = 0; i < context.global.heishamon.SensorMapping.length; i++) {\n    // when sensor is in the global settings \n    msg.sensor = sensor;\n    if(sensor == context.global.heishamon.SensorMapping[i][0]){\n\n        return msg;\n    }\n}\nreturn;",
+        "func": "let heishamon = global.get(\"heishamon\") || {};\nif (!heishamon.SensorMapping) return;\n\n// Extract sensor name (last part after '/')\nlet parts = msg.topic.split(\"/\");\nlet sensor = parts[parts.length - 1];\n\n// Check if sensor exists in SensorMapping\nlet found = heishamon.SensorMapping.some(arr => arr[0] === sensor);\n\nif (found) {\n    msg.sensor = sensor;\n    return msg;\n}\nreturn;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -120,7 +78,7 @@
         "z": "c56b19a8521cdd83",
         "g": "87dbb02b241dbf2f",
         "name": "global setup",
-        "func": "let heishamon = global.get(\"heishamon\") ?? {};\n\nheishamon.HAapplication = heishamon.HAapplication ?? {};\nheishamon.SensorMapping = heishamon.SensorMapping ?? {};\nheishamon.ActionMapping = heishamon.ActionMapping ?? {};\n\nglobal.set(\"heishamon\", heishamon);\n\ncontext.global.heishamon.HAapplication = \"InfluxDB\";\n\n//This is the overview of sensors which has to be sent to the Home Automation system\ncontext.global.heishamon.SensorMapping = [\n        //  [\"name of topic\"]\n        // MAIN/#\n            [\"Heatpump_State\"],\n            [\"Pump_Flow\"],\n            [\"Force_DHW_State\"],\n            [\"Quiet_Mode_Schedule\"],\n            [\"Operating_Mode_State\"],\n            [\"Main_Inlet_Temp\"],\n            [\"Main_Outlet_Temp\"],\n            [\"Main_Target_Temp\"],\n            [\"Compressor_Freq\"],\n            [\"DHW_Target_Temp\"],\n            [\"DHW_Temp\"],\n            [\"Operations_Hours\"],\n            [\"Operations_Counter\"],\n            [\"Main_Schedule_State\"],\n            [\"Outside_Temp\"],\n            [\"Heat_Power_Production\"],\n            [\"Heat_Power_Consumption\"],\n            [\"Powerful_Mode_Time\"],\n            [\"Quiet_Mode_Level\"],\n            [\"Holiday_Mode_State\"],\n            [\"ThreeWay_Valve_State\"],\n            [\"Outside_Pipe_Temp\"],\n            [\"DHW_Heat_Delta\"],\n            [\"Heat_Delta\"],\n            [\"Cool_Delta\"],\n            [\"DHW_Holiday_Shift_Temp\"],\n            [\"Defrosting_State\"],\n            [\"Z1_Heat_Request_Temp\"],\n            [\"Z1_Cool_Request_Temp\"],\n            [\"Z1_Heat_Curve_Target_High_Temp\"],\n            [\"Z1_Heat_Curve_Target_Low_Temp\"],\n            [\"Z1_Heat_Curve_Outside_High_Temp\"],\n            [\"Z1_Heat_Curve_Outside_Low_Temp\"],\n            [\"Room_Thermostat_Temp\"],\n            [\"Z2_Heat_Request_Temp\"],\n            [\"Z2_Cool_Request_Temp\"],\n            [\"Z1_Water_Temp\"],\n            [\"Z2_Water_Temp\"],\n            [\"Cool_Power_Production\"],\n            [\"Cool_Power_Consumption\"],\n            [\"DHW_Power_Production\"],\n            [\"DHW_Power_Consumption\"],\n            [\"Z1_Water_Target_Temp\"],\n            [\"Z2_Water_Target_Temp\"],\n            [\"Error\"],\n            [\"Room_Holiday_Shift_Temp\"],\n            [\"Buffer_Temp\"],\n            [\"Solar_Temp\"],\n            [\"Pool_Temp\"],\n            [\"Main_Hex_Outlet_Temp\"],\n            [\"Discharge_Temp\"],\n            [\"Inside_Pipe_Temp\"],\n            [\"Defrost_Temp\"],\n            [\"Eva_Outlet_Temp\"],\n            [\"Bypass_Outlet_Temp\"],\n            [\"Ipm_Temp\"],\n            [\"Z1_Temp\"],\n            [\"Z2_Temp\"],\n            [\"DHW_Heater_State\"],\n            [\"Room_Heater_State\"],\n            [\"Internal_Heater_State\"],\n            [\"External_Heater_State\"],\n            [\"Fan1_Motor_Speed\"],\n            [\"Fan2_Motor_Speed\"],\n            [\"High_Pressure\"],\n            [\"Pump_Speed\"],\n            [\"Low_Pressure\"],\n            [\"Compressor_Current\"],\n            [\"Force_Heater_State\"],\n            [\"Sterilization_State\"],\n            [\"Sterilization_Temp\"],\n            [\"Sterilization_Max_Time\"],\n            [\"Z1_Cool_Curve_Target_High_Temp\"],\n            [\"Z1_Cool_Curve_Target_Low_Temp\"],\n            [\"Z1_Cool_Curve_Outside_High_Temp\"],\n            [\"Z1_Cool_Curve_Outside_Low_Temp\"],\n            [\"Heating_Mode\"],\n            [\"Heating_Off_Outdoor_Temp\"],\n            [\"Heater_On_Outdoor_Temp\"],\n            [\"Heat_To_Cool_Temp\"],\n            [\"Cool_To_Heat_Temp\"],\n            [\"Cooling_Mode\"],\n            [\"Z2_Heat_Curve_Target_High_Temp\"],\n            [\"Z2_Heat_Curve_Target_Low_Temp\"],\n            [\"Z2_Heat_Curve_Outside_High_Temp\"],\n            [\"Z2_Heat_Curve_Outside_Low_Temp\"],\n            [\"Z2_Cool_Curve_Target_High_Temp\"],\n            [\"Z2_Cool_Curve_Target_Low_Temp\"],\n            [\"Z2_Cool_Curve_Outside_High_Temp\"],\n            [\"Z2_Cool_Curve_Outside_Low_Temp\"],\n            [\"Room_Heater_Operations_Hours\"],\n            [\"DHW_Heater_Operations_Hours\"],\n            [\"Heat_Pump_Model\"],\n            [\"Pump_Duty\"],\n            [\"Zones_State\"],\n            [\"Max_Pump_Duty\"],\n            [\"Heater_Delay_Time\"],\n            [\"Heater_Start_Delta\"],\n            [\"Heater_Stop_Delta\"],\n            [\"Buffer_Installed\"],\n            [\"DHW_Installed\"],\n            [\"Solar_Mode\"],\n            [\"Solar_On_Delta\"],\n            [\"Solar_Off_Delta\"],\n            [\"Solar_Frost_Protection\"],\n            [\"Solar_High_Limit\"],\n\n        // S0/#\n            [\"Watthour/1\"],\n            [\"WatthourTotal/1\"],\n            [\"Watt/1\"],\n            [\"Watthour/2\"],\n            [\"WatthourTotal/2\"],\n            [\"Watt/2\"],\n\n        // opentherm/#\n            [\"write/roomTempSet\"],\n            [\"write/roomTemp\"],\n            [\"write/chSetPoint\"]\n\n    ];\n    \ncontext.global.heishamon.ActionMapping = [\n    // actioncommand\n    [\"SetHeatpump\"],\n    [\"SetHoliday\"],\n    [\"SetQuietMode\"],\n    [\"SetPowerfull\"],\n    [\"SetZ1HeatRequestTemperature\"],\n    [\"SetZ1CoolRequestTemperature\"],\n    [\"SetZ2HeatRequestTemperature\"],\n    [\"SetZ2CoolRequestTemperature\"],\n    [\"SetOperationMode\"],\n    [\"SetForceDHW\"],\n    [\"SetDHWTemp\"],\n    [\"SetCoolTemp\"],\n    [\"SetForceDefrost\"],\n    [\"SetForceSterilization\"]\n];\nreturn msg;",
+        "func": "let heishamon = global.get(\"heishamon\") || {};\n\nheishamon.HAapplication = heishamon.HAapplication || {};\nheishamon.SensorMapping = heishamon.SensorMapping || {};\nheishamon.ActionMapping = heishamon.ActionMapping || {};\n\nheishamon.HAapplication = \"InfluxDB\";\n\n//This is the overview of sensors which has to be sent to the Home Automation system\nheishamon.SensorMapping = [\n    //  [\"name of topic\"]\n    // MAIN/#\n    [\"Heatpump_State\"],\n    [\"Pump_Flow\"],\n    [\"Force_DHW_State\"],\n    [\"Quiet_Mode_Schedule\"],\n    [\"Operating_Mode_State\"],\n    [\"Main_Inlet_Temp\"],\n    [\"Main_Outlet_Temp\"],\n    [\"Main_Target_Temp\"],\n    [\"Compressor_Freq\"],\n    [\"DHW_Target_Temp\"],\n    [\"DHW_Temp\"],\n    [\"Operations_Hours\"],\n    [\"Operations_Counter\"],\n    [\"Main_Schedule_State\"],\n    [\"Outside_Temp\"],\n    [\"Heat_Power_Production\"],\n    [\"Heat_Power_Consumption\"],\n    [\"Powerful_Mode_Time\"],\n    [\"Quiet_Mode_Level\"],\n    [\"Holiday_Mode_State\"],\n    [\"ThreeWay_Valve_State\"],\n    [\"Outside_Pipe_Temp\"],\n    [\"DHW_Heat_Delta\"],\n    [\"Heat_Delta\"],\n    [\"Cool_Delta\"],\n    [\"DHW_Holiday_Shift_Temp\"],\n    [\"Defrosting_State\"],\n    [\"Z1_Heat_Request_Temp\"],\n    [\"Z1_Cool_Request_Temp\"],\n    [\"Z1_Heat_Curve_Target_High_Temp\"],\n    [\"Z1_Heat_Curve_Target_Low_Temp\"],\n    [\"Z1_Heat_Curve_Outside_High_Temp\"],\n    [\"Z1_Heat_Curve_Outside_Low_Temp\"],\n    [\"Room_Thermostat_Temp\"],\n    [\"Z2_Heat_Request_Temp\"],\n    [\"Z2_Cool_Request_Temp\"],\n    [\"Z1_Water_Temp\"],\n    [\"Z2_Water_Temp\"],\n    [\"Cool_Power_Production\"],\n    [\"Cool_Power_Consumption\"],\n    [\"DHW_Power_Production\"],\n    [\"DHW_Power_Consumption\"],\n    [\"Z1_Water_Target_Temp\"],\n    [\"Z2_Water_Target_Temp\"],\n    [\"Error\"],\n    [\"Room_Holiday_Shift_Temp\"],\n    [\"Buffer_Temp\"],\n    [\"Solar_Temp\"],\n    [\"Pool_Temp\"],\n    [\"Main_Hex_Outlet_Temp\"],\n    [\"Discharge_Temp\"],\n    [\"Inside_Pipe_Temp\"],\n    [\"Defrost_Temp\"],\n    [\"Eva_Outlet_Temp\"],\n    [\"Bypass_Outlet_Temp\"],\n    [\"Ipm_Temp\"],\n    [\"Z1_Temp\"],\n    [\"Z2_Temp\"],\n    [\"DHW_Heater_State\"],\n    [\"Room_Heater_State\"],\n    [\"Internal_Heater_State\"],\n    [\"External_Heater_State\"],\n    [\"Fan1_Motor_Speed\"],\n    [\"Fan2_Motor_Speed\"],\n    [\"High_Pressure\"],\n    [\"Pump_Speed\"],\n    [\"Low_Pressure\"],\n    [\"Compressor_Current\"],\n    [\"Force_Heater_State\"],\n    [\"Sterilization_State\"],\n    [\"Sterilization_Temp\"],\n    [\"Sterilization_Max_Time\"],\n    [\"Z1_Cool_Curve_Target_High_Temp\"],\n    [\"Z1_Cool_Curve_Target_Low_Temp\"],\n    [\"Z1_Cool_Curve_Outside_High_Temp\"],\n    [\"Z1_Cool_Curve_Outside_Low_Temp\"],\n    [\"Heating_Mode\"],\n    [\"Heating_Off_Outdoor_Temp\"],\n    [\"Heater_On_Outdoor_Temp\"],\n    [\"Heat_To_Cool_Temp\"],\n    [\"Cool_To_Heat_Temp\"],\n    [\"Cooling_Mode\"],\n    [\"Z2_Heat_Curve_Target_High_Temp\"],\n    [\"Z2_Heat_Curve_Target_Low_Temp\"],\n    [\"Z2_Heat_Curve_Outside_High_Temp\"],\n    [\"Z2_Heat_Curve_Outside_Low_Temp\"],\n    [\"Z2_Cool_Curve_Target_High_Temp\"],\n    [\"Z2_Cool_Curve_Target_Low_Temp\"],\n    [\"Z2_Cool_Curve_Outside_High_Temp\"],\n    [\"Z2_Cool_Curve_Outside_Low_Temp\"],\n    [\"Room_Heater_Operations_Hours\"],\n    [\"DHW_Heater_Operations_Hours\"],\n    [\"Heat_Pump_Model\"],\n    [\"Pump_Duty\"],\n    [\"Zones_State\"],\n    [\"Max_Pump_Duty\"],\n    [\"Heater_Delay_Time\"],\n    [\"Heater_Start_Delta\"],\n    [\"Heater_Stop_Delta\"],\n    [\"Buffer_Installed\"],\n    [\"DHW_Installed\"],\n    [\"Solar_Mode\"],\n    [\"Solar_On_Delta\"],\n    [\"Solar_Off_Delta\"],\n    [\"Solar_Frost_Protection\"],\n    [\"Solar_High_Limit\"],\n\n    // S0/#\n    [\"Watthour/1\"],\n    [\"WatthourTotal/1\"],\n    [\"Watt/1\"],\n    [\"Watthour/2\"],\n    [\"WatthourTotal/2\"],\n    [\"Watt/2\"],\n\n    // opentherm/#\n    [\"write/roomTempSet\"],\n    [\"write/roomTemp\"],\n    [\"write/chSetPoint\"]\n\n];\n\nheishamon.ActionMapping = [\n    // actioncommand\n    [\"SetHeatpump\"],\n    [\"SetHoliday\"],\n    [\"SetQuietMode\"],\n    [\"SetPowerfull\"],\n    [\"SetZ1HeatRequestTemperature\"],\n    [\"SetZ1CoolRequestTemperature\"],\n    [\"SetZ2HeatRequestTemperature\"],\n    [\"SetZ2CoolRequestTemperature\"],\n    [\"SetOperationMode\"],\n    [\"SetForceDHW\"],\n    [\"SetDHWTemp\"],\n    [\"SetCoolTemp\"],\n    [\"SetForceDefrost\"],\n    [\"SetForceSterilization\"]\n];\n\nglobal.set(\"heishamon\", heishamon);\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -214,6 +172,69 @@
         "wires": []
     },
     {
+        "id": "2407702ea84aae48",
+        "type": "function",
+        "z": "c56b19a8521cdd83",
+        "g": "87dbb02b241dbf2f",
+        "name": "Map sensor to ID (opentherm/#)",
+        "func": "let heishamon = global.get(\"heishamon\") || {};\nif (!heishamon.SensorMapping) return;\n\n// Extract sensor name (last part after '/')\nlet parts = msg.topic.split(\"opentherm/\");\nlet sensor = parts[parts.length - 1];\n\n// Check if sensor exists in SensorMapping\nlet found = heishamon.SensorMapping.some(arr => arr[0] === sensor);\n\nif (found) {\n    msg.sensor = sensor;\n    return msg;\n}\nreturn;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 1060,
+        "wires": [
+            [
+                "38d4d5c2336679a3"
+            ]
+        ]
+    },
+    {
+        "id": "c2dd2bee14312b55",
+        "type": "function",
+        "z": "c56b19a8521cdd83",
+        "g": "87dbb02b241dbf2f",
+        "name": "Map sensor to ID (s0/#)",
+        "func": "let heishamon = global.get(\"heishamon\") || {};\nif (!heishamon.SensorMapping) return;\n\n// Extract sensor name (last part after '/')\nlet parts = msg.topic.split(\"s0/\");\nlet sensor = parts[parts.length - 1];\n\n// Check if sensor exists in SensorMapping\nlet found = heishamon.SensorMapping.some(arr => arr[0] === sensor);\n\nif (found) {\n    msg.sensor = sensor;\n    return msg;\n}\nreturn;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 1000,
+        "wires": [
+            [
+                "38d4d5c2336679a3"
+            ]
+        ]
+    },
+    {
+        "id": "07a2e0f96fdc94bb",
+        "type": "mqtt in",
+        "z": "c56b19a8521cdd83",
+        "g": "87dbb02b241dbf2f",
+        "name": "Heishamon",
+        "topic": "panasonic_heat_pump/opentherm/#",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "92e5b2c.00a8b5",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 190,
+        "y": 1060,
+        "wires": [
+            [
+                "2407702ea84aae48"
+            ]
+        ]
+    },
+    {
         "id": "fd57e866827cb156",
         "type": "mqtt in",
         "z": "c56b19a8521cdd83",
@@ -231,27 +252,6 @@
         "wires": [
             [
                 "c2dd2bee14312b55"
-            ]
-        ]
-    },
-    {
-        "id": "c2dd2bee14312b55",
-        "type": "function",
-        "z": "c56b19a8521cdd83",
-        "g": "87dbb02b241dbf2f",
-        "name": "Map sensor to ID (s0/#)",
-        "func": "// if there's an entry in the global defined variable then \n// the value needs to be saved (send) to next function \nvar sensorsplit = msg.topic.split(\"s0/\");\nvar sensor = sensorsplit[sensorsplit.length-1];\n \nvar sensorvalue = msg.payload;\nfor (let i = 0; i < context.global.heishamon.SensorMapping.length; i++) {\n    // when sensor is in the global settings \n    msg.sensor = sensor;\n    if(sensor == context.global.heishamon.SensorMapping[i][0]){\n\n        return msg;\n    }\n}\nreturn;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 470,
-        "y": 1000,
-        "wires": [
-            [
-                "38d4d5c2336679a3"
             ]
         ]
     },
