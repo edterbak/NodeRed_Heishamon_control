@@ -4,6 +4,16 @@ Unfold to see the FULL changelog of the released alpha and Beta versions:
 <details>
 
 </br>
+Version 26.1.2 Beta</br>
+Changes:</br>
+- Enhancement: HEAT setpoints are now sent during DHW runs where they were previously blocked.</br>
+- Fix System Health info: Scheduler information has never been updated in system health stats. This has now partially been fixed.</br>
+- Improvement: RTC linear calculation toggle now available and working for zone 2 and on the right dashboard. </br>
+- Enhancement: Efficiency, added visuals for current values and a table for historical data. >> New pallette: https://flows.nodered.org/node/node-red-node-ui-table</br>
+- Fix: Sensor input. Added protection against NaN values in node Sensorx</br>
+</br>
+
+</br>
 Version 26.1.1 Beta</br>
 Changes:</br>
 - Fix Chart storage: SoftStart chart. Chart survives restarts now.</br>
@@ -122,8 +132,13 @@ Changes:</br>
 
 ---
 
-## About v26.1.1 BETA
+## About v26.1.2 BETA
 <h1>⚠️ Getting really close to a stable release version now... ** ⚠️</h1>
+
+**Attention !** <br>
+ - Additional NodeRed pallette required to install "node-red-node-ui-table" <br>
+ Link: https://flows.nodered.org/node/node-red-node-ui-table
+
 
 **>>> But, I still really need your help for testing !!!**
 
@@ -131,9 +146,9 @@ Changes:</br>
 
 ### Background 
 Question: Why do I need your help so much?
-Answer: Well, when I started this project, it was purely for my own use. I was still learning Node-RED, JavaScript, object-based programming—everything was new to me.  
+Answer: Well, when I started this project, it was purely for my own use. I was still learning Node-RED, JavaScript, object-based programming—everything was new to me. And to be frank, I think I still have a lot of room to improve / learn.... 
 
-Later, I decided to share the project. To my surprise, there was a lot of interest and it was very well received.  
+But later, I decided to share the project. To my surprise, there was a lot of interest and it was very well received.  
 And even more later, I became aware of the incompatibility with other hardware setups, like people with 2 zones active, or with a buffertank, etc. 
 There were frequent requests were to improve compatibility with the different hardware setups.   
 Building this is not that easy as it sounds, because 
