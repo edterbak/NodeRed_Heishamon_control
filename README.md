@@ -3,6 +3,13 @@
 Unfold to see the FULL changelog of the released alpha and Beta versions:
 <details>
 
+Version 26.1.3 Beta</br>
+Changes:</br>
+- Enhancement: RTC Charts in combination with automations. In automations you can now select the target zone. By doing so, the Trigger/Revert lines are shown in the target chart only.</br>
+- Enhancement: RCT automation now offers option to select the target zone. The automation will only function on 1 zone.</br>
+- Enhancement: Made the RTC zone1/2 automation functional</br>
+</br>
+
 </br>
 Version 26.1.2 Beta</br>
 Changes:</br>
@@ -132,7 +139,7 @@ Changes:</br>
 
 ---
 
-## About v26.1.2 BETA
+## About v26.1.3 BETA
 <h1>⚠️ Getting really close to a stable release version now... ** ⚠️</h1>
 
 **Attention !** <br>
