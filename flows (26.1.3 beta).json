@@ -62311,7 +62311,7 @@
         "order": 2,
         "width": 17,
         "height": 9,
-        "format": "<html>\n\n<head>\n    <style>\n        .box {\n            border-left: 1px solid #a39d99;\n            /*border-top: 1px solid #a39d99;\n            /* This is your left border */\n            padding-left: 10px;\n            padding-top: 10px;\n            /* Spacing between border and text */\n            margin: 5px 0;\n            height: 100%;\n            /* Adjust as needed */\n        }\n    </style>\n</head>\n\n<body>\n    <div class=\"box\">\nTo use the Automations, RTC function does NOT need to be enabled.<br>\nWhen you enable one of the action-toggles, that automation is then active.<br>\n<br>\n\n1. Select the target zone.<br>\n2. Set \"Trigger action above dT\".<br>\n3. Set \"Revert action below dT\".<br>\n<br>\n\n- The target zone is the only zone where the automation will react to. This is intentional to prevent unwanted\noscillating scenarios. <br>\n- dT is the temperature difference between actual temperature and temperature setpoint. <br>\n- When the dT is more than \"Trigger\" dT, the selected automation actions will be activated.<br>\n- When the dT drops below the \"Revert\" dT, the selected automation actions will be reverted.<br>\n\n<br>\n<br>\nExample:<br>\nActual temperature: 22.50001°C<br>\nSetpoint: 21°C<br>\n----------------<br>\nDelta T = 1.50001°C<br>\n<br>\nWhen \"Trigger action above dT\": 1.0 > Not triggered<br>\nWhen \"Trigger action above dT\": 1.5 > Triggered<br>\n\n\n\n    </div>\n</body>\n\n</html>",
+        "format": "<html>\n\n<head>\n    <style>\n        .box {\n            border-left: 1px solid #a39d99;\n            /*border-top: 1px solid #a39d99;\n            /* This is your left border */\n            padding-left: 10px;\n            padding-top: 10px;\n            /* Spacing between border and text */\n            margin: 5px 0;\n            height: 100%;\n            /* Adjust as needed */\n        }\n    </style>\n</head>\n\n<body>\n    <div class=\"box\">\nTo use the Automations, RTC function does NOT need to be enabled.<br>\nWhen you enable one of the action-toggles, that automation is then active.<br>\n<br>\n\n1. Select the target zone.<br>\n2. Set \"Trigger action above dT\".<br>\n3. Set \"Revert action below dT\".<br>\n<br>\n\n- The target zone is the only zone where the automation will react to. This is intentional to prevent unwanted\noscillating scenarios. <br>\n- dT is the temperature difference between actual temperature and temperature setpoint. <br>\n- When the dT is more than \"Trigger\" dT, the selected automation actions will be activated.<br>\n- When the dT drops below the \"Revert\" dT, the selected automation actions will be reverted.<br>\n\n<br>\n<br>\nExample:<br>\n\"Trigger action above dT\" is set to 1.5°C<br>\nSetpoint: 21°C<br>\n-------------------<br>\nCase 1: Actual temperature = 22.4°C. dT = 1.4.<br>\nNo action<br>\n<br>\nCase 2: Actual temperature = 22.501°C. dT = 1.501.<br>\nAction is triggered.<br>\n\n    </div>\n</body>\n\n</html>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -90631,7 +90631,7 @@
         "hidden": true
     },
     {
-        "id": "48988136e6adf81f",
+        "id": "6db42a9ddb644f91",
         "type": "global-config",
         "env": [],
         "modules": {
