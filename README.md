@@ -3,25 +3,28 @@
 Unfold to see the FULL changelog of the released alpha and Beta versions:
 <details>
 
+<br>
+<h3>Version 26.1.4 Beta</h3>
+Changes:</br>
+- Enhancement: Add flow version during boot.</br>
+- Fix: RTC tab did not show final correction.</br>
+- Fix: Temperature graph showed WATER instead of ROOM temperature target.
+
 Version 26.1.3 Beta</br>
 Changes:</br>
 - Enhancement: RTC Charts in combination with automations. In automations you can now select the target zone. By doing so, the Trigger/Revert lines are shown in the target chart only.</br>
 - Enhancement: RCT automation now offers option to select the target zone. The automation will only function on 1 zone.</br>
-- Enhancement: Made the RTC zone1/2 automation functional</br>
-</br>
-
-</br>
-Version 26.1.2 Beta</br>
+- Enhancement: Made the RTC zone1/2 automation functional
+  
+<h3>Version 26.1.2 Beta</h3>
 Changes:</br>
 - Enhancement: HEAT setpoints are now sent during DHW runs where they were previously blocked.</br>
 - Fix System Health info: Scheduler information has never been updated in system health stats. This has now partially been fixed.</br>
 - Improvement: RTC linear calculation toggle now available and working for zone 2 and on the right dashboard. </br>
 - Enhancement: Efficiency, added visuals for current values and a table for historical data. >> New pallette: https://flows.nodered.org/node/node-red-node-ui-table</br>
-- Fix: Sensor input. Added protection against NaN values in node Sensorx</br>
-</br>
+- Fix: Sensor input. Added protection against NaN values in node Sensorx
 
-</br>
-Version 26.1.1 Beta</br>
+<h3>Version 26.1.1 Beta</h3>
 Changes:</br>
 - Fix Chart storage: SoftStart chart. Chart survives restarts now.</br>
 - Fix Chart storage: Efficiency - Energy. Chart survives restarts now.</br>
@@ -29,18 +32,14 @@ Changes:</br>
 - Fix Boot behavior: Heat Delta, Cool Delta and SetHeaterDelayTime during startup.</br>
 - Fix MQTT: Do not start command checking when not all current values are known.</br>
 - Fix MQTT: Command checking functionality now first looks if the actual value is already the same as the new command value. If so, it does not perform the checking loop.</br>
-</br>
 
-</br>
 <h3>Version 25.06 (! Beta 6 !)</h3>
 Changes:</br>
 - Enhancement: Merged both Compare SP (z1) and (z2) functions into a single function. This reduces simultaneous sending of the same setcurve mqtt command.</br>
 - Enhancement: Modified the function to check all sent MQTT commands. Now command prefix independant.</br>
 - Enhancement: Added a small function to throttle the amount of MQTT commands being sent ad a time. Rate limit is set  to 1 per 7 seconds. All commands are queued. </br>
 - Fix Scheduler: some conditions did not pass with '==='. fixed.</br>
-</br>
 
-</br>
 <h3>Version 25.06 (! Beta 5 !)</h3>
 Changes:</br>
 - Fix Softstart: Buffertank enabled would have bad performance. Variable was not initialized propperly.</br>
@@ -50,14 +49,12 @@ Changes:</br>
 - Added an auto-tuning noice filter to the input sensors by default.</br>
 - Fix Scheduler: Toggle functions to accomadate zone 1 and zone 2 were not adjusted yet. Now they should be working</br>
 - Fix Scheduler: Removing line 2 did not work. Now it does. 
-</br>
 
-</br>
 <h3>Version 25.06 (! BETA 4 !)</h3>
 Changes:</br>
 - Fix SP_Final: Initial calculation did not resolve. Resulting in no mqtt commands being sent to set heat. If you do not experience issues with Beta 3, you do not need to update. Thanks to Breadrun @ Tweakers.net for the good suggestion.</br>
 
-  </br>
+
 <h3>Version 25.06 (! BETA 3 !)</h3>
 Changes:</br>
 - Fix CCC: Incorrectly used TOP27 instead of TOP42/TOP43 for zone 1/2. Corrected this.</br>
@@ -70,9 +67,7 @@ Changes:</br>
 <br>
 **Important notice:** <br>
 This version does NOT check if a command for HEAT has been received and set. It assumes after sending, it is set. This prevents the issue of needles resending commands fully. However, the QOS level of the MQTT command has been increased to level 2 to make sure the heishamon did receive it. <br>
-</br>
 
-</br>
 <h3>Version 25.06 (! BETA 2 !)</h3>
 Changes:</br>
 - Fix CCC: In Direct mode, disabling CCC function set the target temperature to 20 instead of the given setpoint.</br>
@@ -86,7 +81,6 @@ Changes:</br>
 - Fix SoftStart: Fixed an error in fetching RTC z2 result. It was fetching RTC z1 result</br>
 - Fix CCC: Zone 2 logic was different from Zone 1 logic</br>
 - Enhancement: Added a LOT of new external input options in the tab [WP Input] (WIP)</br>
-</br>
 
 <h3>Version 25.05 (! ALPHA 8!)</h3>
 Changes:</br>
@@ -139,8 +133,8 @@ Changes:</br>
 
 ---
 
-## About v26.1.3 BETA
-<h1>⚠️ Getting really close to a stable release version now... ** ⚠️</h1>
+## About v26.1.4 BETA
+<h1>⚠️ ** Probably the last beta ** ⚠️</h1>
 
 **Attention !** <br>
  - Additional NodeRed pallette required to install "node-red-node-ui-table" <br>
