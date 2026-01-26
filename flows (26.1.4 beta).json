@@ -26069,7 +26069,7 @@
         "z": "8c9d42231fd19d3c",
         "g": "4f352fdae09316c2",
         "name": "function 33",
-        "func": "msg.topic = \"SYSTEM\";\nmsg.payload = 'Flow version ' + msg.payload;\nreturn msg;",
+        "func": "var last_value = context.get('version');\nif (last_value === undefined) {\n    context.set('version',\"msg.payload\");\n    \n    msg.topic = \"SYSTEM\";\n    msg.payload = 'Flow version ' + msg.payload;\n    return msg;\n\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -90066,7 +90066,7 @@
         "hidden": true
     },
     {
-        "id": "afa276850d273846",
+        "id": "f496083b54a37bf8",
         "type": "global-config",
         "env": [],
         "modules": {
